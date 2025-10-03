@@ -50,4 +50,6 @@ In generale si distinguono in:
 - **Non omogenee**
 
 Riprendendo l'esempio degli array (o dei vettori), è una struttura a dimensione fissa, con una tabella monodimensionale di elementi omogenei su cui si possono effettuare:
-- Le
+- Lettura (o selezione)
+- Scrittura (o sostituzione)
+La sua organizzazione di memoria consente l'accesso diretto al singolo componente tramite l'indice (che viene calcolato con l'indirizzo di memoria, tornare indietro o avanti si )
