@@ -184,9 +184,12 @@ Oltre al modello relazionale possiamo trovare altri modelli:
 </table>
 
 #### Modello relazionale
+Il modello relazione
+
+
 Una **relazione** rappresenta l'organizzazione dei dati in insiemi omogenei
 Le **istanze di una relazione** rappresentano i dati veri e propri
-[guardare pag 6-7]
+
 
 #### Modelli dei dati vs concettuali
 I modelli dei dati precedentemente elencati sono detti
