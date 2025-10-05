@@ -1,3 +1,4 @@
-[DA INIZIARE a finire vs.), guardare foto A.M.]
+[guardare foto A.M.]
+
 
 
