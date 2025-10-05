@@ -218,3 +218,4 @@ Il termine query language viene spesso usato come sinonimo di DML.
 Le istruzioni di un DML definite **iterrogazioni** sono quelle che non modificano il database.
 Originariamente la distinzione fra DDL, DML e query language era netta ma successivamente son stati proposti linguaggi che integrano le funzionalità suddette, come SQL.
 #### Classificazione dei DBMS
+Il criterio principale utilizzato per classificare è il modello dei dati sul quale si fonda il DBMS, distinguendo le basi di dati gerarchiche da quelle reticolari (network), relazionali, orientate a oggetti, ecc
