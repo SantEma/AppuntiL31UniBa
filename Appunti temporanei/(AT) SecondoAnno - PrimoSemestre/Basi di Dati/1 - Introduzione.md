@@ -217,7 +217,7 @@ Per i **linguaggi della base di dati** si distinguono in:
 Il termine query language viene spesso usato come sinonimo di DML.
 Le istruzioni di un DML definite **iterrogazioni** sono quelle che non modificano il database.
 Originariamente la distinzione fra DDL, DML e query language era netta ma successivamente son stati proposti linguaggi che integrano le funzionalità suddette, come SQL.
-#### Classificazione dei DBMS
+#### Classifikcazione dei DBMS
 Il criterio principale utilizzato per classificare è il modello dei dati sul quale si fonda il DBMS, distinguendo le basi di dati gerarchiche da quelle reticolari (network), relazionali, orientate a oggetti, ecc.
 
 Altri criteri sono:
@@ -229,4 +229,13 @@ Altri criteri sono:
 		- **Omogeneei**: usano lo stesso software
 		- **Eterogenei**: utilizzano software per accedere a diversi DB autonomi pre-esistenti
 
-#### Moduli di un DBMS
+#### Vantaggi e svantaggi dei DBMS
+Oltre ai vantaggi di **integrazione dei dati** e di **flessibilità** del DB, la tecnologia delle basi di dati consente anche:
+- stabilire degli **standard** circa la strutturazione e nomenclatura dei dati in una organizzazione
+- **ridurre i tempi di sviluppo** delle applicazioni rispetto a quelli richiesti usando la tecnologia degli archivi
+
+Tuttavia si hanno anche degli **svantaggi**: 
+- I DBMS richiedono impegno hardware e software per messa a punto e funzionamento, di conseguenza anche costi più elevati e personale con competenze per lo specifico DBMS
+- Impatto sulla struttura organizzativa 
+- Progetto di DB ed applicazioni richiedono personale qualificato e strumenti opportuni, l’impiego di DB richiede ristrutturazione dei dati in archivi esistenti e riscrittura degli applicativi 
+- Non consigliati per applicazioni con uno o pochi utenti, senza necessità di accessi concorrenti e relativamente stabili nel tempo
