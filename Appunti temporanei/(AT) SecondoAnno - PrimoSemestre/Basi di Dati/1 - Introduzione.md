@@ -199,5 +199,4 @@ I modelli dei dati precedentemente elencati sono detti
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
 ### Livelli di astrazione nei DBMS
-L'architettura a livelli di un DBMS permette di gestire l'indipendenza dei dati, principale caratteristica dei DBMS.
-
+L'architettura di un DBMS 
