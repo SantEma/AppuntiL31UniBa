@@ -187,7 +187,8 @@ Oltre al modello relazionale possiamo trovare altri modelli:
 Il modello relazionale dei dati permette di definire tipi grazie al costruttore della **relazione**, che rappresenta l'organizzazione dei dati in insiemi omogenei.
 Una relazione viene rappresentata generalmente tramite **tabella**, le cui righe rappresentano record **specifici** e le colonne ai vari campi dei record
 ![[Pasted image 20251005151045.png]]
-Le **istanze di una relazione** rappresentano i dati veri e propri
+##### Schemi e istanze
+Nella base di dati esiste una parte invariata nel tempo, detta **schema** della
 #### Modelli dei dati vs concettuali
 I modelli dei dati precedentemente elencati sono detti
 - **Logici**: le strutture usate da questi modelli, pur essendo astratte, riflettono una particolare organizzazione (alberi, grafi, a tabelle, oggetti etc).
