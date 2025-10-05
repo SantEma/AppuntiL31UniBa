@@ -224,6 +224,9 @@ Altri criteri sono:
 - **Il numero di utenti**: Sistemi single-user supportano solo un utente per volta e sono per lo più usati con personal computer, maggior parte dei DBMS sono multi-user.
  - **Il numero di centri (site) in cui è distribuito il DB**: 
 	- Nei DBMS centralizzati i dati sono memorizzati in un unico centro e può supportare più  utenti, eventualmente remoti. 
-	- Nei DBMS distribuito si possono avere dati e software distribuiti in più centri connessi da una rete locale o geografica, tipicamente i database distribuiti hanno un’architettura client-server. Esiste 
+	- Nei DBMS distribuito si possono avere dati e software distribuiti in più centri connessi da una rete locale o geografica, tipicamente i database distribuiti hanno un’architettura client-server.
+	  Questi ultimi si suddividono in
+		- **Omogeneei**: usano lo stesso software
+		- **Eterogenei**: utilizzano software per accedere a diversi DB autonomi pre-esistenti
 
 #### Moduli di un DBMS
