@@ -199,5 +199,5 @@ I modelli dei dati precedentemente elencati sono detti
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
 ### Livelli di astrazione nei DBMS
-L'architettura di un DBMS è distinta in 3 livelli:
-- **Livello fisico**: costituisce una descrizione dell'intera basi di dati
+L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in schema logico:
+- **Livello fisico**: costituisce una descrizione dell'organizzazione fisica dei dati nelle memorie permanenti e strt
