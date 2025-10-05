@@ -198,4 +198,5 @@ I modelli dei dati precedentemente elencati sono detti
 	 Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi, un esempio è il modello Entità-Relazioni.
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
-
+### Livelli di astrazione nei DBMS
+L'architettura a livelli 
