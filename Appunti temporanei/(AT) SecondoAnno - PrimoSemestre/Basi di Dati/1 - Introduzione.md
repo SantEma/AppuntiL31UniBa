@@ -188,7 +188,7 @@ Il modello relazionale dei dati permette di definire tipi grazie al costruttore 
 Una relazione viene rappresentata generalmente tramite **tabella**, le cui righe rappresentano record **specifici** e le colonne ai vari campi dei record
 ![[Pasted image 20251005151502.png]]
 ##### Schemi e istanze
-Nella base di dati esiste una parte invariata nel tempo, detta **schema della base di dati**, costituita dalle caratteristiche dei dati, e una parte invariabile, ch
+Nella base di dati esiste una parte invariata nel tempo, detta **schema della base di dati**, costituita dalle caratteristiche dei dati, e una parte variabile, chiamata **istanza** della base di dati, costituita dai valori effettivi.
 #### Modelli dei dati vs concettuali
 I modelli dei dati precedentemente elencati sono detti
 - **Logici**: le strutture usate da questi modelli, pur essendo astratte, riflettono una particolare organizzazione (alberi, grafi, a tabelle, oggetti etc).
