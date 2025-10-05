@@ -3,9 +3,9 @@ Un **sistema organizzativo** è un insieme di risorse e regole che consentono il
 ## Sistema informativo
 Ogni sistema organizzativo è dotato di **sistema informativo** che organizza e gestisce le informazioni necessarie per perseguire gli scopi dell’organizzazione stessa.
 Il sistema informativo assicura:
-1. Raccolta
-2. Acquisizione
-3. Archiviazione
+1. **Raccolta**
+2. **Acquisizione**
+3. **Archiviazione**
 
 Un sistema informativo è molte volte indipendente dalle automatizzazioni che conosciamo, si basti ricordare l'era pre-calcolatori, come gli archivi delle banche o servizi anagrafici che esistono da vari secoli.
 
@@ -205,4 +205,5 @@ L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in sch
 - **Livello di vista logica**:  definisce come deve apparire la struttura del DB ad una certa applicazione e/o utente
 ![[Pasted image 20251005154127.png]]
 #### Indipendenza dei dati
-L'architettura dei livelli quindi garantisce l'indipendenza
+L'architettura dei livelli quindi garantisce **l'indipendenza** dei dati, principale proprietà dei DBMS.
+L'indipendenza dei dati può essere caratterizzata come due 
