@@ -191,11 +191,10 @@ Le **istanze di una relazione** rappresentano i dati veri e propri
 #### Modelli dei dati vs concettuali
 I modelli dei dati precedentemente elencati sono detti
 - **Logici**: le strutture usate da questi modelli, pur essendo astratte, riflettono una particolare organizzazione (alberi, grafi, a tabelle, oggetti etc).
-	- Sono adottati nei DBMS esistenti per  l’organizzazione dei dati e indipendenti dalle strutture fisiche
+	- Sono adottati nei DBMS esistenti per l’organizzazione dei dati e indipendenti dalle strutture fisiche
 
 - **Concettuali**: utilizzati per descrivere i dati in modo completamente indipendente dalla scelta del modello logico. Descrivono concetti del mondo reale, piuttosto che i dati utili a rappresentarli.
-	- Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi.
-	  Un esempio è il modello Entità-Relazioni.
+	 Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi, un esempio è il modello Entità-Relazioni.
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
 
