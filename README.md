@@ -6,10 +6,10 @@ I file sono suddivisi in 2 categorie principali:
 **Attenzione**:
 I PDF potrebbero non essere caricati subito, se notate che comunque i file Markdown non sono modificati da tempo potreste tranquillamente seguire quelli.
 
-Plugin consigliati per utilizzare Obsidian nel migliore dei modi:
+Plugin che utilizzo per la realizzazione degli appunti:
 - **Better Export PDF**: Permette di poter estrarre i markdown in PDF
-- **Latex Suite**: Permette di scrivere una formula matematica molto più rapidamente tramite shortcut.
-- **Git**: Permette il caricamento automatico di tutti gli appunti che vedete qui, commit ogni minuto e push ogni 3 (per non perdere mai nulla)
+- **Latex Suite**: Permette di scrivere una formula matematica molto più rapidamente tramite shortcut
+- **Git**: Permette il caricamento automatico di tutti gli appunti che vedete qui, commit ogni minuto e push ogni 2 (per non perdere mai nulla)
 
 Per favore, nel caso troviate problemi nei file (minori o maggiori, non importa) **contattatemi dai link sul profilo profilo GitHub**, vi ringrazio.
 
