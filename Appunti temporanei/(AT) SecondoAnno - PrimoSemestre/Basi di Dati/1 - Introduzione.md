@@ -203,4 +203,6 @@ L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in sch
 - **Livello fisico**: costituisce una descrizione dell'organizzazione fisica dei dati nelle memorie permanenti e strutture dati ausiliare per facilitarne l'uso (es. file hash, sequenziale, sequenziale con indici)
 - **Livello logico**:  descrive la struttura degli insiemi di dati e delle relazioni fra loro, secondo un certo modello logico dei dati, senza nessun riferimento alla loro organizzazione fisica nella memoria permanente (es. modello relazionale o altro)
 - **Livello di vista logica**:  definisce come deve apparire la struttura del DB ad una certa applicazione e/o utente
-- ![[Pasted image 20251005154127.png]]
+![[Pasted image 20251005154127.png]]
+#### Indipendenza dei dati
+L'architettura dei livelli quindi garantisce l'indipendenza
