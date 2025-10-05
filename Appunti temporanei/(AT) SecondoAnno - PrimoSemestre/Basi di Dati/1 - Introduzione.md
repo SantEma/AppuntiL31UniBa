@@ -182,7 +182,6 @@ Oltre al modello relazionale possiamo trovare altri modelli:
     </tr>
   </tbody>
 </table>
-
 #### Modello relazionale
 Il modello relazionale dei dati permette di definire tipi grazie al costruttore della **relazione**, che rappresenta l'organizzazione dei dati in insiemi omogenei.
 Una relazione viene rappresentata generalmente tramite **tabella**, le cui righe rappresentano record **specifici** e le colonne ai vari campi dei record
@@ -198,7 +197,7 @@ I modelli dei dati precedentemente elencati sono detti
 	 Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi, un esempio è il modello Entità-Relazioni.
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
-### Livelli di astrazione nei DBMS
+#### Livelli di astrazione nei DBMS
 L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in schema logico:
 - **Livello fisico**: costituisce una descrizione dell'organizzazione fisica dei dati nelle memorie permanenti e strutture dati ausiliare per facilitarne l'uso (es. file hash, sequenziale, sequenziale con indici)
 - **Livello logico**:  descrive la struttura degli insiemi di dati e delle relazioni fra loro, secondo un certo modello logico dei dati, senza nessun riferimento alla loro organizzazione fisica nella memoria permanente (es. modello relazionale o altro)
@@ -218,3 +217,4 @@ Per i **linguaggi della base di dati** si distinguono in:
 Il termine query language viene spesso usato come sinonimo di DML.
 Le istruzioni di un DML definite **iterrogazioni** sono quelle che non modificano il database.
 Originariamente la distinzione fra DDL, DML e query language era netta ma successivamente son stati proposti linguaggi che integrano le funzionalità suddette, come SQL.
+#### Classificazione dei DBMS
