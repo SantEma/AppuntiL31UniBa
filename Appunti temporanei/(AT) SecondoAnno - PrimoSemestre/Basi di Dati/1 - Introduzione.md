@@ -218,4 +218,21 @@ Il termine query language viene spesso usato come sinonimo di DML.
 Le istruzioni di un DML definite **iterrogazioni** sono quelle che non modificano il database.
 Originariamente la distinzione fra DDL, DML e query language era netta ma successivamente son stati proposti linguaggi che integrano le funzionalità suddette, come SQL.
 #### Classificazione dei DBMS
-Il criterio principale utilizzato per classificare è il modello dei dati sul quale si fonda il DBMS, distinguendo le basi di dati gerarchiche da quelle reticolari (network), relazionali, orientate a oggetti, ecc
+Il criterio principale utilizzato per classificare è il modello dei dati sul quale si fonda il DBMS, distinguendo le basi di dati gerarchiche da quelle reticolari (network), relazionali, orientate a oggetti, ecc.
+
+Altri criteri sono:
+• Il numero di utenti
+Sistemi single-user supportano solo un utente per
+volta e sono per lo più usati con personal computer.
+La maggior parte dei DBMS sono multi-user.
+
+ Il numero di centri (site) in cui è distribuito il DB.
+DBMS centralizzati → i dati sono memorizzati in un
+unico centro.
+– Un DBMS centralizzato può supportare più 
+utenti, eventualmente remoti. 
+DBMS distribuito → può avere dati e software
+distribuiti in più centri connessi da una rete locale o
+geografica.
+– Tipicamente i database distribuiti hanno 
+un’architettura client-server. 
