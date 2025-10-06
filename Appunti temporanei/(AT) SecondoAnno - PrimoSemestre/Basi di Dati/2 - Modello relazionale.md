@@ -16,11 +16,11 @@ relazione ed il concetto di tabella. Infatti, poiché una relazione è un insiem
 Al tempo stesso però, ciascuna n-upla è internamente ordinata: l’i-esimo valore di ciascuna proviene dall'i-esimo dominio: 
 $$(v_{1}, v_{2}, \dots , v_{n}) \quad \text{con} \quad v1 \in D_{1}, v_{2} \in D_{2},\dots,v_{n} \in D_{n}$$
 Questo implica che ci sia un ordinamento tra i domini (tra le colonne della tabella), che è significativo ai fini dell’interpretazione dei dati nelle relazioni. 
-Risulta evidente come le informazioni che siamo interessati ad organizzare nelle relazioni dei DB abbiano una struttura riconducibile a quella dei record: una relazione è sostanzialmente un insieme di record omogenei, cioè definiti sugli stessi campi. 
-Di conseguenza attribuendo ad ogni dominio un nome identificativo, detto attributo, l’ordinamento dei domini (quindi la posizione delle colonne nella tabella) diventa irrilevante.
+Risulta evidente come le informazioni che siamo interessati ad organizzare nelle relazioni dei DB abbiano una struttura riconducibile a quella dei record: una relazione è sostanzialmente un insieme di record omogenei, cioè definiti sugli stessi campi, di conseguenza attribuendo ad ogni dominio un nome identificativo, detto attributo, l’ordinamento dei domini (quindi la posizione delle colonne nella tabella) diventa irrilevante.
 ![[Pasted image 20251006112024.png]]
 Rispetto al modello basato su record e puntatori (gerarchico e reticolare), il modello relazionale, basato su valori, presenta diversi vantaggi:
 1. **Astrazione**: Richiede di rappresentare solo ciò che è rilevante dal punto di vista di applicazione/utente.
 2. **Portabilità**: essendo tutta l’informazione contenuta nei valori, è relativamente semplice trasferire i dati da un contesto ad un altro.
 	Al contrario, i puntatori hanno un significato locale al singolo sistema, che non sempre è immediato esportare
-3. **Indipendenza fisica dei dat**i: la rappresentazione logica dei dati non fa alcun riferimento a quella fisica, che può anche cambiare nel tempo;
+3. **Indipendenza fisica dei dati**: la rappresentazione logica dei dati non fa alcun riferimento a quella fisica, che può anche cambiare nel tempo;
+
