@@ -41,6 +41,8 @@ Questa assenza di valore si potrebbe ovviare usando un valore del dominio per ra
 - **L'uso di valori del dominio genera confusione**: la distinzione tra valori veri e fittizi è nascosta, costringendo i programmi che accedono alla base di dati di tenerne conto, distinguendo opportunamente e tenendo conto di quali sono in ciascun caso
 
 Per poter rappresentare in modo semplice e comodo si estende la possibilità di inserire un **valore nullo**, ben distinto dai valori del dominio e aggiunto proprio per lo scopo
+
+![[IMG_0010.jpg]]
 ## Vincoli di integrità
 [da completare]
 ### Vincoli di integrità referenziale
