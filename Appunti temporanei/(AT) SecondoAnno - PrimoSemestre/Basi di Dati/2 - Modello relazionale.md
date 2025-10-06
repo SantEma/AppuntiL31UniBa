@@ -88,3 +88,6 @@ Nel caso in cui la chiave di $R_{2}$ è unica e composta di un solo attributo $B
 Nel caso più generale, ciascuno degli attributi in $X$ deve corrispondere a un preciso attributo della chiave primaria $K$ di $R_{2}$.
 
 Allo scopo è necessario specificare un ordinamento sia nell'insieme $X$ sia in $K$, indicando gli attributi in ordine, $X = A_{1},A_{2} \dots A_{p} e K = B_{1},B_{2} \dots B_{p}$, il vincolo è soddisfatto se per ogni tupla $t_{1}$ in $R_{1}$ senza nulli su $X$ esiste una tupla $t_{2}$ in $R_{2}$ con $t_{1}[A1] = t_{2}[B1]$, per ogni $i$ compreso fra 1 e $p$.
+
+Esempio:
+![[47D3EDDB-C576-4939-B9AE-1CEFB4A93A29.png]]
