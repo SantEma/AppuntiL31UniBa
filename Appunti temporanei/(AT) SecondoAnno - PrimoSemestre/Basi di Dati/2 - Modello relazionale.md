@@ -27,3 +27,4 @@ Analogamente, $t[AB]$ indica il valore di $t$ sull'unione degli attributi $A$ e 
 
 Una **relazione su X** è un insieme di tuple su $X$ ed è rappresentata mediante una **tabella dotata di intestazione**, che riporta i nomi degli attributi.  
 Una **base di dati relazionale** è infine costituita da **più relazioni** tra loro coerenti.
+![[Pasted image 20251006112024.png]]
