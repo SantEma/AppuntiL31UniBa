@@ -34,5 +34,11 @@ La soluzione sarebbe quella di incapsulare ogni variabile globale in un modulo i
 ### I metodi
 Gli oggetti sono costituiti da **dati privati** e **operazioni permesse su tali dati**, tra di loro comunicano tramite passaggio di **messaggi** (chiamata a procedura, detta metodo, che appartiene all'oggetto)
 
-Nei linguaggi ad oggetti come C++ nelle definizioni di classi si avranno metodi accessibili da qualunque punto nel programma e altri che potranno essere accessibili solo alla classe stessa (in C questo non è possibile)
+Nei linguaggi ad oggetti come C++ nelle definizioni di classi si avranno metodi accessibili da qualunque punto nel programma e altri che potranno essere accessibili solo alla classe stessa (in C questo non è possibile con la struct)
 ![[Pasted image 20251006091231.png]]
+
+Il passaggio di messaggi permette la comunicazione:
+- fra **oggetti**
+- fra **oggetti** e **programma client**
+
+Quando viene inviato un messaggio ad un oggetto viene selezionato un metodo fra quelli disponibili per rispondere (ricordando che anche i metodi possono essere non visibili o **privati**) 
