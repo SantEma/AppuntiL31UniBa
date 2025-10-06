@@ -28,3 +28,7 @@ Analogamente, $t[AB]$ indica il valore di $t$ sull'unione degli attributi $A$ e 
 Una **relazione su X** è un insieme di tuple su $X$ ed è rappresentata mediante una **tabella dotata di intestazione**, che riporta i nomi degli attributi.  
 Una **base di dati relazionale** è infine costituita da **più relazioni** tra loro coerenti.
 ![[Pasted image 20251006112024.png]]
+Rispetto al modello basato su record e puntatori (gerarchico e reticolare), il modello relazionale, basato su valori, presenta diversi vantaggi:
+1. Astrazione: Richiede di rappresentare solo ciò che è rilevante dal punto di vista di applicazione/utente.
+2. Portabilità: essendo tutta l’informazione contenuta nei valori, è relativamente semplice trasferire i dati da un contesto ad un altro.
+	Al contrario, i puntatori hanno un significato locale al singolo sistema, che non sempre è immediato esportare
