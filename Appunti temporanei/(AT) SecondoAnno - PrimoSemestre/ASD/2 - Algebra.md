@@ -53,3 +53,5 @@ Riprendendo l'esempio degli array (o dei vettori), è una struttura a dimensione
 - Lettura (o selezione)
 - Scrittura (o sostituzione)
 La sua organizzazione di memoria consente l'accesso diretto al singolo componente tramite l'indice (che viene calcolato con l'indirizzo di memoria, tornare indietro o avanti significa moltiplicare quella cella di memoria $n$ volte per quanto vogliamo andare avanti o indietro)
+
+[Per esempi guardare il pacchetto di slide n.2]([2-Algebre.pdf](https://2x6jqd-my.sharepoint.com/:b:/g/personal/emanuele_2x6jqd_onmicrosoft_com/ESyy5eskUthOhKQFY3u-ClkBTehEWfnpTQpY3bwsW1lIhA?e=5kG8Wg))
