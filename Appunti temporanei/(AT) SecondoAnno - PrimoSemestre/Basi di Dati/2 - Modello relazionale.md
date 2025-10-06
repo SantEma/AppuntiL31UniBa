@@ -57,9 +57,13 @@ Non è corretto dire che qualsiasi insieme di tuple (insieme di dati) sullo sche
 - Nella tupla STUDENTI non si potrebbero avere due studenti con stessa matricola 
 ed etc.
 
-Per poter evitare situazioni come queste viene introdotto il concetto di **vincolo di integrità** come proprietà che deve essere soddisfatta dalle istanze che rappresentano
-### Vincoli di integrità referenziale
-[da completare]
+Per poter evitare situazioni come queste viene introdotto il concetto di **vincolo di integrità** come proprietà che deve essere soddisfatta dalle istanze che rappresentano informazioni corrette per l'applicazione.
+Ogni vincolo può essere visto come un predicato che assegna valori vero o falso se queste soddisfano le condizioni o no.
+
+È possibile classificare i vincoli a seconda degli elementi di una base di dati che ne sono coinvolti, in particolare ci sono due categorie:
+- **Vincolo intrarelazionale**: se il suo soddisfacimento è definito rispetto alle singole relazioni della base di dati (per esempio i casi descritti sopra), talvolta il coinvolgimento riprende direttamente le tuple separatamente chiamato vincolo di **tupla**
+- **Vincolo interreleazionale**: se coinvolge più relazioni 
 ## Chiavi
 [da completare]
-
+### Vincoli di integrità referenziale
+[da completare]
