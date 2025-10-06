@@ -64,6 +64,8 @@ Ogni vincolo può essere visto come un predicato che assegna valori vero o falso
 - **Vincolo intrarelazionale**: se il suo soddisfacimento è definito rispetto alle singole relazioni della base di dati (per esempio i casi descritti sopra), talvolta il coinvolgimento riprende direttamente le tuple separatamente chiamato vincolo di **tupla**
 - **Vincolo interreleazionale**: se coinvolge più relazioni 
 ## Chiavi
-[da completare]
+Una **chiave** è un insieme di attributi utilizzato per identificare univocamente le tuple di una relazione, formalmente:
+
+Data una relazione $R(X)$ con 
 ### Vincoli di integrità referenziale
 [da completare]
