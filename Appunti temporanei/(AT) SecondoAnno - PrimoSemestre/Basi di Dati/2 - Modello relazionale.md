@@ -31,9 +31,11 @@ Possiamo a questo punto riassumere le definizioni relative al modello relazional
 ![[Pasted image 20251006120215.png]]
 
 ## Valori nulli o incompleti
-Quando si aggiunge una tupla ad una relazione, può non essere possibile specificare il valore di un attributo, alcuni dei motivi potrebbero essere valore non applicabile, valore sconosciuto o valore senza informazioni.
-L’assenza di un valore può essere specificata utilizzando un valore del dominio, ma questa, è una soluzione insoddisfacente in quanto richiede l’esistenza di un valore del dominio mai utilizzato per valori significativi e la distinzione fra valori veri e valori fittizi può creare confusione.
-Per rappresentare in modo semplice la non disponibilità di valori, il concetto
-di relazione viene esteso prevedendo che una tupla possa assumere su ciascun attributo un valore detto nullo, che denoti l’assenza di informazione.
+[da completare]
+## Vincoli di integrità
+[da completare]
+### Vincoli di integrità referenziale
+[da completare]
+## Chiavi
+[da completare]
 
-I sistemi relazionali permettono di specificare per ciascun attributo di una relazione se esso può assumere il valore nullo oppure se per esso vale il vincolo not-null e quindi non può assumere il valore nullo.
