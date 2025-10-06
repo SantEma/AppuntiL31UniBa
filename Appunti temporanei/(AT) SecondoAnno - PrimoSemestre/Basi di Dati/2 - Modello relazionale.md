@@ -24,3 +24,7 @@ Rispetto al modello basato su record e puntatori (gerarchico e reticolare), il m
 	Al contrario, i puntatori hanno un significato locale al singolo sistema, che non sempre è immediato esportare
 3. **Indipendenza fisica dei dati**: la rappresentazione logica dei dati non fa alcun riferimento a quella fisica, che può anche cambiare nel tempo;
 
+Possiamo a questo punto riassumere le definizioni relative al modello relazionale distinguendo il livello degli schemi da quello delle istanze:
+- Uno **schema di relazione** é costituito da un simbolo R, detto nome della relazione e da un insieme di attributi $X = \{ A_{1}, A_{2}, \dots , A_{n} \}$, il tutto di solito indicato con $R(X)$.
+- A ciascun attributo é associato un dominio, come
+giá visto.
