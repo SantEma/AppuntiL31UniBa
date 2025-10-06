@@ -81,6 +81,8 @@ Il fatto che su ogni schema di relazione si possa definire almeno una chiave gar
 Su una delle chiavi della relazione, detta **chiave primaria**, si vieta la presenza di valori nulli, per sceglierla si preferisce poi quella con il minor valore di attribuiti.
 Per convenzione gli attributi della chiave primaria sono evidenziati tramite sottolineatura.  
 In quasi tutti i casi è possibile trovare una chiave fra gli attributi, quando ciò non accade si ricorre a un codice come attributo aggiuntivo per l’identificazione di una specifica tupla.
+
+
 ### Vincoli di integrità referenziale
 Un vincolo di integrità referenziale o chiave esterna fra un insieme di attributi $Y \underline{\subset} X$ di una relazione $R_{1}(X)$ e un'altra relazione $R_{2}$ è soddisfatto se i valori su $Y$ di ciascuna tupla dell’istanza su $R_{1}$ compaiono come valori della chiave primaria dell’istanza su $R_{2}$.
 
@@ -88,6 +90,9 @@ Nel caso in cui la chiave di $R_{2}$ è unica e composta di un solo attributo $B
 Nel caso più generale, ciascuno degli attributi in $X$ deve corrispondere a un preciso attributo della chiave primaria $K$ di $R_{2}$.
 
 Allo scopo è necessario specificare un ordinamento sia nell'insieme $X$ sia in $K$, indicando gli attributi in ordine, $X = A_{1},A_{2} \dots A_{p} \quad \text{e} \quad K = B_{1},B_{2} \dots B_{p}$, il vincolo è soddisfatto se per ogni tupla $t_{1}$ in $R_{1}$ senza nulli su $X$ esiste una tupla $t_{2}$ in $R_{2}$ con $t_{1}[A1] = t_{2}[B1]$, per ogni $i$ compreso fra 1 e $p$.
+
+**N.B**: Per i DBMS che non consentono di indicare esplicitamente una chiave primaria, ma solo più chiavi, il vincolo di integrità referenziale deve indicare esplicitamente gli attributi che compongono la chiave cui si fa riferimento
+
 
 Esempio:
 ![[47D3EDDB-C576-4939-B9AE-1CEFB4A93A29.png]]
