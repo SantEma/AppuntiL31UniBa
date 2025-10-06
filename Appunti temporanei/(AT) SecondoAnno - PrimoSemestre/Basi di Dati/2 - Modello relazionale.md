@@ -29,3 +29,4 @@ Possiamo a questo punto riassumere le definizioni relative al modello relazional
 - Una istanza di relazione (o relazione) su uno schema $R(X)$ è un insieme di $r$ tuple su $X$.
 - Una istanza di base di dati (o base di dati) su uno schema $R = \{R_{1}(X_{1}), R_{2}(X_{2}), \dots , R_{n}(X_{n}\}$ è un insieme di relazioni $r = \{r_{1}, r_{2},\dots , r_{n}\}$, dove ogni $r_{i}$, per $1 \leq i \leq n$, è una relazione sullo schema $R_{i}(X_{i})$.
 ![[Pasted image 20251006120215.png]]
+
