@@ -97,3 +97,12 @@ Allo scopo è necessario specificare un ordinamento sia nell'insieme $X$ sia in 
 Esempio:
 ![[47D3EDDB-C576-4939-B9AE-1CEFB4A93A29.png]]
 
+## Esercizi
+### Esercizio 1
+![[Pasted image 20251006210400.png]]![[Pasted image 20251006210411.png]]
+### Esercizio 2
+![[Pasted image 20251006210430.png]]
+![[Pasted image 20251006210441.png]]
+### Esercizio 3
+![[Pasted image 20251006210501.png]]
+![[Pasted image 20251006210511.png]]
