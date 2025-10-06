@@ -41,10 +41,23 @@ Questa assenza di valore si potrebbe ovviare usando un valore del dominio per ra
 - **L'uso di valori del dominio genera confusione**: la distinzione tra valori veri e fittizi è nascosta, costringendo i programmi che accedono alla base di dati di tenerne conto, distinguendo opportunamente e tenendo conto di quali sono in ciascun caso
 
 Per poter rappresentare in modo semplice e comodo si estende la possibilità di inserire un **valore nullo**, ben distinto dai valori del dominio e aggiunto proprio per lo scopo
-
+Qualche esempio:
 ![[IMG_0010.jpg]]
+
+Alcune considerazioni da fare sono:
+- Il valore nullo sulla data di nascita è ammissibile, poiché si può pensare che non sia un dato essenziale in questo contesto
+- Il valore nullo sul numero di matricola impedisce di stabilire correlazioni fra tuple di relazioni diverse.
+-  La presenza di più valori nulli in una tupla può rendere inutilizzabili le altre informazioni nella tupla.
+- La presenza di più valori nulli in una relazione può causare problemi sull'identitá delle tuple
+I sistemi relazionali permettono di specificare per ciascun attributo di una relazione se esso può assumere il valore nullo oppure se per esso vale il vincolo not-null e quindi non può assumere il valore nullo.
 ## Vincoli di integrità
-[da completare]
+Non è corretto dire che qualsiasi insieme di tuple (insieme di dati) sullo schema rappresenti informazioni corrette per l'applicazione, considerando per esempio l'esempio precedente:
+![[IMG_0010.jpg]]
+- Nella tupla ESAMI non si potrebbe avere un voto pari a 36
+- Nella tupla STUDENTI non si potrebbero avere due studenti con stessa matricola 
+ed etc.
+
+Per poter evitare situazioni come queste viene introdotto il concetto di **vincolo di integrità** come proprietà che deve essere soddisfatta dalle istanze che rappresentano
 ### Vincoli di integrità referenziale
 [da completare]
 ## Chiavi
