@@ -32,7 +32,15 @@ Possiamo a questo punto riassumere le definizioni relative al modello relazional
 ![[Pasted image 20251006120215.png]]
 
 ## Valori nulli o incompleti
-Quando si aggiunge una tupla ad una relazione
+Quando si aggiunge una tupla ad una relazione può non essere possibile specificare il valore di un attributo per alcune ragioni come: 
+- Valore non applicabile
+- Valore sconosciuto
+- Valore senza informazioni
+Questa assenza di valore si potrebbe ovviare usando un valore del dominio per rappresentare l'assenza (0 per esempio), ma non va bene per 2 ragioni specifiche:
+- **Si richiede un valore mai utilizzato per valori significativi** (generalmente impossibile a meno di condizioni specifiche)
+- **L'uso di valori del dominio genera confusione**: la distinzione tra valori veri e fittizi è nascosta, costringendo i programmi che accedono alla base di dati di tenerne conto, distinguendo opportunamente e tenendo conto di quali sono in ciascun caso
+
+Per poter rappresentare in modo semplice e comodo si estende la possibilità di inserire un **valore nullo**, ben distinto dai valori del dominio e aggiunto proprio per lo scopo.
 ## Vincoli di integrità
 [da completare]
 ### Vincoli di integrità referenziale
