@@ -30,4 +30,9 @@ Possiamo a questo punto riassumere le definizioni relative al modello relazional
 - Una istanza di base di dati (o base di dati) su uno schema $R = \{R_{1}(X_{1}), R_{2}(X_{2}), \dots , R_{n}(X_{n}\}$ è un insieme di relazioni $r = \{r_{1}, r_{2},\dots , r_{n}\}$, dove ogni $r_{i}$, per $1 \leq i \leq n$, è una relazione sullo schema $R_{i}(X_{i})$.
 ![[Pasted image 20251006120215.png]]
 
-
+## Valori nulli o incompleti
+Quando si aggiunge una tupla ad una relazione, può non essere possibile specificare il valore di un attributo, alcuni dei motivi potrebbero essere valore non applicabile, valore sconosciuto o valore senza informazioni.
+L’assenza di un valore può essere specificata utilizzando un valore del dominio, ma questa, è una soluzione insoddisfacente in quanto richiede l’esistenza di un valore del dominio mai utilizzato per valori significativi e la distinzione fra valori veri e valori fittizi può creare confusione.
+Per rappresentare in modo semplice la non disponibilità di valori, il concetto
+di relazione viene esteso prevedendo che una tupla possa assumere su ciascun
+attributo un valore detto nullo, che denoti l’assenza di informazione
