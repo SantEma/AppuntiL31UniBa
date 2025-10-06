@@ -66,7 +66,7 @@ Ogni vincolo può essere visto come un predicato che assegna valori vero o falso
 ## Chiavi
 Una **chiave** è un insieme di attributi utilizzato per identificare univocamente le tuple di una relazione, formalmente:
 
-Data una relazione $R(X)$ con 
+Data una relazione $R(X)$ con $K X$, l’insieme $K$ di attributi è superchiave per $R$ se $r$ non contiene due tuple distinte $t_{1}$ e $t_{2}$ con $t_{1}[K]=t_{2}[K]$.
 
 
 ### Vincoli di integrità referenziale
