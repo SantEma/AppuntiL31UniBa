@@ -12,8 +12,9 @@ Una relazione può essere **rappresentata in forma tabellare**, dove ogni riga c
 Poiché una relazione è un **insieme**, essa possiede due proprietà fondamentali:  
 1. **Assenza di ordinamento**: non è definito alcun ordinamento tra le n–uple di una relazione. L’ordine con cui le tuple appaiono nelle tabelle è puramente casuale o derivato da esigenze di rappresentazione, ma non ha valore semantico.  
 2. **Assenza di duplicati**: poiché gli elementi di un insieme sono tutti distinti, anche le tuple di una relazione devono esserlo. Pertanto, una tabella rappresenta correttamente una relazione solo se le sue righe sono tutte diverse tra loro.
+
 Ogni tupla di una relazione è **ordinata**, e il suo $i$–esimo valore proviene dal dominio $D_i$.  
-Le informazioni che vogliamo organizzare all’interno delle relazioni di un database hanno una struttura analoga a quella dei **record**: di conseguenza, una relazione può essere vista come un insieme di record omogenei.  
+Le informazioni che vogliamo organizzare all'interno delle relazioni di un database hanno una struttura analoga a quella dei **record**: di conseguenza, una relazione può essere vista come un insieme di record omogenei.  
 Per rendere irrilevante l’ordinamento dei domini, si assegna un **nome**, detto **attributo** ,a ciascun dominio. 
 In questo modo, le informazioni sono descritte in base ai loro attributi e non alla posizione che occupano nella tupla.
 
@@ -21,8 +22,8 @@ La corrispondenza tra l’insieme degli attributi $X$ e quello dei domini $D$ è
 $$DOM: X \to D$$
 che associa a ogni attributo $A \in X$ un dominio $DOM(A) \in D$.  
 Una **tupla** su un insieme di attributi $X$ è definita come una **funzione** $t$ che associa a ciascun attributo $A \in X$ un valore appartenente al dominio $DOM(A)$.  
-Il valore di una tupla $t$ sull’attributo $A$ si indica come $t[A]$ oppure $t.A$.  
-Analogamente, $t[AB]$ indica il valore di $t$ sull’unione degli attributi $A$ e $B$.  
+Il valore di una tupla $t$ sull'attributo $A$ si indica come $t[A]$ oppure $t.A$.  
+Analogamente, $t[AB]$ indica il valore di $t$ sull'unione degli attributi $A$ e $B$.  
 
 Una **relazione su X** è un insieme di tuple su $X$ ed è rappresentata mediante una **tabella dotata di intestazione**, che riporta i nomi degli attributi.  
 Una **base di dati relazionale** è infine costituita da **più relazioni** tra loro coerenti.
