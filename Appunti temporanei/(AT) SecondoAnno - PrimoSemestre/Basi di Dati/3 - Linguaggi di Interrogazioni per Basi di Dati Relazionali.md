@@ -17,4 +17,33 @@ Un esempio di questo linguaggio logico è il **Datalog**, più espressivo del ca
 L'algebra è un linguaggio costituito da un insieme di operatori, definiti su relazioni e che producono ancora relazioni come risultati. 
 Prima si definisce un insieme minimo e completo di operatori (**operatori primitivi**) per poi definire altri operatori derivati dai precedenti, utili per esprimere operazioni complesse in modo sintetico, molto frequente nell'uso dei DB relazionali
 
+Gli operatori sono distinti in 3 gruppi:
+- **Operatori insiemistici tradizionali**: unione, intersezione, differenza
+- **Operatori specifici**: ridenominazione, selezione, proiezione
+- **Operatori di join**: prodotto cartesiano, join naturale, theta-join, equi-join, join-esterno
+
 ### Operatori insiemistici
+#### Unione
+[da completare]
+#### Intersezione
+[da completare]
+#### Differenza
+[da completare]
+### Operatori specifici
+#### Ridenominazione
+[da completare]
+#### Selezione
+[da completare]
+#### Proiezione
+[da completare]
+### Operatori di Join
+#### Prodotto cartesiano
+[da completare]
+#### Join neutrale
+[da completare]
+#### Theta-Join
+[da completare]
+#### Equi-join
+[da completare]
+#### Join esterno
+[da completare]
