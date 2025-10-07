@@ -42,9 +42,20 @@ Esempio:
 ![[Pasted image 20251007120004.png]]
 ### Operatori specifici
 #### Ridenominazione
-[da completare]
+Consente di cambiare i nomi degli attributi, lasciando  inalterato il contenuto delle relazioni, agendo solo sullo schema.
+
+La possiamo definire con:
+[inserire def.]
+
+Esempio:
+![[Pasted image 20251007121725.png]]
+Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not=  B_{i}$
+
 #### Selezione
-[da completare]
+Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condizione di selezione” che possono prevedere: 
+-  confronti fra attributi 
+-  confronto fra attributi e costanti
+- possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
 #### Proiezione
 [da completare]
 ### Operatori di Join
