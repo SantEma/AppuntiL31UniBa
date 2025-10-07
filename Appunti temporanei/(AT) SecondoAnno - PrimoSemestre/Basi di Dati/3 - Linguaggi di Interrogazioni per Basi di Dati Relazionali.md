@@ -26,7 +26,7 @@ Gli operatori sono distinti in 3 gruppi:
 Gli operatori insiemistici sono possibili solo con **relazioni binarie**
 #### Unione
 L’unione di due relazioni $r_{1}(X)$ ed $r_{2}(X)$ definite sullo stesso insieme di attributi $X$, indicata con $r_{1} \bigcup r_{2}$, è una relazione ancora su $X$ contenente le tuple che appartengono ad $r_{1}$ oppure ad $r_{2}$, oppure ad entrambe.
-$$r_{1} \bigcup r_{2}={t|t \in r_{1} \lor t \in r_{2}}$$
+$$r_{1} \bigcup r_{2}=\{t|t \in r_{1} \lor t \in r_{2}\}$$
 Esempio:
 ![[Pasted image 20251007115556.png]]
 #### Intersezione
