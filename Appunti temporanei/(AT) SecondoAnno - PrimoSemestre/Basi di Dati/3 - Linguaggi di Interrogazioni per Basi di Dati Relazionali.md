@@ -27,18 +27,18 @@ Gli operatori insiemistici sono possibili solo con **relazioni binarie**
 #### Unione
 L’unione di due relazioni $r_{1}(X)$ ed $r_{2}(X)$ definite sullo stesso insieme di attributi $X$, indicata con $r_{1} \bigcup r_{2}$, è una relazione ancora su $X$ contenente le tuple che appartengono ad $r_{1}$ oppure ad $r_{2}$, oppure ad entrambe.
 $$r_{1} \bigcup r_{2}=\{t|t \in r_{1} \lor t \in r_{2}\}$$
-Esempio:
+
 ![[Pasted image 20251007115556.png]]
 #### Intersezione
 L’intersezione di due relazioni e definite sullo stesso insieme di attributi , indicata con $r_{1} \bigcap r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e $r_{2}$
 $$r_{1} - r_{2}=\{t|t \in r_{1} \land t \in r_{2}\}$$
 
-Esempio:
+
 ![[Pasted image 20251007120412.png]]
 #### Differenza
 La differenza di due relazioni $r_{1}(X)$ ed $r_{2}(X)$ definite sullo stesso insieme di attributi $X$, indicata con $r_{1} - r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e non appartengono ad $r_{2}$.
 $$r_{1} - r_{2}=\{t|t \in r_{1} \land t \notin r_{2}\}$$
-Esempio:
+
 ![[Pasted image 20251007120004.png]]
 ### Operatori specifici
 #### Ridenominazione
@@ -47,7 +47,7 @@ Consente di cambiare i nomi degli attributi, lasciando  inalterato il contenuto 
 La possiamo definire con:
 [inserire def.]
 
-Esempio:
+
 ![[Pasted image 20251007121725.png]]
 Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not=  B_{i}$
 
@@ -56,6 +56,8 @@ Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condiz
 -  confronti fra attributi 
 -  confronto fra attributi e costanti
 - possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
+
+![[Pasted image 20251007122410.png]]
 #### Proiezione
 [da completare]
 ### Operatori di Join
