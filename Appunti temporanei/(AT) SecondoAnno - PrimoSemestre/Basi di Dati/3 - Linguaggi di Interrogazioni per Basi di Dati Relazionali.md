@@ -30,9 +30,16 @@ $$r_{1} \bigcup r_{2}={t|t \in r_{1} \lor t \in r_{2}}$$
 Esempio:
 ![[Pasted image 20251007115556.png]]
 #### Intersezione
-[da completare]
+L’intersezione di due relazioni e definite sullo stesso insieme di attributi , indicata con $r_{1} \bigcap r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e $r_{2}$
+$$r_{1} - r_{2}=\{t|t \in r_{1} \land t \in r_{2}\}$$
+
+Esempio:
+![[Pasted image 20251007120412.png]]
 #### Differenza
-[da completare]
+La differenza di due relazioni $r_{1}(X)$ ed $r_{2}(X)$ definite sullo stesso insieme di attributi $X$, indicata con $r_{1} - r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e non appartengono ad $r_{2}$.
+$$r_{1} - r_{2}=\{t|t \in r_{1} \land t \notin r_{2}\}$$
+Esempio:
+![[Pasted image 20251007120004.png]]
 ### Operatori specifici
 #### Ridenominazione
 [da completare]
