@@ -23,7 +23,7 @@ Gli operatori sono distinti in 3 gruppi:
 - **Operatori di join**: prodotto cartesiano, join naturale, theta-join, equi-join, join-esterno
 
 ### Operatori insiemistici
-Gli operatori insiemistici sono possibili solo con **relazioni binarie** ()
+Gli operatori insiemistici sono possibili solo con **relazioni binarie**
 #### Unione
 [da completare]
 #### Intersezione
