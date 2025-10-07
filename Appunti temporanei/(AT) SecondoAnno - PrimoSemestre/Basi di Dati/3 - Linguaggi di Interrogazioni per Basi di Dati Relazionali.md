@@ -4,7 +4,8 @@ Il modello relazionale è stato il primo modello ad introdurre linguaggi **set o
 
 I linguaggi si dividono in tre famiglie:
 - **Linguaggi algebrici**: un interrogazione (query) è definita da un'espressione con operatori su relazioni che producono come risultato altre relazioni
-- **Linguaggi basati sul calcolo dei predicati**: 
+- **Linguaggi basati sul calcolo dei predicati**: un'interrogazione è definita da una formula del calcolo dei predicati
+- **Linguaggi logici**: sono linguaggi ispirati dal linguaggio logico Prolog in cui un’interrogazione é definita da un insieme di clausole di Horn.
 ## Ottimizzazione di interrogazioni
 
 ## Algebra relazionale
