@@ -59,7 +59,9 @@ Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condiz
 
 ![[Pasted image 20251007122410.png]]
 #### Proiezione
-[da completare]
+
+
+![[Pasted image 20251007124323.png]]
 ### Operatori di Join
 #### Prodotto cartesiano
 [da completare]
