@@ -118,5 +118,5 @@ Viene definito formalmente in:
 ![[Pasted image 20251008115529.png]]
 #### Equi-join
 Un theta-join in cui la condizione di selezione sia una congiunzione di atomi di uguaglianza, con un attributo della prima relazione e uno della seconda, viene detto **equi-join**.
-![[Pasted image 20251008115545.png]]Da un punto di vista pratico, il theta-join e l’equi-join hanno una grande importanza, in quanto la maggior parte dei BDMS relazionali esistenti non utilizzano i nomi di attributo per correlare relazioni e quindi non ha senso per essi il join naturale. 
+![[Pasted image 20251008115545.png]]Da un punto di vista pratico il theta-join e l’equi-join hanno una grande importanza, in quanto la maggior parte dei BDMS relazionali esistenti non utilizzano i nomi di attributo per correlare relazioni e quindi non ha senso per essi il join naturale. 
 Peraltro il join naturale può essere simulato per mezzo della ridenominazione, dell’equi-join e della proiezione.
