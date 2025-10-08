@@ -42,10 +42,13 @@ $$r_{1} - r_{2}=\{t|t \in r_{1} \land t \notin r_{2}\}$$
 ![[Pasted image 20251007120004.png]]
 ### Operatori specifici
 #### Ridenominazione
-Consente di cambiare i nomi degli attributi, lasciando  inalterato il contenuto delle relazioni, agendo solo sullo schema.
+Consente di cambiare i nomi degli attributi, lasciando inalterato il contenuto delle relazioni e agendo soltanto sullo schema.
 
 La possiamo definire con:
-[inserire def.]
+Sia $R(X)$ una relazione definita sull’insieme di attributi $X$ e sia $Y$ un altro insieme di attributi di stessa cardinalità. 
+Siano $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ rispettivamente un ordinamento per gli attributi in $X$ e un ordinamento per quelli in $Y$, allora la ridenominazione:$$\rho B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)$$
+contiene una tupla $t'$ su $Y$ per ciascuna tupla $t$ in $r$ (su $X$), definita come:
+$$\rho B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)$$
 
 
 ![[Pasted image 20251007121725.png]]
