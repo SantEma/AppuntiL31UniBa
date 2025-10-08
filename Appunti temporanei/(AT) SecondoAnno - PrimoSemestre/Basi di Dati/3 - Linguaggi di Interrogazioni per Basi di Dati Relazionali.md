@@ -76,7 +76,7 @@ Date una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su 
 ![[Pasted image 20251007124323.png]]
 ### Operatori di Join
 #### Prodotto cartesiano
-[da completare]
+Date due relazioni$ r1(X)$ ed r2(Y ), con X e Y insiemi di attributi distinti, X ∩Y = ∅, il prodotto cartesiano è una relazione r1 ×r2(XY ) così definita:
 ![[Pasted image 20251008115151.png]]
 #### Join naturale
 [da completare]
