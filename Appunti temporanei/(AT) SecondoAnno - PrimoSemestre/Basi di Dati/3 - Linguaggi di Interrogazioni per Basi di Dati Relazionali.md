@@ -72,16 +72,26 @@ Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè ve
 
 Date una relazione $r(X)$ ed una formula proposizionale $F$ su $X$, la selezione $\sigma_{F}(r)$  produce una relazione su $X$ che contiene le tuple $t$ di $r$ su cui $F$ è vera:$$\sigma_{F}(r)=\{t|t\in r \land F(t)\}$$![[Pasted image 20251007122410.png]]
 #### Proiezione
-[da completare]
+Date una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su $Y$, $\pi_{Y}(r)$, è l’insieme di tuple su $Y$ ottenute dalle tuple di $r$ considerando solo i valori su $Y$:
 ![[Pasted image 20251007124323.png]]
 ### Operatori di Join
 #### Prodotto cartesiano
 [da completare]
-#### Join neutrale
+![[Pasted image 20251008115151.png]]
+#### Join naturale
 [da completare]
-#### Theta-Join
-[da completare]
-#### Equi-join
-[da completare]
+![[Pasted image 20251008115203.png]]
+![[Pasted image 20251008115239.png]]
+![[Pasted image 20251008115320.png]]
+
 #### Join esterno
 [da completare]
+![[Pasted image 20251008115444.png]]
+Caso sinistro e destro:
+![[Pasted image 20251008115503.png]]
+#### Theta-Join
+[da completare]
+![[Pasted image 20251008115529.png]]
+#### Equi-join
+[da completare]
+![[Pasted image 20251008115545.png]]
