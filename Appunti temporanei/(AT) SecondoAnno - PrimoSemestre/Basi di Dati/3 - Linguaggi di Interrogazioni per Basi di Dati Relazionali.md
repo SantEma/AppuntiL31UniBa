@@ -58,6 +58,9 @@ Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condiz
 -  confronto fra attributi e costanti
 - possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
 
+Viene indicato con $\sigma$
+
+
 ![[Pasted image 20251007122410.png]]
 #### Proiezione
 [da completare]
