@@ -70,7 +70,7 @@ Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè ve
 - $Aθc$ è vera su $t$ se $t[A]$ è in relazione $\theta$ con $c$, altrimenti è falsa; 
 - $F_{1} \lor F_{2}, F_{1} \land F_{2} \ e \ \neg F_{1}$ hanno l’usuale significato
 
-![[Pasted image 20251007122410.png]]
+Date una relazione $r(X)$ ed una formula proposizionale $F$ su $X$, la selezione $\sigma_{F}(r)$  produce una relazione su $X$ che contiene le tuple $t$ di $r$ su cui $F$ è vera:$$\sigma_{F}(r)=\{t|t\in r \land F(t)\}$$![[Pasted image 20251007122410.png]]
 #### Proiezione
 [da completare]
 ![[Pasted image 20251007124323.png]]
