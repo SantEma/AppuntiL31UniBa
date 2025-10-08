@@ -76,10 +76,16 @@ Date una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su 
 ![[Pasted image 20251007124323.png]]
 ### Operatori di Join
 #### Prodotto cartesiano
-Date due relazioni$ r1(X)$ ed r2(Y ), con X e Y insiemi di attributi distinti, X ∩Y = ∅, il prodotto cartesiano è una relazione r1 ×r2(XY ) così definita:
+Date due relazioni $r_{1}(X)$ ed $r_{2}(Y)$, con $X$ e $Y$ insiemi di attributi distinti, $X \bigcap Y = \varnothing$, il prodotto cartesiano è una relazione $r_{1} \times r_{2}(XY)$ così definita:$$r_{1} \times r_{2}=\{tt'|t \in r_{1} \land t' \in r_{2}\}$$
+dove $tt'$ è una $k$ + $m$ $n$-upla ottenuta dalla concatenazione di due tuple $t$ e $t'$ dove $k$ è la cardinalità di $X$ ed $m$ è la cardinalità di $Y$. 
+La relazione risultante ha:
+- **grado** uguale alla somma dei gradi dei due operandi
+- **cardinalità** uguale al prodotto delle cardinalità degli operandi
+
 ![[Pasted image 20251008115151.png]]
 #### Join naturale
-[da completare]
+Il join naturale, denotato con , è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
+Viene formalmente definito con 
 ![[Pasted image 20251008115203.png]]
 ![[Pasted image 20251008115239.png]]
 ![[Pasted image 20251008115320.png]]
