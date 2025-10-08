@@ -45,15 +45,13 @@ $$r_{1} - r_{2}=\{t|t \in r_{1} \land t \notin r_{2}\}$$
 Consente di cambiare i nomi degli attributi, lasciando inalterato il contenuto delle relazioni e agendo soltanto sullo schema.
 
 La possiamo definire con:
-Sia $R(X)$ una relazione definita sull’insieme di attributi $X$ e sia $Y$ un altro insieme di attributi di stessa cardinalità. 
+Sia $R(X)$ una relazione definita sull'insieme di attributi $X$ e sia $Y$ un altro insieme di attributi di stessa cardinalità. 
 Siano $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ rispettivamente un ordinamento per gli attributi in $X$ e un ordinamento per quelli in $Y$, allora la ridenominazione:$$\rho B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)$$
 contiene una tupla $t'$ su $Y$ per ciascuna tupla $t$ in $r$ (su $X$), definita come:
-$$\rho B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)$$
+$$\rho B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)=\{t'|\exists t \in r \ \text{t.c} \ \forall i=1,\dots,k \ t'[B_{i}]=t[A_{i}]   \}$$
 
-
+Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not= B_{i}$
 ![[Pasted image 20251007121725.png]]
-Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not=  B_{i}$
-
 #### Selezione
 Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condizione di selezione” che possono prevedere: 
 -  confronti fra attributi 
