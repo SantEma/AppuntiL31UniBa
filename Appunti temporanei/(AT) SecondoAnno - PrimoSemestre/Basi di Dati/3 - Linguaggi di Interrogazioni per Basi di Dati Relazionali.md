@@ -85,19 +85,33 @@ La relazione risultante ha:
 ![[Pasted image 20251008115151.png]]
 #### Join naturale
 Il join naturale, denotato con , è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
-Viene formalmente definito con 
+Viene formalmente definito con:
+[da finire]
 ![[Pasted image 20251008115203.png]]
-![[Pasted image 20251008115239.png]]
-![[Pasted image 20251008115320.png]]
+Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato. 
+Se ciascuna tupla di un operando è compatibile con tutte le tuple dell’altro operando, il risultato conterrà un numero di tuple pari al prodotto delle cardinalità degli operandi. 
+![[Pasted image 20251008124221.png]]
+Può accadere che alcune tuple degli operandi non contribuiscano al risultato, perché l’altra relazione non contiene tuple con gli stessi valori sull'attributo comune, tali tuple si definiscono dangling (dondolanti). 
+Come caso limite è possibile che nessuna delle tuple degli operandi sia combinabile e allora il risultato del join naturale è la relazione vuota.
+![[Pasted image 20251008124234.png]]
 
-#### Join esterno
+Il join naturale presenta alcune proprietà:
 [da completare]
+#### Join esterno
+Il join esterno è una variante del join naturale, il quale restituisce il join naturale di $r_{1}$ ed $r_{2}$ esteso con le tuple di $r_{1}$ ed $r_{2}$ che non appartengono al join naturale, completate con valori nulli per gli attributi mancanti.
 ![[Pasted image 20251008115444.png]]
-Caso sinistro e destro:
+Esistono altri due tipi di join esterni:
+- Join esterno **sinistro**
+- Join esterno **destro**
+Nel primo caso, solo le tuple dell’argomento sinistro $r_{1}$ che non appartengono al join naturale appaiono nel risultato, mentre nell'altro caso appaiono solo quelle dell’argomento destro $r_{2}$.
 ![[Pasted image 20251008115503.png]]
 #### Theta-Join
+Il prodotto cartesiano ha poca utilità nella pratica, poiché concatena tuple non necessariamente correlate dal punto di vista semantico, infatti viene spesso seguito da una selezione, che centra l’attenzione sulle tuple correlate secondo le esigenze. 
+Per questo motivo si definisce l’operatore derivato theta-join come prodotto cartesiano seguito da una selezione.
+Viene definito formalmente in:
 [da completare]
 ![[Pasted image 20251008115529.png]]
 #### Equi-join
-[da completare]
-![[Pasted image 20251008115545.png]]
+Un theta-join in cui la condizione di selezione sia una congiunzione di atomi di uguaglianza, con un attributo della prima relazione e uno della seconda, viene detto **equi-join**.
+![[Pasted image 20251008115545.png]]Da un punto di vista pratico, il theta-join e l’equi-join hanno una grande importanza, in quanto la maggior parte dei BDMS relazionali esistenti non utilizzano i nomi di attributo per correlare relazioni e quindi non ha senso per essi il join naturale. 
+Peraltro il join naturale può essere simulato per mezzo della ridenominazione, dell’equi-join e della proiezione.
