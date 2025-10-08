@@ -57,9 +57,18 @@ Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condiz
 -  confronti fra attributi 
 -  confronto fra attributi e costanti
 - possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
+e viene indicato con $\sigma$ a pedice
 
-Viene indicato con $\sigma$
+Formalmente viene definito:
+Data una relazione $r(X)$, una formula proposizionale $F$ su $X$ è una formula ottenuta combinando, con i connettivi $\land$, $\lor$ e $\neg$, condizioni atomiche del tipo $A \theta B$ o $A \theta c$, dove:
+- $\theta$ è un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$)
+- $A \ \text{e} \ B$ sono attributi in $X$ dove il confronto $\theta$ abbia senso
+- $c$ è una costante compatibile con il dominio di A
 
+Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè vero o falso) per $F$ su $t$:
+- $A \theta B$ è vera su $t$ se $t[A]$ è in relazione $\theta$ con $t[B]$, altrimenti è falsa; 
+- $Aθc$ è vera su $t$ se $t[A]$ è in relazione $\theta$ con $c$, altrimenti è falsa; 
+- $F_{1} \lor F_{2}, F_{1} \land F_{2} \ e \ \neg F_{1}$ hanno l’usuale significato
 
 ![[Pasted image 20251007122410.png]]
 #### Proiezione
