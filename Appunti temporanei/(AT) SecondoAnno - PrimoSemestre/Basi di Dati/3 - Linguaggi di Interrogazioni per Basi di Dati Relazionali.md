@@ -97,7 +97,11 @@ Come caso limite è possibile che nessuna delle tuple degli operandi sia combina
 ![[Pasted image 20251008124234.png]]
 
 Il join naturale presenta alcune proprietà:
-[da completare]
+- Il grado della relazione risultato di un join naturale è minore o uguale alla somma dei gradi degli operandi, poiché gli attributi omonimi degli operandi compaiono una sola volta nel risultato.
+- **Commutatività**: $r_{1}\rhd\lhd r_{2} = r_{2}\rhd\lhd r_{1}$
+- **Associatività**: $r_{1}\rhd\lhd (r_{2}\rhd\lhd r_{3}) = (r_{1}\rhd\lhd r_{2})\rhd\lhd r_{3}$ (quindi è possibile scrivere sequenze di join senza parentesi)
+- Se $r_{1} \ \text{e} \ r_{2}$ non hanno attributi comuni allora $r_{1}\rhd\lhd r_{2} = r_{1} \times r_{2}$
+- Se $r_{1} \ \text{e} \ r_{2}$ hanno lo stesso schema allora $r_{1}\rhd\lhd r_{2} = r_{1} \bigcap r_{2}$ (il risultato sarà composto dagli elementi delle due istanze, quindi l'intersezione)
 #### Join esterno
 Il join esterno è una variante del join naturale, il quale restituisce il join naturale di $r_{1}$ ed $r_{2}$ esteso con le tuple di $r_{1}$ ed $r_{2}$ che non appartengono al join naturale, completate con valori nulli per gli attributi mancanti.
 ![[Pasted image 20251008115444.png]]
