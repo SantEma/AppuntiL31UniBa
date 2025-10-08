@@ -59,7 +59,7 @@ Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condiz
 - possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
 e viene indicato con $\sigma$ a pedice
 
-Formalmente viene definito:
+Formalmente viene definito: 
 Data una relazione $r(X)$, una formula proposizionale $F$ su $X$ è una formula ottenuta combinando, con i connettivi $\land$, $\lor$ e $\neg$, condizioni atomiche del tipo $A \theta B$ o $A \theta c$, dove:
 - $\theta$ è un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$)
 - $A \ \text{e} \ B$ sono attributi in $X$ dove il confronto $\theta$ abbia senso
