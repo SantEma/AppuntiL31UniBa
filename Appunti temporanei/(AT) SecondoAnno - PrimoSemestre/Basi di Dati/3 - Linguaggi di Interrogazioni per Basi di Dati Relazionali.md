@@ -86,7 +86,7 @@ La relazione risultante ha:
 #### Join naturale
 Il join naturale, denotato con , è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
 Viene formalmente definito con:
-Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni. Formalmente:
+Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni:$$r_{1}\rhd\lhd r_{2}=\{t \ \text{su}\ X_{1} X_{2}|\exists t_{1} \in r_{1} \ \text{e} \ t_{2} \in r_{2} \ \text{con} \ t[X_{1}]=t_{1} \ \text{e} \ t[X_{2}] = t_{2} \} $$
 
 ![[Pasted image 20251008115203.png]]
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato. 
