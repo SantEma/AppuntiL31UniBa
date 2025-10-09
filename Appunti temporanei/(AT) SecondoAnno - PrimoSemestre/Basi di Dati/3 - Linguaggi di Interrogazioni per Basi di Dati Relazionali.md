@@ -146,3 +146,18 @@ Definiamo le formule:
 Siano $E$ un'espressione dell’algebra relazionale e $C_x$ una condizione sull'insieme di attributi $X$
 ![[Pasted image 20251009111902.png]]![[Pasted image 20251009111939.png]]
 ### Viste
+Abbiamo visto che può risultare utile mettere a disposizione degli utenti rappresentazioni diverse per gli stessi dati, in una base di dati relazionale si ottiene distinguendo relazioni di base il cui contenuto è autonomo e relazioni derivate il cui contenuto e funzione del contenuto di altre relazioni, ed inoltre è possibile che una relazione derivata sia funzione di un’altra relazione derivata a patto di stabilire un ordinamento fra le relazioni derivate stesse
+
+In linea di principio possono esistere due tipi di relazioni derivate:
+- **Viste materializzate**: relazioni derivate effettivamente memorizzate nella base di dati
+- **Relazioni virtuali (o viste):** relazioni definite per mezzo di espressioni del linguaggio di interrogazione non memorizzate nella base di dati, ma utilizzate nelle interrogazioni come se lo fossero.
+
+Le viste materializzate hanno il vantaggio di essere immediatamente disponibili per le interrogazioni, ma è spesso oneroso mantenere il loro contenuto allineato con quello delle relazioni da cui derivano mentre al contrario le relazioni virtuali devono essere ricalcolate per ogni interrogazione ma non presentano problemi di allineamento. 
+Per inciso, per mantenere costantemente allineate le viste materializzate occorre disporre di meccanismi di trigger per l’aggiornamento automatico (basi di dati attive), i DBMS attuali forniscono meccanismi per la loro gestione (poiché il loro allineamento è difficile manualmente).
+
+Un’interrogazione su una relazione virtuale viene trasformata sostituendo ad ogni occorrenza della relazione virtuale l’espressione che la definisce.
+Esempio:
+[inserire esempio]
+
+Mentre per quanto riguarda le interrogazioni, le viste possono essere trattate come relazioni di base, lo stesso non si può dire per le operazioni di aggiornamento, in molti casi non è possibile stabilire facilmente una semantica degli aggiornamenti sulle viste:
+Ad esempio l’inserimento di una tupla nella vista non corrisponde univocamente ad un insieme di aggiornamenti sulle relazioni di base, per questo motivo i DBMS limitano aggiornamenti sulle viste.
