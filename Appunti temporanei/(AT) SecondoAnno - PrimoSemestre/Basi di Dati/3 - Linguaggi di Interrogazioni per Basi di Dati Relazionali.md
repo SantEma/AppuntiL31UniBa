@@ -137,9 +137,11 @@ Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo
 Un alternativa per calcolare l'equi-join o il join naturale è l'ordinare entrambe le relazioni rispetto agli attributi coinvolti per poi fondere le liste, producendo le tuple del join.
 Questo tipo di realizzazione ha una complessità $O(m+nlogn)$ per le relazioni di cardinalità $n$ ed $m$ numero di tuple risultanti dalla join.
 **In generale si deve evitare join di grandi relazioni.**
-
+#### Proprietà algebriche
 L'algebra relazionale permette di formulare espressioni fra loro equivalenti sfruttando alcune proprietà degli operatori;
 Queste trasformazioni sono utili perché possono ridurre di ordini di grandezza il costo di esecuzione delle espressioni (ottimizzazione algebrica). 
 Una buona tecnica per ottimizzare un’espressione algebrica consiste nell'anticipare l’applicazione degli operatori di proiezione e di selezione rispetto al prodotto, in modo da ridurre la dimensione dei risultati intermedi, infatti l’operatore di selezione produce una relazione con un numero inferiore di tuple rispetto alla relazione a cui viene applicato e la proiezione riduce la dimensione delle tuple dell’operando ed elimina eventuali tuple dal risultato.
-#### Proprietà algebriche
 
+Definiamo le formule:
+Siano $E$ un'espressione dell’algebra relazionale e $C_x$ una condizione sull'insieme di attributi $X$
+![[Pasted image 20251009111902.png]]![[Pasted image 20251009111939.png]]
