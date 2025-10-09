@@ -174,6 +174,7 @@ $$\{A_{1}:x_{1}\dots,A_{k}:x_{k}|f\}$$
 dove:
 - $A_{1}:x_{1}\dots,A_{k}$ sono attributi distinti (che possono anche non comparire nello schema del DB rispetto a cui viene formulata l'interrogazione)
 - $x_{1},\dots,x_{k}$ sono variabili distinte quantificate universalmente
+- $f$ è una formula logica dove le variabili locali sono da intendersi quantificate esistenzialmente, a meno di quantificazioni universali esplicite
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
