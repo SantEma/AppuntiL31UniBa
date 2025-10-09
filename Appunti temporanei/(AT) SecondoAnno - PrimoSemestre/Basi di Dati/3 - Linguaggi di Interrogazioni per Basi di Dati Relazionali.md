@@ -145,3 +145,4 @@ Una buona tecnica per ottimizzare un’espressione algebrica consiste nell'antic
 Definiamo le formule:
 Siano $E$ un'espressione dell’algebra relazionale e $C_x$ una condizione sull'insieme di attributi $X$
 ![[Pasted image 20251009111902.png]]![[Pasted image 20251009111939.png]]
+### Viste
