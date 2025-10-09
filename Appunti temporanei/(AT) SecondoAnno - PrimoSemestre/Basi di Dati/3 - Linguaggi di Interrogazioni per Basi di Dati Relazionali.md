@@ -22,8 +22,10 @@ Gli operatori sono distinti in 3 gruppi:
 - **Operatori specifici**: ridenominazione, selezione, proiezione
 - **Operatori di join**: prodotto cartesiano, join naturale, theta-join, equi-join, join-esterno
 
-Gli operatori primitivi per categoria sono:
-- 
+Gli operatori **primitivi** (da cui si possono derivare tutti gli altri) per categoria sono:
+- Unione e differenza
+- Ridenominazione, selezione, proiezione
+- Prodotto Cartesiano
 
 ### Operatori insiemistici
 Gli operatori insiemistici sono possibili solo con **relazioni binarie**
