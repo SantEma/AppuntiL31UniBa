@@ -126,7 +126,17 @@ Un theta-join in cui la condizione di selezione sia una congiunzione di atomi di
 ![[Pasted image 20251008115545.png]]Da un punto di vista pratico il theta-join e l’equi-join hanno una grande importanza, in quanto la maggior parte dei BDMS relazionali esistenti non utilizzano i nomi di attributo per correlare relazioni e quindi non ha senso per essi il join naturale. 
 Peraltro il join naturale può essere simulato per mezzo della ridenominazione, dell’equi-join e della proiezione.
 
+Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (La complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
+
+Un alternativa per calcolare l'equi-join o il join naturale è l'ordinare entrambe le relazioni rispetto agli attributi coinvolti per poi fondere le liste, producendo le tuple del join.
+Questo tipo di realizzazione ha una complessità $O(m+nlogn)$ per le relazioni di cardinalità $n$ ed $m$ numero di tuple risultanti dalla join.
+
 ### Interrogazioni in algebra relazionale
 Un interrogazione può essere definita come una funzione che, applicata a istanze di basi di dati, produce relazioni.
+
 Formalmente:
 Dato uno schema $R$ di basi di dati, un'interrogazione è una funzione che, per ogni istanza di $r$ di $R$, produce una reazione su un dato insieme di attributi $X$ 
+In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ vengono formulati con espressioni i cui atomi (nomi di) sono relazioni in $R$ (le variabili)
+#### Proprietà algebriche
+Si consideri la rappresentazione di un’espressione algebrica come un albero le cui foglie siano le relazioni e i nodi interni sono gli operatori dell’algebra, i figli di un nodo interno $N$ sono gli operandi dell’operatore associato al nodo $N$.
+![[Pasted image 20251009110858.png]]
