@@ -161,3 +161,11 @@ Esempio:
 
 Mentre per quanto riguarda le interrogazioni, le viste possono essere trattate come relazioni di base, lo stesso non si può dire per le operazioni di aggiornamento, in molti casi non è possibile stabilire facilmente una semantica degli aggiornamenti sulle viste:
 Ad esempio l’inserimento di una tupla nella vista non corrisponde univocamente ad un insieme di aggiornamenti sulle relazioni di base, per questo motivo i DBMS limitano aggiornamenti sulle viste.
+#### Calcolo relazionale
+[da completare]
+##### Calcolo relazionale su domini
+[da completare]
+##### Calcolo relazionale su tuple con dichiarazione di range
+[da completare]
+#### Algebra e calcolo con valori nulli
+[da completare]
