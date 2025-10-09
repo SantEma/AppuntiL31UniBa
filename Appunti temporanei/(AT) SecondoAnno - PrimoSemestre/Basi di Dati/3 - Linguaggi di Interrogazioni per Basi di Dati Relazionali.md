@@ -175,6 +175,19 @@ dove:
 - $A_{1}:x_{1}\dots,A_{k}$ sono attributi distinti (che possono anche non comparire nello schema del DB rispetto a cui viene formulata l'interrogazione)
 - $x_{1},\dots,x_{k}$ sono variabili distinte quantificate universalmente
 - $f$ è una formula logica dove le variabili locali sono da intendersi quantificate esistenzialmente, a meno di quantificazioni universali esplicite
+
+I simboli che compaiono in una formula $f$ sono:
+- **Costanti**: elementi di un dominio di interesse (Per semplicità si assume che tutti gli attributi siano definiti sullo stesso dominio $D$)
+- **Variabili**: elementi di un insieme numerabile $V$ disgiunto dal dominio $D$
+- **Nomi di relazione e attributi**: presi dallo schema di DB di interesse
+- **Operatori di confronto**: $=,\not=,>,<,\underline{>},\underline{<}$
+- **Connettori logici:** $\land$, $\lor$, e $\neg$
+- **Quantificatori**: $\forall, \exists$
+- **Simboli di punteggiatura e parentesi**
+
+Questi simboli sono composti secondo le regole:
+- **Formule atomiche**, di due tipi:
+	- R 
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
