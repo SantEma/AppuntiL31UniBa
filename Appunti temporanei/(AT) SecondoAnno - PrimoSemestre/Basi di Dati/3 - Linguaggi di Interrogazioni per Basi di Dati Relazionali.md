@@ -162,9 +162,12 @@ Esempio:
 Mentre per quanto riguarda le interrogazioni, le viste possono essere trattate come relazioni di base, lo stesso non si può dire per le operazioni di aggiornamento, in molti casi non è possibile stabilire facilmente una semantica degli aggiornamenti sulle viste:
 Ad esempio l’inserimento di una tupla nella vista non corrisponde univocamente ad un insieme di aggiornamenti sulle relazioni di base, per questo motivo i DBMS limitano aggiornamenti sulle viste.
 #### Calcolo relazionale
-Con il termine **calcolo relazionale** si fa riferimento ad una famiglia di linguaggi di interrogazione, basati sul calcolo dei predicati del primo ordine, che hanno la caratteristica di essere dichiarativi, cioè di specificare le proprietà del risultato delle interrogazioni, anziché la procedura seguita per generarlo. Nel calcolo relazionale, l’istanza di un DB relazionale è vista come una interpretazione di una logica del primo ordine, mentre un’interrogazione è espressa come una formula ben formata. Il risultato si ottiene, dunque, interpretando l’espressione rispetto all'istanza del DB disponibile.
+Con il termine **calcolo relazionale** si fa riferimento ad una famiglia di linguaggi di interrogazione, basati sul calcolo dei predicati del primo ordine, che hanno la caratteristica di essere dichiarativi, cioè di specificare le proprietà del risultato delle interrogazioni, anziché la procedura seguita per generarlo. 
+Nel calcolo relazionale, l’istanza di un DB relazionale è vista come una interpretazione di una logica del primo ordine, mentre un’interrogazione è espressa come una formula ben formata. Il risultato si ottiene, dunque, interpretando l’espressione rispetto all'istanza del DB disponibile.
 
-
+Esistono diverse versioni del calcolo relazionale: 
+- **il calcolo relazionale su domini** 
+- **il calcolo relazionale su tuple**
 ##### Calcolo relazionale su domini
 [da completare]
 ##### Calcolo relazionale su tuple con dichiarazione di range
