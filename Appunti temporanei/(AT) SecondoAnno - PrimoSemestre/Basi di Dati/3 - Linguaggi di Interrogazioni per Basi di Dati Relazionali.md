@@ -86,7 +86,7 @@ La relazione risultante ha:
 #### Join naturale
 Il join naturale, denotato con , è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
 Viene formalmente definito con:
-Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni:$$r_{1}\rhd\lhd r_{2}=\{t \ \text{su}\ X_{1} X_{2}|\exists t_{1} \in r_{1} \ \text{e} \ t_{2} \in r_{2} \ \text{con} \ t[X_{1}]=t_{1} \ \text{e} \ t[X_{2}] = t_{2} \} $$
+Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni:$$r_{1}\rhd\lhd r_{2}=\{t \ \text{su}\ X_{1} X_{2}| \exists \ t_{1} \in r_{1} \ \text{e} \ t_{2} \in r_{2} \ \text{con} \ t[X_{1}]=t_{1} \ \text{e} \ t[X_{2}] = t_{2} \} $$
 
 ![[Pasted image 20251008115203.png]]
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato. 
@@ -114,7 +114,7 @@ Nel primo caso, solo le tuple dell’argomento sinistro $r_{1}$ che non apparten
 Il prodotto cartesiano ha poca utilità nella pratica, poiché concatena tuple non necessariamente correlate dal punto di vista semantico, infatti viene spesso seguito da una selezione, che centra l’attenzione sulle tuple correlate secondo le esigenze. 
 Per questo motivo si definisce l’operatore derivato theta-join come prodotto cartesiano seguito da una selezione.
 Viene definito formalmente in:
-[da completare]
+Date due relazioni $R_{1}(X)$ e $R_{2}(Y)$, con $X \bigcup Y = \varnothing$, siano $A_{i} \in X \ \text{e} \ B_{j} \in Y$ e $\theta$ un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$) il theta-join è definito come:$$r_{1}\rhd\lhd_{A_{i} \ \theta\ B_{j}} r_{2} = \sigma_{A_{i} \ \theta\ B_{j}} (r_{1} \times r_{2})  $$
 ![[Pasted image 20251008115529.png]]
 #### Equi-join
 Un theta-join in cui la condizione di selezione sia una congiunzione di atomi di uguaglianza, con un attributo della prima relazione e uno della seconda, viene detto **equi-join**.
