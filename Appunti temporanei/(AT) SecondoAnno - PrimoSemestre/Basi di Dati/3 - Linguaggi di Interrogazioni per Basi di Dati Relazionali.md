@@ -187,7 +187,7 @@ I simboli che compaiono in una formula $f$ sono:
 
 Questi simboli sono composti secondo le regole:
 - **Formule atomiche**, di due tipi:
-	- R 
+[da completare]
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
