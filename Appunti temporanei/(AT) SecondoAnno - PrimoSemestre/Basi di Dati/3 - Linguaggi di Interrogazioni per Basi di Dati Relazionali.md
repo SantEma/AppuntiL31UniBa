@@ -196,9 +196,15 @@ La lista di coppie $A_{1}:x_{1}\dots,A_{p}:x_{p}$ nelle espressioni del calcolo 
 
 Per definire la semantica di un'espressione bisogna definire la nozione di valore di verità di una formula rispetto ad una sostituzione, si deve inoltre fare riferimento ad uno schema $R = \{ R_1(X_1), \dots, R_m(X_m) \}$ ed una sua istanza $r = \{ r_1, \dots, r_m \}$
 
-Interpretazione delle formule atomiche:
-- $R_j(A_1 : x_1, \dots, A_p : x_p)$ è vera sui valori sui valori $a_{1}$ per $x_{1},\dots,a_{p}$ per $x_{p}$ se la relazione $r_{j}$ in $R$ contiene una tupla con valore $a_{1}$ per $A_{1}, \dots , a_{p}$ per $A_{p}$.
-  In altre parole la formula è vera se nella base di dati esiste almeno una tupla tale per cui è possibile sostituire ad ogni variabile della formula un valore di attributo della tupla
+- Interpretazione delle formule atomiche:
+	- $R_j(A_1 : x_1, \dots, A_p : x_p)$ è vera sui valori sui valori $a_{1}$ per $x_{1},\dots,a_{p}$ per $x_{p}$ se la relazione $r_{j}$ in $R$ contiene una tupla con valore $a_{1}$ per $A_{1}, \dots , a_{p}$ per $A_{p}$.
+	  In altre parole la formula è vera se nella base di dati esiste almeno una tupla tale per cui è possibile sostituire ad ogni variabile della formula un valore di attributo della tupla
+	- $x\theta y$ è vera sui valori $a_{1}$ per $x$, $a_{2}$ per $y$ se il confronto $a_1 \theta a_2$ è soddisfatto
+	- $x\theta c$ è vera sul valore $a$ per $x$ se il confronto $a\theta c$ è soddisfatto 
+- Interpretazione di congiunzioni, disgiunzioni e negazioni:
+	- $f_{1} \lor f_{2}$ è vera se almeno una delle sottoformule è vera
+	- $f_{1} \land f_{2}$ è vera se entrambe le sottoformule sono vere
+	- $\neg f_{1}$ è vera (falsa) su una sostituzione se $f-1$ è falsa (vera) sulla stessa sostituzione
 
 
 ##### Calcolo relazionale su tuple con dichiarazione di range
