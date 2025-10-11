@@ -192,9 +192,15 @@ Questi simboli sono composti secondo le regole:
 - Se $f_{1} \ \text{e} \ f_{2}$ sono formule allora $f_{1} \lor f_{2}, f_{1} \land f_{2},\neg f_{1}$ sono formule
 - Se $f$ è una formula e $x$ una variabile allora $\exists x(f)$ e $\forall x(f)$ sono formule
 
-La lista di coppie $A_{1}:x_{1}\dots,A_{p}:x_{p}$ nelle espressioni del calcolo relazionale su domini è detta **target list** in quanto definisce la struttura del risultato, ovvero una relazione con schema $\{A1, \dots , A_{k}\}$ e tuple i cui valori sostituiti a $x_{1}, \dots , x_{k}$ rendono vera la formula $f$ rispetto ad una istanza di DB cui $f$ è applicata
+La lista di coppie $A_{1}:x_{1}\dots,A_{p}:x_{p}$ nelle espressioni del calcolo relazionale su domini è detta **target list** in quanto definisce la struttura del risultato, ovvero una relazione con schema $\{A_{1}, \dots , A_{k}\}$ e tuple i cui valori sostituiti a $x_{1}, \dots , x_{k}$ rendono vera la formula $f$ rispetto ad una istanza di DB cui $f$ è applicata
 
-Per definire la semantica di un'espressione bisogna definire la
+Per definire la semantica di un'espressione bisogna definire la nozione di valore di verità di una formula rispetto ad una sostituzione, si deve inoltre fare riferimento ad uno schema $R = \{ R_1(X_1), \dots, R_m(X_m) \}$ ed una sua istanza $r = \{ r_1, \dots, r_m \}$
+
+Interpretazione delle formule atomiche:
+- $R_j(A_1 : x_1, \dots, A_p : x_p)$ è vera sui valori sui valori $a_{1}$ per $x_{1},\dots,a_{p}$ per $x_{p}$ se la relazione $r_{j}$ in $R$ contiene una tupla con valore $a_{1}$ per $A_{1}, \dots , a_{p}$ per $A_{p}$.
+  In altre parole la formula è vera se nella base di dati esiste almeno una tupla tale per cui è possibile sostituire ad ogni variabile della formula un valore di attributo della tupla
+
+
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
