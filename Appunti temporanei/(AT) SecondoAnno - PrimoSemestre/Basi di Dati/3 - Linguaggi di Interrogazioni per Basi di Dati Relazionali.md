@@ -206,7 +206,7 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $f_{1} \land f_{2}$ è vera se entrambe le sottoformule sono vere
 	- $\neg f_{1}$ è vera (falsa) su una sostituzione se $f-1$ è falsa (vera) sulla stessa sostituzione
 
-
+[da completare]
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
