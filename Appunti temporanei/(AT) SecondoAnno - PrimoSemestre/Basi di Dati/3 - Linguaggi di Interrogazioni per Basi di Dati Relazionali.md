@@ -187,7 +187,14 @@ I simboli che compaiono in una formula $f$ sono:
 
 Questi simboli sono composti secondo le regole:
 - **Formule atomiche**, di due tipi:
-[da completare]
+	- $R(A_{1}:x_{1}\dots,A_{p}:x_{p})$ dove $R(A_{1}\dots,A_{p})$ è uno schema di relazione e $x_{1}\dots x_{p}$ sono variabili distinte
+	- $x \theta y \ \text{o} \ x\theta c$, con $x$ e $y$ variabili di $V$, $c$ costante e $\theta$ operatore di confronto
+- Se $f_{1} \ \text{e} \ f_{2}$ sono formule allora $f_{1} \lor f_{2}, f_{1} \land f_{2},\neg f_{1}$ sono formule
+- Se $f$ è una formula e $x$ una variabile allora $\exists x(f)$ e $\forall x(f)$ sono formule
+
+La lista di coppie $A_{1}:x_{1}\dots,A_{p}:x_{p}$ nelle espressioni del calcolo relazionale su domini è detta **target list** in quanto definisce la struttura del risultato, ovvero una relazione con schema $\{A1, \dots , A_{k}\}$ e tuple i cui valori sostituiti a $x_{1}, \dots , x_{k}$ rendono vera la formula $f$ rispetto ad una istanza di DB cui $f$ è applicata
+
+Per definire la semantica di un'espressione bisogna definire la
 ##### Calcolo relazionale su tuple con dichiarazione di range
 [da completare]
 #### Algebra e calcolo con valori nulli
