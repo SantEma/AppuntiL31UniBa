@@ -162,7 +162,7 @@ Per inciso, per mantenere costantemente allineate le viste materializzate occorr
 
 Un’interrogazione su una relazione virtuale viene trasformata sostituendo ad ogni occorrenza della relazione virtuale l’espressione che la definisce.
 Esempio:
-[inserire esempio]
+![[Pasted image 20251013084314.png]]
 
 Mentre per quanto riguarda le interrogazioni, le viste possono essere trattate come relazioni di base, lo stesso non si può dire per le operazioni di aggiornamento, in molti casi non è possibile stabilire facilmente una semantica degli aggiornamenti sulle viste:
 Ad esempio l’inserimento di una tupla nella vista non corrisponde univocamente ad un insieme di aggiornamenti sulle relazioni di base, per questo motivo i DBMS limitano aggiornamenti sulle viste.
