@@ -227,5 +227,8 @@ dove:
 		- $\exists x(R)(f)$, (esiste una tupla $x$ nella relazione $r$ sullo schema $R$ che soddisfa la formula $f$)
 	    - $\forall x(R)(f)$ (ogni tupla $x$ nella relazione $r$ sullo schema $R$ soddisfa la formula $f$)
 
+Purtroppo, il calcolo su tuple con dichiarazione di range non permette di esprimere tutte le interrogazioni che possono essere formulate in algebra relazionale (o nel calcolo su domini), in particolare le interrogazioni i cui risultati possono provenire indifferentemente da due o più relazioni (che in algebra realizziamo con l’operatore di unione) non possono essere espresse in questa versione del calcolo:
+Infatti, i risultati sono costruiti a partire da tutte le variabili libere, i cui range sono definiti nella target list e ogni variabile ha come range una sola relazione.
+
 #### Algebra e calcolo con valori nulli
 [da completare]
