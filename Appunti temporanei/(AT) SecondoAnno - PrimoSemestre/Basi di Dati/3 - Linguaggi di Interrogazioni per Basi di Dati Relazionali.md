@@ -208,8 +208,8 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $x\theta y$ è vera sui valori $a_{1}$ per $x$, $a_{2}$ per $y$ se il confronto $a_1 \theta a_2$ è soddisfatto
 	- $x\theta c$ è vera sul valore $a$ per $x$ se il confronto $a\theta c$ è soddisfatto 
 - Interpretazione di congiunzioni, disgiunzioni e negazioni:
-	- $f_{1} \lor f_{2}$ è vera se almeno una delle sottoformule è vera
-	- $f_{1} \land f_{2}$ è vera se entrambe le sottoformule sono vere
+	- $f_{1} \lor f_{2}$ è vera se almeno una delle sotto-formule è vera
+	- $f_{1} \land f_{2}$ è vera se entrambe le sotto-formule sono vere
 	- $\neg f_{1}$ è vera (falsa) su una sostituzione se $f-1$ è falsa (vera) sulla stessa sostituzione
 - Interpretazione di formule quantificate:
 	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera
