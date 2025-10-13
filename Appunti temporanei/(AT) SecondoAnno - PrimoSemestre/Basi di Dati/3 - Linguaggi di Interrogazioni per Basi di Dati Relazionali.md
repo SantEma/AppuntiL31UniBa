@@ -236,7 +236,7 @@ In algebra relazionale tale interrogazione verrebbe espressa mediante l’operat
 $$\{{A:a,B:b|R_{1}(A:a,B:b) \lor R_{2}A:a,B:b}\}$$
 Quindi non si riesce a formulare questa interrogazione nel calcolo su tuple, Infatti se la query formulata avesse una sola variabile libera nella range list, questa dovrebbe far riferimento ad una sola delle relazioni senza acquisire tuple dall'altra per il risultato;
 Se invece l’espressione avesse due variabili libere nella range list $\{t.^{*}, t’.^{*} | t(R1), t’(R2) | true\}$ ogni tupla del risultato dovrebbe corrispondere ad una tupla di ciascuna delle relazioni, che non è necessario perché l'unione richiede alle tuple del risultato di comparire in almeno uno degli operandi e non necessariamente in entrambi.
-Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\{t.^{*}| \}$$
+Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\left\{ t.^{*}| t(R_{1}) \bigcup t'(R_{2}) | true \right\}$$
 
 
 #### Algebra e calcolo con valori nulli
