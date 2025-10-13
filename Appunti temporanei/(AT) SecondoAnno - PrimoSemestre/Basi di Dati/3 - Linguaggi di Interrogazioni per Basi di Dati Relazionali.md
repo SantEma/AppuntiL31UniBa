@@ -215,7 +215,6 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera sui valori $a_{1},\dots a_{q}$ se esiste ameno un valore $a$ tale che $f$ è vera sui valori $a$ per $x$, $a_{1}$ per $y_{1}\dots a_{q}$ per $y_{q}$
 	- $\forall x(f)$,con variabili libere $y_{1}\dots y_{q}$ è vera sui valori $a_{1},\dots a_{q}$ se per ogni elemento $a$ del dominio $D$, la formula $f$ risulta veri sui valori $a$ per $x$, $a_{1}$ per $y_{1},\dots,a_{q}$ per $y_{q}$
 
-[da completare]
 ##### Calcolo relazionale su tuple con dichiarazione di range
 Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$
 dove:
