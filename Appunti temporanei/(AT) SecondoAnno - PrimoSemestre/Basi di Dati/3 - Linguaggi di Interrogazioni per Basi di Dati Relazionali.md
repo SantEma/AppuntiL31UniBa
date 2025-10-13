@@ -238,6 +238,8 @@ Quindi non si riesce a formulare questa interrogazione nel calcolo su tuple, Inf
 Se invece l’espressione avesse due variabili libere nella range list $\{t.^{*}, t’.^{*} | t(R1), t’(R2) | true\}$ ogni tupla del risultato dovrebbe corrispondere ad una tupla di ciascuna delle relazioni, che non è necessario perché l'unione richiede alle tuple del risultato di comparire in almeno uno degli operandi e non necessariamente in entrambi.
 Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\left\{ t.^{*}| t(R_{1}) \bigcup t'(R_{2}) | true \right\}$$
 
+Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
+SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione, per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
 #### Algebra e calcolo con valori nulli
 [da completare]
