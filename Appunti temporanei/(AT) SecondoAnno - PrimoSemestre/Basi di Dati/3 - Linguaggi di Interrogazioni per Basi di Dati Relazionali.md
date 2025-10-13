@@ -218,7 +218,7 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 ##### Calcolo relazionale su tuple con dichiarazione di range
 Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$
 dove:
-- L è la range list: elenca le variabili libere di f con i relativi campi di variabilità; la scrittura x(R) in L indica che la variabile x può assumere come valore solo tuple nella relazione r di schema R.
+- $L$ è la range list: elenca le variabili libere di $f$ con i relativi campi di variabilità, la scrittura x(R) in L indica che la variabile x può assumere come valore solo tuple nella relazione r di schema R.
 - T è la target list, con elementi del tipo Y : x.Z, con x variabile e Y e Z sequenze di attributi di pari lunghezza; (x.∗ abbreviazione di X : x.X)
 
 #### Algebra e calcolo con valori nulli
