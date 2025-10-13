@@ -212,7 +212,8 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $f_{1} \land f_{2}$ è vera se entrambe le sotto-formule sono vere
 	- $\neg f_{1}$ è vera (falsa) su una sostituzione se $f-1$ è falsa (vera) sulla stessa sostituzione
 - Interpretazione di formule quantificate:
-	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera
+	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera sui valori $a_{1},\dots a_{q}$ se esiste ameno un valore $a$ tale che $f$ è vera sui valori $a$ per $x$, $a_{1}$ per $y_{1}\dots a_{q}$ per $y_{q}$
+	- 
 
 [da completare]
 ##### Calcolo relazionale su tuple con dichiarazione di range
