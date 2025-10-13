@@ -239,7 +239,7 @@ Se invece l’espressione avesse due variabili libere nella range list $\{t.^{*}
 Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\left\{ t.^{*}| t(R_{1}) \bigcup t'(R_{2}) | true \right\}$$
 
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
-SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione, per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
+SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
 #### Algebra e calcolo con valori nulli
 [da completare]
