@@ -229,5 +229,15 @@ dove:
 
 Il calcolo su tuple non permette di esprimere le interrogazioni i cui risultati possono provenire indifferentemente da due o più relazioni (che in algebra relazionale si realizzano con l'operatore di unione).
 
+Esempio: date due relazioni definite sugli stessi attributi:
+$$R_{1}(AB),R_{2}(AB)$$
+si vuole formulare una interrogazione che restituisca l'unione delle due relazioni.
+In algebra relazionale tale interrogazione verrebbe espressa mediante l’operatore di unione, mentre nel calcolo relazionale su domini si avrebbe:
+$$\{{A:a,B:b|R_{1}(A:a,B:b) \lor R_{2}A:a,B:b}\}$$
+Quindi non si riesce a formulare questa interrogazione nel calcolo su tuple, Infatti se la query formulata avesse una sola variabile libera nella range list, questa dovrebbe far riferimento ad una sola delle relazioni senza acquisire tuple dall'altra per il risultato;
+Se invece l’espressione avesse due variabili libere nella range list $\{t.^{*}, t’.^{*} | t(R1), t’(R2) | true\}$ ogni tupla del risultato dovrebbe corrispondere ad una tupla di ciascuna delle relazioni, che non è necessario perché l'unione richiede alle tuple del risultato di comparire in almeno uno degli operandi e non necessariamente in entrambi.
+Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\{t.^{*}| \}$$
+
+
 #### Algebra e calcolo con valori nulli
 [da completare]
