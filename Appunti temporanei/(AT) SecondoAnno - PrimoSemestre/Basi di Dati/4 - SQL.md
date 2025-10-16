@@ -24,7 +24,6 @@ Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono:
 
 Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola $\text{SELECT}$.
 ## Interrogazioni in SQL
-SQL esprime le interrogazioni in modo **dichiarativo**, ossia specifica l'obbiettivo dell
 ### Interrogazioni semplici in SQL
 Le operazioni di interrogazione in SQL vengono specificate per mezzo dell'istruzione $\text{SELECT}$, la sua struttura essenziale è:
 ```
@@ -45,10 +44,23 @@ Il comando select è una combinazione di:
 - Selezione (clausola $\text{WHERE}$)
 - Proiezione (target list)
 
-Da $\text{SELECT}$ si possono estrarre alcune operazioni come:
-- **Selezione**:
-
-
+Le operazioni più semplici si ottengono usando solo alcune clausole:
+- **Selezione**: 
+  ```
+  SELECT * 
+  FROM Ordini 
+  WHERE Ammontare > 10000
+  ```
+- **Proiezione**:
+  ```
+  SELECT CognomeENome, Città 
+  FROM Clienti
+  ```
+- **Prodotto cartesiano**:
+  ```
+  SELECT * 
+  FROM Clienti, Ordini
+  ```
 
 Per evitare ambiguità, quando si opera sul prodotto di tabelle con gli stessi attributi, si usa la notazione con il punto:
 ```
@@ -56,19 +68,10 @@ SELECT Clienti.CodiceCliente, Ordini.Ammontare
 FROM Clienti, Ordini 
 WHERE Clienti.CodiceCliente = Ordini.CodiceCliente
 ```
-N.B. Questo è un esempio di join in SQL, in particolare si tratta di un equi-join. 
+N.B. Questo è un esempio di join in SQL, in particolare si tratta di un equi-join;
 La condizione di selezione è una congiunzione di atomi di uguaglianza, con un attributo della prima relazione ed uno della seconda
 
 La **clausola** $\text{SELECT}$ specifica gli elementi dello schema della tabella risultato. 
 Come argomento della clausola select può anche comparire il carattere speciale $*$, che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{FROM}$
 
-Prendiamo in esempio una tabella del genere:
-![[Pasted image 20251016121920.png]]
-Proviamo ad estrarre lo stipendio mensile dell'impiegato che ha cognome "Bianchi", otterremmo:
-```
-SELECT Stipendio/12 as StipendioMensile
-FROM Impiegato
-WHERE Cognome="Bianchi"
-```
-![[Pasted image 20251016122101.png]]
 
