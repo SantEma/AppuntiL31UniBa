@@ -242,4 +242,4 @@ Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscire
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
 #### Algebra e calcolo con valori nulli
-[da completare]
+Nel caso di uno o più valori nulli
