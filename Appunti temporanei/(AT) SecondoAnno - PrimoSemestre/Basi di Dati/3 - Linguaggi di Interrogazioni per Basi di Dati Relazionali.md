@@ -245,4 +245,10 @@ SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un co
 Trattiamo un caso dove  in una relazione si ha un (o più) valore nullo:
 ![[Pasted image 20251016084830.png]]
 Se volessimo fare un interrogazione del tipo:$$\sigma_{\text{Età}>30}(Persone)$$non si può dire se la terza tupla faccia parte o meno del risultato.
-Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predicato può essere vero, falso oppure sconosciuto
+Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predicato può essere vero, falso oppure sconosciuto, rendendo il risultato della relazione precedente:
+- Prima tupla appartenente certamente al risultato (vero)
+- Seconda tupla non appartenente certamente al risultato (falso)
+- Terza tupla forse appartenente al risultato (sconosciuto)
+
+In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$
+si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta
