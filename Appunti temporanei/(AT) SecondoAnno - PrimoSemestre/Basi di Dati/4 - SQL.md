@@ -38,6 +38,8 @@ Di cui:
   $$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
 
+
+
 Le tre parti di cui si compone un'istruzione $\text{SELECT}$ vengono spesso chiamate **clausola** $\text{SELECT}$ (detta pure target list),**clausola** $\text{FROM}$ e **clausola** $\text{WHERE}$.
 Il comando select è una combinazione di:
 - Prodotto cartesiano (clausola $\text{SELECT}$)
@@ -70,6 +72,14 @@ WHERE Clienti.CodiceCliente = Ordini.CodiceCliente
 ```
 N.B. Questo è un esempio di join in SQL, in particolare si tratta di un equi-join;
 La condizione di selezione è una congiunzione di atomi di uguaglianza, con un attributo della prima relazione ed uno della seconda
+
+Una notazione alternativa prevede l’associazione di identificatori alle tabelle (alias), da usare per specificare gli attributi nella notazione, così l'esempio precedente può essere scritto come:
+```
+SELECT c.CodiceCliente, o.Ammontare 
+FROM Clienti c, Ordini o 
+WHERE c.CodiceCliente=o.CodiceCliente 
+```
+
 
 La **clausola** $\text{SELECT}$ specifica gli elementi dello schema della tabella risultato. 
 Come argomento della clausola select può anche comparire il carattere speciale $*$, che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{FROM}$
