@@ -1,9 +1,15 @@
-Sintassi per questo paragrafo:
+Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utilizzata:
+- Le **parentesi angolari** permettono di isolare un termine della sintassi
+- Le **parentesi quadre** indicano che il termine all'interno è opzionale, ossia può non comparire oppure comparire una sola volta
+- Le **parentesi graffe** indicano che il termine racchiuso può non comparire o essere ripetuto un numero arbitrario di volte
+- Le **barre verticali** indicano che deve essere scelto uno tra i termini separati dalle barre (un elenco di termini in alternativa può essere racchiuso tra parentesi angolari)
 
+Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
+
+---
 
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
-
 
 
 Occorre evidenziare una distinzione formale fra SQL e il modello dei dati relazionale: 
