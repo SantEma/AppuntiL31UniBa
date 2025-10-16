@@ -80,3 +80,8 @@ SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}
 L’ordinamento è crescente, a meno che non sia specificato altrimenti ($\text{DESC}$)
 
 #### Target List
+[da finire]
+### Clausola FROM
+[da finire]
+### CLAUSOLA WHERE
+[da finire]
