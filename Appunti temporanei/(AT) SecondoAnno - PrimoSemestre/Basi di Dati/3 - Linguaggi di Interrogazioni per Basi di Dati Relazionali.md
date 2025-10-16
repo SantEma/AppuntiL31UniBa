@@ -251,4 +251,11 @@ Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predica
 - Terza tupla forse appartenente al risultato (sconosciuto)
 
 In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$
-si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta
+si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta.
+Si ottiene una valida alternativa introducendo due condizioni atomiche di selezione (nell'algebra) e due predicati atomici aggiuntivi (nel calcolo) allo scopo di verificare che un valore sia nullo oppure no:
+- $A$ is null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è (non) nullo
+- $A$ is not null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è non (è) nullo
+
+Esempio:
+![[Pasted image 20251016090710.png]]
+Questa logica è utilizzabile in SQL, visto che prevede una gestione a tre valori
