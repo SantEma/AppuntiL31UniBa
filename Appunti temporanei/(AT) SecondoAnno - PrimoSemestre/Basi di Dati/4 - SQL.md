@@ -38,7 +38,7 @@ Di cui:
   $$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
 
-Il significato di $\text{SELECT}$ può essere dato con le seguenti equivalenze:
+Il significato (o semantica operazionale) di $\text{SELECT}$ può essere dato con le seguenti equivalenze:
 ![[Pasted image 20251016160923.png]]
 Le operazioni più semplici si ottengono usando solo alcune clausole:
 - **Selezione**: 
@@ -74,7 +74,9 @@ FROM Clienti c, Ordini o
 WHERE c.CodiceCliente=o.CodiceCliente 
 ```
 Questa seconda notazione è indispensabile quando si deve fare il prodotto di una tabella per se stessa.
-
-
+### Ordinamento
+Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
+SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
+L’ordinamento è crescente, a meno che non sia specificato altrimenti ($\text{DESC}$)
 
 
