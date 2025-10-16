@@ -11,7 +11,6 @@ Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
 
-
 Occorre evidenziare una distinzione formale fra SQL e il modello dei dati relazionale: 
 SQL permette ad una relazione (o tabella) di avere due o più tuple che sono identiche in tutti i valori di attributo (in generale, una tabella SQL non è un insieme di tuple, ma un multi-insieme )
 Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono: 
@@ -21,7 +20,9 @@ Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono:
 4. Quando si applicano funzioni aggregate alle tuple, spesso non si vogliono eliminare i duplicati.
 
 Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave distinct nella clausola select.
-## Interrogazioni semplici in SQL
+## Interrogazioni in SQL
+SQL esprime le interrogazioni in modo **dichiarativo**, ossia specifica l'obbiettivo dell
+### Interrogazioni semplici in SQL
 Le operazioni di interrogazione in SQL vengono specificate per mezzo dell'istruzione $\text{SELECT}$, la sua struttura essenziale è:
 ```
 SELECT [DISTINCT] ListaAttributi
