@@ -83,5 +83,5 @@ L’ordinamento è crescente, a meno che non sia specificato altrimenti ($\text{
 [da finire]
 ### Clausola FROM
 [da finire]
-### CLAUSOLA WHERE
+### Clausola WHERE
 [da finire]
