@@ -27,9 +27,9 @@ Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione S
 ### Interrogazioni semplici in SQL
 Le operazioni di interrogazione in SQL vengono specificate per mezzo dell'istruzione $\text{SELECT}$, la sua struttura essenziale è:
 ```
-SELECT [DISTINCT] ListaAttributi
-FROM ListaTabelle
-[WHERE Condizione]
+SELECT [DISTINCT] ListaAttributi <- target list
+FROM ListaTabelle <- clausola FROM
+[WHERE Condizione] <- clausola WHERE
 ```
 
 Di cui:
@@ -38,6 +38,8 @@ Di cui:
   $$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
 
+Il significato di $\text{SELECT}$ può essere dato con le seguenti equivalenze:
+![[Pasted image 20251016160923.png]]
 Le operazioni più semplici si ottengono usando solo alcune clausole:
 - **Selezione**: 
   ```
@@ -63,7 +65,7 @@ FROM Clienti, Ordini
 WHERE Clienti.CodiceCliente = Ordini.CodiceCliente
 ```
 N.B. Questo è un esempio di join in SQL, in particolare si tratta di un equi-join;
-La condizione di selezione è una congiunzione di atomi di uguaglianza, con un attributo della prima relazione ed uno della seconda
+La condizione di selezione è una congiunzione di atomi di uguaglianza, con un attributo della prima relazione ed uno della seconda.
 
 Una notazione alternativa prevede l’associazione di identificatori alle tabelle (alias), da usare per specificare gli attributi nella notazione, così l'esempio precedente può essere scritto come:
 ```
@@ -71,5 +73,8 @@ SELECT c.CodiceCliente, o.Ammontare
 FROM Clienti c, Ordini o 
 WHERE c.CodiceCliente=o.CodiceCliente 
 ```
+Questa seconda notazione è indispensabile quando si deve fare il prodotto di una tabella per se stessa.
+
+
 
 

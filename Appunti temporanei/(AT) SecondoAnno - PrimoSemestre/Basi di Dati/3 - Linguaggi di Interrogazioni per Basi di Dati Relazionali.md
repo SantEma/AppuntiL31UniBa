@@ -137,7 +137,7 @@ Formalmente:
 Dato uno schema $R$ di basi di dati, un'interrogazione è una funzione che, per ogni istanza di $r$ di $R$, produce una reazione su un dato insieme di attributi $X$ 
 In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ vengono formulati con espressioni i cui atomi (nomi di) sono relazioni in $R$ (le variabili)
 #### Efficienza del join
-Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (La complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
+Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (la complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
 
 Un alternativa per calcolare l'equi-join o il join naturale è l'ordinare entrambe le relazioni rispetto agli attributi coinvolti per poi fondere le liste, producendo le tuple del join.
 Questo tipo di realizzazione ha una complessità $O(m+nlogn)$ per le relazioni di cardinalità $n$ ed $m$ numero di tuple risultanti dalla join.
@@ -234,7 +234,7 @@ $$R_{1}(AB),R_{2}(AB)$$
 si vuole formulare una interrogazione che restituisca l'unione delle due relazioni.
 In algebra relazionale tale interrogazione verrebbe espressa mediante l’operatore di unione, mentre nel calcolo relazionale su domini si avrebbe:
 $$\{{A:a,B:b|R_{1}(A:a,B:b) \lor R_{2}A:a,B:b}\}$$
-Quindi non si riesce a formulare questa interrogazione nel calcolo su tuple, Infatti se la query formulata avesse una sola variabile libera nella range list, questa dovrebbe far riferimento ad una sola delle relazioni senza acquisire tuple dall'altra per il risultato;
+Quindi non si riesce a formulare questa interrogazione nel calcolo su tuple, infatti se la query formulata avesse una sola variabile libera nella range list, questa dovrebbe far riferimento ad una sola delle relazioni senza acquisire tuple dall'altra per il risultato;
 Se invece l’espressione avesse due variabili libere nella range list$\{t.^{*}, t’.^{*} | t(R1), t’(R2) | true\}$ ogni tupla del risultato dovrebbe corrispondere ad una tupla di ciascuna delle relazioni, che non è necessario perché l'unione richiede alle tuple del risultato di comparire in almeno uno degli operandi e non necessariamente in entrambi.
 Si potrebbe pensare di esprimere il problema consentendo di associare ad una variabile un range costituito da più relazioni.$$\left\{ t.^{*}| t(R_{1}) \bigcup t'(R_{2}) | true \right\}$$
 
