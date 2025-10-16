@@ -1,5 +1,9 @@
+Sintassi per questo paragrafo:
+
+
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
+
 
 
 Occorre evidenziare una distinzione formale fra SQL e il modello dei dati relazionale: 
