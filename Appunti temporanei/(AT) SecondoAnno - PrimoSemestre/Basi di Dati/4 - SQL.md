@@ -6,6 +6,9 @@ Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utili
 
 Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
 
+Useremo poi questa tabella come esempio principale di tutto il capitolo:
+![[Pasted image 20251016154754.png]]
+
 ---
 
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
@@ -19,7 +22,7 @@ Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono:
 3. L’utente potrebbe voler vedere i duplicati delle tuple nel risultato di una interrogazione. 
 4. Quando si applicano funzioni aggregate alle tuple, spesso non si vogliono eliminare i duplicati.
 
-Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave distinct nella clausola select.
+Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola $\text{SELECT}$.
 ## Interrogazioni in SQL
 SQL esprime le interrogazioni in modo **dichiarativo**, ossia specifica l'obbiettivo dell
 ### Interrogazioni semplici in SQL
@@ -41,6 +44,11 @@ Il comando select è una combinazione di:
 - Prodotto cartesiano (clausola $\text{SELECT}$)
 - Selezione (clausola $\text{WHERE}$)
 - Proiezione (target list)
+
+Da $\text{SELECT}$ si possono estrarre alcune operazioni come:
+- **Selezione**:
+
+
 
 Per evitare ambiguità, quando si opera sul prodotto di tabelle con gli stessi attributi, si usa la notazione con il punto:
 ```
