@@ -84,12 +84,14 @@ WHERE c.CodiceCliente=o.CodiceCliente
 ```
 Questa seconda notazione è indispensabile quando si deve fare il prodotto di una tabella per se stessa.
 
-Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la selezione di tutti gli attributi 
+Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la selezione di tutti gli attributi.
+Sempre in questa clausola possono apparire espressioni generiche  (come una divisione) sul valori degli attributi di ciascuna riga selezionata. 
+
+#### Clausola FROM
+[da finire]
+#### Clausola WHERE
+[da finire]
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
 L’ordinamento è crescente, a meno che non sia specificato altrimenti ($\text{DESC}$)
-### Clausola FROM
-[da finire]
-### Clausola WHERE
-[da finire]
