@@ -28,8 +28,12 @@ D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di def
 SQL esprime le interrogazioni in modo **dichiarativo**, ossia si specifica l'obbiettivo dell'interrogazione e non il modo in cui ottenerlo, seguendo quindi i principi del calcolo relazionale (contrapponendosi a quelli procedurali come l'algebra relazionale).
 Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (query optimizer), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
 In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità
-### Interrogazioni semplici in SQL
+### Interrogazioni semplici in SQL 
+#### Clausola SELECT
+
+[comment]: DA SPOSTARE!!!!
 Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola .
+[comment]: DA SPOSTARE!!!!
 
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
 ```
@@ -45,9 +49,6 @@ Di cui:
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$ 
-
-Il significato (o semantica operazionale) di $\text{SELECT}$ può essere dato con le seguenti equivalenze in algebra relazionale:
-![[Pasted image 20251016160923.png]]
 
 Le operazioni più semplici si ottengono usando solo alcune clausole:
 - **Selezione**: 
