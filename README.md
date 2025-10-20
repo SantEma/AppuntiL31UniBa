@@ -1,4 +1,5 @@
 Appunti curati personalmente da Emanuele Santoruvo, con il prezioso aiuto dei miei colleghi di corso (citati per ogni aiuto ricevuto nei documenti).
+
 I file sono suddivisi in 2 categorie principali:
 - **Appunti temporanei**: appunti creati con i file Markdown, molte volte sono imprecisi o comunque non perfetti completamente 
 - **Appunti definitivi**: appunti esportati in PDF, di solito sono le versioni finali che vengono estratte per poter essere facilmente stampate, potrebbero presentare errori anche loro.
