@@ -44,8 +44,11 @@ Di cui:
   $$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
 
-Il significato (o semantica operazionale) di $\text{SELECT}$ può essere dato con le seguenti equivalenze:
+Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$ 
+
+Il significato (o semantica operazionale) di $\text{SELECT}$ può essere dato con le seguenti equivalenze in algebra relazionale:
 ![[Pasted image 20251016160923.png]]
+
 Le operazioni più semplici si ottengono usando solo alcune clausole:
 - **Selezione**: 
   ```
@@ -84,9 +87,6 @@ Questa seconda notazione è indispensabile quando si deve fare il prodotto di un
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
 L’ordinamento è crescente, a meno che non sia specificato altrimenti ($\text{DESC}$)
-
-#### Target List
-[da finire]
 ### Clausola FROM
 [da finire]
 ### Clausola WHERE
