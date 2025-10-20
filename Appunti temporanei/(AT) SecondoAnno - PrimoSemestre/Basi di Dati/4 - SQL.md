@@ -1,5 +1,5 @@
 Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utilizzata:
-- Le **parentesi angolari** permettono di isolare un termine della sintassi
+- Le **parentesi angolari** $\langle \rangle$ permettono di isolare un termine della sintassi
 - Le **parentesi quadre** indicano che il termine all'interno è opzionale, ossia può non comparire oppure comparire una sola volta
 - Le **parentesi graffe** indicano che il termine racchiuso può non comparire o essere ripetuto un numero arbitrario di volte
 - Le **barre verticali** indicano che deve essere scelto uno tra i termini separati dalle barre (un elenco di termini in alternativa può essere racchiuso tra parentesi angolari)
@@ -21,11 +21,17 @@ Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono:
 2. Spesso l’operazione di eliminazione di duplicati non è necessaria, in quanto noto a priori che non ve ne saranno (è sufficiente che gli attributi che definiscono il risultato costituiscano una chiave). 
 3. L’utente potrebbe voler vedere i duplicati delle tuple nel risultato di una interrogazione. 
 4. Quando si applicano funzioni aggregate alle tuple, spesso non si vogliono eliminare i duplicati.
-
-Tuttavia se si vuole eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola $\text{SELECT}$.
 ## Interrogazioni in SQL
+La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
+D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specificadi alcuni aspetti avanzati dello schema
+### Dichiaratività di SQL
+SQL esprime le interrogazioni in modo **dichiarativo**, ossia si specifica l'obbiettivo dell'interrogazione e non il modo in cui ottenerlo, seguendo quindi i principi del calcolo relazionale (contrapponendosi a quelli procedurali come l'algebra relazionale).
+Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (query optimizer), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
+In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità
 ### Interrogazioni semplici in SQL
-Le operazioni di interrogazione in SQL vengono specificate per mezzo dell'istruzione $\text{SELECT}$, la sua struttura essenziale è:
+Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola .
+
+Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
 ```
 SELECT [DISTINCT] ListaAttributi <- target list
 FROM ListaTabelle <- clausola FROM
