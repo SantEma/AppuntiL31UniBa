@@ -33,7 +33,7 @@ Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si
 
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
 ```
-SELECT [DISTINCT] ListaAttributi <- target list
+SELECT [DISTINCT] ListaAttributi <- Target list
 FROM ListaTabelle <- clausola FROM
 [WHERE Condizione] <- clausola WHERE
 ```
