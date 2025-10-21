@@ -36,7 +36,7 @@ Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si
 [comment]: DA SPOSTARE!!!!
 
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
-```
+```sql
 SELECT [DISTINCT] ListaAttributi <- Target list
 FROM ListaTabelle <- clausola FROM
 [WHERE Condizione] <- clausola WHERE
@@ -52,24 +52,24 @@ Questa interrogazione quindi seleziona, tra le righe che appartengono al prodott
 
 Le operazioni più semplici si ottengono usando solo alcune clausole:
 - **Selezione**: 
-  ```
+```sql
   SELECT * 
   FROM Ordini 
   WHERE Ammontare > 10000
-  ```
+```
 - **Proiezione**:
-  ```
+```sql
   SELECT CognomeENome, Città 
   FROM Clienti
-  ```
+```
 - **Prodotto cartesiano**:
-  ```
+```sql
   SELECT * 
   FROM Clienti, Ordini
-  ```
+```
 
 Per evitare ambiguità, quando si opera sul prodotto di tabelle con gli stessi attributi, si usa la notazione con il punto (sia clausola $\text{SELECT}$ che clausola $\text{FROM}$):
-```
+```sql
 SELECT Clienti.CodiceCliente, Ordini.Ammontare 
 FROM Clienti, Ordini 
 WHERE Clienti.CodiceCliente = Ordini.CodiceCliente
@@ -78,7 +78,7 @@ N.B. Questo è un esempio di join in SQL, in particolare si tratta di un equi-jo
 La condizione di selezione è una congiunzione di atomi di uguaglianza, con un attributo della prima relazione ed uno della seconda.
 
 Una notazione alternativa prevede l’associazione di identificatori alle tabelle (alias), da usare per specificare gli attributi nella notazione, così l'esempio precedente può essere scritto come:
-```
+```sql
 SELECT c.CodiceCliente, o.Ammontare 
 FROM Clienti c, Ordini o 
 WHERE c.CodiceCliente=o.CodiceCliente 
@@ -86,9 +86,15 @@ WHERE c.CodiceCliente=o.CodiceCliente
 Questa seconda notazione è indispensabile quando si deve fare il prodotto di una tabella per se stessa.
 
 Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la selezione di tutti gli attributi.
-Sempre in questa clausola possono apparire espressioni generiche  (come una divisione) sul valori degli attributi di ciascuna riga selezionata. 
+A differenza dell’algebra relazionale è possibile costruire relazioni i cui attributi non corrispondono agli attributi delle relazioni selezionate, ma sono ottenuti come espressioni a partire da attributi e costanti
+```sql
+SELECT Stipendio/12 AS StipMensile 
+FROM Impiegati
+```
 ##### Target List
-
+Il risultato dell’espressione $\text{SELECT ListaAttributi FROM}$ è una tabella, i cui nomi di colonna sono quelli indicati in $\text{ListaAttributi}$. 
+La sintassi completa è:
+![[Pasted image 20251021153740.png]]
 #### Clausola FROM
 ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
 La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ è:
@@ -96,11 +102,19 @@ La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ 
 Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
 Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle.
 La giunzione di default in questo caso è il **theta-join**, specificato mediante gli operatori.
-![[Pasted image 20251021150801.png]]
+Esempio:
+```sql
+SELECT Agenti.Supervisore, Ordini.Ammontare 
+FROM Agenti JOIN Ordini ON 
+	Agenti.Supervisore=Ordini.CodiceAgente
+```
 La giunzione esterna è comunque realizzata specificando vari operatori come:
 $\text{LEFT|RIGHT|FULL[OUTER]JOIN}$
 a seconda di quale giunzione si voglia effettuare:
-![[Pasted image 20251021151340.png]]
+```sql
+SELECT Agenti.CodiceAgente, Ordini.Ammontare 
+FROM Agenti NATURAL JOIN Ordini
+```
 #### Clausola WHERE
 La clausola $\text{WHERE}$ ammette come argomento un espressione booleana costruita combinando predicati semplici con gli operatori $\text{AND,OR,NOT}$.
 #### Ordinamento
