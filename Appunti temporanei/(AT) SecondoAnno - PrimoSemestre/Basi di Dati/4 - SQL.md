@@ -89,7 +89,8 @@ Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la sel
 Sempre in questa clausola possono apparire espressioni generiche  (come una divisione) sul valori degli attributi di ciascuna riga selezionata. 
 
 #### Clausola FROM
-[da finire]
+Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
+Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle
 #### Clausola WHERE
 [da finire]
 #### Ordinamento
