@@ -119,9 +119,21 @@ FROM Agenti NATURAL JOIN Ordini
 #### Clausola WHERE
 La clausola $\text{WHERE}$ ammette come argomento un espressione booleana costruita combinando predicati semplici con gli operatori $\text{AND,OR,NOT}$.
 Ciascun predicato utilizza gli operatori $<>,<,>,\leq,\geq$ per confrontare un da un alto un'espressione costruita a partire dai valori degli attributi per riga e dall'altro lato un valore costante o un altra espressione.
-Quando i predicati sono separati dall'operatore $\text{AND}$ saranno selezionate solo le righe per cui tutti i predicati sono veri, 
+Quando i predicati sono separati dall'operatore $\text{AND}$ saranno selezionate solo le righe per cui tutti i predicati sono veri;
+Quando i predicati sono separati dall'operatore $\text{OR}$ saranno selezionate solo le righe per cui uno dei predicati risulti vero;
+Il predicato $\text{NOT}$ 
 
 Il risultato di un predicato può essere $TRUE (T), FALSE (F)$ o $UNKNOWN (U)$.
+Qui una tabella di esempio per quanto riguarda questi operatori booleani applicati ai predicati(con logica a tre valori):
+
+| p   | q   | p AND q | p OR q | NOT p |
+| --- | --- | ------- | ------ | ----- |
+| T   | T   | T       | T      | F     |
+| T   | F   | F       | T      | F     |
+| T   | U   | U       | T      | F     |
+| F   | F   | F       | F      | T     |
+| F   | U   | F       | U      | T     |
+| U   | U   | U       | U      | U     |
 
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
