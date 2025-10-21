@@ -44,9 +44,9 @@ FROM ListaTabelle <- clausola FROM
 
 Di cui:
 - **ListaAttributi** è l'elenco di nomi di attributi i cui valori devono essere ritrovati dall'interrogazione: $$ \langle ListaAttributi \rangle ::= * |\langle Attributi \rangle \{,\langle Attributo \rangle\} $$
-- **ListaTabelle** è l'elenco di nomi di relazioni necessarie per elaborare l'interrogazione: $$\langle ListaTabelle \rangle ::= \langle Tabelle \rangle[\langle Ide \rangle] \{,\langle Tabelle \rangle [\langle Ide \rangle]\}$$
-  $$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
+- **ListaTabelle** è l'elenco di nomi di relazioni necessarie per elaborare l'interrogazione: $$\langle ListaTabelle \rangle ::= \langle Tabelle \rangle[\langle Ide \rangle] \{,\langle Tabelle \rangle [\langle Ide \rangle]\}$$$$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
+
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$ 
 
@@ -68,7 +68,7 @@ Le operazioni più semplici si ottengono usando solo alcune clausole:
   FROM Clienti, Ordini
   ```
 
-Per evitare ambiguità, quando si opera sul prodotto di tabelle con gli stessi attributi, si usa la notazione con il punto:
+Per evitare ambiguità, quando si opera sul prodotto di tabelle con gli stessi attributi, si usa la notazione con il punto (sia clausola $\text{SELECT}$ che clausola $\text{FROM}$):
 ```
 SELECT Clienti.CodiceCliente, Ordini.Ammontare 
 FROM Clienti, Ordini 
@@ -87,6 +87,7 @@ Questa seconda notazione è indispensabile quando si deve fare il prodotto di un
 
 Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la selezione di tutti gli attributi.
 Sempre in questa clausola possono apparire espressioni generiche  (come una divisione) sul valori degli attributi di ciascuna riga selezionata. 
+##### Target List
 
 #### Clausola FROM
 Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
