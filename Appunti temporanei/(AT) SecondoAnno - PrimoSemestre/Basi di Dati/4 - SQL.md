@@ -93,7 +93,6 @@ Sempre in questa clausola possono apparire espressioni generiche  (come una divi
 ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
 La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ è:
 ![[Pasted image 20251021151510.png]]
-
 Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
 Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle.
 La giunzione di default in questo caso è il **theta-join**, specificato mediante gli operatori.
@@ -103,7 +102,7 @@ $\text{LEFT|RIGHT|FULL[OUTER]JOIN}$
 a seconda di quale giunzione si voglia effettuare:
 ![[Pasted image 20251021151340.png]]
 #### Clausola WHERE
-[da finire]
+La clausola $\text{WHERE}$ ammette come argomento un espressione booleana costruita combinando predicati semplici con gli operatori $\text{AND,OR,NOT}$.
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
