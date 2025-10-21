@@ -91,7 +91,9 @@ Sempre in questa clausola possono apparire espressioni generiche  (come una divi
 
 #### Clausola FROM
 Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
-Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle
+Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle.
+La giunzione di default in questo caso è il **theta-join**, specificato mediante gli operatori
+![[Pasted image 20251021150801.png]]
 #### Clausola WHERE
 [da finire]
 #### Ordinamento
