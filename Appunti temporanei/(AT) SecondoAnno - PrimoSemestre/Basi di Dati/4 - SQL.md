@@ -121,7 +121,7 @@ La clausola $\text{WHERE}$ ammette come argomento un espressione booleana costru
 Ciascun predicato utilizza gli operatori $<>,<,>,\leq,\geq$ per confrontare un da un alto un'espressione costruita a partire dai valori degli attributi per riga e dall'altro lato un valore costante o un altra espressione.
 Quando i predicati sono separati dall'operatore $\text{AND}$ saranno selezionate solo le righe per cui tutti i predicati sono veri;
 Quando i predicati sono separati dall'operatore $\text{OR}$ saranno selezionate solo le righe per cui uno dei predicati risulti vero;
-Il predicato $\text{NOT}$ 
+Il predicato $\text{NOT}$ è unario e inverte i valori di verità del predicato.
 
 Il risultato di un predicato può essere $TRUE (T), FALSE (F)$ o $UNKNOWN (U)$.
 Qui una tabella di esempio per quanto riguarda questi operatori booleani applicati ai predicati(con logica a tre valori):
@@ -134,7 +134,15 @@ Qui una tabella di esempio per quanto riguarda questi operatori booleani applica
 | F   | F   | F       | F      | T     |
 | F   | U   | F       | U      | T     |
 | U   | U   | U       | U      | U     |
+La sintassi della clausola $\text{WHERE}$ completa è la seguente:
+![[Pasted image 20251022094906.png]]
 
+#### Gestione dei valori nulli
+Un valore nullo in un attributo può significare che tale non è applicabile, oppure che sia applicabile ma non conosciuto, oppure che non si sappia quale delle due situazioni valga.
+Per selezionare i termini con valori nulli SQL fornisce il predicato $\text{IS NULL}$, con sintassi:
+$$\text{Attributo is [not] NULL}$$
+Questo predicato risulta vero soltanto se il valore è veramente null, altrimenti si ha la sua negazione.
+Nell'SQL-2 ci si potrebbe aspettare
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
