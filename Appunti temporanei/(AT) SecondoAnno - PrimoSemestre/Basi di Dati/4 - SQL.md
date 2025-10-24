@@ -54,10 +54,8 @@ Le operazioni più semplici si ottengono usando anche eventualmente le clausole:
 ```
 
 
-##### Target List
-Il risultato dell’espressione $\text{SELECT ListaAttributi FROM}$ è una tabella, i cui nomi di colonna sono quelli indicati in $\text{ListaAttributi}$. 
-La sintassi completa è:
-![[Pasted image 20251021153740.png]]
+
+
 #### Clausola FROM
 ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
 La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ è:
