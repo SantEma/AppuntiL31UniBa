@@ -15,7 +15,7 @@ SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
 
 Occorre evidenziare una distinzione formale fra SQL e il modello dei dati relazionale: 
-SQL permette ad una relazione (o tabella) di avere due o più tuple che sono identiche in tutti i valori di attributo (in generale, una tabella SQL non è un insieme di tuple, ma un multi-insieme )
+SQL permette ad una relazione (o tabella) di avere due o più tuple che sono identiche in tutti i valori di attributo (in generale, una tabella SQL non è un insieme di tuple, ma un multi-insieme)
 Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono: 
 1. L’eliminazione di duplicati è una operazione costosa. 
 2. Spesso l’operazione di eliminazione di duplicati non è necessaria, in quanto noto a priori che non ve ne saranno (è sufficiente che gli attributi che definiscono il risultato costituiscano una chiave). 
@@ -30,11 +30,6 @@ Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di int
 In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità
 ### Interrogazioni semplici in SQL 
 #### Clausola SELECT
-
-[comment]: DA SPOSTARE!!!!
-Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola .
-[comment]: DA SPOSTARE!!!!
-
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
 ```sql
 SELECT [DISTINCT] ListaAttributi <- Target list
@@ -46,7 +41,6 @@ Di cui:
 - **ListaAttributi** è l'elenco di nomi di attributi i cui valori devono essere ritrovati dall'interrogazione: $$ \langle ListaAttributi \rangle ::= * |\langle Attributi \rangle \{,\langle Attributo \rangle\} $$
 - **ListaTabelle** è l'elenco di nomi di relazioni necessarie per elaborare l'interrogazione: $$\langle ListaTabelle \rangle ::= \langle Tabelle \rangle[\langle Ide \rangle] \{,\langle Tabelle \rangle [\langle Ide \rangle]\}$$$$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
 - **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
-
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$ 
 
@@ -91,6 +85,7 @@ A differenza dell’algebra relazionale è possibile costruire relazioni i cui a
 SELECT Stipendio/12 AS StipMensile 
 FROM Impiegati
 ```
+Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola.
 ##### Target List
 Il risultato dell’espressione $\text{SELECT ListaAttributi FROM}$ è una tabella, i cui nomi di colonna sono quelli indicati in $\text{ListaAttributi}$. 
 La sintassi completa è:
