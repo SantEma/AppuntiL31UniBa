@@ -1,11 +1,7 @@
 
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
-
-
-
-
-
+## Definizione dei dati in SQL
 Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utilizzata:
 - Le **parentesi angolari** $\langle \rangle$ permettono di isolare un termine della sintassi
 - Le **parentesi quadre** indicano che il termine all'interno è opzionale, ossia può non comparire oppure comparire una sola volta
@@ -14,9 +10,21 @@ Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utili
 
 Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
 
+### I domini elementari
+#### Caratteri
+#### Tipi numerici Esatti
+#### Tipi numerici Approssimativi 
+#### Istanti temporali
+#### Intervalli temporali
 
-
-
+### Definizioni di schema
+### Definizioni di tabelle
+### Definizione di domini
+### Specifica valori di default
+### Vincoli intrarelazionali
+### Vincoli interrelazionali
+### Modifica degli schemi
+### Cataloghi relazionali
 
 
 ## Interrogazioni in SQL
