@@ -143,6 +143,7 @@ Per selezionare i termini con valori nulli SQL fornisce il predicato $\text{IS N
 $$\text{Attributo is [not] NULL}$$
 Questo predicato risulta vero soltanto se il valore è veramente null, altrimenti si ha la sua negazione.
 Nell'SQL-2 ci si potrebbe aspettare
+[da finire]
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
