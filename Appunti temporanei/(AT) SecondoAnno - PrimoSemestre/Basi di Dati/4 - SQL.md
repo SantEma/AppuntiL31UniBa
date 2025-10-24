@@ -1,4 +1,3 @@
-
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
 ## Definizione dei dati in SQL
@@ -9,11 +8,12 @@ Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utili
 - Le **barre verticali** indicano che deve essere scelto uno tra i termini separati dalle barre (un elenco di termini in alternativa può essere racchiuso tra parentesi angolari)
 
 Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
-
 ### I domini elementari
-[da completare]
+SQL mette a disposizione alcune famiglie di domini elementari, da cui si possono poi definire i domini da associare agli attributi dello schema
 #### Caratteri
-[da completare]
+Il dominio $\text{character}$ permette di rappresentare singoli caratteri oppure stringhe.
+La lunghezza può essere fissa o variabile, in caso di quelle variabile si esplicita la lunghezza massima, oltre a poter prevedere una specifica della famiglia dei caratteri di default (latino, cirillico etc.).
+La sintassi prevista è:$$\begin{align} \text{character [varying]} [(Lunghezza)] \\ [\text{character set}] NomeFamigliaCaratteri\end{align}$$
 #### Tipi numerici esatti
 [da completare]
 #### Tipi numerici approssimativi
