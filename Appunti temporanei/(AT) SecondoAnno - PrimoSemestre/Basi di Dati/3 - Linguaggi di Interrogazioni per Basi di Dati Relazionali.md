@@ -242,7 +242,7 @@ Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscire
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
 #### Algebra e calcolo con valori nulli
-Trattiamo un caso dove  in una relazione si ha un (o più) valore nullo:
+Trattiamo un caso dove in una relazione si ha un (o più) valore nullo:
 ![[Pasted image 20251016084830.png]]
 Se volessimo fare un interrogazione del tipo:$$\sigma_{\text{Età}>30}(Persone)$$non si può dire se la terza tupla faccia parte o meno del risultato.
 Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predicato può essere vero, falso oppure sconosciuto, rendendo il risultato della relazione precedente:
