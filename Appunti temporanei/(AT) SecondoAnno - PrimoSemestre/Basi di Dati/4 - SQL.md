@@ -11,22 +11,43 @@ Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utili
 Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
 
 ### I domini elementari
+[da completare]
 #### Caratteri
-#### Tipi numerici Esatti
-#### Tipi numerici Approssimativi 
+[da completare]
+#### Tipi numerici esatti
+[da completare]
+#### Tipi numerici approssimativi
+[da completare]
 #### Istanti temporali
+[da completare]
 #### Intervalli temporali
-
+[da completare]
 ### Definizioni di schema
+[da completare]
 ### Definizioni di tabelle
+[da completare]
 ### Definizione di domini
+[da completare]
 ### Specifica valori di default
+[da completare]
 ### Vincoli intrarelazionali
+[da completare]
+#### Not Null
+[da completare]
+#### Unique
+[da completare]
+#### Primary Key
+[da completare]
 ### Vincoli interrelazionali
+[da completare]
 ### Modifica degli schemi
+[da completare]
+#### Alter
+[da completare]
+#### Drop
+[da completare]
 ### Cataloghi relazionali
-
-
+[da completare]
 ## Interrogazioni in SQL
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
 D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
@@ -42,10 +63,8 @@ FROM ListaTabelle <- clausola FROM
 [WHERE Condizione] <- clausola WHERE
 ```
 
-Considerando che:
-- **ListaAttributi** è l'elenco di nomi di attributi i cui valori devono essere ritrovati dall'interrogazione: $$ \langle ListaAttributi \rangle ::= * |\langle Attributi \rangle \{,\langle Attributo \rangle\} $$
-- **ListaTabelle** è l'elenco di nomi di relazioni necessarie per elaborare l'interrogazione: $$\langle ListaTabelle \rangle ::= \langle Tabelle \rangle[\langle Ide \rangle] \{,\langle Tabelle \rangle [\langle Ide \rangle]\}$$$$\langle IDE \rangle ::=[as] \langle NuovoIdentificatore \rangle$$
-- **Condizione** specifica la condizione che deve essere soddisfatta dalle tuple del risultato
+
+
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$, ottenendo come risultato una tabella con una riga per ogni riga prodotta dalla clausola $\text{FROM}$ e filtrata dalla clausola $\text{WHERE}$, le cui colonne si ottengono dalla valutazione delle espressioni 
 
@@ -68,7 +87,7 @@ Le operazioni più semplici si ottengono usando anche eventualmente le clausole:
 ```
 
 
-
+#### Clausola SELECT
 
 #### Clausola FROM
 ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
