@@ -1,3 +1,11 @@
+
+SQL è il linguaggio di riferimento per le basi di dati relazionali.
+Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
+
+
+
+
+
 Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utilizzata:
 - Le **parentesi angolari** $\langle \rangle$ permettono di isolare un termine della sintassi
 - Le **parentesi quadre** indicano che il termine all'interno è opzionale, ossia può non comparire oppure comparire una sola volta
@@ -6,13 +14,11 @@ Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utili
 
 Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL, non come simboli della definizione della grammatica
 
-Useremo poi questa tabella come esempio principale di tutto il capitolo:
-![[Pasted image 20251016154754.png]]
 
----
 
-SQL è il linguaggio di riferimento per le basi di dati relazionali.
-Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
+
+
+
 ## Interrogazioni in SQL
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
 D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
