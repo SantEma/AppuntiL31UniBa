@@ -15,7 +15,14 @@ Il dominio $\text{character}$ permette di rappresentare singoli caratteri oppure
 La lunghezza può essere fissa o variabile, in caso di quelle variabile si esplicita la lunghezza massima, oltre a poter prevedere una specifica della famiglia dei caratteri di default (latino, cirillico etc.).
 La sintassi prevista è:$$\begin{align} \text{character [varying]} [(Lunghezza)] \\ [\text{character set}] NomeFamigliaCaratteri\end{align}$$
 #### Tipi numerici esatti
-[da completare]
+Questa famiglia contiene i domini che permettono di rappresentare valori esatti, interi o con una parte decimale di lunghezza prefissata.
+La sintassi prevista è:
+$$\begin{aligned}
+\text{numeric}[(Precisione[,Scala])] \\
+\text{decimal}[(Precisione[,Scala])] \\
+\text{integer}\ \\
+\text{smallint}
+\end{aligned}$$
 #### Tipi numerici approssimativi
 [da completare]
 #### Istanti temporali
