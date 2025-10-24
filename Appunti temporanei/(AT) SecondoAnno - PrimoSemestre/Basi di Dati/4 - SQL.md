@@ -23,11 +23,11 @@ Le ragioni fondamentali per cui SQL permette la presenza di duplicati sono:
 4. Quando si applicano funzioni aggregate alle tuple, spesso non si vogliono eliminare i duplicati.
 ## Interrogazioni in SQL
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
-D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specificadi alcuni aspetti avanzati dello schema
+D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
 ### Dichiaratività di SQL
 SQL esprime le interrogazioni in modo **dichiarativo**, ossia si specifica l'obbiettivo dell'interrogazione e non il modo in cui ottenerlo, seguendo quindi i principi del calcolo relazionale (contrapponendosi a quelli procedurali come l'algebra relazionale).
-Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (query optimizer), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
-In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità
+Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (**query optimizer**), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
+In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità.
 ### Interrogazioni semplici in SQL 
 #### Clausola SELECT
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo di questa istruzione, la sua struttura essenziale è:
@@ -80,12 +80,11 @@ WHERE c.CodiceCliente=o.CodiceCliente
 Questa seconda notazione è indispensabile quando si deve fare il prodotto di una tabella per se stessa.
 
 Nella clausola $\text{SELECT}$ può apparire l'asterisco $*$ per indicare la selezione di tutti gli attributi.
-A differenza dell’algebra relazionale è possibile costruire relazioni i cui attributi non corrispondono agli attributi delle relazioni selezionate, ma sono ottenuti come espressioni a partire da attributi e costanti
+A differenza dell’algebra relazionale è possibile costruire relazioni i cui attributi non corrispondono agli attributi delle relazioni selezionate, ma sono ottenuti come espressioni a partire da attributi e costanti:
 ```sql
 SELECT Stipendio/12 AS StipMensile 
 FROM Impiegati
 ```
-Se si vogliono eliminare i duplicati nel risultato di una interrogazione SQL, si può farlo mediante la parola chiave $\text{DISTINCT}$ nella clausola.
 ##### Target List
 Il risultato dell’espressione $\text{SELECT ListaAttributi FROM}$ è una tabella, i cui nomi di colonna sono quelli indicati in $\text{ListaAttributi}$. 
 La sintassi completa è:
@@ -139,6 +138,13 @@ $$\text{Attributo is [not] NULL}$$
 Questo predicato risulta vero soltanto se il valore è veramente null, altrimenti si ha la sua negazione.
 Nell'SQL-2 ci si potrebbe aspettare
 [da finire]
+
+#### Interpretazione formale delle interrogazioni in SQL
+[da completare]
+#### Duplicati
+[da completare]
+#### Uso di variabili
+[da completare]
 #### Ordinamento
 Se una relazione è un insieme non ha senso definire un ordinamento ma tuttavia, se si guarda al risultato di una interrogazione come ad una tabella, si può porre il problema di ordinare le righe. 
 SQL permette di specificare un ordinamento mediante la clausola $\text{ORDER BY}$ riportata dopo la clausola $\text{WHERE}$:$$\text{ORDER BY} \langle \text{Attributo}\rangle [\text{DESC}] \{,\langle \text{Attributo}\rangle [\text{DESC}]\} $$
