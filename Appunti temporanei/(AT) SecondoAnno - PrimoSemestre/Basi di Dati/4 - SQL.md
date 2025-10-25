@@ -26,7 +26,7 @@ $$\begin{aligned}
 &\text{integer}\ \\
 &\text{smallint}
 \end{aligned}$$
-I numeri $\text{numeric}$ e $\text{decimal}$ rappresentano tutti i numeri in base decimale, mentre quelli 
+I numeri $\text{numeric}$ e $\text{decimal}$ rappresentano tutti i numeri in base decimale, mentre il parametro precisione specifica il numero No
 #### Tipi numerici approssimativi
 [da completare]
 #### Istanti temporali
