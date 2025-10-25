@@ -26,9 +26,22 @@ $$\begin{aligned}
 &\text{integer}\ \\
 &\text{smallint}
 \end{aligned}$$
-I numeri $\text{numeric}$ e $\text{decimal}$ rappresentano tutti i numeri in base decimale, mentre il parametro precisione specifica il numero No
+I numeri $\text{numeric}$ e $\text{decimal}$ rappresentano tutti i numeri in base decimale, mentre il parametro $Precisione$ specifica il numero di cifre significative (con un dominio $\text{decimal}(4)$ si possono rappresentare per esempio valori da -9999 a +9999).
+Il parametro $\text{Scala}$ si specifica la scala di rappresentazione (ossia quante cifre compaiono dopo la virgola nella scala di rappresentazione, tutto ciò sempre specificando la precisione), se non specificata è sempre 0.
+La differenza tra $\text{decimal}$ e $\text{numeric}$ consiste nella precisione, per il primo ci deve essere un requisito minimo, per il secondo invece si rappresenta un valore esatto.
+Nel caso in cui non interessi la parte frazionaria e quindi la precisione della rappresentazione decimale, allora si possono usare i domini $\text{integer}$ e $\text{smallint}$, che si basano sulla rappresentazione interna binaria del calcolatore (la precisione è lasciata all'implementazione)
+Qualora comunque la precisione non sia specificata, il sistema usa un valore caratteristico della implementazione.
 #### Tipi numerici approssimativi
-[da completare]
+Per la rappresentazione di valori reali approssimativi SQL fornisce i seguenti tipi:
+$$\begin{aligned}
+&\text{float}[(Precisione)] \\
+&\text{real} \\
+&\text{double precision} \\
+\end{aligned}$$
+Tutti questi domini ovviamente permettono di descrivere numeri approssimati mediante rappresentazione con virgola mobile, in cui ciascun numero corrisponde ad una coppia di valori: mantissa e esponente.
+Per ottenere un valore approssimativo del numero reale si moltiplica la mantissa per la potenza di 10 con il grado dell'esponente (esempio: $1,7 \times 10^{15}$ rappresenta $0.17E16$, oppure $-4\times 10^{-7}$ rappresenta $-0.4E-6$).
+Al dominio $\text{float}$ può essere associata una precisione che rappresenta il numero delle cifre dedicate alla mantissa, la precisione invece dell'esponente è dipendente dall'implementazione.
+La precisione del dominio $\text{real}$ è fissa, quella del dominio $\text{double precision}$ è di dimensione doppia rispetto al dominio precedente
 #### Istanti temporali
 [da completare]
 #### Intervalli temporali
