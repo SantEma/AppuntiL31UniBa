@@ -160,7 +160,19 @@ Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si f
 Nel vincolo possono essere coinvolti più attributi, in tal caso l'unica differenza è che bisognerà confrontare n-uple di valori piuttosto di singoli valori.
 
 Possiamo definirlo in due modi:
-1. Nel caso sia un unico attributo coinvolto
+1. Nel caso sia un unico attributo coinvolto si può usare il construtto sintattico $\text{references}$, con il quale si specificano la tabella esterna e l'attributo della tabella esterna:
+```sql
+create table Impiegato
+(
+Matricola character(6) primary key
+Nome varchar(20) not null,
+Cognome varchar(20) not null,
+Dipart varchar(15)
+	   references Dipartimento(NomeDip)
+Ufficio numeric(9) default 0,
+unique(Cognome,Nome)
+)   
+```
 ### Modifica degli schemi
 [da completare]
 #### Alter
