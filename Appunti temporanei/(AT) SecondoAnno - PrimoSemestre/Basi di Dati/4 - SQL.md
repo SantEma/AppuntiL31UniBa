@@ -144,9 +144,17 @@ Cognome varchar(20) not null unique
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
-SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi per costituire l'identificatore 
+SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
+Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{not null}$ omessa.
+Un esempio di dichiarazione può essere:
+```sql
+Nome varchar(20),
+Cognome varchar(20),
+primary key (Cognome, Nome)
+```
 ### Vincoli interrelazionali
-[da completare]
+I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
+Questa chiave esterna crea un legame tra i valori di un attributo della tabella su cui è definito (chiamata **interna**) e i valori di attributo di un altra tabella (chiamata **esterna**).
 ### Modifica degli schemi
 [da completare]
 #### Alter
