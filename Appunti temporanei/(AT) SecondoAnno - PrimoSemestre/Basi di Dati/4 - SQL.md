@@ -155,6 +155,7 @@ primary key (Cognome, Nome)
 ### Vincoli interrelazionali
 I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
 Questa chiave esterna crea un legame tra i valori di un attributo della tabella su cui è definito (chiamata **interna**) e i valori di attributo di un altra tabella (chiamata **esterna**).
+Il vincolo impone che per ogni riga della tabella interna il valore dell'attributi specificato (se diverso da nullo) sia presente nelle righe  
 ### Modifica degli schemi
 [da completare]
 #### Alter
