@@ -160,7 +160,7 @@ Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si f
 Nel vincolo possono essere coinvolti più attributi, in tal caso l'unica differenza è che bisognerà confrontare n-uple di valori piuttosto di singoli valori.
 
 Possiamo definirlo in due modi:
-1. 
+1. Nel caso sia un unico attributo coinvolto
 ### Modifica degli schemi
 [da completare]
 #### Alter
