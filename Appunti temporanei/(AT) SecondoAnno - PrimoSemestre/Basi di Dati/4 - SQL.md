@@ -66,8 +66,31 @@ $$\begin{aligned}
 &\text{create schema}[NomeSchema][[authorization]\text{Autorizzazione}] \\
 &\text{\{DefinizioneElementoSchema\}}
 \end{aligned}$$
+$Autorizzazione$ rappresenta il nome dell'utente proprietario dello schema, se omesso si assume che chi abbia lanciato il comando sia il proprietario, $NomeSchema$ viene poi rinominato con lo stesso nome del proprietario.
+Dopo il comando $\text{create schema}$ compaiono le definizioni dei suoi componenti, ma non è necessario che questa definizione avvenga contemporaneamente alla crazione dello schema.
 ### Definizioni di tabelle
-[da completare]
+Una tabella SQL è costituita da una collezione ordinata di attributi e da un insieme (eventualmente vuoto) di vincoli.
+Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite la seguente istruzione SQL:
+```sql
+create table Dipartimento
+(
+	Nome varchar(20) primary key,
+	Indirizzo varchar(50),
+	Città varchar(20)
+)
+```
+Definendolo quindi con uno schema più generale:
+$$\begin{aligned}
+&\text{create table}NomeTabella \\
+&(Nomeattributo \ Dominio [ValoreDiDefault][Vincoli]) \\
+& \quad \{,NomeAttributo Dominio[ValoreDiDefault][Vincoli]\} \\
+&AltriVincoli
+\end{aligned}
+$$
+
+Ogni tabella viene quindi definita associandole un nome ed elencando gli attributi che compongono lo schema.
+Per ogni attributo abbiamo un nome, dominio ed eventuali insiemi di vincoli che devono essere rispettati dai valori dell'attributo.
+Dopo la definizione degli attributi si possono definire i vincoli che coinvolgono più attributi
 ### Definizione di domini
 [da completare]
 ### Specifica valori di default
