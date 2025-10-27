@@ -90,9 +90,16 @@ $$
 
 Ogni tabella viene quindi definita associandole un nome ed elencando gli attributi che compongono lo schema.
 Per ogni attributo abbiamo un nome, dominio ed eventuali insiemi di vincoli che devono essere rispettati dai valori dell'attributo.
-Dopo la definizione degli attributi si possono definire i vincoli che coinvolgono più attributi
+Dopo la definizione degli attributi si possono definire i vincoli che coinvolgono più attributi della tabella.
 ### Definizione di domini
-[da completare]
+Nella definizione delle tabelle si può fare riferimento ai domini predefiniti del linguaggio o a domini definiti dall'utente a partire da quelli predefiniti, infatti proprio da questi è possibile definirli in questa maniera:
+$$ \begin{aligned}
+&\text{create domain }NomeTabella \\
+&(Nomeattributo \ Dominio [ValoreDiDefault][Vincoli]) \\
+& \quad \{,NomeAttributo Dominio[ValoreDiDefault][Vincoli]\} \\
+&AltriVincoli
+\end{aligned}
+$$
 ### Specifica valori di default
 [da completare]
 ### Vincoli intrarelazionali
