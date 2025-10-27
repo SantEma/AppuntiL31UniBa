@@ -123,9 +123,28 @@ Cognome varchar(20) not null
 ```
 #### Unique
 Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
-Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutti diversi tra loro
+Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutti diversi tra loro.
+La definizione del vincolo può avvenire in due modi:
+1. Quando si vuole specificare questo vincolo su un unico attributo, in quel caso viene dichiarato nella specifica di quell'attributo:
+```sql 
+Matricola character(6) unique 
+```
+2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$unique(Attributo,\{, Attributo\})$$
+   Un esempio di sintassi è il seguente:
+```sql
+Nome varchar(20) not null,
+Cognome varchar(20) not null,
+unique (Cognome,Nome)   
+```
+
+Si noti che si potrebbe pensare che la definizione:
+```sql
+Nome varchar(20) not null unique
+Cognome varchar(20) not null unique
+```
+sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
-[da completare]
+SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi per costituire l'identificatore 
 ### Vincoli interrelazionali
 [da completare]
 ### Modifica degli schemi
