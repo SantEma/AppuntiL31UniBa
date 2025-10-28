@@ -179,9 +179,40 @@ foreign key (Nome,Cognome)
 			references Anagrafica(Nome,Cognome)
 ```
 
-La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{foreign key}$ corrisponde al primo argomento di $\text{references}$
+La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{foreign key}$ corrisponde al primo argomento di $\text{references}$ e via via gli altri attributi.
+
+Per tutti i vincoli visti finora quando il sistema rileva una violazione il comando di aggiornamento viene rifiutato segnalando l'errore all'utente, invece per quelli referenziali SQL permette di scegliere altre reazioni da adottare quando viene rilevata una violazione, per esempio una violazione può essere la modifica del contenuto della tabella interna in due modi:
+- Inserire una nuova riga
+- Modificare il valore dell'attributo referente
+In questo caso non viene offerto particolare supporto e l'operazione viene semplicemente rifiutata.
+
+Per le modifiche sulla tabella esterna le alternative esistono, dato dal particolare significato della tabella esterna che sul piano applicativo rappresenta la tabella principale (**master**) alle cui variazioni la tabella interna (**slave**) deve adeguarsi.
+Per poter agire con le operazioni di modifica possiamo usare uno dei seguenti modi:
+- $\text{cascade}$: il nuovo valore dell'attributo della tabella esterna viene riportato su tutte le corrispondenti righe della tabella interna
+- $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore modificato nella tabella esterna
+- $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
+- $\text{no action}$: l'azione di modifica non viene consentita e il sistema quindi non ha bisogno di riparare la violazione
+
+Per le violazioni da cancellazione di un elemento della tabella esterna si ha a disposizione lo stesso insieme di reazioni:
+- $\text{cascade}$: tutte le righe della tabella interna corrispondenti alla riga cancellata vengono cancellate
+- $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore cancellato nella tabella esterna
+- $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
+ - $\text{no action}$: l'azione di cancellazione non viene consentita
+
+In generale per ogni evento è possibile associare una politica diversa in base a come la si vuole gestire.
+Nel caso della politica $\text{cascade}$ si assume che le righe della tabella interna siano strettamente legate alle corrispondenti righe della tabella esterna, per cui se si apporta una modifica alla tabella esterna si devono modificare in modo conseguente tutte le righe della tabella interna, per quanto riguarda le altre politiche ci sono dipendenze meno strette tra prima e seconda tabella.
+Le violazioni possono generare una reazione a catena qualora la tabella interna compaia a sua volta come tabella esterna in un altro vincolo di integrità.
+
+La politica di reazione viene specificata immediatamente dopo il vincolo di integrità secondo la seguente sintassi:
+$$
+\begin{aligned}
+&\text{on \langle delete | update\rangle}\\
+&\quad \  \text{\langle cascade | set null | set default | no action\rangle}
+\end{aligned}
+$$
 ### Modifica degli schemi
-[da completare]
+SQL fornisce primitive per la manipolazione degli schemi della base di dati che permettono di modificare le definizioni di tabelle precedentemente introdotte.
+I comandi che vengono utilizzati a questo fine sono $\text{alter}$ e $\text{drop}$ 
 #### Alter
 [da completare]
 #### Drop
