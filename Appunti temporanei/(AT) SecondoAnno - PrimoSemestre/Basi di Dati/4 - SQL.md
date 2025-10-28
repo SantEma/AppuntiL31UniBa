@@ -214,7 +214,26 @@ $$
 SQL fornisce primitive per la manipolazione degli schemi della base di dati che permettono di modificare le definizioni di tabelle precedentemente introdotte.
 I comandi che vengono utilizzati a questo fine sono $\text{alter}$ e $\text{drop}$ 
 #### Alter
-[da completare]
+Il comando $\text{alter}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
+Per i domini:
+$$\begin{aligned}
+&\text{alter domain} \ NomeDominio \langle \text{set default} \ ValoreDiDefault \| \\
+&\quad \quad \quad\quad \quad \ \ \  \text{drop default} \ | \\
+&\quad \quad \quad\quad \quad \ \ \  \text{add constraint} \  DefVincolo \ | \\
+&\quad \quad \quad\quad \quad \ \ \  \text{drop constraint} \ NomeVincolo \rangle
+\end{aligned}$$
+Per le tabelle:
+$$\begin{aligned}
+&\text{alter table} \ NomeTabella \langle \\ 
+&\text{alter column} \ NomeAttributo \langle \text{set default} \ NuovoDefault \ | \\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{drop default} \rangle \ | \\ 
+&\text{add constraint} \  DefVincolo \ | \\
+&\text{drop constraint} \ NomeVincolo \ |\\ 
+&\text{add column} \ DefAttributo\ |\\
+&\text{drop column} \ NomeAttributo \rangle
+\end{aligned}$$
+Tramite $\text{alter domain}$ e $\text{alter table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
+Quando si definisce un nuovo vincolo 
 #### Drop
 [da completare]
 ### Cataloghi relazionali
