@@ -173,6 +173,8 @@ Ufficio numeric(9) default 0,
 unique(Cognome,Nome)
 )   
 ```
+
+
 ### Modifica degli schemi
 [da completare]
 #### Alter
