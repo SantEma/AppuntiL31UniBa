@@ -173,8 +173,13 @@ Ufficio numeric(9) default 0,
 unique(Cognome,Nome)
 )   
 ```
-2. Nel caso ci sia un insieme di attributi si fa 
+2. Nel caso ci sia un insieme di attributi si utilizza $\text{foreing key}$, posto al termine della definizione degli attributi
+```sql
+foreign key (Nome,Cognome)
+			references Anagrafica(Nome,Cognome)
+```
 
+La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine 
 ### Modifica degli schemi
 [da completare]
 #### Alter
