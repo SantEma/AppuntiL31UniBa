@@ -179,7 +179,7 @@ foreign key (Nome,Cognome)
 			references Anagrafica(Nome,Cognome)
 ```
 
-La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine 
+La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{foreign key}$ corrisponde al primo argomento di $\text{references}$
 ### Modifica degli schemi
 [da completare]
 #### Alter
