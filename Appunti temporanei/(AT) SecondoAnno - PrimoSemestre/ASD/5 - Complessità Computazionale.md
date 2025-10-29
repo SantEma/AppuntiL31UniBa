@@ -229,10 +229,9 @@ $O (1) < O (logn) < O (n) < O (nlogn) < O (n^2) < O (n^3) < O (a^n)$
 
 # Algoritmi polinomiali vs. esponenziali
 La distinzione di maggiore interesse in teoria della complessità è fra:
-- **algoritmi polinomiali** complessità $O(n^k), k >0$
+- **Algoritmi polinomiali** complessità $O(n^k), k >0$;
   Esempi sono: $O(log\ n), O(n^{10})$
-
-- **algoritmi esponenziali** complessità $O(a^{g(n)}), a >1$ e $g(n)$ funzione crescente
+- **Algoritmi esponenziali** complessità $O(a^{g(n)}), a >1$ e $g(n)$ funzione crescente;
   Esempi sono: $O(2^n), O(2^{log \ n}), O(n^{log \ n})$
 
 **Gli algoritmi di importanza pratica sono quelli polinomiali**
