@@ -187,16 +187,16 @@ Tuttavia, al crescere di $n$ (per $n = 3, 4$ e oltre), la funzione $f_1(n)$ supe
 Questo esempio mostra che l’efficienza di un algoritmo può dipendere dal valore di $n$ e che l’analisi asintotica si concentra sul comportamento per $n$ molto grandi, trascurando l’andamento nei casi piccoli.
 
 Le funzioni di complessità $f_1(n) = 3n^2 + n + 1, f_2(n) = 4n^2$ e $f_3(n) = 4n^2 + 2n$ sono considerate **asintoticamente equivalenti**, perché tutte crescono proporzionalmente al quadrato di $n$.
-In altre parole, le differenze dovute a costanti moltiplicative o a termini di grado inferiore diventano irrilevanti quando $n$ tende all’infinito.
+In altre parole, le differenze dovute a costanti moltiplicative o a termini di grado inferiore diventano irrilevanti quando $n$ tende all'infinito.
 
 Lo studio asintotico, infatti, **trascura costanti e termini meno significativi**, concentrandosi solo sul termine dominante, che determina il comportamento di crescita della funzione e quindi la classe di complessità dell’algoritmo.
 
 ### Valutazione complessità
 Regole per trovare la delimitazione superiore della complessità:
-1. **REGOLA 1**: Supponiamo che il programma sia composto da due parti P e Q da eseguire **sequenzialmente** e che i costi di P e Q siano:
+1. **Regola 1**: Supponiamo che il programma sia composto da due parti P e Q da eseguire **sequenzialmente** e che i costi di P e Q siano:
 			$S(n)=O(f(n))$ e $T(n)=O(g(n))$
 Il costo del programma è $O(max(f(n), g(n)))$
-2. **REGOLA 2**: La seconda regola ci permette di valutare il costo del programma quando esso richiede **più volte l'esecuzione di un insieme di istruzioni** o l'attivazione di una procedura.
+2. **Regola 2**: La seconda regola ci permette di valutare il costo del programma quando esso richiede **più volte l'esecuzione di un insieme di istruzioni** o l'attivazione di una procedura.
    Supponiamo che un programma richieda k volte l'esecuzione di una istruzione composta o l'attivazione di una procedura, e sia $f_{i}(n)$ il costo relativo all'esecuzione i-esima, i=1,2...k. Il costo complessivo del programma è pari a: $$O\left( \sum_{i} f_{i}(n) \right)$$
 
    L'***istruzione dominante*** ci permette di semplificare in modo drastico la valutazione della complessità di un programma. 
@@ -206,7 +206,7 @@ Il costo del programma è $O(max(f(n), g(n)))$
    Una **istruzione dominate viene eseguita un numero di volte proporzionale al costo di esecuzione di tutto l'algoritmo**. 
    È importante ricordare che in un programma più istruzioni possono essere dominanti ma può accadere che il programma non contenga istruzioni dominanti. 
 
-3. **REGOLA 3**: Supponiamo che un programma abbia una istruzione dominate che nel caso peggiore di input di dimensione $n$, viene eseguita $d(n)$ volte. La delimitazione superiore alla complessità del programma è $O(d(n))$ (in molti casi per individuare una istruzione dominante è sufficiente esaminare le **operazioni che sono contenute in cicli interni** del programma).
+3. **Regola 3**: Supponiamo che un programma abbia una istruzione dominate che nel caso peggiore di input di dimensione $n$, viene eseguita $d(n)$ volte. La delimitazione superiore alla complessità del programma è $O(d(n))$ (in molti casi per individuare una istruzione dominante è sufficiente esaminare le **operazioni che sono contenute in cicli interni** del programma).
    Ad esempio, nel caso della ricerca sequenziale considerata in un esempio precedente, è  possibile valutare il costo del programma mostrato osservando che l’istruzione {3} è dominante. Infatti essa viene eseguita, nel caso peggiore, n volte; questo è sufficiente per dire che il programma ha costo lineare. Osserviamo inoltre che il test {4} del ciclo repeat until viene eseguito nel caso peggiore n volte e, quindi, rappresenta un’altra istruzione dominante.
 
 ### Classi di complessità
