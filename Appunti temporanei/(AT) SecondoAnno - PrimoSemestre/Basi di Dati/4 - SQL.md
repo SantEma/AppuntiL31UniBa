@@ -249,7 +249,9 @@ L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito
 L'opzione $\text{restrict}$ è un opzione di default.
 
 Nel caso si specifichi l'opzione $\text{cascade}$ tutti gli oggetti specificati devono essere rimossi.
-Quando si rimuove uno schema non vuoto anche tutti gli oggetti che fanno parte 
+Nei diversi casi:
+- Quando si rimuove uno schema non vuoto anche tutti gli oggetti che fanno parte dello schema vengono eliminati
+- Rimuovendo un dominio che compare nelle definizioni di qualche attributo l'opzione fa si che il nome del dominio venga rimosso, ma gli attributi che sono stati definiti utilizzando quel dominio rimangano associati al dominio elementare
 ### Cataloghi relazionali
 [da completare]
 ## Interrogazioni in SQL
