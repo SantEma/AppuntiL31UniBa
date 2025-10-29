@@ -399,7 +399,8 @@ D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di def
 SQL esprime le interrogazioni in modo **dichiarativo**, ossia si specifica l'obbiettivo dell'interrogazione e non il modo in cui ottenerlo, seguendo quindi i principi del calcolo relazionale (contrapponendosi a quelli procedurali come l'algebra relazionale).
 Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (**query optimizer**), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
 In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità.
-### Interrogazioni semplici in SQL 
+### Interrogazioni semplici in SQL
+Prima di cominciare le interrogazioni, cominciamo con il definire che tabella 
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo della struttura essenziale:
 ```sql
 SELECT [DISTINCT] ListaAttributi <- Target list
