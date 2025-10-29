@@ -343,7 +343,7 @@ Non descriviamo né il nome né la struttura di tutte queste tabelle, ma forniam
   </tbody>
 </table>
 
-<table class="custom-table">
+<table>
   <caption>Figura 4.3 La descrizione riflessiva di COLUMNS.</caption>
   <thead>
     <tr>
@@ -406,6 +406,15 @@ SELECT [DISTINCT] ListaAttributi <- Target list
 FROM ListaTabelle <- clausola FROM
 [WHERE Condizione] <- clausola WHERE
 ```
+
+Una descrizione più precisa della sintassi è tale:
+$$
+\begin{aligned}
+&\text{select} \ AttrEspr[[\text{as}]Alias]\{,AttrEspr [[\text{as}]Alias]\} \\
+&\text{from} \ Tabella [[\text{as}]Alias] \{,Tabella [[\text{as}]Alias]\} \\
+&[\text{where} \ Condizione]
+\end{aligned}
+$$
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$, ottenendo come risultato una tabella con una riga per ogni riga prodotta dalla clausola $\text{FROM}$ e filtrata dalla clausola $\text{WHERE}$, le cui colonne si ottengono dalla valutazione delle espressioni 
 
