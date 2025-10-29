@@ -252,6 +252,9 @@ Nel caso si specifichi l'opzione $\text{cascade}$ tutti gli oggetti specificati 
 Nei diversi casi:
 - Quando si rimuove uno schema non vuoto anche tutti gli oggetti che fanno parte dello schema vengono eliminati
 - Rimuovendo un dominio che compare nelle definizioni di qualche attributo l'opzione fa si che il nome del dominio venga rimosso, ma gli attributi che sono stati definiti utilizzando quel dominio rimangano associati al dominio elementare
+- Quando si rimuove una tabella tutte le righe vengono perse, se la tabella poi compariva in qualche definizione di tabella o vista viene rimossa anche questa
+- Eliminando una vista che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
+Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
 ### Cataloghi relazionali
 [da completare]
 ## Interrogazioni in SQL
