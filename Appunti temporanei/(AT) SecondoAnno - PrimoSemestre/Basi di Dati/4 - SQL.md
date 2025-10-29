@@ -241,6 +241,15 @@ $$\begin{aligned}
 &\text{drop} \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
 & \quad \quad [\text{ restrict | cascade }]
 \end{aligned}$$
+L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
+- Uno schema non è rimosso se contiene tabelle o altri oggetti
+- Un dominio non è rimosso se appare in qualche definizione di tabella
+- Una tabella non è rimossa se possiede delle righe o se è presenta qualche definizione di tabella o vista 
+- Una vista non è rimossa se è utilizzata nella definizione di altra tabelle o viste.
+L'opzione $\text{restrict}$ è un opzione di default.
+
+Nel caso si specifichi l'opzione $\text{cascade}$ tutti gli oggetti specificati devono essere rimossi.
+Quando si rimuove uno schema non vuoto anche tutti gli oggetti che fanno parte 
 ### Cataloghi relazionali
 [da completare]
 ## Interrogazioni in SQL
