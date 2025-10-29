@@ -256,7 +256,138 @@ Nei diversi casi:
 - Eliminando una vista che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
 Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
 ### Cataloghi relazionali
-[da completare]
+Lo standard SQL-2 prevede per il dizionario dei dati una descrizione in due livelli. Il primo livello è quello del $DEFINITION\_SCHEMA$, costituito da un insieme di tabelle che contengono la descrizione di tutte le strutture della base di dati. Nello standard compare un insieme di tabelle di esempio che però non corrisponde a nessuna delle implementazioni di SQL, in quanto le tabelle forniscono una descrizione dei soli aspetti di un sistema di base di dati che vengono gestiti dallo standard SQL, tralasciando in particolare tutti i problemi di definizione delle strutture di memorizzazione che, pur se non presenti nello standard, costituiscono un componente fondamentale di uno schema. Le tabelle dello standard costituiscono quindi una traccia che potrebbe (ma non deve necessariamente) essere seguita dai sistemi.
+
+Il secondo componente dello standard è l'$INFORMATION\_SCHEMA$, un insieme di viste costruite sul $DEFINITION\_SCHEMA$ che invece fanno parte a pieno titolo dello standard e che costituiscono un'interfaccia verso il dizionario dei dati che deve essere garantita dai sistemi che vogliono essere conformi allo standard. L' $INFORMATION\_SCHEMA$ contiene viste come $TABLES$, $VIEWS$, $COLUMNS$, $DOMAINS$, $DOMAIN\_CONSTRAINTS$ e altre, per un totale di ventitré viste che descrivono la struttura della base di dati.
+
+Non descriviamo né il nome né la struttura di tutte queste tabelle, ma forniamo un semplice esempio del contenuto di queste viste. Si analizza il contenuto della vista $COLUMNS$ del catalogo. Le colonne di questa vista hanno il seguente significato: $Table\_Name$ rappresenta il nome della tabella; $Column\_Name$ è il nome dell'attributo; $Ordinal\_Position$ descrive la posizione dell'attributo nello schema; $Column\_Default$ specifica il valore di default per l'attributo; infine, $Is\_Nullable$ è un valore booleano che specifica se l'attributo può assumere il valore nullo.
+<table>
+  <caption>Figura 4.2 Una parte del contenuto della vista COLUMNS del dizionario dei dati.</caption>
+  <thead>
+    <tr>
+      <th>Table.Name</th>
+      <th>Column.Name</th>
+      <th>Ordinal.Position</th>
+      <th>Column.Default</th>
+      <th>Is.Nullable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Impiegato</td>
+      <td>Matricola</td>
+      <td>1</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Impiegato</td>
+      <td>Cognome</td>
+      <td>2</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Impiegato</td>
+      <td>Nome</td>
+      <td>3</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Impiegato</td>
+      <td>Dipart</td>
+      <td>4</td>
+      <td>NULL</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>Impiegato</td>
+      <td>Ufficio</td>
+      <td>5</td>
+      <td>NULL</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>Impiegato</td>
+      <td>Stipendio</td>
+      <td>6</td>
+      <td>0</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>Dipartimento</td>
+      <td>Nome</td>
+      <td>1</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Dipartimento</td>
+      <td>Indirizzo</td>
+      <td>2</td>
+      <td>NULL</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>Dipartimento</td>
+      <td>Città</td>
+      <td>3</td>
+      <td>NULL</td>
+      <td>Y</td>
+    </tr>
+  </tbody>
+</table>
+
+<table class="custom-table">
+  <caption>Figura 4.3 La descrizione riflessiva di COLUMNS.</caption>
+  <thead>
+    <tr>
+      <th>Table.Name</th>
+      <th>Column.Name</th>
+      <th>Ordinal.Position</th>
+      <th>Column.Default</th>
+      <th>Is.Nullable</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Columns</td>
+      <td>Table.Name</td>
+      <td>1</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>Column.Name</td>
+      <td>2</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>Ordinal.Position</td>
+      <td>3</td>
+      <td>NULL</td>
+      <td>N</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>Column_Default</td>
+      <td>4</td>
+      <td>NULL</td>
+      <td>Y</td>
+    </tr>
+    <tr>
+      <td>Columns</td>
+      <td>Is_Nullable</td>
+      <td>5</td>
+      <td>Y</td>
+      <td>N</td>
+    </tr>
+  </tbody>
+</table>
 ## Interrogazioni in SQL
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
 D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
