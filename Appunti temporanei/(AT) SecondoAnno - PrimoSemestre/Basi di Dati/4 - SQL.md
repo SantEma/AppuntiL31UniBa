@@ -440,7 +440,7 @@ Le operazioni più semplici si ottengono usando anche eventualmente le clausole:
 #### Clausola SELECT
 La clausola $\text{select}$ specifica gli elementi dello schema della tabella risultato.
 Come argomento della clausola $\text{select}$ può comparire il carattere speciali asterisco $*$ che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
- 
+Possono anche comparire generiche espressioni sul valore degli attributi di ciascuna riga selezionata 
 #### Clausola FROM
 ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
 La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ è:
