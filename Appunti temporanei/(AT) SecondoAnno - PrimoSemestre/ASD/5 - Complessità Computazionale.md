@@ -140,8 +140,8 @@ L'algoritmo scorre tutto l'array dall'inizio alla fine, confrontando ogni elemen
 	- *trovato*: variabile booleana per riferimento (output: `true` se l'elemento è trovato, altrimenti `false`)
 Descrizione: la procedura cerca l'elemento con chiave k. Se la ricerca ha successo, imposta `trovato` a `true`, altrimenti a `false`. È un approccio che non richiede l'array ordinato, ma può essere inefficiente per array grandi perché nel peggiore dei casi controlla tutti gli elementi. 
 
-Il **costo di esecuzione di un algoritmo** dipende dalla **posizione del particolare elemento** che si vuole individuare, se l'elemento cercato è il primo, allora si effettua solo un confronto (**CASO OTTIMO**), se l'elemento cercato è il secondo allora si effettuano due confronti e così via. 
-Il **CASO PEGGIORE** è costituito dalla ricerca dell'ultimo elemento o da una ricerca infruttuosa, perché in questo caso l'algoritmo esamina tutte le componenti dell'array ed esegue il ciclo $n$ volte. 
+Il **costo di esecuzione di un algoritmo** dipende dalla **posizione del particolare elemento** che si vuole individuare, se l'elemento cercato è il primo, allora si effettua solo un confronto (**Caso ottimo**), se l'elemento cercato è il secondo allora si effettuano due confronti e così via. 
+Il **caso peggiore** è costituito dalla ricerca dell'ultimo elemento o da una ricerca infruttuosa, perché in questo caso l'algoritmo esamina tutte le componenti dell'array ed esegue il ciclo $n$ volte. 
 
 **VALUTAZIONE DETTAGLIATA DEL COSTO PER LA RICERCA DELL'ULTIMO ELEMENTO**
 Assumiamo che l'elemento cercato sia l'ultimo (posizione $n$), quindi ricerca fruttuosa ma costosa.
@@ -156,7 +156,7 @@ Assumiamo che l'elemento cercato sia l'ultimo (posizione $n$), quindi ricerca fr
 - Nota: Il repeat-until esegue il corpo almeno una volta, e il test alla fine. Per $n$ elementi, il ciclo si ripete $n$ volte prima di uscire.
 E’ facile vedere che la stessa funzione esprime anche il costo del programma nel caso di ricerca infruttuosa.
 
-Se si vuole valutare il comportamento del programma nel **CASO MEDIO** è necessario distinguere il caso di ricerca con successo da quello di ricerca infruttuosa.
+Se si vuole valutare il comportamento del programma nel **caso medio** è necessario distinguere il caso di ricerca con successo da quello di ricerca infruttuosa.
 Nel caso di ricerca fruttuosa, **se si assume che tutti gli elementi dell'array possano essere ricercati con uguale probabilità pari a 1/n**, allora il programma richiede mediamente $(n+1)/2$ confronti. 
 Infatti se ricerchiamo l'i-esimo elemento si effettuano i confronti e quindi il numero di confronti medio è dato dalla formula probabilistica:
 $$\sum_{1\leq i\leq n} Prob(E(i)) i = \sum_{1\leq i\leq n}=\frac{n+1}{2}$$
@@ -165,13 +165,14 @@ Dove:
 - $i$: Numero di confronti necessari per trovare in posizione _i_.
 
 ## Focus 
-==La **complessità** di un algoritmo è funzione della **dimensione dei dati**, ovvero della mole dei dati del problema da risolvere. L’individuazione della dimensione dei dati è per lo più immediata.==
-Determinare la complessità in **tempo** (o in **spazio**) di un algoritmo significa determinare una **funzione di complessità $f(n)$** che fornisca la misura del tempo (o dello spazio di memoria occupato), al variare della dimensione dei dati $n$. Pertanto, **la dimensione dei dati  non è mai da considerare nell’individuazione della complessità ottima, media e pessima**.
+La **complessità** di un algoritmo è funzione della **dimensione dei dati**, ovvero della mole dei dati del problema da risolvere. L’individuazione della dimensione dei dati è per lo più immediata.
+
+Determinare la complessità in **tempo** (o in **spazio**) di un algoritmo significa determinare una **funzione di complessità $f(n)$** che fornisca la misura del tempo (o dello spazio di memoria occupato), al variare della dimensione dei dati $n$. Pertanto, **la dimensione dei dati  non è mai da considerare nell'individuazione della complessità ottima, media e pessima**.
 Le funzioni di complessità sono caratterizzate da due proprietà: 
 - Assumono solo **valori positivi**.
 - Sono **crescenti** rispetto alla dimensione dei dati.
 ### Comportamento asintotico
-Nel calcolo della complessità di un algoritmo non è necessario determinare con precisione la funzione che ne esprime il costo ma è sufficiente analizzarne il **comportamento asintotico**, ossia come varia quando le dimensioni dell’input tendono all’infinito. 
+Nel calcolo della complessità di un algoritmo non è necessario determinare con precisione la funzione che ne esprime il costo ma è sufficiente analizzarne il **comportamento asintotico**, ossia come varia quando le dimensioni dell’input tendono all'infinito. 
 In questa analisi si **trascurano le costanti moltiplicative e i termini additivi di ordine inferiore**, poiché hanno un impatto trascurabile al crescere di $n$.
 
 Due funzioni come $(3 + n)$ e $(100n + 3027)$ sono considerate equivalenti dal punto di vista asintotico, in quanto crescono entrambe proporzionalmente a $n$. Tuttavia, sebbene $(n + 3)$ rappresenti un costo inferiore rispetto a $(100n + 3027)$, ignorare completamente la costante moltiplicativa può risultare una semplificazione eccessiva in certi contesti.
