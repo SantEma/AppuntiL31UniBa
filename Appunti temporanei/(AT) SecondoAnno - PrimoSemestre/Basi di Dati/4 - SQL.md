@@ -233,9 +233,14 @@ $$\begin{aligned}
 &\text{drop column} \ NomeAttributo \rangle
 \end{aligned}$$
 Tramite $\text{alter domain}$ e $\text{alter table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
-Quando si definisce un nuovo vincolo 
+Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati già presenti, altrimenti l'inserimento viene rifiutato
 #### Drop
-[da completare]
+Mentre il comando $\text{alter}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{drop}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
+Il comando usa la seguente sintassi:
+$$\begin{aligned}
+&\text{drop} \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
+& \quad \quad [\text{ restrict | cascade }]
+\end{aligned}$$
 ### Cataloghi relazionali
 [da completare]
 ## Interrogazioni in SQL
