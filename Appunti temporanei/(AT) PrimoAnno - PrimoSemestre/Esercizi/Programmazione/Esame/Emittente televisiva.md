@@ -1,6 +1,0 @@
-Il programma deve gestire la programmazione settimanale di un emittente televisiva.
-L'emittente televisiva presenta una tabella sui programmi televisivi, ognuno dei quali contiene: codice del programma (si ipotizzi univoco per ognuno di loro), titolo, genere del programma e durata (si ipotizzi espressa in minuti).
-Il programma deve poter ricevere in input i dati per ogni programma, controllando la correttezza dei dati in base ai criteri, nel caso di un dato errato il programma deve prevedere un re-inserimento continuo fin quando l'utente non inserisce un dato corretto.
-Il programma deve poter permettere all'utente di cercare un programma previo inserimento del codice di quel determinato programma, dove si potranno avere due risposte, in caso di risposta positiva si mostrano i dati del programma, in caso di risposta negativa si informa l'utente che non esiste nessun programma con quel tipo di codice.
-Il programma infine deve poter permettere la ricerca di tutti i titoli dei programmi presenti nella categoria immessa dall'utente, dove, nel caso di risposta positiva, vanno a schermo tutti i titoli presenti nella categoria e, nel caso di risposta negativa, si notifica l'utente che nessun programma ha quel tipo di categoria associata.
-Si ipotizzi che i programmi televisivi massimi possibili siano 100 e che la durata di ogni programma non superi i 240 minuti

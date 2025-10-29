@@ -1,3 +1,0 @@
-## Analisi
-### Chiarifica
-## Dati
