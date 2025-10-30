@@ -58,7 +58,7 @@ Se l'opzione $with \ time \ zone$ è specificata allora risulta possibile accede
 Questa famiglia di domini permette di rappresentare intervalli di tempo (come la durata di un evento), la sintassi è:
 $$\text{interval} \  PrimaUnitàDiTempo [\text{to} \ UltimaUnitàdiTempo]$$
 PrimaUnitàDiTempo e UltimaUnitàDiTempo definiscono le unità di misure, dalla più precisa alla meno precisa, in questo modo si possono definire domini come $\text{interval year to month}$ per indicare per indicare che la durata di intervallo deve essere misurata in numero di anni e di mesi.
-Notiamo che comunque ci sono due insieme distintivi nelle unità di misura: $\text{year to month}$ e $\text{day to seconds}$, questo perchè non si possono paragonare per esempio giorni e mesi in modo esatto (un mese potrebbe avere dai 28 ai 31 giorni), rendendo difficile eventuali operazioni aritmetiche.
+Notiamo che comunque ci sono due insieme distintivi nelle unità di misura: $\text{year to month}$ e $\text{day to seconds}$, questo perché non si possono paragonare per esempio giorni e mesi in modo esatto (un mese potrebbe avere dai 28 ai 31 giorni), rendendo difficile eventuali operazioni aritmetiche.
 ### Definizioni di schema
 SQL consente la definizione di uno schema di base di dati come collezione di oggetti (tabelle, domini, viste etc.).
 Uno schema viene definito dalla seguente sintassi:
@@ -256,6 +256,10 @@ Nei diversi casi:
 - Eliminando una vista che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
 Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
 ## Interrogazioni in SQL
+Useremo per tutto questo capitolo le seguenti tabelle per gli esempi:
+![[Pasted image 20251030105223.png]]
+
+---
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
 D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
 ### Dichiaratività di SQL
@@ -263,7 +267,6 @@ SQL esprime le interrogazioni in modo **dichiarativo**, ossia si specifica l'obb
 Un interrogazione SQL per essere eseguita viene passata all'ottimizzatore di interrogazioni (**query optimizer**), un componente del DBMS che analizza interrogazione e formula a partire da quest'ultima un'interrogazione equivalente in calcolo relazionale.
 In generale esistono diversi modi per effettuare la stessa interrogazione, il programmatore però deve effettuare la scelta non basandosi sull'efficienza ma sulla leggibilità e modificabilità.
 ### Interrogazioni semplici in SQL
-Prima di cominciare le interrogazioni, cominciamo con il definire che tabella 
 Le operazioni di interrogazione base in SQL vengono specificate per mezzo della struttura essenziale:
 ```sql
 SELECT [DISTINCT] ListaAttributi <- Target list
