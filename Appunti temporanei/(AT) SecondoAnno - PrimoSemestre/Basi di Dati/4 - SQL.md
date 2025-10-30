@@ -283,6 +283,11 @@ $$
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$, ottenendo come risultato una tabella con una riga per ogni riga prodotta dalla clausola $\text{FROM}$ e filtrata dalla clausola $\text{WHERE}$, le cui colonne si ottengono dalla valutazione delle espressioni 
 
 Le operazioni più semplici si ottengono usando anche le clausole:
+- **Singola tabella**:
+```sql
+SELECT * 
+FROM Agenti
+```
 - **Selezione**: 
 ```sql
   SELECT * 
