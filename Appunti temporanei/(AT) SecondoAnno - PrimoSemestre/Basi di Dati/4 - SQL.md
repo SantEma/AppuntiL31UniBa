@@ -242,18 +242,18 @@ $$\begin{aligned}
 & \quad \quad [\text{ restrict | cascade }]
 \end{aligned}$$
 L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
-- Uno schema non è rimosso se contiene tabelle o altri oggetti
-- Un dominio non è rimosso se appare in qualche definizione di tabella
-- Una tabella non è rimossa se possiede delle righe o se è presenta qualche definizione di tabella o vista 
-- Una vista non è rimossa se è utilizzata nella definizione di altra tabelle o viste.
+- Uno **schema** non è rimosso se contiene tabelle o altri oggetti
+- Un **dominio** non è rimosso se appare in qualche definizione di tabella
+- Una **tabella** non è rimossa se possiede delle righe o se è presenta qualche definizione di tabella o vista 
+- Una **vista** non è rimossa se è utilizzata nella definizione di altra tabelle o viste.
 L'opzione $\text{restrict}$ è un opzione di default.
 
 Nel caso si specifichi l'opzione $\text{cascade}$ tutti gli oggetti specificati devono essere rimossi.
 Nei diversi casi:
-- Quando si rimuove uno schema non vuoto anche tutti gli oggetti che fanno parte dello schema vengono eliminati
-- Rimuovendo un dominio che compare nelle definizioni di qualche attributo l'opzione fa si che il nome del dominio venga rimosso, ma gli attributi che sono stati definiti utilizzando quel dominio rimangano associati al dominio elementare
-- Quando si rimuove una tabella tutte le righe vengono perse, se la tabella poi compariva in qualche definizione di tabella o vista viene rimossa anche questa
-- Eliminando una vista che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
+- Quando si rimuove uno **schema** non vuoto anche tutti gli oggetti che fanno parte dello schema vengono eliminati
+- Rimuovendo un **dominio** che compare nelle definizioni di qualche attributo l'opzione fa si che il nome del dominio venga rimosso, ma gli attributi che sono stati definiti utilizzando quel dominio rimangano associati al dominio elementare
+- Quando si rimuove una **tabella** tutte le righe vengono perse, se la tabella poi compariva in qualche definizione di tabella o vista viene rimossa anche questa
+- Eliminando una **vista** che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
 Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
 ## Interrogazioni in SQL
 Useremo per tutto questo capitolo le seguenti tabelle per gli esempi:
@@ -308,7 +308,7 @@ FROM Agenti
   FROM Clienti, Ordini
 ```
 #### Clausola SELECT
-La clausola $\text{select}$ specifica gli elementi dello schema della tabella risultato.
+La clausola $\text{SELECT}$ specifica gli elementi dello schema della tabella risultato.
 Come argomento della clausola $\text{select}$ può comparire il carattere speciali asterisco $*$ che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
 **Esempio**:
 ```sql
