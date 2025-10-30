@@ -282,7 +282,7 @@ $$
 
 Questa interrogazione quindi seleziona, tra le righe che appartengono al prodotto cartesiano delle tabelle elencate nella clausola $\text{FROM}$, quelle che soddisfano le condizioni in $\text{WHERE}$, ottenendo come risultato una tabella con una riga per ogni riga prodotta dalla clausola $\text{FROM}$ e filtrata dalla clausola $\text{WHERE}$, le cui colonne si ottengono dalla valutazione delle espressioni 
 
-Le operazioni più semplici si ottengono usando anche eventualmente le clausole:
+Le operazioni più semplici si ottengono usando anche le clausole:
 - **Selezione**: 
 ```sql
   SELECT * 
@@ -299,8 +299,6 @@ Le operazioni più semplici si ottengono usando anche eventualmente le clausole:
   SELECT * 
   FROM Clienti, Ordini
 ```
-
-
 #### Clausola SELECT
 La clausola $\text{select}$ specifica gli elementi dello schema della tabella risultato.
 Come argomento della clausola $\text{select}$ può comparire il carattere speciali asterisco $*$ che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
