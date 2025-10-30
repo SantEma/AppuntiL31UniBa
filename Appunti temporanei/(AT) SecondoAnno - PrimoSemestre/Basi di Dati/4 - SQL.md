@@ -1,6 +1,6 @@
 SQL è il linguaggio di riferimento per le basi di dati relazionali.
 Nel tempo la Structured Query Language ha subito diverse iterazioni e standardizzazioni, fino ad arrivare ad SQL-3 ma l'utilizzo di riferimento in questo caso sarà SQL-2
-## Definizione dei dati in SQL
+## Definizione dei dati in SQL (Creazione di una base di dati)
 Prima di cominciare il capitolo, qualche accenno sulla sintassi che verrà utilizzata:
 - Le **parentesi angolari** $\langle \rangle$ permettono di isolare un termine della sintassi
 - Le **parentesi quadre** indicano che il termine all'interno è opzionale, ossia può non comparire oppure comparire una sola volta
@@ -63,11 +63,11 @@ Notiamo che comunque ci sono due insieme distintivi nelle unità di misura: $\te
 SQL consente la definizione di uno schema di base di dati come collezione di oggetti (tabelle, domini, viste etc.).
 Uno schema viene definito dalla seguente sintassi:
 $$\begin{aligned}
-&\text{create schema}[NomeSchema][[authorization]\text{Autorizzazione}] \\
+&\text{create schema} \ [NomeSchema] \ [[authorization]\text{Autorizzazione}] \\
 &\text{\{DefinizioneElementoSchema\}}
 \end{aligned}$$
-$Autorizzazione$ rappresenta il nome dell'utente proprietario dello schema, se omesso si assume che chi abbia lanciato il comando sia il proprietario, $NomeSchema$ viene poi rinominato con lo stesso nome del proprietario.
-Dopo il comando $\text{create schema}$ compaiono le definizioni dei suoi componenti, ma non è necessario che questa definizione avvenga contemporaneamente alla crazione dello schema.
+$\text{Autorizzazione}$ rappresenta il nome dell'utente proprietario dello schema, se omesso si assume che chi abbia lanciato il comando sia il proprietario, $NomeSchema$ viene poi rinominato con lo stesso nome del proprietario.
+Dopo il comando $\text{create schema}$ compaiono le definizioni dei suoi componenti, ma non è necessario che questa definizione avvenga contemporaneamente alla creazione dello schema.
 ### Definizioni di tabelle
 Una tabella SQL è costituita da una collezione ordinata di attributi e da un insieme (eventualmente vuoto) di vincoli.
 Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite la seguente istruzione SQL:
@@ -81,7 +81,7 @@ create table Dipartimento
 ```
 Definendolo quindi con uno schema più generale:
 $$\begin{aligned}
-&\text{create table}NomeTabella \\
+&\text{create table} \ NomeTabella \\
 &(Nomeattributo \ Dominio [ValoreDiDefault][Vincoli]) \\
 & \quad \{,NomeAttributo Dominio[ValoreDiDefault][Vincoli]\} \\
 &AltriVincoli
@@ -94,7 +94,7 @@ Dopo la definizione degli attributi si possono definire i vincoli che coinvolgon
 ### Definizione di domini
 Nella definizione delle tabelle si può fare riferimento ai domini predefiniti del linguaggio o a domini definiti dall'utente a partire da quelli predefiniti, infatti proprio da questi è possibile definirli in questa maniera:
 $$ \begin{aligned}
-&\text{create domain}NomeDominio \ as \ TipoDiDato \\
+&\text{create domain} \ NomeDominio \ as \ TipoDiDato \\
 &\quad\quad\quad\quad\quad\quad \ [ValoreDiDefault] \\
 &\quad\quad\quad\quad\quad\quad \ [Vincolo] \\
 \end{aligned}
@@ -238,7 +238,7 @@ Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati gi�
 Mentre il comando $\text{alter}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{drop}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
-&\text{drop} \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
+&\text{drop} \ \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
 & \quad \quad [\text{ restrict | cascade }]
 \end{aligned}$$
 L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
@@ -255,143 +255,6 @@ Nei diversi casi:
 - Quando si rimuove una tabella tutte le righe vengono perse, se la tabella poi compariva in qualche definizione di tabella o vista viene rimossa anche questa
 - Eliminando una vista che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
 Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
-### Cataloghi relazionali
-Lo standard SQL-2 prevede per il dizionario dei dati una descrizione in due livelli:
-Il primo livello è quello del $DEFINITION\_SCHEMA$, costituito da un insieme di tabelle che contengono la descrizione di tutte le strutture della base di dati. 
-Nello standard compare un insieme di tabelle di esempio che però non corrisponde a nessuna delle implementazioni di SQL, in quanto le tabelle forniscono una descrizione dei soli aspetti di un sistema di base di dati che vengono gestiti dallo standard SQL, tralasciando in particolare tutti i problemi di definizione delle strutture di memorizzazione che, pur se non presenti nello standard, costituiscono un componente fondamentale di uno schema. 
-Le tabelle dello standard costituiscono quindi una traccia che potrebbe (ma non deve necessariamente) essere seguita dai sistemi.
-
-Il secondo componente dello standard è l'$INFORMATION\_SCHEMA$, un insieme di viste costruite sul $DEFINITION\_SCHEMA$ che invece fanno parte a pieno titolo dello standard e che costituiscono un'interfaccia verso il dizionario dei dati che deve essere garantita dai sistemi che vogliono essere conformi allo standard. 
-L' $INFORMATION\_SCHEMA$ contiene viste come $TABLES$, $VIEWS$, $COLUMNS$, $DOMAINS$, $DOMAIN\_CONSTRAINTS$ e altre, per un totale di ventitré viste che descrivono la struttura della base di dati.
-
-Non descriviamo né il nome né la struttura di tutte queste tabelle, ma forniamo un semplice esempio del contenuto di queste viste. Si analizza il contenuto della vista $COLUMNS$ del catalogo. Le colonne di questa vista hanno il seguente significato: $Table\_Name$ rappresenta il nome della tabella; $Column\_Name$ è il nome dell'attributo; $Ordinal\_Position$ descrive la posizione dell'attributo nello schema; $Column\_Default$ specifica il valore di default per l'attributo; infine, $Is\_Nullable$ è un valore booleano che specifica se l'attributo può assumere il valore nullo.
-<table>
-  <caption>Figura 4.2 Una parte del contenuto della vista COLUMNS del dizionario dei dati.</caption>
-  <thead>
-    <tr>
-      <th>Table.Name</th>
-      <th>Column.Name</th>
-      <th>Ordinal.Position</th>
-      <th>Column.Default</th>
-      <th>Is.Nullable</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Impiegato</td>
-      <td>Matricola</td>
-      <td>1</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Impiegato</td>
-      <td>Cognome</td>
-      <td>2</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Impiegato</td>
-      <td>Nome</td>
-      <td>3</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Impiegato</td>
-      <td>Dipart</td>
-      <td>4</td>
-      <td>NULL</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Impiegato</td>
-      <td>Ufficio</td>
-      <td>5</td>
-      <td>NULL</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Impiegato</td>
-      <td>Stipendio</td>
-      <td>6</td>
-      <td>0</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Dipartimento</td>
-      <td>Nome</td>
-      <td>1</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Dipartimento</td>
-      <td>Indirizzo</td>
-      <td>2</td>
-      <td>NULL</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Dipartimento</td>
-      <td>Città</td>
-      <td>3</td>
-      <td>NULL</td>
-      <td>Y</td>
-    </tr>
-  </tbody>
-</table>
-
-<table>
-  <caption>Figura 4.3 La descrizione riflessiva di COLUMNS.</caption>
-  <thead>
-    <tr>
-      <th>Table.Name</th>
-      <th>Column.Name</th>
-      <th>Ordinal.Position</th>
-      <th>Column.Default</th>
-      <th>Is.Nullable</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <td>Columns</td>
-      <td>Table.Name</td>
-      <td>1</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Columns</td>
-      <td>Column.Name</td>
-      <td>2</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Columns</td>
-      <td>Ordinal.Position</td>
-      <td>3</td>
-      <td>NULL</td>
-      <td>N</td>
-    </tr>
-    <tr>
-      <td>Columns</td>
-      <td>Column_Default</td>
-      <td>4</td>
-      <td>NULL</td>
-      <td>Y</td>
-    </tr>
-    <tr>
-      <td>Columns</td>
-      <td>Is_Nullable</td>
-      <td>5</td>
-      <td>Y</td>
-      <td>N</td>
-    </tr>
-  </tbody>
-</table>
 ## Interrogazioni in SQL
 La parte di SQL dedicata alla formulazione di interrogazioni fa parte del DML;
 D'altronde la separazione tra DML e DDL non è rigida e parte dei servizi di definizione di interrogazioni vengono riutilizzati nella specifica di alcuni aspetti avanzati dello schema
