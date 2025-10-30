@@ -327,58 +327,16 @@ WHERE Cognome="Bianchi"
 Risultato:
 
 #### Clausola FROM
-ListaTabelle può essere un’unica tabella su cui fare una selezione e una proiezione, oppure una serie di tabelle separate da virgole, sul cui prodotto cartesiano viene fatta una selezione e/o una proiezione
-La sintassi completa dell’argomento ListaTabelle della clausola $\text{FROM}$ è:
-![[Pasted image 20251021151510.png]]
-##### Interrogazioni con uso di join
-Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle le quali si vuole accedere.
-Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni della clausola $\text{WHERE}$, quindi un join può essere specificato indicando in modo esplicito le condizioni che esprimono il legame tra diverse tabelle.
-La giunzione di default in questo caso è il **theta-join**, specificato mediante gli operatori.
-Esempio:
-```sql
-SELECT Agenti.Supervisore, Ordini.Ammontare 
-FROM Agenti JOIN Ordini ON 
-	Agenti.Supervisore=Ordini.CodiceAgente
-```
-La giunzione esterna è comunque realizzata specificando vari operatori come:
-$\text{LEFT|RIGHT|FULL[OUTER]JOIN}$
-a seconda di quale giunzione si voglia effettuare:
-```sql
-SELECT Agenti.CodiceAgente, Ordini.Ammontare 
-FROM Agenti NATURAL JOIN Ordini
-```
+[da completare]
 #### Clausola WHERE
-La clausola $\text{WHERE}$ ammette come argomento un espressione booleana costruita combinando predicati semplici con gli operatori $\text{AND,OR,NOT}$.
-Ciascun predicato utilizza gli operatori $<>,<,>,\leq,\geq$ per confrontare un da un alto un'espressione costruita a partire dai valori degli attributi per riga e dall'altro lato un valore costante o un altra espressione.
-Quando i predicati sono separati dall'operatore $\text{AND}$ saranno selezionate solo le righe per cui tutti i predicati sono veri;
-Quando i predicati sono separati dall'operatore $\text{OR}$ saranno selezionate solo le righe per cui uno dei predicati risulti vero;
-Il predicato $\text{NOT}$ è unario e inverte i valori di verità del predicato.
-
-Il risultato di un predicato può essere $TRUE (T), FALSE (F)$ o $UNKNOWN (U)$.
-Qui una tabella di esempio per quanto riguarda questi operatori booleani applicati ai predicati(con logica a tre valori):
-
-| p   | q   | p AND q | p OR q | NOT p |
-| --- | --- | ------- | ------ | ----- |
-| T   | T   | T       | T      | F     |
-| T   | F   | F       | T      | F     |
-| T   | U   | U       | T      | F     |
-| F   | F   | F       | F      | T     |
-| F   | U   | F       | U      | T     |
-| U   | U   | U       | U      | U     |
-La sintassi della clausola $\text{WHERE}$ completa è la seguente:
-![[Pasted image 20251022094906.png]]
-
+[da completare]
 #### Gestione dei valori nulli
-Un valore nullo in un attributo può significare che tale non è applicabile, oppure che sia applicabile ma non conosciuto, oppure che non si sappia quale delle due situazioni valga.
-Per selezionare i termini con valori nulli SQL fornisce il predicato $\text{IS NULL}$, con sintassi:
-$$\text{Attributo is [not] NULL}$$
-Questo predicato risulta vero soltanto se il valore è veramente null, altrimenti si ha la sua negazione.
-Nell'SQL-2 ci si potrebbe aspettare
-[da finire]
-
+[da completare]
 #### Interpretazione formale delle interrogazioni in SQL
 [da completare]
 #### Duplicati
+[da completare]
+#### Join interni ed esterni
 [da completare]
 #### Uso di variabili
 [da completare]
