@@ -274,9 +274,9 @@ FROM ListaTabelle <- clausola FROM
 Una descrizione più precisa della sintassi è tale:
 $$
 \begin{aligned}
-&\text{select} \ AttrEspr[[\text{as}]Alias]\{,AttrEspr [[\text{as}]Alias]\} \\
-&\text{from} \ Tabella [[\text{as}]Alias] \{,Tabella [[\text{as}]Alias]\} \\
-&[\text{where} \ Condizione]
+&\text{SELECT} \ AttrEspr[[\text{as}]Alias]\{,AttrEspr [[\text{as}]Alias]\} \\
+&\text{FROM} \ Tabella [[\text{as}]Alias] \{,Tabella [[\text{as}]Alias]\} \\
+&[\text{WHERE} \ Condizione]
 \end{aligned}
 $$
 
