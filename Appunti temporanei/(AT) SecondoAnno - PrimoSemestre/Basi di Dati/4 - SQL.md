@@ -113,7 +113,7 @@ $$default \langle GenericoValore | user| null \rangle$$
 Quando un attributo o un dominio è definito a a partire da un altro a cui è stato già specificato un valore di default automaticamente quello ha la maggiore priorità, diventando valore effettivo. 
 ### Vincoli intrarelazionali
 Sia nella definizione di domini che di tabelle è possibile definire dei vincoli, ovvero delle proprietà che devono essere verificate da ogni istanza della base di dati.
-Ricordiamo che i vincoli intrarelazionali coinvolgono una sola relazione.
+Ricordiamo che i vincoli intrarelazionali coinvolgono una sola relazione su un unico attributo.
 #### Not Null
 Il valore nullo come sappiamo è un particolare valore che indica l'assenza di informazioni, ma SQL non permette la distinzione dei diversi casi, per questo bisogna avere delle soluzioni ad-hoc, come l'introduzione di altri attributi o l'uso di particolare codifica.
 Il vincolo $\text{not null}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
