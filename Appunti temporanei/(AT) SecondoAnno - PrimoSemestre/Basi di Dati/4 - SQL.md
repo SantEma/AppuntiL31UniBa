@@ -325,9 +325,11 @@ FROM Impiegato
 WHERE Cognome="Bianchi"
 ```
 Risultato:
-
+![[Pasted image 20251103094158.png]]
 #### Clausola FROM
-[da completare]
+Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle che si vuole accedere.
+Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni contenute nella clausola $\text{WHERE}$
+La clausola $\text{FROM}$ 
 #### Clausola WHERE
 [da completare]
 #### Gestione dei valori nulli
