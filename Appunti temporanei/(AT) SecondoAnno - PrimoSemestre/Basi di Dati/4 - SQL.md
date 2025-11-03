@@ -309,7 +309,7 @@ FROM Agenti
 ```
 #### Clausola SELECT
 La clausola $\text{SELECT}$ specifica gli elementi dello schema della tabella risultato.
-Come argomento della clausola $\text{select}$ può comparire il carattere speciali asterisco $*$ che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
+Come argomento della clausola $\text{SELECT}$ può comparire il carattere speciale asterisco ($*$) che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
 **Esempio**:
 ```sql
 SELECT *
