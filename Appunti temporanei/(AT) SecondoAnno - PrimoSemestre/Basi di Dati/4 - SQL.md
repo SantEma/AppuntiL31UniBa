@@ -356,9 +356,17 @@ Un valore nullo in un attributo può significare che un certo attributo non è a
 Per selezionare i termini con i valori nulli SQL fornisce il predicato $\text{IS NULL}$, la cui sintassi è:
 $$Attributo \text{ is [not] null}$$
 Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{not null}$ è la sua negazione.
-Ricordiamo che da SQL-2 viene utilizzata la logica a tre valori che 
+Ricordiamo che da SQL-2 viene utilizzata la logica a tre valori che prevede il valore $\text{unknown}$
 #### Interpretazione formale delle interrogazioni in SQL
-[da completare]
+È possibile costruire una corrispondenza tra interrogazioni SQL ed equivalenti interrogazioni espresse in algebra relazionale (ricordiamo cosa viene esplicitato nel paragrafo [[#Dichiaratività di SQL]]).
+Data un interrogazione SQL nella sua formula più semplice:
+$$\begin{aligned}
+&\text{SELECT} \ T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm} \\
+&\text{FROM} \ Tabella_{1} \ T_{1}, \dots , Tabella_{n} \ T_{n} \\
+&\text{WHERE} \ Condizione
+\end{aligned}$$
+si può costruire un'interrogazione equivalente in algebra relazionale usando la seguente traduzione (in cui per semplicità omettiamo le ridenominazioni che ci permettono di considerare tutti i join come prodotti cartesiani):
+$$\Pi_{T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm}} ()$$
 #### Duplicati
 [da completare]
 #### Join interni ed esterni
