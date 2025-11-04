@@ -368,7 +368,8 @@ $$\begin{aligned}
 si può costruire un'interrogazione equivalente in algebra relazionale usando la seguente traduzione (in cui per semplicità omettiamo le ridenominazioni che ci permettono di considerare tutti i join come prodotti cartesiani):
 $$\Pi_{T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm}} (\sigma_{Condizione}(TABELLA_{1}\rhd\lhd \dots \rhd\lhd TABELLA_{n}))$$
 Per interrogazioni più complicate la forma di conversione non è più applicabile.
-Una condizione essenziale per l'esecuzione di queste traduzioni è però che l'interrogazioni di partenza non usi funzionalità di SQL non presenti nell'algebra e calcolo relazionale come la valutazione degli operatori aggregati
+Una condizione essenziale per l'esecuzione di queste traduzioni è però che l'interrogazioni di partenza non usi funzionalità di SQL non presenti nell'algebra e calcolo relazionale come la valutazione degli [[#Operatori Aggregati]].
+I risultati delle interrogazioni SQL differiscono anche dalle espressioni dell'algebra e del calcolo relazionale nella gestione dei duplicati
 #### Duplicati
 [da completare]
 #### Join interni ed esterni
