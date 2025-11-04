@@ -373,9 +373,26 @@ I risultati delle interrogazioni SQL differiscono anche dalle espressioni dell'a
 #### Duplicati
 Una differenza significativa tra SQL e algebra relazionale è data dalla gestione di duplicati:
 Mentre in algebra relazionale una tabella viene vista come una relazione dal punto di vista matematico e quindi come un insieme di elementi (tuple) diversi tra loro, in SQL si possono avere in una tabella più righe uguali (dette **duplicati**).
-Per emulare il comportamento dell'algebra relazionale sarebbe necessario effettuare l'eliminazione dei duplicati tutte le volte che si eseguono operazioni di proiezione, ma la rimozione è costosa e spesso non necessaria, per questo in SQL si è stabilito di permettere la presenza di duplicati all'interno delle tabelle, lasciando che sia l'interrogazione ad escluderli esplicitamente
+Per emulare il comportamento dell'algebra relazionale sarebbe necessario effettuare l'eliminazione dei duplicati tutte le volte che si eseguono operazioni di proiezione, ma la rimozione è costosa e spesso non necessaria, per questo in SQL si è stabilito di permettere la presenza di duplicati all'interno delle tabelle, lasciando che sia l'interrogazione ad escluderli esplicitamente.
+L'eliminazione dei duplicati viene esplicitata con la parola chiave $\text{DISTINCT}$ posta dopo $\text{SELECT}$
 #### Join interni ed esterni
-[da completare]
+Una sintassi alternativa per la specifica dei join permette di distinguere, tra le condizioni che compaiono nell'interrogazione, quelle che rappresentano condizioni di join e quelle che rappresentano condizioni di selezioni sulle righe.
+La sintassi proposta è la seguente:
+$$
+\begin{aligned}
+&\text{SELECT} \ AttrEspr[[\text{as}]Alias]\{,AttrEspr [[\text{as}]Alias]\} \\
+&\text{FROM} \ Tabella [[\text{as}]Alias] \\
+&\{[TipoJoin]\ \text{JOIN} \ Tabella [[\text{as}]Alias] \text{on} CondizioneDiJoin\} \\
+&[\text{WHERE} \  AltraCondizione]
+\end{aligned}
+$$
+Mediante questa sintassi la condizione di join non compare come argomento della clausola $\text{WHERE}$, ma viene spostata nella clasuola $\text{FROM}$, associata alle tabelle che vengono coinvolte nel join.
+Il parametro $TipoJoin$ specifica quale tipo di join usare, tra cui:
+- $\text{inner}$, di default
+- $\text{right outer}$
+- $\text{left outer}$
+- $\text{full outer}$
+L'inner join rappresenta il tradizionale tetha-join dell'algebra relazionale
 #### Uso di variabili
 [da completare]
 #### Ordinamento
