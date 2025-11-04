@@ -393,6 +393,9 @@ Il parametro $TipoJoin$ specifica quale tipo di join usare, tra cui:
 - $\text{left outer}$
 - $\text{full outer}$
 L'inner join rappresenta il tradizionale tetha-join dell'algebra relazionale
+
+Con il join interno le righe che vengono coinvolte nel join sono in generale un sottoinsieme delle righe di ciascuna tabella, può infatti capitare che alcune righe non vengano considerate in quanto non vengano rispettate le condizioni;
+Questo comportamento 
 #### Uso di variabili
 [da completare]
 #### Ordinamento
