@@ -366,7 +366,9 @@ $$\begin{aligned}
 &\text{WHERE} \ Condizione
 \end{aligned}$$
 si può costruire un'interrogazione equivalente in algebra relazionale usando la seguente traduzione (in cui per semplicità omettiamo le ridenominazioni che ci permettono di considerare tutti i join come prodotti cartesiani):
-$$\Pi_{T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm}} ()$$
+$$\Pi_{T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm}} (\sigma_{Condizione}(TABELLA_{1}\rhd\lhd \dots \rhd\lhd TABELLA_{n}))$$
+Per interrogazioni più complicate la forma di conversione non è più applicabile.
+Una condizione essenziale per l'esecuzione di queste traduzioni è però che l'interrogazioni di partenza non usi funzionalità di SQL non presenti nell'algebra e calcolo relazionale come la valutazione degli operatori aggregati
 #### Duplicati
 [da completare]
 #### Join interni ed esterni
@@ -375,3 +377,4 @@ $$\Pi_{T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm}} ()$$
 [da completare]
 #### Ordinamento
 [da completare]
+### Operatori Aggregati
