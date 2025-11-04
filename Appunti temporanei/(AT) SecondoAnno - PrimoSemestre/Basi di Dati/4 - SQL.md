@@ -371,7 +371,9 @@ Per interrogazioni più complicate la forma di conversione non è più applicabi
 Una condizione essenziale per l'esecuzione di queste traduzioni è però che l'interrogazioni di partenza non usi funzionalità di SQL non presenti nell'algebra e calcolo relazionale come la valutazione degli [[#Operatori Aggregati]].
 I risultati delle interrogazioni SQL differiscono anche dalle espressioni dell'algebra e del calcolo relazionale nella gestione dei duplicati
 #### Duplicati
-[da completare]
+Una differenza significativa tra SQL e algebra relazionale è data dalla gestione di duplicati:
+Mentre in algebra relazionale una tabella viene vista come una relazione dal punto di vista matematico e quindi come un insieme di elementi (tuple) diversi tra loro, in SQL si possono avere in una tabella più righe uguali (dette **duplicati**).
+Per emulare il comportamento dell'algebra relazionale sarebbe necessario effettuare l'eliminazione dei duplicati tutte le volte che si eseguono operazioni di proiezione, ma la rimozione è costosa e spesso non necessaria, per questo in SQL si è stabilito di permettere la presenza di duplicati all'interno delle tabelle, lasciando che sia l'interrogazione ad escluderli esplicitamente
 #### Join interni ed esterni
 [da completare]
 #### Uso di variabili
