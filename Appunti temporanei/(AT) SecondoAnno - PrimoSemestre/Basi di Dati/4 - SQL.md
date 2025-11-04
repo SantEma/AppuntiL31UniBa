@@ -403,7 +403,39 @@ Esistono poi tre variante dei join esterni:
 
 Normalmente il join naturale non è consigliato, dato che può introdurre dei rischi nelle applicazioni in quanto il suo comportamento può maturare profondamente al variare dello schema delle tabelle
 #### Uso di variabili
+Nelle interrogazioni SQL è possibile associare un nome alternativo, detto **alias**, alle tabelle che compaiono come argomento della clausola $\text{FROM}$. 
+Il nome viene usato per fare riferimento alla tabella nel contesto dell'interrogazione. 
+Questa funzionalità può essere sfruttata per fare riferimento a una tabella in modo compatto, ricorrendo a brevi alias ed evitando così di scrivere per esteso il nome della tabella tutte le volte che ne viene richiesto l'uso, ma ci sono però altre ragioni per usare gli alias;
+Come prima cosa, utilizzando gli alias è possibile fare accesso più volte alla stessa tabella, come avviene nel calcolo relazionale quando si usano più variabili associate alla stessa tabella e in modo simile all'uso dell'operatore di ridenominazione $\rho$ dell'algebra relazionale. Tutte le volte che si introduce un alias per una tabella si dichiara in effetti una variabile che rappresenta le righe della tabella di cui è alias. 
+Quando la tabella compare una sola volta in un'interrogazione, non c'è differenza tra l'interpretare l'alias come uno pseudonimo o come una nuova variabile, quando compare invece più volte è necessario considerare l'alias come una nuova variabile.
 
+**Esempio:**
+```sql
+select I1.Cognome, I1.Nome
+from Impiegato I1, Impiegato I2
+where I1.Cognome = I2.Cognome and
+      I1.Nome <> I2.Nome and
+      I2.Dipart = 'Produzione'
+```
 #### Ordinamento
 [da completare]
 ### Operatori Aggregati
+[da completare]
+### Interrogazioni con raggruppamento
+[da completare]
+#### Predicati sui gruppi
+[da completare]
+### Interrogazioni di tipo insiemistico
+[da completare]
+### Interrogazioni nidificate
+[da completare]
+#### Interrogazioni nidificate complesse
+[da completare]
+## Modifica dei dati in SQL
+[da completare]
+### Inserimento
+[da completare]
+### Cancellazione
+[da completare]
+### Modifica
+[da completare]
