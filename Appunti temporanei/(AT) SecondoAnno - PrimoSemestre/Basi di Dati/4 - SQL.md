@@ -355,7 +355,7 @@ Un confronto come $\text{LIKE 'ab\%ba\_'}$ sarà perciò soddisfatto da una qual
 Un valore nullo in un attributo può significare che un certo attributo non è applicabile, o che il valore è applicabile ma non conosciuto, oppure che non si conosca quale delle due situazioni sia applicabile.
 Per selezionare i termini con i valori nulli SQL fornisce il predicato $\text{IS NULL}$, la cui sintassi è:
 $$Attributo \text{ is [not] null}$$
-Il predicato risulta vero solo se l'attributo ha valore nullo
+Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{not null}$ è la sua negazione
 #### Interpretazione formale delle interrogazioni in SQL
 [da completare]
 #### Duplicati
