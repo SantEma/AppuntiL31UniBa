@@ -328,12 +328,34 @@ Risultato:
 ![[Pasted image 20251103094158.png]]
 #### Clausola FROM
 Quando si desidera formulare un'interrogazione che coinvolge righe appartenenti a più di una tabella si pone come argomento della clausola $\text{FROM}$ l'insieme di tabelle che si vuole accedere.
-Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni contenute nella clausola $\text{WHERE}$
-La clausola $\text{FROM}$ 
+Sul prodotto cartesiano delle tabelle elencate verranno applicate le condizioni contenute nella clausola $\text{WHERE}$, quindi un join può essere specificato in modo esplicito indicando le condizioni che esprimono il legame tra le diverse tabelle
+
+**Esempio**:
+```sql
+SELECT Impiegato.Nome, Impiegato.Cognome, Dipartimento.Città
+FROM Impiegato, Dipartimento
+WHERE Impiegato.Dipart = Dipartimento.Nome
+```
+
+È necessario utilizzare l'operatore punto "$.$" per specificare il nome della tabella quando le tabelle presenti possiedono più attributi con lo stesso nome, qualora poi non ci siano ambiguità è un ridondante se utilizzato.
 #### Clausola WHERE
-[da completare]
+La clausola $\text{WHERE}$ ammette come argomento un'espressione booleana costruita combinando predicati semplici con gli operatori $\text{AND,OR,NOT}$;
+Ciascun predicato semplice usa gli operatori classici come $<,>,<>,=,\leq,\geq$ per confrontare da un lato un'espressione costruita a partire dai valori degli attributi per la riga, e dall'altro lato un valore costante o un'altra espressione.
+
+**Esempio:**
+```sql
+SELECT Nome, Cognome
+FROM Impiegato
+WHERE Ufficio=20 AND Dipart='Amministrazione'
+```
+
+Oltre ai normali predicati di confronto relazionali, SQL mette a disposizione un operatore $\text{LIKE}$ per il confronto delle stringhe, che permette di effettuare confronti con stringhe in cui compaiono caratteri speciali come $\_$ e $\%$, il primo rappresenta nel confronto un carattere arbitrario, il secondo una stringa di un numero arbitrario (anche eventualmente nullo).
+Un confronto come $\text{LIKE 'ab\%ba\_'}$ sarà perciò soddisfatto da una qualsiasi stringa di caratteri che inizia con $\text{ab}$ e che ha la coppia di caratteri $\text{ba}$ prima dell'ultima posizione (come $\text{abcdedcbac}$)
 #### Gestione dei valori nulli
-[da completare]
+Un valore nullo in un attributo può significare che un certo attributo non è applicabile, o che il valore è applicabile ma non conosciuto, oppure che non si conosca quale delle due situazioni sia applicabile.
+Per selezionare i termini con i valori nulli SQL fornisce il predicato $\text{IS NULL}$, la cui sintassi è:
+$$Attributo \text{ is [not] null}$$
+Il predicato risulta vero solo se l'attributo ha valore nullo
 #### Interpretazione formale delle interrogazioni in SQL
 [da completare]
 #### Duplicati
