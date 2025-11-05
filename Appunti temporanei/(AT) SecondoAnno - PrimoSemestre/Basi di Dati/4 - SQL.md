@@ -438,9 +438,6 @@ Nell'algebra relazionale ogni condizione viene valutata su una signola tupla all
 SQL mette a disposizione 5 operatori:
 $$\text{COUNT,SUM,MAX,MIN,AVG}$$
 
-
-
-
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
