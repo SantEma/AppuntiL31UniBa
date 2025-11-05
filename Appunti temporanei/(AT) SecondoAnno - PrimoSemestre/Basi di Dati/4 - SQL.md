@@ -467,6 +467,7 @@ FROM (Impiegato)
 GROUP BY Dipart
 ```
 
+
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
