@@ -418,7 +418,7 @@ where I1.Cognome = I2.Cognome and
       I2.Dipart = 'Produzione'
 ```
 #### Ordinamento
-[da completare]
+
 ### Operatori Aggregati
 [da completare]
 ### Interrogazioni con raggruppamento
