@@ -418,7 +418,21 @@ where I1.Cognome = I2.Cognome and
       I2.Dipart = 'Produzione'
 ```
 #### Ordinamento
+SQL permette di specificare un ordinamento delle righe del risultato di un'interrogazione tramite la clausola $\text{ORDER BY}$, con la quale si chiude l'interrogazione.
+La sintassi è la seguente:
+$$\begin{aligned}
+&\text{order by} AttrDiOrdinamento \ \text{[asc|desc]} \\
+&\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[asc|desc]}\}
+\end{aligned}$$
+Le righe vengono ordinate in base al primo attributo nell'elenco, per le righe che hanno lo stesso valore del primo attributo si considerano i valori degli attributi successivi in sequenza.
+L'ordine su ciascun attributo può essere ascendente o discendente in base al qualificatore utilizzato, se omesso viene usato un ordinamento ascendente
 
+**Esempio**:
+```sql
+SELECT *
+FROM Automobile
+ORDER BY Marca desc, Modello
+```
 ### Operatori Aggregati
 [da completare]
 ### Interrogazioni con raggruppamento
