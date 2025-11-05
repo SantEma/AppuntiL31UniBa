@@ -434,7 +434,8 @@ FROM Automobile
 ORDER BY Marca desc, Modello
 ```
 ### Operatori Aggregati
-
+Rispetto all'algebra relazionale, SQL permette di valutare delle proprietà che dipendono da un insieme di tuple;
+Tramite l'operatore aggregato di conteggio $\text{COUNT}$ possiamo per esempio contare tutti gli 
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
