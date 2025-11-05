@@ -434,7 +434,7 @@ FROM Automobile
 ORDER BY Marca desc, Modello
 ```
 ### Operatori Aggregati
-[da completare]
+
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
