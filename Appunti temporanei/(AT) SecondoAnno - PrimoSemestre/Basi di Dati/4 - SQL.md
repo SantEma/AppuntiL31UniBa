@@ -444,7 +444,7 @@ $$\begin{aligned}
 &\text{count} (\langle *|[\text{distinct}|\text{|all}] \ ListaAttributi)
 \end{aligned}
 $$
-La prima opzione (\*) restituisce il numero di righe, $\text{distinct}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$, $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
+La prima opzione (\*) restituisce il numero di righe, $\text{distinct}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
 **Esempio:**
 ```sql
 SELECT COUNT(DISTINCT Stipendio)
