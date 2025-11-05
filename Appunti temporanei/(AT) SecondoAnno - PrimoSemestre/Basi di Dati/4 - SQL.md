@@ -453,7 +453,12 @@ FROM Impiegato
 
 Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{distinct}$ e $\text{all}$.
 Le funzioni aggregate $\text{SUM}$ e $\text{AVG}$ ammettono come argomento solo espressioni che rappresentano valori numerici o valori di tempo.
-Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo 
+Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo
+La sintassi è la seguente:
+$$\langle \text{sum | max | min | avg} \ ([\text{distinct| all}]AttrEspr)$$
+Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
+
+
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
