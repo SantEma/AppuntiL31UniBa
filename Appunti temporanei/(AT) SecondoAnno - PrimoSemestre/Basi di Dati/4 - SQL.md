@@ -457,10 +457,9 @@ Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia def
 La sintassi è la seguente:
 $$\langle \text{sum | max | min | avg} \ ([\text{distinct| all}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
-
-
 ### Interrogazioni con raggruppamento
-[da completare]
+SQL mette a disposizione la clausola $\text{group by}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
+La clausola ammette come argomento un insieme di attributi e 
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
