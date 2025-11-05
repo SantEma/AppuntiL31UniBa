@@ -459,7 +459,14 @@ $$\langle \text{sum | max | min | avg} \ ([\text{distinct| all}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
 ### Interrogazioni con raggruppamento
 SQL mette a disposizione la clausola $\text{group by}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
-La clausola ammette come argomento un insieme di attributi e 
+La clausola ammette come argomento un insieme di attributi e l'interrogazione raggrupperà le righe che possiedono gli stessi valori per questo insieme di attributi.
+**Esempio**:
+```sql
+SELECT Dipart, SUM(Stipendio)
+FROM (Impiegato)
+GROUP BY Dipart
+```
+
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
