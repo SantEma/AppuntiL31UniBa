@@ -475,7 +475,7 @@ Il risultato dell'interrogazione è costituito da una tabella con righe che cont
 La sintassi SQL prevede che la clausola $\text{GROUP BY}$ in un interrogazione possa comparire come argomento di la clausola $\text{SELECT}$ soltanto se viene utilizzato lo stesso sottoinsieme degli attributi
 #### Predicati sui gruppi
 Si potrebbe voler prendere in considerazione solo i sottoinsiemi che soddisfano determinate condizioni, nel caso questo sia verificabile per singole righe allora basta porre gli opportuni predicati come argomento della clausola $\text{WHERE}$, altrimenti sarà necessario usare il costrutto $\text{HAVING}$:
-La clausola $\text{HAVING}$ descrive le condizioni che si devono applicare al termine dell'esecuzione di un'interrogazione che fa uso della clausola $\text{GROUP BY}$
+La clausola $\text{HAVING}$ descrive le condizioni che si devono applicare al termine dell'esecuzione di un'interrogazione che fa uso della clausola $\text{GROUP BY}$, e ogni sottoinsieme di righe costruito dalla $\text{GROUP BY}$ fa parte del risultato dell'interrogazione solo se il predicato argomento di $\text{HAVING}$ risulta soddisfatto
 ### Interrogazioni di tipo insiemistico
 [da completare]
 ### Interrogazioni nidificate
