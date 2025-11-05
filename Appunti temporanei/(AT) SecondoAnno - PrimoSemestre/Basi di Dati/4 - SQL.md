@@ -467,7 +467,7 @@ FROM (Impiegato)
 GROUP BY Dipart
 ```
 
-
+L'interrogazione viene eseguita come se la clausola $\text{GROUP BY}$ non esistesse, selezionando gli attributi che compaiono nella clausola o all'interno dell'espressione argomento dell'operatore aggregato.
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
