@@ -434,7 +434,7 @@ FROM Automobile
 ORDER BY Marca desc, Modello
 ```
 ### Operatori Aggregati
-Nell'algebra relazionale ogni condizione viene valutata su una signola tupla alla volta in modo indipendente, SQL  invece permette di valutare delle proprietà che dipendono da un insieme di tuple.
+Nell'algebra relazionale ogni condizione viene valutata su una signola tupla alla volta in modo indipendente, SQL invece permette di valutare delle proprietà che dipendono da un insieme di tuple.
 SQL mette a disposizione 5 operatori:
 $$\text{COUNT,SUM,MAX,MIN,AVG}$$
 
