@@ -444,6 +444,16 @@ $$\begin{aligned}
 &\text{count} (\langle *|[\text{distinct}|\text{|all}] \ ListaAttributi)
 \end{aligned}
 $$
+La prima opzione (\*) restituisce il numero di righe, $\text{distinct}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$, $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
+**Esempio:**
+```sql
+SELECT COUNT(DISTINCT Stipendio)
+FROM Impiegato
+```
+
+Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{distinct}$ e $\text{all}$.
+Le funzioni aggregate $\text{SUM}$ e $\text{AVG}$ ammettono come argomento solo espressioni che rappresentano valori numerici o valori di tempo.
+Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo 
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
