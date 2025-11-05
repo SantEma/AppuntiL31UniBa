@@ -437,7 +437,13 @@ ORDER BY Marca desc, Modello
 Nell'algebra relazionale ogni condizione viene valutata su una signola tupla alla volta in modo indipendente, SQL invece permette di valutare delle proprietà che dipendono da un insieme di tuple.
 SQL mette a disposizione 5 operatori:
 $$\text{COUNT,SUM,MAX,MIN,AVG}$$
+Gli operatori aggregati vengono gestiti come un'estensione delle normali interrogazioni, considerando prima le parti $\text{FROM}$ e $\text{WHERE}$, per poi applicare l'operatore alla tabella contenente il risultato dell'interrogazione.
 
+L'operatore $\text{COUNT}$ usa la seguente sintassi:
+$$\begin{aligned}
+&\text{count} (\langle *|[\text{distinct}|\text{|all}] \ ListaAttributi)
+\end{aligned}
+$$
 ### Interrogazioni con raggruppamento
 [da completare]
 #### Predicati sui gruppi
