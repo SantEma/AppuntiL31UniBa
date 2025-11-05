@@ -458,7 +458,7 @@ La sintassi è la seguente:
 $$\langle \text{sum | max | min | avg} \ ([\text{distinct| all}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
 ### Interrogazioni con raggruppamento
-SQL mette a disposizione la clausola $\text{group by}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
+SQL mette a disposizione la clausola $\text{GROUP BY}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
 La clausola ammette come argomento un insieme di attributi e l'interrogazione raggrupperà le righe che possiedono gli stessi valori per questo insieme di attributi.
 **Esempio**:
 ```sql
@@ -468,7 +468,8 @@ GROUP BY Dipart
 ```
 
 L'interrogazione viene eseguita prima come se la clausola $\text{GROUP BY}$ non esistesse, selezionando gli attributi che compaiono nella clausola o all'interno dell'espressione argomento dell'operatore aggregato;
-La tabella ottenuta poi viene analizzata, dividendo le righe in insiemi caratterizzati 
+La tabella ottenuta poi viene analizzata, dividendo le righe in insiemi caratterizzati dallo stesso valore degli attributi che compaiono come argomento della clausola.
+Dopo che le righe son state raggruppate in sottoinsiemi, l'operatore aggregato viene applicato
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
