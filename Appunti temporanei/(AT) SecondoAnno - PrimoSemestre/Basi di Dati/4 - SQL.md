@@ -469,7 +469,8 @@ GROUP BY Dipart
 
 L'interrogazione viene eseguita prima come se la clausola $\text{GROUP BY}$ non esistesse, selezionando gli attributi che compaiono nella clausola o all'interno dell'espressione argomento dell'operatore aggregato;
 La tabella ottenuta poi viene analizzata, dividendo le righe in insiemi caratterizzati dallo stesso valore degli attributi che compaiono come argomento della clausola.
-Dopo che le righe son state raggruppate in sottoinsiemi, l'operatore aggregato viene applicato
+Dopo che le righe son state raggruppate in sottoinsiemi, l'operatore aggregato viene applicato separatamente su ogni sottoinsieme;
+Il risultato dell'interrogazione è costituito dalle
 #### Predicati sui gruppi
 [da completare]
 ### Interrogazioni di tipo insiemistico
