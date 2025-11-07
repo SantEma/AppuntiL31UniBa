@@ -488,7 +488,8 @@ La sintassi permette anche la definizione che presentano la clausola $\text{HAVI
 Questa clausola permette l'utilizzo di espressioni booleane su predicati semplici (cioè i confronti tra il risultato della valutazione di un operatore aggregato e una generica espressione).
 Sintatticamente nella clausola è ammessa anche la presenza diretta degli attributi argomento di $\text{GROUP BY}$, ma è preferibile raccogliere tutte le condizioni su questi attributi nell'ambito della clausola $\text{WHERE}$.
 
-Per sapere quali predicati di un interrogazione che fa uso di raggruppamento vanno dati come argomento a $\text{WHERE}$ rispetto ad $\text{HAVING}$ basta rispettare il seguente criterio
+Per sapere quali predicati di un interrogazione che fa uso di raggruppamento vanno dati come argomento a $\text{WHERE}$ rispetto ad $\text{HAVING}$ basta rispettare il seguente criterio:
+Solo i predicati in cui compaiono operatori aggregati devono essere argomento della clausola $\text{HAVING}$
 ### Interrogazioni di tipo insiemistico
 [da completare]
 ### Interrogazioni nidificate
