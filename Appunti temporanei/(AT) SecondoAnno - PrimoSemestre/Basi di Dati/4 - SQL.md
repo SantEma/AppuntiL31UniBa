@@ -507,7 +507,7 @@ Gli operatori insiemistici, al contrario del resto del linguaggio, assumo come d
 Qualora si voglia adottare una diversa interpretazione degli operatori sarà sufficiente usare la parola chiave $\text{ALL}$.\
 ### Interrogazioni nidificate
 [da completare]
-## Modifica dei dati in SQL
+## Modifica dei dati in SQLRidenominazione
 [da completare]
 ### Inserimento
 [da completare]
