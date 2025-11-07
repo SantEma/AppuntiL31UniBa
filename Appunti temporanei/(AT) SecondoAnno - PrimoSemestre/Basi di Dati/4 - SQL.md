@@ -504,10 +504,10 @@ Gli operatori insiemistici, al contrario del resto del linguaggio, assumo come d
 1. L'eliminazione dei duplicati rispetta molto meglio il tipico significato di questi operatori
 2. L'esecuzione di queste operazioni (in particolare differenza e intersezione) richiede di effettuare un'analisi delle righe che rende molto limitato il costo aggiuntivo dell'eliminazione dei duplicati
 
-Qualora si voglia adottare una diversa interpretazione degli operatori sarà sufficiente usare la parola chiave $\text{ALL}$.\
+Qualora si voglia adottare una diversa interpretazione degli operatori sarà sufficiente usare la parola chiave $\text{ALL}$.
 ### Interrogazioni nidificate
 [da completare]
-## Modifica dei dati in SQLRidenominazione
+## Modifica dei dati in SQL
 [da completare]
 ### Inserimento
 [da completare]
