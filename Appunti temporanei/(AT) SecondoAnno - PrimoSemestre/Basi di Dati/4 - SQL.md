@@ -476,6 +476,15 @@ La sintassi SQL prevede che la clausola $\text{GROUP BY}$ in un interrogazione p
 #### Predicati sui gruppi
 Si potrebbe voler prendere in considerazione solo i sottoinsiemi che soddisfano determinate condizioni, nel caso questo sia verificabile per singole righe allora basta porre gli opportuni predicati come argomento della clausola $\text{WHERE}$, altrimenti sarà necessario usare il costrutto $\text{HAVING}$:
 La clausola $\text{HAVING}$ descrive le condizioni che si devono applicare al termine dell'esecuzione di un'interrogazione che fa uso della clausola $\text{GROUP BY}$, e ogni sottoinsieme di righe costruito dalla $\text{GROUP BY}$ fa parte del risultato dell'interrogazione solo se il predicato argomento di $\text{HAVING}$ risulta soddisfatto
+**Esempio**:
+```sql
+SELECT Dipart, SUM(Stipendio) AS SommaStipendi
+FROM Impiegato
+GROUP BY Dipart
+HAVING SUM(Stipendio)>100
+```
+
+La sintassi permette anche la definizione che presentano la clausola $\text{HAVING}$ senza una corrispondente clausola $\text{GROUP BY}$, in questo caso l'intero insieme di righe è trattato come unico raggruppamento, ma si ha un campo limitato di applicabilità, poichè se la condizione non vien soddisfatta il risultato sarà vuoto 
 ### Interrogazioni di tipo insiemistico
 [da completare]
 ### Interrogazioni nidificate
