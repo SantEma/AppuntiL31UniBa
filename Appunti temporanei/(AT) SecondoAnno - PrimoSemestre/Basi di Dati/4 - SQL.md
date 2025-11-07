@@ -491,10 +491,12 @@ Sintatticamente nella clausola è ammessa anche la presenza diretta degli attrib
 Per sapere quali predicati di un interrogazione che fa uso di raggruppamento vanno dati come argomento a $\text{WHERE}$ rispetto ad $\text{HAVING}$ basta rispettare il seguente criterio:
 Solo i predicati in cui compaiono operatori aggregati devono essere argomento della clausola $\text{HAVING}$
 ### Interrogazioni di tipo insiemistico
-[da completare]
+SQL mette a disposizione degli operatori insiemistici, simili a quelli dell'algebra relazionale, tra cui:
+- $\text{UNION}$, unione
+- $\text{INTERSECT}$, intersezione
+- $\text{EXCEPT}$, chiamato anche $\text{MINUS}$
+
 ### Interrogazioni nidificate
-[da completare]
-#### Interrogazioni nidificate complesse
 [da completare]
 ## Modifica dei dati in SQL
 [da completare]
