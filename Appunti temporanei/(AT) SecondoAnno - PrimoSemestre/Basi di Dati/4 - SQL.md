@@ -484,9 +484,9 @@ GROUP BY Dipart
 HAVING SUM(Stipendio)>100
 ```
 
-La sintassi permette anche la definizione che presentano la clausola $\text{HAVING}$ senza una corrispondente clausola $\text{GROUP BY}$, in questo caso l'intero insieme di righe è trattato come unico raggruppamento, ma si ha un campo limitato di applicabilità, poichè se la condizione non vien soddisfatta il risultato sarà vuoto.
+La sintassi permette anche la definizione che presentano la clausola $\text{HAVING}$ senza una corrispondente clausola $\text{GROUP BY}$, in questo caso l'intero insieme di righe è trattato come unico raggruppamento, ma si ha un campo limitato di applicabilità, poiché se la condizione non vien soddisfatta il risultato sarà vuoto.
 Questa clausola permette l'utilizzo di espressioni booleane su predicati semplici (cioè i confronti tra il risultato della valutazione di un operatore aggregato e una generica espressione).
-Per non co
+Sintatt
 ### Interrogazioni di tipo insiemistico
 [da completare]
 ### Interrogazioni nidificate
