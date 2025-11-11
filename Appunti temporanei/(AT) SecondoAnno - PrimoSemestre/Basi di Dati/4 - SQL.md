@@ -506,7 +506,7 @@ Gli operatori insiemistici, al contrario del resto del linguaggio, assumo come d
 
 Qualora si voglia adottare una diversa interpretazione degli operatori sarà sufficiente usare la parola chiave $\text{ALL}$.
 ### Interrogazioni nidificate
-[da completare]
+SQL ammette anche l'uso di predicati con una struttura più complessa rispetto a quelli di semplice confronto, in cui si confronta un valore (ottenuto come risultato di una espressione valutata sulla singola riga) con il risultato 
 ## Modifica dei dati in SQL
 [da completare]
 ### Inserimento
