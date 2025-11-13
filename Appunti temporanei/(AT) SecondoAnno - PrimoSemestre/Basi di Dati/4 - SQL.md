@@ -508,10 +508,31 @@ Qualora si voglia adottare una diversa interpretazione degli operatori sarà suf
 ### Interrogazioni nidificate
 SQL ammette anche l'uso di predicati con una struttura più complessa rispetto a quelli di semplice confronto, in cui si confronta un valore (ottenuto come risultato di una espressione valutata sulla singola riga) con il risultato di un'interrogazione SQL.
 L'interrogazione che viene usata per il confronto viene definita direttamente nel predicato interno alla clausola $\text{WHERE}$, $\text{FROM}$ o $\text{SELECT}$, per questo si dicono interrogazioni nidificate.
+Nel caso più tipico, l'espressione più semplice è il confronto di un nome di un attributo.
+[da finire]
 ## Modifica dei dati in SQL
-[da completare]
+La parte di Data Manipulation Language comprende i comandi per interrogare e modificare il contenuto della basi di dati, andremo a vedere esattamente questi
 ### Inserimento
-[da completare]
+Il comando di inserimento di righe nella base di dati presenta due sintassi, la prima permette di inserire le singole righe all'interno delle tabelle:
+$$\begin{aligned}
+&\text{INSERT INTO} \ NomeTabella \ [ListaAttributi] \\
+&\quad\quad\quad\quad\quad \langle \text{values}(Listavalori)|\rangle \\ 
+&\quad\quad\quad\quad\quad SelectSQL
+\end{aligned}
+$$
+L'argomento della clausola $\text{values}$ rappresenta esplicitamente i valori degli attributi della singola riga.
+Questa prima forma è usata principalmente all'interno dei programmi per riempire una tabella con i dati forniti direttamente dagli utenti.
+
+La seconda forma permette di inserire insieme di righe, estratti dal contenuto della base di dati:
+$$\begin{aligned}
+&\text{INSERT INTO} \ NomeTabella \ \\
+&\quad\quad\quad\quad\quad \langle \text{SELECT values}(Listavalori)|\rangle \\ 
+&\quad\quad\quad\quad\quad \text{FROM Tabella} \\
+&\quad\quad\quad\quad\quad \text{WHERE Condizione} \\ 
+\end{aligned}
+$$
+Se in un inserimento non vengono specificati i valori di tutti gli attributi della tabella, agli attributi mancanti viene assegnato quello di default, in assenza di questo avviene uno nullo;
+Se esiste il vincolo $\text{NOT NULL}$ quest viene violato e non avviene l'inserimento.
 ### Cancellazione
 [da completare]
 ### Modifica
