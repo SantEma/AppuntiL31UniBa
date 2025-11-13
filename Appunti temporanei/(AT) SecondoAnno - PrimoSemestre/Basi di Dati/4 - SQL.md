@@ -441,7 +441,7 @@ Gli operatori aggregati vengono gestiti come un'estensione delle normali interro
 
 L'operatore $\text{COUNT}$ usa la seguente sintassi:
 $$\begin{aligned}
-&\text{count} (\langle *|[\text{distinct}|\text{|all}] \ ListaAttributi)
+&\text{COUNT} (\langle *|[\text{distinct}|\text{|all}] \ ListaAttributi)
 \end{aligned}
 $$
 La prima opzione (\*) restituisce il numero di righe, $\text{distinct}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
@@ -455,7 +455,7 @@ Gli altri 4 operatori operatori aggregati invece ammettono come argomento un att
 Le funzioni aggregate $\text{SUM}$ e $\text{AVG}$ ammettono come argomento solo espressioni che rappresentano valori numerici o valori di tempo.
 Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo
 La sintassi è la seguente:
-$$\langle \text{sum | max | min | avg} \ ([\text{distinct| all}]AttrEspr)$$
+$$\langle \text{SUM | MAX | MIN | AVG} \ ([\text{distinct| all}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
 ### Interrogazioni con raggruppamento
 SQL mette a disposizione la clausola $\text{GROUP BY}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
@@ -534,9 +534,24 @@ $$
 Se in un inserimento non vengono specificati i valori di tutti gli attributi della tabella, agli attributi mancanti viene assegnato quello di default, in assenza di questo avviene uno nullo;
 Se esiste il vincolo $\text{NOT NULL}$ quest viene violato e non avviene l'inserimento.
 ### Cancellazione
-[da completare]
+Il comando $\text{DELETE}$ elimina le righe delle tabelle della base di dati,seguendo la seguente sintassi:
+$$\begin{aligned}
+&\text{DELETE FROM} \ NomeTabella \ [\text{WHERE} \ Condizione] \\ 
+\end{aligned}
+$$
+Quando il comando $\text{WHERE}$ non ha argomenti il comando elimina tutte le righe della tabella.
+Nel caso esista un vincolo di integrità referenziale con politica $\text{cascade}$, allora la cancellazione apporta anche la cancellazione di righe appartenenti ad altra tabelle
+$$\begin{aligned}
+&\text{UPDATE} \ NomeTabella \ \\
+&\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{null} | \text{default} \rangle \\ 
+&\quad\quad\quad\quad \{, Attributo =\langle Espressione \ | \ SelectSQL | \text{null} | \text{default} \rangle \} \\
+&\quad\quad\quad\quad\quad [\text{WHERE} \ Condizione] \\ 
+\end{aligned}
+$$
+Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condizione sia soddisfatta e si modificano tutte le righe
 ### Modifica
-[da completare]
+Il comando $\text{UPDATE}$ permette di aggiornare uno o più attributi delle righe di una tabella che soddisfano eventualmente una condizione:
+
 ## Caratteristiche evolute di SQL
 ### Vincoli di integrità generici
 [da completare]
