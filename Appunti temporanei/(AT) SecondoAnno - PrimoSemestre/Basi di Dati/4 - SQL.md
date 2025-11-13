@@ -548,7 +548,7 @@ $$\begin{aligned}
 &\quad\quad\quad\quad\quad [\text{WHERE} \ Condizione] \\ 
 \end{aligned}
 $$
-Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condizione sia soddisfatta e si modificano tutte le righe
+Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condizione sia soddisfatta e si modificano tutte le righe 
 ### Modifica
 Il comando $\text{UPDATE}$ permette di aggiornare uno o più attributi delle righe di una tabella che soddisfano eventualmente una condizione:
 
