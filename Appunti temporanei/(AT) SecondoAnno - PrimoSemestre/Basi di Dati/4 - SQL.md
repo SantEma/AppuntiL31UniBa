@@ -510,6 +510,14 @@ SQL consente di scrivere interrogazioni che presentano al loro interno altre int
 La nidificazione può avvenire nelle 3 clausole di interrogazione e consiste nel confrontare un valore con una collezione di valori (ossia il risultato di un interrogazione).
 Per risolvere il problema della disomogeneità dei termini di confronto, SQL ha esteso i normali operatori di confronto con due altre opzioni: $\text{ALL}$ e $\text{ANY}$;
 Il confronto ANY è vero se il primo operando sta nella relazione specificata con almeno un elemento del secondo operando, ALL ugualmente ma tutti gli elementi devono stare nella relazione.
+Esempio di utilizzo:
+```sql
+SELECT *
+FROM Impiegato
+WHERE Dipart = ANY (SELECT Nome
+					FROM Dipartimento
+					WHERE CIttà='Firenze')
+```
 ## Modifica dei dati in SQL
 La parte di Data Manipulation Language comprende i comandi per interrogare e modificare il contenuto della basi di dati, andremo a vedere esattamente questi
 ### Inserimento
