@@ -14,29 +14,29 @@ SQL mette a disposizione alcune famiglie di domini elementari, da cui si possono
 Il dominio $\text{character}$ permette di rappresentare singoli caratteri oppure stringhe.
 La lunghezza può essere fissa o variabile, in caso di quelle variabile si esplicita la lunghezza massima, oltre a poter prevedere una specifica della famiglia dei caratteri di default (latino, cirillico etc.).
 La sintassi prevista è:$$\begin{align}  \\
-&\text{character [varying]} [(Lunghezza)] \\
-&[\text{character set}] NomeFamigliaCaratteri
+&\text{CHARACTER [varying]} [(Lunghezza)] \\
+&[\text{CHARACTER SET}] NomeFamigliaCaratteri
 \end{align}$$
 #### Tipi numerici esatti
 Questa famiglia contiene i domini che permettono di rappresentare valori esatti, interi o con una parte decimale di lunghezza prefissata.
 La sintassi prevista è:
 $$\begin{aligned}
-&\text{numeric}[(Precisione[,Scala])] \\
-&\text{decimal}[(Precisione[,Scala])] \\
-&\text{integer}\ \\
-&\text{smallint}
+&\text{NUMERIC}[(Precisione[,Scala])] \\
+&\text{DECIMAL}[(Precisione[,Scala])] \\
+&\text{INTEGER}\ \\
+&\text{SMALLINT}
 \end{aligned}$$
-I numeri $\text{numeric}$ e $\text{decimal}$ rappresentano tutti i numeri in base decimale, mentre il parametro $Precisione$ specifica il numero di cifre significative (con un dominio $\text{decimal}(4)$ si possono rappresentare per esempio valori da -9999 a +9999).
+I numeri $\text{NUMERIC}$ e $\text{DECIMAL}$ rappresentano tutti i numeri in base decimale, mentre il parametro $Precisione$ specifica il numero di cifre significative (con un dominio $\text{DECIMAL}(4)$ si possono rappresentare per esempio valori da -9999 a +9999).
 Il parametro $\text{Scala}$ si specifica la scala di rappresentazione (ossia quante cifre compaiono dopo la virgola nella scala di rappresentazione, tutto ciò sempre specificando la precisione), se non specificata è sempre 0.
-La differenza tra $\text{decimal}$ e $\text{numeric}$ consiste nella precisione, per il primo ci deve essere un requisito minimo, per il secondo invece si rappresenta un valore esatto.
-Nel caso in cui non interessi la parte frazionaria e quindi la precisione della rappresentazione decimale, allora si possono usare i domini $\text{integer}$ e $\text{smallint}$, che si basano sulla rappresentazione interna binaria del calcolatore (la precisione è lasciata all'implementazione)
+La differenza tra $\text{DECIMAL}$ e $\text{NUMERIC}$ consiste nella precisione, per il primo ci deve essere un requisito minimo, per il secondo invece si rappresenta un valore esatto.
+Nel caso in cui non interessi la parte frazionaria e quindi la precisione della rappresentazione decimale, allora si possono usare i domini $\text{INTEGER}$ e $\text{SMALLINT}$, che si basano sulla rappresentazione interna binaria del calcolatore (la precisione è lasciata all'implementazione)
 Qualora comunque la precisione non sia specificata, il sistema usa un valore caratteristico della implementazione.
 #### Tipi numerici approssimativi
 Per la rappresentazione di valori reali approssimativi SQL fornisce i seguenti tipi:
 $$\begin{aligned}
-&\text{float}[(Precisione)] \\
-&\text{real} \\
-&\text{double precision} \\
+&\text{FLOAT}[(Precisione)] \\
+&\text{REAL} \\
+&\text{DOUBLE PRECISION} \\
 \end{aligned}$$
 Tutti questi domini ovviamente permettono di descrivere numeri approssimati mediante rappresentazione con virgola mobile, in cui ciascun numero corrisponde ad una coppia di valori: mantissa e esponente.
 Per ottenere un valore approssimativo del numero reale si moltiplica la mantissa per la potenza di 10 con il grado dell'esponente (esempio: $1,7 \times 10^{15}$ rappresenta $0.17E16$, oppure $-4\times 10^{-7}$ rappresenta $-0.4E-6$).
@@ -45,9 +45,9 @@ La precisione del dominio $\text{real}$ è fissa, quella del dominio $\text{doub
 #### Istanti temporali
 Per la rappresentazione di istanti di tempo in SQL usiamo questa famiglia di domini con i seguenti tipi:
 $$\begin{aligned}
-&\text{date} \\
-&\text{time}[(Precisione)] [with\  time \ zone] \\
-&\text{timestamp}[(Precisione)] [with\  time \ zone] \\
+&\text{DATE} \\
+&\text{TIME}[(Precisione)] [with\  time \ zone] \\
+&\text{TIMESTAMP}[(Precisione)] [with\  time \ zone] \\
 \end{aligned}$$
 Ciascuno di questi domini è strutturato e decomponibile con un insieme di campi:
 - Il dominio $\text{date}$ ammette i campi $\text{year, month, day}$
@@ -56,23 +56,23 @@ Ciascuno di questi domini è strutturato e decomponibile con un insieme di campi
 Se l'opzione $with \ time \ zone$ è specificata allora risulta possibile accedere a due campi, $\text{timezone \_\ hour}$ e $\text{timezone \_\ minute}$, che rappresentano la differenza tra il fuso orario locale e quello standard (standard UTC)
 #### Intervalli temporali
 Questa famiglia di domini permette di rappresentare intervalli di tempo (come la durata di un evento), la sintassi è:
-$$\text{interval} \  PrimaUnitàDiTempo [\text{to} \ UltimaUnitàdiTempo]$$
+$$\text{INTERVAL} \  PrimaUnitàDiTempo [\text{to} \ UltimaUnitàdiTempo]$$
 PrimaUnitàDiTempo e UltimaUnitàDiTempo definiscono le unità di misure, dalla più precisa alla meno precisa, in questo modo si possono definire domini come $\text{interval year to month}$ per indicare per indicare che la durata di intervallo deve essere misurata in numero di anni e di mesi.
 Notiamo che comunque ci sono due insieme distintivi nelle unità di misura: $\text{year to month}$ e $\text{day to seconds}$, questo perché non si possono paragonare per esempio giorni e mesi in modo esatto (un mese potrebbe avere dai 28 ai 31 giorni), rendendo difficile eventuali operazioni aritmetiche.
 ### Definizioni di schema
 SQL consente la definizione di uno schema di base di dati come collezione di oggetti (tabelle, domini, viste etc.).
 Uno schema viene definito dalla seguente sintassi:
 $$\begin{aligned}
-&\text{create schema} \ [NomeSchema] \ [[authorization]\text{Autorizzazione}] \\
+&\text{CREATE SCHEMA} \ [NomeSchema] \ [[authorization]\text{Autorizzazione}] \\
 &\text{\{DefinizioneElementoSchema\}}
 \end{aligned}$$
 $\text{Autorizzazione}$ rappresenta il nome dell'utente proprietario dello schema, se omesso si assume che chi abbia lanciato il comando sia il proprietario, $NomeSchema$ viene poi rinominato con lo stesso nome del proprietario.
-Dopo il comando $\text{create schema}$ compaiono le definizioni dei suoi componenti, ma non è necessario che questa definizione avvenga contemporaneamente alla creazione dello schema.
+Dopo il comando $\text{CREATE SCHEMA}$ compaiono le definizioni dei suoi componenti, ma non è necessario che questa definizione avvenga contemporaneamente alla creazione dello schema.
 ### Definizioni di tabelle
 Una tabella SQL è costituita da una collezione ordinata di attributi e da un insieme (eventualmente vuoto) di vincoli.
 Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite la seguente istruzione SQL:
 ```sql
-create table Dipartimento
+CREATE TABLE Dipartimento
 (
 	Nome varchar(20) primary key,
 	Indirizzo varchar(50),
@@ -81,7 +81,7 @@ create table Dipartimento
 ```
 Definendolo quindi con uno schema più generale:
 $$\begin{aligned}
-&\text{create table} \ NomeTabella \\
+&\text{CREATE TABLE} \ NomeTabella \\
 &(Nomeattributo \ Dominio [ValoreDiDefault][Vincoli]) \\
 & \quad \{,NomeAttributo Dominio[ValoreDiDefault][Vincoli]\} \\
 &AltriVincoli
@@ -94,7 +94,7 @@ Dopo la definizione degli attributi si possono definire i vincoli che coinvolgon
 ### Definizione di domini
 Nella definizione delle tabelle si può fare riferimento ai domini predefiniti del linguaggio o a domini definiti dall'utente a partire da quelli predefiniti, infatti proprio da questi è possibile definirli in questa maniera:
 $$ \begin{aligned}
-&\text{create domain} \ NomeDominio \ as \ TipoDiDato \\
+&\text{CREATE DOMAIN} \ NomeDominio \ as \ TipoDiDato \\
 &\quad\quad\quad\quad\quad\quad \ [ValoreDiDefault] \\
 &\quad\quad\quad\quad\quad\quad \ [Vincolo] \\
 \end{aligned}
@@ -162,7 +162,7 @@ Nel vincolo possono essere coinvolti più attributi, in tal caso l'unica differe
 Possiamo definirlo in due modi:
 1. Nel caso sia un unico attributo coinvolto si può usare il costrutto sintattico $\text{references}$, con il quale si specificano la tabella esterna e l'attributo della tabella esterna:
 ```sql
-create table Impiegato
+CREATE TABLE Impiegato
 (
 Matricola character(6) primary key
 Nome varchar(20) not null,
@@ -206,7 +206,7 @@ Le violazioni possono generare una reazione a catena qualora la tabella interna 
 La politica di reazione viene specificata immediatamente dopo il vincolo di integrità secondo la seguente sintassi:
 $$
 \begin{aligned}
-&\text{on \langle delete | update\rangle}\\
+&\text{ON \langle delete | update\rangle}\\
 &\quad \  \text{\langle cascade | set null | set default | no action\rangle}
 \end{aligned}
 $$
@@ -217,15 +217,15 @@ I comandi che vengono utilizzati a questo fine sono $\text{alter}$ e $\text{drop
 Il comando $\text{alter}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
 Per i domini:
 $$\begin{aligned}
-&\text{alter domain} \ NomeDominio \langle \text{set default} \ ValoreDiDefault \| \\
+&\text{ALTER DOMAIN} \ NomeDominio \langle \text{set default} \ ValoreDiDefault \| \\
 &\quad \quad \quad\quad \quad \ \ \  \text{drop default} \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{add constraint} \  DefVincolo \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{drop constraint} \ NomeVincolo \rangle
 \end{aligned}$$
 Per le tabelle:
 $$\begin{aligned}
-&\text{alter table} \ NomeTabella \langle \\ 
-&\text{alter column} \ NomeAttributo \langle \text{set default} \ NuovoDefault \ | \\
+&\text{ALTER TABLE} \ NomeTabella \langle \\ 
+&\text{ALTER COLUMN} \ NomeAttributo \langle \text{set default} \ NuovoDefault \ | \\
 &\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{drop default} \rangle \ | \\ 
 &\text{add constraint} \  DefVincolo \ | \\
 &\text{drop constraint} \ NomeVincolo \ |\\ 
@@ -235,10 +235,10 @@ $$\begin{aligned}
 Tramite $\text{alter domain}$ e $\text{alter table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
 Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati già presenti, altrimenti l'inserimento viene rifiutato
 #### Drop
-Mentre il comando $\text{alter}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{drop}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
+Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{DROP}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
-&\text{drop} \ \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
+&\text{DROP} \ \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
 & \quad \quad [\text{ restrict | cascade }]
 \end{aligned}$$
 L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
@@ -358,7 +358,7 @@ $$Attributo \text{ is [not] null}$$
 Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{not null}$ è la sua negazione.
 Ricordiamo che da SQL-2 viene utilizzata la logica a tre valori che prevede il valore $\text{unknown}$
 #### Interpretazione formale delle interrogazioni in SQL
-È possibile costruire una corrispondenza tra interrogazioni SQL ed equivalenti interrogazioni espresse in algebra relazionale (ricordiamo cosa viene esplicitato nel paragrafo [[#Dichiaratività di SQL]]).
+È possibile costruire una corrispondenza tra interrogazioni SQL ed equivalenti interrogazioni espresse in algebra relazionale (ricordiamo presente nel paragrafo [[#Dichiaratività di SQL]]).
 Data un interrogazione SQL nella sua formula più semplice:
 $$\begin{aligned}
 &\text{SELECT} \ T_{1}.Attributo_{11},\dots, T_{h}Attributo_{hm} \\
@@ -421,7 +421,7 @@ where I1.Cognome = I2.Cognome and
 SQL permette di specificare un ordinamento delle righe del risultato di un'interrogazione tramite la clausola $\text{ORDER BY}$, con la quale si chiude l'interrogazione.
 La sintassi è la seguente:
 $$\begin{aligned}
-&\text{order by} AttrDiOrdinamento \ \text{[asc|desc]} \\
+&\text{ORDER By} AttrDiOrdinamento \ \text{[asc|desc]} \\
 &\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[asc|desc]}\}
 \end{aligned}$$
 Le righe vengono ordinate in base al primo attributo nell'elenco, per le righe che hanno lo stesso valore del primo attributo si considerano i valori degli attributi successivi in sequenza.
