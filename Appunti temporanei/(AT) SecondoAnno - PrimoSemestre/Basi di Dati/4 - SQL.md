@@ -509,7 +509,7 @@ Qualora si voglia adottare una diversa interpretazione degli operatori sarà suf
 SQL consente di scrivere interrogazioni che presentano al loro interno altre interrogazioni, chiamate **nidificate**.
 La nidificazione può avvenire nelle 3 clausole di interrogazione e consiste nel confrontare un valore con una collezione di valori (ossia il risultato di un interrogazione).
 Per risolvere il problema della disomogeneità dei termini di confronto, SQL ha esteso i normali operatori di confronto con due altre opzioni: $\text{ALL}$ e $\text{ANY}$;
-Il confronto ANY è vero se il primo operando sta nella relazione specificata con almeno un elemento di 
+Il confronto ANY è vero se il primo operando sta nella relazione specificata con almeno un elemento del secondo operando, ALL ugualmente ma tutti gli elementi devono stare nella relazione.
 ## Modifica dei dati in SQL
 La parte di Data Manipulation Language comprende i comandi per interrogare e modificare il contenuto della basi di dati, andremo a vedere esattamente questi
 ### Inserimento
