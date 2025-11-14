@@ -518,6 +518,7 @@ WHERE Dipart = ANY (SELECT Nome
 					FROM Dipartimento
 					WHERE CIttà='Firenze')
 ```
+Talvolta l’interrogazione nidificata fa riferimento al contesto dell’interrogazione che la racchiude, tipicamente ciò accade tramite una variabile definita nell'ambito di una della query più esterna e usata nell'ambito della query più interna (si parla di un passaggio di binding da un contesto all'altro). Così la nuova interpretazione è: per ogni riga della query esterna, valutiamo per prima cosa la query nidificata, quindi calcoliamo il predicato a livello di riga sulla query esterna. Per quanto riguarda lo scope delle variabili SQL, vale la restrizione che una variabile è usabile solo nell’ambito della query in cui è stata definita o nell’ambito della query nidificata all’interno di essa.
 ## Modifica dei dati in SQL
 La parte di Data Manipulation Language comprende i comandi per interrogare e modificare il contenuto della basi di dati, andremo a vedere esattamente questi
 ### Inserimento
