@@ -506,10 +506,9 @@ Gli operatori insiemistici, al contrario del resto del linguaggio, assumo come d
 
 Qualora si voglia adottare una diversa interpretazione degli operatori sarà sufficiente usare la parola chiave $\text{ALL}$.
 ### Interrogazioni nidificate
-SQL ammette anche l'uso di predicati con una struttura più complessa rispetto a quelli di semplice confronto, in cui si confronta un valore (ottenuto come risultato di una espressione valutata sulla singola riga) con il risultato di un'interrogazione SQL.
-L'interrogazione che viene usata per il confronto viene definita direttamente nel predicato interno alla clausola $\text{WHERE}$, $\text{FROM}$ o $\text{SELECT}$, per questo si dicono interrogazioni nidificate.
-Nel caso più tipico, l'espressione più semplice è il confronto di un nome di un attributo.
-[da finire]
+SQL consente di scrivere interrogazioni che presentano al loro interno altre interrogazioni, chiamate **nidificate**.
+La nidificazione può avvenire nelle 3 clausole di interrogazione e consiste nel confrontare un valore con una collezione di valori (ossia il risultato di un interrogazione).
+Per risolvere il problema della disomogeneità dei termini di confronto, SQL ha esteso i normali operatori di confronto i due 
 ## Modifica dei dati in SQL
 La parte di Data Manipulation Language comprende i comandi per interrogare e modificare il contenuto della basi di dati, andremo a vedere esattamente questi
 ### Inserimento
