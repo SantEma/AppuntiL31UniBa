@@ -590,3 +590,10 @@ I comandi $\text{SET CONSTRAINTS IMMEDIATE}$ e $\text{SET CONSTRAINTS DEFERRED}$
 Oltre alla costruzione di tabelle (di base), SQL permette di definire tabelle virtuali chiamate **viste**, sono il risultato di un’espressione SQL a partire da altre tabelle, sia base che virtuali.
 La vista non è memorizzata, quando usata in un’interrogazione è espansa con la sua definizione. 
 La sintassi SQL per definire una vista logica è la seguente:
+$$\begin{aligned}
+&\text{CREATE VIEW} \ NomeVista [(ListaAttributi)] \text{AS} \ SelectSQL \\
+&\text{[WITH[local|cascaded] CHECK OPTION]}
+\end{aligned}$$
+L’interrogazione deve restituire un insieme di attributi compatibile con gli attributi nello schema della vista; 
+L'ordine nella target list della clausola select deve corrispondere all'ordine degli attributi nello schema vista.
+[da finire]
