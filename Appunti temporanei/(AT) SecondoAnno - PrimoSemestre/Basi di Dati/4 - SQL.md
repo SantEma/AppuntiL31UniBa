@@ -561,11 +561,32 @@ $$
 Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condizione sia soddisfatta e si modificano tutte le righe 
 ### Modifica
 Il comando $\text{UPDATE}$ permette di aggiornare uno o più attributi delle righe di una tabella che soddisfano eventualmente una condizione:
+$$\begin{aligned}
+&\text{UPDATE} \ NomeTabella \\
+&\quad \text{SET} \ Attributo = \langle Espressione | SelectSQL|\text{null}|\text{default}\rangle\\
+&\quad \{,Attributo = \langle Espressione | SelectSQL|\text{null}|\text{default}\rangle \} \\
+&[\text{WHERE} \ Condizione]
+\end{aligned}$$
+Se il comando non presenta una clausola $\text{WHERE}$ si suppone sempre che la condizione sia soddisfatta e si esegue la modifica su tutte le righe
 
 ## Caratteristiche evolute di SQL
 ### Vincoli di integrità generici
-[da completare]
+SQL permette di specificare vincoli più complessi grazie alla clausola $\text{CHECK}$ con la seguente sintassi:
+$$\text{CHECK} (Condizione)$$
+Le condizioni ammissibili sono le stesse della clausola $\text{WHERE}$ e la condizione deve essere sempre verificata affinchè la base di dati sia corretta.
+
+Una possibile dimostrazione dell'utilità del costrutto è la descrizione dei vincoli predefiniti, che possono essere descritti in maniera più veloce e compatta:
+![[Pasted image 20251116113343.png]]
+Usando questa clausola però si perde la possibilità di associare ai vincoli una politica di reazione alle violazioni
 ### Asserzioni
-[da completare]
+Grazie alla clausola $\text{CHECK}$ è possibile definire anche un ulteriore componente dello schema di una base di dati, le asserzioni; 
+Le asserzioni rappresentano dei vincoli che non sono associati a un attributo o a una tabella in particolare, bensì appartengono direttamente allo schema. 
+Mediante le asserzioni è possibile esprimere tutti i vincoli che abbiamo specificato fin qui nella definizione delle tabelle, permettono inoltre di esprimere vincoli che non sarebbero altrimenti definibili come vincoli che coinvolgono più tabelle o che richiedono che una tabella abbia una cardinalità minima.
+La sintassi prevista è tale:
+$$\text{CREATE ASSERTION} \ NomeAsserzione \ \text{CHECK} \ (Condizione)$$
+Le asserzioni possono essere verificate immediatamente dopo ogni modifica dello stato del DB **(controllo immediato)** o solo al termine di un insieme di operazioni/transazioni **(controllo differito).** 
+I comandi $\text{SET CONSTRAINTS IMMEDIATE}$ e $\text{SET CONSTRAINTS DEFERRED}$ consentono di specificare o passare da una modalità all’altra.
 ### Viste
-[da completare]
+Oltre alla costruzione di tabelle (di base), SQL permette di definire tabelle virtuali chiamate **viste**, sono il risultato di un’espressione SQL a partire da altre tabelle, sia base che virtuali.
+La vista non è memorizzata, quando usata in un’interrogazione è espansa con la sua definizione. 
+La sintassi SQL per definire una vista logica è la seguente:
