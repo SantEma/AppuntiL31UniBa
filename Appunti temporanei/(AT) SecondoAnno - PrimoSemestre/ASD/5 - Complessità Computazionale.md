@@ -2,11 +2,11 @@
 Lo studio della **computabilità** aiuta a stabilire **quali problemi ammettono una soluzione** algoritmica e quali no. 
 Per i problemi computabili dobbiamo conoscere **la complessità degli algoritmi che li risolvono**
 
-La **complessità di un algoritmo** è una misura delle risorse di calcolo consumate dirante la computazione. 
+La **complessità di un algoritmo** è una misura delle risorse di calcolo consumate durante la computazione. 
 **L'efficienza di un algoritmo** è inversamente proporzionale alla sua complessità. 
 
 La teoria della complessità studia l'uso delle risorse necessarie per la computazione di algoritmi e per la risoluzione dei problemi. 
-Questo studio è importante perchè:
+Questo studio è importante perché:
 - Permette di confrontare diversi algoritmi che risolvono lo stesso problema. 
 - Stabilire se il problema permette un algoritmo che lo risolva in maniera computazionale. 
 ### Valutazione dell'efficienza di programmi
@@ -26,13 +26,13 @@ Utilizzando una valutazione come i secondi non otterremo una **valutazione ogget
 La teoria della complessità studia l'uso delle risorse di calcolo necessarie per la computazione di algoritmi. 
 Per risolvere un programma spesso sono disponibili vari algoritmi, per la scelta dell'algoritmo giusto o si valuta la bontà dell'algoritmo o si **confrontano più algoritmi più algoritmi sulla base del comportamento che questi presentano al crescere della dimensione del problema**.
 
-Le risorse principali di nostro interesso sono **TEMPO** e **SPAZIO DI MEMORIA**.
+Le risorse principali di nostro interesso sono **tempo** e **spazio di memoria**.
 Per un algoritmo si parla di:
 - Complessità in tempo. 
 - Complessità in spazio. 
 Per poter valutare la complessità occorre definire un **modello di costo** che dipende dal particolare modello della macchina astratta su cui si fa riferimento. 
 
-L'analisi dell'efficienza di un programma è basata sull'ipotesi che **il costo di ogni istruzione SEMPLICE e di ogni operazione di confronto sia pari a 1**, indipendentemente dal linguaggio e dal sistema usato. 
+L'analisi dell'efficienza di un programma è basata sull'ipotesi che **il costo di ogni istruzione semplice e di ogni operazione di confronto sia pari a 1**, indipendentemente dal linguaggio e dal sistema usato. 
 Noi conteremo **le operazioni eseguite o alcune operazioni chiave o preminenti** (ammettendo che il tempo complessivo di esecuzione sia direttamente proporzionale al numero di tali operazioni). 
 Tratteremo come **non significative le costanti moltiplicative** e studieremo le funzioni di complessità nel loro ordine di grandezza. 
 ### La dimensione dell'input
@@ -85,43 +85,37 @@ Il costo di esecuzione di una **istruzione composta** è pari alla somma dei cos
 - **Costo di un'operazione di selezione (if-then-else):**
   _if **cond** then $S1$ else $S2$ è dato da:_
 ```c++
-	costo test cond + costo S1 //se cond
-	costo test cond + costo S2 //se ¬ cond
-	```
+costo test cond + costo S1 //se cond
+costo test cond + costo S2 //se ¬ cond
+```
 Per una struttura if cond then **S1** else **S2**, il costo dipende dal risultato della condizione:
 - Se **cond** è vera, il costo è $costo test cond+costo S1$.
 - Se **cond** è falsa, il costo è $costo test cond+costo S2$. Il costo del test della condizione è 1 (dato che è un confronto), e i costi di S1 e S2 dipendono dalle istruzioni che contengono.
 
 - **Costo di un'istruzione di ciclo (while):**
   _while **cond** do $S1$ è dato da:_
-  ```c++
+```c++
 costo test cond + (costo test cond + costo S1) * k //[se il ciclo è ripetuto k volte]
 ```
 
-
-
-  
-
-
 - **Costo di un ciclo "repeat":** 
   _repeat **S1** until **cond** è dato da:_
-  ```c++
+```c++
   (costo test cond + costo S1) * k //[se il ciclo è ripetuto k volte]
   ```
-
-	Per una struttura repeat S1 until cond, il costo è dato da:
-		- $(costo test cond+costo S1)×k$ dove k è il numero di volte che il ciclo viene ripetuto. In questo caso, il test della condizione avviene alla fine di ogni iterazione, il costo totale è la somma dei costi di S1 e del test, ripetuti k volte.
+  Per una struttura repeat S1 until cond, il costo è dato da:
+  - $(costo test cond+costo S1)×k$ dove k è il numero di volte che il ciclo viene ripetuto. In questo caso, il test della condizione avviene alla fine di ogni iterazione, il costo totale è la somma dei costi di S1 e del test, ripetuti k volte.
 
 - **Costo di una istruzione for:**
-	```c++
+```c++
 	i = 1  (costo = 1, per l'assegnazione iniziale)
 	while i <= k do
 		S1;  (costo dipende dal contenuto di S1)
 		i = i + 1;  (costo = 2, per l'assegnazione e l'incremento)
-	```
-	Il costo iniziale fisso è 2: 1 per $i = 1$ e 1 per la prima valutazione della condizione while fuori dal ciclo (che avviene prima di entrare nel ciclo).
-	Per ogni iterazione del ciclo, il costo è dato dal costo di $S1+2$(da i=i+1)$+1$(da condizione di test). Moltiplicando questo costo per il numero di iterazioni k, otteniamo la parte variabile.
-	Quindi, il costo totale è: $2+(costo\ di\ S1+2+1)×k$  che si semplifica in:$2+(costo\ di \ S1+3)×k$
+```
+  Il costo iniziale fisso è 2: 1 per $i = 1$ e 1 per la prima valutazione della condizione while fuori dal ciclo (che avviene prima di entrare nel ciclo).
+  Per ogni iterazione del ciclo, il costo è dato dal costo di $S1+2$(da i=i+1)$+1$(da condizione di test). Moltiplicando questo costo per il numero di iterazioni k, otteniamo la parte variabile.
+  Quindi, il costo totale è: $2+(costo\ di\ S1+2+1)×k$  che si semplifica in:$2+(costo\ di \ S1+3)×k$
 
 ### Complessità e configurazioni
 La complessità di un algoritmo non può sempre essere definita da una singola funzione, poiché il tempo di esecuzione, a parità di dimensione dei dati, può variare in base alla specifica configurazione dei dati. 
@@ -139,11 +133,11 @@ $f_{pess}=f_{ott}=f_{med}$ per l'algoritmo del Min di n elementi
 La ricerca lineare in un array è un metodo semplice per trovare un elemento specifico k in un array non ordinato. 
 L'algoritmo scorre tutto l'array dall'inizio alla fine, confrontando ogni elemento fino a trovare una corrispondenza o fino ad esaurire gli elementi.
 ![[Pasted image 20251028132838.png]]
-- **Parametri di input e output**:
-	- *t*: Array di riferimento (contiene gli elementi da cercare, ognuno con un campo chiave)
-	- *k*: valore della chiave da cercare (tipicamente un intero o una stringa)
-	- *trovato*: variabile booleana per riferimento (output: `true` se l'elemento è trovato, altrimenti `false`)
-Descrizione: la procedura cerca l'elemento con chiave k. Se la ricerca ha successo, imposta `trovato` a `true`, altrimenti a `false`. È un approccio che non richiede l'array ordinato, ma può essere inefficiente per array grandi perché nel peggiore dei casi controlla tutti gli elementi. 
+**Parametri di input e output**:
+  - $t$: Array di riferimento (contiene gli elementi da cercare, ognuno con un campo chiave)
+  - $k$: valore della chiave da cercare (tipicamente un intero o una stringa)
+  - *trovato*: variabile booleana per riferimento (output: `true` se l'elemento è trovato, altrimenti `false`)
+**Descrizione**: la procedura cerca l'elemento con chiave $k$. Se la ricerca ha successo, imposta `trovato` a `true`, altrimenti a `false`. È un approccio che non richiede l'array ordinato, ma può essere inefficiente per array grandi perché nel peggiore dei casi controlla tutti gli elementi. 
 
 Il **costo di esecuzione di un algoritmo** dipende dalla **posizione del particolare elemento** che si vuole individuare, se l'elemento cercato è il primo, allora si effettua solo un confronto (**CASO OTTIMO**), se l'elemento cercato è il secondo allora si effettuano due confronti e così via. 
 Il **CASO PEGGIORE** è costituito dalla ricerca dell'ultimo elemento o da una ricerca infruttuosa, perché in questo caso l'algoritmo esamina tutte le componenti dell'array ed esegue il ciclo $n$ volte. 
@@ -171,12 +165,12 @@ Dove:
 
 ## Focus 
 La **complessità** di un algoritmo è funzione della **dimensione dei dati**, ovvero della mole dei dati del problema da risolvere, l’individuazione della dimensione dei dati è per lo più immediata.
-Determinare la complessità in **tempo** (o in **spazio**) di un algoritmo significa determinare una **funzione di complessità $f(n)$** che fornisca la misura del tempo (o dello spazio di memoria occupato), al variare della dimensione dei dati $n$. Pertanto, **la dimensione dei dati  non è mai da considerare nell’individuazione della complessità ottima, media e pessima**.
+Determinare la complessità in **tempo** (o in **spazio**) di un algoritmo significa determinare una **funzione di complessità $f(n)$** che fornisca la misura del tempo (o dello spazio di memoria occupato), al variare della dimensione dei dati $n$. Pertanto, **la dimensione dei dati  non è mai da considerare nell'individuazione della complessità ottima, media e pessima**.
 Le funzioni di complessità sono caratterizzate da due proprietà: 
 - Assumono solo **valori positivi**.
 - Sono **crescenti** rispetto alla dimensione dei dati.
 ### Comportamento asintotico
-Nel calcolo della complessità di un algoritmo non è necessario determinare con precisione la funzione che ne esprime il costo ma è sufficiente analizzarne il **comportamento asintotico**, ossia come varia quando le dimensioni dell’input tendono all’infinito. 
+Nel calcolo della complessità di un algoritmo non è necessario determinare con precisione la funzione che ne esprime il costo ma è sufficiente analizzarne il **comportamento asintotico**, ossia come varia quando le dimensioni dell’input tendono all'infinito. 
 In questa analisi si **trascurano le costanti moltiplicative e i termini additivi di ordine inferiore**, poiché hanno un impatto trascurabile al crescere di $n$.
 
 Due funzioni come $(3 + n)$ e $(100n + 3027)$ sono considerate equivalenti dal punto di vista asintotico, in quanto crescono entrambe proporzionalmente a $n$. Tuttavia, sebbene $(n + 3)$ rappresenti un costo inferiore rispetto a $(100n + 3027)$, ignorare completamente la costante moltiplicativa può risultare una semplificazione eccessiva in certi contesti.
