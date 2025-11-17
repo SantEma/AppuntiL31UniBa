@@ -1,4 +1,3 @@
-# Strutture dati lineari 
 Le strutture lineari di dati si sviluppano in una sola dimensione e possono essere considerate come una **sequenza di oggetti**.
 La loro caratteristica fondamentale è che in esse è presente una **relazione d'ordine** tra gli oggetti, che permette di individuare chi viene prima.
 Questa relazione d'ordine non implica necessariamente un ordinamento dei valori
@@ -21,9 +20,7 @@ Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilar
 - **Inserzione (Scrittura)**: Inserimento di un nuovo componente. 
 - **Rimozione (cancellazione)**: Rimozione di un componente. 
 Nelle strutture dati le operazioni da fare sono generalmente basilari. 
-
-
-## LISTE=
+## Liste
 Una lista è definita una sequenza **finita, anche vuota ($\lambda$)**, di elementi dello stesso tipo (omogenei). 
 La lista viene indicata con: 
 $$
@@ -31,10 +28,11 @@ L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
 A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
 La lista è una struttura dati **dinamica** perché non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
-- **Posizione e valore:** a ciascun elemento $a_{i}$ di una lista viene associato:
-	- una posizione $pos(i)$
-	- un valore $a(i)$
-- **Accesso:** si può accedere direttamente solo al primo elemento della sequenza. Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
+A ciascun elemento $a_{i}$ di una lista viene associato:
+- una posizione $pos(i)$
+- un valore $a(i)$
+In una lista si può accedere direttamente solo al primo elemento della sequenza.
+Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
 - **Operazioni**: la lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione**, queste due operazione vanno a modificare la dimensione, concetto in ammissibile per i vettori. 
 
 ### Lunghezza e sottoliste
