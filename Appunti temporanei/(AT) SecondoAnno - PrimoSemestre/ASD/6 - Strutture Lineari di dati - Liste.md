@@ -49,7 +49,7 @@ $$
 $$
 ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla posizione $j$, senza salti, con $1≤i≤j≤n$. 
 
-#### Specifica della lista (Sintattica e semantica)
+### Specifica della lista (Sintattica e semantica)
 **TIPI ASTRATTI**
 
 | **Tipo**      | **Definizione**                                                                                                                                                                  |
@@ -238,7 +238,7 @@ In entrambi i casi la complessità richiede $O(n)$ operazioni di copia (dove n �
 A differenza della realizzazione con cursori, che utilizza un array di dimensione fissa (il limite spazio), la realizzazione con puntatori si affida a meccanismo si **allocazione dinamica della memoria** (_new_). 
 Quando è necessario inserire un nuovo nodo la funzione _new_ richiede al sistema operativo una nuova porzione di memoria _ovunque_ essa sia disponibile e restituisce l'indirizzo (il puntatore). 
 La gestione della memoria libera (l'equivalente della listalibera) è demandata direttamente al sistema (o al _garbage collector_), superando il limite prefissato di un array e permettendo alla lista di crescere fino a quando la memoria del sistema lo consente.
-## Ricerca in una Lista Lineare Ordinata
+### Ricerca in una Lista Lineare Ordinata
 L'algoritmo di ricerca non si basa sull'indice fisico (come un array), ma sull'ordine logico, scorrendo la lista tramite l'operatore `succlissta`.
 
 L'idea centrale è:
@@ -260,7 +260,7 @@ Analizziamo questo caso:
 L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DARIO" ($dario == dario$).
 - **Arresto:** La ricerca si interrompe perché ha trovato una _corrispondenza esatta_.
 - **Significato del puntatore:** Il puntatore `corrente` restituito punta **direttamente all'elemento "DARIO"**. Questa è la posizione necessaria per eseguire operazioni successive sull'elemento, come la sua cancellazione (`canclista`) o la lettura di dati associati (`leggilista`).
-## Fusione di liste ordinate
+### Fusione di liste ordinate
 L'algoritmo di fusione (o **merge**) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
 Questo algoritmo è fondamentale ed è un blocco di costruzione per metodi di ordinamento più complessi, come il _Natural Merge Sort_ (visto nelle slide successive).
 ```c++
@@ -380,7 +380,7 @@ Ogni iterazione del ciclo `repeat-until` si compone di due fasi principali: Di
 - Quando `numero_catene` è uguale a 1, significa che l'intera lista `L` è stata fusa in un'unica sequenza ordinata, e l'algoritmo termina.
 ##### Considerazioni sull'Efficienza
 Questo algoritmo è particolarmente efficiente ($O(nlogk)$) quando la lista di input è "quasi ordinata", ovvero contiene un basso numero k di catene naturali. Nel caso peggiore (lista ordinata al contrario), la sua efficienza converge a quella del Merge Sort standard, $O(nlogn)$.
-## 1. La Fase di Distribuzione (`distribuisci`)
+##### 1. La Fase di Distribuzione (`distribuisci`)
 Questa procedura ha il compito di svuotare la lista principale `L` e smistare le sue catene, in modo alternato, nelle due liste ausiliarie `A` e `B`.
 **Logica:** La procedura scorre `L` e, finché non è vuota, chiama `copiaCatena` una volta per `A` e una volta per `B`, alternando la destinazione .
 
@@ -396,7 +396,7 @@ distribuisci (l: di tipo lista; a e b: di tipo lista per riferimento);
 	 until finelista (pl, l) //ripeti se ci sono elem. in L
 ```
 
-## 2. La Fase di Fusione (`merge`)
+#####  2. La Fase di Fusione (`merge`)
 Questa procedura gestisce la fusione delle catene da `A` e `B` riversandole in `L`. Ha anche il compito cruciale di contare quante nuove catene vengono create.
 **Logica:**
 1. Fonde a coppie le catene (`fondiCatena`) finché entrambe le liste `A` e `B` ne hanno ancora.
@@ -420,7 +420,7 @@ merge(A e B: di tipo lista; L: di tipo lista per riferimento;
 		numero_catene = numero_catene + 1
 ```
 
-## 3. Il Cuore della Fusione (`fondiCatena`)
+#####  3. Il Cuore della Fusione (`fondiCatena`)
 Questa è la procedura centrale dove avviene la fusione vera e propria di _una_ catena da `A` e _una_ da `B`.
 **Logica:**
 Confronta l'elemento corrente di `A` con quello di `B` e chiama `copia` per spostare il minore dei due in `L`. Se la procedura `copia` rileva che la catena da cui stava copiando è terminata, `fondiCatena` chiama `copiaCatena` per accodare rapidamente l'intera catena rimanente dall'altra lista. 
@@ -440,7 +440,7 @@ fondiCatena(pa: ...; A: ...; pb: ...; B: ...; pl: ...; L: ...)
 until finecatena
 ```
 
-## 4. Le Procedure Utilitarie (`copiaCatena` e `copia`)
+#####  4. Le Procedure Utilitarie (`copiaCatena` e `copia`)
 Queste due procedure sono gli strumenti di basso livello che eseguono lo spostamento fisico dei dati e il rilevamento della fine di una catena.
 **Logica:** Chiama `copia` in un ciclo `repeat...until` finché la procedura `copia` non segnala (tramite la variabile `finecatena`) che la catena è terminata. 
 
@@ -472,8 +472,8 @@ copia (px: posizione per riferimento; X: lista;
     //se l'elem. copiatusao è > del successivo la catena è finita 
     finecatena = (elemento > leggilista (px, X))
 ```
-## Realizzazioni liste in C++
-## Classe Libro
+### Realizzazioni liste in C++
+#### Classe Libro
 ```c++
 //FILE libro.h
 
@@ -519,7 +519,7 @@ bool Libro::operator==(Libro l){
 	return (getTitolo()==l.getTitolo());
 }
 ```
-## Implementazione sequenziale della classe Lista
+#### Implementazione sequenziale della classe Lista
 ```c++
 //FILE .h
 
@@ -558,15 +558,14 @@ La lista usa un implementazione **sequenziale**, che usa un array **statico** pe
 **La struttura**:
 - Nella riga *10 - 11* si vincola *tipoelem*, ovvero la lista funzionerà solamente se all'interno sarà popolata da oggetti della classe *Libro*.
 - `private`:
-	- `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
-	- `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
+  - `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
+  - `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
 - `public`:
-	- `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
-	- `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
-- **I limiti**:
-	L'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
-	1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
-	2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
+  - `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
+  - `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
+- **I limiti**: l'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
+  1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
+  2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
 
 ```c++
 //FILE listav.cpp
@@ -647,16 +646,15 @@ Qui ci si addentra su delle implementazioni più specifiche e dettagliate della 
 - `tipoelem Lista::leggiLista(posizione p) const`, permette l'implementazione di `leggiLista`, questa è la funzione chiave per poter accedere; poiché è vero che la lista ha una lunghezza che varia da $1$ a $1024$, come visto prima, ma per potervi accedere usiamo gli indici dell'array `elementi` che vanno da $0$ a $lunghezza-1$, per poter leggere un elemento in posizione $p$ bisogna accedere all'indice `elementi[p-1]`.
 - `void Lista::scriviLista(tipoelem a, posizione p)` , implementa similmente a `leggiLista` , per scrivere nella posizione logica $p$, deve modificare l'indice fisico `elementi[p-1]`.
 - `void Lista::insLista(tipoelem a, posizione p)` : Questa è l'operazione più costosa e ci permette di inserire un elemento in posizione $p$ : 
-	1. Esegue un ciclo for che parte dalla fine ( lunghezza ) e scende fino a $p$ . 
-	2. Ad ogni passo, **sposta** l'elemento `elementi[i-1]` a **destra**, in `elementi[i]` . 
-	3. Questo "crea un buco" all'indice $p-1$ , dove viene inserito il nuovo elemento $a$.
-	4. Infine, incrementa `lunghezza`.
+  1. Esegue un ciclo for che parte dalla fine ( lunghezza ) e scende fino a $p$ . 
+  2. Ad ogni passo, **sposta** l'elemento `elementi[i-1]` a **destra**, in `elementi[i]` . 
+  3. Questo "crea un buco" all'indice $p-1$ , dove viene inserito il nuovo elemento $a$.
+  4. Infine, incrementa `lunghezza`.
 - **`void Lista::cancLista(posizione p)`**: Anche questa è un'operazione costosa. Per cancellare un elemento in posizione `p`:
-	1. Controlla se la lista non è vuota.
-    2. Esegue un ciclo `for` che parte dalla posizione da cancellare (`p-1`) fino alla fine della lista.
-    3. Ad ogni passo, **sposta l'elemento `elementi[i+1]` a sinistra**, in `elementi[i]`, sovrascrivendo di fatto l'elemento da cancellare.
-    4. Infine, decrementa `lunghezza`.
-
+  1. Controlla se la lista non è vuota.
+  2. Esegue un ciclo `for` che parte dalla posizione da cancellare (`p-1`) fino alla fine della lista.
+  3. Ad ogni passo, **sposta l'elemento `elementi[i+1]` a sinistra**, in `elementi[i]`, sovrascrivendo di fatto l'elemento da cancellare.
+  4. Infine, decrementa `lunghezza`.
 ## Funzioni di servizio
 ```c++
 //FILE serviziolv.h
@@ -711,12 +709,12 @@ void epurazioneLista(Lista &l){
 }
 ```
 - **`stampaLista(Lista &l)`**:
-	È una funzione esterna che riceve una `Lista` (`l`) come parametro.
-	La scorre usando i metodi pubblici della lista (`primoLista`, `fineLista`, `succLista`) e stampa ogni elemento che legge (`leggiLista`).
+  È una funzione esterna che riceve una `Lista` (`l`) come parametro.
+  La scorre usando i metodi pubblici della lista (`primoLista`, `fineLista`, `succLista`) e stampa ogni elemento che legge (`leggiLista`).
 - **`epurazioneLista(Lista &l)`**: È un algoritmo più complesso che rimuove i duplicati.
-	Usa un **doppio ciclo** per scorrere la lista: un puntatore `p` scorre ogni elemento dall'alto, e un puntatore `q` scorre gli elementi _successivi_ a `p` dal basso.
-    **Punto chiave:** Esegue il confronto `if (l.leggiLista(p) == l.leggiLista(q))`. Questo `==` è l'**operatore `operator==` che abbiamo definito nella classe `Libro`** all'inizio.
-    Se trova un duplicato (il confronto è `true`), salva quel valore di $q$ in $r$ e usa il metodo pubblico `l.cancLista(q)` per rimuoverlo dalla lista, dopo di che rimette in $q$ l'elemento in $r$ per verificare se è la fine o meno della lista e poter continuare da quel punto.
+  Usa un **doppio ciclo** per scorrere la lista: un puntatore `p` scorre ogni elemento dall'alto, e un puntatore `q` scorre gli elementi _successivi_ a `p` dal basso.
+  **Punto chiave:** Esegue il confronto `if (l.leggiLista(p) == l.leggiLista(q))`. Questo `==` è l'**operatore `operator==` che abbiamo definito nella classe `Libro`** all'inizio.
+  Se trova un duplicato (il confronto è `true`), salva quel valore di $q$ in $r$ e usa il metodo pubblico `l.cancLista(q)` per rimuoverlo dalla lista, dopo di che rimette in $q$ l'elemento in $r$ per verificare se è la fine o meno della lista e poter continuare da quel punto.
 ## Funzioni di Test
 ```c++
 //FILE testlista.cpp
@@ -755,7 +753,6 @@ int main(){
 L'overloading degli operatori è una caratteristica del C++ che consente di **ridefinire il comportamento di un operatore**(come `+`, `-`, `==`, `<<`) affinché possa essere utilizzato con oggetti di una classe definita dall'utente (come la classe `Libro` vista in precedenza). 
 Per utilizzare un operatore su un oggetto di una classe, è necessario che tale operatore sia stato sovraccaricato per quella classe.
 
-#### Come definirlo
 Si definisce scrivendo una funzione membro (o `friend`) il cui nome è composto dalla parola chiave `operator` seguita dal simbolo dell'operatore che si intende sovraccaricare.
 
 *Esempio visto in precedenza con la classe `Libro`*: `bool operator==(Libro l);`
@@ -785,7 +782,6 @@ Ci sono restrizioni fondamentali che non possono essere violate:
 - **Nuovi Operatori:** Non è possibile inventare nuovi simboli per gli operatori (es. non si può creare un `operator**`). 
 - **Tipi Primitivi:** Non è possibile sovraccaricare gli operatori per i tipi di dati fondamentali (primitivi) del C++. Ad esempio, non si può ridefinire come funziona l'addizione tra due `int`.
 #### Sintassi ed Esempi
-
 - **Operatori Unari:** Agiscono su un singolo operando (es. `!myString`).
 ```c++
 class String {
@@ -807,7 +803,7 @@ Quando il compilatore incontra l'espressione `y += z`, la traduce internamente 
 ```c++
 friend ostream& operator<<(ostream& os, const MiaClasse& miaistanza);
 ```
-## Ereditarietà e Classi astratte
+### Ereditarietà e Classi astratte
 Per separare l'**interfaccia** della `Lista` (l'elenco di operazioni che _deve_ fornire) dalla sua **implementazione** (il _come_ queste operazioni vengono realizzate, ad esempio con un vettore o con puntatori), il C++ utilizza due concetti fondamentali: l'**ereditarietà** e le **classi astratte**.
 #### Ereditarietà
 L'ereditarietà è un meccanismo che permette a una classe (detta **classe derivata** o sotto-classe) di ereditare metodi e campi da un'altra classe (detta **classe base** o super-classe) . Questo permette alla classe derivata di accedere ai membri `protected` della classe base. 
@@ -872,7 +868,7 @@ Perciò si possono creare **classi identiche strutturalmente** ma che gestiscono
 La **Libreria Standard del C++ (STL)** è piena di classi template, dette **classi contenitore** (es. `vector`, `list`, `map`).
 - Questo collega la teoria alla pratica. I template non sono un concetto accademico esoterico; sono il fondamento della Standard Template Library (STL) del C++. Quando in C++ si scrive `std::vector<int>` o `std::map<string, double>`, si sta usando una classe template fornita dalla libreria standard, proprio come stiamo facendo noi con `Lista<T>`.
 La definizione (il `.h`) e l'implementazione (il `.cpp`) di un template **devono risiedere nello stesso file**, non è possibile avere un header. Questa è una regola tecnica fondamentale e una differenza chiave rispetto alle classi normali. Il compilatore genera il codice per `Lista<int>` quando la incontra. Per farlo, ha bisogno di vedere non solo la _dichiarazione_ (i prototipi dei metodi) ma anche l'_implementazione_ (il codice sorgente dei metodi). Se l'implementazione fosse in un file `.cpp` separato, il compilatore non potrebbe vederla nel momento in cui compila il file che usa `Lista<int>`, portando a errori in fase di "link".
-## Vettore a dimensione dinamica
+### Vettore a dimensione dinamica
 Grazie ai template si è risolto il problema di stabilire un tipo di elemento per il vettore, ora bisogna capire come stabilire e stimare la dimensione massima del vettore per comprendere quanti elementi può ospitare. La soluzione a questo problema è aumentare **dinamicamente** la grandezza del vettore quando è necessario.
 Per tanto una possibile soluzione sarebbe definire due vettori $a$ e $a'>a$, dove $a$ è il vettore iniziale e in caso serva più spazio copiare gli elementi di $a$ in $a'$, infine si cambia il valore dell'array iniziale in modo che faccia riferimento al nuovo vettore.
 ```c++
