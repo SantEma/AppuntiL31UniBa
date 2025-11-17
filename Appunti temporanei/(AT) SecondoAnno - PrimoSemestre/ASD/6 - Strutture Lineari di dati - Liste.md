@@ -159,7 +159,7 @@ Una lista può essere implementata utilizzando un **vettore (array monodimension
    La banale infezione in una terza posizione di un nuovo elemento come nell'esempio, causa lo spostamento verso il basso del quarto e quindi elemento.
  ![[lista1.jpg]]
 ### Rappresentazione collegata
-L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta  **riferimento o puntatore**). 
+L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta **riferimento o puntatore**). 
 Questo riferimento permette di individuare dove è memorizzato l'elemento successivo della sequenza logica. 
 Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 - Gli elementi sono rappresentati mediante **nodi**.
@@ -211,9 +211,9 @@ Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
 
  Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
   Le operazioni fondamentali su un puntatore sono:
-  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
-  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
-  3. **Delete**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
+  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di $p$. 
+  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in $p$. 
+  3. **Delete**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in $p$. 
 
 Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". 
   L'$i$-esima cella contiene:
@@ -238,7 +238,7 @@ In entrambi i casi la complessità richiede $O(n)$ operazioni di copia (dove n �
 A differenza della realizzazione con cursori, che utilizza un array di dimensione fissa (il limite spazio), la realizzazione con puntatori si affida a meccanismo si **allocazione dinamica della memoria** (_new_). 
 Quando è necessario inserire un nuovo nodo la funzione _new_ richiede al sistema operativo una nuova porzione di memoria _ovunque_ essa sia disponibile e restituisce l'indirizzo (il puntatore). 
 La gestione della memoria libera (l'equivalente della listalibera) è demandata direttamente al sistema (o al _garbage collector_), superando il limite prefissato di un array e permettendo alla lista di crescere fino a quando la memoria del sistema lo consente.
-# Ricerca in una Lista Lineare Ordinata
+## Ricerca in una Lista Lineare Ordinata
 L'algoritmo di ricerca non si basa sull'indice fisico (come un array), ma sull'ordine logico, scorrendo la lista tramite l'operatore `succlissta`.
 
 L'idea centrale è:
@@ -246,9 +246,9 @@ L'idea centrale è:
 Per fare ciò, si usano due puntatori:
 1. `corrente`: Punta all'elemento che stiamo analizzando ora.
 2. `precedente`: Punta all'elemento analizzato al passo prima.
-È fondamentale aggiornare `precedente = corrente` _prima_ di avanzare `corrente` con `corrente = succlista(corrente, I)`. Questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
+È fondamentale aggiornare `precedente = corrente` _prima_ di avanzare `corrente` con `corrente = succlista(corrente, I)`, questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
 
-Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione) `corrente`** al quale la scansione si è arrestata.
+Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione)** `corrente` al quale la scansione si è arrestata.
 Questo metodo è più versatile perché il puntatore restituito assume un significato operativo preciso in _entrambi_ gli scenari, sia in caso di successo che di fallimento della ricerca, come illustrato dall'esempio della ricerca di "*dario*".
 ![[carlo e davide.png]]
 L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DAVIDE" ($dario < davide$).
@@ -261,7 +261,7 @@ L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successiva
 - **Arresto:** La ricerca si interrompe perché ha trovato una _corrispondenza esatta_.
 - **Significato del puntatore:** Il puntatore `corrente` restituito punta **direttamente all'elemento "DARIO"**. Questa è la posizione necessaria per eseguire operazioni successive sull'elemento, come la sua cancellazione (`canclista`) o la lettura di dati associati (`leggilista`).
 ## Fusione di liste ordinate
-L'algoritmo di fusione (o _merge_) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
+L'algoritmo di fusione (o **merge**) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
 Questo algoritmo è fondamentale ed è un blocco di costruzione per metodi di ordinamento più complessi, come il _Natural Merge Sort_ (visto nelle slide successive).
 ```c++
 creaLista(Lista3)
@@ -327,7 +327,7 @@ Questa lista è composta da **6 catene**:
 - **Catena 4:** <25, 77> (finisce perché 77>13)
 - **Catena 5:** <13, 75> (finisce perché 75>4)
 - **Catena 6:** <4> (finisce perché la lista termina)
-###### **Logica del Natural Merge Sort**
+#### Logica del Natural Merge Sort
 L'idea di questo algoritmo è:
 1. La lista è una sequenza di k catene.
 2. Se usiamo l'algoritmo di **Fusione** per fondere le catene tra loro, otterremo una nuova lista con un numero minore di catene (circa $k/2$), che saranno lunghe il doppio.
@@ -441,7 +441,6 @@ until finecatena
 ```
 
 ## 4. Le Procedure Utilitarie (`copiaCatena` e `copia`)
-
 Queste due procedure sono gli strumenti di basso livello che eseguono lo spostamento fisico dei dati e il rilevamento della fine di una catena.
 **Logica:** Chiama `copia` in un ciclo `repeat...until` finché la procedura `copia` non segnala (tramite la variabile `finecatena`) che la catena è terminata. 
 
