@@ -866,7 +866,7 @@ tipo_restituito Nome_Classe <variabile_tipo>::
 	istruzioni 
 }
 ```
-Grazie all'uso del template possiamo notare alcune migliorie e caratteristiche, infatti i template sono gestiti **staticamente**, quindi a livello di **compilazione** e non comportano alcun costo in fase esecutiva.
+Grazie all'uso del template possiamo notare al**cune migliorie e caratteristiche, infatti i template sono gestiti **staticamente**, quindi a livello di **compilazione** e non comportano alcun costo in fase esecutiva.
 Permette al programmatore di scrivere un codice ancora più **generico** senza preoccuparsi di doverlo cambiare in base alle possibili variazioni di **tipi** a cui il codice va applicato.
 Perciò si possono creare **classi identiche strutturalmente** ma che gestiscono solo **tipi degli argomenti e/o tipi dei membri differenti**.
 La **Libreria Standard del C++ (STL)** è piena di classi template, dette **classi contenitore** (es. `vector`, `list`, `map`).
