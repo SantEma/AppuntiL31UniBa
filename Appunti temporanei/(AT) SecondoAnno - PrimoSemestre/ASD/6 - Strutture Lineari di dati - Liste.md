@@ -167,7 +167,7 @@ Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 	![[lista2.jpg]]
 Come si può notare:
 -  Si usa un **riferimento iniziale** al primo elemento della lista. 
-- Si usa un simbolo speciale, $\empty\{  \}$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
+- Si usa un simbolo speciale, $\varnothing$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
 ### Realizzazione con cursori
 La realizzazione con cursori utilizza un vettore (array monodimensionale) per l'implementazione della lista, ma sfrutta i riferimenti per superare il problema dell'aggiornamento (inserimento o cancellazione di un elemento) che affligge la realizzazione sequenziale pura.
 I riferimenti si realizzano mediante i **cursori**, cioè variabili intere o enumerative il cui valore è interpretato come indice di una cella del vettore. 
