@@ -177,15 +177,15 @@ Si definisce un unico vettore, detto **vettore spazio** che:
 
 *Esempio*:
 Supponiamo di avere tre diverse liste, $l$ $m$,$s$, dove:
-$l=<7,2>$              $m=<4,9,13>$       $s=<13,4,9,13>$
+$$l=<7,2> \quad m=<4,9,13> \quad s=<13,4,9,13>$$
 Per rappresentare queste tre liste possiamo usare un unico vettore.
-**Struttura della cella:** La componente (cella) del vettore spazio ha due campi:
+La componente (cella) del vettore spazio ha due campi:
 - Elemento: dove è memorizzato il contenuto del nodo. 
 - Successivo: contiene il cursore (indice) ovvero il riferimento al prossimo nodo logico della lista. 
 
- **Posizione Logica:** La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
- La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
- Analogamente:
+La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
+La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
+Analogamente:
  - pos(n+1) è il cursore alla cella successiva all'elemento n-esimo (se n≥1), o 0 altrimenti.
  - La lista vuota si indica con L=∅ (insieme vuoto).
 ![[lista3.jpg]]
@@ -199,7 +199,8 @@ Per rappresentare queste tre liste possiamo usare un unico vettore.
 ![[lista7.jpg]]
 È immediato verificare che grazie all'uso della *listalibera*, non richiedono lo spostamento di altri elementi della lista le operazioni di inserimento e cancellazione. Tuttavia restano i problemi legati all'uso dell'array, cioè l'**esigenza di definire una dimensione**.
 
-L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
+L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). 
+Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
 1. La dimensione dell'array è un **limite massimo** alla crescita della lista.
 2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
 3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
@@ -207,10 +208,11 @@ L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elem
 ### Realizzazione con Puntatori
 La realizzazione con puntatori è considerata  la più **efficace** realizzazione della rappresentazione collegata. 
 Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
-- Una variabile di tipo puntatore *p* memorizza l'indirizzo di una locazione di memoria. Le operazioni fondamentali su un puntatore sono:
-	1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
-	2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
-	3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
+- Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
+  Le operazioni fondamentali su un puntatore sono:
+  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
+  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
+  3. **Delete**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
 -Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
 	- L'$i$-esimo elemento della lista. 
 	- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
