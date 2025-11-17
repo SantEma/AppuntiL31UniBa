@@ -93,12 +93,15 @@ Per una struttura if cond then **S1** else **S2**, il costo dipende dal risulta
 - Se **cond** è falsa, il costo è $costo test cond+costo S2$. Il costo del test della condizione è 1 (dato che è un confronto), e i costi di S1 e S2 dipendono dalle istruzioni che contengono.
 
 - **Costo di un'istruzione di ciclo (while):**
-	_while **cond** do $S1$ è dato da:_ 
-	```c++
-	costo test cond + (costo test cond + costo S1) * k //[se il ciclo è ripetuto k volte]
-	```
-	Per una struttura while cond do S1, il costo è dato da:
-		- costo test $cond+(costo test cond+costo S1)×k$, dove k è il numero di volte che il ciclo viene ripetuto. Il costo del test della condizione è 1 per iterazione e il costo totale include il costo di S1 moltiplicato per il numero di iterazioni.
+  _while **cond** do $S1$ è dato da:_
+  ```c++
+costo test cond + (costo test cond + costo S1) * k //[se il ciclo è ripetuto k volte]
+```
+
+
+
+  
+
 
 - **Costo di un ciclo "repeat":** 
   _repeat **S1** until **cond** è dato da:_
