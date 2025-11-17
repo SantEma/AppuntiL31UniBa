@@ -166,8 +166,8 @@ Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 - I riferimenti sono rappresentati mediante **archi** che collegano i nodi.
 	![[lista2.jpg]]
 Come si può notare:
-	- Si usa un **riferimento iniziale** al primo elemento della lista. 
-	- Si usa un simbolo speciale, ∅ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
+-  Si usa un **riferimento iniziale** al primo elemento della lista. 
+- Si usa un simbolo speciale, ∅ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
 
 
 ### Realizzazione con cursori
