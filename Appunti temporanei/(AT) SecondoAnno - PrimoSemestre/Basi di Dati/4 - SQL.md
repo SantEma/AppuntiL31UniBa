@@ -605,4 +605,39 @@ Le modifiche sono ammesse solo quando la vista è definita con un’espressione 
 - Non sono presenti gli operatori $\text{GROUP BY}$ e $\text{HAVING}$
 - Le colonne definite nelle tabelle di base con il vincolo $\text{NOT NULL}$ devono far parte della tabella virtuale
 
-Nell’ambito delle viste modificabili, check option specifica che possono essere ammessi aggiornamenti solo sulle righe della vista, e dopo gli aggiornamenti le righe devono continuare ad appartenere alla vista.
+Nell'ambito delle viste modificabili, $\text{CHECK OPTION}$ specifica che possono essere ammessi aggiornamenti solo sulle righe della vista, e dopo gli aggiornamenti le righe devono continuare ad appartenere alla vista, ad esempio vorremmo costruire una vista contenente tutti gli impiegati con stipendio superiore a 5000 euro:
+![[Pasted image 20251117112416.png]]
+Creiamo una vista per gli impiegati amministratori "poveri" a partire dalla vista precedente:
+![[Pasted image 20251117112507.png]]
+La vista è stata definita con $\text{CHECK OPTION}$ (opzione di default $\text{CASCADE}$) in cui ogni aggiornamento sulla vista, per poter essere propagato, non deve eliminare righe dalle vista.
+
+Le viste hanno diverse utilità come:
+- Semplificare interrogazioni complesse, o addirittura non esprimibili in SQL su tabelle base
+  **Esempio** 
+  Volendo trovare il numero medio degli agenti per zona, non possiamo scrivere qualcosa del genere: 
+  ```sql
+  SELECT AVG(COUNT(*)) 
+  FROM Agenti GROUP BY Zona
+  ```
+  Si può formulare una interrogazione alternativa con l'aiuto di una tabella virtuale:
+  ```sql
+  CREATE VIEW AgentiXZona(ZOna, NAgenti) AS 
+  SELECT ZOna, COUNT(*) 
+  FROM Agenti 
+  GROUP BY Zona; 
+  
+  SELECT avg(NAgenti) fromAgentiXZona; 
+  
+  DROP AgentiXZona
+  ```
+
+- Per nascondere alle applicazioni alcune modifiche dell’organizzazione logica dei dati (indipendenza logica)
+  ![[Pasted image 20251117113036.png]]
+- Per dare visioni diverse degli stessi dati (viste utente)
+  **Esempio**:
+  Aggregare gli ordini per agente, per applicazioni di tipo statistico si può fornire la vista OrdiniPerAgente definita prima: 
+  ```sql
+  CREATE VIEW OrdiniPerAgewnte(CodiceAgente, TotaleOrdini) AS 
+  SELECT CodiceAgente, SUM(Ammontare) FROM Ordini 
+  GROUP BY CodiceAgente
+  ```
