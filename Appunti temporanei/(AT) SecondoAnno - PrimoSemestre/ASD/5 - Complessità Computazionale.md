@@ -200,7 +200,6 @@ Regole per trovare la delimitazione superiore della complessità:
    L'**istruzione dominante** ci permette di semplificare in modo drastico la valutazione della complessità di un programma. 
    **Def**: Sia dato un programma o un algoritmo $P$ il cui costo di esecuzione è $t(n)$.
    Una istruzione di $P$ si dice **istruzione o operazione dominante** se, per ogni intero $n$, essa viene eseguita, nel caso peggiore di input avente dimensione $n$, un numero di volte $d(n)$ che verifica la condizione $t(n)<a*d(n)+b$ per opportune costanti $a$ e $b$. 
-
    Una **istruzione dominate viene eseguita un numero di volte proporzionale al costo di esecuzione di tutto l'algoritmo**. 
    È importante ricordare che in un programma più istruzioni possono essere dominanti ma può accadere che il programma non contenga istruzioni dominanti. 
 
