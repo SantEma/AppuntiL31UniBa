@@ -144,9 +144,9 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 **Implicazioni della specifica semantica**
 Dalla specifica semantica emerge che per accedere a un elemento occorre conoscerne la **posizione**
 - **Accesso diretto limitato:** possibile solo per il **primo elemento** della lista. 
-- **Operatore di posizione:** l'unico operatore che reatituisce direttamente la posizione del primo elemento è _primolista_.
-- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elmento precedente (o seguente)e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
-- **Ridondanza:** l'operatore _listavuota_ è ridondante perchè può essere sostituito dalla composizione di operatori _finelista (primolita)_.
+- **Operatore di posizione:** l'unico operatore che restituisce direttamente la posizione del primo elemento è _primolista_.
+- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elemento precedente (o seguente)e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
+- **Ridondanza:** l'operatore _listavuota_ è ridondante perché può essere sostituito dalla composizione di operatori _finelista (primolita)_.
 
 ### Realizzazione Sequenziale con Vettore
 Una lista può essere implementata utilizzando un **vettore (array monodimensionale)**.
