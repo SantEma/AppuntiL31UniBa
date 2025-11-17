@@ -52,7 +52,7 @@ Siccome abbiamo delle memorie grandissime a basso costo, **studieremo la comples
 
 Riguardo ai costi:
 - Il costo è pari a 1 per i dati di tipo semplice.
-- Per un array di $n$ elementi, il costo è dato da $n× dimensione di un elemento$.
+- Per un array di $n$ elementi, il costo è dato da $n \times \text{dimensioni di un elemento}$.
 - Il costo di un record è determinato dalla somma dei costi delle sue singole componenti.
 
 Esempio: L'algoritmo
