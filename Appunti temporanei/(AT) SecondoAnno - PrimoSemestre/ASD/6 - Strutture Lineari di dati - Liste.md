@@ -208,19 +208,23 @@ Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
 ### Realizzazione con Puntatori
 La realizzazione con puntatori è considerata  la più **efficace** realizzazione della rappresentazione collegata. 
 Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
-- Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
+
+ Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
   Le operazioni fondamentali su un puntatore sono:
   1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
   2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
   3. **Delete**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
--Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
-	- L'$i$-esimo elemento della lista. 
-	- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
-- **Gestione degli indirizzi:**
-	- La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
-	- L'ultima cella punta a un valore convenzionale NULL. 
-	- Gli indirizzi sono noti alla macchina **ma non al programmatore**.
-	- La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
+
+Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". 
+  L'$i$-esima cella contiene:
+  - L'$i$-esimo elemento della lista. 
+  - L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
+
+ Gli **indirizzi** vengono gestiti in questo modo:
+  - La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
+  - L'ultima cella punta a un valore convenzionale NULL. 
+  - Gli indirizzi sono noti alla macchina **ma non al programmatore**.
+  - La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
 ![[lista8.jpg]]
 ### Argomento: relazione d'ordine e vettore
 La relazione s'ordine che definisce una struttura lineare (come vettore o la lista) è puramente **posizionale** (tipologica): $a_{i}$ precede $a_{i+1}$.
@@ -229,7 +233,7 @@ Questo è sempre vero. Al contrario, un **ordinamento** si riferisce ai calori d
 ![[lista10.jpg]]
 #### Svantaggio della realizzazione sequenziale (vettore)
 In un array, gli elementi devono essere memorizzati in locazioni di memoria contigue. Se si vuole inserire un elemento in posizione $i$ (con $1≤i≤n$), è necessario **spostare tutti gli elementi da $a_{i}$ fino a $a_{a+1}$ a $a_{n}$ di una posizione indietro** per colmare il vuoto. 
-In entrambi i casi la complessità richiede O(n) operazioni di copia (dove n è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
+In entrambi i casi la complessità richiede $O(n)$ operazioni di copia (dove n è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
 #### Vantaggio con realizzazione con i puntatori 
 A differenza della realizzazione con cursori, che utilizza un array di dimensione fissa (il limite spazio), la realizzazione con puntatori si affida a meccanismo si **allocazione dinamica della memoria** (_new_). 
 Quando è necessario inserire un nuovo nodo la funzione _new_ richiede al sistema operativo una nuova porzione di memoria _ovunque_ essa sia disponibile e restituisce l'indirizzo (il puntatore). 
