@@ -91,7 +91,6 @@ Allo scopo è necessario specificare un ordinamento sia nell'insieme $X$ sia in 
 
 **N.B**: Per i DBMS che non consentono di indicare esplicitamente una chiave primaria, ma solo più chiavi, il vincolo di integrità referenziale deve indicare esplicitamente gli attributi che compongono la chiave cui si fa riferimento
 
-
 Esempio:
 ![[47D3EDDB-C576-4939-B9AE-1CEFB4A93A29.png]]
 
