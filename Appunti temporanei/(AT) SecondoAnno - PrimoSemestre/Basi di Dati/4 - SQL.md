@@ -587,7 +587,7 @@ $$\text{CREATE ASSERTION} \ NomeAsserzione \ \text{CHECK} \ (Condizione)$$
 Le asserzioni possono essere verificate immediatamente dopo ogni modifica dello stato del DB **(controllo immediato)** o solo al termine di un insieme di operazioni/transazioni **(controllo differito).** 
 I comandi $\text{SET CONSTRAINTS IMMEDIATE}$ e $\text{SET CONSTRAINTS DEFERRED}$ consentono di specificare o passare da una modalità all’altra.
 ### Viste
-Oltre alla costruzione di tabelle (di base), SQL permette di definire tabelle virtuali chiamate **viste**, sono il risultato di un’espressione SQL a partire da altre tabelle, sia base che virtuali.
+Oltre alla costruzione di tabelle di base, SQL permette di definire tabelle virtuali chiamate **viste** (già viste precedentemente in [[3 - Linguaggi di Interrogazioni per Basi di Dati Relazionali]]), queste ultime sono il risultato di un’espressione SQL a partire da altre tabelle, sia base che virtuali.
 La vista non è memorizzata, quando usata in un’interrogazione è espansa con la sua definizione. 
 La sintassi SQL per definire una vista logica è la seguente:
 $$\begin{aligned}
@@ -595,5 +595,14 @@ $$\begin{aligned}
 &\text{[WITH[local|cascaded] CHECK OPTION]}
 \end{aligned}$$
 L’interrogazione deve restituire un insieme di attributi compatibile con gli attributi nello schema della vista; 
-L'ordine nella target list della clausola select deve corrispondere all'ordine degli attributi nello schema vista.
-[da finire]
+L'ordine nella target list della clausola $\text{SELECT}$ deve corrispondere all'ordine degli attributi nello schema.
+
+Le operazioni di modifica su vista sono soggette a restrizioni, perché spesso non sono riconducibili a modifiche sulle tabelle base usate per definire la vista.
+Le modifiche sono ammesse solo quando la vista è definita con un’espressione che soddisfa le seguenti condizioni:
+- La clausola $\text{SELECT}$ non ha l’opzione $\text{DISTINCT}$ e i valori degli attributi della vista non sono calcolati
+- La clausola $\text{FROM}$ riguarda una sola tabella base o virtuale, a sua volta modificabile, ovvero sono escluse tabelle virtuali ottenute per giunzione
+- La clausola $\text{WHERE}$ non contiene $SottoSelect$
+- Non sono presenti gli operatori $\text{GROUP BY}$ e $\text{HAVING}$
+- Le colonne definite nelle tabelle di base con il vincolo $\text{NOT NULL}$ devono far parte della tabella virtuale
+
+Nell’ambito delle viste modificabili, check option specifica che possono essere ammessi aggiornamenti solo sulle righe della vista, e dopo gli aggiornamenti le righe devono continuare ad appartenere alla vista.
