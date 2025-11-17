@@ -472,7 +472,7 @@ copia (px: posizione per riferimento; X: lista;
     //se l'elem. copiatusao è > del successivo la catena è finita 
     finecatena = (elemento > leggilista (px, X))
 ```
-# Realizzazioni liste in C++
+## Realizzazioni liste in C++
 ## Classe Libro
 ```c++
 //FILE libro.h
