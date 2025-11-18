@@ -205,31 +205,35 @@ L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elem
 La realizzazione con puntatori è considerata la più **efficace** realizzazione della rappresentazione collegata, questa si basa (come da nome) sull'uso congiunto del **tipo puntatore e del record (o struct)**.
 - Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
   Le operazioni fondamentali su un puntatore sono:
-  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
-  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 	
-  3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
--Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
-	- L'$i$-esimo elemento della lista. 
-	- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
-- **Gestione degli indirizzi:**
-	- La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
-	- L'ultima cella punta a un valore convenzionale NULL. 
-	- Gli indirizzi sono noti alla macchina **ma non al programmatore**.
-	- La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
+  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di $p$. 
+  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in $p$. 	
+  3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in $p$. 
+
+Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". |
+L'$i$-esima cella contiene:
+- L'$i$-esimo elemento della lista. 
+- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
+
+Gli indirizzi vengono gestiti in questa maniera:
+- La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
+- L'ultima cella punta a un valore convenzionale NULL. 
+- Gli indirizzi sono noti alla macchina **ma non al programmatore**.
+- La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
 ![[lista8.jpg]]
-### Argomento: relazione d'ordine e vettore
-La relazione s'ordine che definisce una struttura lineare (come vettore o la lista) è puramente **posizionale** (tipologica): $a_{i}$ precede $a_{i+1}$.
-Questo è sempre vero. Al contrario, un **ordinamento** si riferisce ai calori degli elementi, come ad esempio $a_{i}≤a_{i+1}$. Un vettore non ordinato conserva la relazione d'ordine posizionale (l'elemento in posizione 5 viene dopo quello di posizione 4) anche le proprietà. La lista standard, in quanto sequenziale, conserva solo la relazione d'ordine posizionale, garantita dai riferimenti logici (cursore o puntatore).
+### Relazione d'ordine e vettore
+La relazione d'ordine che definisce una struttura lineare (come vettore o la lista) è puramente **posizionale** (tipologica): $a_{i}$ precede $a_{i+1}$.
+Questo è sempre vero. Al contrario, un **ordinamento** si riferisce ai calori degli elementi, come ad esempio $a_{i}≤a_{i+1}$.
+Un vettore non ordinato conserva la relazione d'ordine posizionale (l'elemento in posizione 5 viene dopo quello di posizione 4) anche le proprietà. La lista standard, in quanto sequenziale, conserva solo la relazione d'ordine posizionale, garantita dai riferimenti logici (cursore o puntatore).
 ![[lista9.jpg]]
 ![[lista10.jpg]]
 #### Svantaggio della realizzazione sequenziale (vettore)
-In un array, gli elementi devono essere memorizzati in locazioni di memoria contigue. Se si vuole inserire un elemento in posizione $i$ (con $1≤i≤n$), è necessario **spostare tutti gli elementi da $a_{i}$ fino a $a_{a+1}$ a $a_{n}$ di una posizione indietro** per colmare il vuoto. 
-In entrambi i casi la complessità richiede O(n) operazioni di copia (dove n è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
-#### Vantaggio con realizzazione con i puntatori 
+In un array, gli elementi devono essere memorizzati in locazioni di memoria contigue; se si vuole inserire un elemento in posizione $i$ (con $1≤i≤n$), è necessario **spostare tutti gli elementi da $a_{i}$ fino a $a_{i+1}$ a $a_{n}$ di una posizione indietro** per colmare il vuoto. 
+In entrambi i casi la complessità richiede $O(n)$ operazioni di copia (dove $n$ è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
+#### Vantaggio con realizzazione con i puntatori
 A differenza della realizzazione con cursori, che utilizza un array di dimensione fissa (il limite spazio), la realizzazione con puntatori si affida a meccanismo si **allocazione dinamica della memoria** (_new_). 
 Quando è necessario inserire un nuovo nodo la funzione _new_ richiede al sistema operativo una nuova porzione di memoria _ovunque_ essa sia disponibile e restituisce l'indirizzo (il puntatore). 
-La gestione della memoria libera (l'equivalente della listalibera) è demandata direttamente al sistema (o al _garbage collector_), superando il limite prefissato di un array e permettendo alla lista di crescere fino a quando la memoria del sistema lo consente.
-# Ricerca in una Lista Lineare Ordinata
+La gestione della memoria libera (l'equivalente della listalibera) è demandata direttamente al sistema (o al **garbage collector**), superando il limite prefissato di un array e permettendo alla lista di crescere fino a quando la memoria del sistema lo consente.
+### Ricerca in una lista lineare ordinata
 L'algoritmo di ricerca non si basa sull'indice fisico (come un array), ma sull'ordine logico, scorrendo la lista tramite l'operatore `succlissta`.
 
 L'idea centrale è:
@@ -237,23 +241,23 @@ L'idea centrale è:
 Per fare ciò, si usano due puntatori:
 1. `corrente`: Punta all'elemento che stiamo analizzando ora.
 2. `precedente`: Punta all'elemento analizzato al passo prima.
-È fondamentale aggiornare `precedente = corrente` _prima_ di avanzare `corrente` con `corrente = succlista(corrente, I)`. Questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
+È fondamentale aggiornare `precedente = corrente` prima di avanzare `corrente` con `corrente = succlista(corrente, I)`, questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
 
-Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione) `corrente`** al quale la scansione si è arrestata.
+Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione)**  `corrente` al quale la scansione si è arrestata.
 Questo metodo è più versatile perché il puntatore restituito assume un significato operativo preciso in _entrambi_ gli scenari, sia in caso di successo che di fallimento della ricerca, come illustrato dall'esempio della ricerca di "*dario*".
 ![[carlo e davide.png]]
-L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DAVIDE" ($dario < davide$).
-- **Arresto:** La ricerca si interrompe perché ha trovato un elemento ("DAVIDE") che, nell'ordine alfabetico, è _superiore_ a quello cercato.
-- **Significato del puntatore:** Il puntatore `corrente` restituito punta a "DAVIDE". Questo valore non è inutile; al contrario, indica **l'esatta posizione logica prima della quale l'elemento "dario" dovrebbe essere inserito** per preservare l'ordinamento della lista.
+L'algoritmo confronta "dario" con "CARLO" ($\text{dario} > \text{carlo}$) e avanza e successivamente, confronta "dario" con "DAVIDE" ($\text{dario} < \text{davide}$).
+La ricerca si interrompe perché ha trovato un elemento ("DAVIDE") che, nell'ordine alfabetico, è _superiore_ a quello cercato.
+Il puntatore `corrente` restituito punta a "DAVIDE". Questo valore non è inutile; al contrario, indica **l'esatta posizione logica prima della quale l'elemento "dario" dovrebbe essere inserito** per preservare l'ordinamento della lista.
 
 Analizziamo questo caso:
 ![[carlo dario davide.png]]
-L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DARIO" ($dario == dario$).
-- **Arresto:** La ricerca si interrompe perché ha trovato una _corrispondenza esatta_.
-- **Significato del puntatore:** Il puntatore `corrente` restituito punta **direttamente all'elemento "DARIO"**. Questa è la posizione necessaria per eseguire operazioni successive sull'elemento, come la sua cancellazione (`canclista`) o la lettura di dati associati (`leggilista`).
-## Fusione di liste ordinate
-L'algoritmo di fusione (o _merge_) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
-Questo algoritmo è fondamentale ed è un blocco di costruzione per metodi di ordinamento più complessi, come il _Natural Merge Sort_ (visto nelle slide successive).
+L'algoritmo confronta "dario" con "CARLO" ($\text{dario} > \text{carlo}$) e avanza e successivamente, confronta "dario" con "DARIO" ($\text{dario} == \text{dario}$).
+La ricerca si interrompe perché ha trovato una corrispondenza esatta.
+Il puntatore `corrente` restituito punta **direttamente all'elemento "DARIO"**, questa è la posizione necessaria per eseguire operazioni successive sull'elemento, come la sua cancellazione (`canclista`) o la lettura di dati associati (`leggilista`).
+### Fusione di liste ordinate
+L'algoritmo di fusione (o **merge**) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
+Questo algoritmo è fondamentale ed è un blocco di costruzione per metodi di ordinamento più complessi, come il natural merge sort.
 ```c++
 creaLista(Lista3)
 p1=primolista(Lista1)
@@ -464,7 +468,7 @@ copia (px: posizione per riferimento; X: lista;
     //se l'elem. copiatusao è > del successivo la catena è finita 
     finecatena = (elemento > leggilista (px, X))
 ```
-# Realizzazioni liste in C++
+## Realizzazioni liste in C++
 ## Classe Libro
 ```c++
 //FILE libro.h
