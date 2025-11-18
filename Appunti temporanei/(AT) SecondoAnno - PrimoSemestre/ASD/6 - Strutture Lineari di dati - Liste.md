@@ -3,7 +3,7 @@ La loro caratteristica fondamentale è che in esse è presente una **relazione d
 Questa relazione d'ordine non implica necessariamente un ordinamento dei valori
 (es. alfabetico o numerico), ma unicamente l'ordine posizionale. 
 Per distinguere le diverse strutture lineari, è rilevante considerare due fattori.
-- **i modi di accedere (modalità si accesso)**: come si individua la posizione nella sequenza in cui operare. 
+- **I modi di accedere (modalità si accesso)**: come si individua la posizione nella sequenza in cui operare. 
 - **I modi di agire (Operatori)**: i tipi di azione che si possono compiere sulla posizione individuata. 
 
 **Metodi di accesso:**
