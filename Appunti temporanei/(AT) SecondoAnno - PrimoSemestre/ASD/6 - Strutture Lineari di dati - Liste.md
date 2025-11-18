@@ -21,20 +21,18 @@ Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilar
 - **Inserzione (scrittura)**: Inserimento di un nuovo componente. 
 - **Rimozione (cancellazione)**: Rimozione di un componente. 
 Nelle strutture dati le operazioni da fare sono generalmente basilari. 
-
-
-## LISTE
+## Liste
 **Definizione**:
-==Una lista è definita una sequenza **finita, anche vuota (λ)**, di elementi dello stesso tipo (omogenei)==. 
+Una lista è definita una sequenza **finita, anche vuota ($\lambda$)**, di elementi dello stesso tipo (omogenei).
 La lista viene indicata con 
 $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
-- A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
-- La Lista è una struttura dati **dinamica** perchè non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
-- **Posizione e valore:** a ciascun elemento $a_{i}$ di una lista viene associato:
-	- una posizione $pos(i)$
-	- un valore $a(i)$
+A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
+La Lista è una struttura dati **dinamica** perchè non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
+A ciascun elemento $a_{i}$ di una lista viene associato:
+- una posizione $pos(i)$
+- un valore $a(i)$
 - **Accesso:** si può accedere direttamente solo al primo elemento della sequenza. Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
 - **Operazioni**: la lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione**, queste due operazione vanno a modificare la dimensione, concetto in ammissibile per i vettori. 
 
