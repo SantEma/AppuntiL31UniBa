@@ -152,19 +152,19 @@ Una lista può essere implementata utilizzando un **vettore (array monodimension
 	- **lunghezza:** variabile per indicare il **numero effettivo di elementi** di cui è composta la lista rappresentata. 
 
  - **Vantaggio:** consente di realizzare in modo molto semplice alcune delle operazioni definite per la lista (es. _primolista, succlista_ sono a complessità $O(1)$).
- - **Problema:** il vero problema riguarda le operazioni di _inlista_ (inserzione) e _canclista_ (rimozione), infatti L'inserzione o cancellazione di un elemento causa lo **spostamento** di tutti gli elementi successivi all'interno del vettore per mantenere la contiguità fisica, rendendo l'operazione costosa ($O(n)$). 
+ - **Problema:** il vero problema riguarda le operazioni di _inlista_ (inserzione) e _canclista_ (rimozione), infatti l'inserzione o cancellazione di un elemento causa lo **spostamento** di tutti gli elementi successivi all'interno del vettore per mantenere la contiguità fisica, rendendo l'operazione costosa ($O(n)$). 
    La banale infezione in una terza posizione di un nuovo elemento come nell'esempio, causa lo spostamento verso il basso del quarto e quindi elemento.
  ![[lista1.jpg]]
 ### Rappresentazione collegata
-L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta  **riferimento o puntatore**). 
+L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta  **riferimento o puntatore**).
 Questo riferimento permette di individuare dove è memorizzato l'elemento successivo della sequenza logica. 
 Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 - Gli elementi sono rappresentati mediante **nodi**.
 - I riferimenti sono rappresentati mediante **archi** che collegano i nodi.
-	![[lista2.jpg]]
+  ![[lista2.jpg]]
 Come si può notare:
-	- Si usa un **riferimento iniziale** al primo elemento della lista. 
-	- Si usa un simbolo speciale, ∅ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
+- Si usa un **riferimento iniziale** al primo elemento della lista. 
+  - Si usa un simbolo speciale, $\varnothing$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
 
 
 ### Realizzazione con cursori
