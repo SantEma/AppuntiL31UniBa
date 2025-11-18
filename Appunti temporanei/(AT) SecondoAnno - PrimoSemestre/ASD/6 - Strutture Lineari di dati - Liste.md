@@ -173,9 +173,8 @@ Si definisce un unico vettore, detto **vettore spazio** che:
 - Contiene tutte le celle libere, organizzate in una lista aggiuntiva della _listalibera_.
 
 *Esempio*:
-Supponiamo di avere tre diverse liste, $l$ $m$,$s$, dove:
-$l=<7,2> m=<4,9,13>$       $s=<13,4,9,13>$
-Per rappresentare queste tre liste possiamo usare un unico vettore.
+Supponiamo di avere tre diverse liste, $l,m,s$, dove:
+$$l=<7,2> \quad m=<4,9,13> \quad s=<13,4,9,13>$$Per rappresentare queste tre liste possiamo usare un unico vettore.
 **Struttura della cella:** La componente (cella) del vettore spazio ha due campi:
 - Elemento: dove è memorizzato il contenuto del nodo. 
 - Successivo: contiene il cursore (indice) ovvero il riferimento al prossimo nodo logico della lista. 
