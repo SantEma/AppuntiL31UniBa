@@ -236,15 +236,14 @@ La gestione della memoria libera (l'equivalente della listalibera) è demandata
 ### Ricerca in una lista lineare ordinata
 L'algoritmo di ricerca non si basa sull'indice fisico (come un array), ma sull'ordine logico, scorrendo la lista tramite l'operatore `succlissta`.
 
-L'idea centrale è:
-"mentre l'elemento che cerco è più grande dell'elemento corrente della lista, passa all'elemento successivo".
+L'idea centrale è "mentre l'elemento che cerco è più grande dell'elemento corrente della lista, passa all'elemento successivo".
 Per fare ciò, si usano due puntatori:
 1. `corrente`: Punta all'elemento che stiamo analizzando ora.
 2. `precedente`: Punta all'elemento analizzato al passo prima.
 È fondamentale aggiornare `precedente = corrente` prima di avanzare `corrente` con `corrente = succlista(corrente, I)`, questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
 
 Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione)**  `corrente` al quale la scansione si è arrestata.
-Questo metodo è più versatile perché il puntatore restituito assume un significato operativo preciso in _entrambi_ gli scenari, sia in caso di successo che di fallimento della ricerca, come illustrato dall'esempio della ricerca di "*dario*".
+Questo metodo è più versatile perché il puntatore restituito assume un significato operativo preciso in _entrambi_ gli scenari, sia in caso di successo che di fallimento della ricerca, come illustrato dall'esempio della ricerca di "dario".
 ![[carlo e davide.png]]
 L'algoritmo confronta "dario" con "CARLO" ($\text{dario} > \text{carlo}$) e avanza e successivamente, confronta "dario" con "DAVIDE" ($\text{dario} < \text{davide}$).
 La ricerca si interrompe perché ha trovato un elemento ("DAVIDE") che, nell'ordine alfabetico, è _superiore_ a quello cercato.
@@ -283,37 +282,37 @@ while (not finelista(p1,Lista1) and not finelista (p2,Lista2)) do
 		p2=succlista(p2,Lista2)
 		p3=succlista(p3,Lista3)
 ```
-La complessità temporale dell'algoritmo di fusione (merge) è $O(n+m)$.
+La complessità temporale dell'algoritmo del merge è $O(n+m)$.
 L'algoritmo è **lineare** rispetto al numero totale di elementi. Questo perché, per costruire la `Lista3` ordinata, l'algoritmo deve esaminare ogni elemento di `Lista1` e ogni elemento di `Lista2` **esattamente una volta**.
-### Logica di Funzionamento
-L'algoritmo è molto efficiente perché esegue la fusione in un'unica passata, senza bisogno di riordinare la lista finale. La logica si basa su un confronto sequenziale.
+#### Logica di Funzionamento
+L'algoritmo è molto efficiente perché esegue la fusione in un'unica passata, senza bisogno di riordinare la lista finale. La logica si basa su un confronto sequenziale:
 1. **Inizializzazione:**
-    - Si crea una `Lista3` vuota.
-    - Si impostano tre puntatori (posizioni) per scorrere le liste:
-        - `p1` punta al primo elemento di `Lista1`.
-        - `p2` punta al primo elemento di `Lista2`.
-        - `p3` punta alla prima posizione (vuota) di `Lista3`.
+   - Si crea una `Lista3` vuota.
+   - Si impostano tre puntatori (posizioni) per scorrere le liste:
+    - `p1` punta al primo elemento di `Lista1`.
+    - `p2` punta al primo elemento di `Lista2`.
+    - `p3` punta alla prima posizione (vuota) di `Lista3`.
 2. **Ciclo Principale di Confronto:**
-    - Si entra in un ciclo `while` che continua **fintanto che entrambe le liste hanno ancora elementi** (`not finelista(p1, Lista1) AND not finelista(p2, Lista2)`).
-    - All'interno del ciclo, si leggono i due elementi correnti: `elem1` (da `p1`) e `elem2` (da `p2`).
-    - **Si confrontano i due elementi:**
-        - **Se `elem1 < elem2`**: L'elemento più piccolo è `elem1`. Viene inserito in `Lista3` e si fa avanzare _solo_ `p1` alla posizione successiva di `Lista1`.
-        - **Altrimenti (`elem1 >= elem2`)**: L'elemento più piccolo (o uguale) è `elem2`. Viene inserito in `Lista3` e si fa avanzare _solo_ `p2` alla posizione successiva di `Lista2`.
-    - Indipendentemente da quale elemento sia stato inserito, **`p3` viene sempre fatto avanzare** per puntare alla prossima posizione libera in `Lista3`.
+   - Si entra in un ciclo `while` che continua **fintanto che entrambe le liste hanno ancora elementi** (`not finelista(p1, Lista1) AND not finelista(p2, Lista2)`).
+   - All'interno del ciclo, si leggono i due elementi correnti: `elem1` (da `p1`) e `elem2` (da `p2`).
+   - **Si confrontano i due elementi:**
+     - **Se `elem1 < elem2`**: L'elemento più piccolo è `elem1`. Viene inserito in `Lista3` e si fa avanzare _solo_ `p1` alla posizione successiva di `Lista1`.
+    - **Altrimenti (`elem1 >= elem2`)**: L'elemento più piccolo (o uguale) è `elem2`. Viene inserito in `Lista3` e si fa avanzare _solo_ `p2` alla posizione successiva di `Lista2`.
+ - Indipendentemente da quale elemento sia stato inserito, **`p3` viene sempre fatto avanzare** per puntare alla prossima posizione libera in `Lista3`.
 3. **Fase di "Pulizia" (Copia dei Rimanenti):**
-    - Il ciclo principale termina quando una delle due liste (o entrambe) è finita.
-    - A questo punto, è possibile che una delle due liste contenga ancora elementi. Questi elementi sono, per definizione, già ordinati e sono tutti più grandi degli elementi già inseriti in `Lista3`.
-    - **Primo ciclo di pulizia:** Un `while` controlla se `Lista1` ha ancora elementi (`not finelista(p1, Lista1)`). Se sì, copia tutti gli elementi rimanenti da `Lista1` a `Lista3`.
-    - **Secondo ciclo di pulizia:** Un `while` fa lo stesso per `Lista2` (`not finelista(p2, Lista2)`). Copia tutti gli elementi rimanenti da `Lista2` a `Lista3`.
+   - Il ciclo principale termina quando una delle due liste (o entrambe) è finita.
+   - A questo punto, è possibile che una delle due liste contenga ancora elementi. Questi elementi sono, per definizione, già ordinati e sono tutti più grandi degli elementi già inseriti in `Lista3`.
+   - **Primo ciclo di pulizia:** Un `while` controlla se `Lista1` ha ancora elementi (`not finelista(p1, Lista1)`). Se sì, copia tutti gli elementi rimanenti da `Lista1` a `Lista3`.
+   - **Secondo ciclo di pulizia:** Un `while` fa lo stesso per `Lista2` (`not finelista(p2, Lista2)`). Copia tutti gli elementi rimanenti da `Lista2` a `Lista3`.
 
 Alla fine di questo processo, `Lista3` conterrà la fusione perfettamente ordinata di `Lista1` e `Lista2`.
-### Ordinamento di una Lista (Natural Merge Sort)
-Questo algoritmo non guarda i singoli elementi, ma sfrutta le "catene" (chiamate anche _run_).
+#### Ordinamento di una Lista (Natural Merge Sort)
+Questo algoritmo non guarda i singoli elementi, ma sfrutta le "catene" (chiamate anche run).
 Una **catena** è una sottosequenza della lista che è **già ordinata al suo interno**.
 Qualsiasi lista, anche se disordinata, può essere vista come una sequenza di catene. 
 Una catena parte dall'inizio della lista o quando l'ordine si "rompe" (es. $a_{i−1​}>a_{i}$​) e termina alla fine della lista o quando l'ordine si "rompe" di nuovo (es. $a_{k}​>a_{k+1}​$).
 
-*Esempio*:
+**Esempio**:
 $l=82\ 16\ 14\ 15\ 84\ 25\ 77\ 13\ 75\ 4$, dove $l$ è ottenuta dalla concatenazione di sei catene di varia lunghezza.
 Questa lista è composta da **6 catene**:
 - **Catena 1:** <82> (finisce perché 82>16)
@@ -554,15 +553,14 @@ La lista usa un implementazione **sequenziale**, che usa un array **statico** pe
 **La struttura**:
 - Nella riga *10 - 11* si vincola *tipoelem*, ovvero la lista funzionerà solamente se all'interno sarà popolata da oggetti della classe *Libro*.
 - `private`:
-	- `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
-	- `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
+  - `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
+  - `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
 - `public`:
-	- `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
-	- `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
-- **I limiti**:
-	L'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
-	1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
-	2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
+  - `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
+  - `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
+- **I limiti**: L'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
+  1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
+  2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
 
 ```c++
 //FILE listav.cpp
@@ -653,7 +651,7 @@ Qui ci si addentra su delle implementazioni più specifiche e dettagliate della 
     3. Ad ogni passo, **sposta l'elemento `elementi[i+1]` a sinistra**, in `elementi[i]`, sovrascrivendo di fatto l'elemento da cancellare.
     4. Infine, decrementa `lunghezza`.
 
-## Funzioni di servizio
+### Funzioni di servizio
 ```c++
 //FILE serviziolv.h
 
@@ -713,7 +711,7 @@ void epurazioneLista(Lista &l){
 	Usa un **doppio ciclo** per scorrere la lista: un puntatore `p` scorre ogni elemento dall'alto, e un puntatore `q` scorre gli elementi _successivi_ a `p` dal basso.
     **Punto chiave:** Esegue il confronto `if (l.leggiLista(p) == l.leggiLista(q))`. Questo `==` è l'**operatore `operator==` che abbiamo definito nella classe `Libro`** all'inizio.
     Se trova un duplicato (il confronto è `true`), salva quel valore di $q$ in $r$ e usa il metodo pubblico `l.cancLista(q)` per rimuoverlo dalla lista, dopo di che rimette in $q$ l'elemento in $r$ per verificare se è la fine o meno della lista e poter continuare da quel punto.
-## Funzioni di Test
+### Funzioni di Test
 ```c++
 //FILE testlista.cpp
 
@@ -747,18 +745,17 @@ int main(){
 	return 0;
 }
 ```
-## Overloading degli operatori
+### Overloading degli operatori
 L'overloading degli operatori è una caratteristica del C++ che consente di **ridefinire il comportamento di un operatore**(come `+`, `-`, `==`, `<<`) affinché possa essere utilizzato con oggetti di una classe definita dall'utente (come la classe `Libro` vista in precedenza). 
 Per utilizzare un operatore su un oggetto di una classe, è necessario che tale operatore sia stato sovraccaricato per quella classe.
 
-#### Come definirlo
 Si definisce scrivendo una funzione membro (o `friend`) il cui nome è composto dalla parola chiave `operator` seguita dal simbolo dell'operatore che si intende sovraccaricare.
 
 *Esempio visto in precedenza con la classe `Libro`*: `bool operator==(Libro l);`
 
 Il C++ impone regole precise su cosa si può e non si può fare con il sovraccarico.
 
-**1. Operatori NON Sovraccaricabili**
+#### Operatori non sovraccaricabili
 Non tutti gli operatori possono essere ridefiniti. Gli operatori esclusi sono fondamentali per il funzionamento del linguaggio stesso:
 - `.` (Accesso a membro)
 - `.*` (Accesso a membro tramite puntatore)
@@ -766,7 +763,7 @@ Non tutti gli operatori possono essere ridefiniti. Gli operatori esclusi sono f
 - `?:` (Operatore condizionale ternario)
 - `sizeof` (Operatore di dimensione) 
 
-**2. Operatori Sovraccaricabili**
+#### Operatori sovraccaricabili
 La maggior parte degli altri operatori, inclusi quelli aritmetici, logici, di confronto e anche operatori più specifici, può essere sovraccaricati :
 - Aritmetici: `+`, `-`, `*`, `/`, `%`, `++`, `--`
 - Confronto: `==`, `!=`, `<`, `>`, `<=`, `>=`
@@ -774,14 +771,13 @@ La maggior parte degli altri operatori, inclusi quelli aritmetici, logici, di co
 - Allocazione: `new`, `delete`
 - Accesso: `[]` (accesso array), `()` (chiamata di funzione)
 
-**3. Regole Fondamentali**
+#### Regole Fondamentali
 Ci sono restrizioni fondamentali che non possono essere violate:
 - **Arità:** Non è possibile cambiare il numero di operandi di un operatore (es. un operatore binario come `+` deve rimanere binario; non può diventare unario).
 - **Precedenza e Associatività:** Non è possibile cambiare l'ordine di valutazione. L'operatore `*` avrà sempre la precedenza sull'operatore `+`, anche se sovraccaricati.
 - **Nuovi Operatori:** Non è possibile inventare nuovi simboli per gli operatori (es. non si può creare un `operator**`). 
 - **Tipi Primitivi:** Non è possibile sovraccaricare gli operatori per i tipi di dati fondamentali (primitivi) del C++. Ad esempio, non si può ridefinire come funziona l'addizione tra due `int`.
 #### Sintassi ed Esempi
-
 - **Operatori Unari:** Agiscono su un singolo operando (es. `!myString`).
 ```c++
 class String {
