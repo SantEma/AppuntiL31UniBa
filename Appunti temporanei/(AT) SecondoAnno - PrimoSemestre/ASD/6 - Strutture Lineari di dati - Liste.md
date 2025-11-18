@@ -141,9 +141,9 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 
 Dalla specifica semantica emerge che per accedere a un elemento occorre conoscerne la **posizione**
 - **Accesso diretto limitato:** possibile solo per il **primo elemento** della lista. 
-- **Operatore di posizione:** l'unico operatore che reatituisce direttamente la posizione del primo elemento è _primolista_.
-- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elmento precedente (o seguente)e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
-- **Ridondanza:** l'operatore _listavuota_ è ridondante perchè può essere sostituito dalla composizione di operatori _finelista (primolita)_.
+- **Operatore di posizione:** l'unico operatore che restituisce direttamente la posizione del primo elemento è _primolista_.
+- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elemento precedente (o seguente) e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
+- **Ridondanza:** l'operatore _listavuota_ è ridondante perché può essere sostituito dalla composizione di operatori _finelista (primolita)_.
 
 ### Realizzazione Sequenziale con Vettore
 Una lista può essere implementata utilizzando un **vettore (array monodimensionale)**.
@@ -152,7 +152,7 @@ Una lista può essere implementata utilizzando un **vettore (array monodimension
 	- **lunghezza:** variabile per indicare il **numero effettivo di elementi** di cui è composta la lista rappresentata. 
 
  - **Vantaggio:** consente di realizzare in modo molto semplice alcune delle operazioni definite per la lista (es. _primolista, succlista_ sono a complessità $O(1)$).
- - **Problema:** il vero problema riguarda le operazioni di _inlista_ (inserzione) e _canclista_ (rimozione). L'inserzione o cancellazione di un elemento causa lo **spostamento** di tutti gli elementi successivi all'interno del vettore per mantenere la contiguità fisica, rendendo l'operazione costosa ($O(n)$). 
+ - **Problema:** il vero problema riguarda le operazioni di _inlista_ (inserzione) e _canclista_ (rimozione), infatti L'inserzione o cancellazione di un elemento causa lo **spostamento** di tutti gli elementi successivi all'interno del vettore per mantenere la contiguità fisica, rendendo l'operazione costosa ($O(n)$). 
    La banale infezione in una terza posizione di un nuovo elemento come nell'esempio, causa lo spostamento verso il basso del quarto e quindi elemento.
  ![[lista1.jpg]]
 ### Rappresentazione collegata
