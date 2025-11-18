@@ -13,7 +13,7 @@ Abbiamo diversi metodi di accesso:
   Si ha un punto di ingresso e dei meccanismi per muoversi sequenzialmente (avanti o indietro). 
   - **Esempio:** La lista. 
 - **Accesso a Estremi:** strutture che permettono di accedere solo al primo elemento e/o all'ultimo. 
-	- **Esempio:** la **pila** (che usa l'algoritmo LIFO - last in First out) e la **coda** (che usa l'algoritmo FIFO - First in First out). 
+  - **Esempio:** la **pila** (che usa l'algoritmo LIFO - last in First out) e la **coda** (che usa l'algoritmo FIFO - First in First out). 
 
 Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilari in una sequenza sono:
 - **Ispezione (lettura)**: Lettura del valore di un componente. 
@@ -22,7 +22,7 @@ Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilar
 - **Rimozione (cancellazione)**: Rimozione di un componente. 
 Nelle strutture dati le operazioni da fare sono generalmente basilari. 
 ## Liste
-**Definizione**:
+**Def**:
 Una lista è definita una sequenza **finita, anche vuota ($\lambda$)**, di elementi dello stesso tipo (omogenei).
 La lista viene indicata con 
 $$
