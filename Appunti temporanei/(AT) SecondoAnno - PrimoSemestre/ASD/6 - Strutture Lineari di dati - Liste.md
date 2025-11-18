@@ -175,15 +175,16 @@ Si definisce un unico vettore, detto **vettore spazio** che:
 *Esempio*:
 Supponiamo di avere tre diverse liste, $l,m,s$, dove:
 $$l=<7,2> \quad m=<4,9,13> \quad s=<13,4,9,13>$$Per rappresentare queste tre liste possiamo usare un unico vettore.
-**Struttura della cella:** La componente (cella) del vettore spazio ha due campi:
-- Elemento: dove è memorizzato il contenuto del nodo. 
-- Successivo: contiene il cursore (indice) ovvero il riferimento al prossimo nodo logico della lista. 
 
- **Posizione Logica:** La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
- La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
- Analogamente:
+La componente (**cella**) del vettore spazio ha due campi:
+- **Elemento**: dove è memorizzato il contenuto del nodo. 
+- **Successivo**: contiene il cursore (indice) ovvero il riferimento al prossimo nodo logico della lista. 
+
+La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
+La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
+Analogamente:
  - pos(n+1) è il cursore alla cella successiva all'elemento n-esimo (se n≥1), o 0 altrimenti.
- - La lista vuota si indica con L=∅ (insieme vuoto).
+ - La lista vuota si indica con L=$varnothing$ (insieme vuoto).
 ![[lista3.jpg]]
 
 **Aggiornamento e listalibera:** Per inslista e canclista, il problema di individuare una posizione libera è risolto usando la **listalibera**.
