@@ -321,7 +321,7 @@ Questa lista è composta da **6 catene**:
 - **Catena 4:** <25, 77> (finisce perché 77>13)
 - **Catena 5:** <13, 75> (finisce perché 75>4)
 - **Catena 6:** <4> (finisce perché la lista termina)
-###### **Logica del Natural Merge Sort**
+###### Logica del Natural Merge Sort
 L'idea di questo algoritmo è:
 1. La lista è una sequenza di k catene.
 2. Se usiamo l'algoritmo di **Fusione** per fondere le catene tra loro, otterremo una nuova lista con un numero minore di catene (circa $k/2$), che saranno lunghe il doppio.
