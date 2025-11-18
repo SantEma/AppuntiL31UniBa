@@ -156,7 +156,7 @@ Una lista può essere implementata utilizzando un **vettore (array monodimension
    La banale infezione in una terza posizione di un nuovo elemento come nell'esempio, causa lo spostamento verso il basso del quarto e quindi elemento.
  ![[lista1.jpg]]
 ### Rappresentazione collegata
-L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta  **riferimento o puntatore**).
+L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta **riferimento o puntatore**).
 Questo riferimento permette di individuare dove è memorizzato l'elemento successivo della sequenza logica. 
 Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 - Gli elementi sono rappresentati mediante **nodi**.
@@ -164,9 +164,7 @@ Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
   ![[lista2.jpg]]
 Come si può notare:
 - Si usa un **riferimento iniziale** al primo elemento della lista. 
-  - Si usa un simbolo speciale, $\varnothing$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
-
-
+- Si usa un simbolo speciale, $\varnothing$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
 ### Realizzazione con cursori
 La realizzazione con cursori utilizza un vettore (array monodimensionale) per l'implementazione della lista, ma sfrutta i riferimenti per superare il problema dell'aggiornamento (inserimento o cancellazione di un elemento) che affligge la realizzazione sequenziale pura.
 I riferimenti si realizzano mediante i **cursori**, cioè variabili intere o enumerative il cui valore è interpretato come indice di una cella del vettore. 
@@ -176,7 +174,7 @@ Si definisce un unico vettore, detto **vettore spazio** che:
 
 *Esempio*:
 Supponiamo di avere tre diverse liste, $l$ $m$,$s$, dove:
-$l=<7,2>$              $m=<4,9,13>$       $s=<13,4,9,13>$
+$l=<7,2> m=<4,9,13>$       $s=<13,4,9,13>$
 Per rappresentare queste tre liste possiamo usare un unico vettore.
 **Struttura della cella:** La componente (cella) del vettore spazio ha due campi:
 - Elemento: dove è memorizzato il contenuto del nodo. 
