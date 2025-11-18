@@ -33,8 +33,8 @@ La Lista è una struttura dati **dinamica** perchè non ha una dimensione prefis
 A ciascun elemento $a_{i}$ di una lista viene associato:
 - una posizione $pos(i)$
 - un valore $a(i)$
-- **Accesso:** si può accedere direttamente solo al primo elemento della sequenza. Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
-- **Operazioni**: la lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione**, queste due operazione vanno a modificare la dimensione, concetto in ammissibile per i vettori. 
+Nella lista si può accedere direttamente solo al primo elemento della sequenza, per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
+La lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione** andandone a modificare la dimensione, concetto in ammissibile per i vettori. 
 
 ### Lunghezza e sottoliste
 La lunghezza di una lista è il **numero dei suoi elementi**.
