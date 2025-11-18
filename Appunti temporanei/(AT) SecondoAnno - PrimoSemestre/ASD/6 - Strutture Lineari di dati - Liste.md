@@ -9,15 +9,16 @@ Per distinguere le diverse strutture lineari, è rilevante considerare due fatto
 Abbiamo diversi metodi di accesso:
 - **Accesso diretto:** Consente di accedere al singolo componente mediante il **nome** e il meccanismo dell'**indice** 
   - **Esempio:** il vettore è il tipico esempio di struttura dati astratta che corrisponde alla struttura dati fisica in C (struttura dati concreta). 
-- **Accesso a scansione (sequenziale)**: consente l'accesso all'elemento generico solo dopo aver **scandito** sequenzialmente gli elementi che lo precedono. Si ha un punto di ingresso e dei meccanismi per muoversi sequenzialmente (avanti o indietro). 
-	- **Esempio tipico:** la Lista. 
+- **Accesso a scansione (sequenziale)**: consente l'accesso all'elemento generico solo dopo aver **scandito** sequenzialmente gli elementi che lo precedono. 
+  Si ha un punto di ingresso e dei meccanismi per muoversi sequenzialmente (avanti o indietro). 
+  - **Esempio:** La lista. 
 - **Accesso a Estremi:** strutture che permettono di accedere solo al primo elemento e/o all'ultimo. 
-	- **Esempio tipico:** la **pila** (che usa l'algoritmo LIFO - last in First out) e la **coda** (che usa l'algoritmo FIFO - First in First out). 
+	- **Esempio:** la **pila** (che usa l'algoritmo LIFO - last in First out) e la **coda** (che usa l'algoritmo FIFO - First in First out). 
 
 Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilari in una sequenza sono:
-- **Ispezione (Lettura)**: Lettura del valore di un componente. 
-- **Aggiornamento (Cambio di valore)**: Aggiornamento del valore di un componente. 
-- **Inserzione (Scrittura)**: Inserimento di un nuovo componente. 
+- **Ispezione (lettura)**: Lettura del valore di un componente. 
+- **Aggiornamento (cambio di valore)**: Aggiornamento del valore di un componente. 
+- **Inserzione (scrittura)**: Inserimento di un nuovo componente. 
 - **Rimozione (cancellazione)**: Rimozione di un componente. 
 Nelle strutture dati le operazioni da fare sono generalmente basilari. 
 
