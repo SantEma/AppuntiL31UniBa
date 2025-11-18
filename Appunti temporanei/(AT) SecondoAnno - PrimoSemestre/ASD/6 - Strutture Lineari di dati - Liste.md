@@ -39,7 +39,7 @@ La lista è a **dimensione variabile**, per questo si possono eseguire **l'inser
 La lunghezza di una lista è il **numero dei suoi elementi**, si contano le posizioni e non i simboli distinti. 
 Una lista è detta vuota quando il numero di elementi è zero, si indica con `<>` ed essa è sottolista di qualsiasi lista.
 
-**Sottolista**: Data una lista
+**Def.**: Data una lista
 $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
@@ -48,7 +48,6 @@ $$
 <a_{i}​,…,a_{j}​>
 $$
 ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla posizione $j$, senza salti, con $1≤i≤j≤n$. 
-
 #### Specifica della lista (Sintattica e semantica)
 **TIPI ASTRATTI**
 
@@ -62,9 +61,8 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 **OPERATORI (specifica semantica)**
 <section>
   <p>Tabella riassuntiva degli operatori principali con relativa sintassi, pre-condizione e post-condizione.</p>
-
-  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
-    <thead style="background-color: #f2f2f2;">
+  <table>
+    <thead>
       <tr>
         <th>Operatore</th>
         <th>Sintassi</th>
@@ -141,7 +139,6 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
   </table>
 </section>
 
-**Implicazioni della specifica semantica**
 Dalla specifica semantica emerge che per accedere a un elemento occorre conoscerne la **posizione**
 - **Accesso diretto limitato:** possibile solo per il **primo elemento** della lista. 
 - **Operatore di posizione:** l'unico operatore che reatituisce direttamente la posizione del primo elemento è _primolista_.
