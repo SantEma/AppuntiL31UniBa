@@ -184,10 +184,11 @@ La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle
 La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
 Analogamente:
  - pos(n+1) è il cursore alla cella successiva all'elemento n-esimo (se n≥1), o 0 altrimenti.
- - La lista vuota si indica con L=$varnothing$ (insieme vuoto).
+ - La lista vuota si indica con L=$\varnothing$ (insieme vuoto).
+ 
 ![[lista3.jpg]]
 
-**Aggiornamento e listalibera:** Per inslista e canclista, il problema di individuare una posizione libera è risolto usando la **listalibera**.
+Per inslista e canclista, il problema di individuare una posizione libera è risolto usando la **listalibera**.
 - listalibera è memorizzata nello stesso array e raccoglie in modo collegato le componenti libere.
 - Essa funge da **serbatoio** da cui prelevare (per l'inserimento) e in cui riversare (per la cancellazione) le componenti inutilizzate.
 ![[lista4 (2).jpg]]
@@ -196,11 +197,10 @@ Analogamente:
 ![[lista7.jpg]]
 È immediato verificare che grazie all'uso della *listalibera*, non richiedono lo spostamento di altri elementi della lista le operazioni di inserimento e cancellazione. Tuttavia restano i problemi legati all'uso dell'array, cioè l'**esigenza di definire una dimensione**.
 
-**Vantaggio/Svantaggio della rappresentazione sequenziale:** L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
-    1. La dimensione dell'array è un **limite massimo** alla crescita della lista.
-    2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
-    3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
-
+L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
+1. La dimensione dell'array è un **limite massimo** alla crescita della lista.
+2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
+3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
 ### Realizzazione con Puntatori
 La realizzazione con puntatori è considerata  la più **efficace** realizzazione della rappresentazione collegata. 
 Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
