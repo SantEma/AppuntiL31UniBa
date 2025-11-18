@@ -18,3 +18,12 @@ Le fasi appena descritte non sono sequenziali, spesso durante l’esecuzione di 
 La fase di progettazione di una base di dati è un’attività tanto complessa e delicata da essere considerata la più critica dell’intero ciclo, per questo motivo richiede l’applicazione di una vera e propria metodologia di progettazione e quest'ultima consiste in:
 - Una **decomposizione** dell’intera attività di progetto in fasi successive indipendenti, con input e prodotti
 - Una serie di **strategie** da seguire nei vari passi e alcuni criteri per la scelta in caso di alternative
+- L’utilizzo di **modelli di riferimento** per descrivere i dati di ingresso e uscita delle varie fasi.
+
+Le proprietà che una metodologia deve garantire sono principalmente: 
+- La **generalità** rispetto alle applicazioni e ai sistemi in gioco e quindi la possibilità di utilizzo indipendentemente dal problema e dagli strumenti a disposizione 
+- La **qualità** del prodotto in termini di correttezza, completezza ed efficienza 
+- La **facilità d'uso** sia delle strategie che dei modelli di riferimento. 
+  
+Nell'ambito delle basi di dati, si è consolidata negli anni una metodologia di progetto che ha dato prova di soddisfare pienamente le proprietà descritte. Questa metodologia è costituita da tre fasi principali da effettuare in cascata e si fonda sul principio dell’astrazione, separando le decisioni relative a cosa rappresentare in una base di dati (prima fase) dalle decisioni relative al come farlo (seconda e terza fase):
+- **Progettazione concettuale**: Traduce le specifiche dei requisiti in uno schema concettuale dei dati, dei vincoli e delle operazioni sui dati. Lo schema prodotto è descritto in modo formale e completo. Inoltre fa riferimento a un modello concettuale dei dati, che consente di descrivere l’organizzazione dei dati senza tener conto degli aspetti implementativi. Il modello concettuale utilizzato nell’ambito di questo corso è il modello entità-relazione esteso.
