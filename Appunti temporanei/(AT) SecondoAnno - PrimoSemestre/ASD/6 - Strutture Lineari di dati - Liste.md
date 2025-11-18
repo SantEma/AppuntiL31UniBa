@@ -206,8 +206,8 @@ La realizzazione con puntatori è considerata la più **efficace** realizzazione
 - Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
   Le operazioni fondamentali su un puntatore sono:
   1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
-     2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
-	3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
+  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 	
+  3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
 -Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
 	- L'$i$-esimo elemento della lista. 
 	- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
