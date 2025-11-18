@@ -3,12 +3,12 @@ La loro caratteristica fondamentale è che in esse è presente una **relazione d
 Questa relazione d'ordine non implica necessariamente un ordinamento dei valori
 (es. alfabetico o numerico), ma unicamente l'ordine posizionale. 
 Per distinguere le diverse strutture lineari, è rilevante considerare due fattori.
-- **I modi di accedere (modalità si accesso)**: come si individua la posizione nella sequenza in cui operare. 
-- **I modi di agire (Operatori)**: i tipi di azione che si possono compiere sulla posizione individuata. 
+- **I modi di accedere (modalità di accesso)**: come si individua la posizione nella sequenza in cui operare. 
+- **I modi di agire (operatori)**: i tipi di azione che si possono compiere sulla posizione individuata. 
 
-**Metodi di accesso:**
+Abbiamo diversi metodi di accesso:
 - **Accesso diretto:** Consente di accedere al singolo componente mediante il **nome** e il meccanismo dell'**indice** 
-  - **Esempio il vettore (o array):** il vettore è il tipico esempio di struttura dati astratta che corrisponde alla struttura dati fisica in C (struttura dati concreta). 
+  - **Esempio:** il vettore è il tipico esempio di struttura dati astratta che corrisponde alla struttura dati fisica in C (struttura dati concreta). 
 - **Accesso a scansione (sequenziale)**: consente l'accesso all'elemento generico solo dopo aver **scandito** sequenzialmente gli elementi che lo precedono. Si ha un punto di ingresso e dei meccanismi per muoversi sequenzialmente (avanti o indietro). 
 	- **Esempio tipico:** la Lista. 
 - **Accesso a Estremi:** strutture che permettono di accedere solo al primo elemento e/o all'ultimo. 
@@ -20,26 +20,29 @@ Relativamente ai modi di agire nelle posizioni, le operazioni operazioni basilar
 - **Inserzione (Scrittura)**: Inserimento di un nuovo componente. 
 - **Rimozione (cancellazione)**: Rimozione di un componente. 
 Nelle strutture dati le operazioni da fare sono generalmente basilari. 
-## Liste
-Una lista è definita una sequenza **finita, anche vuota ($\lambda$)**, di elementi dello stesso tipo (omogenei). 
-La lista viene indicata con: 
+
+
+## LISTE
+**Definizione**:
+==Una lista è definita una sequenza **finita, anche vuota (λ)**, di elementi dello stesso tipo (omogenei)==. 
+La lista viene indicata con 
 $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
-A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
-La lista è una struttura dati **dinamica** perché non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
-A ciascun elemento $a_{i}$ di una lista viene associato:
-- una posizione $pos(i)$
-- un valore $a(i)$
-In una lista si può accedere direttamente solo al primo elemento della sequenza.
-Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
-La lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione**, queste due operazione vanno a modificare la dimensione, concetto in ammissibile per i vettori. 
-### Lunghezza e sottoliste
-La lunghezza di una lista è il **numero dei suoi elementi**, conta le posizioni e non i simboli distinti. 
-Una lista è detta **vuota** quando il numero di elementi è zero, si indica con `<>` ed essa è sottolista di qualsiasi lista.
+- A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
+- La Lista è una struttura dati **dinamica** perchè non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
+- **Posizione e valore:** a ciascun elemento $a_{i}$ di una lista viene associato:
+	- una posizione $pos(i)$
+	- un valore $a(i)$
+- **Accesso:** si può accedere direttamente solo al primo elemento della sequenza. Per accedere al generico elemento, occorre **scandire sequenzialmente** gli elementi che lo precedono.
+- **Operazioni**: la lista è a **dimensione variabile**, per questo si possono eseguire **l'inserimento** e la **cancellazione**, queste due operazione vanno a modificare la dimensione, concetto in ammissibile per i vettori. 
 
-**Sottolista**:
-Data una lista
+### Lunghezza e sottoliste
+La lunghezza di una lista è il **numero dei suoi elementi**.
+La lunghezza conta le posizioni, non i simboli distinti. 
+Una lista è detta vuota quando il numero di elementi è zero. La lista vuota si indica con `<>` ed essa è sottolista di qualsiasi lista.
+
+**Sottolista**: Data una lista
 $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
@@ -49,7 +52,7 @@ $$
 $$
 ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla posizione $j$, senza salti, con $1≤i≤j≤n$. 
 
-### Specifica della lista (Sintattica e semantica)
+#### Specifica della lista (Sintattica e semantica)
 **TIPI ASTRATTI**
 
 | **Tipo**      | **Definizione**                                                                                                                                                                  |
@@ -63,8 +66,8 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 <section>
   <p>Tabella riassuntiva degli operatori principali con relativa sintassi, pre-condizione e post-condizione.</p>
 
-  <table>
-    <thead>
+  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
+    <thead style="background-color: #f2f2f2;">
       <tr>
         <th>Operatore</th>
         <th>Sintassi</th>
@@ -144,9 +147,9 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 **Implicazioni della specifica semantica**
 Dalla specifica semantica emerge che per accedere a un elemento occorre conoscerne la **posizione**
 - **Accesso diretto limitato:** possibile solo per il **primo elemento** della lista. 
-- **Operatore di posizione:** l'unico operatore che restituisce direttamente la posizione del primo elemento è _primolista_.
-- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elemento precedente (o seguente)e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
-- **Ridondanza:** l'operatore _listavuota_ è ridondante perché può essere sostituito dalla composizione di operatori _finelista (primolita)_.
+- **Operatore di posizione:** l'unico operatore che reatituisce direttamente la posizione del primo elemento è _primolista_.
+- **Scansione Obbligatoria**: Per tutti gli elementi, la posizione si ottiene conoscendo a priori la posizione dell'elmento precedente (o seguente)e applicando l'operatore _succlista_ (o _predlista_). Dunque per accedere a un generico elemento occorre **scandire tutta la lista a partire dal primo elemento**.
+- **Ridondanza:** l'operatore _listavuota_ è ridondante perchè può essere sostituito dalla composizione di operatori _finelista (primolita)_.
 
 ### Realizzazione Sequenziale con Vettore
 Una lista può essere implementata utilizzando un **vettore (array monodimensionale)**.
@@ -159,15 +162,17 @@ Una lista può essere implementata utilizzando un **vettore (array monodimension
    La banale infezione in una terza posizione di un nuovo elemento come nell'esempio, causa lo spostamento verso il basso del quarto e quindi elemento.
  ![[lista1.jpg]]
 ### Rappresentazione collegata
-L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta **riferimento o puntatore**). 
+L'idea fondamentale della rappresentazione collegata è quella di memorizzare gli elementi della lista associando ad ognuno di essi una particolare informazione (detta  **riferimento o puntatore**). 
 Questo riferimento permette di individuare dove è memorizzato l'elemento successivo della sequenza logica. 
 Per visualizzare tale rappresentazione si usa la notazione grafica in cui:
 - Gli elementi sono rappresentati mediante **nodi**.
 - I riferimenti sono rappresentati mediante **archi** che collegano i nodi.
 	![[lista2.jpg]]
 Come si può notare:
--  Si usa un **riferimento iniziale** al primo elemento della lista. 
-- Si usa un simbolo speciale, $\varnothing$ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
+	- Si usa un **riferimento iniziale** al primo elemento della lista. 
+	- Si usa un simbolo speciale, ∅ (insieme vuoto) o NULL, come riferimento associato all'ultimo nodo. Nel caso la lista sia vuota, tale simbolo compare direttamente nel riferimento iniziale. 
+
+
 ### Realizzazione con cursori
 La realizzazione con cursori utilizza un vettore (array monodimensionale) per l'implementazione della lista, ma sfrutta i riferimenti per superare il problema dell'aggiornamento (inserimento o cancellazione di un elemento) che affligge la realizzazione sequenziale pura.
 I riferimenti si realizzano mediante i **cursori**, cioè variabili intere o enumerative il cui valore è interpretato come indice di una cella del vettore. 
@@ -177,15 +182,15 @@ Si definisce un unico vettore, detto **vettore spazio** che:
 
 *Esempio*:
 Supponiamo di avere tre diverse liste, $l$ $m$,$s$, dove:
-$$l=<7,2> \quad m=<4,9,13> \quad s=<13,4,9,13>$$
+$l=<7,2>$              $m=<4,9,13>$       $s=<13,4,9,13>$
 Per rappresentare queste tre liste possiamo usare un unico vettore.
-La componente (cella) del vettore spazio ha due campi:
+**Struttura della cella:** La componente (cella) del vettore spazio ha due campi:
 - Elemento: dove è memorizzato il contenuto del nodo. 
 - Successivo: contiene il cursore (indice) ovvero il riferimento al prossimo nodo logico della lista. 
 
-La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
-La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
-Analogamente:
+ **Posizione Logica:** La sequenza degli elementi che formano la lista è ricostruibile iniziando dalle componente dell'array corrispondente al valore di inizio, nel cui campo **elemento** è memorizzato il valore del loro primo elemento.
+ La posizione astratta $pos(i)$ è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento i-esimo di $l$ che è uguale al valore del cursore alla cella del vettore spazio che contiene l'elemento $(i-1)esimo$, se $2 \leq i \leq n+1$ ,uguale a 0 se $i=1$ .
+ Analogamente:
  - pos(n+1) è il cursore alla cella successiva all'elemento n-esimo (se n≥1), o 0 altrimenti.
  - La lista vuota si indica con L=∅ (insieme vuoto).
 ![[lista3.jpg]]
@@ -199,32 +204,26 @@ Analogamente:
 ![[lista7.jpg]]
 È immediato verificare che grazie all'uso della *listalibera*, non richiedono lo spostamento di altri elementi della lista le operazioni di inserimento e cancellazione. Tuttavia restano i problemi legati all'uso dell'array, cioè l'**esigenza di definire una dimensione**.
 
-L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). 
-Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
-1. La dimensione dell'array è un **limite massimo** alla crescita della lista.
-2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
-3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
+**Vantaggio/Svantaggio della rappresentazione sequenziale:** L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elementi, superando un grosso svantaggio della realizzazione sequenziale pura. La complicazione data dalla listalibera è compensata dal fatto che gli aggiornamenti sono veloci ($O(1)$). Tuttavia, **rimangono gli svantaggi connessi all'uso dell'array**:
+    1. La dimensione dell'array è un **limite massimo** alla crescita della lista.
+    2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
+    3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
 
 ### Realizzazione con Puntatori
 La realizzazione con puntatori è considerata  la più **efficace** realizzazione della rappresentazione collegata. 
 Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
-
- Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
-  Le operazioni fondamentali su un puntatore sono:
-  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di $p$. 
-  2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in $p$. 
-  3. **Delete**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in $p$. 
-
-Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". 
-  L'$i$-esima cella contiene:
-  - L'$i$-esimo elemento della lista. 
-  - L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
-
- Gli **indirizzi** vengono gestiti in questo modo:
-  - La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
-  - L'ultima cella punta a un valore convenzionale NULL. 
-  - Gli indirizzi sono noti alla macchina **ma non al programmatore**.
-  - La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
+- Una variabile di tipo puntatore *p* memorizza l'indirizzo di una locazione di memoria. Le operazioni fondamentali su un puntatore sono:
+	1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
+	2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
+	3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
+-Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
+	- L'$i$-esimo elemento della lista. 
+	- L'**indirizzo** della cella che contiene l'elemento successivo (il puntatore). 
+- **Gestione degli indirizzi:**
+	- La prima cella è indirizzata da una variabile $l$ di tipo **puntatore**
+	- L'ultima cella punta a un valore convenzionale NULL. 
+	- Gli indirizzi sono noti alla macchina **ma non al programmatore**.
+	- La posizione astratta $pos(i)$ è uguale al valore puntato alla cella che contiene l'$i$-esimo elemento, con $1≤i≤n$.
 ![[lista8.jpg]]
 ### Argomento: relazione d'ordine e vettore
 La relazione s'ordine che definisce una struttura lineare (come vettore o la lista) è puramente **posizionale** (tipologica): $a_{i}$ precede $a_{i+1}$.
@@ -233,12 +232,12 @@ Questo è sempre vero. Al contrario, un **ordinamento** si riferisce ai calori d
 ![[lista10.jpg]]
 #### Svantaggio della realizzazione sequenziale (vettore)
 In un array, gli elementi devono essere memorizzati in locazioni di memoria contigue. Se si vuole inserire un elemento in posizione $i$ (con $1≤i≤n$), è necessario **spostare tutti gli elementi da $a_{i}$ fino a $a_{a+1}$ a $a_{n}$ di una posizione indietro** per colmare il vuoto. 
-In entrambi i casi la complessità richiede $O(n)$ operazioni di copia (dove n è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
+In entrambi i casi la complessità richiede O(n) operazioni di copia (dove n è la lunghezza della lista/vettore), rendendola inefficiente in tempo per liste lunghe. 
 #### Vantaggio con realizzazione con i puntatori 
 A differenza della realizzazione con cursori, che utilizza un array di dimensione fissa (il limite spazio), la realizzazione con puntatori si affida a meccanismo si **allocazione dinamica della memoria** (_new_). 
 Quando è necessario inserire un nuovo nodo la funzione _new_ richiede al sistema operativo una nuova porzione di memoria _ovunque_ essa sia disponibile e restituisce l'indirizzo (il puntatore). 
 La gestione della memoria libera (l'equivalente della listalibera) è demandata direttamente al sistema (o al _garbage collector_), superando il limite prefissato di un array e permettendo alla lista di crescere fino a quando la memoria del sistema lo consente.
-### Ricerca in una Lista Lineare Ordinata
+# Ricerca in una Lista Lineare Ordinata
 L'algoritmo di ricerca non si basa sull'indice fisico (come un array), ma sull'ordine logico, scorrendo la lista tramite l'operatore `succlissta`.
 
 L'idea centrale è:
@@ -246,9 +245,9 @@ L'idea centrale è:
 Per fare ciò, si usano due puntatori:
 1. `corrente`: Punta all'elemento che stiamo analizzando ora.
 2. `precedente`: Punta all'elemento analizzato al passo prima.
-È fondamentale aggiornare `precedente = corrente` _prima_ di avanzare `corrente` con `corrente = succlista(corrente, I)`, questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
+È fondamentale aggiornare `precedente = corrente` _prima_ di avanzare `corrente` con `corrente = succlista(corrente, I)`. Questo perché, specialmente per inserimenti e cancellazioni, abbiamo bisogno di un riferimento all'elemento _prima_ della posizione trovata, per poter modificare i collegamenti.
 
-Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione)** `corrente` al quale la scansione si è arrestata.
+Nell'ambito della ricerca in una lista lineare ordinata, un approccio più robusto rispetto alla semplice restituzione di un valore booleano (`true`/`false`) consiste nel restituire il **puntatore (o posizione) `corrente`** al quale la scansione si è arrestata.
 Questo metodo è più versatile perché il puntatore restituito assume un significato operativo preciso in _entrambi_ gli scenari, sia in caso di successo che di fallimento della ricerca, come illustrato dall'esempio della ricerca di "*dario*".
 ![[carlo e davide.png]]
 L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DAVIDE" ($dario < davide$).
@@ -260,8 +259,8 @@ Analizziamo questo caso:
 L'algoritmo confronta "dario" con "CARLO" ($dario > carlo$) e avanza. Successivamente, confronta "dario" con "DARIO" ($dario == dario$).
 - **Arresto:** La ricerca si interrompe perché ha trovato una _corrispondenza esatta_.
 - **Significato del puntatore:** Il puntatore `corrente` restituito punta **direttamente all'elemento "DARIO"**. Questa è la posizione necessaria per eseguire operazioni successive sull'elemento, come la sua cancellazione (`canclista`) o la lettura di dati associati (`leggilista`).
-### Fusione di liste ordinate
-L'algoritmo di fusione (o **merge**) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
+## Fusione di liste ordinate
+L'algoritmo di fusione (o _merge_) ha lo scopo di **combinare due liste già ordinate** (che chiameremo `Lista1` e `Lista2`) in una **terza lista** (`Lista3`), la quale deve contenere tutti gli elementi delle prime due e deve risultare anch'essa ordinata.
 Questo algoritmo è fondamentale ed è un blocco di costruzione per metodi di ordinamento più complessi, come il _Natural Merge Sort_ (visto nelle slide successive).
 ```c++
 creaLista(Lista3)
@@ -327,7 +326,7 @@ Questa lista è composta da **6 catene**:
 - **Catena 4:** <25, 77> (finisce perché 77>13)
 - **Catena 5:** <13, 75> (finisce perché 75>4)
 - **Catena 6:** <4> (finisce perché la lista termina)
-#### Logica del Natural Merge Sort
+###### **Logica del Natural Merge Sort**
 L'idea di questo algoritmo è:
 1. La lista è una sequenza di k catene.
 2. Se usiamo l'algoritmo di **Fusione** per fondere le catene tra loro, otterremo una nuova lista con un numero minore di catene (circa $k/2$), che saranno lunghe il doppio.
@@ -380,7 +379,7 @@ Ogni iterazione del ciclo `repeat-until` si compone di due fasi principali: Di
 - Quando `numero_catene` è uguale a 1, significa che l'intera lista `L` è stata fusa in un'unica sequenza ordinata, e l'algoritmo termina.
 ##### Considerazioni sull'Efficienza
 Questo algoritmo è particolarmente efficiente ($O(nlogk)$) quando la lista di input è "quasi ordinata", ovvero contiene un basso numero k di catene naturali. Nel caso peggiore (lista ordinata al contrario), la sua efficienza converge a quella del Merge Sort standard, $O(nlogn)$.
-##### 1. La Fase di Distribuzione (`distribuisci`)
+## 1. La Fase di Distribuzione (`distribuisci`)
 Questa procedura ha il compito di svuotare la lista principale `L` e smistare le sue catene, in modo alternato, nelle due liste ausiliarie `A` e `B`.
 **Logica:** La procedura scorre `L` e, finché non è vuota, chiama `copiaCatena` una volta per `A` e una volta per `B`, alternando la destinazione .
 
@@ -396,7 +395,7 @@ distribuisci (l: di tipo lista; a e b: di tipo lista per riferimento);
 	 until finelista (pl, l) //ripeti se ci sono elem. in L
 ```
 
-#####  2. La Fase di Fusione (`merge`)
+## 2. La Fase di Fusione (`merge`)
 Questa procedura gestisce la fusione delle catene da `A` e `B` riversandole in `L`. Ha anche il compito cruciale di contare quante nuove catene vengono create.
 **Logica:**
 1. Fonde a coppie le catene (`fondiCatena`) finché entrambe le liste `A` e `B` ne hanno ancora.
@@ -420,7 +419,7 @@ merge(A e B: di tipo lista; L: di tipo lista per riferimento;
 		numero_catene = numero_catene + 1
 ```
 
-#####  3. Il Cuore della Fusione (`fondiCatena`)
+## 3. Il Cuore della Fusione (`fondiCatena`)
 Questa è la procedura centrale dove avviene la fusione vera e propria di _una_ catena da `A` e _una_ da `B`.
 **Logica:**
 Confronta l'elemento corrente di `A` con quello di `B` e chiama `copia` per spostare il minore dei due in `L`. Se la procedura `copia` rileva che la catena da cui stava copiando è terminata, `fondiCatena` chiama `copiaCatena` per accodare rapidamente l'intera catena rimanente dall'altra lista. 
@@ -440,7 +439,8 @@ fondiCatena(pa: ...; A: ...; pb: ...; B: ...; pl: ...; L: ...)
 until finecatena
 ```
 
-#####  4. Le Procedure Utilitarie (`copiaCatena` e `copia`)
+## 4. Le Procedure Utilitarie (`copiaCatena` e `copia`)
+
 Queste due procedure sono gli strumenti di basso livello che eseguono lo spostamento fisico dei dati e il rilevamento della fine di una catena.
 **Logica:** Chiama `copia` in un ciclo `repeat...until` finché la procedura `copia` non segnala (tramite la variabile `finecatena`) che la catena è terminata. 
 
@@ -472,8 +472,8 @@ copia (px: posizione per riferimento; X: lista;
     //se l'elem. copiatusao è > del successivo la catena è finita 
     finecatena = (elemento > leggilista (px, X))
 ```
-### Realizzazioni liste in C++
-#### Classe Libro
+# Realizzazioni liste in C++
+## Classe Libro
 ```c++
 //FILE libro.h
 
@@ -519,7 +519,7 @@ bool Libro::operator==(Libro l){
 	return (getTitolo()==l.getTitolo());
 }
 ```
-#### Implementazione sequenziale della classe Lista
+## Implementazione sequenziale della classe Lista
 ```c++
 //FILE .h
 
@@ -558,14 +558,15 @@ La lista usa un implementazione **sequenziale**, che usa un array **statico** pe
 **La struttura**:
 - Nella riga *10 - 11* si vincola *tipoelem*, ovvero la lista funzionerà solamente se all'interno sarà popolata da oggetti della classe *Libro*.
 - `private`:
-  - `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
-  - `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
+	- `tipoelem elementi[DIMENSIONE];`: E' la dimensione dell'array fisico vero e proprio, impostato a $1024$, tramite costante fissa, dettando così la capacità massima della lista.
+	- `int lunghezza`: Questa variabile tiene traccia di **quanti** elementi sono presenti nella lista in un preciso momento.
 - `public`:
-  - `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
-  - `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
-- **I limiti**: l'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
-  1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
-  2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
+	- `operatori`: Sono l'insieme delle operazioni pubbliche che si possono eseguire **esternamente** per manipolare la lista.
+	- `typedef int posizione;`: Rappresenta semplicemente l'indice dell'array per quanto riguarda la lista.
+- **I limiti**:
+	L'implementazione di questa lista presenta due **limiti fondamentali** che motivano gli argomenti:
+	1. **Tipo vincolato**: La riga `typedef Libro tipoelem;` **costringe** la classe *Lista* a funzionare solamente con **oggetti di tipo *Libro***. Si definisce una Lista **fortemente accoppiata**.
+	2. **Dimensione fissa**: La lista conterrà solamente 1024 elementi.
 
 ```c++
 //FILE listav.cpp
@@ -646,15 +647,16 @@ Qui ci si addentra su delle implementazioni più specifiche e dettagliate della 
 - `tipoelem Lista::leggiLista(posizione p) const`, permette l'implementazione di `leggiLista`, questa è la funzione chiave per poter accedere; poiché è vero che la lista ha una lunghezza che varia da $1$ a $1024$, come visto prima, ma per potervi accedere usiamo gli indici dell'array `elementi` che vanno da $0$ a $lunghezza-1$, per poter leggere un elemento in posizione $p$ bisogna accedere all'indice `elementi[p-1]`.
 - `void Lista::scriviLista(tipoelem a, posizione p)` , implementa similmente a `leggiLista` , per scrivere nella posizione logica $p$, deve modificare l'indice fisico `elementi[p-1]`.
 - `void Lista::insLista(tipoelem a, posizione p)` : Questa è l'operazione più costosa e ci permette di inserire un elemento in posizione $p$ : 
-  1. Esegue un ciclo for che parte dalla fine ( lunghezza ) e scende fino a $p$ . 
-  2. Ad ogni passo, **sposta** l'elemento `elementi[i-1]` a **destra**, in `elementi[i]` . 
-  3. Questo "crea un buco" all'indice $p-1$ , dove viene inserito il nuovo elemento $a$.
-  4. Infine, incrementa `lunghezza`.
+	1. Esegue un ciclo for che parte dalla fine ( lunghezza ) e scende fino a $p$ . 
+	2. Ad ogni passo, **sposta** l'elemento `elementi[i-1]` a **destra**, in `elementi[i]` . 
+	3. Questo "crea un buco" all'indice $p-1$ , dove viene inserito il nuovo elemento $a$.
+	4. Infine, incrementa `lunghezza`.
 - **`void Lista::cancLista(posizione p)`**: Anche questa è un'operazione costosa. Per cancellare un elemento in posizione `p`:
-  1. Controlla se la lista non è vuota.
-  2. Esegue un ciclo `for` che parte dalla posizione da cancellare (`p-1`) fino alla fine della lista.
-  3. Ad ogni passo, **sposta l'elemento `elementi[i+1]` a sinistra**, in `elementi[i]`, sovrascrivendo di fatto l'elemento da cancellare.
-  4. Infine, decrementa `lunghezza`.
+	1. Controlla se la lista non è vuota.
+    2. Esegue un ciclo `for` che parte dalla posizione da cancellare (`p-1`) fino alla fine della lista.
+    3. Ad ogni passo, **sposta l'elemento `elementi[i+1]` a sinistra**, in `elementi[i]`, sovrascrivendo di fatto l'elemento da cancellare.
+    4. Infine, decrementa `lunghezza`.
+
 ## Funzioni di servizio
 ```c++
 //FILE serviziolv.h
@@ -709,12 +711,12 @@ void epurazioneLista(Lista &l){
 }
 ```
 - **`stampaLista(Lista &l)`**:
-  È una funzione esterna che riceve una `Lista` (`l`) come parametro.
-  La scorre usando i metodi pubblici della lista (`primoLista`, `fineLista`, `succLista`) e stampa ogni elemento che legge (`leggiLista`).
+	È una funzione esterna che riceve una `Lista` (`l`) come parametro.
+	La scorre usando i metodi pubblici della lista (`primoLista`, `fineLista`, `succLista`) e stampa ogni elemento che legge (`leggiLista`).
 - **`epurazioneLista(Lista &l)`**: È un algoritmo più complesso che rimuove i duplicati.
-  Usa un **doppio ciclo** per scorrere la lista: un puntatore `p` scorre ogni elemento dall'alto, e un puntatore `q` scorre gli elementi _successivi_ a `p` dal basso.
-  **Punto chiave:** Esegue il confronto `if (l.leggiLista(p) == l.leggiLista(q))`. Questo `==` è l'**operatore `operator==` che abbiamo definito nella classe `Libro`** all'inizio.
-  Se trova un duplicato (il confronto è `true`), salva quel valore di $q$ in $r$ e usa il metodo pubblico `l.cancLista(q)` per rimuoverlo dalla lista, dopo di che rimette in $q$ l'elemento in $r$ per verificare se è la fine o meno della lista e poter continuare da quel punto.
+	Usa un **doppio ciclo** per scorrere la lista: un puntatore `p` scorre ogni elemento dall'alto, e un puntatore `q` scorre gli elementi _successivi_ a `p` dal basso.
+    **Punto chiave:** Esegue il confronto `if (l.leggiLista(p) == l.leggiLista(q))`. Questo `==` è l'**operatore `operator==` che abbiamo definito nella classe `Libro`** all'inizio.
+    Se trova un duplicato (il confronto è `true`), salva quel valore di $q$ in $r$ e usa il metodo pubblico `l.cancLista(q)` per rimuoverlo dalla lista, dopo di che rimette in $q$ l'elemento in $r$ per verificare se è la fine o meno della lista e poter continuare da quel punto.
 ## Funzioni di Test
 ```c++
 //FILE testlista.cpp
@@ -753,6 +755,7 @@ int main(){
 L'overloading degli operatori è una caratteristica del C++ che consente di **ridefinire il comportamento di un operatore**(come `+`, `-`, `==`, `<<`) affinché possa essere utilizzato con oggetti di una classe definita dall'utente (come la classe `Libro` vista in precedenza). 
 Per utilizzare un operatore su un oggetto di una classe, è necessario che tale operatore sia stato sovraccaricato per quella classe.
 
+#### Come definirlo
 Si definisce scrivendo una funzione membro (o `friend`) il cui nome è composto dalla parola chiave `operator` seguita dal simbolo dell'operatore che si intende sovraccaricare.
 
 *Esempio visto in precedenza con la classe `Libro`*: `bool operator==(Libro l);`
@@ -782,6 +785,7 @@ Ci sono restrizioni fondamentali che non possono essere violate:
 - **Nuovi Operatori:** Non è possibile inventare nuovi simboli per gli operatori (es. non si può creare un `operator**`). 
 - **Tipi Primitivi:** Non è possibile sovraccaricare gli operatori per i tipi di dati fondamentali (primitivi) del C++. Ad esempio, non si può ridefinire come funziona l'addizione tra due `int`.
 #### Sintassi ed Esempi
+
 - **Operatori Unari:** Agiscono su un singolo operando (es. `!myString`).
 ```c++
 class String {
@@ -803,7 +807,7 @@ Quando il compilatore incontra l'espressione `y += z`, la traduce internamente 
 ```c++
 friend ostream& operator<<(ostream& os, const MiaClasse& miaistanza);
 ```
-### Ereditarietà e Classi astratte
+## Ereditarietà e Classi astratte
 Per separare l'**interfaccia** della `Lista` (l'elenco di operazioni che _deve_ fornire) dalla sua **implementazione** (il _come_ queste operazioni vengono realizzate, ad esempio con un vettore o con puntatori), il C++ utilizza due concetti fondamentali: l'**ereditarietà** e le **classi astratte**.
 #### Ereditarietà
 L'ereditarietà è un meccanismo che permette a una classe (detta **classe derivata** o sotto-classe) di ereditare metodi e campi da un'altra classe (detta **classe base** o super-classe) . Questo permette alla classe derivata di accedere ai membri `protected` della classe base. 
@@ -862,13 +866,13 @@ tipo_restituito Nome_Classe <variabile_tipo>::
 	istruzioni 
 }
 ```
-Grazie all'uso del template possiamo notare al**cune migliorie e caratteristiche, infatti i template sono gestiti **staticamente**, quindi a livello di **compilazione** e non comportano alcun costo in fase esecutiva.
+Grazie all'uso del template possiamo notare alcune migliorie e caratteristiche, infatti i template sono gestiti **staticamente**, quindi a livello di **compilazione** e non comportano alcun costo in fase esecutiva.
 Permette al programmatore di scrivere un codice ancora più **generico** senza preoccuparsi di doverlo cambiare in base alle possibili variazioni di **tipi** a cui il codice va applicato.
 Perciò si possono creare **classi identiche strutturalmente** ma che gestiscono solo **tipi degli argomenti e/o tipi dei membri differenti**.
 La **Libreria Standard del C++ (STL)** è piena di classi template, dette **classi contenitore** (es. `vector`, `list`, `map`).
 - Questo collega la teoria alla pratica. I template non sono un concetto accademico esoterico; sono il fondamento della Standard Template Library (STL) del C++. Quando in C++ si scrive `std::vector<int>` o `std::map<string, double>`, si sta usando una classe template fornita dalla libreria standard, proprio come stiamo facendo noi con `Lista<T>`.
 La definizione (il `.h`) e l'implementazione (il `.cpp`) di un template **devono risiedere nello stesso file**, non è possibile avere un header. Questa è una regola tecnica fondamentale e una differenza chiave rispetto alle classi normali. Il compilatore genera il codice per `Lista<int>` quando la incontra. Per farlo, ha bisogno di vedere non solo la _dichiarazione_ (i prototipi dei metodi) ma anche l'_implementazione_ (il codice sorgente dei metodi). Se l'implementazione fosse in un file `.cpp` separato, il compilatore non potrebbe vederla nel momento in cui compila il file che usa `Lista<int>`, portando a errori in fase di "link".
-### Vettore a dimensione dinamica
+## Vettore a dimensione dinamica
 Grazie ai template si è risolto il problema di stabilire un tipo di elemento per il vettore, ora bisogna capire come stabilire e stimare la dimensione massima del vettore per comprendere quanti elementi può ospitare. La soluzione a questo problema è aumentare **dinamicamente** la grandezza del vettore quando è necessario.
 Per tanto una possibile soluzione sarebbe definire due vettori $a$ e $a'>a$, dove $a$ è il vettore iniziale e in caso serva più spazio copiare gli elementi di $a$ in $a'$, infine si cambia il valore dell'array iniziale in modo che faccia riferimento al nuovo vettore.
 ```c++
