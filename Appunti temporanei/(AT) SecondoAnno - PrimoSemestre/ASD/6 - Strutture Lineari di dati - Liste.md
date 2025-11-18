@@ -202,11 +202,11 @@ L'inserimento e l'eliminazione **non richiedono lo spostamento** di altri elem
 2. La memoria utilizzata **non dipende dalla lunghezza effettiva** della lista.
 3. C'è un'ulteriore **occupazione di memoria** per memorizzare i riferimenti (campo "successivo"). 
 ### Realizzazione con Puntatori
-La realizzazione con puntatori è considerata  la più **efficace** realizzazione della rappresentazione collegata. 
-Si basa sull'uso congiunto del **tipo puntatore e del record (o struct)**.
-- Una variabile di tipo puntatore *p* memorizza l'indirizzo di una locazione di memoria. Le operazioni fondamentali su un puntatore sono:
-	1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
-	2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
+La realizzazione con puntatori è considerata la più **efficace** realizzazione della rappresentazione collegata, questa si basa (come da nome) sull'uso congiunto del **tipo puntatore e del record (o struct)**.
+- Una variabile di tipo puntatore $p$ memorizza l'indirizzo di una locazione di memoria. 
+  Le operazioni fondamentali su un puntatore sono:
+  1. **Accesso**: Accesso alla locazione in cui è memorizzato l'indirizzo di *p*. 
+     2. **New**: richiesta di una nuova locazione di memoria e memorizzazione del suo suo indirizzo in *p*. 
 	3. **Delate**: Rilascio della locazione di memoria il cui indirizzo è memorizzato in *p*. 
 -Una possibile realizzazione è una **lista monodirezionale semplificata;** in questa realizzazione, si ha una struttura di $n$ elementi o "**celle**". L'$i$-esima cella contiene:
 	- L'$i$-esimo elemento della lista. 
