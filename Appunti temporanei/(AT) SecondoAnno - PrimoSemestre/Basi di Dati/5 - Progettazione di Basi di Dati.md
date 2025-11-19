@@ -35,3 +35,17 @@ Questa metodologia è costituita da tre fasi principali da effettuare in cascata
 Il risultato della progettazione di una base non sarà solo uno schema fisico, ma sarà costituito anche da uno schema concettuale ed uno schema logico. Lo schema concettuale fornisce infatti una rappresentazione della base di dati di alto livello che può essere utile a livello documentativo, mentre lo schema logico fornisce una descrizione concreta del contenuto della base di dati che, prescindendo dagli aspetti implementativi, è il riferimento per le operazioni di interrogazione e aggiornamento.
 ![[Pasted image 20251118184446.png]]
 ## Il modello Entità-Relazione
+Il modello **Entità-Relazione (ER)** è un modello concettuale di dati e, come tale, fornisce una serie di strutture, dette **costrutti**, atte a descrivere la realtà di interesse. 
+Questi costrutti vengono utilizzati per definire schemi che descrivono l’organizzazione e la struttura delle occorrenze (o istanze) dei dati, ovvero dei valori assunti dai dati al variare del tempo. 
+Tra i costrutti forniti dal modello E-R vi sono:
+- **Entità**
+- **Relazioni o Associazioni**
+- **Attributi**
+- **Identificatori**
+- **Generalizzazioni e sottoinsiemi**
+![[Pasted image 20251119142513.png]]
+### Costrutti principali del modello E-R
+#### Entità
+Rappresentano classi di oggetti che hanno proprietà comuni ed esistenza autonoma ai fini dell’applicazione di interesse (per esempio città, dipartimento, impiegato, acquisto, vendita sono esempi di entità di un’applicazione aziendale). 
+Una **occorrenza** di un’entità è un oggetto della classe che l'entità rappresenta, a tutti gli effetti le entità sono la descrizione intensionale del modello concettuale, le occorrenze sono la descrizione estensionale. 
+Ogni entità ha un nome che la identifica univocamente nello schema. La scelta del nome deve soddisfare due criteri: essere espressivi ed essere al singolare
