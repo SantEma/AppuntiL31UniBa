@@ -38,9 +38,9 @@ POST: i = 1 se s1 = s2, i = 0 altrimenti
 			* pre: 
 				  $I = \{a1, a2, ..., an\} \text{ } n>= 1$
 				  $L = <b1, b2, ..., bm> m >= 1$	
-			* post: b = true se per qualunque elemento $a \in I$ e se scandendo tutta la lista, $an$ appartiene cioè è presente in $L$ (ai = bj) altrimenti *false*
+			* post: b = true se per qualunque elemento $a \in I$ e se scandendo tutta la lista, $an$ appartiene cioè è presente in $L$ ($$a_{i}$$ = bj) altrimenti *false*
 		* trasforma_lista(L) = L'
-			* pre: L=<b1,b2,...,bj> j >= 1
+			* pre: $L=<b1,b2,...,bj> j >= 1$
 			* post: 
 				  invertiamo l'ordine $L' = <bj, b_{j-1}, b_{j-2},...,b1>$
 				  rimuoviamo l'elemento centrale se $j$ dispari quindi l'elemento $b_{j/2}$, $L' = L' - \{b_[j/2]\}$
@@ -56,7 +56,7 @@ POST: i = 1 se s1 = s2, i = 0 altrimenti
 	* *Operatori*:
 		* almeno_k_volte(L, P, K) -> b
 			* pre: 
-				  L = <a1,a2,..,an> n >= 1
+				  L = $<a_{1},a_{2},\dots a_{n}>$ n >= 1
 				  K >= 0
 			* post:
 				  b = true se $\sum_{i}^{n} uguale(a_i, P) >= K$ altrimenti false
@@ -80,7 +80,7 @@ post: i = 1 se P1 = P altrimenti 0
 2. **Specifica semantica**
 	* *Operatori*:
 		* unisci_lista(L, Q) = L'
-			* pre: L = <a1,a2,...an> n>=0 , Q = <b1,b2,...,bm> m >= 0
+			* pre: L = $<a_{1},a_{2},\dots a_{n}>$ n>=0 , Q = <b1,b2,...,bm> m >= 0
 			* post: L' = <a1,a2,...an, b1,b2,...bm>
 
 *Data una lista L di interi e un intero N, restituire il numero di volte in cui N compare in L*
@@ -91,8 +91,8 @@ post: i = 1 se P1 = P altrimenti 0
 2. **Specifica semantica**
 	* *Operatori*:
 		* numero_volte(L, N) = n
-			* pre: L = <a1,a2,...an> n>=0
-			* post: n = $\sum_{i=0}^{n} uguale(ai,n)$
+			* pre: L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+			* post: n = $\sum_{i=0}^{n} uguale($$a_{i}$$,n)$
 
 *Altri operatori*
 uguale(intero,intero) -> intero
@@ -108,9 +108,9 @@ post: 1 se a = n, 0 altrimenti
 2. **Specifica semantica**
 	* *Operatori*:
 		* rimuovi_numero(L, N) -> L'
-			* pre: L = <a1,a2,...an> n>=0
+			* pre: L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
 			* post: 
-				  L' = <a1,a2,...an> per qualunque $a_i \in L$ che non rispetta la condizione uguale($a_i$,N)
+				  L' = $<a_{1},a_{2},\dots a_{n}>$ per qualunque $a_i \in L$ che non rispetta la condizione uguale($a_i$,N)
 
 *Altri operatori*
 uguale(intero,intero) -> booleano
@@ -126,8 +126,8 @@ post: 1 se a = n, 0 altrimenti
 2. **Specifica semantica**
 	* *Operatori*:
 		* rimuovi_pari(L) = L'
-			* pre: L = <a1,a2,...an> n>=0
-			* post: L' = <a1,a3,...an> con *n dispari* 
+			* pre: L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+			* post: L' = $<a_{1},a_{3},\dots a_{n}>$  con *n dispari* 
 
 
 *Dati due insiemi A e B, restituire gli elementi pari presenti sia in A che in B*
@@ -138,8 +138,8 @@ post: 1 se a = n, 0 altrimenti
 	* *Operatori*:
 		* insiemi_pari(A, B) = C
 			* pre: 
-				  A = {a1,a2,a...an} n>=0
-				  B = {b1,b2,..bm} m>=0
+				  A = ${a_{1},a_{2},a \dots a_{n}}$ n>=0
+				  B = ${b_{1},b_{2},...b_{m}}$ m>=0
 			* post: $C = \{ x \in A \cap B \mid x \text{ è pari} \}$
 
 *Data una lista L, un insieme I e un intero K, restituire vero se tutti gli elementi di I sono presenti in L almeno K volte; false altrimenti.*
@@ -151,8 +151,8 @@ post: 1 se a = n, 0 altrimenti
 	* *Operatori*:
 		* presente_k_volte(L, I, K) = b
 			* pre: 
-				  L = <a1,a2,...an> n>=0
-				  I = {b1,b2,...bm} m >=0
+				  L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+				  I = ${b_{1},b_{2},...b_{m}}$  m >=0
 			* post: 
 			  b = 1 se $\{x \in I | \text{numero\_volte} (x, L) >= K\}$
 			  b = 0 altrimenti
@@ -177,8 +177,8 @@ post: n = 1 se x = i altrimenti 0
 	* *Operatori*:
 		* numeri_distinit(L, I) = b
 			* pre: 
-				  L = <a1,a2,...an> n>=0
-				  I = {b1,b2,...bm} m >=0
+				  L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+				  I = ${b_{1},b_{2},...b_{m}}$  m >=0
 			* post: 
 			  b = 1 se  |\{per qualunque x $\in I$ | 1<=i<=n, 1<=j<=n,  $i \not= j$,  $x_i \not= x_j$\}| = |\{per qualunque x $\in I$ | 1<=i<=n, 1<=j<=n,  $y_i \not= y_j, j\not=i$ \}| 
 			  b = 0 altrimenti
@@ -191,8 +191,8 @@ post: n = 1 se x = i altrimenti 0
 2. **Specifica semantica**
 	* *Operatori*:
 		* rimuovi_duplicati(L) = L'
-			* pre: L = <a1,a2,...an> n>=0
-			* post: L' = <a1,a2,...an> se per qualunque ai e aj con i != j, ai = aj 
+			* pre: L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+			* post: L' = $<a_{1},a_{2},\dots a_{n}>$ se per qualunque $$a_{i}$$ e $a_{j}$ con i != j, $a_{i}$ = $a_{j}$ 
 
 *Data una lista L e un insieme I, restituire vero se tutti gli elementi di L sono multipli di tutti gli elementi dell'insieme I*
 
@@ -203,7 +203,7 @@ post: n = 1 se x = i altrimenti 0
 	* *Operatori*:
 		* tutti_multipli(L, I) = b
 			* pre: 
-				  L = <a1,a2,...an> n>=0
+				  L = $<a_{1},a_{2},\dots a_{n}>$ n>=0
 				  I = {b1,b2,...bm} m >= 0
 			* post: 
 				  b = *true* se per ogni $a_i$ e per ogni $b_j \in I$, $a_i$ multiplo($a_i$, $b_j$) = *true*; 
@@ -346,13 +346,13 @@ h' = \<a2,a3...,an\> (accettato ma non corretto al 100%)
 
 stati_duplicati(h) -> b
 PRE: h = \<a1, a2,...,an\>, n >= 1
-POST: b = true se esiste *i*, 1 <= i <= n ed esiste *j* != *i*, 1 <= j <= n t.c. ai = aj; b = false altrimenti
+POST: b = true se esiste *i*, 1 <= i <= n ed esiste *j* != *i*, 1 <= j <= n t.c. a_{i = $a_{j}$; b = false altrimenti
 
 stato_più_frequente(h) -> s
 PRE: h = \<a1, a2,...,an\>, n >= 1
 POST: 
-* CON ASSENZA DI PARIMERITO -> s = ai, 1 <= i <= n, t.c. per ogni j != i, 1<= j <= n, numero_volte(h, ai) > numero_volte(h, aj)
-* CON PARIMERITO -> s = ai, 1 <= i <= n, t.c. per ogni j != i, 1<= j <= n, numero_volte(h, ai) > numero_volte(h, aj) OR numero_volte(h, ai) = numero_volte(h, aj) AND i < j  
+* CON ASSENZA DI PARIMERITO -> s = $a_{i}$, 1 <= i <= n, t.c. per ogni j != i, 1<= j <= n, numero_volte(h$$a_{i}$${i}$) > numero_volte(h, $a_{j}$)
+* CON PARIMERITO -> s = $$a_{i}$$, 1 <= i <= n, t.c. per ogni j != i, 1<= j <= n, numero_volte(h, $$a_{i}$$) > numero_volte(h, $a_{j}$) OR numero_volte(h, $$a_{i}$$) = numero_volte(h, $a_{j}$) AND i < j  
 
 Possibili soluzioni per trovare il massimo:
 * x nell'history h t.c. numero_volte(h,x) è massimo
@@ -383,25 +383,25 @@ pre: -
 post: M = <>
 
 aggiungiLibro(M, L) -> M'
-pre: M = <a1,a2,...an> n>= 0
+pre: M = $<a_{1},a_{2},\dots a_{n}>$ n>= 0
 post: M' = <L, a1,a2,...an>
 
 scambiaLibri(M) -> M'
-pre: M = <a1,a2,...an> n>= 2
+pre: M = $<a_{1},a_{2},\dots a_{n}>$ n>= 2
 post M' = <a2,a1,...an>
 
 pulisciMensola(M, I) -> M'
-pre: M = <a1,a2,...an> n>= 0
+pre: M = $<a_{1},a_{2},\dots a_{n}>$ n>= 0
 post: $\sum_{i}^{j = I} \text {cancellaLibro(M)}$
 
 piùAutori(M) -> L
-pre: M = <a1,a2,...an> n>= 1
+pre: M = $<a_{1},a_{2},\dots a_{n}>$ n>= 1
 post: 
 	L = $a_i , 1 \leq i \leq n$ t.c. per ogni $i,j \text{con} j \not=i, 1 \leq j \leq n$, (L\[i\].numero_autori > L\[j\].numero_autori) OR (L\[i\].numero_autori = L\[j\].numero_autori AND i < j) 
 
 *Altri operatori a supporto:*
 cancellaLibro(M) -> M'
-pre: M = <a1,a2,...an> n>= 1
+pre: M = $<a_{1},a_{2},\dots a_{n}>$ n>= 1
 post: M' = <$\not {a1}$, a2, an>  
 
 *Es n.4 Esonero I 2023/11/13*
@@ -410,26 +410,26 @@ post: M' = <$\not {a1}$, a2, an>
 *Assomiglia ad una coda*
 
 persona = struttura dati 'P' contenente informazioni sulle persone come la loro matricola;
-segreteria = insieme delle sequenze S=<a1,a2,...an> gestita in modo FIFO
+segreteria = insieme delle sequenze S=$<a_{1},a_{2},\dots a_{n}>$ gestita in modo FIFO
 
 creaSegreteria() -> S
 pre: -
 post: S = <a1,a2,...,an>
 
 aggiungiPersona(S,P) -> S'
-pre: S = <a1,a2,...an> n >= 0
-post: S' = <a1,a2,...an, P> se $a_n$ è studente altrimenti S' = <a1,a2,...an, $a_{n+1}$> se $P = a_{n+1}$ e il suo $a_{n-1}$ è docente
+pre: S = $<a_{1},a_{2},\dots a_{n}>$ n >= 0
+post: S' = $<a_{1},a_{2},\dots a_{n}>, P$ se $a_n$ è studente altrimenti $S' = <a1,a2,...an, a_{n+1}$> se $P = a_{n+1}$ e il suo $a_{n-1}$ è docente
 
 serviPersona(S) -> S'
-pre: S = <a1,a2,...an> n >= 0
-post: S' = <a2,a3,...an>
+pre: S = $<a_{1},a_{2},\dots a_{n}>$ n >= 0
+post: S' = $<a_{2},a_{3},\dots a_{n}>$
 
 chiusuraSegreteria(S) -> S'
-pre: S = <a1,a2,...an> n >= 0
-post: S' = <a1,a2,...ai> dove $i <= n$ e tutti gli $a_{i + 1}$ sono studenti e non vengono serviti
+pre: S = $<a_{1},a_{2},\dots a_{n}>$ n >= 0
+post: S' = <$a_{1},a_{2},\dots a_{i}$> dove $i <= n$ e tutti gli $a_{i + 1}$ sono studenti e non vengono serviti
 
 piùAnziano(S) -> P
-pre: S = <a1,a2,...an> n >= 0
+pre: S = $<a_{1},a_{2},\dots a_{n}>$ n >= 0
 post: P = per ogni elemento di S applico l'operatore $min(a_i, a_{i+1})$ per trovare la persona con la matricola più piccola ovvero più "vecchia"
 
 *Nuovi operatori*
@@ -444,7 +444,7 @@ post: P' = P se P.matricola < P1.matricola altrimenti P' = P1
 ![[Pasted image 20251112103537.png]]
 *Assomiglia ad una lista*
 
-socialnet = insieme delle sequenze <a1,a2,...an> 
+socialnet = insieme delle sequenze $<a_{1},a_{2},\dots a_{n}>$ 
 utente = struttura dati contente nome, relazioni di amicizia, data inizio della relazione
 lista = insieme delle sequenze di elementi omogenei ordinati tra loro
 
@@ -453,12 +453,12 @@ pre: -
 post: S = <>
 
 aggiungiUtente(S, U, s) = S'
-pre: S = <a1,a2,...an> n>=0
-post: S' = <U, a1,a2,...an> con U.nome = s
+pre: S = $<a_{1},a_{2},\dots a_{n}>$ n>=0
+post: S' = $<U, a_{1},a_{2},...a_{n}>$ con U.nome = s
 
 amici(S, U, U1 d) = S'
-pre:  S = <a1,a2,...an> n>=2
-post: S' = <a1=U, a2=U1,...an = Un> U.relazioni = U1 e U.data_amicizia = d
+pre:  S = $<a_{1},a_{2},\dots a_{n}>$ n>=2
+post: S' = $<a_{1}=U, a_{2}=U1,...a_{n} = U_{n}>$ U.relazioni = U1 e U.data_amicizia = d
 
 
 
