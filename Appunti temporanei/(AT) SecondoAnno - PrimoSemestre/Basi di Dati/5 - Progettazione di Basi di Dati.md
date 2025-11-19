@@ -106,3 +106,4 @@ Vengono specificati per ciascuna entità di uno schema e sono lo strumento che p
 Un identificatore interno può essere anche un insieme di attributi, come si vede nello schema $\text{PERSONA}$
 Alcune volte però gli attributi di un’entità non sono sufficienti a identificare univocamente le sue occorrenze. 
 Guardiamo un esempio:
+[da completare]
