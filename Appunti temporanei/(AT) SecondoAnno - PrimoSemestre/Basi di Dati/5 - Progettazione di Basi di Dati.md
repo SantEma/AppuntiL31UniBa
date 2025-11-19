@@ -43,6 +43,8 @@ Tra i costrutti forniti dal modello E-R vi sono:
 - **Attributi**
 - **Identificatori**
 - **Generalizzazioni e sottoinsiemi**
+
+Alcune simbologie che vedremo: 
 ![[Pasted image 20251119142513.png]]
 ### Costrutti principali del modello E-R
 #### Entità
@@ -83,3 +85,24 @@ Per la cardinalità minima (primo elemento nella coppia delle cardinalità) si u
 Per la cardinalità massima (secondo elemento nella coppia delle cardinalità) si usa:
 - $1$ per indicare che la relazione può essere espressa mediante una funzione che associa a una occorrenza dell’entità una sola occorrenza (o nessuna) dell’altra entità che partecipa alla relazione
 - $N$ per indicare un’associazione con un numero arbitrario di occorrenze dell’altra entità
+
+Con riferimento alle cardinalità massime, si classificano le relazioni binarie come:
+- **Uno-A-Uno**: relazioni aventi cardinalità massima pari a uno per entrambe le entità coinvolte
+  ![[Pasted image 20251119160643.png]]
+- **Uno-A-Molti**: relazioni aventi un'entità con cardinalità massima pari a uno e l'altra cardinalità massima pari ad $N$
+  ![[Pasted image 20251119160652.png]]
+- **Molti-A-Molti**: relazioni aventi cardinalità massima pari ad $N$ per entrambe le entità coinvolte
+  ![[Pasted image 20251119160707.png]]
+
+Nelle relazioni n-arie, le entità coinvolte partecipano quasi sempre con cardinalità massima pari ad $N$. Se una entità partecipa ad una relazione n-aria con cardinalità massima pari a uno, significa che ogni sua occorrenza può essere legata ad un’unica ennupla delle altre entità coinvolte, si può allora legare direttamente tale entità con altre entità, mediante relazioni binarie di tipo uno-a-molti.
+#### Cardinalità degli attributi
+Possono essere specificate per attributi di entità o relazioni e descrivono il numero minimo e massimo di valori dell’attributo associati a ogni occorrenza di entità o relazione.
+Se la cardinalità di un attributo è uno, può essere omessa e l’attributo rappresenta una funzione che associa ad ogni occorrenza di entità un solo valore dell’attributo. 
+Il valore di un certo attributo può essere però nullo, oppure possono esistere diversi valori di un certo attributo per una occorrenza di entità (multivalore), in quest'ultimo caso bisogna fare attenzione, poiché possono rappresentare situazioni talvolta modellabili con entità a sé, legate da relazioni uno-a-molti all’entità cui si riferiscono.
+![[Pasted image 20251119160857.png]]
+#### Identificatore delle entità
+Vengono specificati per ciascuna entità di uno schema e sono lo strumento che permette di identificare univocamente una determinata occorrenza di una entità. In molti casi, uno o più attributi di una entità sono sufficienti ad individuare un identificatore, in questo caso si parla di **identificatore interno (o chiave)**.
+![[Pasted image 20251119161008.png]]
+Un identificatore interno può essere anche un insieme di attributi, come si vede nello schema $\text{PERSONA}$
+Alcune volte però gli attributi di un’entità non sono sufficienti a identificare univocamente le sue occorrenze. 
+Guardiamo un esempio:
