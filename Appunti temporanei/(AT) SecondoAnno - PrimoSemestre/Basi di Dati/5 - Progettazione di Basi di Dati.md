@@ -47,5 +47,39 @@ Tra i costrutti forniti dal modello E-R vi sono:
 ### Costrutti principali del modello E-R
 #### Entità
 Rappresentano classi di oggetti che hanno proprietà comuni ed esistenza autonoma ai fini dell’applicazione di interesse (per esempio città, dipartimento, impiegato, acquisto, vendita sono esempi di entità di un’applicazione aziendale). 
-Una **occorrenza** di un’entità è un oggetto della classe che l'entità rappresenta, a tutti gli effetti le entità sono la descrizione intensionale del modello concettuale, le occorrenze sono la descrizione estensionale. 
+Una **occorrenza** di un’entità è un oggetto della classe che l'entità rappresenta, a tutti gli effetti le entità sono la descrizione intensionale (lo schema del database) del modello concettuale, le occorrenze sono la descrizione estensionale (l'istanza, l'insieme di dati). 
 Ogni entità ha un nome che la identifica univocamente nello schema. La scelta del nome deve soddisfare due criteri: essere espressivi ed essere al singolare
+#### Relazioni (o associazioni)
+Rappresentano legami logici, significativi per l’applicazione, tra due o più entità.
+Una **occorrenza** è una n-upla (coppia nel caso di relazione binaria) costituita da occorrenze di entità, una per ciascuna delle entità coinvolte. 
+In uno schema E-R ogni relazione ha un nome che la identifica univocamente e viene rappresentata graficamente mediante un rombo con il nome della relazione all'interno e da linee che collegano la relazione con ciascuna delle sue componenti.
+È importante osservare che due entità possono essere coinvolte in più relazioni e che l’insieme delle occorrenze di una relazione è a tutti gli effetti una relazione matematica tra le occorrenze delle entità coinvolte, ossia, è un sottoinsieme del loro prodotto cartesiano, implicando che tra le occorrenze di una relazione non ci possono essere ennuple ripetute
+È anche possibile avere **relazioni ricorsive**, ovvero relazioni tra un entità e se stessa, e **relazioni n-arie**, cioè relazioni che coinvolgono più di due entità.
+Infine, quando una relazione non è simmetrica può essere necessario distinguere i ruoli che l’entità coinvolta gioca nella relazione, ciò è ottenuto associando degli identificatori alle linee uscenti dalla relazione ricorsiva.
+
+**Esempio**:
+![[Pasted image 20251119143512.png]]
+$\text{ESAME}$ è un esempio di relazione tra le entità $\text{STUDENTE}$ e $\text{CORSO}$
+**Esempio ricorsivo**:
+![[Pasted image 20251119143742.png]]
+**Esempio n-ario (ternario)**:
+![[Pasted image 20251119143817.png]]
+#### Attributi
+Descrivono le proprietà elementari di entità o relazioni che sono di interesse ai fini dell’applicazione.
+Un attributo associa a ciascuna occorrenza di entità (o di relazione) un valore appartenente a un dominio che contiene i valori ammissibili per l’attributo. 
+Gli attributi atomici possono essere raggruppati in un attributo composto.
+**Esempio schema E-R con relazioni, entità e attributi**:
+![[Pasted image 20251119144017.png]]
+### Altri costrutti del modello E-R
+#### Cardinalità delle relazioni
+Vengono specificate per ciascuna partecipazione di entità a una relazione e descrivono il numero minimo e massimo di occorrenze di relazione a cui una occorrenza dell’entità può (o deve) partecipare.
+![[Pasted image 20251119144154.png]]
+Nell'esempio in figura , ad un impiegato deve essere assegnato almeno un incarico, ma non più di cinque. Uno stesso incarico può non essere attribuito affatto, oppure può essere attributo al più a cinquanta impiegati diversi. 
+
+Per la cardinalità minima (primo elemento nella coppia delle cardinalità) si usa:
+- $0$ per indicare che la partecipazione dell’entità alla relazione è **opzionale**
+- $1$ per indicare che la partecipazione dell’entità alla relazione è **obbligatoria**.
+
+Per la cardinalità massima (secondo elemento nella coppia delle cardinalità) si usa:
+- $1$ per indicare che la relazione può essere espressa mediante una funzione che associa a una occorrenza dell’entità una sola occorrenza (o nessuna) dell’altra entità che partecipa alla relazione
+- $N$ per indicare un’associazione con un numero arbitrario di occorrenze dell’altra entità
