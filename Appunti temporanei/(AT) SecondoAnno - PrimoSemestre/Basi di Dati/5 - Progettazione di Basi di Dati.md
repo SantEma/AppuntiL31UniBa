@@ -106,4 +106,7 @@ Vengono specificati per ciascuna entità di uno schema e sono lo strumento che p
 Un identificatore interno può essere anche un insieme di attributi, come si vede nello schema $\text{PERSONA}$
 Alcune volte però gli attributi di un’entità non sono sufficienti a identificare univocamente le sue occorrenze. 
 Guardiamo un esempio:
-[da completare]
+![[Pasted image 20251120160354.png]]Si consideri per esempio l’entità $\text{STUDENTE}$ nello schema in figura, l’attributo $\text{Matricola}$ non può essere un identificatore interno poiché lo schema descrive studenti iscritti a varie università e due studenti iscritti a università diverse possono avere lo stesso numero di matricola.
+In questo caso per identificare univocamente uno studente serve, oltre al numero di matricola, anche la relativa università, quindi, un identificatore corretto per l’entità studente in questo schema è costituito dall'attributo $\text{Matricola}$ e dall'entità $\text{UNIVERSITÀ}$.
+Va osservato che questa identificazione è resa possibile alla relazione uno a molti tra le entità $\text{UNIVERSITÀ}$ e $\text{STUDENTE}$, che associa a ogni studente una e una sola università. Se questa relazione non esistesse, l’identificazione univoca attraverso un’altra entità non sarebbe possibile. 
+In generale un’entità $E$ può essere identificata da altre entità solo se tali entità sono coinvolte in una relazione a cui $E$ partecipa con cardinalità (1,1). In casi come questi, ovvero nei casi in cui l’identificazione è ottenuta utilizzando altre entità si parla di **identificatore esterno**.
