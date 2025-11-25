@@ -6,7 +6,6 @@ I file sono suddivisi in 2 categorie principali:
 
 **Attenzione**:
 
-Due precisazioni:
 - **I PDF potrebbero non essere caricati subito**, se notate che comunque i file Markdown non sono modificati da tempo potreste tranquillamente seguire quelli.
 - Con questa repository non si intende sostituire completamente i libri di testo ma di estrarre il contenuto principale (e molte volte anche approfondimenti importanti e interessanti) di un corso. Anche se molte informazioni sono prese dai libri di testo, se possibile integrate con questi ultimi, **non do nessuna garanzia su questi appunti e non li consiglio come unica fonte di informazioni**  
 
