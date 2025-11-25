@@ -100,7 +100,7 @@ Possono essere specificate per attributi di entità o relazioni e descrivono il 
 Se la cardinalità di un attributo è uno, può essere omessa e l’attributo rappresenta una funzione che associa ad ogni occorrenza di entità un solo valore dell’attributo. 
 Il valore di un certo attributo può essere però nullo, oppure possono esistere diversi valori di un certo attributo per una occorrenza di entità (multivalore), in quest'ultimo caso bisogna fare attenzione, poiché possono rappresentare situazioni talvolta modellabili con entità a sé, legate da relazioni uno-a-molti all'entità cui si riferiscono.
 ![[Pasted image 20251119160857.png]]
-#### Identificatore delle entità
+#### Identificatori delle entità
 Vengono specificati per ciascuna entità di uno schema e sono lo strumento che permette di identificare univocamente una determinata occorrenza di una entità. In molti casi, uno o più attributi di una entità sono sufficienti ad individuare un identificatore, in questo caso si parla di **identificatore interno (o chiave)**.
 ![[Pasted image 20251119161008.png]]
 Un identificatore interno può essere anche un insieme di attributi, come si vede nello schema $\text{PERSONA}$
