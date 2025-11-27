@@ -67,16 +67,15 @@ Per rappresentare una lista abbiamo due metodi:
 Per la rappresentazione sequenziale useremo un **vettore**. Questa rappresentazione consente di realizzare molto semplicemente alcune delle operazioni definite per la lista. Tuttavia riscontra problemi durante l'inserzione e la rimozione di componenti, che hanno una complessità computazionale lineare in quanto andranno spostati degli elementi per riottenere l'equivalenza tra la sequenza e il vettore.
 
 La rappresentazione collegata, invece, prevede che ogni elemento abbia un'informazione per recuperare la posizione dell'elemento successivo. ![[Pasted image 20251027101400.png]]
-
-Una realizzazione di tale rappresentazione è a realizzazione con cursori, in cui viene utilizzato un vettore per l'implementazione della lista.
+Una realizzazione di tale rappresentazione è a **realizzazione con cursori**, in cui viene utilizzato un vettore per l'implementazione della lista.
 I riferimenti si realizzano tramite cursori, ovvero variabili il cui valore è interpretato come indice di un vettore.
 Si definisce un vettore spazio che:
 - può contenere più liste, ognuna individuata da un proprio cursore iniziale 
 - contiene tutte le celle libere, organizzate in una lista aggiuntiva, detta “listalibera”
-La listalibera rappresenta un serbatoio da cui prelevare componenti libere dell’array e in cui riversare le componenti dell’array che non sono piu’ utilizzate per la lista.
+La listalibera rappresenta un serbatoio da cui prelevare componenti libere dell’array e in cui riversare le componenti dell’array che non sono più’ utilizzate per la lista.
 ![[Pasted image 20251027102220.png]]
 
-La listalibera dunque permette di evitare lo shift degli elementi presenti ogni qualvolta si effettua un inserimento o una eliminazione. Rimangono gli svantaggi connessi all’uso dell’array: la dimensione dell’array rappresenta un limite alla crescita della lista e la quantità in memoria utilizzata non dipende dalla lunghezza effettiva della lista. Inoltre, rispetto alla rappresentazione sequenziale, vi è un’ulteriore occupazione di memoria, vista la necessità di memorizzare i riferimenti.
+La listalibera dunque permette di evitare lo shift degli elementi presenti ogni qualvolta si effettua un inserimento o una eliminazione. Rimangono gli svantaggi connessi all'uso dell’array: la dimensione dell’array rappresenta un limite alla crescita della lista e la quantità in memoria utilizzata non dipende dalla lunghezza effettiva della lista. Inoltre, rispetto alla rappresentazione sequenziale, vi è un’ulteriore occupazione di memoria, vista la necessità di memorizzare i riferimenti.
 
 Un'altra possibile realizzazione di una lista è quella mediante l’uso congiunto del tipo puntatore e del tipo record.
 Le operazioni usualmente disponibili su una variabile di tipo puntatore p sono:
