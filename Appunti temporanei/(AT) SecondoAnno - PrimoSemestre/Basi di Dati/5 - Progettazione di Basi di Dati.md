@@ -144,8 +144,13 @@ Nel caso di schemi particolarmente complessi può accadere di non riuscire a rap
 La documentazione di supporto è costituita da un dizionario dei dati e dai vincoli di integrità sui dati.
 
 Il dizionario dei dati è composto dalle due tabelle:
-1. Entità delle relazioni, che comprende:
+1. Entità delle tabelle, che comprende:
    - Nome
-   - Descrizione
-   - Attributi
+   - Descrizione (informale)
+   - Attributi (con eventuali descrizioni associate)
    - Identificatori
+2. Relazioni delle tabelle, che comprende:
+   - Descrizione
+   - Entità coinvolte
+   - Attributi
+
