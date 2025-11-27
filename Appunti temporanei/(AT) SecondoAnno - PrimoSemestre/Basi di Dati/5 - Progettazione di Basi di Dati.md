@@ -164,3 +164,4 @@ dove i concetti citati corrispondono a concetti che compaio nello schema E-R a c
 Prendiamo in esempio questo schema:
 ![[Pasted image 20251127144602.png]]
 Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei dati:
+![[Pasted image 20251127144709.png]]![[Pasted image 20251127144730
