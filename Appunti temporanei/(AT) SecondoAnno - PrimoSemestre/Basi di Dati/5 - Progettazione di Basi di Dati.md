@@ -110,3 +110,4 @@ Guardiamo un esempio:
 In questo caso per identificare univocamente uno studente serve, oltre al numero di matricola, anche la relativa università, quindi, un identificatore corretto per l’entità studente in questo schema è costituito dall'attributo $\text{Matricola}$ e dall'entità $\text{UNIVERSITÀ}$.
 Va osservato che questa identificazione è resa possibile alla relazione uno a molti tra le entità $\text{UNIVERSITÀ}$ e $\text{STUDENTE}$, che associa a ogni studente una e una sola università. Se questa relazione non esistesse, l’identificazione univoca attraverso un’altra entità non sarebbe possibile. 
 In generale un’entità $E$ può essere identificata da altre entità solo se tali entità sono coinvolte in una relazione a cui $E$ partecipa con cardinalità (1,1), in casi come questi, ovvero nei casi in cui l’identificazione è ottenuta utilizzando altre entità si parla di **identificatore esterno**.
+##### Generalizzazioni
