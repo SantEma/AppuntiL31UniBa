@@ -154,3 +154,7 @@ Il dizionario dei dati è composto dalle due tabelle:
    - Entità coinvolte
    - Attributi
 
+Il dizionario dei dati è utile soprattutto quando lo schema è complesso e risulta pesante aggiungere allo schema tutti gli attributi di entità e relazioni. 
+Le regole che descrivono i vincoli di integrità possono essere espresse sotto forma di **asserzioni**, ovvero affermazioni che devono sempre essere verificate nella base di dati che si sta progettando;
+Le asserzioni vanno enunciate in maniera dichiarativa, in una forma cioè che non suggerisca un metodo per soddisfarle. Quindi notazioni del tipo “se allora ” non sono adatte ad esprimere regole aziendali, quando queste documentano uno schema E-R. Una struttura per enunciare regole aziendali sotto forma di asserzioni potrebbe essere invece la seguente:
+
