@@ -75,7 +75,7 @@ Si definisce un vettore spazio che:
 La listalibera rappresenta un serbatoio da cui prelevare componenti libere dell’array e in cui riversare le componenti dell’array che non sono più’ utilizzate per la lista.
 ![[Pasted image 20251027102220.png]]
 
-La listalibera dunque permette di evitare lo shift degli elementi presenti ogni qualvolta si effettua un inserimento o una eliminazione. Rimangono gli svantaggi connessi all'uso dell’array: la dimensione dell’array rappresenta un limite alla crescita della lista e la quantità in memoria utilizzata non dipende dalla lunghezza effettiva della lista. Inoltre, rispetto alla rappresentazione sequenziale, vi è un’ulteriore occupazione di memoria, vista la necessità di memorizzare i riferimenti.
+La listalibera dunque permette di evitare lo shift degli elementi presenti ogni qualvolta si effettua un inserimento o una eliminazione. Rimangono gli svantaggi connessi all'uso dell'array: la dimensione dell’array rappresenta un limite alla crescita della lista e la quantità in memoria utilizzata non dipende dalla lunghezza effettiva della lista. Inoltre, rispetto alla rappresentazione sequenziale, vi è un'ulteriore occupazione di memoria, vista la necessità di memorizzare i riferimenti.
 
 Un'altra possibile realizzazione di una lista è quella mediante l’uso congiunto del tipo puntatore e del tipo record.
 Le operazioni usualmente disponibili su una variabile di tipo puntatore p sono:
@@ -94,7 +94,6 @@ Con questa rappresentazione si ha il vantaggio di:
 - poter realizzare le operazioni di inserimento senza dover usare variabili aggiuntive
 
 ATTENZIONE: su una lista è sconsigliata la ricerca dicotomica, in quanto non c'è una complessità computazionale costante a causa della impossibilità di accedere direttamente ad un componente.
-
 #### Ordinamento di una lista
 Per effettuare l'ordinamento di una lista useremo il natural merge sort.
 
@@ -125,8 +124,7 @@ l = 4 14 15 16 25 77 82 84 13 75
 ---
 
 ### Operatori
-
-E' possibile fare l'overloading di alcuni operatori, e quindi scrivere delle funzioni che riscrivono il comportamento di certi operatori. Tali funzioni devono essere del tipo `operator + simbolo` (esempio: operator+, operator*).
+È' possibile fare l'overloading di alcuni operatori, e quindi scrivere delle funzioni che riscrivono il comportamento di certi operatori. Tali funzioni devono essere del tipo `operator + simbolo` (esempio: operator+, operator*).
 
 ![[Pasted image 20251030112657.png]]
 
