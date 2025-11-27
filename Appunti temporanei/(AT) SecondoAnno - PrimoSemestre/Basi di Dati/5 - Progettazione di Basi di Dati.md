@@ -160,3 +160,7 @@ Le asserzioni vanno enunciate in maniera dichiarativa, in una forma quindi che n
 Una struttura per enunciare regole aziendali sotto forma di asserzioni potrebbe essere invece la seguente:
 $$\text{<concetto> deve/non deve <espressione sui concetti>}$$
 dove i concetti citati corrispondono a concetti che compaio nello schema E-R a cui si fa riferimento.
+
+Prendiamo in esempio questo schema:
+![[Pasted image 20251127144602.png]]
+Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei dati:
