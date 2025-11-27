@@ -109,5 +109,34 @@ Guardiamo un esempio:
 ![[Pasted image 20251120160354.png]]Si consideri per esempio l’entità $\text{STUDENTE}$ nello schema in figura, l’attributo $\text{Matricola}$ non può essere un identificatore interno poiché lo schema descrive studenti iscritti a varie università e due studenti iscritti a università diverse possono avere lo stesso numero di matricola.
 In questo caso per identificare univocamente uno studente serve, oltre al numero di matricola, anche la relativa università, quindi, un identificatore corretto per l’entità studente in questo schema è costituito dall'attributo $\text{Matricola}$ e dall'entità $\text{UNIVERSITÀ}$.
 Va osservato che questa identificazione è resa possibile alla relazione uno a molti tra le entità $\text{UNIVERSITÀ}$ e $\text{STUDENTE}$, che associa a ogni studente una e una sola università. Se questa relazione non esistesse, l’identificazione univoca attraverso un’altra entità non sarebbe possibile. 
-In generale un’entità $E$ può essere identificata da altre entità solo se tali entità sono coinvolte in una relazione a cui $E$ partecipa con cardinalità (1,1), in casi come questi, ovvero nei casi in cui l’identificazione è ottenuta utilizzando altre entità si parla di **identificatore esterno**.
-##### Generalizzazioni
+In generale un'entità $E$ può essere identificata da altre entità solo se tali entità sono coinvolte in una relazione a cui $E$ partecipa con cardinalità (1,1), in casi come questi, ovvero nei casi in cui l’identificazione è ottenuta utilizzando altre entità si parla di **identificatore esterno**.
+#### Generalizzazioni
+Rappresentano legami logici tra un'entità $E$ (detta **entità genitore**) e una o più entità $E_{1}\dots E_{n}$ (dette **entità figlie**), di cui $E$ è la più generale, nel senso che le comprende come caso particolare.
+Le entità figlie $E_{1}\dots E_{n}$ quindi sono **specializzazioni** (rispetto all'entità genitore), mentre quella genitore vi è una **generalizzazione** (rispetto all'entità dei figli).
+
+Tra le entità coinvolte in una generalizzazione valgono le seguenti proprietà:
+- Ogni occorrenza di un entità figlia è anche un occorrenza dell'entità genitore
+- Ogni proprietà dell'entità genitore viene ereditata da tutte le entità figlie
+
+Le generalizzazioni vengono rappresentate graficamente mediante delle frecce che congiungono le entità figlie con l’entità genitore. 
+Per le entità figlie le proprietà ereditate non vanno rappresentate esplicitamente.
+![[Pasted image 20251127142117.png]]
+Le generalizzazioni possono essere classificate sulla base di due proprietà tra loro ortogonali:
+- Una generalizzazione è **totale** se ogni occorrenza dell’entità genitore è una occorrenza di almeno una delle entità figlie, altrimenti è **parziale**.
+  La generalizzazione totale si rappresenta graficamente con una freccia chiusa, mentre la generalizzazione parziale si rappresenta con una freccia aperta.
+- Una generalizzazione è **esclusiva** se ogni occorrenza dell’entità genitore è al più un’occorrenza di una delle entità figlie, altrimenti è **sovrapposta**.
+
+Guardiamo questo schema:
+![[Pasted image 20251127142713.png]]
+La generalizzazione tra $\text{PERSONA}$, $\text{UOMO}$ e $\text{DONNA}$ in figura è totale, poiché gli uomini e le donne costituiscono tutte le persone (una persona deve essere o un uomo o una donna), e esclusiva, poiché una persona o è uomo o è donna (una persona non può essere sia uomo che donna). 
+La generalizzazione tra l’entità $\text{PROFESSIONISTA}$ e le entità $\text{INGEGNERE}$ e $\text{DOTTORE}$ è invece parziale ed esclusiva, perché assumiamo che ciascun professionista abbia una sola professione principale e che vi siano altre professioni oltre a queste tre. 
+Tra l’entità $\text{PERSONA}$ e le entità $\text{STUDENTE}$ e $\text{LAVORATORE}$ esiste infine una generalizzazione parziale e sovrapposta, perché esistono studenti che sono anche lavoratori.
+
+Quest'ultimo esempio ci suggerisce che le generalizzazioni sovrapposte possono essere facilmente trasformate in generalizzazioni esclusive aggiungendo una o più entità figlie per rappresentare i concetti che costituiscono le intersezioni delle entità che si sovrappongono;
+nel caso degli studenti e dei lavoratori è sufficiente aggiungere l’entità $\text{STUDENTELAVORATORE}$ per ottenere una generalizzazione esclusiva. 
+Una stessa entità può essere coinvolta in più generalizzazioni diverse e possono esserci inoltre generalizzazioni su più livelli, in questo caso si parla di **gerarchia di generalizzazioni.** 
+Nel caso in cui una generalizzazione ha una sola entità figlia si parla di **sottoinsieme**. 
+È necessario tener conto del fatto che le generalizzazioni non possiedono nomi, quindi per identificarle assumiamo che siano numerate. 
+Esistono infine altri vincoli sull'uso dei costrutti che non si possono esprimere sullo schema, per esempio il fatto che le gerarchie di generalizzazione non possono contenere cicli, oppure il fatto che una cardinalità minima non può essere maggiore della corrispondente cardinalità massima.
+### Documentazione di schemi E-R
+Uno schema E-R non è quasi mai sufficiente, da solo, a rappresentare nel dettaglio tutti gli aspetti di un’applicazione. Nel caso di schemi particolarmente complessi può accadere di non riuscire a rappresentare in maniera comprensibile ed esaustiva i vari concetti. Dunque, è buona norma corredare uno schema con una documentazione di supporto utile a facilitare l’interpretazione dello schema stesso e a descrivere vincoli non esprimibili nel modello E-R.
