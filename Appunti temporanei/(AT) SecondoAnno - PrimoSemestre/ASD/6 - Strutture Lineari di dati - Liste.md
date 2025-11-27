@@ -4,11 +4,11 @@ Una **sequenza** è un serie di elementi di cui riconosco una relazione d'ordine
 
 Per accedere a tali strutture è possibile usare:
 - Accesso **diretto**
-	- Un esempio di accesso diretto è il vettore tramite l'indice
+  - Un esempio di accesso diretto è il vettore tramite l'indice
 - Accesso **per scansione**
-	- La lista è un esempio di accesso per scansione, permettendo l'accesso agli elementi solo dopo aver scandito gli elementi precedenti
+  - La lista è un esempio di accesso per scansione, permettendo l'accesso agli elementi solo dopo aver scandito gli elementi precedenti
 - Accesso **agli estremi**
-	- come la coda e la pila
+  - come la coda e la pila
 
 In una struttura dati è possibile:
 - leggere il valore di un componente
@@ -18,11 +18,8 @@ In una struttura dati è possibile:
 
 ### Liste
 Una **lista** è sequenza finita (che può essere vuota) di elementi dello stesso tipo
-
 A differenza di un'insieme (concetto che vedremo più in la), in una lista un elemento può apparire più volte ma in posizioni diverse.
-
-Attenzione: la lista è una struttura dinamica, non ha dimensione prefissata.
-
+**Attenzione**: la lista è una struttura dinamica, non ha dimensione prefissata.
 Una lista si indica con la notazione:
 $$i = <a_{1}, a_{2}, \dots, a_{n}> n\geq_{0}$$
 La posizione (astratta, che può non essere un intero) di un elemento si ottiene con: `pos(i)`. Il valore di un elemento invece con: `a(i)`.
@@ -31,7 +28,7 @@ La posizione (astratta, che può non essere un intero) di un elemento si ottiene
 Ad un lista si può accedere solo dal primo elemento della sequenza, per poi scandire tutti gli elementi prima di arrivare a quello desiderato.
 
 La lunghezza indica gli elementi della lista.
-Si dice sottolista una sequenza di elementi adiacenti nella lista. La lista vuota è sottolista di qualsiasi lista.
+Si dice sottolista una sequenza di elementi adiacenti nella lista, la lista vuota è sottolista di qualsiasi lista.
 
 #### Operatori
 - crealista : () $\to$ lista
@@ -63,7 +60,6 @@ Si dice sottolista una sequenza di elementi adiacenti nella lista. La lista vuot
 	- POST: : l' = <a1, a2, … , ai-1, ai+1, … , an> ``
 
 #### Rappresentazioni
-
 Per rappresentare una lista abbiamo due metodi:
 - **Rappresentazione sequenziale**
 - **Rappresentazione collegata**
