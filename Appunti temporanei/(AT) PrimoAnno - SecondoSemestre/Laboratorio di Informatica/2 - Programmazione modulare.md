@@ -4,8 +4,8 @@ Le funzioni sono un tipo di **astrazione**.
 L'astrazione è il processo che porta a definire oggetti/concetti generali dalla conoscenza di oggetti particolari.
 La programmazione modulare permette di implementare il paradigma **divide-et-impera**, che aiuta a gestire meglio la complessità dei problemi, suddividendoli in problemi più piccoli di dimensioni ridotte.
 L'implementazione di questo paradigma si basa su due metodologie:
-- **TOP DOWN**: suddividere il problema in sotto-problemi e implementare un sotto-programma per ciascuno di essi.
-- **BOTTOM UP**: partire da frammenti di codice più piccoli e li unisco per ottenere programmi complessi.
+- **Top Down**: suddividere il problema in sotto-problemi e implementare un sotto-programma per ciascuno di essi.
+- **Bottom Up**: partire da frammenti di codice più piccoli e li unisco per ottenere programmi complessi.
 ## Vantaggi della modularità
 E' molto utile utilizzare la programmazione modulare poiché andremmo ad eliminare le difficoltà dell'uso di un **unico file sorgente**:
 - Difficoltà nel tracciamento di errori logici
