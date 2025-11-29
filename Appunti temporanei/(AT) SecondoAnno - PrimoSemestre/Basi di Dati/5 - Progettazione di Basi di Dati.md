@@ -192,3 +192,10 @@ Alcune frasi di esempio per la strutturazione dei requisti possono essere tali:
 ### Rappresentazione concettuale dei dati
 Prima di affrontare le metodologie di progetto, cerchiamo di stabilire alcune buone pratiche generali per una corretta rappresentazione concettuale dei dati.
 #### Criteri generali di rappresentazione
+Dal momento che spesso non esiste una rappresentazione univoca di un insieme di specifiche, è utile stabilire delle regole concettuali basate sul modello E-R:
+- Se un concetto ha proprietà significative e/o descrive classi di oggetti con esistenza autonoma, è opportuno **rappresentarlo con una entità**.
+- Se un concetto ha una struttura semplice e non possiede proprietà rilevanti associate, è opportuno rappresentarlo con un **attributo** di un altro concetto a cui si riferisce.
+- Se sono state individuate due (o più) entità e nei requisiti compare un concetto che le associa, questo concetto può essere rappresentato da una **relazione**.
+- Se uno o più concetti risultano essere casi particolari di un altro, è opportuno rappresentarli facendo uso di una **generalizzazione**.
+
+I criteri appena elencati hanno validità generale, sono cioè indipendenti dalla strategia di progettazione adottata
