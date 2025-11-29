@@ -169,3 +169,5 @@ Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei d
 ## Progettazione concettuale
 ### La raccolta e l'analisi dei requisiti
 Per raccolta dei requisiti si intende la completa individuazione sia dei problemi che il sistema da realizzare deve risolvere, sia delle caratteristiche che tale sistema dovrà assumere.
+Per caratteristiche di sistema si intendono sia gli aspetti statici (dati) sia gli aspetti dinamici (operazioni sui suddetti dati).
+I requisiti di solito vengono raccolti in linguaggio naturale e, per questo motivo, spe
