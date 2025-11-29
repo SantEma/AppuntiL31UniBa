@@ -166,3 +166,4 @@ Prendiamo in esempio questo schema:
 Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei dati:
 ![[Pasted image 20251127144709.png]]
 ![[Pasted image 20251127144746.png]]
+## Progettazione concettuale
