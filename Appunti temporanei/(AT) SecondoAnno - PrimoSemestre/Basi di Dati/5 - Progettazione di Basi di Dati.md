@@ -170,8 +170,25 @@ Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei d
 ### La raccolta e l'analisi dei requisiti
 Per **raccolta dei requisiti** si intende la completa individuazione sia dei problemi che il sistema da realizzare deve risolvere, sia delle caratteristiche che tale sistema dovrà assumere.
 Per caratteristiche di sistema si intendono sia gli aspetti statici (dati) sia gli aspetti dinamici (operazioni sui suddetti dati).
-I requisiti di solito vengono raccolti in linguaggio naturale e, per questo motivo, spesso ambigue e disorganizzate, quindi successivamente alla raccolta arriva la fase dell'**analisi dei requisiti**, la quale prevede il chiarimento e l'organizzazione delle specifiche dei dati. 
 I requisiti di un sistema provengono da fonti diverse, in genere sono:
 - **Gli utenti**, attraverso interviste oppure documentazione scritta
 - **La documentazione esistente**, come moduli, regolamenti interni, procedure aziendali, normative etc...
 - **Eventuali realizzazioni pre-esistenti**, ovvero applicazione che si devono rimpiazzare o che devono interagire in qualche maniera con il sistema da realizzare.
+
+I requisiti di solito vengono raccolti in linguaggio naturale e, per questo motivo, spesso ambigue e disorganizzate, quindi successivamente alla raccolta arriva la fase dell'**analisi dei requisiti**, la quale prevede il chiarimento e l'organizzazione delle specifiche dei dati.
+Generalmente, si possono stabilire le seguenti regole di analisi dei requisiti:
+- **Scegliere il corretto livello di astrazione**, per evitare di scegliere termini troppo astratti o troppo specifici.
+- **Standardizzare la struttura delle frasi**, usando sempre lo stesso stile semantico (a costo di essere ripetitivi).
+- **Evitare frasi contorte**, ossia avere delle definizioni semplici e chiare
+- **Individuare omonimi e sinonimi ed unificare i termini**
+- **Rendere esplicito il riferimento fra termini**, può succedere infatti che l'assenza di un contesto renda alcuni concetti ambigui.
+- **Costruire un glossario dei termini**, utile per la comprensione e precisazione dei termini usati
+
+Un esempio di glossario dei termini può essere questo:
+![[Pasted image 20251129121251.png]]
+
+Alcune frasi di esempio per la strutturazione dei requisti possono essere tali:
+![[Pasted image 20251129121420.png]]
+### Rappresentazione concettuale dei dati
+Prima di affrontare le metodologie di progetto, cerchiamo di stabilire alcune buone pratiche generali per una corretta rappresentazione concettuale dei dati.
+#### Criteri generali di rappresentazione
