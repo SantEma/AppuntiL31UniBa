@@ -173,5 +173,5 @@ Per caratteristiche di sistema si intendono sia gli aspetti statici (dati) sia g
 I requisiti di solito vengono raccolti in linguaggio naturale e, per questo motivo, spesso ambigue e disorganizzate, quindi successivamente alla raccolta arriva la fase dell'**analisi dei requisiti**, la quale prevede il chiarimento e l'organizzazione delle specifiche dei dati. 
 I requisiti di un sistema provengono da fonti diverse, in genere sono:
 - **Gli utenti**, attraverso interviste oppure documentazione scritta
-- **La documentazione esistente**, come moduli, r
+- **La documentazione esistente**, come moduli, regolamenti interni, procedure aziendali, normative etc...
 
