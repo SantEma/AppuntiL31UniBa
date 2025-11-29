@@ -174,4 +174,4 @@ I requisiti di solito vengono raccolti in linguaggio naturale e, per questo moti
 I requisiti di un sistema provengono da fonti diverse, in genere sono:
 - **Gli utenti**, attraverso interviste oppure documentazione scritta
 - **La documentazione esistente**, come moduli, regolamenti interni, procedure aziendali, normative etc...
-- **Eventuali realizzazioni pre-esistenti**
+- **Eventuali realizzazioni pre-esistenti**, ovvero applicazione che si devono rimpiazzare o che devono interagire in qualche maniera con il sistema da realizzare.
