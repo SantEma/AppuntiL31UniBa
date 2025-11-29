@@ -171,5 +171,7 @@ Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei d
 Per **raccolta dei requisiti** si intende la completa individuazione sia dei problemi che il sistema da realizzare deve risolvere, sia delle caratteristiche che tale sistema dovrà assumere.
 Per caratteristiche di sistema si intendono sia gli aspetti statici (dati) sia gli aspetti dinamici (operazioni sui suddetti dati).
 I requisiti di solito vengono raccolti in linguaggio naturale e, per questo motivo, spesso ambigue e disorganizzate, quindi successivamente alla raccolta arriva la fase dell'**analisi dei requisiti**, la quale prevede il chiarimento e l'organizzazione delle specifiche dei dati. 
-I requisiti di un sistema provengono da fonti diverse, 
+I requisiti di un sistema provengono da fonti diverse, in genere sono:
+- **Gli utenti**, attraverso interviste oppure documentazione scritta
+- **La documentazione esistente**, come moduli, r
 
