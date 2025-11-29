@@ -167,3 +167,5 @@ Da questo possiamo trarre il dizionario dei dati e i vincoli di integrità dei d
 ![[Pasted image 20251127144709.png]]
 ![[Pasted image 20251127144746.png]]
 ## Progettazione concettuale
+### La raccolta e l'analisi dei requisiti
+Per raccolta dei requisiti si intende la completa individuazione sia dei problemi che il sistema da realizzare deve risolvere, sia delle caratteristiche che tale sistema dovrà assumere.
