@@ -1,5 +1,6 @@
-Le strutture dati lineari sono strutture dati che si sviluppano in un'unica dimensione, una sequenza.
+(Si ringrazia Pice per questo capitolo)
 
+Le strutture dati lineari sono strutture dati che si sviluppano in un'unica dimensione, una sequenza.
 Una **sequenza** è un serie di elementi di cui riconosco una relazione d'ordine (es. il vettore).
 
 Per accedere a tali strutture è possibile usare:
@@ -15,7 +16,6 @@ In una struttura dati è possibile:
 - aggiornare il valore esistente
 - inserire un nuovo valore
 - rimuovere un componente
-
 ### Liste
 Una **lista** è sequenza finita (che può essere vuota) di elementi dello stesso tipo
 A differenza di un'insieme (concetto che vedremo più in la), in una lista un elemento può apparire più volte ma in posizioni diverse.
@@ -23,13 +23,11 @@ A differenza di un'insieme (concetto che vedremo più in la), in una lista un el
 Una lista si indica con la notazione:
 $$i = <a_{1}, a_{2}, \dots, a_{n}> n\geq_{0}$$
 La posizione (astratta, che può non essere un intero) di un elemento si ottiene con: `pos(i)`. Il valore di un elemento invece con: `a(i)`.
-
 #### Accesso
 Ad un lista si può accedere solo dal primo elemento della sequenza, per poi scandire tutti gli elementi prima di arrivare a quello desiderato.
 
 La lunghezza indica gli elementi della lista.
 Si dice sottolista una sequenza di elementi adiacenti nella lista, la lista vuota è sottolista di qualsiasi lista.
-
 #### Operatori
 - crealista : () $\to$ lista
 	- POST: `l'= <>`
@@ -58,7 +56,6 @@ Si dice sottolista una sequenza di elementi adiacenti nella lista, la lista vuot
 - canclista: (posizione, lista) $\to$ lista
 	- PRE: `p = pos(i) 1<=i<=n`
 	- POST: : l' = <a1, a2, … , ai-1, ai+1, … , an> ``
-
 #### Rappresentazioni
 Per rappresentare una lista abbiamo due metodi:
 - **Rappresentazione sequenziale**
@@ -93,7 +90,7 @@ Con questa rappresentazione si ha il vantaggio di:
 - poter individuare facilmente l’elemento che precede 
 - poter realizzare le operazioni di inserimento senza dover usare variabili aggiuntive
 
-ATTENZIONE: su una lista è sconsigliata la ricerca dicotomica, in quanto non c'è una complessità computazionale costante a causa della impossibilità di accedere direttamente ad un componente.
+**ATTENZIONE**: su una lista è sconsigliata la ricerca dicotomica, in quanto non c'è una complessità computazionale costante a causa della impossibilità di accedere direttamente ad un componente.
 #### Ordinamento di una lista
 Per effettuare l'ordinamento di una lista useremo il natural merge sort.
 
