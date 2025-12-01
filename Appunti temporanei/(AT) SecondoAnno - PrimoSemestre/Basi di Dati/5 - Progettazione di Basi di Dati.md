@@ -221,3 +221,11 @@ Nello schema possiamo notare le varie fasi:
 Le trasformazioni elementari che attuiamo vengono chiamate **primitive di trasformazione bottom-up**, che introducono in uno schema nuovi concetti non presenti precedentemente e in grado di descrivere aspetti della realtà di interesse non ancor stati rappresentati.
 Il vantaggio di questa strategia è la stessa decomposizione di problemi in componenti più semplici e facilmente individuabili, rendendo possibile la collaborazione di progettisti diversi sullo stesso progetto. Uno svantaggio è la richiesta delle operazioni di integrazione degli schemi concettuali diversi che, nel caso di schemi complessi, presentano quasi sempre grosse difficoltà
 #### Inside-out
+In questa strategia si rappresentano prima i concetti in relazione con i concetti iniziali per poi muoversi verso quelli più lontani usando una "navigazione" tra specifiche.
+![[Pasted image 20251201111618.png]]
+Come si può vedere dall'esempio proposto in figura, si hanno i concetti principali internamente, per poi espandersi verso l'esterno.
+Si potrebbe vedere questo tipo di schema come una particolare strategia di bottom-up.
+Questa strategia ha come vantaggio il non richiedere passi integrazione, a discapito di esaminare sempre tutte le specifiche di volta in volta per individuare concetti ancora non rappresentati e descriverne di nuovi nel dettaglio, rendendo quindi impossibile avere livelli di astrazione come in top-down.
+#### Mista
+La strategia mista prevede la combinazione delle strategia top-down e bottom-up:
+Il progettista suddivide i requisiti in componenti separate (come in bottom-up) e allo stesso tempo definisce uno schema scheletro contenente, a livello astratto, i concetti principali dell'applicazione. Questo schema fornisce una visione 
