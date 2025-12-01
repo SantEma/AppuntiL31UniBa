@@ -224,8 +224,15 @@ Il vantaggio di questa strategia è la stessa decomposizione di problemi in comp
 In questa strategia si rappresentano prima i concetti in relazione con i concetti iniziali per poi muoversi verso quelli più lontani usando una "navigazione" tra specifiche.
 ![[Pasted image 20251201111618.png]]
 Come si può vedere dall'esempio proposto in figura, si hanno i concetti principali internamente, per poi espandersi verso l'esterno.
-Si potrebbe vedere questo tipo di schema come una particolare strategia di bottom-up.
+Questo tipo di strategia è una particolare strategia di bottom-up.
 Questa strategia ha come vantaggio il non richiedere passi integrazione, a discapito di esaminare sempre tutte le specifiche di volta in volta per individuare concetti ancora non rappresentati e descriverne di nuovi nel dettaglio, rendendo quindi impossibile avere livelli di astrazione come in top-down.
-#### Mista
+#### Mista (o ibrida)
 La strategia mista prevede la combinazione delle strategia top-down e bottom-up:
-Il progettista suddivide i requisiti in componenti separate (come in bottom-up) e allo stesso tempo definisce uno schema scheletro contenente, a livello astratto, i concetti principali dell'applicazione. Questo schema fornisce una visione 
+Il progettista suddivide i requisiti in componenti separate (come in bottom-up) e allo stesso tempo definisce uno **schema scheletro** contenente, a livello astratto, i concetti principali dell'applicazione. Questo schema fornisce una visione astratta dell'intero progetto, favorendo l'integrazione degli schemi sviluppati separatamente.
+Per ogni concetto principale completo nello schema è possibile proseguire per raffinamenti successivi (top-down) o per concetti ancora non rappresentati (bottom-up).
+Questo tipo di strategia è la più flessibile tra tutte, poichè si adatta a tutte le esigenze, per questo è molte volte l'unica ad essere adottabile in progetti di certa complessità.
+### Qualità di uno schema concettuale
+### Metodologia generale
+### Esempio di progettazione concettuale
+
+##
