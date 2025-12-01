@@ -201,3 +201,13 @@ Dal momento che spesso non esiste una rappresentazione univoca di un insieme di 
 I criteri appena elencati hanno validità generale, sono cioè indipendenti dalla strategia di progettazione adottata
 #### Pattern di progetto
 Riferirsi al PDF [[Pattern di progetto.pdf]], preso dal libro e presente negli appunti definitivi
+(Essendo pieno di esempi vi è inutile riportarlo qui)
+### Strategie di progetto
+Lo sviluppo di uno schema concettuale a partire dalle sue specifiche può essere considerato un processo di ingegnerizzazione e, come tale, è possibile utilizzare strategie viste già in altre discipline
+####  Top-Down
+Schema concettuale dove si parte da uno schema iniziale che descrive tutte le specifiche con pochi concetti molto astratto e in pian piano viene raffinato mediante opportune trasformazioni.
+Nel passaggio da un raffinamento ad un altro lo schema viene modificato facendo uso di alcune trasformazioni elementari, chiamate **primitive di trasformazione top-down**.
+![[Pasted image 20251201104947.png]]
+Il vantaggio di questa strategia è dalla parte del progettista, tale infatti può descrivere inizialmente tutte le specifiche dei dati trascurandone i dettagli, per poi entrare nel merito di un concetto per volta.
+Tutto questo procedimento però vi è possibile solo se si ha una visione globale e astratta di tutte le componenti del sistema, molto difficile se quest'ultimo è complesso
+#### Bottom-up
