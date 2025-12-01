@@ -232,9 +232,41 @@ Il progettista suddivide i requisiti in componenti separate (come in bottom-up) 
 Per ogni concetto principale completo nello schema è possibile proseguire per raffinamenti successivi (top-down) o per concetti ancora non rappresentati (bottom-up).
 Questo tipo di strategia è la più flessibile tra tutte, poichè si adatta a tutte le esigenze, per questo è molte volte l'unica ad essere adottabile in progetti di certa complessità.
 ### Qualità di uno schema concettuale
-[da completare]
+Nella costruzione di uno schema concettuale vanno garantite alcune proprietà generali che uno schema di buona qualità deve possedere:
+- **Correttezza**: Uno schema è corretto quando utilizza propriamente i costrutti messi a disposizione del modello concettuale di riferimento.
+  Gli errori possibili possono essere semantici o sintattici
+- **Completezza**: Uno schema è completo quando rappresenta tutti i dati di interesse e quando tutte le operazioni possono essere eseguite a partire da concetti descritti nello schema.
+  Questa proprietà si può controllare verificando che tutte le specifiche sui dati siano rappresentate da qualche concetto presente nello schema che stiamo costruendo
+- **Leggibilità**: Uno schema è leggibile quando rappresenta i requisiti in maniera naturale e facilmente comprensibile.
+  Per questa proprietà è necessario rendere lo schema autoesplicativo, per esempio con la scelta dei nomi da dare ai concetti.
+  Alcuni suggerimenti per renderlo più leggibili possono essere:
+  - Riporre i costrutti su una griglia scegliendo come elementi centrali quelli con più legami
+  - Tracciare solo linee perpendicolari e cercare di minimizzare le intersezioni
+  - Disporre le entità che sono genitori di generalizzazioni sopra le relative entità figlie
+- **Minimalità**: uno schema è minimale quando tutte le specifiche dei dati sono rappresentate una volta nello schema.
+  Quindi non vi è minimale quando ci sono ridondanze, ma quest'ultima potrebbe non essere indesiderata ma voluta per scelte progettuali desiderate
 ### Metodologia generale
-[da completare]
+Descriviamo un metodo per la progettazione concettuale con strategia mista, da poter seguire:
+1. **Analisi dei requisiti**
+	- Costruire un glossario	
+	- Analizzare i requisiti ed eliminare ambiguità
+	- Raggruppare i requisiti in insiemi omogenei
+2. **Passo base**
+	- Individuare i concetti più rilevanti e rappresentarli in uno schema scheletro
+3. **Passo di decomposizione (solo se necessario o appropriato**
+	- Effettuare una decomposizione dei requisiti con riferimento ai concetti presenti nello schema scheletro 
+4. **Passo iterativo**
+	- Raffinare i concetti presenti sulla base delle loro specifiche
+	- Aggiungere nuovi concetti allo schema per descrivere specifiche non ancora descritte
+5. **Passo di integrazione**
+	- Integrare vari sotto-schemi in uno schema generale facendo riferimento allo schema scheletro
+6. **Analisi di qualità**
+	- Verificare la correttezza dello schema ed eventualmente ristrutturare lo schema
+	- Verificare la completezza dello schema ed eventualmente ristrutturare lo schema
+	- Verificare la minimalità, documentare le ridondanze ed eventualmente ristrutturare lo schema
+	- Verificare la leggibilità dello schema ed eventualmente ristrutturare lo schema
+
+In questi passaggi è sempre utile per ogni passaggio la **documentazione degli schemi**
 ### Esempio di progettazione concettuale
 Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente in Appunti Definitivi
 
