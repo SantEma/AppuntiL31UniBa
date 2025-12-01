@@ -232,7 +232,10 @@ Il progettista suddivide i requisiti in componenti separate (come in bottom-up) 
 Per ogni concetto principale completo nello schema è possibile proseguire per raffinamenti successivi (top-down) o per concetti ancora non rappresentati (bottom-up).
 Questo tipo di strategia è la più flessibile tra tutte, poichè si adatta a tutte le esigenze, per questo è molte volte l'unica ad essere adottabile in progetti di certa complessità.
 ### Qualità di uno schema concettuale
+[da completare]
 ### Metodologia generale
+[da completare]
 ### Esempio di progettazione concettuale
+Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente in Appunti Definitivi
 
-##
+## Progettazione logica
