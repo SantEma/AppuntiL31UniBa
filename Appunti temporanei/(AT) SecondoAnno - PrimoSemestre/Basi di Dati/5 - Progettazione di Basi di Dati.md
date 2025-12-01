@@ -200,7 +200,7 @@ Dal momento che spesso non esiste una rappresentazione univoca di un insieme di 
 
 I criteri appena elencati hanno validità generale, sono cioè indipendenti dalla strategia di progettazione adottata
 #### Pattern di progetto
-Riferirsi al PDF [[Pattern di progetto.pdf]], preso dal libro e presente negli appunti definitivi
+Riferirsi al PDF [[Pattern di progetto.pdf]], preso dal libro e presente negli Appunti Definitivi
 (Essendo pieno di esempi vi è inutile riportarlo qui)
 ### Strategie di progetto
 Lo sviluppo di uno schema concettuale a partire dalle sue specifiche può essere considerato un processo di ingegnerizzazione e, come tale, è possibile utilizzare strategie viste già in altre discipline
@@ -213,3 +213,11 @@ Tutto questo procedimento però vi è possibile solo se si ha una visione global
 #### Bottom-up
 Questa strategia prevede l'inversione del metodo top-down, ossia si parte da componenti specifiche già dettagliate per poi astrarle per passi, rendendole descrittrici di un frammento elementare della realtà di interesse, e infine riunirle in uno schema concettuale finale molto più generale, composto da semplici concetti.
 ![[Pasted image 20251201110023.png]]
+Nello schema possiamo notare le varie fasi:
+1. Decomposizione delle specifiche
+2. Rappresentazione delle componenti di base
+3. Integrazione in schemi elementari
+
+Le trasformazioni elementari che attuiamo vengono chiamate **primitive di trasformazione bottom-up**, che introducono in uno schema nuovi concetti non presenti precedentemente e in grado di descrivere aspetti della realtà di interesse non ancor stati rappresentati.
+Il vantaggio di questa strategia è la stessa decomposizione di problemi in componenti più semplici e facilmente individuabili, rendendo possibile la collaborazione di progettisti diversi sullo stesso progetto. Uno svantaggio è la richiesta delle operazioni di integrazione degli schemi concettuali diversi che, nel caso di schemi complessi, presentano quasi sempre grosse difficoltà
+#### Inside-out
