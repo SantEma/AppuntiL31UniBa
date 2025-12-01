@@ -200,4 +200,4 @@ Dal momento che spesso non esiste una rappresentazione univoca di un insieme di 
 
 I criteri appena elencati hanno validità generale, sono cioè indipendenti dalla strategia di progettazione adottata
 #### Pattern di progetto
-[riportare a pag 242-]
+Riferirsi al PDF [[Pattern di progetto.pdf]], preso dal libro e presente negli appunti definitivi
