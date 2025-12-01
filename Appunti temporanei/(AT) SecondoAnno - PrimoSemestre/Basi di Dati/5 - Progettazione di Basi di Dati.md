@@ -239,3 +239,4 @@ Questo tipo di strategia è la più flessibile tra tutte, poichè si adatta a tu
 Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente in Appunti Definitivi
 
 ## Progettazione logica
+[da completare]
