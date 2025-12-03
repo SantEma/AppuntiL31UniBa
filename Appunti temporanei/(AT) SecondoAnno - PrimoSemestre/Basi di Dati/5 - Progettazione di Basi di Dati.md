@@ -268,7 +268,15 @@ Descriviamo un metodo per la progettazione concettuale con strategia mista, da p
 
 In questi passaggi è sempre utile per ogni passaggio la **documentazione degli schemi**
 ### Esempio di progettazione concettuale
-Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente in Appunti Definitivi
+Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi
 
 ## Progettazione logica
-[da completare]
+L'obbiettivo della progettazione logica è quello di costruire uno schema logico in grado di descrivere, in maniera corretta ed efficiente, tutte le informazioni contenute nello schema Entità-Relazione prodotto nella fase di progettazione concettuale,
+### Fasi della progettazione logica
+Le attività principali della progettazione logica sono la riorganizzazione dello schema concettuale e la traduzione in un modello logico. 
+Questo processo prevede due fasi principali:
+- **Ristrutturazione dello schema E-R**: fase indipendente dal modello logico scelto e si basa su criteri di ottimizzazione dello schema e di semplificazione della fase successiva.
+- **Traduzione verso il modello logico**: fase che fa riferimento ad uno specifico modello logico e può includere un ulteriore ottimizzazione.
+
+I dati di ingresso della prima fase sono lo schema concettuale prodotto nella fase precedente e il carico applicativo previsto, in termini di dimensione dei dati e caratteristiche delle operazioni. Il risultato che si ottiene è uno schema E-R che non è più strettamente concettuale, poiché tiene conto degli aspetti realizzativi. Questo schema e il modello logico scelto costituiscono i dati di input della seconda fase, che produce lo schema logico della base di dati. Lo schema logico, i vincoli di integrità definiti su esso e la relativa documentazione, costituiscono i prodotti finali della progettazione logica
+![[Pasted image 20251203151211.png]]
