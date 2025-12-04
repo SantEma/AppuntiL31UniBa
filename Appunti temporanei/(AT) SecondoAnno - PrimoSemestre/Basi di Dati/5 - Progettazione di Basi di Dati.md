@@ -307,5 +307,5 @@ In generale, a seconda del tipo di cardinalità delle associazioni si possono st
 	- Obbligatoria: il volume medio dei dati si ricava dal numero di occorrenze dell’entità con cardinalità massima uguale a uno. Ad esempio il numero di occorrenze dell’associazione composizione è dato dal numero dei dipartimenti, perché le cardinalità ci dicono che un dipartimento appartiene ad una sola sede. 
 	-  Facoltativa: si considera il volume del caso obbligatorio e lo si riduce del 10%. Ad esempio, il numero di occorrenze dell’associazione afferenza è invece poco meno del numero degli impiegati, perché dalle cardinalità si evince che ci sono impiegati che non afferiscono ad alcun dipartimento.c
 - 1 a 1:
-	- Obbligatoria: analogo al caso 1 a N obbligatoria. \
+	- Obbligatoria: analogo al caso 1 a N obbligatoria.
 	- Facoltativa: bisogna ragionare logicamente per giungere ad un volume che sia plausibile con la realtà (si riduce di qualche unità). Ad esempio, se l’associazione direzione avesse cardinalità (0,1) con l’entità dipartimento, il numero di occorrenze di direzione sarebbe circa 78, ovvero in numero dei dipartimenti leggermente diminuito.
