@@ -281,3 +281,20 @@ Questo processo prevede due fasi principali:
 I dati di ingresso della prima fase sono lo schema concettuale prodotto nella fase precedente e il carico applicativo previsto, in termini di dimensione dei dati e caratteristiche delle operazioni. Il risultato che si ottiene è uno schema E-R che non è più strettamente concettuale, poiché tiene conto degli aspetti realizzativi. Questo schema e il modello logico scelto costituiscono i dati di input della seconda fase, che produce lo schema logico della base di dati.
 Lo schema logico, i vincoli di integrità definiti su esso e la relativa documentazione, costituiscono i prodotti finali della progettazione logica
 ![[Pasted image 20251203151211.png]]
+### Analisi delle prestazioni
+Uno schema E-R può essere modificato per ottimizzare alcuni indici di prestazione del progetto, si parla di indici poiché non esiste una valutazione per le prestazioni della base di dati nella progettazione logica (non esistono semplicemente fattori possibili prevedibili).
+Due parametri che generalmente regolano le prestazioni di un sistema software sono:
+- **Costo di un'operazione**: valutato in termini di numero medio di occorrenze di entità e associazioni da visitare per rispondere a una operazione sul DB
+- **Occupazione di memoria**: valutata in termini di spazio di memoria necessario per memorizzare i dati descritti dallo schema.
+
+Per studiare questi parametri abbiamo bisogno di conoscere, oltre allo schema, le seguenti informazioni:
+- **Volume dei dati**, ossia: 
+	- Numero medio di occorrenze di ogni entità e associazione dello schema 
+	- Dimensioni di ciascun attributo (di entità o associazione) •
+- **Caratteristiche delle operazioni**, ossia:
+	- Tipo dell’operazione (interattiva o batch)
+	- Frequenza (numero medio di esecuzioni in un certo intervallo di tempo) 
+	- Dati coinvolti (entità e associazioni)
+
+Il volume dei dati e le caratteristiche generali delle operazioni possono essere descritti facendo uso di tabelle, chiamate **tabelle dei volumi e delle operazioni** 
+Nella tavola dei volumi vengono riportati tutti i concetti dello schema (entità e associazioni), un simbolo per ogni concetto che distingua le entità ($E$) dalle relazioni ($R$) e il volume a regime. Nella tavola delle operazioni riportiamo, per ogni operazione la frequenza prevista (su un arco di tempo) e un simbolo che indichi se l’operazione è interattiva (I) o batch (B). Nella tavola dei volumi, il numero delle occorrenze delle associazioni dipende da due parametri: il numero di occorrenze delle entità coinvolte nelle associazioni e il numero (medio) di partecipazioni di una occorrenza di entità alle
