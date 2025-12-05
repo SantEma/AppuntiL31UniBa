@@ -75,7 +75,7 @@ Sono impilati in ordine di diametro decrescente, dal più grande in basso al pi�
 1. È possibile usare un terzo piolo ("intermedio") per gli spostamenti.
 2. Si può spostare **un solo disco per volta**.
 3. Non è **mai** possibile sovrapporre un disco più grande su uno più piccolo.
-#### La soluzione Ricorsiva
+### La soluzione Ricorsiva
 ![[Prima torre di hanoi.png]]
 Come si può vedere nella figura, la strategia per spostare $n$ dischi da un'origine a una destinazione è definita scomponendo il problema:
 1. Muovi i primi $n-1$ dischi (i più piccoli) dal piolo di _origine_ al piolo _intermedio_ (usando la destinazione come appoggio).
@@ -130,7 +130,7 @@ move(interpos n, pole ori, pole intermedio, pole destin){
 		move(n-1,intermedio,ori,destin)
 }
 ```
-#### La Trasformazione Iterativa
+### La Trasformazione Iterativa
 È **sempre possibile trasformare una procedura ricorsiva in una iterativa usando una pila** .
 Il metodo consiste nel simulare manualmente ciò che il computer fa automaticamente con la pila delle chiamate di sistema:
 - Si crea una Pila all'inizio.    
@@ -250,11 +250,9 @@ non è banale perché richiede di **memorizzare i risultati intermedi** (ad es
     - Esempio: `(9 + 8)` diventa `9 8 +`.
     
 ### Conversione di un'espressione infissa in postfissa
-Ma come otteniamo l'espressione postfissa?"
-
+Ma come otteniamo l'espressione postfissa?
 È possibile **usare una Pila anche per convertire** un'espressione da infissa (con parentesi) a postfissa.
-
-**L'Algoritmo di Conversione:** Un algoritmo preciso che scorre l'espressione infissa da sinistra a destra:
+**L'Algoritmo di Conversione:** è un'algoritmo preciso che scorre l'espressione infissa da sinistra a destra:
 1. **Se incontri un numero (operando):** Lo scrivi direttamente nell'**output**.
 2. **Se incontri una parentesi aperta `(`:** La **ignori**.
 3. **Se incontri un operatore (`+`, `*`, ...):** Lo inserisci (push) nella **Pila**.
