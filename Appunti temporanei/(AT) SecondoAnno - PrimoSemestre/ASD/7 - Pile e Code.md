@@ -58,3 +58,30 @@ Con l'uso di una pila possiamo valutare una qualsiasi espressione postfissa. Dat
 
 Partendo dall'espressione precedentemente ottenuta: 5 9 8 + 4 6 * * 7 + * avremo:
 ![[Pasted image 20251110113229.png]]
+## Code
+
+La coda è una struttura astratta simile alla pila, dalla quale si differisce per l'accesso. Difatti, a differenza della pila in cui si inserisce e si toglie l'elemento situato "in testa", nella coda gli elementi vengono aggiunti da un estremo "fondo", ed estratti dalla testa, secondo l'algoritmo FIFO.
+
+È particolarmente adatta a rappresentare sequenze nelle quali l'elemento viene elaborato secondo l'ordine di arrivo.
+
+#### Operatori:
+- creacoda (): $\to$ coda
+	- POST: `q' = <>`
+- codavuota (coda): $\to$ boolean
+	- POST: `b = vero se q = <>, b = falso altrimenti`
+- leggicoda (coda): $\to$ tipoelem
+	- PRE: `q = <a1 , a2,...,an > e n ≥ 1`
+	- POST: `a = a1`
+- fuoricoda (coda): $\to$ coda
+	- PRE: `q = <a1 , a2, ..., an> e n ≥ 1`
+	- POST: `q’ = <a2, a3, ..., an> se n > 1, q’ = <> se n = 1`
+- incoda (tipoelem, coda): $\to$ coda
+	-  PRE: `q = <a1, a2, ..., an> e n ≥ 0 `
+	- POST: `q’ = <a1, a2, ..., an, a>`
+
+Per rappresentare la coda, le rappresentazioni sono simili a quelle della pila, con la differenza, però, che la rappresentazione sequenziale con il vettore diventa dispendiosa a causa degli shift da effettuare. E' possibile tuttavia usare i vettori (anche se comunque è poco usata) in modo circolare.
+
+Quando si usa il vettore circolare, gli elementi non vengono salvati a partire dalla prima posizione, ma piuttosto la coda viene inserita nel vettore nel mezzo (non per forza nel centro letterale), lasciando dello spazio all'inizio e alla fine, permettendo la scrittura degli elementi da un lato o dall'altro, qualora si sfori.
+
+La realizzazione più usata è comunque la rappresentazione collegata, in cui la sequenza è rappresentate da delle celle, legate da dei puntatori che puntano alla cella successiva, con due puntatori "testa" e "fondo" che puntano ai due estremi.
+![[Pasted image 20251103092610.png]]
