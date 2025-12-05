@@ -217,7 +217,7 @@ Semantica delle operazioni:
     </tr>
 
     <tr>
-      <td colspan="2" style="background-color: #f9f9f9;"><strong>Navigazione</strong></td>
+      <td  ><strong>Navigazione</strong></td>
     </tr>
     <tr>
       <td><code>PADRE(u, T) = v</code></td>
@@ -243,7 +243,7 @@ Semantica delle operazioni:
     </tr>
 
     <tr>
-      <td colspan="2" style="background-color: #f9f9f9;"><strong>Modifica Strutturale</strong></td>
+      <td  ><strong>Modifica Strutturale</strong></td>
     </tr>
     <tr>
       <td><code>INSPRIMOSOTTOALBERO(u, T, T') = T''</code></td>
