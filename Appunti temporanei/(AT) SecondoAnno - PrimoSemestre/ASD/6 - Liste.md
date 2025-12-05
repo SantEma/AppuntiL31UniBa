@@ -67,8 +67,8 @@ ottenuta partendo da una posizione $i$ e prendendo tutti gli elementi fino alla 
 <section>
   <p>Tabella riassuntiva degli operatori principali con relativa sintassi, pre-condizione e post-condizione.</p>
 
-  <table border="1" style="border-collapse: collapse; width: 100%; text-align: left;">
-    <thead style="background-color: #f2f2f2;">
+  <table>
+    <thead>
       <tr>
         <th>Operatore</th>
         <th>Sintassi</th>
