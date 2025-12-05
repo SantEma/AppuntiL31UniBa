@@ -309,4 +309,5 @@ In generale, a seconda del tipo di cardinalità delle associazioni si possono st
 - 1 a 1:
 	- Obbligatoria: analogo al caso 1 a N obbligatoria.
 	- Facoltativa: bisogna ragionare logicamente per giungere ad un volume che sia plausibile con la realtà (si riduce di qualche unità). Ad esempio, se l’associazione direzione avesse cardinalità (0,1) con l’entità dipartimento, il numero di occorrenze di direzione sarebbe circa 78, ovvero in numero dei dipartimenti leggermente diminuito.
-- 
+- N a N:
+	- Non c’è distinzione tra associazione obbligatoria e facoltativa, la molteplicità è data stimando le occorrenze della partecipazione dell’entità all'associazione e moltiplicando questa stima per il numero di occorrenze dell’entità che partecipa all'associazione
