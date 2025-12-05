@@ -75,7 +75,7 @@ Sono impilati in ordine di diametro decrescente, dal più grande in basso al pi�
 1. È possibile usare un terzo piolo ("intermedio") per gli spostamenti.
 2. Si può spostare **un solo disco per volta**.
 3. Non è **mai** possibile sovrapporre un disco più grande su uno più piccolo.
-### La soluzione Ricorsiva
+### La soluzione ricorsiva
 ![[Prima torre di hanoi.png]]
 Come si può vedere nella figura, la strategia per spostare $n$ dischi da un'origine a una destinazione è definita scomponendo il problema:
 1. Muovi i primi $n-1$ dischi (i più piccoli) dal piolo di _origine_ al piolo _intermedio_ (usando la destinazione come appoggio).
@@ -279,7 +279,6 @@ Ma come otteniamo l'espressione postfissa?
 | `)`             | Pop operatore  | `5 9 8 + 4 6 * * 7 +`   | `<*>`       |
 | `)`             | Pop operatore  | `5 9 8 + 4 6 * * 7 + *` | `< >`       |
 Alla fine, la pila è vuota e l'output è l'espressione postfissa corretta.
-
 # Coda
 Una Coda è un tipo astratto per una sequenza di elementi, ma con regole di accesso specifiche.    
 **Funzionamento:**
