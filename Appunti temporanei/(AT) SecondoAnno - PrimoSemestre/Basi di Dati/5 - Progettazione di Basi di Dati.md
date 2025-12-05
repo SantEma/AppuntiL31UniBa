@@ -323,3 +323,5 @@ Presa in considerazione l’operazione 2, per eseguirla si deve: accedere a una 
 Tutto questo viene riassunto in una tavola degli accessi in cui viene anche indicato se l’accesso avviene in lettura ($L$) o scrittura ($S$). Evidenziare questa differenza è fondamentale poiché si assume che le operazioni di scrittura abbiano un costo pari al doppio di una operazione di lettura.
 ![[Pasted image 20251205102913.png]]
 ### Ristrutturazione di schemi E-R
+La fase di ristrutturazione di uno schema Entità-Relazione si può suddividere in una serie di passi in sequenza:
+- 
