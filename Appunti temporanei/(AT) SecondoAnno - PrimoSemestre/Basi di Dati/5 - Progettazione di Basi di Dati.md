@@ -324,4 +324,7 @@ Tutto questo viene riassunto in una tavola degli accessi in cui viene anche indi
 ![[Pasted image 20251205102913.png]]
 ### Ristrutturazione di schemi E-R
 La fase di ristrutturazione di uno schema Entità-Relazione si può suddividere in una serie di passi in sequenza:
-- 
+- **Analisi delle ridondanze**: si decide se eliminare o mantenere eventuali ridondanze presenti nel E-R.
+- **Eliminazione delle generalizzazioni**: tutte le generalizzazioni presenti nello schema sono analizzate e sostituite da altri costrutti. Nella progettazione concettuale utilizziamo costrutti assenti nella progettazione logica per rappresentare nel miglior modo possibile i dati.
+- **Partizionamento/accorpamento di entità e associazioni**: si decide se partizionare concetti dello schema in più concetti o, viceversa, accorpare concetti in un unico concetto\
+- **Scelta degli identificatori primari**: si seleziona un identificatore per le entità che ne hanno più di uno.
