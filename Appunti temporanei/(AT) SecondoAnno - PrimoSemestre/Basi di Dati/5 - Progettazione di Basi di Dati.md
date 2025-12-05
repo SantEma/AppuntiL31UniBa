@@ -322,4 +322,4 @@ Per ogni operazione, possiamo inoltre descrivere graficamente i dati coinvolti c
 Presa in considerazione l’operazione 2, per eseguirla si deve: accedere a una occorrenza dell’entità $\text{IMPIEGATO}$ per accedere poi ad una occorrenza dell’associazione $\text{AFFERENZA}$ e, attraverso questa, a una occorrenza dell’entità $\text{DIPARTIMENTO}$. Successivamente, per conoscere i dati dei progetti ai quali lavora, dobbiamo accedere a tre occorrenze dell’associazione $\text{PARTECIPAZIONE}$ e, attraverso queste, a tre occorrenze dell'entità progetto. 
 Tutto questo viene riassunto in una tavola degli accessi in cui viene anche indicato se l’accesso avviene in lettura ($L$) o scrittura ($S$). Evidenziare questa differenza è fondamentale poiché si assume che le operazioni di scrittura abbiano un costo pari al doppio di una operazione di lettura.
 ![[Pasted image 20251205102913.png]]
-###
+### Ristrutturazione di schemi E-R
