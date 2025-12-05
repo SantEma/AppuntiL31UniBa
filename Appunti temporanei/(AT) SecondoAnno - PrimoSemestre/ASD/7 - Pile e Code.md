@@ -22,7 +22,6 @@ Operatori:
 E' possibile realizzare la pila con due possibili rappresentazioni:
 - con vettore
 - con puntatori
-
 #### Realizzazione con vettore
 Vanno memorizzati gli n elementi della pila, in ordine inverso, nelle prime n posizioni del vettore, mantenendo un cursore alla testa della pila.
 ![[Pasted image 20251110110903.png]]
@@ -35,10 +34,9 @@ Ci riferiamo alla pila con un puntatore alla cella che si trova in cima, con ogn
 
 Una delle applicazioni più interessanti delle pile riguarda l'esecuzione di programmi ricorsivi, difatti l'esecuzione di una procedura ricorsiva prevede il salvataggio dei dati su cui lavora la procedura al momento della chiamata ricorsiva. Le diverse chiamate attive sono organizzate in una pila in cui la chiamata più recente è quella che si conclude per prima. Nella pila vanno salvati i parametri (e le eventuali variabili locali) e il punto di ritorno, cioè l’etichetta della istruzione da cui ripartire al termine della esecuzione della procedura chiamata.
 
-ATTENZIONE: imparare bene i prossimi algoritmi delle valutazioni aritmetiche poiche' il professore ha detto che molte volte le chiede all'esame.
+**ATTENZIONE**: imparare bene i prossimi algoritmi delle valutazioni aritmetiche poiché il professore ha detto che molte volte le chiede all'esame.
 
 La pila è la struttura ideale per valutare delle operazioni aritmetiche. Una espressione aritmetica viene convertita in forma postfissa (in cui l'operatore viene inserito successivamente ai due operandi) e poi risolta. 
-
 #### Conversione di un'espressione infissa in postfissa
 Data un'espressione infissa, procediamo da sinistra a destra nell'espressione:
 - se incontriamo un numero lo scriviamo in output;
@@ -59,11 +57,9 @@ Con l'uso di una pila possiamo valutare una qualsiasi espressione postfissa. Dat
 Partendo dall'espressione precedentemente ottenuta: 5 9 8 + 4 6 * * 7 + * avremo:
 ![[Pasted image 20251110113229.png]]
 ## Code
-
 La coda è una struttura astratta simile alla pila, dalla quale si differisce per l'accesso. Difatti, a differenza della pila in cui si inserisce e si toglie l'elemento situato "in testa", nella coda gli elementi vengono aggiunti da un estremo "fondo", ed estratti dalla testa, secondo l'algoritmo FIFO.
 
 È particolarmente adatta a rappresentare sequenze nelle quali l'elemento viene elaborato secondo l'ordine di arrivo.
-
 #### Operatori:
 - creacoda (): $\to$ coda
 	- POST: `q' = <>`
