@@ -296,8 +296,29 @@ Per studiare questi parametri abbiamo bisogno di conoscere, oltre allo schema, l
 	- Frequenza (numero medio di esecuzioni in un certo intervallo di tempo) 
 	- Dati coinvolti (entità e associazioni)
 
+Per fare un esempio pratico, prendiamo uno schema:
+![[Pasted image 20251205101649.png]]
+Trattandosi di uno schema riguardante dati sul personale di un'azienda, le operazioni possibili potrebbero essere quelle che seguono:
+1. Assegna un impiegato ad un progetto
+2. Trova i dati di un impiegato, del dipartimento in quale lavora e dei progetti a cui partecipa
+3. Trova i dati di tutti gli impiegati di un certo dipartimento
+4. Per ogni sede, trova i suoi dipartimenti con il cognome del direttore e l'elenco degli impiegati del dipartimento
+
+Sebbene un'analisi delle prestazioni che fa riferimento ad un numero ristretto di operazioni può sembrare riduttiva rispetto al reale carico della base di dati, va notato che le operazioni sulle basi di dati seguono la cosidetta regola "ottanta-venti":
+L'ottanta percento del carico è generato dal venti percento delle operazioni.
+Questo ci permette di valutare adeguatamente il carico concentrandoci solo sulle operazioni previste
+
 Il volume dei dati e le caratteristiche generali delle operazioni possono essere descritti facendo uso di tabelle, chiamate **tabelle dei volumi e delle operazioni** 
 Nella tavola dei volumi vengono riportati tutti i concetti dello schema (entità e associazioni), un simbolo per ogni concetto che distingua le entità ($E$) dalle relazioni ($R$) e il volume a regime. 
 Nella tavola delle operazioni riportiamo, per ogni operazione la frequenza prevista (su un arco di tempo) e un simbolo che indichi se l’operazione è interattiva ($I$) o batch ($B$). 
-Nella tavola dei volumi, il numero delle occorrenze delle associazioni dipende da due parametri: il numero di occorrenze delle entità coinvolte nelle associazioni e il numero (medio) di partecipazioni di una occorrenza di entità alle occorrenze di associazioni. Il primo parametro è solitamente fornito dalla specifica dei requisiti. Il secondo parametro dipende a sua volta dalle cardinalità dell’associazione.
+Nella tavola dei volumi, il numero delle occorrenze delle associazioni dipende da due parametri: il numero di occorrenze delle entità coinvolte nelle associazioni e il numero (medio) di partecipazioni di una occorrenza di entità alle occorrenze di associazioni. Il primo parametro è solitamente fornito dalla specifica dei requisiti, mentre il secondo parametro dipende a sua volta dalle cardinalità dell’associazione.
 ![[Pasted image 20251204153135.png]]
+Ad esempio, considerando lo schema E-R precedente e le sue tabelle, per calcolare il numero di occorrenze per l’associazione $\text{PARTECIPAZIONE}$ si assume che un impiegato possa partecipare a 3 progetti contemporaneamente, ottenendo dunque 2000 × 3 = 6000 occorrenze.
+Allo stesso modo, si sarebbe potuto assumere che ad uno stesso progetto possano partecipare 12 impiegati, ottenendo 500 × 12 = 6000 occorrenze della relazione partecipazione. 
+È assolutamente errato moltiplicare tra loro il numero di occorrenze delle due entità che partecipano all'associazione, poiché così facendo si considera che, ricorrendo all'esempio precedente, ogni impiegato possa partecipare solo ad un progetto.
+
+Per ogni operazione, possiamo inoltre descrivere graficamente i dati coinvolti con uno schema di operazione che consiste nel frammento dello schema E-R interessato dall'operazione, sul quale viene disegnato il cammino logico da percorrere per accedere alle informazioni di interesse.
+![[Pasted image 20251205102711.png]]
+Presa in considerazione l’operazione 2, per eseguirla si deve: accedere a una occorrenza dell’entità $\text{IMPIEGATO}$ per accedere poi ad una occorrenza dell’associazione $\text{AFFERENZA}$ e, attraverso questa, a una occorrenza dell’entità $\text{DIPARTIMENTO}$. Successivamente, per conoscere i dati dei progetti ai quali lavora, dobbiamo accedere a tre occorrenze dell’associazione $\text{PARTECIPAZIONE}$ e, attraverso queste, a tre occorrenze dell'entità progetto. 
+Tutto questo viene riassunto in una tavola degli accessi in cui viene anche indicato se l’accesso avviene in lettura ($L$) o scrittura ($S$). Evidenziare questa differenza è fondamentale poiché si assume che le operazioni di scrittura abbiano un costo pari al doppio di una operazione di lettura.
+![[Pasted image 20251205102913.png]]
