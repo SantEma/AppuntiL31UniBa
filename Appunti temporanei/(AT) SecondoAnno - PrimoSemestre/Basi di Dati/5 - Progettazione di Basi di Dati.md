@@ -301,13 +301,3 @@ Nella tavola dei volumi vengono riportati tutti i concetti dello schema (entità
 Nella tavola delle operazioni riportiamo, per ogni operazione la frequenza prevista (su un arco di tempo) e un simbolo che indichi se l’operazione è interattiva ($I$) o batch ($B$). 
 Nella tavola dei volumi, il numero delle occorrenze delle associazioni dipende da due parametri: il numero di occorrenze delle entità coinvolte nelle associazioni e il numero (medio) di partecipazioni di una occorrenza di entità alle occorrenze di associazioni. Il primo parametro è solitamente fornito dalla specifica dei requisiti. Il secondo parametro dipende a sua volta dalle cardinalità dell’associazione.
 ![[Pasted image 20251204153135.png]]
-
-In generale, a seconda del tipo di cardinalità delle associazioni si possono stabilire le seguenti convenzioni:
-- 1 a N:
-	- Obbligatoria: il volume medio dei dati si ricava dal numero di occorrenze dell’entità con cardinalità massima uguale a uno. Ad esempio il numero di occorrenze dell’associazione composizione è dato dal numero dei dipartimenti, perché le cardinalità ci dicono che un dipartimento appartiene ad una sola sede. 
-	-  Facoltativa: si considera il volume del caso obbligatorio e lo si riduce del 10%. Ad esempio, il numero di occorrenze dell’associazione $\text{AFFERENZA}$ è invece poco meno del numero degli impiegati, perché dalle cardinalità si evince che ci sono impiegati che non afferiscono ad alcun dipartimento.c
-- 1 a 1:
-	- Obbligatoria: analogo al caso 1 a N obbligatoria.
-	- Facoltativa: bisogna ragionare logicamente per giungere ad un volume che sia plausibile con la realtà (si riduce di qualche unità). Ad esempio, se l’associazione direzione avesse cardinalità (0,1) con l’entità dipartimento, il numero di occorrenze di direzione sarebbe circa 78, ovvero in numero dei dipartimenti leggermente diminuito.
-- N a N:
-	- Non c’è distinzione tra associazione obbligatoria e facoltativa, la molteplicità è data stimando le occorrenze della partecipazione dell’entità all'associazione e moltiplicando questa stima per il numero di occorrenze dell’entità che partecipa all'associazione
