@@ -360,4 +360,4 @@ Quindi, circa 8500 accessi giornalieri in più rispetto al caso di dato ridondan
 Possiamo dunque concludere che conviene, in questo caso, mantenere il dato ridondante.
 Di seguito le tavole di accessi per caso
 ![[Pasted image 20251208113448.png]]
-#### Eliminazione delle general
+#### Eliminazione delle generalizzazioni
