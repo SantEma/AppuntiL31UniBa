@@ -353,4 +353,5 @@ Individuato l’attributo $\text{Numero abitanti}$ come dato ridondante, proviam
 Assumendo che il numero degli abitanti di una città richieda 4 byte, abbiamo che il dato ridondante richiede 4×200 = 800 byte di memoria aggiuntiva. 
 Passiamo ora alla stima del costo delle operazioni; per farlo si generano le tabelle degli accessi in figura, dalle quali si evince che l’operazione 1 ha un costo unitario pari a 7 in presenza di ridondanza e pari a 4 in assenza di ridondanza, l’operazione 2 ha costo unitario rispettivamente 1 e 5001. 
 A questo punto, tenendo conto delle frequenze, si ottiene che il sistema presenta:
-1. $7 \times 500 +1 \times 2 $
+1. $7 \times 500 +1 \times 2 = 3502$ accessi totali in presenza di ridondanza
+2. $4 \times 500 + 5001 \times 2 = 12002$ accessi assenti in presenza di ridondanza
