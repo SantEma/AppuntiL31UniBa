@@ -331,4 +331,8 @@ La fase di ristrutturazione di uno schema Entità-Relazione si può suddividere 
 ![[Pasted image 20251205103837.png]]
 #### Analisi delle ridondanze
 Per ridondanza, in uno schema concettuale, si intende la presenza di un dato che può essere derivato da altri. Le forme di ridondanza in uno schema E-R sono:
-- Attributi derivabili da altri attributi della stessa entità (o associazione)
+- Attributi derivabili da altri attributi della stessa entità (o associazione), come nel primo schema in figura
+- Attributi derivabili da attributi di altre entità (o associazioni), di solito attraverso funzioni di aggregazione (somma, media, conteggio...).
+   Se ne vedono due esempi nel secondo e terzo schema in figura. Nel secondo schema, l’attributo importo totale dell’entità acquisto si può derivare, attraverso l’associazione composizione dall'attributo prezzo dell’entità prodotto, sommando i prezzi dei prodotti di cui un acquisto è composto
+- Associazioni derivabili dalla composizione di altre associazioni in presenza di cicli. 
+  Ad esempio nel quarto schema in figura l’associazione docenza tra studenti e professori può essere infatti derivata dalle associazioni frequenza e insegnamento. Va comunque precisato che la presenza di un ciclo non genera necessariamente ridondanze.
