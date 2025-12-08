@@ -362,6 +362,9 @@ Di seguito le tavole di accessi per caso
 ![[Pasted image 20251208113448.png]]
 #### Eliminazione delle generalizzazioni
 Dato che i sistemi tradizionali per la gestione dei dati non consentono di rappresentare direttamente una generalizzazione, risulta spesso necessario trasformare questo costrutto in altri costrutti del modello E-R per i quali esiste una implementazione naturale: le entità e le associazioni.
+Prenderemo in esempio questo schema:
+![[Pasted image 20251208115554.png]]
+
 Per rappresentare una generalizzazione mediante entità e associazioni abbiamo essenzialmente tre alternative possibili:
 
-Prendiamo in esempio questo schema:
+
