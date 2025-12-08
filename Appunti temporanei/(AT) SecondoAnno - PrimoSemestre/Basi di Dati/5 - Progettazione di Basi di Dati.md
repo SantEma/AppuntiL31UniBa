@@ -356,4 +356,8 @@ A questo punto, tenendo conto delle frequenze, si ottiene che il sistema present
 1. $7 \times 500 +1 \times 2 = 3502$ accessi totali in presenza di ridondanza
 2. $4 \times 500 + 5001 \times 2 = 12002$ accessi assenti in presenza di ridondanza
 
-Quindi, circa 8500 accessi giornalieri in più rispetto al caso di dato ridondante presente contro un risparmio di un solo kilobyte. Possiamo dunque concludere che conviene, in questo caso, mantenere il dato ridondante
+Quindi, circa 8500 accessi giornalieri in più rispetto al caso di dato ridondante presente contro un risparmio di un solo kilobyte.
+Possiamo dunque concludere che conviene, in questo caso, mantenere il dato ridondante.
+Di seguito le tavole di accessi per caso
+![[Pasted image 20251208113448.png]]
+#### Eliminazione delle general
