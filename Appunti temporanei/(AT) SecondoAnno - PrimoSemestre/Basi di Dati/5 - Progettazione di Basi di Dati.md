@@ -344,5 +344,9 @@ Per ridondanza, in uno schema concettuale, si intende la presenza di un dato che
 La presenza di una ridondanza ha effetti positivi, semplificare le interrogazioni, ed effetti negativi, appesantisce gli aggiornamenti e comporta l'occupazione di più memoria. Per questo motivo, la decisione di mantenere o eliminare una ridondanza va presa in seguito ad una **analisi quantitativa** che confronti il costo di esecuzione delle operazioni che coinvolgono il dato ridondante e l’occupazione di memoria, sia in presenza e che in assenza di ridondanza.
 ##### Esempio di eliminazione di una ridondanza
 Si consideri l’applicazione anagrafica di una regione rappresentata dal terzo schema nella figura precedente e si considerino le seguenti operazioni:
-- Operazione 1: memorizzare una nuova persona con la relativa città di residenza
+1. Memorizzare una nuova persona con la relativa città di residenza
+2. Stampare tutti i dati di una città (incluso il numero di abitanti)
+
+Supponiamo inoltre che per questa applicazione i dati di carico siano quelli riportati in figura:
+
  
