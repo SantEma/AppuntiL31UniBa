@@ -366,5 +366,4 @@ Prenderemo in esempio questo schema:
 ![[Pasted image 20251208115554.png]]
 
 Per rappresentare una generalizzazione mediante entità e associazioni abbiamo essenzialmente tre alternative possibili:
-
-
+- **Accorpamento delle figlie nel genitore**. Le entità $E_{1}$ e $E_{2}$ sono eliminate e le loro proprietà (attributi, associazioni, generalizzazioni) sono aggiunte al padre $E_{0}$. All'entità padre viene aggiunto un attributo per distinguere il tipo di occorrenza di $E_{0}$, cioè se tale occorrenza apparteneva a $E_{1}$  o a $E_{2}$ o, nel caso di generalizzazione parziale, a nessuna delle due. In riferimento al primo schema in Figura 6.41, si osservi che gli attributi A11 e A12 possono assumere valori nulli per alcune occorrenze di E0 e che la relazione R2 avrà una cardinalità minima pari a 0 sull’entità E0.
