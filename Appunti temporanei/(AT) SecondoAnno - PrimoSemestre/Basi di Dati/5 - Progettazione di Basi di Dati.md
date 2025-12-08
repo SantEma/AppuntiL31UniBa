@@ -329,3 +329,6 @@ La fase di ristrutturazione di uno schema Entità-Relazione si può suddividere 
 - **Partizionamento/accorpamento di entità e associazioni**: si decide se partizionare concetti dello schema in più concetti o, viceversa, accorpare concetti in un unico concetto\
 - **Scelta degli identificatori primari**: si seleziona un identificatore per le entità che ne hanno più di uno.
 ![[Pasted image 20251205103837.png]]
+#### Analisi delle ridondanze
+Per ridondanza, in uno schema concettuale, si intende la presenza di un dato che può essere derivato da altri. Le forme di ridondanza in uno schema E-R sono:
+- Attributi derivabili da altri attributi della stessa entità (o associazione)
