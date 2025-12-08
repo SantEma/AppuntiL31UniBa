@@ -341,6 +341,8 @@ Per ridondanza, in uno schema concettuale, si intende la presenza di un dato che
 **Nota bene**: La presenza di cicli non genera necessariamente ridondanze.
 ![[Pasted image 20251208112702.png]]
 
-La presenza di una ridondanza ha effetti positivi, semplificare le interrogazioni, ed effetti negativi, appesantisce gli aggiornamenti e comporta l'occupazione di più memoria. Per questo motivo, la decisione di mantenere o eliminare una ridondanza va presa in seguito ad una analisi quantitativa che confronti il costo di esecuzione delle operazioni che coinvolgono il dato ridondante e l’occupazione di memoria, sia in presenza e che in assenza di ridondanza.
-##### Esempio di eliminazione di una rido
-
+La presenza di una ridondanza ha effetti positivi, semplificare le interrogazioni, ed effetti negativi, appesantisce gli aggiornamenti e comporta l'occupazione di più memoria. Per questo motivo, la decisione di mantenere o eliminare una ridondanza va presa in seguito ad una **analisi quantitativa** che confronti il costo di esecuzione delle operazioni che coinvolgono il dato ridondante e l’occupazione di memoria, sia in presenza e che in assenza di ridondanza.
+##### Esempio di eliminazione di una ridondanza
+Si consideri l’applicazione anagrafica di una regione rappresentata dal terzo schema nella figura precedente e si considerino le seguenti operazioni:
+- Operazione 1: memorizzare una nuova persona con la relativa città di residenza
+ 
