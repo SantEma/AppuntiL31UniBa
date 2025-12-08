@@ -348,5 +348,7 @@ Si consideri l’applicazione anagrafica di una regione rappresentata dal terzo 
 2. Stampare tutti i dati di una città (incluso il numero di abitanti)
 
 Supponiamo inoltre che per questa applicazione i dati di carico siano quelli riportati in figura:
-
- 
+![[Pasted image 20251208113020.png]]
+Individuato l’attributo $\text{Numero abitanti}$ come dato ridondante, proviamo a valutare gli indici di prestazione in caso di presenza del dato ridondante. 
+Assumendo che il numero degli abitanti di una città richieda 4 byte, abbiamo che il dato ridondante richiede 4×200 = 800 byte di memoria aggiuntiva. 
+Passiamo ora alla stima del costo delle operazioni; per farlo si generano le tabelle degli accessi in fig. Dalle quali si evince che l’operazione 1 ha un costo unitario pari a 7 in presenza di ridondanza e pari a 4 in assenza di ridondanza, l’operazione 2 ha costo unitario rispettivamente 1 e 5001. A questo punto, tenendo conto delle frequenze, si ottiene che il sistema presenta
