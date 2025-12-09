@@ -404,7 +404,7 @@ A partire da uno schema E-R ristrutturato si costruisce uno schema logico equiva
 L'idea fondamentale di questa trasformazione si basa sul far diventare le entità delle relazioni (sugli stessi attributi) e le associazioni farle diventare relazioni sulle chiavi delle relazioni che rappresentano le entità coinvolte (più gli attributi propri delle associazioni)
 
 Se gli attributi originali di entità e associazioni sono opzionali, i corrispondenti attributi di relazione possono assumere valori nulli (questa situazione si indica graficamente posizionando un asterisco in corrispondenza dell’attributo facoltativo all'interno dello schema della relazione).
-#### Associazioni molti a molti 
+#### Associazioni molti a molti ($N:N$) 
 Considerato lo schema in figura (esempio Impiegato-Progetto):
 ![[Pasted image 20251209142951.png]]
 Lo schema relazionale che si ottiene è il seguente:
@@ -430,3 +430,4 @@ $$\text{PRODOTTO}(\text{Codice}, \text{Genere})$$
 $$\text{DIPARTIMENTO}(\text{Nome}, \text{Telefono})$$
 $$\text{FORNITURA}(\text{Fornitore}, \text{Prodotto}, \text{Dipartimento}, \text{Quantità})$$
 ![[Pasted image 20251209143056.png]]
+#### Associazioni uno a molti $(1:N)$
