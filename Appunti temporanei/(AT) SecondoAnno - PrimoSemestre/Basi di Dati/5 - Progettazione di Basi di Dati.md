@@ -468,9 +468,9 @@ Cominciamo a vedere le associazioni uno a uno con partecipazione obbligatoria pe
 In questo caso abbiamo due tipi di traduzioni completamente simmetriche:
 $$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}, \text{DipartimentoDiretto}, \text{InizioDirezione})$$
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
-con vincolo di integrità referenziale tra l'attributo $\text{DipartimentoDiretto}$ di $\text{DIRETTORE$ e Nome di DIPARTIMENTO.
+con vincolo di integrità referenziale tra l'attributo $\text{DipartimentoDiretto}$ di $\text{DIRETTORE}$ e $\text{Nome}$ di $\text{DIPARTIMENTO}$.
 Oppure
 $$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
 
-con vincolo di integrità referenziale tra l'attributo Direttore di DIPARTIMENTO e l'attributo Codice della relazione DIRETTORE.
+con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di DIPARTIMENTO e l'attributo Codice della relazione DIRETTORE.
