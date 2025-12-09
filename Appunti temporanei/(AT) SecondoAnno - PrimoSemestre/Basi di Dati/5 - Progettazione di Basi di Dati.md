@@ -406,9 +406,7 @@ L'idea fondamentale di questa trasformazione si basa sul far diventare le entit�
 Se gli attributi originali di entità e associazioni sono opzionali, i corrispondenti attributi di relazione possono assumere valori nulli (questa situazione si indica graficamente posizionando un asterisco in corrispondenza dell’attributo facoltativo all'interno dello schema della relazione).
 #### Associazioni molti a molti 
 Considerato lo schema in figura (esempio Impiegato-Progetto):
-
-![Inserire qui lo schema E-R della figura relativa all'associazione molti a molti]
-
+![[Pasted image 20251209142951.png]]
 Lo schema relazionale che si ottiene è il seguente:
 
 $$\text{IMPIEGATO}(\text{Matricola}, \text{Cognome}, \text{Stipendio})$$
