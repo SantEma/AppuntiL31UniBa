@@ -401,4 +401,4 @@ La scelta degli identificatori principali è indispensabile nelle traduzione ver
 - Preferenza per gli identificatori interni
 ### Traduzione verso il modello relazionale
 A partire da uno schema E-R ristrutturato si costruisce uno schema logico equivalente.
-L'idea fondamental
+L'idea fondamentale di questa trasformazione si basa sul far diventare le entità delle relazioni (sugli stessi attributi) e le associazioni farle diventare relazioni sulle chiavi delle relazioni che rappresentano
