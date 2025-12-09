@@ -431,9 +431,7 @@ $$\text{FORNITURA} (\underline{\text{Fornitore}}, \underline{\text{Prodotto}}, \
 
 #### Associazioni uno a molti $(1:N)$
 Consideriamo lo schema in figura.
-
-![Inserire qui lo schema E-R con associazione uno a molti]
-
+![[Pasted image 20251209144425.png]]
 Secondo la regola vista per le associazioni molti a molti, la traduzione di questo schema dovrebbe essere la seguente:
 
 $$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
