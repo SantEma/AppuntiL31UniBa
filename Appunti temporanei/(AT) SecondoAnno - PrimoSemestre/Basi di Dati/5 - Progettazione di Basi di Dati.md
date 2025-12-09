@@ -450,4 +450,5 @@ Si preferisce, dunque, la traduzione che segue, nella quale la relazione $\text{
 $$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}, \text{Squadra}, \text{Ingaggio})$$
 $$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
 con vincolo di integrità referenziale fra Squadra in $\text{GIOCATORE}$ e la chiave di $\text{SQUADRA}$.
-Se la cardinalità minima dell'associazione è zero, allora $\text{SQUADRA}$ e $\text{INA}$ in GIOCATORE devono ammettere valore nullo.
+Se la cardinalità minima dell'associazione è zero, allora $\text{SQUADRA}$ e $\text{INGAGGIO}$ in $\text{GIOCATORE}$ devono ammettere valore nullo.
+#### Entità con identificatore esterno
