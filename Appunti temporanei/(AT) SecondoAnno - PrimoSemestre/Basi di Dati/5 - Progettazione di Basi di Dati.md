@@ -413,19 +413,17 @@ $$\text{PROGETTO} (\underline{\text{Codice}}, \text{Nome}, \text{Budget})$$
 $$\text{PARTECIPAZIONE} (\underline{\text{Matricola}}, \underline{\text{Codice}}, \text{DataInizio})$$
 Inoltre, vanno sempre specificati i **vincoli di integrità referenziale** presenti tra gli schemi creati. Nel caso in esempio esistono due vincoli tra gli attributi $\text{Matricola}$ e $\text{Codice}$ di $\text{PARTECIPAZIONE}$ e gli omonimi attributi delle entità $\text{IMPIEGATO}$ e $\text{PROGETTO}$.
 Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni. Ad esempio:
-
-$$\text{PARTECIPAZIONE}(\text{Impiegato}, \text{Progetto}, \text{DataInizio})$$
-
-La ridenominazione è essenziale in presenza di associazioni ricorsive (vedi figura).
+$$\text{PARTECIPAZIONE} (\underline{\text{Impiegato}}, \underline{\text{Progetto}}, \text{DataInizio})$$
+La ridenominazione è essenziale in presenza di associazioni ricorsive
 ![[Pasted image 20251209143021.png]]
-Questo schema si traduce nelle seguenti due relazioni: $$\text{PRODOTTO}(\text{Codice}, \text{Nome}, \text{Costo})$$ $$\text{COMPOSIZIONE}(\text{Composto}, \text{Componente}, \text{Quantità})$$Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
+Questo schema si traduce nelle seguenti due relazioni: 
+$$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Nome}, \text{Costo})$$
+$$\text{COMPOSIZIONE} (\underline{\text{Composto}}, \underline{\text{Componente}}, \text{Quantità})$$
+
+Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
 
 Le associazioni con più di due entità partecipanti si traducono in maniera analoga alle associazioni binarie.
 Lo schema in figura si traduce nelle seguenti tre relazioni:
 
-$$\text{FORNITORE}(\text{PartitaIVA}, \text{NomeDitta})$$
-$$\text{PRODOTTO}(\text{Codice}, \text{Genere})$$
-$$\text{DIPARTIMENTO}(\text{Nome}, \text{Telefono})$$
-$$\text{FORNITURA}(\text{Fornitore}, \text{Prodotto}, \text{Dipartimento}, \text{Quantità})$$
 ![[Pasted image 20251209143056.png]]
 #### Associazioni uno a molti $(1:N)$
