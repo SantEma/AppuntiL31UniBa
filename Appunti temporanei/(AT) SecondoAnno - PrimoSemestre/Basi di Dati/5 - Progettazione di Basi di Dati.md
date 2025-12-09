@@ -378,3 +378,5 @@ La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, 
 Le alternative presentate non sono le uniche ammesse, ma è possibile effettuare ristrutturazioni che sono combinazioni delle precedenti. Inoltre per la stessa generalizzazione è possibile applicare trasformazioni differenti sui diversi livelli
 
 #### Partizionamento/Accorpamento di entità e/o associazioni
+Entità e associazioni possono essere partizionati o accorpati per garantire maggiore efficienza delle operazioni in base a criteri simili a quelli usati per le generalizzazioni: 
+Gli accessi si riducono separando attributi di uno stesso concetto che vengono acceduti da operazioni diverse e raggruppando attributi di concetti diversi che vengono acceduti dalle medesime operazioni.
