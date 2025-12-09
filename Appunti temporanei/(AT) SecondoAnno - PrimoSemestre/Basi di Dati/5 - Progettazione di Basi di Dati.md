@@ -437,6 +437,7 @@ Consideriamo lo schema in figura.
 Secondo la regola vista per le associazioni molti a molti, la traduzione di questo schema dovrebbe essere la seguente:
 
 $$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
-$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio})$$
+$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \underline{\text{Squadra}}, \text{Ingaggio})$$
 $$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
 Ma la traduzione appena vista non è la più corretta. Infatti, essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$.
+Ottenendo in questo modo una nuova traduzione:
