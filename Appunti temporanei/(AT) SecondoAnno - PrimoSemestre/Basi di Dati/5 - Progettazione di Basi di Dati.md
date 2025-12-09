@@ -404,7 +404,6 @@ La seconda fase della progettazione logica corrisponde a una traduzione tra mode
 Facciamo riferimento a una versione semplificata del modello E-R, che non contiene generalizzazioni e attributi multivalore, e nella quale ogni entità ha un solo identificatore. 
 
 Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
-
 #### Associazioni molti a molti ($N:N$) 
 Consideriamo lo schema in figura, la sua traduzione naturale nel modello relazionale prevede:
 * per ogni entità, una relazione con lo stesso nome avente per attributi i medesimi attributi dell’entità e per chiave il suo identificatore;
