@@ -461,4 +461,6 @@ $$\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità
 $$\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})$$
 con vincolo di integrità referenziale tra l'attributo $\text{NomeUniversità}$ della relazione $\text{STUDENTE}$ e l'attributo $\text{Nome}$ dell'entità $\text{UNIVERSITÀ}$.
 Come si può vedere, rappresentando l'identificatore esterno si rappresenta direttamente anche l'associazione tra le due entità. Ricordiamo, infatti, che le entità identificate esternamente partecipano all'associazione sempre con cardinalità minima e massima pari a uno.
-
+#### Associazioni uno a uno $(1:1)$
+Per le associazioni uno a uno esistono diverse possibilità di traduzione sulla base delle cardinalità minime.
+Cominciamo a vedere le associazioni uno a uno con partecipazione obbligatoria per entrambe le entità, come in figura.
