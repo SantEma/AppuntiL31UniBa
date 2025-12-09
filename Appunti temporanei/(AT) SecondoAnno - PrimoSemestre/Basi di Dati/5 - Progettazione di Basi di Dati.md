@@ -435,7 +435,9 @@ Consideriamo lo schema in figura (Giocatore-Squadra).
 
 ![Inserire qui lo schema E-R della figura relativa all'associazione uno a molti]
 
-Secondo la regola vista per le associazioni molti a molti, la traduzione standard creerebbe tre relazioni. Tuttavia, questa non è la traduzione più corretta ed efficiente.
+Secondo la regola vista per le associazioni molti a molti, la traduzione standard creerebbe tre relazioni:
+$$\text{FORNITORE}(\text{PartitaIVA}, \text{NomeDitta})$$
+Tuttavia, questa non è la traduzione più corretta ed efficiente.
 
 Essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$. Notiamo che nella relazione che rappresenterebbe il contratto, la chiave sarebbe costituita solo dall'identificatore di $\text{GIOCATORE}$ (perché le cardinalità indicano che ogni giocatore ha un contratto con una sola squadra).
 
