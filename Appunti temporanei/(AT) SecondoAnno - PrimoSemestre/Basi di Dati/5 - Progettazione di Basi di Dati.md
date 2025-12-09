@@ -406,7 +406,14 @@ Facciamo riferimento a una versione semplificata del modello E-R, che non contie
 Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
 
 #### Associazioni molti a molti ($N:N$) 
-Considerato lo schema in figura (esempio Impiegato-Progetto):
+e nella quale ogni entità ha un solo identificatore. Studieremo inoltre la traduzione verso il modello relazionale.
+Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
+
+Consideriamo lo schema in figura. La sua traduzione naturale nel modello relazionale prevede:
+* per ogni entità, una relazione con lo stesso nome avente per attributi i medesimi attributi dell’entità e per chiave il suo identificatore;
+* per l’associazione, una relazione con lo stesso nome avente per attributi gli attributi dell’associazione e gli identificatori delle entità coinvolte; tali identificatori formano la chiave della relazione.
+
+Se gli attributi originali di entità o associazioni sono opzionali, i corrispondenti attributi di relazione possono assumere valori nulli.
 ![[Pasted image 20251209142951.png]]
 Lo schema relazionale che si ottiene è il seguente:
 $$\text{IMPIEGATO} (\underline{\text{Matricola}}, \text{Cognome}, \text{Stipendio})$$
