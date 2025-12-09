@@ -441,3 +441,9 @@ $$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG
 $$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
 Ma la traduzione appena vista non è la più corretta. Infatti, essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$.
 Ottenendo in questo modo una nuova traduzione:
+
+$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
+$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio})$$
+$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
+Ancora una volta, notiamo che nella relazione $\text{CONTRATTO}$, la chiave è costituita solo dall'identificatore di $\text{GIOCATORE}$ perché le cardinalità dell’associazione ci dicono che ogni giocatore ha un contratto con una sola squadra. A questo punto le relazioni $\text{GIOCATORE}$ e $\text{CONTRATTO}$ hanno la stessa chiave, quindi si possono fondere in un’unica relazione. 
+Si preferisce, dunque, la traduzione che segue, nella quale la relazione Giocatore rappresenta sia l’entità relativa sia l’associazione dello schema E-R originale:
