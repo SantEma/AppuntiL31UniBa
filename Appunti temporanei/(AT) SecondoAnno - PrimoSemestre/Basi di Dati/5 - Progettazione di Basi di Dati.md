@@ -388,4 +388,6 @@ Per esempio, per l’entità $\text{IMPIEGATO}$ ci potrebbero essere alcune oper
 ##### Eliminazione di attributi multivalore
 Questa ristrutturazione si rende necessaria perché, come per le generalizzazioni, il modello relazionale non permette di rappresentare questo tipo di attributo
 ![[Pasted image 20251209121453.png]]
-Come si vede in figura, l'entità $\text{AGENZIA}$ avente l’attributo multivalore $\text{TELEFONO}$ viene partizionata in due entità: una entità con lo stesso nome e gli stessi attributi a meno dell’attributo multivalore, e l’entità $\text{TEKEI}$, con il solo attributo numero, legata con una associazione uno a molti con l’entità agenzia. Se l’attributo multivalore fosse stato opzionale, allora la cardinalità minima dell’associazione sarebbe stata pari a zero.
+Come si vede in figura, l'entità $\text{AGENZIA}$ avente l’attributo multivalore $\text{TELEFONO}$ viene partizionata in due entità: una entità con lo stesso nome e gli stessi attributi a meno dell’attributo multivalore, e l’entità $\text{TELEFONO}$, con il solo attributo numero, legata con una associazione uno a molti con l’entità $\text{AGENZIA}$. Se l’attributo multivalore fosse stato opzionale, allora la cardinalità minima dell’associazione sarebbe stata pari a zero.
+##### Accorpamento di entità
+È l’operazione inversa al partizionamento. Due entità connesse da relazione vengono accorpate in un’unica entità contenente gli attributi di entrambe. Si ottiene una riduzione degli accessi, ma con il rischio di uno spreco di memoria dovuto alla presenza di possibili valori nulli
