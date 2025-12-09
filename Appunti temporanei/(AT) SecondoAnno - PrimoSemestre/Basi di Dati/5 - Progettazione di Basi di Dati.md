@@ -451,3 +451,6 @@ con vincolo di integrità referenziale fra Squadra in $\text{GIOCATORE}$ e la ch
 Se la cardinalità minima dell'associazione è zero, allora $\text{SQUADRA}$ e $\text{INGAGGIO}$ in $\text{GIOCATORE}$ devono ammettere valore nullo.
 #### Entità con identificatore esterno
 Le entità con identificatori esterni danno luogo a relazioni con chiavi che includono gli identificatori delle entità identificanti.![[Pasted image 20251209144538.png]]
+Per esempio, una traduzione per lo schema in figura potrebbe essere il seguente:
+$$\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità}}, \text{Cognome}, \text{AnnoIscrizione})$$
+$$\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})$$
