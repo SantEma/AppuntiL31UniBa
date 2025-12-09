@@ -376,3 +376,5 @@ La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, 
 - La terza alternativa conviene quando la generalizzazione non è totale e ci sono operatori che si riferiscono solo a $E_{1}$ o $E_{2}$ , oppure si riferiscono solo a $E_{0}$ , e dunque fanno distinzioni tra entità figlia ed entità genitore.
 
 Le alternative presentate non sono le uniche ammesse, ma è possibile effettuare ristrutturazioni che sono combinazioni delle precedenti. Inoltre per la stessa generalizzazione è possibile applicare trasformazioni differenti sui diversi livelli
+
+#### Partizionamento/Accorpamento di entità e/o associazioni
