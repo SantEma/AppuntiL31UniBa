@@ -406,10 +406,7 @@ Facciamo riferimento a una versione semplificata del modello E-R, che non contie
 Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
 
 #### Associazioni molti a molti ($N:N$) 
-e nella quale ogni entità ha un solo identificatore. Studieremo inoltre la traduzione verso il modello relazionale.
-Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
-
-Consideriamo lo schema in figura. La sua traduzione naturale nel modello relazionale prevede:
+Consideriamo lo schema in figura, la sua traduzione naturale nel modello relazionale prevede:
 * per ogni entità, una relazione con lo stesso nome avente per attributi i medesimi attributi dell’entità e per chiave il suo identificatore;
 * per l’associazione, una relazione con lo stesso nome avente per attributi gli attributi dell’associazione e gli identificatori delle entità coinvolte; tali identificatori formano la chiave della relazione.
 
@@ -419,8 +416,8 @@ Lo schema relazionale che si ottiene è il seguente:
 $$\text{IMPIEGATO} (\underline{\text{Matricola}}, \text{Cognome}, \text{Stipendio})$$
 $$\text{PROGETTO} (\underline{\text{Codice}}, \text{Nome}, \text{Budget})$$
 $$\text{PARTECIPAZIONE} (\underline{\text{Matricola}}, \underline{\text{Codice}}, \text{DataInizio})$$
-Inoltre, vanno sempre specificati i **vincoli di integrità referenziale** presenti tra gli schemi creati. Nel caso in esempio esistono due vincoli tra gli attributi $\text{Matricola}$ e $\text{Codice}$ di $\text{PARTECIPAZIONE}$ e gli omonimi attributi delle entità $\text{IMPIEGATO}$ e $\text{PROGETTO}$.
-Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni. Ad esempio:
+Vanno sempre specificati i **vincoli di integrità referenziale** presenti tra gli schemi creati. Nel caso in esempio esistono due vincoli tra gli attributi $\text{Matricola}$ e $\text{Codice}$ di $\text{PARTECIPAZIONE}$ e gli omonimi attributi delle entità $\text{IMPIEGATO}$ e $\text{PROGETTO}$.
+Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni, ad esempio:
 $$\text{PARTECIPAZIONE} (\underline{\text{Impiegato}}, \underline{\text{Progetto}}, \text{DataInizio})$$
 La ridenominazione è essenziale in presenza di associazioni ricorsive
 ![[Pasted image 20251209143021.png]]
