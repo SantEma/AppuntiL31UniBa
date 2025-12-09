@@ -419,3 +419,7 @@ Inoltre, vanno sempre specificati i **vincoli di integrità referenziale** prese
 Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni. Ad esempio:
 
 $$\text{PARTECIPAZIONE}(\text{Impiegato}, \text{Progetto}, \text{DataInizio})$$
+
+La ridenominazione è essenziale in presenza di associazioni ricorsive (vedi figura).
+
+Questo schema si traduce nelle seguenti due relazioni: $$\text{PRODOTTO}(\text{Codice}, \text{Nome}, \text{Costo})$$ $$\text{COMPOSIZIONE}(\text{Composto}, \text{Componente}, \text{Quantità})$$ Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
