@@ -459,3 +459,4 @@ Le entità con identificatori esterni danno luogo a relazioni con chiavi che inc
 Per esempio, una traduzione per lo schema in figura potrebbe essere il seguente:
 $$\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità}}, \text{Cognome}, \text{AnnoIscrizione})$$
 $$\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})$$
+con vincolo di integrità referenziale tra l'attributo $\text{NomeUniversità}$ della relazione $\text{STUDENTE}$ e l'attributo $\text{Nome}$ dell'entità $\text{UNIVERSITÀ}$.
