@@ -394,4 +394,9 @@ Come si vede in figura, l'entità $\text{AGENZIA}$ avente l’attributo multival
 Un ragionamento analogo si può estendere alle associazioni, come si vede nel prossimo esempio in cui vengono distinti i giocatori che compongono attualmente una squadra da quelli che ne facevano parte nel passato
 ![[Pasted image 20251209121741.png]]
 #### Scelta degli identificatori principali
-La scelta degli identificatori principali è indispensabile nelle traduzione verso il modello relazionale, perché in questo modello le chiavi sono usate per stabilire legami tra dati di relazioni diverse. Quindi, nei casi in cui esistono entità per le quali sono stati specificati più identificatori, bisogna decidere quale di questi identificatori verrà utilizzato come chiave primaria. I criteri per la scelta sono
+La scelta degli identificatori principali è indispensabile nelle traduzione verso il modello relazionale, perché in questo modello le chiavi sono usate per stabilire legami tra dati di relazioni diverse. Quindi, nei casi in cui esistono entità per le quali sono stati specificati più identificatori, bisogna decidere quale di questi identificatori verrà utilizzato come chiave primaria. I criteri per la scelta sono:
+- Assenza di valori nulli, altrimenti non è garantito l’accesso a tutte le occorrenze dell’entità corrispondente.
+- Semplicità: un identificatore composto da uno o pochi attributi è da preferire a identificatori costituiti da molti attributi.
+- Utilizzo nelle operazioni più frequenti e/o importanti.
+- Preferenza per gli identificatori interni
+### Traduzione verso il moedfll
