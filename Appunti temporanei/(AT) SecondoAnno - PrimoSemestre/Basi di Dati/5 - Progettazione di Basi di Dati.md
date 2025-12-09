@@ -431,20 +431,3 @@ $$\text{DIPARTIMENTO}(\text{Nome}, \text{Telefono})$$
 $$\text{FORNITURA}(\text{Fornitore}, \text{Prodotto}, \text{Dipartimento}, \text{Quantità})$$
 ![[Pasted image 20251209143056.png]]
 #### Associazioni uno a molti $(1:N)$
-Consideriamo lo schema in figura (Giocatore-Squadra).
-
-![Inserire qui lo schema E-R della figura relativa all'associazione uno a molti]
-
-Secondo la regola vista per le associazioni molti a molti, la traduzione standard creerebbe tre relazioni:
-$$\text{FORNITORE}(\text{PartitaIVA}, \text{NomeDitta})$$
-Tuttavia, questa non è la traduzione più corretta ed efficiente.
-
-Essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$. Notiamo che nella relazione che rappresenterebbe il contratto, la chiave sarebbe costituita solo dall'identificatore di $\text{GIOCATORE}$ (perché le cardinalità indicano che ogni giocatore ha un contratto con una sola squadra).
-
-Le relazioni $\text{GIOCATORE}$ e $\text{CONTRATTO}$ avrebbero la stessa chiave, quindi si possono fondere in un'unica relazione. Si preferisce dunque la seguente traduzione, dove $\text{GIOCATORE}$ rappresenta sia l'entità che l'associazione:
-
-$$\text{GIOCATORE}(\text{Cognome}, \text{DataNascita}, \text{Ruolo}, \text{Squadra}, \text{Ingaggio})$$
-$$\text{SQUADRA}(\text{Nome}, \text{Città}, \text{ColoriSociali})$$
-
-* **Vincolo:** Integrità referenziale fra $\text{Squadra}$ in $\text{GIOCATORE}$ e la chiave di $\text{SQUADRA}$.
-* **Nota:** Se la cardinalità minima dell'associazione è zero, allora $\text{Squadra}$ e $\text{Ingaggio}$ in $\text{GIOCATORE}$ devono ammettere valore nullo.
