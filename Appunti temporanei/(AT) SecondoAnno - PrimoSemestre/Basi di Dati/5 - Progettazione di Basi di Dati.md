@@ -426,7 +426,7 @@ Le associazioni con più di due entità partecipanti si traducono in maniera ana
 ![[Pasted image 20251209143056.png]]
 Lo schema in figura si traduce nelle seguenti tre relazioni:
 $$\text{FORNITORE} (\underline{\text{PartitaIVA}}, \text{NomeDitta})$$
-$$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Genere}) \ \text{Dipartimento}(\text{Nome}, Telefono)$$ 
+$$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Genere}) \ \text{DIPARTIMENTO}(\underline{\text{Nome}}, \text{Telefono})$$ 
 $$\text{FORNITURA} (\underline{\text{Fornitore}}, \underline{\text{Prodotto}}, \underline{\text{Dipartimento}}, \text{Quantità})$$
 
 #### Associazioni uno a molti $(1:N)$
