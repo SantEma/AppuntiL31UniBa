@@ -473,4 +473,6 @@ Oppure
 $$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
 
-con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di DIPARTIMENTO e l'attributo Codice della relazione DIRETTORE.
+con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIPARTIMENTO}$ e l'attributo $\text{Codice}$ della relazione $\text{DIRETTORE}$.
+
+Trattandosi di una relazione biunivoca, si potrebbe pensare di rappresentare tutti i concetti in un'unica relazione contenente tutti gli attributi in gioco. Questa alternativa è da escludere perché se ci fosse stato un valido motivo si sarebbe già ristrutturato lo schema E-R in modo da accorpare le due entità.
