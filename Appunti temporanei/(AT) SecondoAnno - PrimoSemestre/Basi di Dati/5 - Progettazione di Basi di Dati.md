@@ -422,4 +422,12 @@ $$\text{PARTECIPAZIONE}(\text{Impiegato}, \text{Progetto}, \text{DataInizio})$$
 
 La ridenominazione è essenziale in presenza di associazioni ricorsive (vedi figura).
 
-Questo schema si traduce nelle seguenti due relazioni: $$\text{PRODOTTO}(\text{Codice}, \text{Nome}, \text{Costo})$$ $$\text{COMPOSIZIONE}(\text{Composto}, \text{Componente}, \text{Quantità})$$ Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
+Questo schema si traduce nelle seguenti due relazioni: $$\text{PRODOTTO}(\text{Codice}, \text{Nome}, \text{Costo})$$ $$\text{COMPOSIZIONE}(\text{Composto}, \text{Componente}, \text{Quantità})$$Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
+
+Le associazioni con più di due entità partecipanti si traducono in maniera analoga alle associazioni binarie.
+Lo schema in figura si traduce nelle seguenti tre relazioni:
+
+$$\text{FORNITORE}(\text{PartitaIVA}, \text{NomeDitta})$$
+$$\text{PRODOTTO}(\text{Codice}, \text{Genere})$$
+$$\text{DIPARTIMENTO}(\text{Nome}, \text{Telefono})$$
+$$\text{FORNITURA}(\text{Fornitore}, \text{Prodotto}, \text{Dipartimento}, \text{Quantità})$$
