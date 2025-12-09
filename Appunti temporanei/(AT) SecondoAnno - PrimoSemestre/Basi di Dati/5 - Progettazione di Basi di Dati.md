@@ -477,5 +477,23 @@ con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\t
 Trattandosi di una relazione biunivoca, si potrebbe pensare di rappresentare tutti i concetti in un'unica relazione contenente tutti gli attributi in gioco. Questa alternativa è da escludere perché se ci fosse stato un valido motivo si sarebbe già ristrutturato lo schema E-R in modo da accorpare le due entità.
 
 Consideriamo ora il caso di associazione uno a uno con partecipazione opzionale per una sola entità, come mostrato in figura.
+
 ![Inserire qui lo schema E-R con associazione uno a uno opzionale]
+
 In questo caso abbiamo una soluzione preferibile, ovvero la seguente:
+
+$$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
+$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
+
+con vincolo di integrità referenziale tra l'attributo Direttore di DIPARTIMENTO e l'attributo Codice di IMPIEGATO.
+
+Consideriamo infine il caso in cui entrambe le entità hanno partecipazione opzionale, come nel caso in figura, dove però possono esistere dipartimenti senza direttori, e quindi la cardinalità dell'entità DIPARTIMENTO diventa (0,1).
+In questo caso esiste un ulteriore possibilità che prevede tre relazioni separate:
+
+$$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
+$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
+$$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})$$
+
+con vincoli di integrità referenziale tra l'attributo Direttore di DIREZIONE e l'attributo Codice di IMPIEGATO e tra l'attributo Dipartimento di DIREZIONE e l'attributo Nome di DIPARTIMENTO.
+
+[DA FINIRE!!!!]
