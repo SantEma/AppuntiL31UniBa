@@ -408,11 +408,9 @@ Se gli attributi originali di entità e associazioni sono opzionali, i corrispon
 Considerato lo schema in figura (esempio Impiegato-Progetto):
 ![[Pasted image 20251209142951.png]]
 Lo schema relazionale che si ottiene è il seguente:
-
-$$\text{IMPIEGATO}(\text{Matricola}, \text{Cognome}, \text{Stipendio})$$
-$$\text{PROGETTO}(\text{Codice}, \text{Nome}, \text{Budget})$$
-$$\text{PARTECIPAZIONE}(\text{Matricola}, \text{Codice}, \text{DataInizio})$$
-
+$$\text{IMPIEGATO} (\underline{\text{Matricola}}, \text{Cognome}, \text{Stipendio})$$
+$$\text{PROGETTO} (\underline{\text{Codice}}, \text{Nome}, \text{Budget})$$
+$$\text{PARTECIPAZIONE} (\underline{\text{Matricola}}, \underline{\text{Codice}}, \text{DataInizio})$$
 Inoltre, vanno sempre specificati i **vincoli di integrità referenziale** presenti tra gli schemi creati. Nel caso in esempio esistono due vincoli tra gli attributi $\text{Matricola}$ e $\text{Codice}$ di $\text{PARTECIPAZIONE}$ e gli omonimi attributi delle entità $\text{IMPIEGATO}$ e $\text{PROGETTO}$.
 Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni. Ad esempio:
 
