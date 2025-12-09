@@ -399,4 +399,6 @@ La scelta degli identificatori principali è indispensabile nelle traduzione ver
 - Semplicità: un identificatore composto da uno o pochi attributi è da preferire a identificatori costituiti da molti attributi.
 - Utilizzo nelle operazioni più frequenti e/o importanti.
 - Preferenza per gli identificatori interni
-### Traduzione verso il moedfll
+### Traduzione verso il modello relazionale
+A partire da uno schema E-R ristrutturato si costruisce uno schema logico equivalente.
+L'idea fondamental
