@@ -371,5 +371,9 @@ Per rappresentare una generalizzazione mediante entità e associazioni abbiamo e
 3. **Sostituzione delle generalizzazioni con associazioni**. La generalizzazione si trasforma in due associazioni uno a uno che legano rispettivamente l’entità genitore con le entità figlie $E_{1}$ e $E_{2}$. Non ci sono trasferimenti di attributi o associazioni e le entità $E_{1}$ ed $E_{2}$ sono identificate esternamente dall'entità $E_{0}$. Nello schema ottenuto vanno aggiunti però dei vincoli: ogni occorrenza di $E_{0}$ non può partecipare contemporaneamente a $R_{G1}$ e $R_{G2}$; inoltre, se la generalizzazione è totale, ogni occorrenza di $E_{0}$ deve partecipare o a un’occorrenza di $R_{G1}$ oppure ad un’occorrenza di $R_{G2}$.![[Pasted image 20251208120409.png]]
 
 La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, analogamente all'analisi delle ridondanze, oppure in seguito ad un’analisi qualitativa che tenga conto di semplici regole generali:
-- La (1) conviene quando le operazioni non fanno molta distinzione fra occorrenze e attributi di E0, E1 e E2. Pur generando uno spreco di memoria
-per la presenza di valori nulli, induce un minor numero di accessi
+- La prima conviene quando le operazioni non fanno molta distinzione fra occorrenze e attributi di $E_{0}$, $E_{1}$ e $E_{2}$. Pur generando uno spreco di memoria per la presenza di valori nulli, induce un minor numero di accessi
+- La (2) è possibile solo se la generalizzazione è totale, altrimenti le occorrenze di E0 che non sono occorrenze nè di E1 nè di E2 non sarebbero rappresentate. Questa alternativa è conveniente quando ci sono operazioni
+che si riferiscono solo a occorrenze di E1 o di E2, e dunque fanno distinzione tra le entità figlie. in questo caso si ottiene un risparmio di memoria
+rispetto alla (1) poiché in linea di principio non ci sono valori nulli, ed
+una riduzione di accessi rispetto alla (3) perché non si deve visitare E0
+per accedere al alcuni attributi di E1 ed E2
