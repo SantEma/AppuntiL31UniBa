@@ -323,7 +323,7 @@ Presa in considerazione l’operazione 2, per eseguirla si deve: accedere a una 
 Tutto questo viene riassunto in una tavola degli accessi in cui viene anche indicato se l’accesso avviene in lettura ($L$) o scrittura ($S$). Evidenziare questa differenza è fondamentale poiché si assume che le operazioni di scrittura abbiano un costo pari al doppio di una operazione di lettura.
 ![[Pasted image 20251205102913.png]]
 ### Ristrutturazione di schemi E-R
-La fase di ristrutturazione di uno schema Entità-Relazione si può suddividere in una serie di passi in sequenza:
+La prima fase di ristrutturazione di uno schema Entità-Relazione si può suddividere in una serie di passi in sequenza:
 - **Analisi delle ridondanze**: si decide se eliminare o mantenere eventuali ridondanze presenti nel E-R.
 - **Eliminazione delle generalizzazioni**: tutte le generalizzazioni presenti nello schema sono analizzate e sostituite da altri costrutti. Nella progettazione concettuale utilizziamo costrutti assenti nella progettazione logica per rappresentare nel miglior modo possibile i dati.
 - **Partizionamento/accorpamento di entità e associazioni**: si decide se partizionare concetti dello schema in più concetti o, viceversa, accorpare concetti in un unico concetto\
@@ -460,3 +460,5 @@ Per esempio, una traduzione per lo schema in figura potrebbe essere il seguente:
 $$\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità}}, \text{Cognome}, \text{AnnoIscrizione})$$
 $$\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})$$
 con vincolo di integrità referenziale tra l'attributo $\text{NomeUniversità}$ della relazione $\text{STUDENTE}$ e l'attributo $\text{Nome}$ dell'entità $\text{UNIVERSITÀ}$.
+Come si può vedere, rappresentando l'identificatore esterno si rappresenta direttamente anche l'associazione tra le due entità. Ricordiamo, infatti, che le entità identificate esternamente partecipano all'associazione sempre con cardinalità minima e massima pari a uno.
+
