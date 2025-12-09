@@ -446,4 +446,8 @@ $$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, 
 $$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio})$$
 $$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
 Ancora una volta, notiamo che nella relazione $\text{CONTRATTO}$, la chiave è costituita solo dall'identificatore di $\text{GIOCATORE}$ perché le cardinalità dell’associazione ci dicono che ogni giocatore ha un contratto con una sola squadra. A questo punto le relazioni $\text{GIOCATORE}$ e $\text{CONTRATTO}$ hanno la stessa chiave, quindi si possono fondere in un’unica relazione. 
-Si preferisce, dunque, la traduzione che segue, nella quale la relazione Giocatore rappresenta sia l’entità relativa sia l’associazione dello schema E-R originale:
+Si preferisce, dunque, la traduzione che segue, nella quale la relazione $\text{GIOCATORE}$ rappresenta sia l’entità relativa sia l’associazione dello schema E-R originale:
+$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}, \text{Squadra}, \text{Ingaggio})$$
+$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
+con vincolo di integrità referenziale fra Squadra in $\text{GIOCATORE}$ e la chiave di $\text{SQUADRA}$.
+Se la cardinalità minima dell'associazione è zero, allora $\text{SQUADRA}$ e $\text{INA}$ in GIOCATORE devono ammettere valore nullo.
