@@ -376,7 +376,6 @@ La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, 
 - La terza alternativa conviene quando la generalizzazione non è totale e ci sono operatori che si riferiscono solo a $E_{1}$ o $E_{2}$ , oppure si riferiscono solo a $E_{0}$ , e dunque fanno distinzioni tra entità figlia ed entità genitore.
 
 Le alternative presentate non sono le uniche ammesse, ma è possibile effettuare ristrutturazioni che sono combinazioni delle precedenti. Inoltre per la stessa generalizzazione è possibile applicare trasformazioni differenti sui diversi livelli
-
 #### Partizionamento/Accorpamento di entità e/o associazioni
 Entità e associazioni possono essere partizionati o accorpati per garantire maggiore efficienza delle operazioni in base a criteri simili a quelli usati per le generalizzazioni: 
 Gli accessi si riducono separando attributi di uno stesso concetto che vengono acceduti da operazioni diverse e raggruppando attributi di concetti diversi che vengono acceduti dalle medesime operazioni.
@@ -393,3 +392,6 @@ Come si vede in figura, l'entità $\text{AGENZIA}$ avente l’attributo multival
 È l’operazione inversa al partizionamento. Due entità connesse da relazione vengono accorpate in un’unica entità contenente gli attributi di entrambe. Si ottiene una riduzione degli accessi, ma con il rischio di uno spreco di memoria dovuto alla presenza di possibili valori nulli
 ![[Pasted image 20251209121700.png]]
 Un ragionamento analogo si può estendere alle associazioni, come si vede nel prossimo esempio in cui vengono distinti i giocatori che compongono attualmente una squadra da quelli che ne facevano parte nel passato
+![[Pasted image 20251209121741.png]]
+#### Scelta degli identificatori principali
+La scelta degli identificatori principali è indispensabile nelle traduzione verso il modello relazionale, perché in questo modello le chiavi sono usate per stabilire legami tra dati di relazioni diverse. Quindi, nei casi in cui esistono entità per le quali sono stati specificati più identificatori, bisogna decidere quale di questi identificatori verrà utilizzato come chiave primaria. I criteri per la scelta sono
