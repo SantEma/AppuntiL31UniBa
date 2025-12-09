@@ -427,7 +427,16 @@ Le associazioni con più di due entità partecipanti si traducono in maniera ana
 Lo schema in figura si traduce nelle seguenti tre relazioni:
 $$\text{FORNITORE} (\underline{\text{PartitaIVA}}, \text{NomeDitta})$$
 $$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Genere})$$
-$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono})$$
 $$\text{FORNITURA} (\underline{\text{Fornitore}}, \underline{\text{Prodotto}}, \underline{\text{Dipartimento}}, \text{Quantità})$$
 
 #### Associazioni uno a molti $(1:N)$
+Consideriamo lo schema in figura.
+
+![Inserire qui lo schema E-R con associazione uno a molti]
+
+Secondo la regola vista per le associazioni molti a molti, la traduzione di questo schema dovrebbe essere la seguente:
+
+$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
+$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio})$$
+$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
+Ma la traduzione appena vista non è la più corretta. Infatti, essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$.
