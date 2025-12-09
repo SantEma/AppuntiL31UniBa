@@ -372,8 +372,5 @@ Per rappresentare una generalizzazione mediante entità e associazioni abbiamo e
 
 La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, analogamente all'analisi delle ridondanze, oppure in seguito ad un’analisi qualitativa che tenga conto di semplici regole generali:
 - La prima conviene quando le operazioni non fanno molta distinzione fra occorrenze e attributi di $E_{0}$, $E_{1}$ e $E_{2}$. Pur generando uno spreco di memoria per la presenza di valori nulli, induce un minor numero di accessi
-- La (2) è possibile solo se la generalizzazione è totale, altrimenti le occorrenze di E0 che non sono occorrenze nè di E1 nè di E2 non sarebbero rappresentate. Questa alternativa è conveniente quando ci sono operazioni
-che si riferiscono solo a occorrenze di E1 o di E2, e dunque fanno distinzione tra le entità figlie. in questo caso si ottiene un risparmio di memoria
-rispetto alla (1) poiché in linea di principio non ci sono valori nulli, ed
-una riduzione di accessi rispetto alla (3) perché non si deve visitare E0
+- La seconda è possibile solo se la generalizzazione è totale, altrimenti le occorrenze di $E_{0}$ che non sono occorrenze nè di $E_{1}$ nè di $E_{2}$ non sarebbero rappresentate. Questa alternativa è conveniente quando ci sono operazioni che si riferiscono solo a occorrenze di $E_{1}$ o di $E_{2}$, e dunque fanno distinzione tra le entità figlie. In questo caso si ottiene un risparmio di memoria rispetto alla prima poiché in linea di principio non ci sono valori nulli, ed una riduzione di accessi rispetto alla terza perché non si deve visitare E0
 per accedere al alcuni attributi di E1 ed E2
