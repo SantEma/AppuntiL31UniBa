@@ -401,9 +401,10 @@ La scelta degli identificatori principali è indispensabile nelle traduzione ver
 - Preferenza per gli identificatori interni
 ### Traduzione verso il modello relazionale
 La seconda fase della progettazione logica corrisponde a una traduzione tra modelli di dati diversi: a partire da uno schema E-R ristrutturato si costruisce uno schema logico equivalente, in grado cioè di rappresentare le medesime informazioni. 
-Facciamo riferimento a una versione semplificata del modello E-R, che non contiene generalizzazioni e attributi multivalore, e nella quale ogni entità ha un solo identificatore. Studieremo inoltre la traduzione verso il modello relazionale. Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
+Facciamo riferimento a una versione semplificata del modello E-R, che non contiene generalizzazioni e attributi multivalore, e nella quale ogni entità ha un solo identificatore. 
 
-Se gli attributi originali di entità e associazioni sono opzionali, i corrispondenti attributi di relazione possono assumere valori nulli (questa situazione si indica graficamente posizionando un asterisco in corrispondenza dell’attributo facoltativo all'interno dello schema della relazione).
+Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
+
 #### Associazioni molti a molti ($N:N$) 
 Considerato lo schema in figura (esempio Impiegato-Progetto):
 ![[Pasted image 20251209142951.png]]
