@@ -380,3 +380,7 @@ Le alternative presentate non sono le uniche ammesse, ma è possibile effettuare
 #### Partizionamento/Accorpamento di entità e/o associazioni
 Entità e associazioni possono essere partizionati o accorpati per garantire maggiore efficienza delle operazioni in base a criteri simili a quelli usati per le generalizzazioni: 
 Gli accessi si riducono separando attributi di uno stesso concetto che vengono acceduti da operazioni diverse e raggruppando attributi di concetti diversi che vengono acceduti dalle medesime operazioni.
+##### Partizionamento (verticale e orizzontale) di entità
+Si suddivide un concetto operando sui suoi attributi.
+Questa ristrutturazione è conveniente se le operazioni che coinvolgono frequentemente l’entità originaria richiedono, ad esempio per un $\text{impiegato}$, o solo informazioni di carattere anagrafico o solo informazioni relative alla sua retribuzione. Un partizionamento di questo tipo è un esempio di partizionamento **verticale** di una entità. È possibile effettuare delle decomposizioni orizzontali nelle quali la suddivisione avviene sulle occorrenze dell’entità. 
+Per esempio, per l’entità impiegato ci potrebbero essere alcune operazioni che riguardano soltanto gli analisti e altre che operano solo sui venditori. In questo caso però le entità ottenute (analista e venditore) hanno gli stessi attributi dell’entità di partenza. Si osservi che una decomposizione orizzontale corrisponde all’introduzione di
