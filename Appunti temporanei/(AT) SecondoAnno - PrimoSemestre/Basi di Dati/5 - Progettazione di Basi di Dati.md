@@ -463,4 +463,9 @@ con vincolo di integrità referenziale tra l'attributo $\text{NomeUniversità}$ 
 Come si può vedere, rappresentando l'identificatore esterno si rappresenta direttamente anche l'associazione tra le due entità. Ricordiamo, infatti, che le entità identificate esternamente partecipano all'associazione sempre con cardinalità minima e massima pari a uno.
 #### Associazioni uno a uno $(1:1)$
 Per le associazioni uno a uno esistono diverse possibilità di traduzione sulla base delle cardinalità minime.
-Cominciamo a vedere le associazioni uno a uno con partecipazione obbligatoria per entrambe le entità, come in figura.
+Cominciamo a vedere le associazioni uno a uno con partecipazione obbligatoria per entrambe le entità, come in figura:
+![[Pasted image 20251209153301.png]]
+In questo caso abbiamo due tipi di traduzioni completamente simmetriche:
+
+$$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}, \text{DipartimentoDiretto}, \text{InizioDirezione})$$
+$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
