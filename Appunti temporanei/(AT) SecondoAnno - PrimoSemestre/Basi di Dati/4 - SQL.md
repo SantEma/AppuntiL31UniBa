@@ -144,16 +144,16 @@ Cognome varchar(20) NOT NULL UNIQUE
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
-SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
+SQL permette di specificare il vincolo $\text{PRIMARY KEY}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
 Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{NOT NULL}$ omessa.
 Un esempio di dichiarazione può essere:
 ```sql
 Nome varchar(20),
 Cognome varchar(20),
-primary key (Cognome, Nome)
+PRIMARY KEY (Cognome, Nome)
 ```
 ### Vincoli interrelazionali
-I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
+I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{FOREIGN KEY}$, chiamato anche **chiave esterna**;
 Questa chiave esterna crea un legame tra i valori di un attributo della tabella su cui è definito (chiamata **interna**) e i valori di attributo di un altra tabella (chiamata **esterna**).
 Il vincolo impone che per ogni riga della tabella interna il valore dell'attributi specificato (se diverso da nullo) sia presente nelle righe della tabella esterna tra i valori del corrispondente attributo;
 Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si fa riferimento alla tabella esterna sia soggetto ad $\text{UNIQUE}$, ossia che questo sia un identificatore, infatti tipicamente la chiave esterna fa riferimento la chiave primaria della tabella.
@@ -164,7 +164,7 @@ Possiamo definirlo in due modi:
 ```sql
 CREATE TABLE Impiegato
 (
-Matricola character(6) primary key
+Matricola character(6) PRIMARY KEY
 Nome varchar(20) NOT NULL,
 Cognome varchar(20) NOT NULL,
 Dipart varchar(15)
@@ -175,11 +175,11 @@ UNIQUE(Cognome,Nome)
 ```
 2. Nel caso ci sia un insieme di attributi si utilizza $\text{foreing key}$, posto al termine della definizione degli attributi
 ```sql
-foreign key (Nome,Cognome)
+FOREIGN KEY (Nome,Cognome)
 			references Anagrafica(Nome,Cognome)
 ```
 
-La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{foreign key}$ corrisponde al primo argomento di $\text{references}$ e via via gli altri attributi.
+La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{FOREIGN KEY}$ corrisponde al primo argomento di $\text{references}$ e via via gli altri attributi.
 
 Per tutti i vincoli visti finora quando il sistema rileva una violazione il comando di aggiornamento viene rifiutato segnalando l'errore all'utente, invece per quelli referenziali SQL permette di scegliere altre reazioni da adottare quando viene rilevata una violazione, per esempio una violazione può essere la modifica del contenuto della tabella interna in due modi:
 - Inserire una nuova riga
