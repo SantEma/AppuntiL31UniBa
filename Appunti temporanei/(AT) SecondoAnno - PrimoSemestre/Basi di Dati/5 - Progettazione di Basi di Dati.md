@@ -506,3 +506,5 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 ### Extra
 #### Tabella delle traduzioni dal modello E-R a quello relazionale
 ![[Pasted image 20251210115641.png]]
+#### Esempio di progettazione logica
+Gua
