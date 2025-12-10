@@ -206,7 +206,7 @@ Le violazioni possono generare una reazione a catena qualora la tabella interna 
 La politica di reazione viene specificata immediatamente dopo il vincolo di integrità secondo la seguente sintassi:
 $$
 \begin{aligned}
-&\text{ON \langle delete | update\rangle}\\
+&\text{ON \langle DELETE | UPDATE\rangle}\\
 &\quad \  \text{\langle CASCADE | SET NULL | SET DEFAULT | NO ACTION\rangle}
 \end{aligned}
 $$
