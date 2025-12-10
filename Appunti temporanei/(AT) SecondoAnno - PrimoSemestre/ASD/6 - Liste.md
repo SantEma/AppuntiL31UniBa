@@ -98,7 +98,6 @@ b = 4 14 15 84
 l = 4 14 15 16 25 77 82 84 13 75
 ```
 ### Operatori
-
 E' possibile fare l'overloading di alcuni operatori, e quindi scrivere delle funzioni che riscrivono il comportamento di certi operatori. Tali funzioni devono essere del tipo `operator + simbolo` (esempio: operator+, operator*).
 
 ![[Pasted image 20251030112657.png]]
@@ -112,19 +111,13 @@ Tuttavia ci sono delle restrizioni:
 Una classe B (classe derivata) può derivare da una classe A (classe base). Ogni classe derivata può accedere a tutti i campi della base definiti protected.
 
 Chiamasi classe astratta una classe che contiene metodi senza implementazione (funzioni virtuali).
-
 ```c++
 virtual int funzioneVirtuale(int x);
 ```
-
 Le classi con solo funzioni implementate sono dette classi effettive, e sono le uniche classi che è possibile istanziare.
-
 In pratica useremo le classi astratte per definire le funzioni disponibili al posto del file header (.h).
-
 Tutte le classi derivate da una classe astratta sono delle classi astratte e quindi non possono essere istanziate a meno che non implementino tutte le funzioni virtuali della classe base.
-
 Possiamo usare i template per implementare liste di ogni tipologia di cui abbiamo bisogno.
-
 ```c++
 template< class T >
 	class Lista{
