@@ -212,9 +212,9 @@ $$
 $$
 ### Modifica degli schemi
 SQL fornisce primitive per la manipolazione degli schemi della base di dati che permettono di modificare le definizioni di tabelle precedentemente introdotte.
-I comandi che vengono utilizzati a questo fine sono $\text{alter}$ e $\text{drop}$ 
+I comandi che vengono utilizzati a questo fine sono $\text{ALTER}$ e $\text{drop}$ 
 #### Alter
-Il comando $\text{alter}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
+Il comando $\text{ALTER}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
 Per i domini:
 $$\begin{aligned}
 &\text{ALTER DOMAIN} \ NomeDominio \langle \text{SET DEFAULT} \ ValoreDiDefault \| \\
@@ -232,7 +232,7 @@ $$\begin{aligned}
 &\text{ADD COLUMN} \ DefAttributo\ |\\
 &\text{DROP COLUMN} \ NomeAttributo \rangle
 \end{aligned}$$
-Tramite $\text{alter domain}$ e $\text{alter table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
+Tramite $\text{ALTER domain}$ e $\text{ALTER table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
 Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati già presenti, altrimenti l'inserimento viene rifiutato
 #### Drop
 Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{DROP}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
@@ -621,12 +621,12 @@ Le viste hanno diverse utilità come:
   ```
   Si può formulare una interrogazione alternativa con l'aiuto di una tabella virtuale:
   ```sql
-  CREATE VIEW AgentiXZona(ZOna, NAgenti) AS 
-  SELECT ZOna, COUNT(*) 
+  CREATE VIEW AgentiXZona(Zona, NAgenti) AS 
+  SELECT Zona, COUNT(*) 
   FROM Agenti 
   GROUP BY Zona; 
   
-  SELECT avg(NAgenti) fromAgentiXZona; 
+  SELECT AVG(NAgenti) fromAgentiXZona; 
   
   DROP AgentiXZona
   ```
