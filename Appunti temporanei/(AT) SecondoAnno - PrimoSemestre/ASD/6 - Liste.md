@@ -1,4 +1,4 @@
-**La lista** è una1 sequenza finita (che può essere vuota) di elementi dello stesso tipo
+**La lista** è una sequenza finita (che può essere vuota) di elementi dello stesso tipo
 A differenza di un'insieme (concetto che vedremo più in la), in una lista un elemento può apparire più volte ma in posizioni diverse.
 
 Attenzione: la lista è una struttura dinamica, non ha dimensione prefissata.

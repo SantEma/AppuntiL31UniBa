@@ -65,7 +65,6 @@ Se è definita una relazione $<=$ di **ordinamento totale sugli elementi dell'in
 - **`appartiene`:** L'operazione di ricerca diventa più efficiente . Non è più necessario scorrere sempre tutta la lista; si può smettere di cercare non appena si trova un elemento più grande di quello cercato, se esiste.
 - **`inserisci` / `cancella`:** Richiedono ancora una scansione (nel caso peggiore) per trovare la posizione corretta in cui inserire o rimuovere per mantenere l'ordine.
 - **Operatori Binari (`unione`, `intersezione`, `differenza`):** Questi diventano **molto più efficienti**. Invece di fare ricerche $n×m$, è possibile scorrere le due liste ordinate in parallelo (in modo simile all'algoritmo di _merge_), completando l'operazione in un'unica passata,la complessità passa da $O(n \times m)$  a circa $O(n+m)$ .
-
 #### Altre Implementazioni
 Con **dizionario** (soluzione ottimale), in questo caso il dizionario conterrà solo chiavi che sono gli elementi dell’insieme o  con **albero bilanciato**. Li vedremo nei capitoli seguenti
 ##### Applicazione: Il Setaccio di Eratostene
