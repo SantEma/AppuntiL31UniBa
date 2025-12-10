@@ -498,4 +498,7 @@ A questa documentazione bisogna aggiungere ulteriore documentazione per descrive
 Dato uno schema logico, i vincoli di integrità referenziale si documentano mediante un diagramma dove:
 - Le chiavi delle relazioni sono rappresentate in grassetto
 - Le frecce indicano vincoli di integrità referenziale
-- Gli asterischi su attributi indicano possibili valori null
+- Gli asterischi su attributi indicano possibili valori nulli
+
+Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
+![[Pasted image 20251210115426.png]]
