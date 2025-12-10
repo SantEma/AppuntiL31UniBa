@@ -269,7 +269,6 @@ Descriviamo un metodo per la progettazione concettuale con strategia mista, da p
 In questi passaggi è sempre utile per ogni passaggio la **documentazione degli schemi**
 ### Esempio di progettazione concettuale
 Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi
-
 ## Progettazione logica
 L'obbiettivo della progettazione logica è quello di costruire uno schema logico in grado di descrivere, in maniera corretta ed efficiente, tutte le informazioni contenute nello schema Entità-Relazione prodotto nella fase di progettazione concettuale,
 ### Fasi della progettazione logica
@@ -508,3 +507,4 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 ![[Pasted image 20251210115641.png]]
 #### Esempio di progettazione logica
 Guardare il file [[Esempio di Progettazione Logica.pdf]], estratto dal libro
+## Normalizzazione
