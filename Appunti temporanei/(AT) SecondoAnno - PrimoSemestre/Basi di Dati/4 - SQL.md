@@ -74,7 +74,7 @@ Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite
 ```sql
 CREATE TABLE Dipartimento
 (
-	Nome varchar(20) `PRIMARY KEY`,
+	Nome varchar(20) primary key,
 	Indirizzo varchar(50),
 	Città varchar(20)
 )
@@ -105,9 +105,9 @@ Definendo un dominio si può rendere più facile la modifica della definizione, 
 Il termine $ValoreDiDefault$ nei domini e nelle tabelle permette di specificare un valore predefinito quando viene inserito un attributo in una riga della tabella senza specificare un valore.
 In modo predefinito il valore di default risulta sempre nullo.
 La sintassi specifica è la seguente:
-$$\text{DEFAULT} \langle GenericoValore | user| null \rangle$$
+$$default \langle GenericoValore | user| null \rangle$$
 - $GenericoValore$ rappresenta un valore compatibile con il dominio
-- $user$ impone come valore di default l'identificativo dell'utente che esegue il comando
+- $user$ impone come valore di default l'identificativo dell/ utente che esegue il comando
 - $null$ corrisponde al valore di default base
 
 Quando un attributo o un dominio è definito a a partire da un altro a cui è stato già specificato un valore di default automaticamente quello ha la maggiore priorità, diventando valore effettivo. 
@@ -116,41 +116,41 @@ Sia nella definizione di domini che di tabelle è possibile definire dei vincoli
 Ricordiamo che i vincoli intrarelazionali coinvolgono una sola relazione su un unico attributo.
 #### Not Null
 Il valore nullo come sappiamo è un particolare valore che indica l'assenza di informazioni, ma SQL non permette la distinzione dei diversi casi, per questo bisogna avere delle soluzioni ad-hoc, come l'introduzione di altri attributi o l'uso di particolare codifica.
-Il vincolo $\text{NOT NULL}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
+Il vincolo $\text{not null}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
 Un esempio può essere:
 ```sql
-Cognome varchar(20) NOT NULL
+Cognome varchar(20) not null 
 ```
 #### Unique
-Il vincolo $\text{UNIQUE}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
+Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
 Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutti diversi tra loro.
 La definizione del vincolo può avvenire in due modi:
 1. Quando si vuole specificare questo vincolo su un unico attributo, in quel caso viene dichiarato nella specifica di quell'attributo:
 ```sql 
-Matricola character(6) UNIQUE 
+Matricola character(6) unique 
 ```
-2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$\text{UNIQUE}(Attributo,\{, Attributo\})$$
+2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$unique(Attributo,\{, Attributo\})$$
    Un esempio di sintassi è il seguente:
 ```sql
-Nome varchar(20) NOT NULL,
-Cognome varchar(20) NOT NULL,
+Nome varchar(20) not null,
+Cognome varchar(20) not null,
 unique (Cognome,Nome)   
 ```
 
 Si noti che si potrebbe pensare che la definizione:
 ```sql
-Nome varchar(20) NOT NULL UNIQUE
-Cognome varchar(20) NOT NULL UNIQUE
+Nome varchar(20) not null unique
+Cognome varchar(20) not null unique
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
-SQL permette di specificare il vincolo $\text{PRIMARY KEY}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
+SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
 Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{not null}$ omessa.
 Un esempio di dichiarazione può essere:
 ```sql
 Nome varchar(20),
 Cognome varchar(20),
-PRIMARY KEY (Cognome, Nome)
+primary key (Cognome, Nome)
 ```
 ### Vincoli interrelazionali
 I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
@@ -164,7 +164,7 @@ Possiamo definirlo in due modi:
 ```sql
 CREATE TABLE Impiegato
 (
-Matricola character(6) PRIMARY KEY
+Matricola character(6) primary key
 Nome varchar(20) not null,
 Cognome varchar(20) not null,
 Dipart varchar(15)
@@ -621,12 +621,12 @@ Le viste hanno diverse utilità come:
   ```
   Si può formulare una interrogazione alternativa con l'aiuto di una tabella virtuale:
   ```sql
-  CREATE VIEW AgentiXZona(Zona, NAgenti) AS 
-  SELECT Zona, COUNT(*) 
+  CREATE VIEW AgentiXZona(ZOna, NAgenti) AS 
+  SELECT ZOna, COUNT(*) 
   FROM Agenti 
   GROUP BY Zona; 
   
-  SELECT AVG(NAgenti) FROM AgentiXZona; 
+  SELECT avg(NAgenti) fromAgentiXZona; 
   
   DROP AgentiXZona
   ```
