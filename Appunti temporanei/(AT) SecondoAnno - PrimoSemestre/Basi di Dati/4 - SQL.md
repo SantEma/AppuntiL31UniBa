@@ -74,7 +74,7 @@ Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite
 ```sql
 CREATE TABLE Dipartimento
 (
-	Nome varchar(20) PRIMARY KEY,
+	Nome varchar(20) `PRIMARY KEY`,
 	Indirizzo varchar(50),
 	Città varchar(20)
 )
@@ -107,7 +107,7 @@ In modo predefinito il valore di default risulta sempre nullo.
 La sintassi specifica è la seguente:
 $$\text{DEFAULT} \langle GenericoValore | user| null \rangle$$
 - $GenericoValore$ rappresenta un valore compatibile con il dominio
-- $user$ impone come valore di default l'identificativo dell/ utente che esegue il comando
+- $user$ impone come valore di default l'identificativo dell'utente che esegue il comando
 - $null$ corrisponde al valore di default base
 
 Quando un attributo o un dominio è definito a a partire da un altro a cui è stato già specificato un valore di default automaticamente quello ha la maggiore priorità, diventando valore effettivo. 
