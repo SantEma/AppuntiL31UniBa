@@ -116,10 +116,10 @@ Sia nella definizione di domini che di tabelle è possibile definire dei vincoli
 Ricordiamo che i vincoli intrarelazionali coinvolgono una sola relazione su un unico attributo.
 #### Not Null
 Il valore nullo come sappiamo è un particolare valore che indica l'assenza di informazioni, ma SQL non permette la distinzione dei diversi casi, per questo bisogna avere delle soluzioni ad-hoc, come l'introduzione di altri attributi o l'uso di particolare codifica.
-Il vincolo $\text{not null}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
+Il vincolo $\text{NOT NULL}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
 Un esempio può essere:
 ```sql
-Cognome varchar(20) not null 
+Cognome varchar(20) NOT NULL 
 ```
 #### Unique
 Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
@@ -132,20 +132,20 @@ Matricola character(6) unique
 2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$unique(Attributo,\{, Attributo\})$$
    Un esempio di sintassi è il seguente:
 ```sql
-Nome varchar(20) not null,
-Cognome varchar(20) not null,
+Nome varchar(20) NOT NULL,
+Cognome varchar(20) NOT NULL,
 unique (Cognome,Nome)   
 ```
 
 Si noti che si potrebbe pensare che la definizione:
 ```sql
-Nome varchar(20) not null unique
-Cognome varchar(20) not null unique
+Nome varchar(20) NOT NULL unique
+Cognome varchar(20) NOT NULL unique
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
 SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
-Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{not null}$ omessa.
+Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{NOT NULL}$ omessa.
 Un esempio di dichiarazione può essere:
 ```sql
 Nome varchar(20),
@@ -165,8 +165,8 @@ Possiamo definirlo in due modi:
 CREATE TABLE Impiegato
 (
 Matricola character(6) primary key
-Nome varchar(20) not null,
-Cognome varchar(20) not null,
+Nome varchar(20) NOT NULL,
+Cognome varchar(20) NOT NULL,
 Dipart varchar(15)
 	   references Dipartimento(NomeDip)
 Ufficio numeric(9) default 0,
@@ -354,8 +354,8 @@ Un confronto come $\text{LIKE 'ab\%ba\_'}$ sarà perciò soddisfatto da una qual
 #### Gestione dei valori nulli
 Un valore nullo in un attributo può significare che un certo attributo non è applicabile, o che il valore è applicabile ma non conosciuto, oppure che non si conosca quale delle due situazioni sia applicabile.
 Per selezionare i termini con i valori nulli SQL fornisce il predicato $\text{IS NULL}$, la cui sintassi è:
-$$Attributo \text{ is [not] null}$$
-Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{not null}$ è la sua negazione.
+$$Attributo \text{ IS [not] NULL}$$
+Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{NOT NULL}$ è la sua negazione.
 Ricordiamo che da SQL-2 viene utilizzata la logica a tre valori che prevede il valore $\text{unknown}$
 #### Interpretazione formale delle interrogazioni in SQL
 È possibile costruire una corrispondenza tra interrogazioni SQL ed equivalenti interrogazioni espresse in algebra relazionale (ricordiamo presente nel paragrafo [[#Dichiaratività di SQL]]).
