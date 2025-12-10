@@ -1,4 +1,4 @@
-## Introduzione
+## Metodologie e modelli per il progetto
 ### Ciclo di vita dei sistemi informatici
 La progettazione di una base di dati costituisce solo una delle componenti del processo di sviluppo di un sistema informativo complesso e va quindi inquadrata in un contesto più ampio, quello del ciclo di vita dei sistemi informativi. 
 Tale ciclo di vita, generalmente, comprende:
