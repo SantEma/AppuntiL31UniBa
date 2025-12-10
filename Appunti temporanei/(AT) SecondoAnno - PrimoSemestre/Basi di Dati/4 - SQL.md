@@ -220,7 +220,7 @@ $$\begin{aligned}
 &\text{ALTER DOMAIN} \ NomeDominio \langle \text{SET DEFAULT} \ ValoreDiDefault \| \\
 &\quad \quad \quad\quad \quad \ \ \  \text{DROP DEFAULT} \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{ADD CONSTRAINT} \  DefVincolo \ | \\
-&\quad \quad \quad\quad \quad \ \ \  \text{drop constraint} \ NomeVincolo \rangle
+&\quad \quad \quad\quad \quad \ \ \  \text{DROP CONSTRAINT} \ NomeVincolo \rangle
 \end{aligned}$$
 Per le tabelle:
 $$\begin{aligned}
@@ -228,9 +228,9 @@ $$\begin{aligned}
 &\text{ALTER COLUMN} \ NomeAttributo \langle \text{SET DEFAULT} \ NuovoDefault \ | \\
 &\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{DROP DEFAULT} \rangle \ | \\ 
 &\text{ADD CONSTRAINT} \  DefVincolo \ | \\
-&\text{drop constraint} \ NomeVincolo \ |\\ 
-&\text{add column} \ DefAttributo\ |\\
-&\text{drop column} \ NomeAttributo \rangle
+&\text{DROP CONSTRAINT} \ NomeVincolo \ |\\ 
+&\text{ADD COLUMN} \ DefAttributo\ |\\
+&\text{DROP COLUMN} \ NomeAttributo \rangle
 \end{aligned}$$
 Tramite $\text{alter domain}$ e $\text{alter table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
 Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati già presenti, altrimenti l'inserimento viene rifiutato
