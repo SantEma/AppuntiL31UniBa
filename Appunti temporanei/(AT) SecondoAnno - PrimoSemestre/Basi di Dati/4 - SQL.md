@@ -74,7 +74,7 @@ Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite
 ```sql
 CREATE TABLE Dipartimento
 (
-	Nome varchar(20) primary key,
+	Nome varchar(20) PRIMARY KEY,
 	Indirizzo varchar(50),
 	Città varchar(20)
 )
@@ -143,14 +143,14 @@ Nome varchar(20) NOT NULL UNIQUE
 Cognome varchar(20) NOT NULL UNIQUE
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
-#### Primary Key
-SQL permette di specificare il vincolo $\text{primary key}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
+#### Primary
+SQL permette di specificare il vincolo $\text{PRIMARY KEY}$ soltanto una volta per tabella e per singolo attributo o più attributi che costituiscono l'identificatore.
 Gli attributi che fanno parte della chiave primaria non possono essere nulli, quindi si implica che ci sia una definizione $\text{not null}$ omessa.
 Un esempio di dichiarazione può essere:
 ```sql
 Nome varchar(20),
 Cognome varchar(20),
-primary key (Cognome, Nome)
+PRIMARY KE (Cognome, Nome)
 ```
 ### Vincoli interrelazionali
 I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
@@ -164,7 +164,7 @@ Possiamo definirlo in due modi:
 ```sql
 CREATE TABLE Impiegato
 (
-Matricola character(6) primary key
+Matricola character(6) PRIMARY KEY
 Nome varchar(20) not null,
 Cognome varchar(20) not null,
 Dipart varchar(15)
