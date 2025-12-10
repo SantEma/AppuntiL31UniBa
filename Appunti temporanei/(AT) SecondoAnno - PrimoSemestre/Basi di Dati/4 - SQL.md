@@ -413,7 +413,7 @@ Quando la tabella compare una sola volta in un'interrogazione, non c'è differen
 ```sql
 SELECT I1.Cognome, I1.Nome
 FROM Impiegato I1, Impiegato I2
-where I1.Cognome = I2.Cognome and
+WHERE I1.Cognome = I2.Cognome and
       I1.Nome <> I2.Nome and
       I2.Dipart = 'Produzione'
 ```
