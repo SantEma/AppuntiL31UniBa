@@ -309,7 +309,7 @@ FROM Agenti
 ```
 #### Clausola SELECT
 La clausola $\text{SELECT}$ specifica gli elementi dello schema della tabella risultato.
-Come argomento della clausola $\text{SELECT}$ può comparire il carattere speciale asterisco ($*$) che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{from}$
+Come argomento della clausola $\text{SELECT}$ può comparire il carattere speciale asterisco ($*$) che rappresenta la selezione di tutti gli attributi delle tabelle elencate nella clausola $\text{FROM}$
 **Esempio**:
 ```sql
 SELECT *
@@ -412,7 +412,7 @@ Quando la tabella compare una sola volta in un'interrogazione, non c'è differen
 **Esempio:**
 ```sql
 SELECT I1.Cognome, I1.Nome
-from Impiegato I1, Impiegato I2
+FROM Impiegato I1, Impiegato I2
 where I1.Cognome = I2.Cognome and
       I1.Nome <> I2.Nome and
       I2.Dipart = 'Produzione'
@@ -553,8 +553,8 @@ Quando il comando $\text{WHERE}$ non ha argomenti il comando elimina tutte le ri
 Nel caso esista un vincolo di integrità referenziale con politica $\text{CASCADE}$, allora la cancellazione apporta anche la cancellazione di righe appartenenti ad altra tabelle
 $$\begin{aligned}
 &\text{UPDATE} \ NomeTabella \ \\
-&\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{default} \rangle \\ 
-&\quad\quad\quad\quad \{, Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{default} \rangle \} \\
+&\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{DEFAULT} \rangle \\ 
+&\quad\quad\quad\quad \{, Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{DEFAULT} \rangle \} \\
 &\quad\quad\quad\quad\quad [\text{WHERE} \ Condizione] \\ 
 \end{aligned}
 $$
@@ -563,8 +563,8 @@ Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condi
 Il comando $\text{UPDATE}$ permette di aggiornare uno o più attributi delle righe di una tabella che soddisfano eventualmente una condizione:
 $$\begin{aligned}
 &\text{UPDATE} \ NomeTabella \\
-&\quad \text{SET} \ Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{default}\rangle\\
-&\quad \{,Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{default}\rangle \} \\
+&\quad \text{SET} \ Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{DEFAULT}\rangle\\
+&\quad \{,Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{DEFAULT}\rangle \} \\
 &[\text{WHERE} \ Condizione]
 \end{aligned}$$
 Se il comando non presenta una clausola $\text{WHERE}$ si suppone sempre che la condizione sia soddisfatta e si esegue la modifica su tutte le righe
