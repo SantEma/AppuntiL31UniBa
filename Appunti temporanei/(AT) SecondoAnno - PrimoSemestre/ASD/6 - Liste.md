@@ -60,11 +60,9 @@ Le operazioni usualmente disponibili su una variabile di tipo puntatore p sono:
 - l’accesso alla locazione il cui indirizzo è memorizzato in p ;
 - la richiesta di una nuova locazione di memoria e la memorizzazione dell’indirizzo in p (new);
 - il rilascio della locazione di memoria il cui indirizzo è memorizzato in p (delete) ;
-
 La prima cella è indirizzata da una variabile di tipo puntatore, mentre l’ultima cella punta a un valore convenzionale NULL.
 
 Esempi di operazioni:![[Pasted image 20251027104811.png]]
-
 Una variante di tale rappresentazione è quella a doppi puntatori o simmetrica in cui ogni elemento contiene, oltre al puntatore al nodo successivo, anche il puntatore al precedente.
 ![[Pasted image 20251027105002.png]]
 Con questa rappresentazione si ha il vantaggio di: 
@@ -72,13 +70,11 @@ Con questa rappresentazione si ha il vantaggio di:
 - poter individuare facilmente l’elemento che precede 
 - poter realizzare le operazioni di inserimento senza dover usare variabili aggiuntive
 
-ATTENZIONE: su una lista è sconsigliata la ricerca dicotomica, in quanto non c'è una complessità computazionale costante a causa della impossibilità di accedere direttamente ad un componente.
-
+**ATTENZIONE**: su una lista è sconsigliata la ricerca dicotomica, in quanto non c'è una complessità computazionale costante a causa della impossibilità di accedere direttamente ad un componente.
 #### Ordinamento di una lista
-
 Per effettuare l'ordinamento di una lista useremo il natural merge sort.
 
-Data una lista `l = <a1 a2 . . . an>`, diremo che una sottosequenza <$a_i$, $a_{i+1}$ . . . $a_k$> costituisce una catena (o run) se accade che: 
+Data una lista $l = <a_1 a_{2} ,\dots a_{n}>$, diremo che una sottosequenza <$a_i$, $a_{i+1}$ . . . $a_k$> costituisce una catena (o run) se accade che: 
 - $a_{i-1}$ > $a_i$ OR $i = 1$ 
 - $a_j ≤ a_{j+1}$ per ogni $j = i, i+1, … , k -1$ 
 - $a_k > a_{k+1}$ OR $k = n$
@@ -101,9 +97,6 @@ a = 16 25 77 82  13 75
 b = 4 14 15 84
 l = 4 14 15 16 25 77 82 84 13 75
 ```
-
----
-
 ### Operatori
 
 E' possibile fare l'overloading di alcuni operatori, e quindi scrivere delle funzioni che riscrivono il comportamento di certi operatori. Tali funzioni devono essere del tipo `operator + simbolo` (esempio: operator+, operator*).
@@ -115,9 +108,7 @@ Tuttavia ci sono delle restrizioni:
 - La precedenza con cui vengono eseguite rimane invariato (ad esempio * e / verranno sempre eseguite prima di + e -).
 - Non si possono creare nuovi operatori.
 - Per i tipi primitivi non è possibile effettuare l'overloading (esempio: non è possibile modificare la somma di due interi).
-
 ### Ereditarietà e classi astratte
-
 Una classe B (classe derivata) può derivare da una classe A (classe base). Ogni classe derivata può accedere a tutti i campi della base definiti protected.
 
 Chiamasi classe astratta una classe che contiene metodi senza implementazione (funzioni virtuali).
