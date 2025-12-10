@@ -160,7 +160,7 @@ Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si f
 Nel vincolo possono essere coinvolti più attributi, in tal caso l'unica differenza è che bisognerà confrontare n-uple di valori piuttosto di singoli valori.
 
 Possiamo definirlo in due modi:
-1. Nel caso sia un unico attributo coinvolto si può usare il costrutto sintattico $\text{references}$, con il quale si specificano la tabella esterna e l'attributo della tabella esterna:
+1. Nel caso sia un unico attributo coinvolto si può usare il costrutto sintattico $\text{REFERENCES}$, con il quale si specificano la tabella esterna e l'attributo della tabella esterna:
 ```sql
 CREATE TABLE Impiegato
 (
@@ -168,18 +168,18 @@ Matricola character(6) PRIMARY KEY
 Nome varchar(20) NOT NULL,
 Cognome varchar(20) NOT NULL,
 Dipart varchar(15)
-	   references Dipartimento(NomeDip)
+	   REFERENCES Dipartimento(NomeDip)
 Ufficio numeric(9) default 0,
 UNIQUE(Cognome,Nome)
 )   
 ```
-2. Nel caso ci sia un insieme di attributi si utilizza $\text{foreing key}$, posto al termine della definizione degli attributi
+2. Nel caso ci sia un insieme di attributi si utilizza $\text{FOREIGN KEY}$, posto al termine della definizione degli attributi
 ```sql
 FOREIGN KEY (Nome,Cognome)
-			references Anagrafica(Nome,Cognome)
+			REFERENCES Anagrafica(Nome,Cognome)
 ```
 
-La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{FOREIGN KEY}$ corrisponde al primo argomento di $\text{references}$ e via via gli altri attributi.
+La corrispondenza tra gli attributi locali e quelli esterni avviene in base all'ordine, infatti il primo attributo corrispondente a $\text{FOREIGN KEY}$ corrisponde al primo argomento di $\text{REFERENCES}$ e via via gli altri attributi.
 
 Per tutti i vincoli visti finora quando il sistema rileva una violazione il comando di aggiornamento viene rifiutato segnalando l'errore all'utente, invece per quelli referenziali SQL permette di scegliere altre reazioni da adottare quando viene rilevata una violazione, per esempio una violazione può essere la modifica del contenuto della tabella interna in due modi:
 - Inserire una nuova riga
@@ -188,26 +188,26 @@ In questo caso non viene offerto particolare supporto e l'operazione viene sempl
 
 Per le modifiche sulla tabella esterna le alternative esistono, dato dal particolare significato della tabella esterna che sul piano applicativo rappresenta la tabella principale (**master**) alle cui variazioni la tabella interna (**slave**) deve adeguarsi.
 Per poter agire con le operazioni di modifica possiamo usare uno dei seguenti modi:
-- $\text{cascade}$: il nuovo valore dell'attributo della tabella esterna viene riportato su tutte le corrispondenti righe della tabella interna
+- $\text{CASCADE}$: il nuovo valore dell'attributo della tabella esterna viene riportato su tutte le corrispondenti righe della tabella interna
 - $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore modificato nella tabella esterna
 - $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
 - $\text{no action}$: l'azione di modifica non viene consentita e il sistema quindi non ha bisogno di riparare la violazione
 
 Per le violazioni da cancellazione di un elemento della tabella esterna si ha a disposizione lo stesso insieme di reazioni:
-- $\text{cascade}$: tutte le righe della tabella interna corrispondenti alla riga cancellata vengono cancellate
+- $\text{CASCADE}$: tutte le righe della tabella interna corrispondenti alla riga cancellata vengono cancellate
 - $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore cancellato nella tabella esterna
 - $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
  - $\text{no action}$: l'azione di cancellazione non viene consentita
 
 In generale per ogni evento è possibile associare una politica diversa in base a come la si vuole gestire.
-Nel caso della politica $\text{cascade}$ si assume che le righe della tabella interna siano strettamente legate alle corrispondenti righe della tabella esterna, per cui se si apporta una modifica alla tabella esterna si devono modificare in modo conseguente tutte le righe della tabella interna, per quanto riguarda le altre politiche ci sono dipendenze meno strette tra prima e seconda tabella.
+Nel caso della politica $\text{CASCADE}$ si assume che le righe della tabella interna siano strettamente legate alle corrispondenti righe della tabella esterna, per cui se si apporta una modifica alla tabella esterna si devono modificare in modo conseguente tutte le righe della tabella interna, per quanto riguarda le altre politiche ci sono dipendenze meno strette tra prima e seconda tabella.
 Le violazioni possono generare una reazione a catena qualora la tabella interna compaia a sua volta come tabella esterna in un altro vincolo di integrità.
 
 La politica di reazione viene specificata immediatamente dopo il vincolo di integrità secondo la seguente sintassi:
 $$
 \begin{aligned}
 &\text{ON \langle delete | update\rangle}\\
-&\quad \  \text{\langle cascade | set null | set default | no action\rangle}
+&\quad \  \text{\langle CASCADE | set null | set default | no action\rangle}
 \end{aligned}
 $$
 ### Modifica degli schemi
