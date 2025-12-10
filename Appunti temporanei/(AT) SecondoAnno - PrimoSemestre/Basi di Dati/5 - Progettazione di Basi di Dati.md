@@ -476,10 +476,8 @@ $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \t
 con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIPARTIMENTO}$ e l'attributo $\text{Codice}$ della relazione $\text{DIRETTORE}$.
 Trattandosi di una relazione biunivoca, si potrebbe pensare di rappresentare tutti i concetti in un'unica relazione contenente tutti gli attributi in gioco. Questa alternativa è da escludere perché se ci fosse stato un valido motivo si sarebbe già ristrutturato lo schema E-R in modo da accorpare le due entità.
 
-Consideriamo ora il caso di associazione uno a uno con partecipazione opzionale per una sola entità, come mostrato in figura.
-
-![Inserire qui lo schema E-R con associazione uno a uno opzionale]
-
+Consideriamo ora il caso di associazione uno a uno con **partecipazione opzional**e per una sola entità, come mostrato in figura.
+![[Pasted image 20251210105819.png]]
 In questo caso abbiamo una soluzione preferibile, ovvero la seguente:
 
 $$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
