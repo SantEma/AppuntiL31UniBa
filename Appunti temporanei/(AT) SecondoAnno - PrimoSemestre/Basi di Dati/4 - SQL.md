@@ -388,10 +388,10 @@ $$
 $$
 Mediante questa sintassi la condizione di join non compare come argomento della clausola $\text{WHERE}$, ma viene spostata nella clasuola $\text{FROM}$, associata alle tabelle che vengono coinvolte nel join.
 Il parametro $TipoJoin$ specifica quale tipo di join usare, tra cui:
-- $\text{inner}$, di default
-- $\text{right outer}$
-- $\text{left outer}$
-- $\text{full outer}$
+- $\text{INNER}$, di default
+- $\text{RIGHT OUTER}$
+- $\text{LEFT OUTER}$
+- $\text{FULL OUTER}$
 L'inner join rappresenta il tradizionale tetha-join dell'algebra relazionale
 
 Con il join interno le righe che vengono coinvolte nel join sono in generale un sottoinsieme delle righe di ciascuna tabella, può infatti capitare che alcune righe non vengano considerate in quanto non vengano rispettate le condizioni;
