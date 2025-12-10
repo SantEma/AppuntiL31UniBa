@@ -212,7 +212,7 @@ $$
 $$
 ### Modifica degli schemi
 SQL fornisce primitive per la manipolazione degli schemi della base di dati che permettono di modificare le definizioni di tabelle precedentemente introdotte.
-I comandi che vengono utilizzati a questo fine sono $\text{ALTER}$ e $\text{drop}$ 
+I comandi che vengono utilizzati a questo fine sono $\text{ALTER}$ e $\text{DROP}$ 
 #### Alter
 Il comando $\text{ALTER}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
 Per i domini:
@@ -239,14 +239,14 @@ Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo sch
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
 &\text{DROP} \ \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
-& \quad \quad [\text{ restrict | CASCADE }]
+& \quad \quad [\text{ RESTRICT | CASCADE }]
 \end{aligned}$$
-L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
+L'operazione $\text{RESTRICT}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
 - Uno **schema** non è rimosso se contiene tabelle o altri oggetti
 - Un **dominio** non è rimosso se appare in qualche definizione di tabella
 - Una **tabella** non è rimossa se possiede delle righe o se è presenta qualche definizione di tabella o vista 
 - Una **vista** non è rimossa se è utilizzata nella definizione di altra tabelle o viste.
-L'opzione $\text{restrict}$ è un opzione di default.
+L'opzione $\text{RESTRICT}$ è un opzione di default.
 
 Nel caso si specifichi l'opzione $\text{CASCADE}$ tutti gli oggetti specificati devono essere rimossi.
 Nei diversi casi:
