@@ -218,16 +218,16 @@ Il comando $\text{alter}$ permette di modificare domini e schemi di tabelle, le 
 Per i domini:
 $$\begin{aligned}
 &\text{ALTER DOMAIN} \ NomeDominio \langle \text{SET DEFAULT} \ ValoreDiDefault \| \\
-&\quad \quad \quad\quad \quad \ \ \  \text{drop default} \ | \\
-&\quad \quad \quad\quad \quad \ \ \  \text{add constraint} \  DefVincolo \ | \\
+&\quad \quad \quad\quad \quad \ \ \  \text{DROP DEFAULT} \ | \\
+&\quad \quad \quad\quad \quad \ \ \  \text{ADD CONSTRAINT} \  DefVincolo \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{drop constraint} \ NomeVincolo \rangle
 \end{aligned}$$
 Per le tabelle:
 $$\begin{aligned}
 &\text{ALTER TABLE} \ NomeTabella \langle \\ 
 &\text{ALTER COLUMN} \ NomeAttributo \langle \text{SET DEFAULT} \ NuovoDefault \ | \\
-&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{drop default} \rangle \ | \\ 
-&\text{add constraint} \  DefVincolo \ | \\
+&\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{DROP DEFAULT} \rangle \ | \\ 
+&\text{ADD CONSTRAINT} \  DefVincolo \ | \\
 &\text{drop constraint} \ NomeVincolo \ |\\ 
 &\text{add column} \ DefAttributo\ |\\
 &\text{drop column} \ NomeAttributo \rangle
