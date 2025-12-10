@@ -592,7 +592,7 @@ La vista non è memorizzata, quando usata in un’interrogazione è espansa con 
 La sintassi SQL per definire una vista logica è la seguente:
 $$\begin{aligned}
 &\text{CREATE VIEW} \ NomeVista [(ListaAttributi)] \text{AS} \ SelectSQL \\
-&\text{[WITH[local|CASCADE] CHECK OPTION]}
+&\text{[WITH[LOCAL|CASCADE] CHECK OPTION]}
 \end{aligned}$$
 L’interrogazione deve restituire un insieme di attributi compatibile con gli attributi nello schema della vista; 
 L'ordine nella target list della clausola $\text{SELECT}$ deve corrispondere all'ordine degli attributi nello schema.
