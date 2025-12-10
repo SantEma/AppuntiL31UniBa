@@ -490,5 +490,10 @@ $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
 $$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})$$
 
 con vincoli di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIREZIONE}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$ e tra l'attributo $\text{Dipartimento}$ di $\text{DIREZIONE}$ e l'attributo $\text{Nome}$ di $\text{DIPARTIMENTO}$.
+#### Documentazione di schemi logici
+Il risultato della progettazione logica è costituito dallo schema di una base di dati e la documentazione ad esso associata.
+Buona parte della documentazione dello schema concettuale in ingresso alla fase di progettazione
 
 
+
+A questa documentazione bisogna aggiungere ulteriore documentazione per descrivere vincoli di integrità referenziale introdotti dalla traduzione (in aggiunta ai vincoli individuati durante la progettazione concettuale).
