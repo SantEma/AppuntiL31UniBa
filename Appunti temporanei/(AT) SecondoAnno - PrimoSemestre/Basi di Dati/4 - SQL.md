@@ -116,13 +116,13 @@ Sia nella definizione di domini che di tabelle è possibile definire dei vincoli
 Ricordiamo che i vincoli intrarelazionali coinvolgono una sola relazione su un unico attributo.
 #### Not Null
 Il valore nullo come sappiamo è un particolare valore che indica l'assenza di informazioni, ma SQL non permette la distinzione dei diversi casi, per questo bisogna avere delle soluzioni ad-hoc, come l'introduzione di altri attributi o l'uso di particolare codifica.
-Il vincolo $\text{not null}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
+Il vincolo $\text{NOT NULL}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
 Un esempio può essere:
 ```sql
 Cognome varchar(20) NOT NULL
 ```
 #### Unique
-Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
+Il vincolo $\text{UNIQUE}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
 Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutti diversi tra loro.
 La definizione del vincolo può avvenire in due modi:
 1. Quando si vuole specificare questo vincolo su un unico attributo, in quel caso viene dichiarato nella specifica di quell'attributo:
