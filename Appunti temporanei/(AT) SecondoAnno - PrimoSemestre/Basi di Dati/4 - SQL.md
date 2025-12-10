@@ -105,7 +105,7 @@ Definendo un dominio si può rendere più facile la modifica della definizione, 
 Il termine $ValoreDiDefault$ nei domini e nelle tabelle permette di specificare un valore predefinito quando viene inserito un attributo in una riga della tabella senza specificare un valore.
 In modo predefinito il valore di default risulta sempre nullo.
 La sintassi specifica è la seguente:
-$$default \langle GenericoValore | user| null \rangle$$
+$$\text{DEFAULT} \langle GenericoValore | user| null \rangle$$
 - $GenericoValore$ rappresenta un valore compatibile con il dominio
 - $user$ impone come valore di default l'identificativo dell/ utente che esegue il comando
 - $null$ corrisponde al valore di default base
