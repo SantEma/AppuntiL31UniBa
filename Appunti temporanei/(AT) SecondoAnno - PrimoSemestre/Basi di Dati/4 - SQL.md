@@ -238,7 +238,7 @@ Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati gi√
 Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{DROP}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
-&\text{DROP} \ \langle \text{SCHEMA | DOMAIN | TABLE | view | assertion}\rangle \ NomeElemento \\
+&\text{DROP} \ \langle \text{SCHEMA | DOMAIN | TABLE | VIEW | ASSERTION}\rangle \ NomeElemento \\
 & \quad \quad [\text{ RESTRICT | CASCADE }]
 \end{aligned}$$
 L'operazione $\text{RESTRICT}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
