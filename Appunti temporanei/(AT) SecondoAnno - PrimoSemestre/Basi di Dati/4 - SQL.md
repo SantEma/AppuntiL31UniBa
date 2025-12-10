@@ -621,12 +621,12 @@ Le viste hanno diverse utilità come:
   ```
   Si può formulare una interrogazione alternativa con l'aiuto di una tabella virtuale:
   ```sql
-  CREATE VIEW AgentiXZona(ZOna, NAgenti) AS 
-  SELECT ZOna, COUNT(*) 
+  CREATE VIEW AgentiXZona(Zona, NAgenti) AS 
+  SELECT Zona, COUNT(*) 
   FROM Agenti 
   GROUP BY Zona; 
   
-  SELECT avg(NAgenti) fromAgentiXZona; 
+  SELECT AVG(NAgenti) FROM AgentiXZona; 
   
   DROP AgentiXZona
   ```
