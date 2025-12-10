@@ -444,18 +444,18 @@ $$\begin{aligned}
 &\text{COUNT} (\langle *|[\text{DISTINCT}|\text{|ALL}] \ ListaAttributi)
 \end{aligned}
 $$
-La prima opzione (\*) restituisce il numero di righe, $\text{DISTINCT}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
+La prima opzione (\*) restituisce il numero di righe, $\text{DISTINCT}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{ALL}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
 **Esempio:**
 ```sql
 SELECT COUNT(DISTINCT Stipendio)
 FROM Impiegato
 ```
 
-Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{DISTINCT}$ e $\text{all}$.
+Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{DISTINCT}$ e $\text{ALL}$.
 Le funzioni aggregate $\text{SUM}$ e $\text{AVG}$ ammettono come argomento solo espressioni che rappresentano valori numerici o valori di tempo.
 Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo
 La sintassi è la seguente:
-$$\langle \text{SUM | MAX | MIN | AVG} \ ([\text{DISTINCT| all}]AttrEspr)$$
+$$\langle \text{SUM | MAX | MIN | AVG} \ ([\text{DISTINCT| ALL}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
 ### Interrogazioni con raggruppamento
 SQL mette a disposizione la clausola $\text{GROUP BY}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
@@ -497,7 +497,7 @@ SQL mette a disposizione degli operatori insiemistici, simili a quelli dell'alge
 - $\text{EXCEPT}$, chiamato anche $\text{MINUS}$
 La sintassi è la seguente:
 $$\begin{aligned}
-SelectSQL \{\langle \text{UNION | INTERSECT | EXCEPT} \rangle \text{[all]} SelectSQL\}
+SelectSQL \{\langle \text{UNION | INTERSECT | EXCEPT} \rangle \text{[ALL]} SelectSQL\}
 \end{aligned}
 $$
 Gli operatori insiemistici, al contrario del resto del linguaggio, assumo come default l'azione di eliminazione dei duplicati, ci sono due ragioni per questa differenza:
@@ -509,7 +509,7 @@ Qualora si voglia adottare una diversa interpretazione degli operatori sarà suf
 SQL consente di scrivere interrogazioni che presentano al loro interno altre interrogazioni, chiamate **nidificate**.
 La nidificazione può avvenire nelle 3 clausole di interrogazione e consiste nel confrontare un valore con una collezione di valori (ossia il risultato di un interrogazione).
 Per risolvere il problema della disomogeneità dei termini di confronto, SQL ha esteso i normali operatori di confronto con due altre opzioni: $\text{ALL}$ e $\text{ANY}$;
-Il confronto ANY è vero se il primo operando sta nella relazione specificata con almeno un elemento del secondo operando, ALL ugualmente ma tutti gli elementi devono stare nella relazione.
+Il confronto ANY è vero se il primo operando sta nella relazione specificata con almeno un elemento del secondo operando, $\text{ALL}$ ugualmente ma tutti gli elementi devono stare nella relazione.
 Esempio di utilizzo:
 ```sql
 SELECT *
