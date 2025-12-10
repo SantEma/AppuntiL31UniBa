@@ -479,19 +479,16 @@ Trattandosi di una relazione biunivoca, si potrebbe pensare di rappresentare tut
 Consideriamo ora il caso di associazione uno a uno con **partecipazione opzional**e per una sola entità, come mostrato in figura.
 ![[Pasted image 20251210105819.png]]
 In questo caso abbiamo una soluzione preferibile, ovvero la seguente:
-
 $$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
+con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIPARTIMENTO}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$.
 
-con vincolo di integrità referenziale tra l'attributo Direttore di DIPARTIMENTO e l'attributo Codice di IMPIEGATO.
-
-Consideriamo infine il caso in cui entrambe le entità hanno partecipazione opzionale, come nel caso in figura, dove però possono esistere dipartimenti senza direttori, e quindi la cardinalità dell'entità DIPARTIMENTO diventa (0,1).
+Consideriamo infine il caso in cui entrambe le entità hanno partecipazione opzionale, come nel caso in figura, dove però possono esistere dipartimenti senza direttori, e quindi la cardinalità dell'entità $\text{DIPARTIMENTO}$ diventa $(0,1);
 In questo caso esiste un ulteriore possibilità che prevede tre relazioni separate:
-
 $$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
 $$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})$$
 
-con vincoli di integrità referenziale tra l'attributo Direttore di DIREZIONE e l'attributo Codice di IMPIEGATO e tra l'attributo Dipartimento di DIREZIONE e l'attributo Nome di DIPARTIMENTO.
+con vincoli di integrità referenziale tra l'attributo $\text{Direttore$ di DIREZIONE e l'attributo Codice di IMPIEGATO e tra l'attributo Dipartimento di DIREZIONE e l'attributo Nome di DIPARTIMENTO.
 
 [DA FINIRE!!!!]
