@@ -25,7 +25,7 @@ Nelle strutture dati le operazioni da fare sono generalmente basilari.
 
 ## Liste
 **Definizione**:
-==Una lista è definita una sequenza **finita, anche vuota (λ)**, di elementi dello stesso tipo (omogenei)==. 
+Una lista è definita una sequenza **finita, anche vuota ($\lambda$)**, di elementi dello stesso tipo (omogenei).
 La lista viene indicata con 
 $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
