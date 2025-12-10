@@ -492,8 +492,10 @@ $$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}
 con vincoli di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIREZIONE}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$ e tra l'attributo $\text{Dipartimento}$ di $\text{DIREZIONE}$ e l'attributo $\text{Nome}$ di $\text{DIPARTIMENTO}$.
 #### Documentazione di schemi logici
 Il risultato della progettazione logica è costituito dallo schema di una base di dati e la documentazione ad esso associata.
-Buona parte della documentazione dello schema concettuale in ingresso alla fase di progettazione può essere ereditata dallo schema logico ottenuto come risultato di questa fase, in particolare se i nomi dei concetti dello schema E-R son stati riutilizzati per costruire lo schema relazionale, le regole precedentemente definite possono essere utilizzate per documentare anche quest; ultimi 
+Buona parte della documentazione dello schema concettuale in ingresso alla fase di progettazione può essere ereditata dallo schema logico ottenuto come risultato di questa fase, in particolare se i nomi dei concetti dello schema E-R son stati riutilizzati per costruire lo schema relazionale, le regole precedentemente definite possono essere utilizzate per documentare anche quest'ultimo. 
 
-
-
-A questa documentazione bisogna aggiungere ulteriore documentazione per descrivere vincoli di integrità referenziale introdotti dalla traduzione (in aggiunta ai vincoli individuati durante la progettazione concettuale).
+A questa documentazione bisogna aggiungere ulteriore documentazione per descrivere vincoli di integrità referenziale introdotti dalla traduzione (in aggiunta ai vincoli individuati durante la progettazione concettuale), quindi a tal fine si adotta un semplice formalismo grafico. 
+Dato uno schema logico, i vincoli di integrità referenziale si documentano mediante un diagramma dove:
+- Le chiavi delle relazioni sono rappresentate in grassetto
+- Le frecce indicano vincoli di integrità referenziale
+- Gli asterischi su attributi indicano possibili valori null
