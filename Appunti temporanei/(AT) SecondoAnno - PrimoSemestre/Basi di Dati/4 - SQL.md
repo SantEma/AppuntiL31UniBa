@@ -52,12 +52,12 @@ $$\begin{aligned}
 Ciascuno di questi domini è strutturato e decomponibile con un insieme di campi:
 - Il dominio $\text{DATE}$ ammette i campi $\text{year, month, day}$
 - Il dominio $\text{TIME}$ ammette i campi $\text{hour,minute,seconds}$
-- Il dominio $\text{timestamps}$ ammette tutti i campi precedentemente descritti
+- Il dominio $\text{TIMESTAMP}$ ammette tutti i campi precedentemente descritti
 Se l'opzione $with \ time \ zone$ è specificata allora risulta possibile accedere a due campi, $\text{timezone \_\ hour}$ e $\text{timezone \_\ minute}$, che rappresentano la differenza tra il fuso orario locale e quello standard (standard UTC)
 #### Intervalli temporali
 Questa famiglia di domini permette di rappresentare intervalli di tempo (come la durata di un evento), la sintassi è:
 $$\text{INTERVAL} \  PrimaUnitàDiTempo [\text{to} \ UltimaUnitàdiTempo]$$
-PrimaUnitàDiTempo e UltimaUnitàDiTempo definiscono le unità di misure, dalla più precisa alla meno precisa, in questo modo si possono definire domini come $\text{interval year to month}$ per indicare per indicare che la durata di intervallo deve essere misurata in numero di anni e di mesi.
+$\text{PrimaUnitàDiTempo}$ e$\text{UltimaUnitàDiTempo}$ definiscono le unità di misure, dalla più precisa alla meno precisa, in questo modo si possono definire domini come $\text{interval year to month}$ per indicare per indicare che la durata di intervallo deve essere misurata in numero di anni e di mesi.
 Notiamo che comunque ci sono due insieme distintivi nelle unità di misura: $\text{year to month}$ e $\text{day to seconds}$, questo perché non si possono paragonare per esempio giorni e mesi in modo esatto (un mese potrebbe avere dai 28 ai 31 giorni), rendendo difficile eventuali operazioni aritmetiche.
 ### Definizioni di schema
 SQL consente la definizione di uno schema di base di dati come collezione di oggetti (tabelle, domini, viste etc.).
