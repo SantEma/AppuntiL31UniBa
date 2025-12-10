@@ -189,15 +189,15 @@ In questo caso non viene offerto particolare supporto e l'operazione viene sempl
 Per le modifiche sulla tabella esterna le alternative esistono, dato dal particolare significato della tabella esterna che sul piano applicativo rappresenta la tabella principale (**master**) alle cui variazioni la tabella interna (**slave**) deve adeguarsi.
 Per poter agire con le operazioni di modifica possiamo usare uno dei seguenti modi:
 - $\text{CASCADE}$: il nuovo valore dell'attributo della tabella esterna viene riportato su tutte le corrispondenti righe della tabella interna
-- $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore modificato nella tabella esterna
-- $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
-- $\text{no action}$: l'azione di modifica non viene consentita e il sistema quindi non ha bisogno di riparare la violazione
+- $\text{SET NULL}$: all'attributo referente viene assegnato il valore nullo al posto del valore modificato nella tabella esterna
+- $\text{SET DEFAULT}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
+- $\text{NO ACTION}$: l'azione di modifica non viene consentita e il sistema quindi non ha bisogno di riparare la violazione
 
 Per le violazioni da cancellazione di un elemento della tabella esterna si ha a disposizione lo stesso insieme di reazioni:
 - $\text{CASCADE}$: tutte le righe della tabella interna corrispondenti alla riga cancellata vengono cancellate
-- $\text{set null}$: all'attributo referente viene assegnato il valore nullo al posto del valore cancellato nella tabella esterna
-- $\text{set default}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
- - $\text{no action}$: l'azione di cancellazione non viene consentita
+- $\text{SET NULL}$: all'attributo referente viene assegnato il valore nullo al posto del valore cancellato nella tabella esterna
+- $\text{SET DEFAULT}$: all'attributo referente viene assegnato il valore di default al posto del valore modificato nella tabella esterna
+ - $\text{NO ACTION}$: l'azione di cancellazione non viene consentita
 
 In generale per ogni evento è possibile associare una politica diversa in base a come la si vuole gestire.
 Nel caso della politica $\text{CASCADE}$ si assume che le righe della tabella interna siano strettamente legate alle corrispondenti righe della tabella esterna, per cui se si apporta una modifica alla tabella esterna si devono modificare in modo conseguente tutte le righe della tabella interna, per quanto riguarda le altre politiche ci sono dipendenze meno strette tra prima e seconda tabella.
@@ -207,7 +207,7 @@ La politica di reazione viene specificata immediatamente dopo il vincolo di inte
 $$
 \begin{aligned}
 &\text{ON \langle delete | update\rangle}\\
-&\quad \  \text{\langle CASCADE | set null | set default | no action\rangle}
+&\quad \  \text{\langle CASCADE | SET NULL | SET DEFAULT | NO ACTION\rangle}
 \end{aligned}
 $$
 ### Modifica degli schemi
@@ -217,7 +217,7 @@ I comandi che vengono utilizzati a questo fine sono $\text{alter}$ e $\text{drop
 Il comando $\text{alter}$ permette di modificare domini e schemi di tabelle, le forme che troviamo sono:
 Per i domini:
 $$\begin{aligned}
-&\text{ALTER DOMAIN} \ NomeDominio \langle \text{set default} \ ValoreDiDefault \| \\
+&\text{ALTER DOMAIN} \ NomeDominio \langle \text{SET DEFAULT} \ ValoreDiDefault \| \\
 &\quad \quad \quad\quad \quad \ \ \  \text{drop default} \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{add constraint} \  DefVincolo \ | \\
 &\quad \quad \quad\quad \quad \ \ \  \text{drop constraint} \ NomeVincolo \rangle
@@ -225,7 +225,7 @@ $$\begin{aligned}
 Per le tabelle:
 $$\begin{aligned}
 &\text{ALTER TABLE} \ NomeTabella \langle \\ 
-&\text{ALTER COLUMN} \ NomeAttributo \langle \text{set default} \ NuovoDefault \ | \\
+&\text{ALTER COLUMN} \ NomeAttributo \langle \text{SET DEFAULT} \ NuovoDefault \ | \\
 &\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad\quad  \ \ \  \text{drop default} \rangle \ | \\ 
 &\text{add constraint} \  DefVincolo \ | \\
 &\text{drop constraint} \ NomeVincolo \ |\\ 
@@ -239,7 +239,7 @@ Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo sch
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
 &\text{DROP} \ \langle \text{schema | domain| table | view | assertion}\rangle \ NomeElemento \\
-& \quad \quad [\text{ restrict | cascade }]
+& \quad \quad [\text{ restrict | CASCADE }]
 \end{aligned}$$
 L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
 - Uno **schema** non è rimosso se contiene tabelle o altri oggetti
@@ -248,13 +248,13 @@ L'operazione $\text{restrict}$ specifica che il comando non deve essere eseguito
 - Una **vista** non è rimossa se è utilizzata nella definizione di altra tabelle o viste.
 L'opzione $\text{restrict}$ è un opzione di default.
 
-Nel caso si specifichi l'opzione $\text{cascade}$ tutti gli oggetti specificati devono essere rimossi.
+Nel caso si specifichi l'opzione $\text{CASCADE}$ tutti gli oggetti specificati devono essere rimossi.
 Nei diversi casi:
 - Quando si rimuove uno **schema** non vuoto anche tutti gli oggetti che fanno parte dello schema vengono eliminati
 - Rimuovendo un **dominio** che compare nelle definizioni di qualche attributo l'opzione fa si che il nome del dominio venga rimosso, ma gli attributi che sono stati definiti utilizzando quel dominio rimangano associati al dominio elementare
 - Quando si rimuove una **tabella** tutte le righe vengono perse, se la tabella poi compariva in qualche definizione di tabella o vista viene rimossa anche questa
 - Eliminando una **vista** che compare nella altre definizioni di altre tabelle o viste viene anche queste tabelle e viste vengono rimosse
-Quindi in generale l'opzione $\text{cascade}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
+Quindi in generale l'opzione $\text{CASCADE}$ attiva una reazione a catena per cui tutti gli elementi che dipendono da un elemento vengono rimossi fin quando non si giunge ad una situazione dove non esistono dipendenze non risolte
 ## Interrogazioni in SQL
 Useremo per tutto questo capitolo le seguenti tabelle per gli esempi:
 ![[Pasted image 20251030105223.png]]
@@ -550,7 +550,7 @@ $$\begin{aligned}
 \end{aligned}
 $$
 Quando il comando $\text{WHERE}$ non ha argomenti il comando elimina tutte le righe della tabella.
-Nel caso esista un vincolo di integrità referenziale con politica $\text{cascade}$, allora la cancellazione apporta anche la cancellazione di righe appartenenti ad altra tabelle
+Nel caso esista un vincolo di integrità referenziale con politica $\text{CASCADE}$, allora la cancellazione apporta anche la cancellazione di righe appartenenti ad altra tabelle
 $$\begin{aligned}
 &\text{UPDATE} \ NomeTabella \ \\
 &\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{null} | \text{default} \rangle \\ 
@@ -592,7 +592,7 @@ La vista non è memorizzata, quando usata in un’interrogazione è espansa con 
 La sintassi SQL per definire una vista logica è la seguente:
 $$\begin{aligned}
 &\text{CREATE VIEW} \ NomeVista [(ListaAttributi)] \text{AS} \ SelectSQL \\
-&\text{[WITH[local|cascaded] CHECK OPTION]}
+&\text{[WITH[local|CASCADE] CHECK OPTION]}
 \end{aligned}$$
 L’interrogazione deve restituire un insieme di attributi compatibile con gli attributi nello schema della vista; 
 L'ordine nella target list della clausola $\text{SELECT}$ deve corrispondere all'ordine degli attributi nello schema.
