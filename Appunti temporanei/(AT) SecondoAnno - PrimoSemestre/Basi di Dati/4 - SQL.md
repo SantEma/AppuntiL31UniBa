@@ -421,8 +421,8 @@ WHERE I1.Cognome = I2.Cognome and
 SQL permette di specificare un ordinamento delle righe del risultato di un'interrogazione tramite la clausola $\text{ORDER BY}$, con la quale si chiude l'interrogazione.
 La sintassi è la seguente:
 $$\begin{aligned}
-&\text{ORDER By} AttrDiOrdinamento \ \text{[ASC|desc]} \\
-&\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[ASC|desc]}\}
+&\text{ORDER By} AttrDiOrdinamento \ \text{[ASC|DESC]} \\
+&\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[ASC|DESC]}\}
 \end{aligned}$$
 Le righe vengono ordinate in base al primo attributo nell'elenco, per le righe che hanno lo stesso valore del primo attributo si considerano i valori degli attributi successivi in sequenza.
 L'ordine su ciascun attributo può essere ascendente o discendente in base al qualificatore utilizzato, se omesso viene usato un ordinamento ascendente
@@ -431,7 +431,7 @@ L'ordine su ciascun attributo può essere ascendente o discendente in base al qu
 ```sql
 SELECT *
 FROM Automobile
-ORDER BY Marca desc, Modello
+ORDER BY Marca DESC, Modello
 ```
 ### Operatori Aggregati
 Nell'algebra relazionale ogni condizione viene valutata su una signola tupla alla volta in modo indipendente, SQL invece permette di valutare delle proprietà che dipendono da un insieme di tuple.
@@ -444,18 +444,18 @@ $$\begin{aligned}
 &\text{COUNT} (\langle *|[\text{DISTINCT}|\text{|ALL}] \ ListaAttributi)
 \end{aligned}
 $$
-La prima opzione (\*) restituisce il numero di righe, $\text{distinct}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
+La prima opzione (\*) restituisce il numero di righe, $\text{DISTINCT}$ restituisce il numero di diversi valori degli attributi in $ListaAttributi$ (elimina i duplicati), $\text{all}$ restituisce il numero di righe che possiedono valori diversi dal valore nullo in $ListaAttributi$, nel caso di omissione di qualunque opzione quest'ultima è quella di default.
 **Esempio:**
 ```sql
 SELECT COUNT(DISTINCT Stipendio)
 FROM Impiegato
 ```
 
-Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{distinct}$ e $\text{all}$.
+Gli altri 4 operatori operatori aggregati invece ammettono come argomento un attributo o un'espressione, eventualmente preceduta dalle parole chiave $\text{DISTINCT}$ e $\text{all}$.
 Le funzioni aggregate $\text{SUM}$ e $\text{AVG}$ ammettono come argomento solo espressioni che rappresentano valori numerici o valori di tempo.
 Le funzioni $\text{MAX}$ e $\text{MIN}$ richiedono solo sull'espressione sia definito un ordinamento per cui si possano applicare anche su stringhe di caratteri o su istanti di tempo
 La sintassi è la seguente:
-$$\langle \text{SUM | MAX | MIN | AVG} \ ([\text{distinct| all}]AttrEspr)$$
+$$\langle \text{SUM | MAX | MIN | AVG} \ ([\text{DISTINCT| all}]AttrEspr)$$
 Gli operatori si applicano sulle righe che soddisfano la condizione presente nella clausola $\text{WHERE}$.
 ### Interrogazioni con raggruppamento
 SQL mette a disposizione la clausola $\text{GROUP BY}$ che permette di specificare come dividere le tabelle in sottoinsiemi.
