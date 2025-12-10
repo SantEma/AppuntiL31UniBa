@@ -232,13 +232,13 @@ $$\begin{aligned}
 &\text{ADD COLUMN} \ DefAttributo\ |\\
 &\text{DROP COLUMN} \ NomeAttributo \rangle
 \end{aligned}$$
-Tramite $\text{ALTER domain}$ e $\text{ALTER table}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
+Tramite $\text{ALTER DOMAIN}$ e $\text{ALTER TABLE}$ è possibile aggiungere e rimuovere vincoli e modificare i valori di default associati ai domini e agli attributi, inoltre è possibile aggiungere ed eliminare attributi e vincoli sullo schema di una tabella.
 Quando si definisce un nuovo vincolo questo deve essere soddisfatto dai dati già presenti, altrimenti l'inserimento viene rifiutato
 #### Drop
 Mentre il comando $\text{ALTER}$ effettua delle modifiche sui domini o sullo schema delle tabelle il comando $\text{DROP}$ permette di rimuovere dei componenti come schemi, domini, tabelle, viste o asserzioni.
 Il comando usa la seguente sintassi:
 $$\begin{aligned}
-&\text{DROP} \ \langle \text{SCHEMA | domain | table | view | assertion}\rangle \ NomeElemento \\
+&\text{DROP} \ \langle \text{SCHEMA | DOMAIN | TABLE | view | assertion}\rangle \ NomeElemento \\
 & \quad \quad [\text{ RESTRICT | CASCADE }]
 \end{aligned}$$
 L'operazione $\text{RESTRICT}$ specifica che il comando non deve essere eseguito in presenza di oggetti **non vuoti**, nei diversi casi:
