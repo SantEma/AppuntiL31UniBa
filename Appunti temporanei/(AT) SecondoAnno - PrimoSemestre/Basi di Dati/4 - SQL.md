@@ -74,7 +74,7 @@ Lo schema della tabella $\text{DIPARTIMENTO}$ viene definita per esempio tramite
 ```sql
 CREATE TABLE Dipartimento
 (
-	Nome varchar(20) primary key,
+	Nome varchar(20) PRIMARY KEY,
 	Indirizzo varchar(50),
 	Città varchar(20)
 )
@@ -122,25 +122,25 @@ Un esempio può essere:
 Cognome varchar(20) NOT NULL 
 ```
 #### Unique
-Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
+Il vincolo $\text{UNIQUE}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
 Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutti diversi tra loro.
 La definizione del vincolo può avvenire in due modi:
 1. Quando si vuole specificare questo vincolo su un unico attributo, in quel caso viene dichiarato nella specifica di quell'attributo:
 ```sql 
-Matricola character(6) unique 
+Matricola character(6) UNIQUE 
 ```
-2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$unique(Attributo,\{, Attributo\})$$
+2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$UNIQUE(Attributo,\{, Attributo\})$$
    Un esempio di sintassi è il seguente:
 ```sql
 Nome varchar(20) NOT NULL,
 Cognome varchar(20) NOT NULL,
-unique (Cognome,Nome)   
+UNIQUE (Cognome,Nome)   
 ```
 
 Si noti che si potrebbe pensare che la definizione:
 ```sql
-Nome varchar(20) NOT NULL unique
-Cognome varchar(20) NOT NULL unique
+Nome varchar(20) NOT NULL UNIQUE
+Cognome varchar(20) NOT NULL UNIQUE
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
@@ -156,7 +156,7 @@ primary key (Cognome, Nome)
 I vincoli interrelazionali più diffusi e significativi sono i **vincoli di integrità referenziale**, in SQL per loro definizione viene usato il vincolo di $\text{foreign key}$, chiamato anche **chiave esterna**;
 Questa chiave esterna crea un legame tra i valori di un attributo della tabella su cui è definito (chiamata **interna**) e i valori di attributo di un altra tabella (chiamata **esterna**).
 Il vincolo impone che per ogni riga della tabella interna il valore dell'attributi specificato (se diverso da nullo) sia presente nelle righe della tabella esterna tra i valori del corrispondente attributo;
-Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si fa riferimento alla tabella esterna sia soggetto ad $\text{unique}$, ossia che questo sia un identificatore, infatti tipicamente la chiave esterna fa riferimento la chiave primaria della tabella.
+Questo vincolo ha come unico requisito che la sintassi dell'attributo a cui si fa riferimento alla tabella esterna sia soggetto ad $\text{UNIQUE}$, ossia che questo sia un identificatore, infatti tipicamente la chiave esterna fa riferimento la chiave primaria della tabella.
 Nel vincolo possono essere coinvolti più attributi, in tal caso l'unica differenza è che bisognerà confrontare n-uple di valori piuttosto di singoli valori.
 
 Possiamo definirlo in due modi:
@@ -170,7 +170,7 @@ Cognome varchar(20) NOT NULL,
 Dipart varchar(15)
 	   references Dipartimento(NomeDip)
 Ufficio numeric(9) default 0,
-unique(Cognome,Nome)
+UNIQUE(Cognome,Nome)
 )   
 ```
 2. Nel caso ci sia un insieme di attributi si utilizza $\text{foreing key}$, posto al termine della definizione degli attributi
@@ -354,7 +354,7 @@ Un confronto come $\text{LIKE 'ab\%ba\_'}$ sarà perciò soddisfatto da una qual
 #### Gestione dei valori nulli
 Un valore nullo in un attributo può significare che un certo attributo non è applicabile, o che il valore è applicabile ma non conosciuto, oppure che non si conosca quale delle due situazioni sia applicabile.
 Per selezionare i termini con i valori nulli SQL fornisce il predicato $\text{IS NULL}$, la cui sintassi è:
-$$Attributo \text{ IS [not] NULL}$$
+$$Attributo \text{ IS [NOT] NULL}$$
 Il predicato risulta vero solo se l'attributo ha valore nullo, mentre $\text{NOT NULL}$ è la sua negazione.
 Ricordiamo che da SQL-2 viene utilizzata la logica a tre valori che prevede il valore $\text{unknown}$
 #### Interpretazione formale delle interrogazioni in SQL
