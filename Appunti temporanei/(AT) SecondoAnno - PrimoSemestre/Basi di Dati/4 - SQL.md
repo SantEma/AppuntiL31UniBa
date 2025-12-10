@@ -397,9 +397,9 @@ L'inner join rappresenta il tradizionale tetha-join dell'algebra relazionale
 Con il join interno le righe che vengono coinvolte nel join sono in generale un sottoinsieme delle righe di ciascuna tabella, può infatti capitare che alcune righe non vengano considerate in quanto non vengano rispettate le condizioni;
 Questo comportamento non è desiderabile solitamente, si preferisce infatti utilizzare il join esterno per mantenere le righe che fanno parte di una o entrambe le tabelle coinvolte.
 Esistono poi tre variante dei join esterni:
-- $\text{left}$, fornisce come risultato il join esteso con le righe della tabella che compare a sinistra per le quali non esiste una corrispondente riga nella tabella di destra
-- $\text{right}$, che si comporta nella maniera opposta del $\text{left}$
-- $\text{full}$, che restituisce il join interno esteso con le righe escluse di entrambe le tabelle
+- $\text{LEFT}$, fornisce come risultato il join esteso con le righe della tabella che compare a sinistra per le quali non esiste una corrispondente riga nella tabella di destra
+- $\text{RIGHT}$, che si comporta nella maniera opposta del $\text{LEFT}$
+- $\text{FULL}$, che restituisce il join interno esteso con le righe escluse di entrambe le tabelle
 
 Normalmente il join naturale non è consigliato, dato che può introdurre dei rischi nelle applicazioni in quanto il suo comportamento può maturare profondamente al variare dello schema delle tabelle
 #### Uso di variabili
