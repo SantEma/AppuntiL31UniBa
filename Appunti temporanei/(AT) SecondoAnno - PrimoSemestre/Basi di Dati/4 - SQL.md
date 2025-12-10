@@ -11,7 +11,7 @@ Le parentesi tonde dovranno sempre essere intese come termini del linguaggio SQL
 ### I domini elementari
 SQL mette a disposizione alcune famiglie di domini elementari, da cui si possono poi definire i domini da associare agli attributi dello schema
 #### Caratteri
-Il dominio $\text{character}$ permette di rappresentare singoli caratteri oppure stringhe.
+Il dominio $\text{CHARACTER}$ permette di rappresentare singoli caratteri oppure stringhe.
 La lunghezza può essere fissa o variabile, in caso di quelle variabile si esplicita la lunghezza massima, oltre a poter prevedere una specifica della famiglia dei caratteri di default (latino, cirillico etc.).
 La sintassi prevista è:$$\begin{align}  \\
 &\text{CHARACTER [varying]} [(Lunghezza)] \\
@@ -40,8 +40,8 @@ $$\begin{aligned}
 \end{aligned}$$
 Tutti questi domini ovviamente permettono di descrivere numeri approssimati mediante rappresentazione con virgola mobile, in cui ciascun numero corrisponde ad una coppia di valori: mantissa e esponente.
 Per ottenere un valore approssimativo del numero reale si moltiplica la mantissa per la potenza di 10 con il grado dell'esponente (esempio: $1,7 \times 10^{15}$ rappresenta $0.17E16$, oppure $-4\times 10^{-7}$ rappresenta $-0.4E-6$).
-Al dominio $\text{float}$ può essere associata una precisione che rappresenta il numero delle cifre dedicate alla mantissa, la precisione invece dell'esponente è dipendente dall'implementazione.
-La precisione del dominio $\text{real}$ è fissa, quella del dominio $\text{double precision}$ è di dimensione doppia rispetto al dominio precedente
+Al dominio $\text{FLOAT}$ può essere associata una precisione che rappresenta il numero delle cifre dedicate alla mantissa, la precisione invece dell'esponente è dipendente dall'implementazione.
+La precisione del dominio $\text{REAL}$ è fissa, quella del dominio $\text{DOUBLE PRECISION}$ è di dimensione doppia rispetto al dominio precedente
 #### Istanti temporali
 Per la rappresentazione di istanti di tempo in SQL usiamo questa famiglia di domini con i seguenti tipi:
 $$\begin{aligned}
@@ -50,8 +50,8 @@ $$\begin{aligned}
 &\text{TIMESTAMP}[(Precisione)] [with\  time \ zone] \\
 \end{aligned}$$
 Ciascuno di questi domini è strutturato e decomponibile con un insieme di campi:
-- Il dominio $\text{date}$ ammette i campi $\text{year, month, day}$
-- Il dominio $\text{time}$ ammette i campi $\text{hour,minute,seconds}$
+- Il dominio $\text{DATE}$ ammette i campi $\text{year, month, day}$
+- Il dominio $\text{TIME}$ ammette i campi $\text{hour,minute,seconds}$
 - Il dominio $\text{timestamps}$ ammette tutti i campi precedentemente descritti
 Se l'opzione $with \ time \ zone$ è specificata allora risulta possibile accedere a due campi, $\text{timezone \_\ hour}$ e $\text{timezone \_\ minute}$, che rappresentano la differenza tra il fuso orario locale e quello standard (standard UTC)
 #### Intervalli temporali
