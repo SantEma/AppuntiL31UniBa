@@ -526,17 +526,17 @@ La parte di Data Manipulation Language comprende i comandi per interrogare e mod
 Il comando di inserimento di righe nella base di dati presenta due sintassi, la prima permette di inserire le singole righe all'interno delle tabelle:
 $$\begin{aligned}
 &\text{INSERT INTO} \ NomeTabella \ [ListaAttributi] \\
-&\quad\quad\quad\quad\quad \langle \text{values}(Listavalori)|\rangle \\ 
+&\quad\quad\quad\quad\quad \langle \text{VALUES}(Listavalori)|\rangle \\ 
 &\quad\quad\quad\quad\quad SelectSQL
 \end{aligned}
 $$
-L'argomento della clausola $\text{values}$ rappresenta esplicitamente i valori degli attributi della singola riga.
+L'argomento della clausola $\text{VALUES}$ rappresenta esplicitamente i valori degli attributi della singola riga.
 Questa prima forma è usata principalmente all'interno dei programmi per riempire una tabella con i dati forniti direttamente dagli utenti.
 
 La seconda forma permette di inserire insieme di righe, estratti dal contenuto della base di dati:
 $$\begin{aligned}
 &\text{INSERT INTO} \ NomeTabella \ \\
-&\quad\quad\quad\quad\quad \langle \text{SELECT values}(Listavalori)|\rangle \\ 
+&\quad\quad\quad\quad\quad \langle \text{SELECT VALUES}(Listavalori)|\rangle \\ 
 &\quad\quad\quad\quad\quad \text{FROM Tabella} \\
 &\quad\quad\quad\quad\quad \text{WHERE Condizione} \\ 
 \end{aligned}
