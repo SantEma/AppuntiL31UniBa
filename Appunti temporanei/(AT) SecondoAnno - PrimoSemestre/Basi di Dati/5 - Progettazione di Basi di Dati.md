@@ -489,6 +489,6 @@ $$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})
 $$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
 $$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})$$
 
-con vincoli di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIREZIONE}$ e l'attributo Codice di $\text{IMPIEGATO}$ e tra l'attributo Dipartimento di DIREZIONE e l'attributo Nome di DIPARTIMENTO.
+con vincoli di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIREZIONE}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$ e tra l'attributo $\text{Dipartimento}$ di $\text{DIREZIONE}$ e l'attributo $\text{Nome}$ di $\text{DIPARTIMENTO}$.
 
-[DA FINIRE!!!!]
+
