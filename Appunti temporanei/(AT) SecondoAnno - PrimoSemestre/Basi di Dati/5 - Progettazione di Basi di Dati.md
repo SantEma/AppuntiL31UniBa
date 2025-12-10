@@ -502,3 +502,5 @@ Dato uno schema logico, i vincoli di integrità referenziale si documentano medi
 
 Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 ![[Pasted image 20251210115426.png]]
+È interessante osservare come, con questo tipo di rappresentazione, sia possibile rappresentare esplicitamente anche le associazioni dello schema Entità-Relazione di partenza alle quali, nello schema relazionale equivalente, non corrisponde nessuna relazione.
+#### Extra
