@@ -4,7 +4,7 @@ La loro caratteristica fondamentale è che in esse è presente una **relazione d
 Questa relazione d'ordine non implica necessariamente un ordinamento dei valori
 (es. alfabetico o numerico), ma unicamente l'ordine posizionale. 
 Per distinguere le diverse strutture lineari, è rilevante considerare due fattori.
-- **i modi di accedere (modalità si accesso)**: come si individua la posizione nella sequenza in cui operare. 
+- **I modi di accedere (modalità si accesso)**: come si individua la posizione nella sequenza in cui operare. 
 - **I modi di agire (Operatori)**: i tipi di azione che si possono compiere sulla posizione individuata. 
 
 **Metodi di accesso:**
@@ -31,7 +31,7 @@ $$
 L=<a_{1}​,a_{2}​,…,a_{n}​>
 $$
 - A differenza del concetto di insieme, nella lista uno stesso elemento può comparire più volte in posizioni diverse. 
-- La Lista è una struttura dati **dinamica** perchè non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
+- La Lista è una struttura dati **dinamica** perché non ha una dimensione prefissata e può crescere e decrescere nel tempo, rendendo fondamentali le operazioni di inserimento e cancellazione che alterano la dimensione (a differenza del vettore). 
 - **Posizione e valore:** a ciascun elemento $a_{i}$ di una lista viene associato:
 	- una posizione $pos(i)$
 	- un valore $a(i)$
