@@ -105,7 +105,7 @@ Definendo un dominio si può rendere più facile la modifica della definizione, 
 Il termine $ValoreDiDefault$ nei domini e nelle tabelle permette di specificare un valore predefinito quando viene inserito un attributo in una riga della tabella senza specificare un valore.
 In modo predefinito il valore di default risulta sempre nullo.
 La sintassi specifica è la seguente:
-$$default \langle GenericoValore | user| null \rangle$$
+$$\text{DEFAULT} \langle GenericoValore | user| null \rangle$$
 - $GenericoValore$ rappresenta un valore compatibile con il dominio
 - $user$ impone come valore di default l'identificativo dell/ utente che esegue il comando
 - $null$ corrisponde al valore di default base
@@ -119,7 +119,7 @@ Il valore nullo come sappiamo è un particolare valore che indica l'assenza di i
 Il vincolo $\text{not null}$ indica che il valore nullo non è ammesso come valore dell'attributo e deve essere necessariamente specificato in fase di inserimento (ma anche successivamente), ma nel caso sia presente un valore di default non è necessario l'inserimento forzato.
 Un esempio può essere:
 ```sql
-Cognome varchar(20) not null 
+Cognome varchar(20) NOT NULL
 ```
 #### Unique
 Il vincolo $\text{unique}$ si applica ad un attributo o a un insieme di attributi di una tabella e impone che i valori (o le n-uple dei valori sull'insieme degli attributi) siano una superchiave, ossia per tutte le righe differenti della tabella non ci siano gli stessi valori.
@@ -127,20 +127,20 @@ Un'eccezione viene fatta per il valore nullo, in quanto si assume che siano tutt
 La definizione del vincolo può avvenire in due modi:
 1. Quando si vuole specificare questo vincolo su un unico attributo, in quel caso viene dichiarato nella specifica di quell'attributo:
 ```sql 
-Matricola character(6) unique 
+Matricola character(6) UNIQUE 
 ```
-2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$unique(Attributo,\{, Attributo\})$$
+2. Quando avviene su un insieme di attributi in una tabella, usando la sintassi seguente: $$\text{UNIQUE}(Attributo,\{, Attributo\})$$
    Un esempio di sintassi è il seguente:
 ```sql
-Nome varchar(20) not null,
-Cognome varchar(20) not null,
+Nome varchar(20) NOT NULL,
+Cognome varchar(20) NOT NULL,
 unique (Cognome,Nome)   
 ```
 
 Si noti che si potrebbe pensare che la definizione:
 ```sql
-Nome varchar(20) not null unique
-Cognome varchar(20) not null unique
+Nome varchar(20) NOT NULL UNIQUE
+Cognome varchar(20) NOT NULL UNIQUE
 ```
 sia uguale in modo logico, ma in non lo è, nel primo caso si presuppone che non ci siano righe uguali con nome e cognome uguale, nel secondo caso invece si presuppone che non esistano o lo stesso nome o lo stesso cognome ripetuto più di una volta
 #### Primary Key
