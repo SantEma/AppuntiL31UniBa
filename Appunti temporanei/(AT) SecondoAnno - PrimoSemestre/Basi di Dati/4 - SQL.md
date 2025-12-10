@@ -421,8 +421,8 @@ WHERE I1.Cognome = I2.Cognome and
 SQL permette di specificare un ordinamento delle righe del risultato di un'interrogazione tramite la clausola $\text{ORDER BY}$, con la quale si chiude l'interrogazione.
 La sintassi è la seguente:
 $$\begin{aligned}
-&\text{ORDER By} AttrDiOrdinamento \ \text{[asc|desc]} \\
-&\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[asc|desc]}\}
+&\text{ORDER By} AttrDiOrdinamento \ \text{[ASC|desc]} \\
+&\quad\quad\quad\quad \{,AttrDiOrdinamento \ \text{[ASC|desc]}\}
 \end{aligned}$$
 Le righe vengono ordinate in base al primo attributo nell'elenco, per le righe che hanno lo stesso valore del primo attributo si considerano i valori degli attributi successivi in sequenza.
 L'ordine su ciascun attributo può essere ascendente o discendente in base al qualificatore utilizzato, se omesso viene usato un ordinamento ascendente
