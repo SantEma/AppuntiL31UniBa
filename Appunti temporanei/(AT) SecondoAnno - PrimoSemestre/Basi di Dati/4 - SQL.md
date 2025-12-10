@@ -169,7 +169,7 @@ Nome varchar(20) NOT NULL,
 Cognome varchar(20) NOT NULL,
 Dipart varchar(15)
 	   REFERENCES Dipartimento(NomeDip)
-Ufficio numeric(9) default 0,
+Ufficio numeric(9) DEFAULT 0,
 UNIQUE(Cognome,Nome)
 )   
 ```
@@ -553,8 +553,8 @@ Quando il comando $\text{WHERE}$ non ha argomenti il comando elimina tutte le ri
 Nel caso esista un vincolo di integrità referenziale con politica $\text{CASCADE}$, allora la cancellazione apporta anche la cancellazione di righe appartenenti ad altra tabelle
 $$\begin{aligned}
 &\text{UPDATE} \ NomeTabella \ \\
-&\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{null} | \text{default} \rangle \\ 
-&\quad\quad\quad\quad \{, Attributo =\langle Espressione \ | \ SelectSQL | \text{null} | \text{default} \rangle \} \\
+&\quad\quad \text{set} \ Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{default} \rangle \\ 
+&\quad\quad\quad\quad \{, Attributo =\langle Espressione \ | \ SelectSQL | \text{NULL} | \text{default} \rangle \} \\
 &\quad\quad\quad\quad\quad [\text{WHERE} \ Condizione] \\ 
 \end{aligned}
 $$
@@ -563,8 +563,8 @@ Se il comando non presenta la clausola $\text{WHERE}$ si presuppone che la condi
 Il comando $\text{UPDATE}$ permette di aggiornare uno o più attributi delle righe di una tabella che soddisfano eventualmente una condizione:
 $$\begin{aligned}
 &\text{UPDATE} \ NomeTabella \\
-&\quad \text{SET} \ Attributo = \langle Espressione | SelectSQL|\text{null}|\text{default}\rangle\\
-&\quad \{,Attributo = \langle Espressione | SelectSQL|\text{null}|\text{default}\rangle \} \\
+&\quad \text{SET} \ Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{default}\rangle\\
+&\quad \{,Attributo = \langle Espressione | SelectSQL|\text{NULL}|\text{default}\rangle \} \\
 &[\text{WHERE} \ Condizione]
 \end{aligned}$$
 Se il comando non presenta una clausola $\text{WHERE}$ si suppone sempre che la condizione sia soddisfatta e si esegue la modifica su tutte le righe
