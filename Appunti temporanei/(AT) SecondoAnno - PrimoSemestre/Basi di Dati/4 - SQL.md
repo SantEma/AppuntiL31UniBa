@@ -105,10 +105,10 @@ Definendo un dominio si può rendere più facile la modifica della definizione, 
 Il termine $ValoreDiDefault$ nei domini e nelle tabelle permette di specificare un valore predefinito quando viene inserito un attributo in una riga della tabella senza specificare un valore.
 In modo predefinito il valore di default risulta sempre nullo.
 La sintassi specifica è la seguente:
-$$\text{DEFAULT} \langle GenericoValore | user| null \rangle$$
+$$\text{DEFAULT} \langle GenericoValore | user| NULL \rangle$$
 - $GenericoValore$ rappresenta un valore compatibile con il dominio
 - $user$ impone come valore di default l'identificativo dell/ utente che esegue il comando
-- $null$ corrisponde al valore di default base
+- $NULL$ corrisponde al valore di default base
 
 Quando un attributo o un dominio è definito a a partire da un altro a cui è stato già specificato un valore di default automaticamente quello ha la maggiore priorità, diventando valore effettivo. 
 ### Vincoli intrarelazionali
@@ -411,7 +411,7 @@ Quando la tabella compare una sola volta in un'interrogazione, non c'è differen
 
 **Esempio:**
 ```sql
-select I1.Cognome, I1.Nome
+SELECT I1.Cognome, I1.Nome
 from Impiegato I1, Impiegato I2
 where I1.Cognome = I2.Cognome and
       I1.Nome <> I2.Nome and
