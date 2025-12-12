@@ -515,4 +515,11 @@ Dunque, per **normalizzazione** si intende la procedura che permette di trasform
 
 Facciamo un esempio con una tabella:
 ![[Pasted image 20251212133424.png]]
+Si può notare facilmente che le tuple soddisfano le seguenti proprietà:
+- Lo stipendio di ciascun impiegato è unico ed è funzione del solo impiegato, indipendentemente dai progetti a cui partecipa;
+- Il bilancio di ciascun progetto è unico e dipende dal solo progetto, indipendentemente dagli impiegati che vi partecipano.
+
+Questi fatti 
+
+
 ## Progettazione fisica 
