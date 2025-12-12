@@ -508,5 +508,5 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 #### Esempio di progettazione logica
 Guardare il file [[Esempio di Progettazione Logica.pdf]], estratto dal libro
 ## Normalizzazione
-Esistono alcune proprietà, dette forme normali
-## Progettazione fisica
+Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema alla bas
+## Progettazione fisica 
