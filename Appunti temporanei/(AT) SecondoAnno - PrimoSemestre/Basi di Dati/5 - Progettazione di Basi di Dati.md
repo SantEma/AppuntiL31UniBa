@@ -522,6 +522,7 @@ Si può notare facilmente che le tuple soddisfano le seguenti proprietà:
 Questi fatti hanno alcune conseguenze sul contenuto della relazione e sulle operazioni che si possono effettuare su di essa, infatti si osserva che:
 - Lo stipendio di ciascun impiegato è ripetuto in tutte le tuple relative a esso, generando **ridondanza** (se l'impiegato partecipasse a 20 progetti verrebbe ripetuto 20 volte)
 - Se lo stipendio di un impiegato varia, è necessario modificare il valore in tutte le tuple corrispondenti, portando ad un **anomalia di aggiornamento**
-- 
+- Se un impiegato interrompe la partecipazione a tutti i progetti senza lasciare l’azienda, non è possibile conservare traccia del suo nome e del suo stipendio (a meno di valori nulli sulla chiave), portando ad una **anomalia di cancellazione**
+- Se si hanno informazioni su un nuovo impiegato, non è possibile inserirle finché questi non viene assegnato ad un progetto, portando ad una **anomalia di inserimento**
 
 ## Progettazione fisica 
