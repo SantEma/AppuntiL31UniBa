@@ -548,3 +548,4 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 ### Terza forma normale
 [da finire]
 ## Progettazione fisica 
+[da finire]
