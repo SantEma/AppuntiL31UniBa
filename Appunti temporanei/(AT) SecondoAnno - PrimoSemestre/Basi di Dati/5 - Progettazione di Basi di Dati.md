@@ -547,5 +547,6 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 [da finire]
 ### Terza forma normale
 [da finire]
+#### Decom
 ## Progettazione fisica 
 [da finire]
