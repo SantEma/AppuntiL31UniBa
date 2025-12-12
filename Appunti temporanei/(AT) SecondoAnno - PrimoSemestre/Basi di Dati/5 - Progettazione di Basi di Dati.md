@@ -525,4 +525,6 @@ Questi fatti hanno alcune conseguenze sul contenuto della relazione e sulle oper
 - Se un impiegato interrompe la partecipazione a tutti i progetti senza lasciare l’azienda, non è possibile conservare traccia del suo nome e del suo stipendio (a meno di valori nulli sulla chiave), portando ad una **anomalia di cancellazione**
 - Se si hanno informazioni su un nuovo impiegato, non è possibile inserirle finché questi non viene assegnato ad un progetto, portando ad una **anomalia di inserimento**
 
+La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizzata un’unica relazione per gestire dati e associazioni tra dati etereogenei
+
 ## Progettazione fisica 
