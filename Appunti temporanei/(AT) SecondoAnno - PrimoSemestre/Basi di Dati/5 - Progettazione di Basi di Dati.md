@@ -519,7 +519,7 @@ Si può notare facilmente che le tuple soddisfano le seguenti proprietà:
 - Lo stipendio di ciascun impiegato è unico ed è funzione del solo impiegato, indipendentemente dai progetti a cui partecipa;
 - Il bilancio di ciascun progetto è unico e dipende dal solo progetto, indipendentemente dagli impiegati che vi partecipano.
 
-Questi fatti 
+Questi fatti hanno alcune conseguenze sul contenuto della relazione e sulle operazioni che si possono effettuare su di essa
 
 
 ## Progettazione fisica 
