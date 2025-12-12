@@ -526,7 +526,9 @@ Questi fatti hanno alcune conseguenze sul contenuto della relazione e sulle oper
 - Se si hanno informazioni su un nuovo impiegato, non è possibile inserirle finché questi non viene assegnato ad un progetto, portando ad una **anomalia di inserimento**
 
 La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizzata un'unica relazione per gestire dati e associazioni tra dati etereogenei, infatti nella relazione sono rappresentati:
-0
+- Gli impiegati con i relativi stipendi
+- I progetti con i relativi bilanci
+- {}le partecipazioni degli impiegati ai progetti con le relative funzioni.
 
 
 ## Progettazione fisica 
