@@ -520,8 +520,8 @@ Si può notare facilmente che le tuple soddisfano le seguenti proprietà:
 - Il bilancio di ciascun progetto è unico e dipende dal solo progetto, indipendentemente dagli impiegati che vi partecipano.
 
 Questi fatti hanno alcune conseguenze sul contenuto della relazione e sulle operazioni che si possono effettuare su di essa, infatti si osserva che:
-- Lo stipendio di ciascun impiegato è ripetuto in tutte le tuple relative a esso, generando **ridondanza**.
+- Lo stipendio di ciascun impiegato è ripetuto in tutte le tuple relative a esso, generando **ridondanza** (se l'impiegato partecipasse a 20 progetti verrebbe ripetuto 20 volte)
+- Se lo stipendio di un impiegato varia, è necessario modificare il valore in tutte le tuple corrispondenti, portando ad un **anomalia di aggiornamento**
 - 
-
 
 ## Progettazione fisica 
