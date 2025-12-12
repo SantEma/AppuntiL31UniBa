@@ -509,5 +509,7 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 Guardare il file [[Esempio di Progettazione Logica.pdf]], estratto dal libro
 ## Normalizzazione
 Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti;
-Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti. Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che
+Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
+ 
+Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
 ## Progettazione fisica 
