@@ -533,5 +533,12 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 [da finire]
 ### Forma normale di Boyce e Codd
 [da finire]
-#### Def
+#### Definizione
+[da finire]
+#### Decomposizione in forma normale
+[da finire]
+### Proprietà delle decomposizioni
+[da finire]
+####
+
 ## Progettazione fisica 
