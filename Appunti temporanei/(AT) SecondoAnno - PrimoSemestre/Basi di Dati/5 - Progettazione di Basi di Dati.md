@@ -512,4 +512,7 @@ Esistono alcune proprietà, dette **forme normali**, che certificano la qualità
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
  
 Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
+
+Facciamo un esempio con una tabella:
+![[Pasted image 20251212133424.png]]
 ## Progettazione fisica 
