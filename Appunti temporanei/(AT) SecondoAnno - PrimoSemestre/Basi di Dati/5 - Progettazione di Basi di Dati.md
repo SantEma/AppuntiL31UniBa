@@ -539,6 +539,7 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 [da finire]
 ### Proprietà delle decomposizioni
 [da finire]
-####
-
+#### Decomposizioni senza perdita
+[da finire]
+#### Conservazione delle dipendenze
 ## Progettazione fisica 
