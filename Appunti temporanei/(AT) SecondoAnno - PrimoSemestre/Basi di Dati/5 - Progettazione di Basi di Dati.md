@@ -542,4 +542,9 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 #### Decomposizioni senza perdita
 [da finire]
 #### Conservazione delle dipendenze
+[da finire]
+#### Qualità delle decomposizioni
+[da finire]
+### Terza forma normale
+[da finire]
 ## Progettazione fisica 
