@@ -1,3 +1,5 @@
 ## Basi di dati
-- [ ] Finire normalizzazione #insettimana
-- [ ] Finire progettazione fisica #todo 
+- [ ] Finire normalizzazione #settimana
+- [ ] Finire progettazione fisica #settimana 
+- [ ] Finire capitolo 5 #futuro
+- [ ] 
