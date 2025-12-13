@@ -532,10 +532,6 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 ### Dipendenze funzionali
 [da finire]
 
-|     |     |
-| --- | --- |
-|     |     |
-
 ### Forma normale di Boyce e Codd
 [da finire]
 #### Decomposizione in forma normale
