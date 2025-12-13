@@ -529,25 +529,24 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 - Gli impiegati con i relativi stipendi
 - I progetti con i relativi bilanci
 - Le partecipazioni degli impiegati ai progetti con le relative funzioni
-### Dipendenze funzionali 
-- [ ] Dipendenze funzionali  #todo
-### Forma normale di Boyce e Codd 
+### Dipendenze funzionali
+### Forma normale di Boyce e Codd
 [da finire]
-#### Decomposizione in forma normale #todo
+#### Decomposizione in forma normale
 [da finire]
-### Proprietà delle decomposizioni #todo
+### Proprietà delle decomposizioni
 [da finire]
-#### Decomposizioni senza perdita #todo
+#### Decomposizioni senza perdita
 [da finire]
-#### Conservazione delle dipendenze #todo
+#### Conservazione delle dipendenze
 [da finire]
-#### Qualità delle decomposizioni #todo
+#### Qualità delle decomposizioni
 [da finire]
-### Terza forma normale #todo
+### Terza forma normale
 [da finire]
-#### Decomposizione in terza forma normale #todo
+#### Decomposizione in terza forma normale
 [da finire]
-#### Altre forme normali #todo
+#### Altre forme normali
 [da finire]
-## Progettazione fisica  #todo
+## Progettazione fisica
 [da finire] 
