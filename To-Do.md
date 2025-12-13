@@ -3,4 +3,4 @@
 
 
 
-- [ ] Finire capitolo sulla normalizzazione #BasiDiDati ⏳2005-12-15
+- [ ] Finire capitolo sulla normalizzazione #BasiDiDati  📅2025-12-15
