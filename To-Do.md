@@ -1,7 +1,1 @@
-
-
-
-
-
-
 - [ ] Finire capitolo 5 @due(2025-12-15) 
