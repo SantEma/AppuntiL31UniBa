@@ -1,2 +1,0 @@
-- [ ] Finire capitolo 5
-- [ ] 
