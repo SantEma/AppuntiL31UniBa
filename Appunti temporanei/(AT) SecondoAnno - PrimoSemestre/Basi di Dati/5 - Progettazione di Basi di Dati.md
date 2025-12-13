@@ -530,6 +530,7 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 - I progetti con i relativi bilanci
 - Le partecipazioni degli impiegati ai progetti con le relative funzioni
 ### Dipendenze funzionali
+[da finire]
 ### Forma normale di Boyce e Codd
 [da finire]
 #### Decomposizione in forma normale
