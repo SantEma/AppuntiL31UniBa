@@ -1,3 +1,3 @@
 ## Basi di dati
-- [ ] Finire normalizzazione #todo
+- [ ] Finire normalizzazione #insettimana
 - [ ] Finire progettazione fisica #todo 
