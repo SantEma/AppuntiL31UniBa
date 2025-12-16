@@ -668,10 +668,10 @@ Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un 
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 Consideriamo l’esempio della seguente relazione:
-![[Pasted image 20251216160748.png]]
+![[Pasted image 20251216161147.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{STIPENDIO}$.
 Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{STIPENDIO}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO STIPENDIO}$ e un'altra solo sull'attributo $\text{PROGETTO}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi impiegato progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
-
+![[Pasted image 20251216160748.png]]
 #### Altre forme normali
 [da finire]
 ## Progettazione fisica
