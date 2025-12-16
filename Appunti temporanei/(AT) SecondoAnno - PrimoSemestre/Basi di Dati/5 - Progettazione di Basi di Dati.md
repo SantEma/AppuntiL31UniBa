@@ -666,7 +666,7 @@ Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipe
 La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ ha come primo membro una chiave della relazione, mentre $\text{DIRIGENTE} \to SEDE$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{PROGETTO SEDE}$.
 Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un dirigente compare in una tupla, viene ripetuta per esso la sede in cui opera. Questa ridondanza viene tollerata dalla $\text{3NF}$ perché non sarebbe possibile una decomposizione che la elimini e al tempo stesso conservi tutte le dipendenze.
 #### Decomposizione in terza forma normale
-[da finire]
+Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 #### Altre forme normali
 [da finire]
 ## Progettazione fisica
