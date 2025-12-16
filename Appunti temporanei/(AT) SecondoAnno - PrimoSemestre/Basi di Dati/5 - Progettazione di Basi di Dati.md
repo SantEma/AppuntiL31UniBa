@@ -671,7 +671,7 @@ Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216161147.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$.
 Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
-![[Pasted image 20251216160748.png]]
+![[Pasted image 20251216160748.png]]sulla quale può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$
 #### Altre forme normali
 [da finire]
 ## Progettazione fisica
