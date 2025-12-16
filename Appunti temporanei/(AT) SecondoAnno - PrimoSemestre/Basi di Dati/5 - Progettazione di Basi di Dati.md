@@ -663,7 +663,7 @@ Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipe
 - $X$ contiene una chiave $K$ di $r$
 - $A$ appartiene ad almeno una chiave di $r$
 
-La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all’esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$.
+La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ ha come primo membro una chiave della relazione, mentre $\text{DIRIGENTE} \to SEDE$, pur non contenendo
 #### Decomposizione in terza forma normale
 [da finire]
 #### Altre forme normali
