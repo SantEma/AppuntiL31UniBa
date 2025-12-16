@@ -573,7 +573,7 @@ Una dipendenza funzionale tra gli attributi $Y$ e $Z$ viene generalmente indicat
 ### Forma normale di Boyce e Codd
 Alla luce di quanto detto sulle dipendenze funzionali, l’idea fondamentale è che si possono introdurre delle proprietà dette **forme normali** che sono soddisfatte quando non ci sono anomalie.
 Negli esempi precedenti notiamo che:
-- Le dipendenze $\text{IMPIEGATO} \to \text{Stipendio}$ e $\text{Progetto} \to \text{Bilancio}$ sono causa di anomalie
+- Le dipendenze $\text{Impiegato} \to \text{Stipendio}$ e $\text{Progetto} \to \text{Bilancio}$ sono causa di anomalie
 - La dipendenza $\text{Impiegato Progetto} \to \text{Funzione}$ non lo è
 
 La differenza risiede nel fatto che $\text{Impiegato Progetto}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
@@ -601,17 +601,17 @@ Andiamo ad esaminare questa relazione:
 ![[Pasted image 20251216112645.png]]
 Tale relazione soddisfa le dipendenze funzionali:
 $$\begin{aligned}
-&\text{IMPIEGATO} \to \text{SEDE} \\
-&\text{Progetto} \to \text{SEDE}
+&\text{Impiegato} \to \text{Sede} \\
+&\text{Progetto} \to \text{Sede}
 \end{aligned}$$
 che specificano il fatto che ciascun impiegato opera presso un’unica sede e che ciascun Progetto è sviluppato presso un’unica sede. Inoltre un impiegato può partecipare a più progetti, ma questi devono essere assegnati tutti alla sede cui afferisce.
 
 Separando sulla base delle dipendenze funzionali, saremmo portati a decomporre la relazione in due parti:
-- Una relazione sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{IMPIEGATO} \to \text{SEDE}$
-- Una relazione sugli attributi $\text{Progetto}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{Progetto} \to \text{SEDE}$
+- Una relazione sugli attributi $\text{Impiegato}$ e $\text{Sede}$, in corrispondenza della dipendenza $\text{Impiegato} \to \text{Sede}$
+- Una relazione sugli attributi $\text{Progetto}$ e $\text{Sede}$, in corrispondenza della dipendenza $\text{Progetto} \to \text{Sede}$
 Quindi l'istanza iniziale verrebbe decomposta per mezzo di proiezioni sugli attributi coinvolti, nelle due relazioni come segue:
 ![[Pasted image 20251216113257.png]]
-Dopo la decomposizione, la ricostruire delle informazioni di partenza, dunque la relazione originaria a partire dalle sue proiezioni, deve essere effettuata per mezzo di un’operazione di join naturale sull'attributo comune $\text{SEDE}$, producendo la tabella seguente:
+Dopo la decomposizione, la ricostruire delle informazioni di partenza, dunque la relazione originaria a partire dalle sue proiezioni, deve essere effettuata per mezzo di un’operazione di join naturale sull'attributo comune $\text{Sede}$, producendo la tabella seguente:
 ![[Pasted image 20251216113524.png]]
 la quale contiene tutte le tuple della relazione originaria più altre tuple **spurie** (le ultime due in questa tabella), infatti l'impiegato Verdi lavora a Milano e il Progetto Saturno ha sede a Milano, ma Verdi non lavora a tale Progetto. 
 In questo caso è impossibile ricostruire tutte e sole le informazioni della relazione originaria.
@@ -620,20 +620,20 @@ Affermiamo quindi che, data una relazione $r$ su un insieme di attributi $X$, co
 
 È possibile individuare una condizione che garantisce la decomposizione senza perdita di una relazione come segue:
 Sia $r$ una relazione su $X$ e siano $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ tali che $X_{1} \bigcup X_{2} = X$; inoltre sia $X_{0} = X_{1} \bigcap X_{2}$; allora: $r$ si decompone senza perdita su $X_{1}$ e $X_{2}$ se soddisfa la dipendenza funzionale $X_{0} \to X_{1}$ oppure la dipendenza funzionale $X_{0}\to X_{2}$, oppure entrambe.
-In altre parole, la decomposizione senza perdita è garantita se gli attributi comuni formano una chiave per almeno una delle relazioni decomposte. Ciò avviene se gli attributi comuni costituiscono il primo membro di almeno una delle dipendenze su cui si effettua la decomposizione. Nell'esempio, possiamo vedere che l’intersezione degli insiemi di attributi su cui abbiamo effettuato le due proiezioni è costituita dall'attributo $\text{SEDE}$, che non è il primo membro di alcuna dipendenza funzionale, ovvero, non è chiave per nessuna delle due relazioni.
+In altre parole, la decomposizione senza perdita è garantita se gli attributi comuni formano una chiave per almeno una delle relazioni decomposte. Ciò avviene se gli attributi comuni costituiscono il primo membro di almeno una delle dipendenze su cui si effettua la decomposizione. Nell'esempio, possiamo vedere che l’intersezione degli insiemi di attributi su cui abbiamo effettuato le due proiezioni è costituita dall'attributo $\text{Sede}$, che non è il primo membro di alcuna dipendenza funzionale, ovvero, non è chiave per nessuna delle due relazioni.
 
 È opportuno notare come la condizione enunciata sia **sufficiente** ma non **necessaria** per la decomposizione senza perdita, esistono infatti istanze di relazione che non soddisfano nessuna delle due dipendenze ma al tempo stesso si decompongono senza perdita come si vede nella tabella di sopra.
 La condizione in questione garantisce che tutte le istanze di relazione che soddisfano un dato insieme di dipendenze si decompongano senza perdita, rendendolo un risultato utilizzabile in pratica:
 Ogniqualvolta che decomponiamo una relazione in due parti, se l'insieme degli attributi comuni è chiave per una delle due relazioni allora possiamo essere certi che tutte le istanze della relazione si decompongono senza perdita.
 #### Conservazione delle dipendenze
-Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{IMPIEGATO} \to \text{SEDE}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{Progetto} \to \text{SEDE}$, si otterrebbe comunque lo stesso risultato).
-Alla fine otteniamo due relazione, una sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$ e l'altra su $\text{IMPIEGATO}$ e $\text{Progetto}$, venendo rappresentata graficamente in questa maniera:
+Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{Impiegato} \to \text{Sede}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{Progetto} \to \text{Sede}$, si otterrebbe comunque lo stesso risultato).
+Alla fine otteniamo due relazione, una sugli attributi $\text{Impiegato}$ e $\text{SEDE}$ e l'altra su $\text{Impiegato}$ e $\text{Progetto}$, venendo rappresentata graficamente in questa maniera:
 ![[Pasted image 20251216145503.png]]
 Il join di queste due relazioni produce effettivamente la relazione originaria, potendo affermare di aver ottenuto una decomposizione senza perdita.
 Questa decomposizione, però, presenta un altro inconveniente:
 Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al Progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{Progetto} \to \text{SEDE}$.
 
-Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{IMPIEGATO}$ e $\text{Progetto}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{IMPIEGATO}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{IMPIEGATO} \to \text{SEDE}$.
+Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{Impiegato}$ e $\text{Progetto}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{Impiegato}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{Impiegato} \to \text{SEDE}$.
 Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{Progetto} \to SEDE$ perché i due attributi $\text{Progetto}$ e $\text{SEDE}$ sono stati separati in due relazioni diverse.
 
 In generale, il teorema afferma che una decomposizione conserva le dipendenze se ciascuna delle dipendenze funzionali dello schema originario coinvolge attributi che compaiono tutti insieme in uno degli schemi decomposti.
@@ -669,8 +669,8 @@ Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un 
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216161147.png]]
-Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{Stipendio}$.
-Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi Impiegato Progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
+Su questa può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$.
+Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
 ![[Pasted image 20251216160748.png]]
 #### Altre forme normali
 [da finire]
