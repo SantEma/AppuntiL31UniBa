@@ -566,17 +566,17 @@ Data una relazione $r$ su uno schema $R(X)$ e due sottoinsiemi di attributi non 
 Una dipendenza funzionale tra gli attributi $Y$ e $Z$ viene generalmente indicata con la notazione $Y \to Z$ e, come gli altri vincoli di integrità, viene associata ad uno schema: una relazione su quello schema verrà considerata corretta se soddisfa tale dipendenza funzionale
 #### Osservazioni
 - Se l’insieme $Z$ è composto dagli attributi $A_{1}, A_{2}, \dots , A_{k}$, allora una relazione soddisfa $Y \to Z$ se e solo se soddisfa tutte le $k$ dipendenze $Y \to A_{1}, Y \to A_{2}, \dots , Y \to A_{k}$. Di conseguenza, quando opportuno, possiamo, senza perdita di generalità, assumere che le dipendenze abbiano la forma $Y \to A$, in cui $A$ è un singolo attributo.
-- In base alla definizione data, possiamo notare che, nella nostra relazione, è verificata anche la dipendenza funzionale:$$\text{IMPIEGATO PROGETTO} \to \text{PROGETTO}$$Questa è una dipendenza funzionale **banale** in quanto asserisce una proprietà ovvia di una relazione, infatti due tuple con gli stessi valori sulla coppia di attributi $\text{IMPIEGATO PROGETTO}$, hanno ovviamente lo stesso valore sull'attributo $\text{PROGETTO}$, che è uno dei due. Diremo quindi che una dipendenza funzionale $Y \to A$ è **non banale** se $A$ non compare tra gli attributi di $Y$ .
+- In base alla definizione data, possiamo notare che, nella nostra relazione, è verificata anche la dipendenza funzionale:$$\text{Impiegato Progetto} \to \text{Progetto}$$Questa è una dipendenza funzionale **banale** in quanto asserisce una proprietà ovvia di una relazione, infatti due tuple con gli stessi valori sulla coppia di attributi $\text{Impiegato Progetto}$, hanno ovviamente lo stesso valore sull'attributo $\text{Progetto}$, che è uno dei due. Diremo quindi che una dipendenza funzionale $Y \to A$ è **non banale** se $A$ non compare tra gli attributi di $Y$ .
 - Se prendiamo una chiave $K$ di una relazione $r$, si può facilmente verificare che esiste una dipendenza funzionale tra $K$ e ogni altro attributo dello schema $r$. Questo perché, per definizione stessa di vincolo di chiave, non possono esistere due tuple con gli stessi valori su $K$ e quindi una dipendenza funzionale che ha $K$ al primo membro sarà sempre soddisfatta. 
-  Con riferimento al nostro esempio abbiamo detto che gli attributi impiegato e progetto formano una chiave. Possiamo allora affermare che, per esempio, vale la dipendenza funzionale $\text{IMPIEGATO PROGETTO} \to \text{FUNZIONE}$. In particolare esisterà una dipendenza funzionale tra una chiave di una relazione e tutti gli attributi dello schema della relazione. Nel nostro caso abbiamo che:$$\text{IMPIEGATO PROGETTO} \to \text{STIPENDIO BILANCIO FUNZIONE}$$
+  Con riferimento al nostro esempio abbiamo detto che gli attributi $\text{Impiegato}$ e $\text{Progetto}$ formano una chiave. Possiamo allora affermare che, per esempio, vale la dipendenza funzionale $\text{Impiegato Progetto} \to \text{FUNZIONE}$. In particolare esisterà una dipendenza funzionale tra una chiave di una relazione e tutti gli attributi dello schema della relazione. Nel nostro caso abbiamo che:$$\text{Impiegato Progetto} \to \text{STIPENDIO BILANCIO FUNZIONE}$$
   Possiamo quindi concludere dicendo che il vincolo di dipendenza funzionale **generalizza** il vincolo di chiave. Possiamo dire che una dipendenza funzionale c$Y\to Z$ su uno schema $R(X)$ degenera nel vincolo di chiave se l’unione di $Y$ e $Z$ è pari a $X$. In tal caso, infatti, $Y$ è (super)chiave per lo schema $R(X)$.
 ### Forma normale di Boyce e Codd
 Alla luce di quanto detto sulle dipendenze funzionali, l’idea fondamentale è che si possono introdurre delle proprietà dette **forme normali** che sono soddisfatte quando non ci sono anomalie.
 Negli esempi precedenti notiamo che:
-- Le dipendenze $\text{IMPIEGATO} \to \text{STIPENDIO}$ e $\text{PROGETTO} \to \text{BILANCIO}$ sono causa di anomalie
-- La dipendenza $\text{IMPIEGATO PROGETTO} \to \text{FUNZIONE}$ non lo è
+- Le dipendenze $\text{IMPIEGATO} \to \text{STIPENDIO}$ e $\text{Progetto} \to \text{BILANCIO}$ sono causa di anomalie
+- La dipendenza $\text{Impiegato Progetto} \to \text{FUNZIONE}$ non lo è
 
-La differenza risiede nel fatto che $\text{IMPIEGATO PROGETTO}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
+La differenza risiede nel fatto che $\text{Impiegato Progetto}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
 Possiamo quindi concludere che le ridondanze e le anomalie sono causate dalle dipendenze funzionali $X \to A$ che permettono la presenza di più tuple fra loro uguali sugli attributi di $X$, ossia sulle dipendenze $X\to A$ tali che $X$ non contiene una chiave.
 
 Questo concetto è alla base della forma normale di Boyce e Codd (BCNF), secondo la quale: una relazione $r$ è in forma normale di Boyce e Codd se per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, $X$ è superchiave per $r$
@@ -602,18 +602,18 @@ Andiamo ad esaminare questa relazione:
 Tale relazione soddisfa le dipendenze funzionali:
 $$\begin{aligned}
 &\text{IMPIEGATO} \to \text{SEDE} \\
-&\text{PROGETTO} \to \text{SEDE}
+&\text{Progetto} \to \text{SEDE}
 \end{aligned}$$
-che specificano il fatto che ciascun impiegato opera presso un’unica sede e che ciascun progetto è sviluppato presso un’unica sede. Inoltre un impiegato può partecipare a più progetti, ma questi devono essere assegnati tutti alla sede cui afferisce.
+che specificano il fatto che ciascun impiegato opera presso un’unica sede e che ciascun Progetto è sviluppato presso un’unica sede. Inoltre un impiegato può partecipare a più progetti, ma questi devono essere assegnati tutti alla sede cui afferisce.
 
 Separando sulla base delle dipendenze funzionali, saremmo portati a decomporre la relazione in due parti:
 - Una relazione sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{IMPIEGATO} \to \text{SEDE}$
-- Una relazione sugli attributi $\text{PROGETTO}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{PROGETTO} \to \text{SEDE}$
+- Una relazione sugli attributi $\text{Progetto}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{Progetto} \to \text{SEDE}$
 Quindi l'istanza iniziale verrebbe decomposta per mezzo di proiezioni sugli attributi coinvolti, nelle due relazioni come segue:
 ![[Pasted image 20251216113257.png]]
 Dopo la decomposizione, la ricostruire delle informazioni di partenza, dunque la relazione originaria a partire dalle sue proiezioni, deve essere effettuata per mezzo di un’operazione di join naturale sull'attributo comune $\text{SEDE}$, producendo la tabella seguente:
 ![[Pasted image 20251216113524.png]]
-la quale contiene tutte le tuple della relazione originaria più altre tuple **spurie** (le ultime due in questa tabella), infatti l'impiegato Verdi lavora a Milano e il progetto Saturno ha sede a Milano, ma Verdi non lavora a tale progetto. 
+la quale contiene tutte le tuple della relazione originaria più altre tuple **spurie** (le ultime due in questa tabella), infatti l'impiegato Verdi lavora a Milano e il Progetto Saturno ha sede a Milano, ma Verdi non lavora a tale Progetto. 
 In questo caso è impossibile ricostruire tutte e sole le informazioni della relazione originaria.
 
 Affermiamo quindi che, data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ la cui unione sia pari a $X$ stesso, si può decomporre senza perdita di dati sugli insiemi $X_{1}$ e $X_{2}$ se il join delle due proiezioni è uguale a $r$ stessa (ossia non contiene **spurie**). È irrinunciabile che una decomposizione effettuata al fine di normalizzare sia senza perdita.
@@ -626,15 +626,15 @@ In altre parole, la decomposizione senza perdita è garantita se gli attributi c
 La condizione in questione garantisce che tutte le istanze di relazione che soddisfano un dato insieme di dipendenze si decompongano senza perdita, rendendolo un risultato utilizzabile in pratica:
 Ogniqualvolta che decomponiamo una relazione in due parti, se l'insieme degli attributi comuni è chiave per una delle due relazioni allora possiamo essere certi che tutte le istanze della relazione si decompongono senza perdita.
 #### Conservazione delle dipendenze
-Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{IMPIEGATO} \to \text{SEDE}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{PROGETTO} \to \text{SEDE}$, si otterrebbe comunque lo stesso risultato).
-Alla fine otteniamo due relazione, una sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$ e l'altra su $\text{IMPIEGATO}$ e $\text{PROGETTO}$, venendo rappresentata graficamente in questa maniera:
+Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{IMPIEGATO} \to \text{SEDE}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{Progetto} \to \text{SEDE}$, si otterrebbe comunque lo stesso risultato).
+Alla fine otteniamo due relazione, una sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$ e l'altra su $\text{IMPIEGATO}$ e $\text{Progetto}$, venendo rappresentata graficamente in questa maniera:
 ![[Pasted image 20251216145503.png]]
 Il join di queste due relazioni produce effettivamente la relazione originaria, potendo affermare di aver ottenuto una decomposizione senza perdita.
 Questa decomposizione, però, presenta un altro inconveniente:
-Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{PROGETTO} \to \text{SEDE}$.
+Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al Progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{Progetto} \to \text{SEDE}$.
 
-Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{IMPIEGATO}$ e $\text{PROGETTO}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{IMPIEGATO}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{IMPIEGATO} \to \text{SEDE}$.
-Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{PROGETTO} \to SEDE$ perché i due attributi $\text{PROGETTO}$ e $\text{SEDE}$ sono stati separati in due relazioni diverse.
+Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{IMPIEGATO}$ e $\text{Progetto}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{IMPIEGATO}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{IMPIEGATO} \to \text{SEDE}$.
+Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{Progetto} \to SEDE$ perché i due attributi $\text{Progetto}$ e $\text{SEDE}$ sono stati separati in due relazioni diverse.
 
 In generale, il teorema afferma che una decomposizione conserva le dipendenze se ciascuna delle dipendenze funzionali dello schema originario coinvolge attributi che compaiono tutti insieme in uno degli schemi decomposti.
 #### Qualità delle decomposizioni
@@ -650,7 +650,7 @@ Possiamo vederlo tramite un esempio, consideriamo questa relazione
 ![[Pasted image 20251216151736.png]]
 Su di essa possiamo supporre che siano definite le seguenti dipendenze:
 - $\text{DIRIGENTE} \to SEDE$: ogni dirigente opera presso una sede
-- $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$: ogni progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un progetto ha un solo responsabile
+- $\text{Progetto SEDE} \to \text{DIRIGENTE}$: ogni progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un progetto ha un solo responsabile
 
 La relazione non è in forma normale di Boyce e Codd, perché: 
 - Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
@@ -670,7 +670,7 @@ Una relazione che non soddisfa la terza forma normale si decompone in relazioni 
 Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216161147.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{STIPENDIO}$.
-Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{STIPENDIO}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO STIPENDIO}$ e un'altra solo sull'attributo $\text{PROGETTO}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi impiegato progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
+Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{STIPENDIO}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO STIPENDIO}$ e un'altra solo sull'attributo $\text{PROGETTO}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi Impiegato Progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
 ![[Pasted image 20251216160748.png]]
 #### Altre forme normali
 [da finire]
