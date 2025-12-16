@@ -30,7 +30,6 @@ Possiamo a questo punto riassumere le definizioni relative al modello relazional
 - **Una istanza di relazione (o relazione)** su uno schema $R(X)$ è un insieme di $r$ tuple su $X$.
 - **Una istanza di base di dati (o base di dati)** su uno schema $R = \{R_{1}(X_{1}), R_{2}(X_{2}), \dots , R_{n}(X_{n}\}$ è un insieme di relazioni $r = \{r_{1}, r_{2},\dots , r_{n}\}$, dove ogni $r_{i}$, per $1 \leq i \leq n$, è una relazione sullo schema $R_{i}(X_{i})$.
 ![[Pasted image 20251006120215.png]]
-
 ## Valori nulli o incompleti
 Quando si aggiunge una tupla ad una relazione può non essere possibile specificare il valore di un attributo per alcune ragioni come: 
 - Valore non applicabile
@@ -47,14 +46,14 @@ Qualche esempio:
 Alcune considerazioni da fare sono:
 - Il valore nullo sulla data di nascita è ammissibile, poiché si può pensare che non sia un dato essenziale in questo contesto
 - Il valore nullo sul numero di matricola impedisce di stabilire correlazioni fra tuple di relazioni diverse.
--  La presenza di più valori nulli in una tupla può rendere inutilizzabili le altre informazioni nella tupla.
+- La presenza di più valori nulli in una tupla può rendere inutilizzabili le altre informazioni nella tupla.
 - La presenza di più valori nulli in una relazione può causare problemi sull'identitá delle tuple
 I sistemi relazionali permettono di specificare per ciascun attributo di una relazione se esso può assumere il valore nullo oppure se per esso vale il vincolo not-null e quindi non può assumere il valore nullo.
 ## Vincoli di integrità
 Non è corretto dire che qualsiasi insieme di tuple (insieme di dati) sullo schema rappresenti informazioni corrette per l'applicazione, considerando per esempio l'esempio precedente:
 ![[IMG_0010.jpg]]
-- Nella tupla ESAMI non si potrebbe avere un voto pari a 36
-- Nella tupla STUDENTI non si potrebbero avere due studenti con stessa matricola 
+- Nella tupla $\text{ESAMI}$ non si potrebbe avere un voto pari a 36
+- Nella tupla $\text{STUDENTI}$ non si potrebbero avere due studenti con stessa matricola 
 ed etc.
 
 Per poter evitare situazioni come queste viene introdotto il concetto di **vincolo di integrità** come proprietà che deve essere soddisfatta dalle istanze che rappresentano informazioni corrette per l'applicazione.

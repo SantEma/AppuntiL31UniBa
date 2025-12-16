@@ -59,13 +59,11 @@ Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicherann
 ![[Pasted image 20251007121725.png]]
 #### Selezione
 Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condizione di selezione” che possono prevedere: 
--  confronti fra attributi 
--  confronto fra attributi e costanti
+- confronti fra attributi 
+- confronto fra attributi e costanti
 - possono essere complesse (ossia ottenute combinando condizioni semplici con i connettivi logici $\land$, $\lor$, e $\neg$)
 e viene indicato con $\sigma$ a pedice
-
 ![[Pasted image 20251013083801.png]]
-
 Formalmente viene definito: 
 Data una relazione $r(X)$, una formula proposizionale $F$ su $X$ è una formula ottenuta combinando, con i connettivi $\land$, $\lor$ e $\neg$, condizioni atomiche del tipo $A \theta B$ o $A \theta c$, dove:
 - $\theta$ è un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$)
@@ -80,7 +78,6 @@ Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè ve
 Date una relazione $r(X)$ ed una formula proposizionale $F$ su $X$, la selezione $\sigma_{F}(r)$  produce una relazione su $X$ che contiene le tuple $t$ di $r$ su cui $F$ è vera:$$\sigma_{F}(r)=\{t|t\in r \land F(t)\}$$![[Pasted image 20251007122410.png]]
 #### Proiezione
 Date una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su $Y$, $\pi_{Y}(r)$, è l’insieme di tuple su $Y$ ottenute dalle tuple di $r$ considerando solo i valori su $Y$:
-
 ![[Pasted image 20251013083825.png]]
 Esempio:
 ![[Pasted image 20251007124323.png]]

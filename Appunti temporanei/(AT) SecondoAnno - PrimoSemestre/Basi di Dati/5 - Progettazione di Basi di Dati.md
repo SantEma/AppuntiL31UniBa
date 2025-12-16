@@ -6,8 +6,8 @@ Tale ciclo di vita, generalmente, comprende:
 - **Raccolta e analisi dei requisiti**: consiste nel definire precisamente il problema da risolvere e quali proprietà e funzionalità il sistema deve avere. Occorre specificare l’ambiente di realizzazione sia hardware che software.
 - **Progettazione**: in questa fase si concepisce la soluzione.
   Si divide in:
-  - Progettazione dei dati: si individua la struttura e l’organizzazione che i dati dovranno avere
-  - Progettazione delle applicazioni: si definiscono le caratteristiche dei programmi applicativi
+	- Progettazione dei dati: si individua la struttura e l’organizzazione che i dati dovranno avere
+	- Progettazione delle applicazioni: si definiscono le caratteristiche dei programmi applicativi
 - **Implementazione**: consiste nella realizzazione del sistema informatico secondo la struttura e le caratteristiche definite nella fase di progettazione
 - **Validazione e collaudo**: serve a verificare il corretto funzionamento e la qualità del sistema informativo. Il collaudo è condotto mediante prove su dati di test
 - **Funzionamento**: in questa fase il sistema informativo diventa operativo ed esegue i compiti per i quali era stato originariamente progettato. Questa fase prevede anche attività di gestione e manutenzione
@@ -132,30 +132,30 @@ La generalizzazione tra $\text{PERSONA}$, $\text{UOMO}$ e $\text{DONNA}$ in figu
 La generalizzazione tra l’entità $\text{PROFESSIONISTA}$ e le entità $\text{INGEGNERE}$ e $\text{DOTTORE}$ è invece parziale ed esclusiva, perché assumiamo che ciascun professionista abbia una sola professione principale e che vi siano altre professioni oltre a queste tre. 
 Tra l’entità $\text{PERSONA}$ e le entità $\text{STUDENTE}$ e $\text{LAVORATORE}$ esiste infine una generalizzazione parziale e sovrapposta, perché esistono studenti che sono anche lavoratori.
 
-Quest'ultimo esempio ci suggerisce che le generalizzazioni sovrapposte possono essere facilmente trasformate in generalizzazioni esclusive aggiungendo una o più entità figlie per rappresentare i concetti che costituiscono le intersezioni delle entità che si sovrappongono;
+Quest'ultimo esempio ci suggerisce che le generalizzazioni sovrapposte possono essere facilmente trasformate in generalizzazioni esclusive aggiungendo una o più entità figlie per rappresentare i concetti che costituiscono le intersezioni delle entità che si sovrappongono
 nel caso degli studenti e dei lavoratori è sufficiente aggiungere l’entità $\text{STUDENTELAVORATORE}$ per ottenere una generalizzazione esclusiva. 
 Una stessa entità può essere coinvolta in più generalizzazioni diverse e possono esserci inoltre generalizzazioni su più livelli, in questo caso si parla di **gerarchia di generalizzazioni.** 
 Nel caso in cui una generalizzazione ha una sola entità figlia si parla di **sottoinsieme**. 
 È necessario tener conto del fatto che le generalizzazioni non possiedono nomi, quindi per identificarle assumiamo che siano numerate. 
 Esistono infine altri vincoli sull'uso dei costrutti che non si possono esprimere sullo schema, per esempio il fatto che le gerarchie di generalizzazione non possono contenere cicli, oppure il fatto che una cardinalità minima non può essere maggiore della corrispondente cardinalità massima.
 ### Documentazione di schemi E-R
-Uno schema E-R non è quasi mai sufficiente, da solo, a rappresentare nel dettaglio tutti gli aspetti di un’applicazione;
+Uno schema E-R non è quasi mai sufficiente, da solo, a rappresentare nel dettaglio tutti gli aspetti di un’applicazione.
 Nel caso di schemi particolarmente complessi può accadere di non riuscire a rappresentare in maniera comprensibile ed esaustiva i vari concetti, dunque è buona norma corredare uno schema con una documentazione di supporto utile a facilitare l’interpretazione dello schema stesso e a descrivere vincoli non esprimibili nel modello E-R.
 La documentazione di supporto è costituita da un dizionario dei dati e dai vincoli di integrità sui dati.
 
 Il dizionario dei dati è composto dalle due tabelle:
 1. Entità delle tabelle, che comprende:
-   - Nome
-   - Descrizione (informale)
-   - Attributi (con eventuali descrizioni associate)
-   - Identificatori
+	- Nome
+	- Descrizione (informale)
+	- Attributi (con eventuali descrizioni associate)
+    - Identificatori
 2. Relazioni delle tabelle, che comprende:
-   - Descrizione
-   - Entità coinvolte
-   - Attributi
+	- Descrizione
+	- Entità coinvolte
+	- Attributi
 
 Il dizionario dei dati è utile soprattutto quando lo schema è complesso e risulta pesante aggiungere allo schema tutti gli attributi di entità e relazioni. 
-Le regole che descrivono i vincoli di integrità possono essere espresse sotto forma di **asserzioni**, ovvero affermazioni che devono sempre essere verificate nella base di dati che si sta progettando;
+Le regole che descrivono i vincoli di integrità possono essere espresse sotto forma di **asserzioni**, ovvero affermazioni che devono sempre essere verificate nella base di dati che si sta progettando.
 Le asserzioni vanno enunciate in maniera dichiarativa, in una forma quindi che non suggerisca un metodo per soddisfarle, per esempio notazioni del tipo “se allora ” non sono adatte ad esprimere regole aziendali, quando queste documentano uno schema E-R. 
 Una struttura per enunciare regole aziendali sotto forma di asserzioni potrebbe essere invece la seguente:
 $$\text{<concetto> deve/non deve <espressione sui concetti>}$$
@@ -240,9 +240,9 @@ Nella costruzione di uno schema concettuale vanno garantite alcune proprietà ge
 - **Leggibilità**: Uno schema è leggibile quando rappresenta i requisiti in maniera naturale e facilmente comprensibile.
   Per questa proprietà è necessario rendere lo schema autoesplicativo, per esempio con la scelta dei nomi da dare ai concetti.
   Alcuni suggerimenti per renderlo più leggibili possono essere:
-  - Riporre i costrutti su una griglia scegliendo come elementi centrali quelli con più legami
-  - Tracciare solo linee perpendicolari e cercare di minimizzare le intersezioni
-  - Disporre le entità che sono genitori di generalizzazioni sopra le relative entità figlie
+	- Riporre i costrutti su una griglia scegliendo come elementi centrali quelli con più legami
+	- Tracciare solo linee perpendicolari e cercare di minimizzare le intersezioni
+	- Disporre le entità che sono genitori di generalizzazioni sopra le relative entità **figlie**
 - **Minimalità**: uno schema è minimale quando tutte le specifiche dei dati sono rappresentate una volta nello schema.
   Quindi non vi è minimale quando ci sono ridondanze, ma quest'ultima potrebbe non essere indesiderata ma voluta per scelte progettuali desiderate
 ### Metodologia generale
@@ -350,7 +350,8 @@ Supponiamo inoltre che per questa applicazione i dati di carico siano quelli rip
 ![[Pasted image 20251208113020.png]]
 Individuato l’attributo $\text{Numero abitanti}$ come dato ridondante, proviamo a valutare gli indici di prestazione in caso di presenza del dato ridondante. 
 Assumendo che il numero degli abitanti di una città richieda 4 byte, abbiamo che il dato ridondante richiede $4 \times 200 = 800$ byte di memoria aggiuntiva. 
-Passiamo ora alla stima del costo delle operazioni; per farlo si generano le tabelle degli accessi in figura, dalle quali si evince che l’operazione 1 ha un costo unitario pari a 7 in presenza di ridondanza e pari a 4 in assenza di ridondanza, l’operazione 2 ha costo unitario rispettivamente 1 e 5001. 
+Passiamo ora alla stima del costo delle operazioni: 
+Per farlo si generano le tabelle degli accessi in figura, dalle quali si evince che l’operazione 1 ha un costo unitario pari a 7 in presenza di ridondanza e pari a 4 in assenza di ridondanza, l’operazione 2 ha costo unitario rispettivamente 1 e 5001. 
 A questo punto, tenendo conto delle frequenze, si ottiene che il sistema presenta:
 1. $7 \times 500 +1 \times 2 = 3502$ accessi totali in presenza di ridondanza
 2. $4 \times 500 + 5001 \times 2 = 12002$ accessi assenti in presenza di ridondanza
@@ -367,7 +368,7 @@ Prenderemo in esempio questo schema:
 Per rappresentare una generalizzazione mediante entità e associazioni abbiamo essenzialmente tre alternative possibili:
 1. **Accorpamento delle figlie nel genitore**. Le entità $E_{1}$ e $E_{2}$ sono eliminate e le loro proprietà (attributi, associazioni, generalizzazioni) sono aggiunte al padre $E_{0}$. All'entità padre viene aggiunto un attributo per distinguere il tipo di occorrenza di $E_{0}$, cioè se tale occorrenza apparteneva a $E_{1}$  o a $E_{2}$ o, nel caso di generalizzazione parziale, a nessuna delle due. In riferimento al primo schema, si osservi che gli attributi $A_{11}$ e $A_{12}$ possono assumere valori nulli per alcune occorrenze di $E_{0}$ e che la relazione $R_{2}$ avrà una cardinalità minima pari a 0 sull'entità $E_{0}$.![[Pasted image 20251208115904.png]]
 2. **Accorpamento del genitore nelle figlie**. Si elimina l’entità genitore $E_{0}$. Per l’ereditarietà, gli attributi di $E_{0}$, il suo identificatore e le relazioni cui partecipava, sono aggiunti alle figlie $E_{1}$ e $E_{2}$. Le relazioni $R_{11}$ ed $R_{12}$ rappresentano la restrizione della relazione $R_{1}$ sulla occorrenze di $E_{1}$ ed $E_{2}$. La cardinalità delle associazioni presenti non vengono alterate.![[Pasted image 20251208120102.png]]
-3. **Sostituzione delle generalizzazioni con associazioni**. La generalizzazione si trasforma in due associazioni uno a uno che legano rispettivamente l’entità genitore con le entità figlie $E_{1}$ e $E_{2}$. Non ci sono trasferimenti di attributi o associazioni e le entità $E_{1}$ ed $E_{2}$ sono identificate esternamente dall'entità $E_{0}$. Nello schema ottenuto vanno aggiunti però dei vincoli: ogni occorrenza di $E_{0}$ non può partecipare contemporaneamente a $R_{G1}$ e $R_{G2}$; inoltre, se la generalizzazione è totale, ogni occorrenza di $E_{0}$ deve partecipare o a un’occorrenza di $R_{G1}$ oppure ad un’occorrenza di $R_{G2}$.![[Pasted image 20251208120409.png]]
+3. **Sostituzione delle generalizzazioni con associazioni**. La generalizzazione si trasforma in due associazioni uno a uno che legano rispettivamente l’entità genitore con le entità figlie $E_{1}$ e $E_{2}$. Non ci sono trasferimenti di attributi o associazioni e le entità $E_{1}$ ed $E_{2}$ sono identificate esternamente dall'entità $E_{0}$. Nello schema ottenuto vanno aggiunti però dei vincoli: ogni occorrenza di $E_{0}$ non può partecipare contemporaneamente a $R_{G1}$ e $R_{G2}$. Inoltre, se la generalizzazione è totale, ogni occorrenza di $E_{0}$ deve partecipare o a un’occorrenza di $R_{G1}$ oppure ad un’occorrenza di $R_{G2}$.![[Pasted image 20251208120409.png]]
 
 La scelta fra le alternative si può effettuare dopo un’analisi quantitativa, analogamente all'analisi delle ridondanze, oppure in seguito ad un’analisi qualitativa che tenga conto di semplici regole generali:
 - La prima conviene quando le operazioni non fanno molta distinzione fra occorrenze e attributi di $E_{0}$, $E_{1}$ e $E_{2}$. Pur generando uno spreco di memoria per la presenza di valori nulli, induce un minor numero di accessi
@@ -405,59 +406,75 @@ Facciamo riferimento a una versione semplificata del modello E-R, che non contie
 Affrontiamo il problema della traduzione caso per caso, iniziando dal caso più generale (quello di entità legate da associazioni molti a molti) che ci suggerisce l’idea generale su cui si basa la metodologia di traduzione.
 #### Associazioni molti a molti ($N:N$) 
 Consideriamo lo schema in figura, la sua traduzione naturale nel modello relazionale prevede:
-* per ogni entità, una relazione con lo stesso nome avente per attributi i medesimi attributi dell’entità e per chiave il suo identificatore;
-* per l’associazione, una relazione con lo stesso nome avente per attributi gli attributi dell’associazione e gli identificatori delle entità coinvolte; tali identificatori formano la chiave della relazione.
+* Per ogni entità, una relazione con lo stesso nome avente per attributi i medesimi attributi dell’entità e per chiave il suo identificatore;
+* Per l’associazione, una relazione con lo stesso nome avente per attributi gli attributi dell’associazione e gli identificatori delle entità coinvolte, tali identificatori formano la chiave della relazione.
 
 Se gli attributi originali di entità o associazioni sono opzionali, i corrispondenti attributi di relazione possono assumere valori nulli.
 ![[Pasted image 20251209142951.png]]
 Lo schema relazionale che si ottiene è il seguente:
-$$\text{IMPIEGATO} (\underline{\text{Matricola}}, \text{Cognome}, \text{Stipendio})$$
-$$\text{PROGETTO} (\underline{\text{Codice}}, \text{Nome}, \text{Budget})$$
-$$\text{PARTECIPAZIONE} (\underline{\text{Matricola}}, \underline{\text{Codice}}, \text{DataInizio})$$
+$$\begin {aligned}
+&\text{IMPIEGATO} (\underline{\text{Matricola}}, \text{Cognome}, \text{Stipendio}) \\
+
+&\text{PROGETTO} (\underline{\text{Codice}}, \text{Nome}, \text{Budget}) \\
+
+&\text{PARTECIPAZIONE} (\underline{\text{Matricola}}, \underline{\text{Codice}}, \text{DataInizio}) \\
+\end{aligned}$$
 Vanno sempre specificati i **vincoli di integrità referenziale** presenti tra gli schemi creati. Nel caso in esempio esistono due vincoli tra gli attributi $\text{Matricola}$ e $\text{Codice}$ di $\text{PARTECIPAZIONE}$ e gli omonimi attributi delle entità $\text{IMPIEGATO}$ e $\text{PROGETTO}$.
 Per rendere più comprensibile il significato dello schema è conveniente effettuare alcune ridenominazioni, ad esempio:
 $$\text{PARTECIPAZIONE} (\underline{\text{Impiegato}}, \underline{\text{Progetto}}, \text{DataInizio})$$
 La ridenominazione è essenziale in presenza di associazioni ricorsive
 ![[Pasted image 20251209143021.png]]
 Questo schema si traduce nelle seguenti due relazioni: 
-$$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Nome}, \text{Costo})$$
-$$\text{COMPOSIZIONE} (\underline{\text{Composto}}, \underline{\text{Componente}}, \text{Quantità})$$
-
+$$\begin{aligned}
+&\text{PRODOTTO} (\underline{\text{Codice}}, \text{Nome}, \text{Costo})\\
+&\text{COMPOSIZIONE} (\underline{\text{Composto}}, \underline{\text{Componente}}, \text{Quantità})
+\end{aligned}$$
 Esistono vincoli di integrità referenziale tra gli attributi $\text{Composto}$ e $\text{Componente}$ di $\text{COMPOSIZIONE}$ e la chiave di $\text{PRODOTTO}$.
 
 Le associazioni con più di due entità partecipanti si traducono in maniera analoga alle associazioni binarie.
 ![[Pasted image 20251209143056.png]]
 Lo schema in figura si traduce nelle seguenti tre relazioni:
-$$\text{FORNITORE} (\underline{\text{PartitaIVA}}, \text{NomeDitta})$$
-$$\text{PRODOTTO} (\underline{\text{Codice}}, \text{Genere}) \ \text{DIPARTIMENTO}(\underline{\text{Nome}}, \text{Telefono})$$ 
-$$\text{FORNITURA} (\underline{\text{Fornitore}}, \underline{\text{Prodotto}}, \underline{\text{Dipartimento}}, \text{Quantità})$$
+$$\begin{aligned}
+&\text{FORNITORE} (\underline{\text{PartitaIVA}}, \text{NomeDitta}) \\
 
+&\text{PRODOTTO} (\underline{\text{Codice}}, \text{Genere}) \ \text{DIPARTIMENTO}(\underline{\text{Nome}}, \text{Telefono}) \\
+
+&\text{FORNITURA} (\underline{\text{Fornitore}}, \underline{\text{Prodotto}}, \underline{\text{Dipartimento}}, \text{Quantità}) \\
+\end{aligned}$$
 #### Associazioni uno a molti $(1:N)$
 Consideriamo lo schema in figura.
 ![[Pasted image 20251209144425.png]]
 Secondo la regola vista per le associazioni molti a molti, la traduzione di questo schema dovrebbe essere la seguente:
+$$\begin{aligned}
+&\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}) \\ 
+&\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \underline{\text{Squadra}}, \text{Ingaggio}) \\
+&\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali}) \\
+\end{aligned}$$
 
-$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
-$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \underline{\text{Squadra}}, \text{Ingaggio})$$
-$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
-Ma la traduzione appena vista non è la più corretta. Infatti, essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$.
+Ma la traduzione appena vista non è la più corretta, infatti essendo una relazione di tipo uno a molti, per identificare univocamente una squadra è sufficiente l'id di $\text{GIOCATORE}$.
 Ottenendo in questo modo una nuova traduzione:
-
-$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo})$$
-$$\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio})$$
-$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
+$$\begin{aligned}
+&\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}) \\ 
+&\text{CONTRATTO} (\underline{\text{CognGiocatore}}, \underline{\text{DataNascG}}, \text{Squadra}, \text{Ingaggio}) \\
+&\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali}) \\
+\end{aligned}$$
 Ancora una volta, notiamo che nella relazione $\text{CONTRATTO}$, la chiave è costituita solo dall'identificatore di $\text{GIOCATORE}$ perché le cardinalità dell’associazione ci dicono che ogni giocatore ha un contratto con una sola squadra. A questo punto le relazioni $\text{GIOCATORE}$ e $\text{CONTRATTO}$ hanno la stessa chiave, quindi si possono fondere in un’unica relazione. 
 Si preferisce, dunque, la traduzione che segue, nella quale la relazione $\text{GIOCATORE}$ rappresenta sia l’entità relativa sia l’associazione dello schema E-R originale:
-$$\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}, \text{Squadra}, \text{Ingaggio})$$
-$$\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})$$
+$$\begin{aligned}
+&\text{GIOCATORE} (\underline{\text{Cognome}}, \underline{\text{DataNascita}}, \text{Ruolo}, \text{Squadra}, \text{Ingaggio})\\
+&\text{SQUADRA} (\underline{\text{Nome}}, \text{Città}, \text{ColoriSociali})
+\end{aligned}$$
 con vincolo di integrità referenziale fra Squadra in $\text{GIOCATORE}$ e la chiave di $\text{SQUADRA}$.
 Se la cardinalità minima dell'associazione è zero, allora $\text{SQUADRA}$ e $\text{INGAGGIO}$ in $\text{GIOCATORE}$ devono ammettere valore nullo.
 #### Entità con identificatore esterno
 Le entità con identificatori esterni danno luogo a relazioni con chiavi che includono gli identificatori delle entità identificanti.
 ![[Pasted image 20251209144538.png]]
 Per esempio, una traduzione per lo schema in figura potrebbe essere il seguente:
-$$\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità}}, \text{Cognome}, \text{AnnoIscrizione})$$
-$$\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})$$
+$$\begin{aligned}
+&\text{STUDENTE}(\underline{\text{Matricola}}, \underline{\text{NomeUniversità}}, \text{Cognome}, \text{AnnoIscrizione}) \\
+&\text{UNIVERSITÀ} (\underline{\text{Nome}}, \text{Città}, \text{Indirizzo})
+\end{aligned}
+$$
 con vincolo di integrità referenziale tra l'attributo $\text{NomeUniversità}$ della relazione $\text{STUDENTE}$ e l'attributo $\text{Nome}$ dell'entità $\text{UNIVERSITÀ}$.
 Come si può vedere, rappresentando l'identificatore esterno si rappresenta direttamente anche l'associazione tra le due entità. Ricordiamo, infatti, che le entità identificate esternamente partecipano all'associazione sempre con cardinalità minima e massima pari a uno.
 #### Associazioni uno a uno $(1:1)$
@@ -465,28 +482,38 @@ Per le associazioni uno a uno esistono diverse possibilità di traduzione sulla 
 Cominciamo a vedere le associazioni uno a uno con partecipazione obbligatoria per entrambe le entità, come in figura:
 ![[Pasted image 20251209153301.png]]
 In questo caso abbiamo due tipi di traduzioni completamente simmetriche:
-$$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}, \text{DipartimentoDiretto}, \text{InizioDirezione})$$
-$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
+$$\begin{aligned}
+&\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}, \text{DipartimentoDiretto}, \text{InizioDirezione}) \\
+&\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})
+\end{aligned}
+$$
 con vincolo di integrità referenziale tra l'attributo $\text{DipartimentoDiretto}$ di $\text{DIRETTORE}$ e $\text{Nome}$ di $\text{DIPARTIMENTO}$.
 Oppure
-$$\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
-$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
-
+$$\begin{aligned}
+&\text{DIRETTORE} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}) \\
+&\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})
+\end{aligned}$$
 con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIPARTIMENTO}$ e l'attributo $\text{Codice}$ della relazione $\text{DIRETTORE}$.
 Trattandosi di una relazione biunivoca, si potrebbe pensare di rappresentare tutti i concetti in un'unica relazione contenente tutti gli attributi in gioco. Questa alternativa è da escludere perché se ci fosse stato un valido motivo si sarebbe già ristrutturato lo schema E-R in modo da accorpare le due entità.
 
 Consideriamo ora il caso di associazione uno a uno con **partecipazione opzional**e per una sola entità, come mostrato in figura.
 ![[Pasted image 20251210105819.png]]
 In questo caso abbiamo una soluzione preferibile, ovvero la seguente:
-$$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
-$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})$$
+$$\begin{aligned}
+&\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}) \\
+&\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}, \text{Direttore}, \text{InizioDirezione})
+\end{aligned}
+$$
 con vincolo di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIPARTIMENTO}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$.
 
-Consideriamo infine il caso in cui entrambe le entità hanno partecipazione opzionale, come nel caso in figura, dove però possono esistere dipartimenti senza direttori, e quindi la cardinalità dell'entità $\text{DIPARTIMENTO}$ diventa $(0,1);
+Consideriamo infine il caso in cui entrambe le entità hanno partecipazione opzionale, come nel caso in figura, dove però possono esistere dipartimenti senza direttori, e quindi la cardinalità dell'entità $\text{DIPARTIMENTO}$ diventa $(0,1).
 In questo caso esiste un ulteriore possibilità che prevede tre relazioni separate:
-$$\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio})$$
-$$\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede})$$
-$$\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})$$
+$$\begin{aligned}
+&\text{IMPIEGATO} (\underline{\text{Codice}}, \text{Cognome}, \text{Stipendio}) \\
+&\text{DIPARTIMENTO} (\underline{\text{Nome}}, \text{Telefono}, \text{Sede}) \\
+&\text{DIREZIONE} (\underline{\text{Direttore}}, \underline{\text{Dipartimento}}, \text{DataInizioDirezione})
+\end{aligned}
+$$
 
 con vincoli di integrità referenziale tra l'attributo $\text{Direttore}$ di $\text{DIREZIONE}$ e l'attributo $\text{Codice}$ di $\text{IMPIEGATO}$ e tra l'attributo $\text{Dipartimento}$ di $\text{DIREZIONE}$ e l'attributo $\text{Nome}$ di $\text{DIPARTIMENTO}$.
 #### Documentazione di schemi logici
@@ -508,7 +535,7 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 #### Esempio di progettazione logica
 Guardare il file [[Esempio di Progettazione Logica.pdf]], estratto dal libro
 ## Normalizzazione
-Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti;
+Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti.
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
  
 Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
@@ -530,21 +557,104 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 - I progetti con i relativi bilanci
 - Le partecipazioni degli impiegati ai progetti con le relative funzioni
 ### Dipendenze funzionali
-[da finire]
+Per poter studiare in maniera sistematica i concetti introdotti formalmente nel paragrafo precedente è necessario fare uso delle **dipendenze funzionali**:
+Si trattano di particolari vincoli di integrità per il modello relazionale che descrive legami di tipo funzionale tra gli attributi di una relazione.
+Riconsiderando l'esempio precedente con la relazione in figura, abbiamo osservato che lo stipendio di ciascun impiegato è unico e quindi, ogni volta che in una tupla della relazione compare un certo impiegato, il valore del suo stipendio rimane sempre lo stesso.
+Possiamo dunque dire che il valore dell’attributo $\text{IMPIEGATO}$ determina il valore dell’attributo $\text{STIPENDIO}$ o, in maniera più precisa, che esiste una funzione che associa a ogni elemento del dominio dell’attributo impiegato un solo elemento del dominio dell’attributo stipendio.
+#### Formalizzazione
+Data una relazione $r$ su uno schema $R(X)$ e due sottoinsiemi di attributi non vuoti $Y$ e $Z$ di $X$, diremo che esiste su $r$ una dipendenza funzionale tra $Y$ e $Z$ se, per ogni coppia di tuple $t_{1}$ e $t_{2}$ di $r$ aventi gli stessi valori sugli attributi $Y$, risulta che $t_{1}$ e $t_{2}$ hanno gli stessi valori anche sugli attributi $Z$.
+Una dipendenza funzionale tra gli attributi $Y$ e $Z$ viene generalmente indicata con la notazione $Y \to Z$ e, come gli altri vincoli di integrità, viene associata ad uno schema: una relazione su quello schema verrà considerata corretta se soddisfa tale dipendenza funzionale
+#### Osservazioni
+- Se l’insieme $Z$ è composto dagli attributi $A_{1}, A_{2}, \dots , A_{k}$, allora una relazione soddisfa $Y \to Z$ se e solo se soddisfa tutte le $k$ dipendenze $Y \to A_{1}, Y \to A_{2}, \dots , Y \to A_{k}$. Di conseguenza, quando opportuno, possiamo, senza perdita di generalità, assumere che le dipendenze abbiano la forma $Y \to A$, in cui $A$ è un singolo attributo.
+- In base alla definizione data, possiamo notare che, nella nostra relazione, è verificata anche la dipendenza funzionale:$$\text{IMPIEGATO PROGETTO} \to \text{PROGETTO}$$Questa è una dipendenza funzionale **banale** in quanto asserisce una proprietà ovvia di una relazione, infatti due tuple con gli stessi valori sulla coppia di attributi $\text{IMPIEGATO PROGETTO}$, hanno ovviamente lo stesso valore sull'attributo $\text{PROGETTO}$, che è uno dei due. Diremo quindi che una dipendenza funzionale $Y \to A$ è **non banale** se $A$ non compare tra gli attributi di $Y$ .
+- Se prendiamo una chiave $K$ di una relazione $r$, si può facilmente verificare che esiste una dipendenza funzionale tra $K$ e ogni altro attributo dello schema $r$. Questo perché, per definizione stessa di vincolo di chiave, non possono esistere due tuple con gli stessi valori su $K$ e quindi una dipendenza funzionale che ha $K$ al primo membro sarà sempre soddisfatta. 
+  Con riferimento al nostro esempio abbiamo detto che gli attributi impiegato e progetto formano una chiave. Possiamo allora affermare che, per esempio, vale la dipendenza funzionale $\text{IMPIEGATO PROGETTO} \to \text{FUNZIONE}$. In particolare esisterà una dipendenza funzionale tra una chiave di una relazione e tutti gli attributi dello schema della relazione. Nel nostro caso abbiamo che:$$\text{IMPIEGATO PROGETTO} \to \text{STIPENDIO BILANCIO FUNZIONE}$$
+  Possiamo quindi concludere dicendo che il vincolo di dipendenza funzionale **generalizza** il vincolo di chiave. Possiamo dire che una dipendenza funzionale c$Y\to Z$ su uno schema $R(X)$ degenera nel vincolo di chiave se l’unione di $Y$ e $Z$ è pari a $X$. In tal caso, infatti, $Y$ è (super)chiave per lo schema $R(X)$.
 ### Forma normale di Boyce e Codd
-[da finire]
-#### Decomposizione in forma normale
-[da finire]
+Alla luce di quanto detto sulle dipendenze funzionali, l’idea fondamentale è che si possono introdurre delle proprietà dette **forme normali** che sono soddisfatte quando non ci sono anomalie.
+Negli esempi precedenti notiamo che:
+- Le dipendenze $\text{IMPIEGATO} \to \text{STIPENDIO}$ e $\text{PROGETTO} \to \text{BILANCIO}$ sono causa di anomalie
+- La dipendenza $\text{IMPIEGATO PROGETTO} \to \text{FUNZIONE}$ non lo è
+
+La differenza risiede nel fatto che $\text{IMPIEGATO PROGETTO}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
+Possiamo quindi concludere che le ridondanze e le anomalie sono causate dalle dipendenze funzionali $X \to A$ che permettono la presenza di più tuple fra loro uguali sugli attributi di $X$, ossia sulle dipendenze $X\to A$ tali che $X$ non contiene una chiave.
+
+Questo concetto è alla base della forma normale di Boyce e Codd (BCNF), secondo la quale: una relazione $r$ è in forma normale di Boyce e Codd se per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, $X$ è superchiave per $r$
+#### Decomposizione in forma normale di Boyce e Codd
+Data una relazione che non soddisfa la forma normale di Boyce e Codd è possibile, in molti casi, sostituirla con due o più relazioni normalizzate attraverso un processo detto di **normalizzazione**. 
+Questo processo si fonda su un semplice criterio: 
+Se una relazione rappresenta più concetti indipendenti, allora va decomposta in relazioni più piccole, una per ogni concetto. 
+
+Ora, riprendiamo in esempio sempre la tabella iniziale vista in [[#Normalizzazione]], per mezzo di proiezioni sugli insiemi di attributi (rispettivamente corrispondenti ai tre concetti prima menzionati) eliminiamo le ridondanze.
+Alla fine di questo processo otterremo le seguenti tabelle:
+![[Pasted image 20251216103601.png]]
+Le tre relazioni ora sono in forma normale di Boyce e Codd.
+Si osservi che  abbiamo costruito le relazioni in modo che a ciascuna dipendenza corrisponda una diversa relazione la cui chiave è proprio il primo membro della dipendenza stessa.
+In tal modo il soddisfacimento della forma normale di Boyce e Codd è garantito per la definizione stessa di tale forma normale.
 ### Proprietà delle decomposizioni
-[da finire]
+Nell'esempio appena visto, la separazione delle dipendenze è stata facilitata dalla struttura delle dipendenze stesse, “naturalmente” separate ed indipendenti l'una dall'altra. Purtroppo questa procedura non è valida in generale, infatti basare le decomposizioni sulle dipendenze funzionali può essere non necessario o non possibile, inoltre individuare le dipendenze funzionali utili ai fini della decomposizione può essere difficile. Per questo è necessario individuare delle proprietà generalmente valide, che devono essere soddisfatte da una buona normalizzazione. 
+Tali proprietà sono le seguenti:
+- Decomposizione senza perdita
+- Conservazione delle dipendenze
 #### Decomposizioni senza perdita
-[da finire]
+Andiamo ad esaminare questa relazione:
+![[Pasted image 20251216112645.png]]
+Tale relazione soddisfa le dipendenze funzionali:
+$$\begin{aligned}
+&\text{IMPIEGATO} \to \text{SEDE} \\
+&\text{PROGETTO} \to \text{SEDE}
+\end{aligned}$$
+che specificano il fatto che ciascun impiegato opera presso un’unica sede e che ciascun progetto è sviluppato presso un’unica sede. Inoltre un impiegato può partecipare a più progetti, ma questi devono essere assegnati tutti alla sede cui afferisce.
+
+Separando sulla base delle dipendenze funzionali, saremmo portati a decomporre la relazione in due parti:
+- Una relazione sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{IMPIEGATO} \to \text{SEDE}$
+- Una relazione sugli attributi $\text{PROGETTO}$ e $\text{SEDE}$, in corrispondenza della dipendenza $\text{PROGETTO} \to \text{SEDE}$
+Quindi l'istanza iniziale verrebbe decomposta per mezzo di proiezioni sugli attributi coinvolti, nelle due relazioni come segue:
+![[Pasted image 20251216113257.png]]
+Dopo la decomposizione, la ricostruire delle informazioni di partenza, dunque la relazione originaria a partire dalle sue proiezioni, deve essere effettuata per mezzo di un’operazione di join naturale sull'attributo comune $\text{SEDE}$, producendo la tabella seguente:
+![[Pasted image 20251216113524.png]]
+la quale contiene tutte le tuple della relazione originaria più altre tuple **spurie** (le ultime due in questa tabella), infatti l'impiegato Verdi lavora a Milano e il progetto Saturno ha sede a Milano, ma Verdi non lavora a tale progetto. 
+In questo caso è impossibile ricostruire tutte e sole le informazioni della relazione originaria.
+
+Affermiamo quindi che, data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ la cui unione sia pari a $X$ stesso, si può decomporre senza perdita di dati sugli insiemi $X_{1}$ e $X_{2}$ se il join delle due proiezioni è uguale a $r$ stessa (ossia non contiene **spurie**). È irrinunciabile che una decomposizione effettuata al fine di normalizzare sia senza perdita.
+
+È possibile individuare una condizione che garantisce la decomposizione senza perdita di una relazione come segue:
+Sia $r$ una relazione su $X$ e siano $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ tali che $X_{1} \bigcup X_{2} = X$; inoltre sia $X_{0} = X_{1} \bigcap X_{2}$; allora: $r$ si decompone senza perdita su $X_{1}$ e $X_{2}$ se soddisfa la dipendenza funzionale $X_{0} \to X_{1}$ oppure la dipendenza funzionale $X_{0}\to X_{2}$, oppure entrambe.
+In altre parole, la decomposizione senza perdita è garantita se gli attributi comuni formano una chiave per almeno una delle relazioni decomposte. Ciò avviene se gli attributi comuni costituiscono il primo membro di almeno una delle dipendenze su cui si effettua la decomposizione. Nell'esempio, possiamo vedere che l’intersezione degli insiemi di attributi su cui abbiamo effettuato le due proiezioni è costituita dall'attributo $\text{SEDE}$, che non è il primo membro di alcuna dipendenza funzionale, ovvero, non è chiave per nessuna delle due relazioni.
+
+È opportuno notare come la condizione enunciata sia **sufficiente** ma non **necessaria** per la decomposizione senza perdita, esistono infatti istanze di relazione che non soddisfano nessuna delle due dipendenze ma al tempo stesso si decompongono senza perdita come si vede nella tabella di sopra.
+La condizione in questione garantisce che tutte le istanze di relazione che soddisfano un dato insieme di dipendenze si decompongano senza perdita, rendendolo un risultato utilizzabile in pratica:
+Ogniqualvolta che decomponiamo una relazione in due parti, se l'insieme degli attributi comuni è chiave per una delle due relazioni allora possiamo essere certi che tutte le istanze della relazione si decompongono senza perdita.
 #### Conservazione delle dipendenze
-[da finire]
+Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{IMPIEGATO} \to \text{SEDE}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{PROGETTO} \to \text{SEDE}$, si otterrebbe comunque lo stesso risultato).
+Alla fine otteniamo due relazione, una sugli attributi $\text{IMPIEGATO}$ e $\text{SEDE}$ e l'altra su $\text{IMPIEGATO}$ e $\text{PROGETTO}$, venendo rappresentata graficamente in questa maniera:
+![[Pasted image 20251216145503.png]]
+Il join di queste due relazioni produce effettivamente la relazione originaria, potendo affermare di aver ottenuto una decomposizione senza perdita.
+Questa decomposizione, però, presenta un altro inconveniente:
+Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{PROGETTO} \to \text{SEDE}$.
+
+Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{IMPIEGATO}$ e $\text{PROGETTO}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{IMPIEGATO}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{IMPIEGATO} \to \text{SEDE}$.
+Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{PROGETTO} \to SEDE$ perché i due attributi $\text{PROGETTO}$ e $\text{SEDE}$ sono stati separati in due relazioni diverse.
+
+In generale, il teorema afferma che una decomposizione conserva le dipendenze se ciascuna delle dipendenze funzionali dello schema originario coinvolge attributi che compaiono tutti insieme in uno degli schemi decomposti.
 #### Qualità delle decomposizioni
-[da finire]
+In sintesi, a partire da uno schema non normalizzato, se ne ottiene uno normalizzato valido, se la decomposizione è:
+- **Senza perdite**, ovvero, garantisce la ricostruzione di tutte e sole le informazioni presenti nella relazione originaria a partire dalle informazioni rappresentate nelle relazioni decomposte
+- **Conserva le dipendenze**, ovvero, garantisce il mantenimento dei vincoli di integrità originari e, quindi, permetta di rilevare aggiornamenti illeciti.
+
+Di conseguenza considereremo accettabili solo le decomposizioni che soddisfano queste due proprietà.
 ### Terza forma normale
-[da finire]
+#### Limitazioni della forma normale di Boyce e Codd
+Nella maggior parte dei casi si può raggiungere l'obbiettivo di una buona decomposizione in forma normale di Boyce e Codd, talvolta però questo non è possibile.
+Possiamo vederlo tramite un esempio, consideriamo questa relazione
+![[Pasted image 20251216151736.png]]
+Su di essa possiamo supporre che siano definite le seguenti dipendenze:
+- $\text{DIRIGENTE} \to SEDE$: ogni dirigente opera presso una sede
+- $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$: ogni progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un progetto ha un solo responsabile
+
+La relazione non è in forma normale di Boyce e Codd, perché: 
+- Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
+- La dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
 #### Decomposizione in terza forma normale
 [da finire]
 #### Altre forme normali

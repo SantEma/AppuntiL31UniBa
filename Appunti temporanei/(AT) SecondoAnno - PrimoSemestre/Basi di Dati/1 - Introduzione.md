@@ -54,7 +54,6 @@ Sempre nell'esempio dell'università troviamo:
 | Incarichi Insegnamento Docenti | Assegnazione di un nuovo insegnamento ad un docente | Codice Insegnamento, Nome Insegnamento, a.a. di attivazione, Docente affidatario |
 | Personale                      | Assunzione nuovo Docente                            | Matr. Docente, CF, Nome Cognome, Indirizzo, posizione accademica                 |
 | Amministrazione Sito Web       | Pubblicazione insegnamenti per il nuovo a.a.        | Nome insegnamento, Programma, Nome Docente, Numero Stanza                        |
-
 Tipicamente gli eventi posso determinare una nuova informazione o la morte di un dato.
 ### Sistemi Informatici Settoriali
 Si stabiliscono tra i settori flussi di informazioni che permettono ad ogni settore di procurarsi i dati di interesse dal settore originante, di conseguenza accade:
@@ -100,16 +99,15 @@ Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di
 L'interruzione di transazione causa l'attivazione di procedure ripristino o recovery (riportano il DB allo stato corretto precedente al malfunzionamento)
 ##### Integrità
 I DBMS prevedono anche meccanismi per controllare che i dati inseriti, o modificati, siano conformi alle definizioni nello schema per garantire sempre la consistenza del DB
-
 I linguaggi per la definizione dello schema logico consentono di definire le condizioni cui i dati devono sottostare per essere significativi (vincoli d’integrità), e cosa fare in caso di violazioni.
 ![[Pasted image 20251001093300.png]]
 ### Sistemi di gestione di basi di dati (PT.2)
 I dati di DB, gestiti da un elaboratore, si distinguono in:
 - **Metadati**, ovvero lo schema di DB 
-	  **Def.** raccolta di definizioni che descrivono la struttura dei dati, le restrizioni sui valori ammissibili (vincoli  d’integrità), relazioni tra gli insiemi
+  **Def.** raccolta di definizioni che descrivono la struttura dei dati, le restrizioni sui valori ammissibili (vincoli  d’integrità), relazioni tra gli insiemi
 - **Dati**: rappresentazione di fatti conformi alle definizioni dello schema
 
-Un DBMS consente di
+Un DBMS consente di:
 - Definire schemi di basi di dati e vincoli di integrità;
 -  Scegliere le strutture dati per la memorizzazione e l’accesso ai dati;
 -  Memorizzare, interrogare e modificare i dati
@@ -126,9 +124,7 @@ Alcuni DBMS sul mercato sono:
 - PostgresSQL
 ### Modelli di dati
 Un **modello di dati** è un insieme di concetti (o costrutti) per organizzare i dati di interesse e descriverne la struttura in modo comprensibile ad un elaboratore.
-
 Ogni modello di dati fornisce meccanismi di astrazione per definire nuovi tipi sulla base di tipi (elementari) predefiniti e costruttori di tipo.
-
 Il modello relazione dei dati (più diffuso tra tutti) permette di definire tipi per mezzo del costrutto della **relazione**, che consente di organizzare i dati in insiemi di record a struttura fissa. 
 
 Un buon modello di dati è caratterizzato da:
@@ -193,11 +189,10 @@ Una relazione viene rappresentata generalmente tramite **tabella**, le cui righe
 Nella base di dati esiste una parte invariata nel tempo, detta **schema della base di dati**, costituita dalle caratteristiche dei dati, e una parte variabile, chiamata **istanza** della base di dati, costituita dai valori effettivi.
 #### Modelli dei dati vs concettuali
 I modelli dei dati precedentemente elencati sono detti
-- **Logici**: le strutture usate da questi modelli, pur essendo astratte, riflettono una particolare organizzazione (alberi, grafi, a tabelle, oggetti etc).
-	- Sono adottati nei DBMS esistenti per l’organizzazione dei dati e indipendenti dalle strutture fisiche
-
+- **Logici**: le strutture usate da questi modelli, pur essendo astratte, riflettono una particolare organizzazione (alberi, grafi, a tabelle, oggetti etc). 
+  Sono adottati nei DBMS esistenti per l’organizzazione dei dati e indipendenti dalle strutture fisiche
 - **Concettuali**: utilizzati per descrivere i dati in modo completamente indipendente dalla scelta del modello logico. Descrivono concetti del mondo reale, piuttosto che i dati utili a rappresentarli.
-	 Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi, un esempio è il modello Entità-Relazioni.
+  Sono utilizzati nella fase preliminare di  progettazione di un DB, per modellare la realtà indipendentemente da aspetti realizzativi, un esempio è il modello Entità-Relazioni.
 
 I modelli concettuali, a differenza di quelli logici, non sono generalmente disponibili nei DBMS.
 #### Livelli di astrazione nei DBMS
@@ -220,14 +215,14 @@ Per i **linguaggi della base di dati** si distinguono in:
 Il termine query language viene spesso usato come sinonimo di DML.
 Le istruzioni di un DML definite **iterrogazioni** sono quelle che non modificano il database.
 Originariamente la distinzione fra DDL, DML e query language era netta ma successivamente son stati proposti linguaggi che integrano le funzionalità suddette, come SQL.
-#### Classifikcazione dei DBMS
+#### Classificazione dei DBMS
 Il criterio principale utilizzato per classificare è il modello dei dati sul quale si fonda il DBMS, distinguendo le basi di dati gerarchiche da quelle reticolari (network), relazionali, orientate a oggetti, ecc.
 
 Altri criteri sono:
 - **Il numero di utenti**: Sistemi single-user supportano solo un utente per volta e sono per lo più usati con personal computer, maggior parte dei DBMS sono multi-user.
  - **Il numero di centri (site) in cui è distribuito il DB**: 
-	- Nei DBMS centralizzati i dati sono memorizzati in un unico centro e può supportare più  utenti, eventualmente remoti. 
-	- Nei DBMS distribuito si possono avere dati e software distribuiti in più centri connessi da una rete locale o geografica, tipicamente i database distribuiti hanno un’architettura client-server.
+	- Nei DBMS **centralizzati** i dati sono memorizzati in un unico centro e può supportare più  utenti, eventualmente remoti. 
+	- Nei DBMS **distribuito** si possono avere dati e software distribuiti in più centri connessi da una rete locale o geografica, tipicamente i database distribuiti hanno un’architettura client-server.
 	  Questi ultimi si suddividono in
 		- **Omogeneei**: usano lo stesso software
 		- **Eterogenei**: utilizzano software per accedere a diversi DB autonomi pre-esistenti
