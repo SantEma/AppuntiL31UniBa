@@ -667,6 +667,9 @@ La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggi
 Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un dirigente compare in una tupla, viene ripetuta per esso la sede in cui opera. Questa ridondanza viene tollerata dalla $\text{3NF}$ perché non sarebbe possibile una decomposizione che la elimini e al tempo stesso conservi tutte le dipendenze.
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
+Consideriamo l’esempio della seguente relazione:
+![[Pasted image 20251216160748.png]]
+Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{STIPENDIO}$
 #### Altre forme normali
 [da finire]
 ## Progettazione fisica
