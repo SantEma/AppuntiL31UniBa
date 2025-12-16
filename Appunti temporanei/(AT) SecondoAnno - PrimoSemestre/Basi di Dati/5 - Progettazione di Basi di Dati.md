@@ -560,7 +560,7 @@ La motivazione a tutti questi inconvenienti deriva dal fatto che si sia utilizza
 Per poter studiare in maniera sistematica i concetti introdotti formalmente nel paragrafo precedente è necessario fare uso delle **dipendenze funzionali**:
 Si trattano di particolari vincoli di integrità per il modello relazionale che descrive legami di tipo funzionale tra gli attributi di una relazione.
 Riconsiderando l'esempio precedente con la relazione in figura, abbiamo osservato che lo stipendio di ciascun impiegato è unico e quindi, ogni volta che in una tupla della relazione compare un certo impiegato, il valore del suo stipendio rimane sempre lo stesso.
-Possiamo dunque dire che il valore dell’attributo $\text{IMPIEGATO}$ determina il valore dell’attributo $\text{STIPENDIO}$ o, in maniera più precisa, che esiste una funzione che associa a ogni elemento del dominio dell’attributo impiegato un solo elemento del dominio dell’attributo stipendio.
+Possiamo dunque dire che il valore dell’attributo $\text{Impiegato}$ determina il valore dell’attributo $\text{Stipendio}$ o, in maniera più precisa, che esiste una funzione che associa a ogni elemento del dominio dell’attributo impiegato un solo elemento del dominio dell’attributo stipendio.
 #### Formalizzazione
 Data una relazione $r$ su uno schema $R(X)$ e due sottoinsiemi di attributi non vuoti $Y$ e $Z$ di $X$, diremo che esiste su $r$ una dipendenza funzionale tra $Y$ e $Z$ se, per ogni coppia di tuple $t_{1}$ e $t_{2}$ di $r$ aventi gli stessi valori sugli attributi $Y$, risulta che $t_{1}$ e $t_{2}$ hanno gli stessi valori anche sugli attributi $Z$.
 Una dipendenza funzionale tra gli attributi $Y$ e $Z$ viene generalmente indicata con la notazione $Y \to Z$ e, come gli altri vincoli di integrità, viene associata ad uno schema: una relazione su quello schema verrà considerata corretta se soddisfa tale dipendenza funzionale
@@ -568,13 +568,13 @@ Una dipendenza funzionale tra gli attributi $Y$ e $Z$ viene generalmente indicat
 - Se l’insieme $Z$ è composto dagli attributi $A_{1}, A_{2}, \dots , A_{k}$, allora una relazione soddisfa $Y \to Z$ se e solo se soddisfa tutte le $k$ dipendenze $Y \to A_{1}, Y \to A_{2}, \dots , Y \to A_{k}$. Di conseguenza, quando opportuno, possiamo, senza perdita di generalità, assumere che le dipendenze abbiano la forma $Y \to A$, in cui $A$ è un singolo attributo.
 - In base alla definizione data, possiamo notare che, nella nostra relazione, è verificata anche la dipendenza funzionale:$$\text{Impiegato Progetto} \to \text{Progetto}$$Questa è una dipendenza funzionale **banale** in quanto asserisce una proprietà ovvia di una relazione, infatti due tuple con gli stessi valori sulla coppia di attributi $\text{Impiegato Progetto}$, hanno ovviamente lo stesso valore sull'attributo $\text{Progetto}$, che è uno dei due. Diremo quindi che una dipendenza funzionale $Y \to A$ è **non banale** se $A$ non compare tra gli attributi di $Y$ .
 - Se prendiamo una chiave $K$ di una relazione $r$, si può facilmente verificare che esiste una dipendenza funzionale tra $K$ e ogni altro attributo dello schema $r$. Questo perché, per definizione stessa di vincolo di chiave, non possono esistere due tuple con gli stessi valori su $K$ e quindi una dipendenza funzionale che ha $K$ al primo membro sarà sempre soddisfatta. 
-  Con riferimento al nostro esempio abbiamo detto che gli attributi $\text{Impiegato}$ e $\text{Progetto}$ formano una chiave. Possiamo allora affermare che, per esempio, vale la dipendenza funzionale $\text{Impiegato Progetto} \to \text{FUNZIONE}$. In particolare esisterà una dipendenza funzionale tra una chiave di una relazione e tutti gli attributi dello schema della relazione. Nel nostro caso abbiamo che:$$\text{Impiegato Progetto} \to \text{STIPENDIO BILANCIO FUNZIONE}$$
+  Con riferimento al nostro esempio abbiamo detto che gli attributi $\text{Impiegato}$ e $\text{Progetto}$ formano una chiave. Possiamo allora affermare che, per esempio, vale la dipendenza funzionale $\text{Impiegato Progetto} \to \text{Funzione}$. In particolare esisterà una dipendenza funzionale tra una chiave di una relazione e tutti gli attributi dello schema della relazione. Nel nostro caso abbiamo che:$$\text{Impiegato Progetto} \to \text{Stipendio Bilancio Funzione}$$
   Possiamo quindi concludere dicendo che il vincolo di dipendenza funzionale **generalizza** il vincolo di chiave. Possiamo dire che una dipendenza funzionale c$Y\to Z$ su uno schema $R(X)$ degenera nel vincolo di chiave se l’unione di $Y$ e $Z$ è pari a $X$. In tal caso, infatti, $Y$ è (super)chiave per lo schema $R(X)$.
 ### Forma normale di Boyce e Codd
 Alla luce di quanto detto sulle dipendenze funzionali, l’idea fondamentale è che si possono introdurre delle proprietà dette **forme normali** che sono soddisfatte quando non ci sono anomalie.
 Negli esempi precedenti notiamo che:
-- Le dipendenze $\text{IMPIEGATO} \to \text{STIPENDIO}$ e $\text{Progetto} \to \text{BILANCIO}$ sono causa di anomalie
-- La dipendenza $\text{Impiegato Progetto} \to \text{FUNZIONE}$ non lo è
+- Le dipendenze $\text{IMPIEGATO} \to \text{Stipendio}$ e $\text{Progetto} \to \text{Bilancio}$ sono causa di anomalie
+- La dipendenza $\text{Impiegato Progetto} \to \text{Funzione}$ non lo è
 
 La differenza risiede nel fatto che $\text{Impiegato Progetto}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
 Possiamo quindi concludere che le ridondanze e le anomalie sono causate dalle dipendenze funzionali $X \to A$ che permettono la presenza di più tuple fra loro uguali sugli attributi di $X$, ossia sulle dipendenze $X\to A$ tali che $X$ non contiene una chiave.
@@ -650,11 +650,11 @@ Possiamo vederlo tramite un esempio, consideriamo questa relazione
 ![[Pasted image 20251216151736.png]]
 Su di essa possiamo supporre che siano definite le seguenti dipendenze:
 - $\text{DIRIGENTE} \to SEDE$: ogni dirigente opera presso una sede
-- $\text{Progetto SEDE} \to \text{DIRIGENTE}$: ogni progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un progetto ha un solo responsabile
+- $\text{Progetto SEDE} \to \text{DIRIGENTE}$: ogni Progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un Progetto ha un solo responsabile
 
 La relazione non è in forma normale di Boyce e Codd, perché: 
 - Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
-- La dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
+- La dipendenza $\text{Progetto SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
 
 L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze.
 Per trattare casi come questi, si ricorre ad una forma normale meno restrittiva, ossia la terza forma normale.
@@ -663,14 +663,14 @@ Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipe
 - $X$ contiene una chiave $K$ di $r$
 - $A$ appartiene ad almeno una chiave di $r$
 
-La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ ha come primo membro una chiave della relazione, mentre $\text{DIRIGENTE} \to SEDE$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{PROGETTO SEDE}$.
+La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{Progetto SEDE} \to \text{DIRIGENTE}$ ha come primo membro una chiave della relazione, mentre $\text{DIRIGENTE} \to SEDE$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{Progetto SEDE}$.
 Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un dirigente compare in una tupla, viene ripetuta per esso la sede in cui opera. Questa ridondanza viene tollerata dalla $\text{3NF}$ perché non sarebbe possibile una decomposizione che la elimini e al tempo stesso conservi tutte le dipendenze.
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216161147.png]]
-Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{STIPENDIO}$.
-Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{STIPENDIO}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO STIPENDIO}$ e un'altra solo sull'attributo $\text{PROGETTO}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi Impiegato Progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
+Su questa può essere riconosciuta la sola dipendenza funzionale $\text{IMPIEGATO} \to \text{Stipendio}$.
+Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{IMPIEGATO}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{IMPIEGATO Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi Impiegato Progetto, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
 ![[Pasted image 20251216160748.png]]
 #### Altre forme normali
 [da finire]
