@@ -627,14 +627,14 @@ La condizione in questione garantisce che tutte le istanze di relazione che sodd
 Ogniqualvolta che decomponiamo una relazione in due parti, se l'insieme degli attributi comuni è chiave per una delle due relazioni allora possiamo essere certi che tutte le istanze della relazione si decompongono senza perdita.
 #### Conservazione delle dipendenze
 Tornando alla tabella di esempio precedentemente vista, possiamo rimuovere ancora anomalie utilizzando solo la dipendenza $\text{Impiegato} \to \text{Sede}$ per ottenere una decomposizione senza perdita (oppure volendo $\text{Progetto} \to \text{Sede}$, si otterrebbe comunque lo stesso risultato).
-Alla fine otteniamo due relazione, una sugli attributi $\text{Impiegato}$ e $\text{SEDE}$ e l'altra su $\text{Impiegato}$ e $\text{Progetto}$, venendo rappresentata graficamente in questa maniera:
+Alla fine otteniamo due relazione, una sugli attributi $\text{Impiegato}$ e $\text{Sede}$ e l'altra su $\text{Impiegato}$ e $\text{Progetto}$, venendo rappresentata graficamente in questa maniera:
 ![[Pasted image 20251216145503.png]]
 Il join di queste due relazioni produce effettivamente la relazione originaria, potendo affermare di aver ottenuto una decomposizione senza perdita.
 Questa decomposizione, però, presenta un altro inconveniente:
-Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al Progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{Progetto} \to \text{SEDE}$.
+Supponiamo di voler inserire una nuova tupla che specifica la partecipazione dell’impiegato Neri, che opera a Milano, al Progetto Marte, sulla relazione originaria un tale aggiornamento verrebbe immediatamente individuato come illecito, perché porterebbe ad una violazione della dipendenza funzionale $\text{Progetto} \to \text{Sede}$.
 
-Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{Impiegato}$ e $\text{Progetto}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{Impiegato}$ e $\text{SEDE}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{Impiegato} \to \text{SEDE}$.
-Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{Progetto} \to SEDE$ perché i due attributi $\text{Progetto}$ e $\text{SEDE}$ sono stati separati in due relazioni diverse.
+Sulle relazioni decomposte, al contrario, non è possibile rilevare alcuna violazione di dipendenze. Infatti, sulla relazione avente per attributi $\text{Impiegato}$ e $\text{Progetto}$ non è possibile definire alcuna dipendenza funzionale (quindi non possono esserci violazioni), mentre nella relazione su $\text{Impiegato}$ e $\text{Sede}$ la tupla con valori Neri e Milano soddisfa la dipendenza funzionale $\text{Impiegato} \to \text{Sede}$.
+Ne evince che non è possibile fare alcuna verifica sulla dipendenza funzionale $\text{Progetto} \to Sede$ perché i due attributi $\text{Progetto}$ e $\text{Sede}$ sono stati separati in due relazioni diverse.
 
 In generale, il teorema afferma che una decomposizione conserva le dipendenze se ciascuna delle dipendenze funzionali dello schema originario coinvolge attributi che compaiono tutti insieme in uno degli schemi decomposti.
 #### Qualità delle decomposizioni
@@ -649,12 +649,12 @@ Nella maggior parte dei casi si può raggiungere l'obbiettivo di una buona decom
 Possiamo vederlo tramite un esempio, consideriamo questa relazione
 ![[Pasted image 20251216151736.png]]
 Su di essa possiamo supporre che siano definite le seguenti dipendenze:
-- $\text{DIRIGENTE} \to SEDE$: ogni dirigente opera presso una sede
-- $\text{Progetto SEDE} \to \text{DIRIGENTE}$: ogni Progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un Progetto ha un solo responsabile
+- $\text{Dirigente} \to \text{Sede}$: ogni dirigente opera presso una sede
+- $\text{Progetto Sede} \to \text{Dirigente}$: ogni Progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un Progetto ha un solo responsabile
 
 La relazione non è in forma normale di Boyce e Codd, perché: 
-- Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
-- La dipendenza $\text{Progetto SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
+- Il primo membro della dipendenza $\text{Dirigente} \to \text{Sede}$ non è superchiave
+- La dipendenza $\text{Progetto Sede} \to \text{Dirigente}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
 
 L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze.
 Per trattare casi come questi, si ricorre ad una forma normale meno restrittiva, ossia la terza forma normale.
@@ -663,7 +663,7 @@ Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipe
 - $X$ contiene una chiave $K$ di $r$
 - $A$ appartiene ad almeno una chiave di $r$
 
-La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{Progetto SEDE} \to \text{DIRIGENTE}$ ha come primo membro una chiave della relazione, mentre $\text{DIRIGENTE} \to SEDE$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{Progetto SEDE}$.
+La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{Progetto Sede} \to \text{Dirigente}$ ha come primo membro una chiave della relazione, mentre $\text{Dirigente} \to \text{Sede}$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{Progetto Sede}$.
 Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un dirigente compare in una tupla, viene ripetuta per esso la sede in cui opera. Questa ridondanza viene tollerata dalla $\text{3NF}$ perché non sarebbe possibile una decomposizione che la elimini e al tempo stesso conservi tutte le dipendenze.
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
