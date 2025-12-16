@@ -656,7 +656,12 @@ La relazione non è in forma normale di Boyce e Codd, perché:
 - Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
 - La dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
 
-L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze
+L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze.
+Per trattare casi come questi, si ricorre ad una forma normale meno restrittiva, ossia la terza forma normale.
+#### Definizione di terza forma normale
+Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, almeno una delle seguenti condizioni è verificata:
+- $X$ contiene una chiave K di $r$
+- $A$
 #### Decomposizione in terza forma normale
 [da finire]
 #### Altre forme normali
