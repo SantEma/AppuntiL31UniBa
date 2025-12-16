@@ -659,9 +659,11 @@ La relazione non è in forma normale di Boyce e Codd, perché:
 L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze.
 Per trattare casi come questi, si ricorre ad una forma normale meno restrittiva, ossia la terza forma normale.
 #### Definizione di terza forma normale
-Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, almeno una delle seguenti condizioni è verificata:
-- $X$ contiene una chiave K di $r$
-- $A$
+Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipendenza funzionale (non banale) $X \to A$ definita su di essa, almeno una delle seguenti condizioni è verificata:
+- $X$ contiene una chiave $K$ di $r$
+- $A$ appartiene ad almeno una chiave di $r$
+
+La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all’esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$.
 #### Decomposizione in terza forma normale
 [da finire]
 #### Altre forme normali
