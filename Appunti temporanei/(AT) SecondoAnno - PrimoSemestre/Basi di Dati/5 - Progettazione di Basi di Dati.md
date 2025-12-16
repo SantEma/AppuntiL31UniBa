@@ -655,6 +655,8 @@ Su di essa possiamo supporre che siano definite le seguenti dipendenze:
 La relazione non è in forma normale di Boyce e Codd, perché: 
 - Il primo membro della dipendenza $\text{DIRIGENTE} \to SEDE$ non è superchiave
 - La dipendenza $\text{PROGETTO SEDE} \to \text{DIRIGENTE}$ coinvolge tutti gli attributi e quindi nessuna decomposizione è in grado di conservarla.
+
+L'esempio ci mostra quindi che esistono schemi che violano la forma normale di Boyce e Codd per i quali non esiste alcune decomposizione che conservi le dipendenze
 #### Decomposizione in terza forma normale
 [da finire]
 #### Altre forme normali
