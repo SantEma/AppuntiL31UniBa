@@ -540,8 +540,7 @@ Quando una relazione non è normalizzata presenta ridondanze e si presta a compo
  
 Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
 
-Facciamo un esempio con una tabella:
-![[Pasted image 20251212133424.png]]
+Facciamo un esempio con una tabella:![[Pasted image 20251216165019.png]]
 Si può notare facilmente che le tuple soddisfano le seguenti proprietà:
 - Lo stipendio di ciascun impiegato è unico ed è funzione del solo impiegato, indipendentemente dai progetti a cui partecipa;
 - Il bilancio di ciascun progetto è unico e dipende dal solo progetto, indipendentemente dagli impiegati che vi partecipano.
@@ -671,7 +670,7 @@ Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216161147.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$.
 Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
-![[Pasted image 20251216160748.png]]sulla quale può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$
+![[Pasted image 20251216160748.png]]sulla quale può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}
 #### Altre forme normali
 [da finire]
 ## Progettazione fisica
