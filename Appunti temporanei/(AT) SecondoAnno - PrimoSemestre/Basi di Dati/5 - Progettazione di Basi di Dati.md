@@ -597,7 +597,7 @@ Tali proprietà sono le seguenti:
 - Conservazione delle dipendenze
 #### Decomposizioni senza perdita
 Andiamo ad esaminare questa relazione:
-![[Pasted image 20251216112645.png]]
+![[Pasted image 20251216165221.png]]
 Tale relazione soddisfa le dipendenze funzionali:
 $$\begin{aligned}
 &\text{Impiegato} \to \text{Sede} \\
@@ -609,7 +609,7 @@ Separando sulla base delle dipendenze funzionali, saremmo portati a decomporre l
 - Una relazione sugli attributi $\text{Impiegato}$ e $\text{Sede}$, in corrispondenza della dipendenza $\text{Impiegato} \to \text{Sede}$
 - Una relazione sugli attributi $\text{Progetto}$ e $\text{Sede}$, in corrispondenza della dipendenza $\text{Progetto} \to \text{Sede}$
 Quindi l'istanza iniziale verrebbe decomposta per mezzo di proiezioni sugli attributi coinvolti, nelle due relazioni come segue:
-![[Pasted image 20251216113257.png]]
+![[Pasted image 20251216165248.png]]
 Dopo la decomposizione, la ricostruire delle informazioni di partenza, dunque la relazione originaria a partire dalle sue proiezioni, deve essere effettuata per mezzo di un’operazione di join naturale sull'attributo comune $\text{Sede}$, producendo la tabella seguente:
 ![[Pasted image 20251216113524.png]]
 la quale contiene tutte le tuple della relazione originaria più altre tuple **spurie** (le ultime due in questa tabella), infatti l'impiegato Verdi lavora a Milano e il Progetto Saturno ha sede a Milano, ma Verdi non lavora a tale Progetto. 
@@ -646,7 +646,7 @@ Di conseguenza considereremo accettabili solo le decomposizioni che soddisfano q
 #### Limitazioni della forma normale di Boyce e Codd
 Nella maggior parte dei casi si può raggiungere l'obbiettivo di una buona decomposizione in forma normale di Boyce e Codd, talvolta però questo non è possibile.
 Possiamo vederlo tramite un esempio, consideriamo questa relazione
-![[Pasted image 20251216151736.png]]
+![[Pasted image 20251216165318.png]]
 Su di essa possiamo supporre che siano definite le seguenti dipendenze:
 - $\text{Dirigente} \to \text{Sede}$: ogni dirigente opera presso una sede
 - $\text{Progetto Sede} \to \text{Dirigente}$: ogni Progetto ha più dirigenti che ne sono responsabili, ma in sedi diverse, e ogni dirigente può essere responsabile di più progetti; però, per ogni sede, un Progetto ha un solo responsabile
@@ -667,11 +667,14 @@ Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un 
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 Consideriamo l’esempio della seguente relazione:
-![[Pasted image 20251216161147.png]]
+![[Pasted image 20251216165406.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$.
 Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
-![[Pasted image 20251216160748.png]]sulla quale può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}
+![[Pasted image 20251216160748.png]]
+Una decomposizione in terza forma normale produce, nella maggior parte dei casi, schemi in forma normale di Boyce-Codd. Si può dimostrare che se una relazione ha solo una chiave allora le due forme normali coincidono, cioè una relazione in 3NF è anche in BCNF.
 #### Altre forme normali
+[da finire]
+### Progettazione di basi di dati e normalizzazione
 [da finire]
 ## Progettazione fisica
 [da finire] 
