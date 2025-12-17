@@ -213,8 +213,7 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $\forall x(f)$,con variabili libere $y_{1}\dots y_{q}$ è vera sui valori $a_{1},\dots a_{q}$ se per ogni elemento $a$ del dominio $D$, la formula $f$ risulta veri sui valori $a$ per $x$, $a_{1}$ per $y_{1},\dots,a_{q}$ per $y_{q}$
 
 ##### Calcolo relazionale su tuple con dichiarazione di range
-Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$
-dove:
+Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$dove:
 - $L$ è la range list: elenca le variabili libere di $f$ con i relativi campi di variabilità, la scrittura $x(R) \in L$ indica che la variabile $x$ può assumere come valore solo tuple nella relazione $r$ di schema $R$.
 - $T$ è la target list, con elementi del tipo $Y : x.Z$, con $x$ variabile e $Y$ e $Z$ sequenze di attributi di pari lunghezza; ($x.* \ \text{abbreviazione di} \ X : x.X$)
 - $f$ è una formula con
@@ -247,8 +246,7 @@ Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predica
 - Seconda tupla non appartenente certamente al risultato (falso)
 - Terza tupla forse appartenente al risultato (sconosciuto)
 
-In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$
-si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta.
+In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta.
 Si ottiene una valida alternativa introducendo due condizioni atomiche di selezione (nell'algebra) e due predicati atomici aggiuntivi (nel calcolo) allo scopo di verificare che un valore sia nullo oppure no:
 - $A$ is null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è (non) nullo
 - $A$ is not null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è non (è) nullo
@@ -257,5 +255,4 @@ Esempio:
 ![[Pasted image 20251016090710.png]]
 Questa logica è utilizzabile in SQL, visto che prevede una gestione a tre valori
 ## Esercizi Linguaggi di interrogazione
-Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]]
-## Esercizi 
+Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]] e [[3.2 - Esercizi Calcolo relazionale.pdf]] 

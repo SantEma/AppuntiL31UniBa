@@ -267,8 +267,8 @@ Descriviamo un metodo per la progettazione concettuale con strategia mista, da p
 	- Verificare la leggibilità dello schema ed eventualmente ristrutturare lo schema
 
 In questi passaggi è sempre utile per ogni passaggio la **documentazione degli schemi**
-### Esempio di progettazione concettuale
-Vi consiglio di andare a vedere il PDF [[5.1 - Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi
+### Esempi di progettazione concettuale
+Vi consiglio di andare a vedere il PDF [[5.1 - Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi, insieme al PDF [[5.4 - Esercitazione Analisi dei Requisiti e Progettazione Concettuale.pdf]], preso dalla prof
 ## Progettazione logica
 L'obbiettivo della progettazione logica è quello di costruire uno schema logico in grado di descrivere, in maniera corretta ed efficiente, tutte le informazioni contenute nello schema Entità-Relazione prodotto nella fase di progettazione concettuale,
 ### Fasi della progettazione logica
