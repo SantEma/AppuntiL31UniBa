@@ -676,9 +676,10 @@ Una decomposizione in terza forma normale produce, nella maggior parte dei casi,
 Oltre alla terza forma normale esistono altre due forme normali:
 1. La **prima forma normale** stabilisce una condizione che sta alla base del modello relazione stesso: gli attributi delle relazioni sono definiti su valori atomici e non su valori complessi.
 2. Una relazione è in **seconda forma normale** se su di essa non son definite dipendenze parziali, cioè dipendenze fra un sottoinsieme proprio della chiave e altri attributi.
+   Quindi le relazioni chiave di un solo attributo sono in seconda forma normale.
 
-La seconda forma normale è una variante debole della terza forma normale, introduciamola con un esempio utilizzando la seguente relazione:
-![[Pasted image 20251217142021.png]]
+Una relazione in seconda forma normale è una variante debole della terza forma normale, facciamo 
+
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ## Progettazione fisica
