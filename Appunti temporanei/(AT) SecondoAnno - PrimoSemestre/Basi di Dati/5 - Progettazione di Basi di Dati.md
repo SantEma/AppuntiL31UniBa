@@ -200,7 +200,7 @@ Dal momento che spesso non esiste una rappresentazione univoca di un insieme di 
 
 I criteri appena elencati hanno validità generale, sono cioè indipendenti dalla strategia di progettazione adottata
 #### Pattern di progetto
-Riferirsi al PDF [[Pattern di progetto.pdf]], preso dal libro e presente negli Appunti Definitivi
+Riferirsi al PDF [[5.2 - Pattern di progetto.pdf]], preso dal libro e presente negli Appunti Definitivi
 (Essendo pieno di esempi vi è inutile riportarlo qui)
 ### Strategie di progetto
 Lo sviluppo di uno schema concettuale a partire dalle sue specifiche può essere considerato un processo di ingegnerizzazione e, come tale, è possibile utilizzare strategie viste già in altre discipline
@@ -268,7 +268,7 @@ Descriviamo un metodo per la progettazione concettuale con strategia mista, da p
 
 In questi passaggi è sempre utile per ogni passaggio la **documentazione degli schemi**
 ### Esempio di progettazione concettuale
-Vi consiglio di andare a vedere il PDF [[Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi
+Vi consiglio di andare a vedere il PDF [[5.1 - Esempio di progettazione concettuale.pdf]], preso sempre dal libro e presente nella cartella degli Appunti Definitivi
 ## Progettazione logica
 L'obbiettivo della progettazione logica è quello di costruire uno schema logico in grado di descrivere, in maniera corretta ed efficiente, tutte le informazioni contenute nello schema Entità-Relazione prodotto nella fase di progettazione concettuale,
 ### Fasi della progettazione logica
@@ -533,7 +533,7 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 #### Tabella delle traduzioni dal modello E-R a quello relazionale
 ![[Pasted image 20251210115641.png]]
 #### Esempio di progettazione logica
-Guardare il file [[Esempio di Progettazione Logica.pdf]], estratto dal libro
+Guardare il PDF [[5.3 - Esempio di Progettazione Logica.pdf]], estratto dal libro
 ## Normalizzazione
 Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti.
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
