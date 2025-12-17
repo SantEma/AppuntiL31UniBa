@@ -685,7 +685,9 @@ Essa soddisfa le dipendenze $\text{Impiegato}\to \text{Categoria}$ e $\text{Cate
 La $\text{2NF}$ ammette **dipendenze funzionali transitive**, ossia dipendenze nella forma $K \to A$ dove $K$ è la chiave ed esiste un altro insieme di attributi $X$, non chiave, con dipendenze $K\to X$ e $X\to A$.
 Le dipendenze transitive non possono essere ammesse nella terza forma normale, in quanto si potrebbe avere una dipendenza in cui il il dominio non è superchiave ed il codominio non è contenuto in alcuna chiave della relazione di partenza.
 
-È importante notare ce tanto le dipendenze parziali quanto quelle transitive violano la terza forma normale così come noi l'abbiamo definita perché coinvolgono una dipendenza funzionale il cui primo membro non è
+È importante notare ce tanto le dipendenze parziali quanto quelle transitive violano la terza forma normale così come noi l'abbiamo definita perché coinvolgono una dipendenza funzionale il cui primo membro non è super chiave
+### Normalizzazione e scelta degli attributi
+[da finire]
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ## Progettazione fisica
