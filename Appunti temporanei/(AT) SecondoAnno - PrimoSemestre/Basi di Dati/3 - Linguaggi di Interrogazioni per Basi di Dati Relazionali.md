@@ -256,3 +256,6 @@ Si ottiene una valida alternativa introducendo due condizioni atomiche di selezi
 Esempio:
 ![[Pasted image 20251016090710.png]]
 Questa logica è utilizzabile in SQL, visto che prevede una gestione a tre valori
+## Esercizi Linguaggi di interrogazione
+Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]]
+## Esercizi 
