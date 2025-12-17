@@ -641,3 +641,6 @@ Le viste hanno diverse utilità come:
   SELECT CodiceAgente, SUM(Ammontare) FROM Ordini 
   GROUP BY CodiceAgente
   ```
+
+## Note
+Si consiglia la visione del PDF [[4.1 - Intro to MySQL.pdf]] per poter fare le eventuali esercitazioni
