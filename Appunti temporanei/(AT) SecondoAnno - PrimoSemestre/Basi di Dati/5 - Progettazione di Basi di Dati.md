@@ -533,7 +533,7 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 #### Tabella delle traduzioni dal modello E-R a quello relazionale
 ![[Pasted image 20251210115641.png]]
 #### Esempio di progettazione logica
-Guardare il PDF [[5.3 - Esempio di Progettazione Logica.pdf]], estratto dal libro
+Guardare il PDF [[5.3 - Esempio di Progettazione Logica.pdf]], estratto dal libro e in più l'esercitazione data dalla prof [[5.5 - Esercizi Progettazione Logica.pdf]]
 ## Normalizzazione
 Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti.
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
@@ -690,5 +690,7 @@ Le dipendenze transitive non possono essere ammesse nella terza forma normale, i
 [da finire]
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
+### Esercizi sulla normalizzione
+Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
 [da finire]
