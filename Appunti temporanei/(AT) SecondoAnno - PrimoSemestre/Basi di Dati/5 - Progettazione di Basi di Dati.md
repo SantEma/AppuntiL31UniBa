@@ -674,15 +674,16 @@ Questa relazione non è in $\text{BCNF}$ in quanto nella dipendenza funzionale, 
 Una decomposizione in terza forma normale produce, nella maggior parte dei casi, schemi in forma normale di Boyce-Codd. Si può dimostrare che se una relazione ha solo una chiave allora le due forme normali coincidono, cioè una relazione in $\text{3NF}$ è anche in $\text{BCNF}$.
 #### Altre forme normali
 Oltre alla terza forma normale esistono altre due forme normali:
-1. La **prima forma normale** stabilisce una condizione che sta alla base del modello relazione stesso: gli attributi delle relazioni sono definiti su valori atomici e non su valori complessi.
-2. Una relazione è in **seconda forma normale** ($\text{2NF$se su di essa non son definite dipendenze parziali, cioè dipendenze fra un sottoinsieme proprio della chiave e altri attributi.
+1. La **prima forma normale** ($\text{1NF}$) stabilisce una condizione che sta alla base del modello relazione stesso: gli attributi delle relazioni sono definiti su valori atomici e non su valori complessi.
+2. Una relazione è in **seconda forma normale** ($\text{2NF}$) se su di essa non son definite dipendenze parziali, cioè dipendenze fra un sottoinsieme proprio della chiave e altri attributi.
    Quindi le relazioni chiave di un solo attributo sono in seconda forma normale.
 
 Una relazione in seconda forma normale è una variante debole della terza forma normale, facciamo un esempio prendendo questa relazione:
 ![[Pasted image 20251217142021.png]]
 Essa soddisfa le dipendenze $\text{Impiegato}\to \text{Categoria}$ e $\text{Categoria}\to \text{Stipendio}$, violando la terza forma normale poiché $\text{Categoria}$ non è chiave. La seconda forma normale tollera la dipendenza tra $\text{Categoria}$ e $\text{Stipendio}$ perché $\text{Stipendio}$ dipende comunque dall'intera chiave $\text{Impiegato}$.
 
-La $\text{2NF}$
+La $\text{2NF}$ ammette **dipendenze funzionali transitive**, ossia dipendenze nella forma $K \to A$ dove $K$ è la chiave ed esiste un altro insieme di attributi $X$, non chiave, con dipendenze $K\to X$ e $X\to A$.
+Le dipendenze transitive non possono essere ammesse nella terza forma normale, in quanto si potrebbe avere una dipendenza in cui il il dominio non è superchiave ed il codominio non è contenuto in alcuna chiave della relazione di partenza
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ## Progettazione fisica
