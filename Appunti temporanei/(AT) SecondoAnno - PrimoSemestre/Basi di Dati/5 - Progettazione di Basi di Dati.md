@@ -578,7 +578,7 @@ Negli esempi precedenti notiamo che:
 La differenza risiede nel fatto che $\text{Impiegato Progetto}$ è una superchiave della relazione (più specificatamente è l'unica chiave).
 Possiamo quindi concludere che le ridondanze e le anomalie sono causate dalle dipendenze funzionali $X \to A$ che permettono la presenza di più tuple fra loro uguali sugli attributi di $X$, ossia sulle dipendenze $X\to A$ tali che $X$ non contiene una chiave.
 
-Questo concetto è alla base della forma normale di Boyce e Codd (BCNF), secondo la quale: una relazione $r$ è in forma normale di Boyce e Codd se per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, $X$ è superchiave per $r$
+Questo concetto è alla base della forma normale di Boyce e Codd ($\text{BCNF}$), secondo la quale: una relazione $r$ è in forma normale di Boyce e Codd se per ogni dipendenza funzionale (non banale) $X \to Y$ definita su $r$, $X$ è superchiave per $r$
 #### Decomposizione in forma normale di Boyce e Codd
 Data una relazione che non soddisfa la forma normale di Boyce e Codd è possibile, in molti casi, sostituirla con due o più relazioni normalizzate attraverso un processo detto di **normalizzazione**. 
 Questo processo si fonda su un semplice criterio: 
@@ -662,19 +662,21 @@ Una relazione $r$ è in **terza forma normale** ($\text{3FN}$) se, per ogni dipe
 - $X$ contiene una chiave $K$ di $r$
 - $A$ appartiene ad almeno una chiave di $r$
 
-La terza forma normale è meno restrittiva rispetto alla BCNF, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{Progetto Sede} \to \text{Dirigente}$ ha come primo membro una chiave della relazione, mentre $\text{Dirigente} \to \text{Sede}$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{Progetto Sede}$.
+La terza forma normale è meno restrittiva rispetto alla $\text{BCNF}$, ma ha il vantaggio di essere sempre raggiungibile. Tornando all'esempio, possiamo verificare che la relazione soddisfa la $\text{3NF}$, infatti la dipendenza $\text{Progetto Sede} \to \text{Dirigente}$ ha come primo membro una chiave della relazione, mentre $\text{Dirigente} \to \text{Sede}$, pur non contenendo una chiave al primo membro ha un unico attributo a secondo membro che fa parte della chiave $\text{Progetto Sede}$.
 Si osservi che la relazione presenta una forma di ridondanza: ogni volta che un dirigente compare in una tupla, viene ripetuta per esso la sede in cui opera. Questa ridondanza viene tollerata dalla $\text{3NF}$ perché non sarebbe possibile una decomposizione che la elimini e al tempo stesso conservi tutte le dipendenze.
 #### Decomposizione in terza forma normale
 Una relazione che non soddisfa la terza forma normale si decompone in relazioni ottenute per proiezione sugli attributi corrispondenti alle dipendenze funzionali (quindi si crea una relazione per ogni dipendenza funzionale) e, successivamente, si verifica che alla fine una relazione contenga una chiave della relazione originaria.
 Consideriamo l’esempio della seguente relazione:
 ![[Pasted image 20251216165406.png]]
 Su questa può essere riconosciuta la sola dipendenza funzionale $\text{Impiegato} \to \text{Stipendio}$.
-Questa relazione non è in BCNF in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
+Questa relazione non è in $\text{BCNF}$ in quanto nella dipendenza funzionale, $\text{Impiegato}$ non è superchiave, non è in $\text{3NF}$ poiché $\text{Stipendio}$ non è contenuto in almeno una chiave della relazione. In questo caso, se si effettuasse una decomposizione in una relazione sugli attributi $\text{Impiegato Stipendio}$ e un'altra solo sull'attributo $\text{Progetto}$ si violerebbe la proprietà di decomposizione senza perdita, proprio perché nessuna delle due relazioni contiene una chiave. Per garantire tale proprietà dobbiamo invece definire la seconda relazione sugli attributi $\text{Impiegato Progetto}$, che formano una chiave della relazione originaria, ottenendo in questo modo questa decomposizione:
 ![[Pasted image 20251216160748.png]]
-Una decomposizione in terza forma normale produce, nella maggior parte dei casi, schemi in forma normale di Boyce-Codd. Si può dimostrare che se una relazione ha solo una chiave allora le due forme normali coincidono, cioè una relazione in 3NF è anche in BCNF.
+Una decomposizione in terza forma normale produce, nella maggior parte dei casi, schemi in forma normale di Boyce-Codd. Si può dimostrare che se una relazione ha solo una chiave allora le due forme normali coincidono, cioè una relazione in $\text{3NF}$ è anche in $\text{BCNF}$.
 #### Altre forme normali
-[da finire]
+Oltre alla terza forma normale esistono altre due forme normali:
+1. La **prima forma normale** stabilisce una condizione che sta alla base del modello relazione stesso: gli attributi delle relazioni sono definiti su valori atomici e non su valori complessi.
+2. 
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ## Progettazione fisica
-[da finire] 
+[da finire]
