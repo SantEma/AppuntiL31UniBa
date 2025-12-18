@@ -703,7 +703,7 @@ Possiamo quindi concludere che spesso la non raggiungibilità della forma normal
 ### Progettazione di basi di dati e normalizzazione
 La normalizzazione può essere utilizzata come base per operazioni di verifica di qualità degli schemi sia nella fase di progettazione concettuale (schemi ER) che logica (schema relazionale)
 #### Verifiche di normalizzazioni su entità
-Nel caso dello schema ER, è possibile considerare ciascuna entità e ciascuna associazione come una relazione, considerando le dipendenze funzionali che sussistono tra attributi dell'entità e 
+Nel caso dello schema ER, è possibile considerare ciascuna entità e ciascuna associazione come una relazione, considerando le dipendenze funzionali che sussistono tra attributi dell'entità e verificare che ciascuna di esse abbia come primo membro l'identificatore (o lo contenga).
 
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
