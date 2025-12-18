@@ -687,7 +687,7 @@ Le dipendenze transitive non possono essere ammesse nella terza forma normale, i
 
 È importante notare ce tanto le dipendenze parziali quanto quelle transitive violano la terza forma normale così come noi l'abbiamo definita perché coinvolgono una dipendenza funzionale il cui primo membro non è super chiave
 ### Normalizzazione e scelta degli attributi
-[da finire]
+Andando a riprendere la relazione d'esempio nel paragrafo [[#Limitazioni della forma normale di Boyce e Codd]], possiamo
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ### Esercizi sulla normalizzione
