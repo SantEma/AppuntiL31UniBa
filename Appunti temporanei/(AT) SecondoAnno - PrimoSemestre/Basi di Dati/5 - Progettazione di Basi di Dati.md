@@ -691,14 +691,15 @@ Andando a riprendere la relazione d'esempio nel paragrafo [[#Limitazioni della f
 Le dipendenze in questo caso possono essere così definite:
 - $\text{Dirigente}\to \text{Sede Reparto}$: ogni dirigente opera presso una sede e dirige un reparto
 - $\text{Sede reparto} \to \text{Dirigente}$: per ogni sede e reparto c'è un solo dirigente
-- $\text{Progetto Sede} \to \text{Reparto}$: per ogni sede, un progetto è assegnato a un solo reparto; la dipendenza funzionale 
+- $\text{Progetto Sede} \to \text{Reparto}$: per ogni sede, un progetto è assegnato a un solo reparto; la dipendenza funzionale  $\text{Progetto Sede} \to \text{Dirigente}$ è quindi ricostruibile 
 ![[Pasted image 20251218141632.png]]
-In conclusione possiamo dire che la relazione nella tabella originale:
-- Non è in $\text{BCNF}$ poiché esiste almeno una dipendenza funzionale in cui il dominio non è superchiave
-- Non è in terza forma normale poiché esiste almeno una dipendenza funzionale il cui codominio non sia contenuto in almeno una chiave della relazione
-- Non è nella seconda forma normale poiché esiste almeno una dipendenza funzionale il cui dominio è un sottoinsieme di una chiave della relazione
-- È in prima forma normale perché ogni attributo è atomico
+Per questo schema esiste una buona decomposizione, ossia:
+![[Pasted image 20251218142243.png]]
+- La decomposizione è senza perdita, gli attributi comuni $\text{Sede}$ e $\text{Reparto}$ formano una chiave per la prima relazione 
+- Le dipendenze sono conservate, per ciascuna dipendenza esiste una relazione decomposta che ne contiene tutti gli attributi 
+- Entrambe le relazioni sono in forma normale di Boyce e Codd: tutte le dipendenze hanno il primo membro costituito da una chiave
 
+Possiamo quindi concludere che spesso la non raggiungibilità della forma normale di Boyce e Codd è dovuta a una analisi non sufficientemente accurata.
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
 ### Esercizi sulla normalizzazione
