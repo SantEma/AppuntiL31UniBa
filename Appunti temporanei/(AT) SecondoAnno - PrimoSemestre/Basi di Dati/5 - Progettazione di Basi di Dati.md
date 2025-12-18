@@ -701,8 +701,9 @@ Per questo schema esiste una buona decomposizione, ossia:
 
 Possiamo quindi concludere che spesso la non raggiungibilità della forma normale di Boyce e Codd è dovuta a una analisi non sufficientemente accurata.
 ### Progettazione di basi di dati e normalizzazione
-La normalizzazione può essere utilizzata come base per operazioni di verifica di qualità degli schemi, sia nella fase di progettazione concettuale che logica.
+La normalizzazione può essere utilizzata come base per operazioni di verifica di qualità degli schemi sia nella fase di progettazione concettuale (schemi ER) che logica (schema relazionale)
 #### Verifiche di normalizzazioni su entità
+Nel caso dello schema ER, è possibile considerare ciascuna entità e ciascuna associazione come una relazione, considerando le dipendenze funzionali che sussistono tra attributi dell'entità e 
 
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
