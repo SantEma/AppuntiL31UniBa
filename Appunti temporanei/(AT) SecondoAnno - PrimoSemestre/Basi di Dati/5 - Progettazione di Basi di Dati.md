@@ -701,7 +701,7 @@ Per questo schema esiste una buona decomposizione, ossia:
 
 Possiamo quindi concludere che spesso la non raggiungibilità della forma normale di Boyce e Codd è dovuta a una analisi non sufficientemente accurata.
 ### Progettazione di basi di dati e normalizzazione
-[da finire]
+La normalizzazione 
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
