@@ -687,10 +687,16 @@ Le dipendenze transitive non possono essere ammesse nella terza forma normale, i
 
 È importante notare ce tanto le dipendenze parziali quanto quelle transitive violano la terza forma normale così come noi l'abbiamo definita perché coinvolgono una dipendenza funzionale il cui primo membro non è super chiave
 ### Normalizzazione e scelta degli attributi
-Andando a riprendere la relazione d'esempio nel paragrafo [[#Limitazioni della forma normale di Boyce e Codd]], possiamo
+Andando a riprendere la relazione d'esempio nel paragrafo [[#Limitazioni della forma normale di Boyce e Codd]], possiamo arrivare alla conclusione che avremmo potuto descrivere l'applicazione di interesse in maniera più appropriata introducendo un ulteriore attributo, ossia $\text{Reparto}$, che partiziona le singole sedi sulla base dei responsabili.
+Le dipendenze in questo caso possono essere così definite:
+- $\text{Dirigente}\to \text{Sede Reparto}$: ogni dirigente opera presso una sede e dirige un reparto
+- $\text{Sede reparto} \to \text{Dirigente}$: per ogni sede e reparto c'è un solo dirigente
+- $\text{Progetto Sede} \to \text{Reparto}$: per ogni sede, un progetto è assegnato a un solo reparto
+![[Pasted image 20251218141632.png]]
+
 ### Progettazione di basi di dati e normalizzazione
 [da finire]
-### Esercizi sulla normalizzione
+### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
 [da finire]
