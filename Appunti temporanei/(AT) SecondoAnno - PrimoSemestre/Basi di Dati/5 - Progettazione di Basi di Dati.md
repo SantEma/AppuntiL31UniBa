@@ -710,6 +710,7 @@ Possiamo notare che tra gli attributi di tale entità sussiste la dipendenza fun
 Poiché nello schema originario gli attributi di prodotto e fornitore compaiono sulla stessa entità, è evidente che se li separiamo in due entità, è opportuno che che tali entità siano correlate da un’associazione binaria, ottenendo lo schema decomposto seguente:
 ![[Pasted image 20251218163829.png]]
 La partecipazione dell’entità $\text{PRODOTTO}$ all'associazione deve avere cardinalità massima pari a 1.
+[da finire]
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
