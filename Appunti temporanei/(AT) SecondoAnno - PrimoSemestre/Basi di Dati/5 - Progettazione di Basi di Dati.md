@@ -733,8 +733,9 @@ $$\begin{aligned}
 \end{aligned}
 $$
 hanno $\text{STUDENTE}$ come primo membro, tuttavia le proprietà descritte dalle due dipendenze sono fra loro indipendenti, è evidente che non tutti gli studenti stanno svolgendo una tesi e quindi non hanno un relatore. Attraverso le dipendenze si nota che sarebbe opportuno decomporre ulteriormente l’associazione $\text{TESI}$ ottenendo due associazioni per i due concetti, come in figura:
-[[Pasted image 20251222121244.png]]
-
+![[Pasted image 20251222121244.png]]
+Siccome è molto raro incontrare delle associazioni con più di tre entità, possiamo affermare che è di solito opportuno decomporre un'associazione ternaria se su di essa è definita una dipendenza funzionale il cui primo membro è costituito da un'entità e il secondo membro dalle altre due.
+Tuttavia se le due entità nel secondo membro della dipendenza sono fra loro strettamente correlate, la decomposizione può risultare non conveniente.
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
