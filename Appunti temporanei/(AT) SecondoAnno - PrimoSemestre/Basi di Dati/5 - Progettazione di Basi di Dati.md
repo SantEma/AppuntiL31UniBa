@@ -711,8 +711,19 @@ Poiché nello schema originario gli attributi di prodotto e fornitore compaiono 
 ![[Pasted image 20251218163829.png]]
 La partecipazione dell’entità $\text{PRODOTTO}$ all'associazione deve avere cardinalità massima pari a 1.
 #### Verifiche di normalizzazioni su associazioni
-Per quanto riguarda le associazioni, il ragionamento è per certi aspetti più semplice, perché l'insieme delle occorrenze di ciascuna associazione è una relazione, e quindi è possibile applicare direttamente i concetti connessi con le forme normali, ma per altri più complesso, perché i domini su cui tale relazione è definita sono gli insiemi delle occorrenze delle entità coinvolte. Per verificare il soddisfacimento della $\text{3NF}$, è necessario individuare le dipendenze funzionali che sussistono, nell'ambito dell’associazione in esame, fra le entità coinvolte. La verifica di normalizzazione su associazioni è in particolar modo applicata a relazioni n-arie, come nell’esempio
+Per quanto riguarda le associazioni, il ragionamento è per certi aspetti più semplice, perché l'insieme delle occorrenze di ciascuna associazione è una relazione, e quindi è possibile applicare direttamente i concetti connessi con le forme normali, ma per altri più complesso, perché i domini su cui tale relazione è definita sono gli insiemi delle occorrenze delle entità coinvolte. Per verificare il soddisfacimento della $\text{3NF}$, è necessario individuare le dipendenze funzionali che sussistono, nell'ambito dell’associazione in esame, fra le entità coinvolte. 
+La verifica di normalizzazione su associazioni è solo applicata a relazioni n-arie, come nell'esempio:
 ![[Pasted image 20251222115717.png]]
+Esaminando tale associazione si conclude che sussistono le dipendenze funzionali
+$$\begin{aligned}
+&\text{STUDENTE} \to \text{CORSO DI LAUREA} \\
+&\text{STUDENTE} \to \text{PROFESSORE} \\
+&\text{PROFESSORE} \to \text{DIPARTIMENTO}
+\end{aligned}
+$$
+La chiave unica della relazione risulta essere $\text{STUDENTE}$, infatti dato uno studente sono univocamente individuati il corso di laurea, il professore e il dipartimento. La dipendenza $\text{PROFESSORE} \to \text{DIPARTIMENTO}$ causa la violazione della terza forma normale, infatti l'afferenza di 
+
+
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
