@@ -721,9 +721,18 @@ $$\begin{aligned}
 &\text{PROFESSORE} \to \text{DIPARTIMENTO}
 \end{aligned}
 $$
-La chiave unica della relazione risulta essere $\text{STUDENTE}$, infatti dato uno studente sono univocamente individuati il corso di laurea, il professore e il dipartimento. La dipendenza $\text{PROFESSORE} \to \text{DIPARTIMENTO}$ causa la violazione della terza forma normale, infatti l'afferenza di 
-
-
+La chiave unica della relazione risulta essere $\text{STUDENTE}$, infatti dato uno studente sono univocamente individuati il corso di laurea, il professore e il dipartimento. La dipendenza $\text{PROFESSORE} \to \text{DIPARTIMENTO}$ causa la violazione della terza forma normale, infatti l'afferenza di un professore a un dipartimento è un concetto indipendente dall'esistenza di studenti che svolgono la tesi con il professore stesso.
+Decomponendo la relazione, quindi separando le dipendenze funzionali con primi membri diversi, si ottengono due associazioni in terza forma normale e due associazioni anche in forma normale di Boyce e Codd come si vede qui:
+![[Pasted image 20251222120541.png]]
+#### Ulteriori decomposizioni di associazioni
+Sullo schema precedente possiamo rfar
+L'associazione $\text{TESI}$ è in terza forma normale, poichè la chiave è $\text{STUDENTE}$ e le dipendenze che sussistono, ovvero 
+$$\begin{aligned}
+&\text{STUDENTE} \to \text{PROFESSORE}\\
+&\text{STUDENTE} \to \text{CORSO DI LAUREA}
+\end{aligned}
+$$
+hanno $\text{STUDENTE}$ come primo membro
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
