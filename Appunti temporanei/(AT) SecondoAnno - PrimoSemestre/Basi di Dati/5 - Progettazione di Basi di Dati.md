@@ -725,14 +725,16 @@ La chiave unica della relazione risulta essere $\text{STUDENTE}$, infatti dato u
 Decomponendo la relazione, quindi separando le dipendenze funzionali con primi membri diversi, si ottengono due associazioni in terza forma normale e due associazioni anche in forma normale di Boyce e Codd come si vede qui:
 ![[Pasted image 20251222120541.png]]
 #### Ulteriori decomposizioni di associazioni
-Sullo schema precedente possiamo rfar
-L'associazione $\text{TESI}$ è in terza forma normale, poichè la chiave è $\text{STUDENTE}$ e le dipendenze che sussistono, ovvero 
+Sullo schema precedente possiamo fare alcune considerazioni aggiuntive che vanno al di là della teoria della normalizzazioni nel senso stretto ma rientrano nell'ambito dell'analisi e verifica degli schemi concettuali per mezzo di strumenti formali (nel nostro caso specifico, dipendenze funzionali).
+L'associazione $\text{TESI}$ è in terza forma normale, poiché la chiave è $\text{STUDENTE}$ e le dipendenze che sussistono, ovvero 
 $$\begin{aligned}
 &\text{STUDENTE} \to \text{PROFESSORE}\\
 &\text{STUDENTE} \to \text{CORSO DI LAUREA}
 \end{aligned}
 $$
-hanno $\text{STUDENTE}$ come primo membro
+hanno $\text{STUDENTE}$ come primo membro, tuttavia le proprietà descritte dalle due dipendenze sono fra loro indipendenti, è evidente che non tutti gli studenti stanno svolgendo una tesi e quindi non hanno un relatore. Attraverso le dipendenze si nota che sarebbe opportuno decomporre ulteriormente l’associazione $\text{TESI}$ ottenendo due associazioni per i due concetti, come in figura:
+[[Pasted image 20251222121244.png]]
+
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
