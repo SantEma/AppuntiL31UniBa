@@ -710,7 +710,9 @@ Possiamo notare che tra gli attributi di tale entità sussiste la dipendenza fun
 Poiché nello schema originario gli attributi di prodotto e fornitore compaiono sulla stessa entità, è evidente che se li separiamo in due entità, è opportuno che che tali entità siano correlate da un’associazione binaria, ottenendo lo schema decomposto seguente:
 ![[Pasted image 20251218163829.png]]
 La partecipazione dell’entità $\text{PRODOTTO}$ all'associazione deve avere cardinalità massima pari a 1.
-[da finire]
+#### Verifiche di normalizzazioni su associazioni
+Per quanto riguarda le associazioni, il ragionamento è per certi aspetti più semplice, perché l'insieme delle occorrenze di ciascuna associazione è una relazione, e quindi è possibile applicare direttamente i concetti connessi con le forme normali, ma per altri più complesso, perché i domini su cui tale relazione è definita sono gli insiemi delle occorrenze delle entità coinvolte. Per verificare il soddisfacimento della $\text{3NF}$, è necessario individuare le dipendenze funzionali che sussistono, nell'ambito dell’associazione in esame, fra le entità coinvolte. La verifica di normalizzazione su associazioni è in particolar modo applicata a relazioni n-arie, come nell’esempio
+![[Pasted image 20251222115717.png]]
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
