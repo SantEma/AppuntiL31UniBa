@@ -740,9 +740,7 @@ Tuttavia se le due entità nel secondo membro della dipendenza sono fra loro str
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
 La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri (dipendenti dal DBMS utilizzato).
-Anche se la maggior parte delle scelte dipendono dallo specifico DBMS usato, esistono delle linee generali per le scelte di base in progettazione fisica, in particolare due fondamentali sono:
-- Scelta della **struttura** **primaria** per ciascuna relazione, fra quelle rese disponibili dal DBMS
-- Definizioni di eventuali **indici** **secondari**
+Nella progettazione fisica dobbiamo ricordarci un concetto fondamentale, ossia che la macchina prevede due tipi di memorie:
 
-Un **indice** è una particolare struttura dati ausiliaria, definita rispetto ad un attributo (o insieme di attributi) della relazione, che consente un accesso quasi diretto (logaritmico) alle tuple della relazione. Prima di continuare, bisogna innanzitutto specificare una cosa: le operazioni più costose durante l'interrogazione di un database relazionale sono quelle della selezione e del join.
-Un indice (primario o secondario) viene definito su un campo (insieme ad una struttrura hash) per poter ottimizzare poi nel complessivo l'efficienza di un intero sistema.
+
+
