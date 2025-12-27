@@ -739,14 +739,8 @@ Tuttavia se le due entità nel secondo membro della dipendenza sono fra loro str
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
-La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni e soprattutto delle strutture fisiche utilizzate con i relativi parametri.
-In questa fase, la maggior parte delle scelte dipendono dallo specifico DBMS usato e vengono prese dal DBMS stesso in maniera trasparente all'utente.
+La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri (dipendenti dal DBMS utilizzato).
 Le scelte fondamentali nella progettazione sono due:
 - Scelta della **struttura** **primaria** per ciascuna relazione, fra quelle rese disponibili dal DBMS
 - Definizioni di eventuali **indici** **secondari**
-
-Prima di orientarci nelle scelte però, partiamo da un presupposto molto importante: durante un interrogazione di una base di dati (attività più frequente), le operazioni più costose sono la **selezione** e il **join**, quindi ottimizzarle influirebbe positivamente sull'efficienza del sistema.
-Ciascuna delle due operazioni può essere eseguita in modo molto più efficiente se sui campi interessati è definito un **indice** (primario o secondario) o una struttura hash, rendendo così possibile un accesso diretto. 
-Per **indice** si intende una particolare struttura dati ausiliaria, definita rispetto ad un attributo (o insieme di attributi) della relazione, che consente un accesso quasi diretto (logaritmico) alle tuple della relazione. 
-Proprio per il fine dell'accesso diretto, 
 
