@@ -739,4 +739,4 @@ Tuttavia se le due entità nel secondo membro della dipendenza sono fra loro str
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
 ## Progettazione fisica
-[da finire]
+La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce i
