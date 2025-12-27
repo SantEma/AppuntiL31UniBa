@@ -738,9 +738,3 @@ Siccome è molto raro incontrare delle associazioni con più di tre entità, pos
 Tuttavia se le due entità nel secondo membro della dipendenza sono fra loro strettamente correlate, la decomposizione può risultare non conveniente.
 ### Esercizi sulla normalizzazione
 Li trovate sul PDF [[5.6 - Esercizi Normalizzazione.pdf]], presi dalla prof
-## Progettazione fisica
-La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri (dipendenti dal DBMS utilizzato).
-
-
-
-
