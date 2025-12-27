@@ -745,6 +745,6 @@ Anche se la maggior parte delle scelte dipendono dallo specifico DBMS usato, esi
 - Definizioni di eventuali **indici** **secondari**
 
 Un **indice** è una particolare struttura dati ausiliaria, definita rispetto ad un attributo (o insieme di attributi) della relazione, che consente un accesso quasi diretto (logaritmico) alle tuple della relazione.
-
+L'indice rende possibile l'ottimizzazione in termini di velocità 
 
 
