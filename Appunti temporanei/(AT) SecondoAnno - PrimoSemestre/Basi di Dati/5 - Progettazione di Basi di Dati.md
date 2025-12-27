@@ -744,7 +744,7 @@ Anche se la maggior parte delle scelte dipendono dallo specifico DBMS usato, esi
 - Scelta della **struttura** **primaria** per ciascuna relazione, fra quelle rese disponibili dal DBMS
 - Definizioni di eventuali **indici** **secondari**
 
-Un **indice** 
+Un **indice** è una particolare struttura dati ausiliaria, definita rispetto ad un attributo (o insieme di attributi) della relazione, che consente un accesso quasi diretto (logaritmico) alle tuple della relazione.
 
 
 
