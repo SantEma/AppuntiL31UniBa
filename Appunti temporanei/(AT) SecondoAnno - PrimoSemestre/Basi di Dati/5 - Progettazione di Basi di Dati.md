@@ -747,3 +747,5 @@ Le scelte fondamentali nella progettazione sono due:
 - Definizioni di eventuali **indici** **secondari**
 
 Per **indice** si intende una particolare struttura dati ausiliaria, definita rispetto ad un attributo (o insieme di attributi) della relazione, che consente un accesso quasi diretto (logaritmico) alle tuple della relazione.
+Prima di orientarci nelle scelte per partiamo da un presupposto molto importante: durante un interrogazione di una base di dati (attività più frequente), le operazioni più costose sono la **selezione** e il **join**, quindi ottimizzarle influirebbe positivamente sull'efficienza del sistema.
+Un criterio quindi importante
