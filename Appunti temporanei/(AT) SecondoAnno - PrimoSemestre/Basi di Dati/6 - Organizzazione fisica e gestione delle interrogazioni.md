@@ -5,7 +5,7 @@ Nelle applicazioni di per basi di dati, le operazioni vengono affidate a un modu
 Ci sono due motivi fondamentali per cui le basi di dati hanno necessità di gestire dati in memoria secondaria:
 - La dimensione della memoria principale non risulta quasi mai sufficiente per contenere una base di dati
 - Una delle caratteristiche fondamentali per le base di dati è la persistenza, cosa che la memoria principale non può offrire poiché limitata a contenere informazioni nel lasso di tempo di esecuzione dei programmi e non oltre (quindi spegnimento della macchina o guasto).
-
+[da finire]
 
 
 
