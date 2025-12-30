@@ -9,7 +9,7 @@ Ci sono due motivi fondamentali per cui le basi di dati hanno necessità di gest
 L'interazione fra memoria centrale e memoria secondaria è realizzata nei DBMS attraverso l'utilizzo di un'apposita grande zona di memoria detta **buffer**, gestita dal DBMS in modo condiviso per tutte le applicazioni.
 Il buffer è organizzato in **pagine**, che hanno dimensioni pari a un numero intero di blocchi di memoria secondaria (assumeremo che ogni blocco corrisponda a esattamente un blocco di memoria secondaria).
 Il gestore dei buffer si occupa del caricamento e del salvataggio delle pagine dalla memoria centrale alla memoria di massa.
-L'interfaccia del gestore offerta dal gestore del buffer è relativamente più complessa di quanto accennato, poichè non può limitarsi alle richieste di lettura e scrittura ma ha bisogno di informazioni sul prevedibile riutilizzo delle pagine (per evitarne la lettura ripetuta) e sull'eventuale necessità di effettuare immediatamente gli aggiornamenti (per garantirne l'effettuazione ed evitare che vadano persi in modo irrecuperabile in caso di guasto).
+L'interfaccia del gestore offerta dal gestore del buffer è relativamente più complessa di quanto accennato, poiché non può limitarsi alle richieste di lettura e scrittura ma ha bisogno di informazioni sul prevedibile riutilizzo delle pagine (per evitarne la lettura ripetuta) e sull'eventuale necessità di effettuare immediatamente gli aggiornamenti (per garantirne l'effettuazione ed evitare che vadano persi in modo irrecuperabile in caso di guasto).
 
 Il gestore del buffer gestisce, oltre al buffer appunto, un direttorio che per ogni pagina mantiene:
 - File fisico e numero blocco corrispondete alla pagina
@@ -29,16 +29,20 @@ Il file system è un modulo messo a disposizione dal sistema operativo che gesti
 
 In molti casi, il DBMS crea file di grandi dimensioni che utilizza per memorizzare diverse relazioni (o l'intera basi di dati), in altri invece vengono creati file in tempi successivi e può succedere che un file contenga i dati di più relazioni e che varie tuple di una relazione siano in file diversi. In sostanza, il DBMS gestisce i blocchi come se fossero un unico grande spazio di memoria secondaria e costruisce, in tale spazio, le strutture fisiche con cui implementa le relazioni
 ## Strutture primarie per l'organizzazione di file
-La struttura primaria di un file stabilisce il criterio secondo il quale sono disposte le tuple nell’ambito del file. Le strutture possono essere divise in tre categorie principali: 
+La struttura primaria di un file stabilisce il criterio secondo il quale sono disposte le tuple nell'ambito del file. Le strutture possono essere divise in tre categorie principali: 
 - Sequenziali;
 - Ad accesso calcolato (hash);  
 - Ad albero;
 #### Strutture sequenziali
 Nelle strutture sequenziali, un file è costituito da vari blocchi di memoria “logicamente” consecutivi, e le tuple vengono inserite nei blocchi rispettando una sequenza:
-- Seriale: sequenza delle tuple indotta dall'ordine di immissione (organizzazione disordinata)
-- Array: le tuple sono disposte come in un array, e la loro posizione dipende dal valore assunto in ciascuna tupla da un campo di indice
-- Ordinata: la sequenza delle tuple dipende dal valore assunto in ciascuna tupla da un campo (attributo) del file.
-
+- Seriale: sequenza delle tuple indotta dall'ordine di immissione (organizzazione disordinata).
+  Di solito viene chiamata anche **heap**, ossia mucchio
+- Array: le tuple sono disposte come in un array, e la loro posizione dipende dal valore assunto in ciascuna tupla da un campo di indice.
+  Possibile soltanto quando le tuple di una tabella sono di dimensione fissa.
+- Ordinata: la sequenza delle tuple dipende dal valore assunto in ciascuna tupla da un campo (attributo) del file, ossia la chiave.
+#### Strutture ad accesso calcolato (hash)
+Una struttura con accesso ad **hash** garantisce un accesso associativo ai dati, ovvero un tipo di accesso in cui la locazione fisica dei dati dipende dal valore assunto da un campo chiave. Questo avviene tramite specifiche funzioni hash che consentono di trasformare un attributo chiave nell'indice di un array, e quindi associare ad ogni record una posizione specifica in una struttura sequenziale. Un problema di questa tecnica è dovuto al fatto che l’insieme delle chiavi è molto più grande dell’insieme dei possibili valori dell’indice, è quindi sempre possibile che si generino collisioni, cioè valori diversi della chiave che portano allo stesso valore dell’indice. Una buona funzione hash rende bassa la probabilità che le collisioni si verifichino. 
+Va sottolineato che per definizione stessa di funzione hash, questa tecnica non è efficiente per ricerche basate su intervalli o ordinamenti. La forza 'hash infatti risiede nel determinare con complessità costante, data una certa chiave, il corrispondente valore (accessi puntuali). Trovare invece tutti gli elementi successivi (o in un certo intervallo) all'elemento corrispondete alla chiave inserita rende l'hash inutile.
 
 
 
