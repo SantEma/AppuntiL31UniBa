@@ -117,20 +117,27 @@ In generale:
 - Se l’interrogazione presenta una congiunzione di predicati valutabili tramite indice o funzione hash, il DBMS valuta i profili delle relazioni coinvolte e sceglie il metodo di accesso più selettivo;
 - Se l’interrogazione presenta una disgiunzione di predicati è necessario che siano definiti indici o funzioni hash su tutti gli attributi affinché la query sia più ottimizzata possibile.
 
-Da questo capiamo come, la medesima operazione di join sulle stesse identiche relazioni, sugli stessi identici attributi, a basso livello può essere eseguita in tre diverse modalità equivalenti: bested-loop, merge-scan, hash-based.
+Da questo capiamo come, la medesima operazione di join sulle stesse identiche relazioni, sugli stessi identici attributi, a basso livello può essere eseguita in tre diverse modalità equivalenti: **bested-loop, merge-scan, hash-based**.
 #### Ottimizzazione basata sui costi
 Il problema di ottimizzazione basato sui costi è assai difficile, in quanto possono presentarsi varie dimensioni di ottimizzazione, con scelte relative a:
 - Quale operazione di accesso ai dati svolgere (scansione o accesso diretto);
 - Ordine delle operazioni da eseguire (in presenza di più join, va determinato in quale ordine eseguirli);
 - Quando il sistema offre varie alternative per la realizzazione di un’operazione, occorre scegliere l’alternativa più adatta (quale metodo di join eseguire).
 
-Difronte ad un problema tanto complesso, il DBMS costruisce un albero di decisione (o albero delle alternative), in cui ogni nodo intermedio corrisponde ad una particolare scelta di un particolare sotto-problema e ad ogni nodo foglia corrisponde una specifica strategia di esecuzione dell’interrogazione, descritta dalle scelte che si trovano percorrendo il cammino che va dalla radice al nodo foglia. Quindi, il problema di ottimizzazione è riformulato nella ricerca del nodofoglia cui corrisponde il costo minore
+Difronte ad un problema tanto complesso, il DBMS costruisce un **albero di decisione** (o albero delle alternative), in cui ogni nodo intermedio corrisponde ad una particolare scelta di un particolare sotto-problema e ad ogni nodo foglia corrisponde una specifica strategia di esecuzione dell’interrogazione, descritta dalle scelte che si trovano percorrendo il cammino che va dalla radice al nodo foglia. Quindi, il problema di ottimizzazione è riformulato nella ricerca del nodofoglia cui corrisponde il costo minore.
 ![[Pasted image 20251230181952.png]]
 ## Progettazione fisica
 La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri.
 La maggior parte delle scelte da effettuare nel corso della progettazione fisica dipende dal specifico DBMS utilizzato, quindi risulta difficile fornire una panoramica completa e di validità generale, ma esistono delle linee generali per delle basi di dati non enormi o con carichi non particolarmente complessi.
-
 Le scelte fondamentali nella progettazione sono da ricondurre a due:
 - Scelta della **struttura primaria** per ciascuna relazione, fra quelle disponibili dal DBMS
 - Definizione di eventuali **indici secondari**
-[da finire]
+
+Per orientarci nelle scelte, è opportuno ricordare che le operazioni più delicate in una base di dati relazionale sono quelle di selezione (che corrisponde all'accesso a uno o più record sulla base dei valori di uno o più attributi) e di join (che richiede di combinare tuple di relazioni diverse sulla base dei valori di uno o più attributi di ognuna di tali relazioni).
+Ciascuna delle due operazioni può essere eseguita in modo molto più efficiente se sui campi interessati è definito un indice (primario o secondario) o una struttura hash, rendendo così possibile un accesso diretto.
+La definizione degli indici comporta, però, alcuni svantaggi. Infatti se è vero che accelerano le operazioni di ricerca, è anche vero che occupano memoria e soprattutto rallentano le operazioni di aggiornamento. Per questo motivo, per la definizione degli indici, è necessario seguire alcuni suggerimenti:
+1. Non creare indici su tabelle piccole (meno di sei pagine)
+2. Non creare indici su attributi poco selettivi, ovvero che hanno pochi valori diversi (sesso, stato civile etc.)
+3. Evitare indici su attributi modificati di frequente
+4. Prevedere più di quattro indici per relazione solo se le operazioni di modifica sono rare
+5. Creare indici sulle chiavi esterne per agevolare l’esecuzione delle operazioni di giunzione.
