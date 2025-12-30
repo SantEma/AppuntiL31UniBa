@@ -52,8 +52,16 @@ Iniziamo col dire che, in prima approssimazione, dato un file di dati $f$ con un
 Quando l'indice contiene al suo interno i dati, oppure quando è realizzato su un file che è già fisicamente ordinato in base a quella stessa chiave, in questo caso si parla **indice primario**, perché non garantisce solo l'accesso, ma vincola proprio l'allocazione fisica dei record. Un file può avere un solo indice primario (i dati possono essere ordinati fisicamente in un unico modo), mentre può avere più indici secondari. Continuando il paragone con i libri, possiamo considerare l'indice primario come l'**indice generale** (o sommario), che riflette l'ordine sequenziale dei capitoli e dei paragrafi.
 
 In generale, un file può avere al più un indice primario e un numero qualunque di indici secondari (su campi diversi).
+
+Senza entrare in dettagli troppo tecnici sulla struttura, vale la pena notare che questi "indirizzi" contenuti nell'indice possono puntare genericamente a un blocco di dati o, più specificamente, al singolo record. Sebbene i puntatori ai singoli record occupino più spazio, offrono il vantaggio di poter risolvere interrogazioni complesse leggendo solo l'indice, senza dover accedere al file dei dati se non alla fine.
+
+Passando agli aspetti gestionali, una caratteristica fondamentale dell'indice primario è che può essere "sparso". Grazie al fatto che i dati nel file principale sono già ordinati, non serve che l'indice punti a ogni singola riga; è sufficiente che "punti" a un solo record per ogni blocco di dati (ad esempio il primo o l'ultimo). Poiché i valori sono consecutivi, il sistema sa che i dati intermedi si trovano necessariamente in quel blocco. Questo rende l'indice primario molto compatto, o "sparso", a differenza degli indici secondari che devono per forza contenere riferimenti a tutti i valori (ed essere quindi "densi").
+![[Pasted image 20251230165600.png]]
+![[Pasted image 20251230165617.png]]
+L'efficienza è la ragion d'essere di queste strutture. Essendo file molto piccoli rispetto all'archivio dati completo, gli indici possono spesso essere caricati interamente nella memoria veloce (buffer), permettendo ricerche rapidissime. Mentre le strutture hash sono imbattibili per accessi puntuali (trovare un singolo dato specifico), gli indici si dimostrano superiori quando dobbiamo cercare intervalli di valori o scorrere i dati in ordine, operazioni in cui le hash risultano inefficienti.
 #### Strutture ad albero dinamiche
-le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multilivello, efficienti anche in caso di aggiornamenti. Tali strutture dinamiche si distinguono generalmente tra $\text{B-tree}$ (alberi bilanciati) e $\text{B+-tree}$.
+Le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multilivello, efficienti anche in caso di aggiornamenti. Tali strutture dinamiche si distinguono generalmente tra $\text{B-tree}$ (alberi bilanciati) e $\text{B+-tree}$.
+##### B-Tree
 
 
 
