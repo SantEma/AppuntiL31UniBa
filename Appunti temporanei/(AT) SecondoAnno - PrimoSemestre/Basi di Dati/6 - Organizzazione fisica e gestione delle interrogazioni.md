@@ -94,7 +94,17 @@ Per eliminare un indice è sufficiente eseguire il comando:
 $$\begin{aligned}
 &\text{DROP INDEX} \ Nometabella
 \end{aligned}$$
-## GEstore
+## Gestore delle interrogazioni: esecuzione e ottimizzazione
+Il gestore delle interrogazioni è un modulo cruciale dell’architettura di un DBMS, in quanto responsabile dell’esecuzione efficiente di operazioni che sono specificate a livello molto alto. Esso riceve in ingresso un’interrogazione scritta in SQL, controlla che non vi siano errori lessicali, sintattici o semantici, una volta accettata, l’interrogazione viene tradotta in una forma interna di tipo algebrico. A questo punto, l’ottimizzazione vera e propria ha inizio, dividendosi in: 
+1. Ottimizzazione algebrica, basata sulle proprietà degli operatori algebrici;
+2. Ottimizzazione basata sul modello dei costi, a sua volta basata sui profili delle relazioni;
+3. Generazione del codice.
+### Profili delle relazioni
+Ciascun DBMS commerciale possiede informazioni quantitative relative alle caratteristiche delle tabelle, organizzate in strutture dati, dette **profili delle relazioni**, che vengono memorizzate nel dizionario dei dati. I profili contengono alcune delle seguenti informazioni:
+- La cardinalità di ciascuna tabella;
+- Dimensioni di ciascuna tupla;
+- Dimensioni di ciascun attributo;
+- 
 ## Progettazione fisica
 La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri.
 La maggior parte delle scelte da effettuare nel corso della progettazione fisica dipende dal specifico DBMS utilizzato, quindi risulta difficile fornire una panoramica completa e di validità generale, ma esistono delle linee generali per delle basi di dati non enormi o con carichi non particolarmente complessi.
