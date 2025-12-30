@@ -85,22 +85,15 @@ Una cancellazione può essere sempre fatta localmente, marcando lo spazio preced
 ##### B+-Tree
 Per la struttura ad albero appena descritta esistono due versioni, denominate B e B. L’unica differenza consiste nel fatto che negli alberi B+, i nodi foglia sono collegati da una catena che li connette in base all'ordine imposto dalla chiave. Tale catena consente di svolgere in modo efficiente anche interrogazioni il cui predicato di selezione definisce un intervallo di valori ammissibili. Per ottimizzare ulteriormente questo tipo di struttura si possono integrare dei puntatori ulteriori che collegano determinati nodi intermedi alle foglie corrispondenti.
 ##### Definizione degli indici in SQL
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+In SQL, la sintassi del comando per la creazione di un indice è:
+$$\begin{aligned}
+&\text{CREATE [UNIQUE] INDEX} \ Nometabella \ \text{on} \ Nometabella \ (ListaAttributi) 
+\end{aligned}$$
+Con questo comando si crea un indice di nome $NomeIndice$ sulla tabella $NomeTabella$, operante sugli attributi elencati in $ListaAttributi$. $\text{UNIQUE}$ è usato per indicare che $ListaAttributi$ è superchiave.
+Per eliminare un indice è sufficiente eseguire il comando:
+$$\begin{aligned}
+&\text{DROP INDEX} \ Nometabella
+\end{aligned}$$
 
 ## Progettazione fisica
 La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri.
@@ -109,3 +102,4 @@ La maggior parte delle scelte da effettuare nel corso della progettazione fisica
 Le scelte fondamentali nella progettazione sono da ricondurre a due:
 - Scelta della **struttura primaria** per ciascuna relazione, fra quelle disponibili dal DBMS
 - Definizione di eventuali **indici secondari**
+[da finire]
