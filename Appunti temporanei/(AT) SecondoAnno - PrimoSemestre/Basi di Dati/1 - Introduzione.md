@@ -2,6 +2,7 @@
 **SI CONSIGLIA DI AVERE A PORTATA IL LIBRO**
 - Pur essendoci gli esercizi svolti dalla professoressa, sul libro ne sono presenti altri per potervi esercitare voi
 - Qualche esempio potrebbe mancare volontariamente o involontariamente
+- Ci sono approfondimenti che magari non ho trattato essendo questi riassunti ma sono carini da sapere (meno se stai usando questi file per studiare)
 **SIETE STATI AVVERTITI** :D
 ## Sistema organizzativo
 Un **sistema organizzativo** è un insieme di risorse e regole che consentono il funzionamento di una qualunque struttura sociale per il raggiungimento dei suoi obbiettivi (alcuni esempi di questi sono una biblioteca, studio medico, università etc...)
