@@ -33,19 +33,19 @@ La struttura primaria di un file stabilisce il criterio secondo il quale sono di
 - Sequenziali;
 - Ad accesso calcolato (hash);  
 - Ad albero;
-#### Strutture sequenziali
+### Strutture sequenziali
 Nelle strutture sequenziali, un file è costituito da vari blocchi di memoria “logicamente” consecutivi, e le tuple vengono inserite nei blocchi rispettando una sequenza:
 - Seriale: sequenza delle tuple indotta dall'ordine di immissione (organizzazione disordinata).
   Di solito viene chiamata anche **heap**, ossia mucchio
 - Array: le tuple sono disposte come in un array, e la loro posizione dipende dal valore assunto in ciascuna tupla da un campo di indice.
   Possibile soltanto quando le tuple di una tabella sono di dimensione fissa.
 - Ordinata: la sequenza delle tuple dipende dal valore assunto in ciascuna tupla da un campo (attributo) del file, ossia la chiave.
-#### Strutture ad accesso calcolato (hash)
+### Strutture ad accesso calcolato (hash)
 Una struttura con accesso ad **hash** garantisce un accesso associativo ai dati, ovvero un tipo di accesso in cui la locazione fisica dei dati dipende dal valore assunto da un campo chiave. Questo avviene tramite specifiche funzioni hash che consentono di trasformare un attributo chiave nell'indice di un array, e quindi associare ad ogni record una posizione specifica in una struttura sequenziale. Un problema di questa tecnica è dovuto al fatto che l’insieme delle chiavi è molto più grande dell’insieme dei possibili valori dell’indice, è quindi sempre possibile che si generino collisioni, cioè valori diversi della chiave che portano allo stesso valore dell’indice. Una buona funzione hash rende bassa la probabilità che le collisioni si verifichino. 
 Va sottolineato che per definizione stessa di funzione hash, questa tecnica non è efficiente per ricerche basate su intervalli o ordinamenti. La forza 'hash infatti risiede nel determinare con complessità costante, data una certa chiave, il corrispondente valore (accessi puntuali). Trovare invece tutti gli elementi successivi (o in un certo intervallo) all'elemento corrispondete alla chiave inserita rende l'hash inutile.
-
-
-
+### Strutture ad albero
+Le strutture ad albero, denominate anche **indici**, favoriscono l'accesso in base al valore di uno o più campi, consentendo sia accessi puntuali che corrispondenti a valori con complessità logaritmica (sulla base della profondità dell’albero).
+L’organizzazione ad albero può essere utilizzata per realizzare sia strutture primarie, cioè strutture per contenere i dati, sia strutture secondarie, che favoriscono gli accessi ai dati senza peraltro contenere i dati stessi.
 
 
 
