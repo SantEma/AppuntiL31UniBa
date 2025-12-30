@@ -104,7 +104,28 @@ Ciascun DBMS commerciale possiede informazioni quantitative relative alle caratt
 - La cardinalità di ciascuna tabella;
 - Dimensioni di ciascuna tupla;
 - Dimensioni di ciascun attributo;
-- 
+- Il numero dei valori distinti di ciascun attributo;
+- Il valore minimo e massimo di ciascun attributo.
+
+I profili vengono calcolati in base ai dati effettivamente memorizzati nelle tabelle, utilizzando opportune primitive di sistema (es. update statistics) e sono utilizzati nella fase finale dell’ottimizzazione, per stimare le dimensioni dei risultati intermedi.
+### Ottimizzazione delle query
+Sappiamo che una query può essere scritta in diversi modi, ma una volta ottimizzata, la query è l’unica possibile. Ora, però, l’esecuzione della stessa query ottimizzata può essere eseguita in diversi modi. Questo deriva dal fatto che, per quanto sia ottimizzata, la query è rappresentata in linguaggio di alto livello e di conseguenza utilizza operatori di alto livello che possono essere il risultato dell’unione di più operatori di basso livello. Ad esempio, per eseguire un’operazione join, si esegue un’operazione di ordinamento a sua volta composta da operatori di accesso diretto o di scansione (in base alla struttura fisica utilizzata per memorizzare i dati) di livello ancora più basso
+#### Accesso diretto
+Si usa il termine accesso diretto quando è possibile leggere o scrivere un record senza dover necessariamente esaminare il file in modo sequenziale, ma è possibile ottenere a partire dal valore di un campo l’indirizzo del blocco in cui il record si trova. Per eseguire l’accesso diretto è necessaria la presenza di una struttura hash o indice che lo permetta. Come sappiamo, gli indici favoriscono le interrogazioni che richiedono accessi puntuali oppure a intervallo. Si dice in tal caso che un predicato dell’interrogazione è **valutabile** tramite l’indice.
+In generale:
+- Se l’interrogazione presenta un solo predicato valutabile, allora c’è convenienza a usare l’indice o la struttura hash, consapevoli del fatto che per per un accesso puntuale è preferibile l'hash, su un intervallo è preferibile l’indice;
+- Se l’interrogazione presenta una congiunzione di predicati valutabili tramite indice o funzione hash, il DBMS valuta i profili delle relazioni coinvolte e sceglie il metodo di accesso più selettivo;
+- Se l’interrogazione presenta una disgiunzione di predicati è necessario che siano definiti indici o funzioni hash su tutti gli attributi affinché la query sia più ottimizzata possibile.
+
+Da questo capiamo come, la medesima operazione di join sulle stesse identiche relazioni, sugli stessi identici attributi, a basso livello può essere eseguita in tre diverse modalità equivalenti: bested-loop, merge-scan, hash-based.
+#### Ottimizzazione basata sui costi
+Il problema di ottimizzazione basato sui costi è assai difficile, in quanto possono presentarsi varie dimensioni di ottimizzazione, con scelte relative a:
+- Quale operazione di accesso ai dati svolgere (scansione o accesso diretto);
+- Ordine delle operazioni da eseguire (in presenza di più join, va determinato in quale ordine eseguirli);
+- Quando il sistema offre varie alternative per la realizzazione di un’operazione, occorre scegliere l’alternativa più adatta (quale metodo di join eseguire).
+
+Difronte ad un problema tanto complesso, il DBMS costruisce un albero di decisione (o albero delle alternative), in cui ogni nodo intermedio corrisponde ad una particolare scelta di un particolare sotto-problema e ad ogni nodo foglia corrisponde una specifica strategia di esecuzione dell’interrogazione, descritta dalle scelte che si trovano percorrendo il cammino che va dalla radice al nodo foglia. Quindi, il problema di ottimizzazione è riformulato nella ricerca del nodofoglia cui corrisponde il costo minore
+![[Pasted image 20251230181952.png]]
 ## Progettazione fisica
 La fase finale nel processo di progettazione di una base di dati è quella della progettazione fisica, che, ricevendo in ingresso lo schema logico della base dei dati, le caratteristiche del sistema scelto e le previsioni sul carico applicativo, produce in uscita lo schema fisico della base di dati, costituito da effettive definizioni delle relazioni (le istruzioni $\text{CREATE TABLE}$ in SQL) e soprattutto delle strutture fisiche utilizzate con i relativi parametri.
 La maggior parte delle scelte da effettuare nel corso della progettazione fisica dipende dal specifico DBMS utilizzato, quindi risulta difficile fornire una panoramica completa e di validità generale, ma esistono delle linee generali per delle basi di dati non enormi o con carichi non particolarmente complessi.
