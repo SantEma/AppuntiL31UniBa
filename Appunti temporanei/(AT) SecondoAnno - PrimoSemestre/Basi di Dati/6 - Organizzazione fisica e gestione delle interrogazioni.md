@@ -21,7 +21,9 @@ La conoscenza di questi dati è fondamentale nel momento in cui diventa necessar
 - $\text{unfix}$: indica che la transazione ha concluso l’utilizzo della pagina, quindi decrementa il contatore di utilizzo di pagina
 - $\text{force}$: trasferisce in modo sincrono una pagina in memoria secondaria su richiesta del gestore dell’affidabilità.
 
-
+Il buffer può richiedere scritture in modo sincrono, cioè esplicitamente richiesto con una primitiva $\text{force}$, oppure in modo asincrono, quindi le scritture delle pagine modificate e conservate nel buffer vengono scritte quando il buffer lo ritiene opportuno.
+### DBMS e file system
+Il file system è 
 
 
 
