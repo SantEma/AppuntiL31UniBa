@@ -27,7 +27,22 @@ Il file system è un modulo messo a disposizione dal sistema operativo che gesti
 - Creare ed eliminare file
 - Leggere e scrivere blocchi o sequenze di blocchi contigui
 
-In molti casi, il DBMS crea file di grandi dimensioni che utilizza per memorizzare diverse relazioni (o l'intera basi di dati), in altri invece vengono creati file in tempi successivi e può succedere che un file contenga i dati di più relazioni e che varie tuple di una relazione siano in file diversi. In sostanza, il DBMS 
+In molti casi, il DBMS crea file di grandi dimensioni che utilizza per memorizzare diverse relazioni (o l'intera basi di dati), in altri invece vengono creati file in tempi successivi e può succedere che un file contenga i dati di più relazioni e che varie tuple di una relazione siano in file diversi. In sostanza, il DBMS gestisce i blocchi come se fossero un unico grande spazio di memoria secondaria e costruisce, in tale spazio, le strutture fisiche con cui implementa le relazioni
+## Strutture primarie per l'organizzazione di file
+La struttura primaria di un file stabilisce il criterio secondo il quale sono disposte le tuple nell’ambito del file. Le strutture possono essere divise in tre categorie principali: 
+- Sequenziali;
+- Ad accesso calcolato (hash);  
+- Ad albero;
+#### Strutture sequenziali
+Nelle strutture sequenziali, un file è costituito da vari blocchi di memoria “logicamente” consecutivi, e le tuple vengono inserite nei blocchi rispettando una sequenza:
+- Seriale: sequenza delle tuple indotta dall'ordine di immissione (organizzazione disordinata)
+- Array: le tuple sono disposte come in un array, e la loro posizione dipende dal valore assunto in ciascuna tupla da un campo di indice
+- Ordinata: la sequenza delle tuple dipende dal valore assunto in ciascuna tupla da un campo (attributo) del file.
+
+
+
+
+
 
 
 
