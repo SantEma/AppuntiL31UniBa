@@ -46,7 +46,7 @@ Va sottolineato che per definizione stessa di funzione hash, questa tecnica non 
 ### Strutture ad albero
 Le strutture ad albero, denominate anche **indici**, favoriscono l'accesso in base al valore di uno o più campi, consentendo sia accessi puntuali che corrispondenti a valori con complessità logaritmica (sulla base della profondità dell’albero).
 L’organizzazione ad albero può essere utilizzata per realizzare sia strutture primarie, cioè strutture per contenere i dati, sia strutture secondarie, che favoriscono gli accessi ai dati senza peraltro contenere i dati stessi.
-
+#### Indici primari e secondari
 
 
 
