@@ -84,7 +84,7 @@ Una cancellazione può essere sempre fatta localmente, marcando lo spazio preced
 ![[Pasted image 20251230171754.png]]
 ##### B+-Tree
 Per la struttura ad albero appena descritta esistono due versioni, denominate B e B. L’unica differenza consiste nel fatto che negli alberi B+, i nodi foglia sono collegati da una catena che li connette in base all'ordine imposto dalla chiave. Tale catena consente di svolgere in modo efficiente anche interrogazioni il cui predicato di selezione definisce un intervallo di valori ammissibili. Per ottimizzare ulteriormente questo tipo di struttura si possono integrare dei puntatori ulteriori che collegano determinati nodi intermedi alle foglie corrispondenti.
-##### Definzione degli indici in SQL
+##### Definizione degli indici in SQL
 
 
 
