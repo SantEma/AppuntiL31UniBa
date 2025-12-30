@@ -60,7 +60,7 @@ Passando agli aspetti gestionali, una caratteristica fondamentale dell'indice pr
 ![[Pasted image 20251230165617.png]]
 L'efficienza è la ragion d'essere di queste strutture. Essendo file molto piccoli rispetto all'archivio dati completo, gli indici possono spesso essere caricati interamente nella memoria veloce (buffer), permettendo ricerche rapidissime. Mentre le strutture hash sono imbattibili per accessi puntuali (trovare un singolo dato specifico), gli indici si dimostrano superiori quando dobbiamo cercare intervalli di valori o scorrere i dati in ordine, operazioni in cui le hash risultano inefficienti.
 #### Strutture ad albero dinamiche
-Le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multilivello, efficienti anche in caso di aggiornamenti. Tali strutture dinamiche si distinguono generalmente tra $\text{B-tree}$ (alberi bilanciati) e $\text{B+-tree}$.
+Le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multi-livello, efficienti anche in caso di aggiornamenti. Tali strutture dinamiche si distinguono generalmente tra $\text{B-tree}$ (alberi bilanciati) e $\text{B+-tree}$.
 ##### B-Tree
 
 
