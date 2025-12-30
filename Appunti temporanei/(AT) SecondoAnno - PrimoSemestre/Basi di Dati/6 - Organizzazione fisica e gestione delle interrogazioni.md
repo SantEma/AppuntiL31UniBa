@@ -23,8 +23,11 @@ La conoscenza di questi dati è fondamentale nel momento in cui diventa necessar
 
 Il buffer può richiedere scritture in modo sincrono, cioè esplicitamente richiesto con una primitiva $\text{force}$, oppure in modo asincrono, quindi le scritture delle pagine modificate e conservate nel buffer vengono scritte quando il buffer lo ritiene opportuno.
 ### DBMS e file system
-Il file system è 
+Il file system è un modulo messo a disposizione dal sistema operativo che gestisce la memoria secondaria, utilizzato dai DBMS oggi, seppur in maniera limitata, per:
+- Creare ed eliminare file
+- Leggere e scrivere blocchi o sequenze di blocchi contigui
 
+In molti casi, il DBMS crea file di grandi dimensioni che utilizza per memorizzare diverse relazioni (o l'intera basi di dati), in altri invece vengono creati file in tempi successivi e può succedere che un file contenga i dati di più relazioni e che varie tuple di una relazione siano in file diversi. In sostanza, il DBMS 
 
 
 
