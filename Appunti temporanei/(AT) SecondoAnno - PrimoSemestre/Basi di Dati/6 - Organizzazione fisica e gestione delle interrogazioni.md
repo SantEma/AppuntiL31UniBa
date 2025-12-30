@@ -47,11 +47,13 @@ Va sottolineato che per definizione stessa di funzione hash, questa tecnica non 
 Le strutture ad albero, denominate anche **indici**, favoriscono l'accesso in base al valore di uno o più campi, consentendo sia accessi puntuali che corrispondenti a valori con complessità logaritmica (sulla base della profondità dell’albero).
 L’organizzazione ad albero può essere utilizzata per realizzare sia strutture primarie, cioè strutture per contenere i dati, sia strutture secondarie, che favoriscono gli accessi ai dati senza peraltro contenere i dati stessi.
 #### Indici primari e secondari
+Iniziamo col dire che, in prima approssimazione, dato un file di dati $f$, un **indice secondario** è essenzialmente un file separato. In esso, ogni record è composto logicamente da due campi: il valore della chiave e l'indirizzo fisico dove si trova quel dato nel file principale. Essendo ordinato in base alla chiave, questo indice consente di fare ricerche rapide. Intuitivamente, si può pensarlo come l'**indice analitico** di un libro: un elenco di termini ordinati alfabeticamente che ti dice esattamente a che pagina andare.
 
+Quando l'indice contiene al suo interno i dati, oppure quando è realizzato su un file che è già fisicamente ordinato in base a quella stessa chiave, in questo caso si parla **indice primario**, perché non garantisce solo l'accesso, ma vincola proprio l'allocazione fisica dei record. Un file può avere un solo indice primario (i dati possono essere ordinati fisicamente in un unico modo), mentre può avere più indici secondari. Continuando il paragone con i libri, possiamo considerare l'indice primario come l'**indice generale** (o sommario), che riflette l'ordine sequenziale dei capitoli e dei paragrafi.
 
-
-
-
+In generale, un file può avere al più un indice primario e un numero qualunque di indici secondari (su campi diversi).
+#### Strutture ad albero dinamiche
+le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multilivello, efficienti anche in caso di aggiornamenti. Tali strutture dinamiche si distinguono generalmente tra $\text{B-tree}$ (alberi bilanciati) e $\text{B+-tree}$.
 
 
 
