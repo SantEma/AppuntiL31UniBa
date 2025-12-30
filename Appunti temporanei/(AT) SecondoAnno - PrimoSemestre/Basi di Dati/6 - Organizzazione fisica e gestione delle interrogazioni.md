@@ -63,6 +63,24 @@ L'efficienza è la ragion d'essere di queste strutture. Essendo file molto picco
 Le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multi-livello, efficienti anche in caso di aggiornamenti. 
 
 Ogni albero è caratterizzato da un nodo radice, vari nodi intermedi e vari nodi foglia; ogni nodo coincide con una pagina o blocco a livello di file system e di gestore del buffer. I legami tra nodi vengono stabiliti da puntatori che collegano fra loro le pagine; in genere, ogni nodo ha un numero di discendenti abbastanza grande, che dipende dall'ampiezza della pagina (non è raro il caso di alberi in cui ogni nodo ha decine o addirittura centinaia di successori); questo consente di costruire alberi con un numero limitato di livelli, nei quali la maggioranza delle pagine è occupata da nodi foglia. Un altro requisito importante per il buon funzionamento di queste strutture dati è che gli alberi siano **bilanciati** (il B-Tree classico), cioè che la lunghezza di un cammino che collega il nodo radice a un qualunque nodo foglia sia costante; in tal caso, il tempo di accesso alle informazioni contenute nell'albero è lo stesso per tutte le foglie ed è pari alla profondità dell’albero.
+##### Contenuti dei nodi e tecnica di ricerca
+Per capire come funziona un albero $n$-ario, è sufficiente analizzare la struttura di un suo qualsiasi nodo non foglia. Come si può vedere in figura, ogni nodo presenta una sequenza di $F$ valori ordinati di chiave.
+![[Pasted image 20251230171159.png]]
+Ogni chiave $K_i$, con $1 \le i \le F$, è seguita da un puntatore $P_i$, mentre $K_1$ è preceduta da un puntatore $P_0$. Ciascun puntatore indirizza un sottoalbero così caratterizzato:
+- il puntatore $P_0$ indirizza al sottoalbero che permette di accedere ai record con chiavi minori di $K$
+- il puntatore $P_f$ indirizza al sottoalbero che permette di accedere ai record con chiavi maggiori o uguali a $K_f$
+- ciascun puntatore intermedio $P_i$, $0 < i < F$, indirizza un sottoalbero che contiene chiavi comprese nell'intervallo $[K_i, K_{i+1})$.
+
+Rispetto all'albero binario, invece di un'etichetta e due puntatori, si hanno $F$ etichette (valori di chiave) ed $F+1$ puntatori.
+A questo punto, dato un valore $V$, la *ricerca* viene effettuata seguendo i puntatori partendo dalla radice. Ad ogni nodo intermedio:
+- Se $V < K_1$ si segue il puntatore $P_0$
+- Se $V \ge K_f$ si segue il puntatore $P_f$
+- Altrimenti si segue il puntatore $P_j$ t.c. $K_j \le V < K_{j+1}$
+- La ricerca prosegue fino ai nodi foglia dell'albero.
+
+Le operazioni di inserimento ed eliminazione di tuple provocano anche aggiornamenti degli indici, che devono riflettere la situazione generata da una variazione dei valori del campo chiave. 
+Un inserimento non provoca problemi quando è possibile inserire il nuovo valore della chiave in una foglia dell’albero. Quando invece la pagina della foglia non ha spazio disponibile, si rende necessaria un’operazione di split, che suddivide l’informazione già presente nella foglia e la nuova informazione in due, allocando due foglie al posto di una. Questo significa aggiungere un nuovo puntatore nel nodo padre del nodo foglia splittato. Ma, se il nodo padre non ha spazio sufficiente, lo split si propaga, fino, in casi estremi, alla radice dell’albero. Per evitare i casi estremi, quindi per ottenere degli aggiustamenti locali, si applica il criterio del riempimento parziale, in base al quale si cerca di riempire al massimo il 70% dell’intero albero. 
+Una cancellazione può essere sempre fatta localmente, marcando lo spazio precedentemente allocato a una tupla come invalido. In questo caso si potrebbe verificare il problema inverso all'inserimento. Infatti, dopo la cancellazione, il nodo foglia potrebbe presentare una quantità di spazi vuoti tale da richiedere un’operazione di merge, ovvero l’unione di due foglie in una unica. Analogamente all'operazione di split, anche quella di merge potrebbe riverberarsi sui nodi precedenti, sino al raggiungimento della radice
 ##### B+-Tree
 
 
