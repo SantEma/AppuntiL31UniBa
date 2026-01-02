@@ -5,14 +5,23 @@ SQL supporta le applicazioni in due modi:
 ## Procedure 
 Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sottoprogrammi memorizzati nel database come parte dello schema (motivo per cui vengono dette anche **stored procedures**). Esse permettono di assegnare un nome a un’istruzione SQL ed eventuali parametri. Una volta definita, la procedura è utilizzabile come un qualunque comando SQL. La presenza di procedure memorizzate nella base di dati consente di azzerare il tempo che sarebbe stato necessario per scrivere ogni volta le stesse istruzioni in SQL e, di conseguenza, riducono il rischio di commettere errori involontari scrivendo istruzioni errate.
 
-Consideriamo una procedura SQL che aggiorna il nome della città del dipartimento:
+Consideriamo una procedura SQL che assegna lo sconto per ogni cliente in base al codice cliente:
 ```SQL
-PROCEDURE AssegnaCitta(:Dip varchar(20),
-                       :Citta varchar(20))
-UPDATE Dipartimento
-SET Città=: Citta
-WHERE Nome =: Dip;
+PROCEDURE AssegnaSconto (:Cod char(2), :Sc integer))
+UPDATE Clienti
+SET Sconto = :Sc
+WHERE CodiceCliente = :Cod;
 ```
-
+Quest'ultima può essere invocata all'interno del linguaggio ospite utilizzando il comando seguente:
+```SQL
+$ AssegnaSconto (:CodCli, :ScRid)
+```
 È bene sapere che lo standard SQL-2 non tratta la scrittura di procedure complesse, ma solo quelle composte da un singolo comando SQL. Questo è invece permesso in SQL-3, dove viene fornita una ricca sintassi per la definizione di procedure, integrando anche le strutture di controllo
 ## Trigger
+I trigger, detti anche regole attive, seguono il paradigma Evento-Condizione-Azione (ECA), infatti ogni trigger si attiva al verificarsi di una condizione prestabilita. Un trigger attivato, avvia l’esecuzione di una specifica sequenza di istruzioni. Le basi di dati che contengono trigger sono dette basi di dati attive. 
+Nello specifico il paradigma seguito da un trigger funziona come segue:
+- **Evento**: Tipicamente una modifica dello stato del database consiste in una operazione di $\text{INSERT}$, $\text{DELETE}$, $\text{UPDATE}$. Se l’evento accade, il trigger si attiva.
+- **Condizione**: Predicato booleano espresso in SQL che identifica se l’azione del trigger deve essere eseguita. Quando il trigger si attiva, viene valutata la condizione, quindi il trigger viene considerato.
+- **Azione**: Consiste in una sequenza di update SQL o una procedura. Quando la condizione è verificata, allora l’azione viene eseguita, quindi il trigger viene eseguito.
+
+È bene ricordare che l’azione eseguita al verificarsi della condizione di un trigger, può a sua volta attivare un ulteriore trigger,renb. I trigger sono uno strumento molto potente che permette di gestire vincoli di integrità, calcolare dati derivati, gestire eccezioni e codificare regole aziendali.
