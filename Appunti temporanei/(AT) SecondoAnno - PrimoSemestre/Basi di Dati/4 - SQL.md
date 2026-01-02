@@ -386,13 +386,13 @@ $$
 &[\text{WHERE} \  AltraCondizione]
 \end{aligned}
 $$
-Mediante questa sintassi la condizione di join non compare come argomento della clausola $\text{WHERE}$, ma viene spostata nella clasuola $\text{FROM}$, associata alle tabelle che vengono coinvolte nel join.
+Mediante questa sintassi la condizione di join non compare come argomento della clausola $\text{WHERE}$, ma viene spostata nella clausola $\text{FROM}$, associata alle tabelle che vengono coinvolte nel join.
 Il parametro $TipoJoin$ specifica quale tipo di join usare, tra cui:
 - $\text{INNER}$, di default
 - $\text{RIGHT OUTER}$
 - $\text{LEFT OUTER}$
 - $\text{FULL OUTER}$
-L'inner join rappresenta il tradizionale tetha-join dell'algebra relazionale
+L'inner join rappresenta il tradizionale theta-join dell'algebra relazionale
 
 Con il join interno le righe che vengono coinvolte nel join sono in generale un sottoinsieme delle righe di ciascuna tabella, può infatti capitare che alcune righe non vengano considerate in quanto non vengano rispettate le condizioni;
 Questo comportamento non è desiderabile solitamente, si preferisce infatti utilizzare il join esterno per mantenere le righe che fanno parte di una o entrambe le tabelle coinvolte.
@@ -683,9 +683,28 @@ Ogni trigger è caratterizzato da:
 
 
 Un trigger ha questo tipo di sintassi:
-
+$$
+\begin{aligned}
+&\text{CREATE TRIGGER } NomeTrigger \\
+&Modo \ Evento \ \text{ON } TabellaTarget \\
+&[ \ \text{REFERENCING } Referenza \ ] \\
+&[ \ \text{FOR EACH } Livello \ ] \\
+&[ \ \text{WHEN } ( \ PredicatoSQL \ ) \ ] \\
+&StatementProceduraleSQL
+\end{aligned}
+$$
 Un esempio può essere questo:
-
+$$
+\begin{aligned}
+&\text{CREATE TRIGGER } ImpiegatiSenzaDip \\
+&\text{AFTER INSERT INTO } Impiegati \\
+&\text{FOR EACH ROW} \\
+&\text{WHEN } ( \ New.Dipart \ \text{IS NULL} \ ) \\
+&\text{UPDATE } Impiegati \\
+&\quad \text{SET } Dipart = \text{'Nuovi Arrivati'} \\
+&\quad \text{WHERE } Matr = New.Matr
+\end{aligned}
+$$
 
 È bene ricordare che l’azione eseguita al verificarsi della condizione di un trigger, può a sua volta attivare un ulteriore trigger, rendendoli quindi **a cascata**,  ma se non vi si è attenti si potrebbe generare una catena di attivazioni potenzialmente infinita, mandando in stallo l’intera applicazione. 
 I trigger sono uno strumento molto potente che permette di gestire vincoli di integrità, calcolare dati derivati, gestire eccezioni e codificare regole aziendali. 
