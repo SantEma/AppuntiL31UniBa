@@ -24,4 +24,15 @@ Nello specifico il paradigma seguito da un trigger funziona come segue:
 - **Condizione**: Predicato booleano espresso in SQL che identifica se l’azione del trigger deve essere eseguita. Quando il trigger si attiva, viene valutata la condizione, quindi il trigger viene considerato.
 - **Azione**: Consiste in una sequenza di update SQL o una procedura. Quando la condizione è verificata, allora l’azione viene eseguita, quindi il trigger viene eseguito.
 
-È bene ricordare che l’azione eseguita al verificarsi della condizione di un trigger, può a sua volta attivare un ulteriore trigger,renb. I trigger sono uno strumento molto potente che permette di gestire vincoli di integrità, calcolare dati derivati, gestire eccezioni e codificare regole aziendali.
+È bene ricordare che l’azione eseguita al verificarsi della condizione di un trigger, può a sua volta attivare un ulteriore trigger, rendendoli quindi **a cascata**,  ma se non vi si è attenti si potrebbe generare una catena di attivazioni potenzialmente infinita, mandando in stallo l’intera applicazione. 
+I trigger sono uno strumento molto potente che permette di gestire vincoli di integrità, calcolare dati derivati, gestire eccezioni e codificare regole aziendali. 
+Un ulteriore vantaggio derivante dall'utilizzo dei trigger consiste nel riuscire a codificare la logica del sistema in maniera centralizzata e condivisa da tutte le applicazioni, con conseguenti vantaggi in fase di lettura e manutenzione del codice, infatti in caso di modifiche al comportamento del sistema è sufficiente intervenire nell'ambito della definizione dei trigger e non in più parti del codice. Lo svantaggio è che i trigger sono standardizzati sono il SQL-3, per cui potrebbero presentarsi casi (se pur sempre più rari) di non portabilità del codice.
+
+Ogni trigger è caratterizzato da:
+- Nome
+- Target, ovvero la tabella controllata
+- Modalità
+	- Nella modalità $\text{before}$ il trigger è considerato e possibilmente eseguito prima dell’evento, ad esempio quando si vuole verificare una modifica prima di eseguirla.
+	- Nella modalità $\text{after}$ il trigger è considerato ed eseguito dopo l’evento.
+- Evento: $\text{INSERT}$, $\text{DELETE}$, o $\text{UPDATE}$
+   
