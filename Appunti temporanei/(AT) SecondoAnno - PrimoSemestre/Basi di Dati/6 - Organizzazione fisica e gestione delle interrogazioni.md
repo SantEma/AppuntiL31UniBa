@@ -52,7 +52,6 @@ Iniziamo col dire che, in prima approssimazione, dato un file di dati $f$ con un
 Quando l'indice contiene al suo interno i dati, oppure quando è realizzato su un file che è già fisicamente ordinato in base a quella stessa chiave, in questo caso si parla **indice primario**, perché non garantisce solo l'accesso, ma vincola proprio l'allocazione fisica dei record. Un file può avere un solo indice primario (i dati possono essere ordinati fisicamente in un unico modo), mentre può avere più indici secondari. Continuando il paragone con i libri, possiamo considerare l'indice primario come l'**indice generale** (o sommario), che riflette l'ordine sequenziale dei capitoli e dei paragrafi.
 
 In generale, un file può avere al più un indice primario e un numero qualunque di indici secondari (su campi diversi).
-
 Senza entrare in dettagli troppo tecnici sulla struttura, vale la pena notare che questi "indirizzi" contenuti nell'indice possono puntare genericamente a un blocco di dati o, più specificamente, al singolo record. Sebbene i puntatori ai singoli record occupino più spazio, offrono il vantaggio di poter risolvere interrogazioni complesse leggendo solo l'indice, senza dover accedere al file dei dati se non alla fine.
 
 Passando agli aspetti gestionali, una caratteristica fondamentale dell'indice primario è che può essere "sparso". Grazie al fatto che i dati nel file principale sono già ordinati, non serve che l'indice punti a ogni singola riga; è sufficiente che "punti" a un solo record per ogni blocco di dati (ad esempio il primo o l'ultimo). Poiché i valori sono consecutivi, il sistema sa che i dati intermedi si trovano necessariamente in quel blocco. Questo rende l'indice primario molto compatto, o "sparso", a differenza degli indici secondari che devono per forza contenere riferimenti a tutti i valori (ed essere quindi "densi").
@@ -141,3 +140,5 @@ La definizione degli indici comporta, però, alcuni svantaggi. Infatti se è ver
 3. Evitare indici su attributi modificati di frequente
 4. Prevedere più di quattro indici per relazione solo se le operazioni di modifica sono rare
 5. Creare indici sulle chiavi esterne per agevolare l’esecuzione delle operazioni di giunzione.
+
+Inoltre, se sull’applicazione ci sono frequenti query che ricorrono alle clausole $\text{ORDER BY}$, $\text{DISTINCT}$ e $\text{GROUP BY}$, può avere senso definire indici rispetto agli attributi interessati dalle clausole stesse. Infatti l’esecuzione di interrogazioni con queste opzioni, un assenza di indici, comporta la creazione di tabelle temporanee da ordinare.
