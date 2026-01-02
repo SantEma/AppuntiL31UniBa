@@ -42,6 +42,12 @@ Ogni trigger è caratterizzato da:
 - Azione
 - Timestamp di creazione
 
+
+Un trigger ha questo tipo di sintassi:
+![[Pasted image 20260102171606.png]]
+Un esempio può essere questo:
+![[Pasted image 20260102171629.png]]
+
 È bene ricordare che l’azione eseguita al verificarsi della condizione di un trigger, può a sua volta attivare un ulteriore trigger, rendendoli quindi **a cascata**,  ma se non vi si è attenti si potrebbe generare una catena di attivazioni potenzialmente infinita, mandando in stallo l’intera applicazione. 
 I trigger sono uno strumento molto potente che permette di gestire vincoli di integrità, calcolare dati derivati, gestire eccezioni e codificare regole aziendali. 
 Un ulteriore vantaggio derivante dall'utilizzo dei trigger consiste nel riuscire a codificare la logica del sistema in maniera centralizzata e condivisa da tutte le applicazioni, con conseguenti vantaggi in fase di lettura e manutenzione del codice, infatti in caso di modifiche al comportamento del sistema è sufficiente intervenire nell'ambito della definizione dei trigger e non in più parti del codice. Lo svantaggio è che i trigger sono standardizzati sono il SQL-3, per cui potrebbero presentarsi casi (se pur sempre più rari) di non portabilità del codice.
@@ -50,5 +56,6 @@ SQL Embedded prevede di introdurre direttamente nel programma sorgente scritto n
 
 Tutte le variabili usate per scambiare dati fra il programma e il DBMS sono dichiarate in un blocco di istruzioni compreso tra i due comandi:
 $$\begin{aligned}
-&\text{exec sql}
+&\text{exec sql begin declare section} \\
+&\text{exec sql end declare section}
 \end{aligned}$$
