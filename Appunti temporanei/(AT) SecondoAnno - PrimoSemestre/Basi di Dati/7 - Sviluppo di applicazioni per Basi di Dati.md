@@ -58,4 +58,11 @@ Tutte le variabili usate per scambiare dati fra il programma e il DBMS sono dich
 $$\begin{aligned}
 &\text{exec sql begin declare section} \\
 &\text{exec sql end declare section}
-\end{aligned}$$
+\end{aligned}$$Ogni volta che si dichiara una variabile $(x)$ in questo blocco nel linguaggio ospite, viene creata una variabile copia identica in SQL il cui nome è lo stesso ma preceduto dal carattere $\textquoteleft:\textquoteright (:x)$. Ogni modifica effettuata $x$ viene effettuata anche se $:x$ e viceversa. 
+
+Per lavorare con un database da linguaggio ospite:
+1. Si stabilisce una connessione con il sistema specificando il DB su sui lavorare tramite il comando seguente:$$\text{CONNECTED TO} <IdUtente> \text{IDENTIFIED BY} <password> \text{USING} <Database>$$
+2. Il preprocessore introduce implicitamente la dichiarazione di una struttura SQLCA (SQL communication area) per gestire la comunicazione tra programma e DBMS
+3. Si può accedere al campo SQLCODE della struttura SQLCA, il cui valore è un intero che codifica l’effetto dell’ultima operazione SQL effettuata. Se il valore è uguale a zero indica la corretta esecuzione del comando, se è diverso da zero indica che si è verificata una anomalia ed il comando non è andato a buon fine.
+4. In caso di query scalary (unico risultato) il comando select è esteso con la clausola $$\text{into} <Variabile> \{,<Variabile>\}$$
+5. 
