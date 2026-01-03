@@ -111,3 +111,14 @@ Diversi sistemi offrono proprie CLI sulla base del sistema operativo e del lingu
 	- Si rilasciano le strutture dati usate per la gestione del dialogo
 ### Object Relational Mapping (ORM)
 Le soluzioni viste fino a questo momento sono basate sul trasferimento di dati dagli oggetti/variabili temporanei dell’applicazione alla fonte persistente e viceversa. I sistemi di mappatura relazionale (ORM), sviluppati in ambito Object Oriented, offrono e gestiscono automaticamente la corrispondenza tra oggetti temporanei e tuple.
+## Gestione delle transazioni
+Come detto nel capitolo [[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/1 - Introduzione|1 - Introduzione]], una transazione è un'operazione che il DBMS esegue garantendone:
+- **Atomicità**: una transazione non può essere incompleta, se una transazione fallisce i suoi effetti vengono annullati ed il database torna alla fase di consistenza precedente.
+- **Seralizzabilità**: garantita con il meccanismo del bloccaggio dei dati (record and table locking). È una gestione ottenuta mediante tecniche di programmazione concorrente in cui prima di leggere/modificare un dato, una transazione deve bloccare questo dato il lettura/scrittura.
+
+Idealmente per assicurare che accessi concorrenti non provochino stati di inconsistenza nel database, ogni transazione dovrebbe essere effettuata in serie. Questo comporterebbe una estrema lentezza del DB in caso di accessi concorrenti. Con la tecnica del record and table locking, invece, si riesce a serializzare le letture e scritture su un dato, bloccando solo il dato interessato dall'operazione. Si interviene quindi con la programmazione delle transazioni, ovvero bloccare, a livello di codice, il dato di interesse per il tempo strettamente necessario all'esecuzione della transazione. Questo permette di prevedere due condizioni:
+- Quando il programma rileva un’anomalia, può essere opportuno disfare solo una parte delle operazioni fatte
+- Quando un programma richiede un tempo lungo per terminare le proprie operazioni, può essere opportuno spezzare il programma in più transizioni.
+
+I DBMS relazionali permettono di spezzare un programma in più transazioni usando le operazioni di $\text{COMMIT}$ e $\text{ROLLBACK}$. Una transazione è considerata iniziata dal sistema quando un programma esegue un’operazione su una tabella e termina quando:
+- Viene eseguito il comando$\text{exec sql commit work}$, cioè la transazione termina esplicitamente, rilasciando i blocchi sui dati usati, rendendoli disponibili ad altre transazioni (es. attesa di un input utente).
