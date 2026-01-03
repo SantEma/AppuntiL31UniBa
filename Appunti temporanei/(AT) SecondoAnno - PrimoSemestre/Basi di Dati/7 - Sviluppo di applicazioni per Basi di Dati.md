@@ -135,4 +135,20 @@ La suddivisione di un programma in più transazioni, dunque l’esecuzione conco
 ### Ripetizione delle transazioni
 Nella programmazione di transazioni è importante prevedere la ripetizione della transazione quando questa viene interrotta dal DBMS per sbloccare una condizione di stallo (deadlock). Lo stallo è una situazione tipica dei sistemi in cui si utilizzano dei meccanismi di blocco delle risorse e si verifica quando due o più transazioni sono bloccate in attesa l’una dei dati dell’altra. Se il DBMS riconosce una situazione di stallo, interrompe una delle transazioni, segnalando al programma $\text{sqlcode = deadabort}$. Il programma può dunque decidere di far ripartire la transazione.
 Per ottimizzare il sistema, si può decidere di non lasciare al DBMS il compito di individuare eventuali stalli, ma prevederli da codice. 
-Esempio: Un aggiornamento del supervisore di tutti gli agenti di una certa zona, può coinvolgere molte tuple. Si programmare il codice in maniera tale che, in caso di interruzione per uno stallo, prova ripetutamente l’operazione, fino ad un massimo di quattro volte.
+**Esempio**: Un aggiornamento del supervisore di tutti gli agenti di una certa zona, può coinvolgere molte tuple. Si programmare il codice in maniera tale che, in caso di interruzione per uno stallo, prova ripetutamente l’operazione, fino ad un massimo di quattro volte.
+### Livelli di isolamento
+Rinunciando alla proprietà di serializzabilità e quindi di isolamento delle transazioni si possono aumentare le prestazioni dell’applicazione. In altre parole, se si limita il bloccaggio di una risorsa, allora più applicazioni possono accedere alla stessa risorsa. Vanno, ovviamente, prese in considerazione le eventualità di inconsistenze.
+
+Nella proposta dell'SQL-92, con il comando $\text{SET TRANSACTION}$si può scegliere uno dei seguenti livelli di isolamento per consentire gradi di concorrenza decrescenti:
+$$
+\begin{aligned}
+&\text{SET TRANSACTION ISOLATION LEVEL [READ UNCOMMITTED | READ} \\
+&\quad \text{COMMITTED | REPEATABLE READ | SERIALIZABLE]}
+\end{aligned}
+$$Analizziamo i vari livelli di isolamento per grado di concorrenza decrescente:
+1. **Read uncommitted (degree of isolation 0):** consente transazioni che fanno solo operazioni di lettura (quelle di modifica sono proibite) che vengono eseguite dal sistema senza bloccare in lettura i dati. Si rende il sistema molto più veloce, ma può accadere che una transazione legga dati modificati da un’altra transazione non ancora terminata (dati sporchi) oppure abortita in seguito, motivo per cui questo livello di isolamento può applicarsi esclusivamente su porzioni di DB utilizzate sempre e solo in lettura.
+2. **Read committed (degree of isolation 1):** a differenza del livello precedente in cui sui dati in lettura non vi era un bloccaggio, questo livello prevede che i dati in lettura siano bloccati esclusivamente per il tempo di lettura e subito rilasciati, mentre i dati in scrittura siano rilasciati alla terminazione della transazione. Questo comporta letture non ripetibili, ovvero letture successive sugli stessi dati possono dare risultati diversi perché i dati sono stati modificati da altre transazioni terminate nell’intervallo tra la prima e la seconda lettura.
+3. **Repeatable read (degree of isolation 2)**: prevede che i blocchi in lettura e scrittura non sia applicati sull’intera tabella, ma siano assegnati solo su sottoinsiemi di tuple e vengano rilasciati alla terminazione della transazione. Questa soluzione evita il problema delle letture non ripetibili, ma non quello delle letture fantasma.
+4. **Serializable (degree of isolation 4)**: le transazioni vengono serializzate in maniera sicura.
+## Controllo degli accessi
+In SQL è possibile specificare chi (utente) può utilizzare la base di dati e quale tipo di autorizzazione fornire ad uno specifico utente (lettura, scrittura, etc). Oggetto dei privilegi (diritti di accesso) sono di solito le tabelle, ma anche altri tipi di risorse, quali singoli attributi, viste o domini. Un utente predefinito $\underlinesystem$, amministratore della base di dati, ha tutti i privilegi. Il creatore di una risorsa ha tutti i privilegi su di essa. Un privilegio è caratterizzato da:
