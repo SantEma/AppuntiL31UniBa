@@ -121,4 +121,18 @@ Idealmente per assicurare che accessi concorrenti non provochino stati di incons
 - Quando un programma richiede un tempo lungo per terminare le proprie operazioni, può essere opportuno spezzare il programma in più transizioni.
 
 I DBMS relazionali permettono di spezzare un programma in più transazioni usando le operazioni di $\text{COMMIT}$ e $\text{ROLLBACK}$. Una transazione è considerata iniziata dal sistema quando un programma esegue un’operazione su una tabella e termina quando:
-- Viene eseguito il comando$\text{exec sql commit work}$, cioè la transazione termina esplicitamente, rilasciando i blocchi sui dati usati, rendendoli disponibili ad altre transazioni (es. attesa di un input utente).
+- Viene eseguito il comando $\text{EXEC SQL COMMIT WORK}$, cioè la transazione termina esplicitamente, rilasciando i blocchi sui dati usati, rendendoli disponibili ad altre transazioni (es. attesa di un input utente).
+- Viene eseguito un comando$\text{EXEC SQL ROLLBACK WORK}$ (abort transaction), che comporta la terminazione prematura della transazione, quindi il disfacimento di tutte le modifiche apportate ed il rilascio dei blocchi sui dati usati
+- Il programma termina naturalmente senza errori
+- Il programma termina con fallimento e provoca la terminazione prematura della transazione
+
+La suddivisione di un programma in più transazioni, dunque l’esecuzione concorrente di varie transazioni, può causare alcuni problemi di correttezza. La presenza di queste anomalie comporta alcune complicazioni di programmazione. Un esempio di anomalia potrebbe essere data da una sequenza di transizioni del tipo:
+1. Si avvia la transizione che informa l’utente in merito alla quantità ed al prezzo di un determinato prodotto e si termina la transizione.
+2. Si avvia la transizione che permette la modifica del prezzo di quel prodotto e si termina la transizione
+3. Si avvia la transizione che permette all'utente di ordinare il prodotto al prezzo che gli è stato riferito dalla prima transizione e si termina la transizione.
+
+È assolutamente necessario che, prima della terza transizione, nel codice vada introdotto un controllo che permetta all'utente di procedere con l’ordine solo se il prezzo (o la quantità) del prodotto è rimasto invariato nel frattempo. È facile immaginare le dimensioni del problema per sistemi molto complessi.
+### Ripetizione delle transazioni
+Nella programmazione di transazioni è importante prevedere la ripetizione della transazione quando questa viene interrotta dal DBMS per sbloccare una condizione di stallo (deadlock). Lo stallo è una situazione tipica dei sistemi in cui si utilizzano dei meccanismi di blocco delle risorse e si verifica quando due o più transazioni sono bloccate in attesa l’una dei dati dell’altra. Se il DBMS riconosce una situazione di stallo, interrompe una delle transazioni, segnalando al programma $\text{sqlcode = deadabort}$. Il programma può dunque decidere di far ripartire la transazione.
+Per ottimizzare il sistema, si può decidere di non lasciare al DBMS il compito di individuare eventuali stalli, ma prevederli da codice. 
+Esempio: Un aggiornamento del supervisore di tutti gli agenti di una certa zona, può coinvolgere molte tuple. Si programmare il codice in maniera tale che, in caso di interruzione per uno stallo, prova ripetutamente l’operazione, fino ad un massimo di quattro volte.
