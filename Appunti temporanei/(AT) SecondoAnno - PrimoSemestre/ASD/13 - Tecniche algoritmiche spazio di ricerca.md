@@ -1,4 +1,3 @@
-
 # Introduzione
 Per comprendere come progettare un algoritmo, è necessario prima distinguere tre livelli di astrazione:
 - **La specifica del problema**: rappresenta la definizione formale della struttura del problema. È importante notare che la specifica definisce il problema in sé, indipendentemente dal metodo o dalla strategia che verrà poi utilizzata per risolverlo.
