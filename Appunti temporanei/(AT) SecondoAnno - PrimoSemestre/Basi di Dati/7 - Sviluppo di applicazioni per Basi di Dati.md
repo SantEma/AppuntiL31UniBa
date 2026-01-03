@@ -45,10 +45,11 @@ main()
 
 Un importante problema che caratterizza l’integrazione tra SQL e i normali linguaggi di programmazione è il cosiddetto **conflitto di impedenza**. I linguaggi di programmazione accedono agli elementi di una tabella scandendone le righe una a una (tuple-oriented). Al contrario SQL è un linguaggio di tipo set-oriented, che opera su intere tabelle e restituisce come risultato di un’interrogazione un’intera tabella. Le soluzioni a questo problema si ottengono con l’utilizzo dei **cursori** e l’utilizzo di linguaggi con costruttori di tipo in grado di gestire una struttura del tipo “insieme di righe” (Call Level Interface).
 ### Cursori
-Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta; il cursore viene definito su una generica interrogazione, con la seguente sintassi:
-$$
+Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta; il cursore viene definito su una generica interrogazione, con la seguente sintassi:$$
 \begin{aligned}
-&\text{DECLARE } NomeCursore \ [ \ \text{SCROLL} \ ] \ \text{CURSOR FOR } SelectSQL \\
-&\quad [ \ \text{FOR } ( \ \text{READ ONLY} \ | \ \text{UPDATE } [ \ \text{OF } Attributo \ \{ \ , Attributo \ \} \ ] \ ) \ ]
+&\text{DECLARE}\  NomeCursore \ [ \ \text{SCROLL} \ ] \ \text{CURSOR FOR} \ SelectSQL \\
+&\quad [ \ \text{FOR} \langle \text{READ ONLY} \ | \ \text{UPDATE} [ \ \text{OF} Attributo \ \{\ , Attributo \ \} \ ] \ \rangle \ ]
 \end{aligned}
 $$
+Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuota. L’avvaloramento del cursore avviene mediante il comando:$$\text{OPEN} \  Nomecursore$$
+
