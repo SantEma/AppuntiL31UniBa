@@ -151,4 +151,30 @@ $$Analizziamo i vari livelli di isolamento per grado di concorrenza decrescente:
 3. **Repeatable read (degree of isolation 2)**: prevede che i blocchi in lettura e scrittura non sia applicati sull’intera tabella, ma siano assegnati solo su sottoinsiemi di tuple e vengano rilasciati alla terminazione della transazione. Questa soluzione evita il problema delle letture non ripetibili, ma non quello delle letture fantasma.
 4. **Serializable (degree of isolation 4)**: le transazioni vengono serializzate in maniera sicura.
 ## Controllo degli accessi
-In SQL è possibile specificare chi (utente) può utilizzare la base di dati e quale tipo di autorizzazione fornire ad uno specifico utente (lettura, scrittura, etc). Oggetto dei privilegi (diritti di accesso) sono di solito le tabelle, ma anche altri tipi di risorse, quali singoli attributi, viste o domini. Un utente predefinito $\underlinesystem$, amministratore della base di dati, ha tutti i privilegi. Il creatore di una risorsa ha tutti i privilegi su di essa. Un privilegio è caratterizzato da:
+In SQL è possibile specificare chi (utente) può utilizzare la base di dati e quale tipo di autorizzazione fornire ad uno specifico utente (lettura, scrittura, etc). Oggetto dei privilegi (diritti di accesso) sono di solito le tabelle, ma anche altri tipi di risorse, quali singoli attributi, viste o domini. Un utente predefinito $\text{\_{SYSTEM}}$, amministratore della base di dati, ha tutti i privilegi. Il creatore di una risorsa ha tutti i privilegi su di essa. Un privilegio è caratterizzato da:
+- La risorsa cui si riferisce
+- L'utente che concede il privilegio
+- L'utente che riceve il privilegio
+- L'azione che viene permessa
+	- $\text{INSERT}$: permette di inserire nuovi oggetti (ennuple)
+	- $\text{UPDATE}$: permette di modificare il contenuto
+	- $\text{DELETE}$: permette di eliminare oggetti
+	- $\text{SELECT}$: permette di leggere le risorse
+	- $\text{REFERENCES}$: permette la definizione di vincoli di integrità referenziale verso la risorsa
+	- $\text{USAGE}$: permette l’utilizzo di una risorsa in una definizione (per esempio un dominio)
+- La trasmissibilità del privilegio
+
+I privilegi possono essere concessi con il comando:
+$$
+\begin{aligned}
+&\text{GRANT } \langle \ Privileges \ | \ \text{ALL PRIVILEGES} \ \rangle \ \text{ON } Resource \ \text{TO } Users \ [ \ \text{WITH GRANT OPTIONS} \ ]
+\end{aligned}
+$$
+$\text{GRANT OPTIONS}$ specifica se il privilegio può essere trasmesso ad altri utenti. Chiaramente i privilegi possono essere anche revocati con il comando:
+$$
+\begin{aligned}
+&\text{REVOKE } Privileges \ \text{ON } Resource \ \text{FROM } Users \ [ \ \text{RESTRICT} \ | \ \text{CASCADE} \ ]
+\end{aligned}
+$$
+La gestione delle autorizzazioni deve nascondere gli elementi cui un utente non può accedere, senza sospetti. 
+Per autorizzare un utente a vedere solo alcune ennuple di una relazione si utilizzano le viste. Infatti dopo aver definito una vista con una condizione di selezione, si attribuiscono le autorizzazioni sulla vista, anziché sulla relazione base.
