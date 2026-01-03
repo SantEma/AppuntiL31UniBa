@@ -63,13 +63,23 @@ Il cursore è una variabile speciale dotata di un proprio stato, infatti il para
 - $\text{PRIOR}$ alla precedente alla corrente
 - $\text{FIRST}$ alla prima riga del risultato
 - $\text{LAST}$ all'ultima riga del risultato
-- $\text{ABSOLUTE}$, ammesso che espressione intera sia uguale a i, posiziona il cursore alla i-esima posizione a partire dalla prima riga del risultato
-- $\text{RELATIVE}$, ammesso che espressione intera sia uguale a i, posiziona il cursore alla i-esima posizione a partire dalla riga corrente in cui si trova il cursore
+- $\text{ABSOLUTE} <Espressione Intera>$, ammesso che espressione intera sia uguale a $i$, posiziona il cursore alla $i$-esima posizione a partire dalla prima riga del risultato
+- $\text{RELATIVE} <Espressione Intera>$, ammesso che espressione intera sia uguale a $i$, posiziona il cursore alla $i$-esima posizione a partire dalla riga corrente in cui si trova il cursore
+Di default il cursore va usa il comando $\text{NEXT}$
 
-
-
-
-
+I comandi di $\text{UPDATE}$ e $\text{DELETE}$ permettono di apportare modifiche alla base di dati tramite l'uso di cursori tramite seguente sintassi:$$
+\begin{aligned}
+&\text{UPDATE } NomeTabella \\
+&\quad \text{SET } Attributo = \langle \ Espressione \ | \ \text{NULL} \ | \ \text{DEFAULT} \ \rangle \\
+&\quad \{ \ , Attributo = \langle \ Espressione \ | \ \text{NULL} \ | \ \text{DEFAULT} \ \rangle \ \} \\
+&\quad \text{WHERE CURRENT OF } NomeCursore
+\end{aligned}
+$$$$
+\begin{aligned}
+&\text{DELETE FROM } NomeTabella \ \text{WHERE CURRENT OF } NomeCursore
+\end{aligned}
+$$
+Infine, esiste il comando $\text{CLOSE}$ che comunica al sistema che il risultato dell'interrogazione non serve più, chiudendo il cursore, si definisce come
 
 Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un DB utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
 Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione effettuate hanno una struttura predefinita e ciò che varia è solamente il valore dei parametri usati in ingresso. È però possibile che l’applicazione richieda di effettuare interrogazioni non note a priori ma create a run time, sulla base dell’evoluzione delle informazioni contenute del DB stesso o sulla base dell’interazione dell’utente con il DB.
