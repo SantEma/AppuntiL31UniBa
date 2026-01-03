@@ -17,6 +17,38 @@ Per lavorare con un database da linguaggio ospite:
 4. In caso di query scalary (unico risultato) il comando select è esteso con la clausola $$\text{into} <Variabile> \{,<Variabile>\}$$per assegnare a delle variabili del programma il valore degli attributi dell’unica tupla del risultato. Se il comando select può assegnare ad una variabile il valore nullo (non previsto nel linguaggio ospite) la variabile va dichiarata come: $$:Variabile \ \text{INDICATOR} <\text{IndVariabile}>$$Se dopo l’esecuzione IndVariabile ha valore minore di zero allora Variabile ha valore significativo (quindi non null).
 
 Un esempio di implementazione di SQL Embedded tramite C è questo:
+```c
+#include <stdlib.h>
+#include <stdio.h>
 
+main()
+{
+    exec sql begin declare section;
+        char *NomeDip = "Manutenzione";
+        char *CittaDip = "Pisa";
+        int NumeroDip = 20;
+    exec sql end declare section;
+
+    exec sql connect to utente@librobd;
+
+    if (sqlca.sqlcode != 0) {
+        printf("Connessione al DB non riuscita\n"); 
+    }
+    else {
+        exec sql insert into Dipartimento 
+            values(:NomeDip, :CittaDip, :NumeroDip);
+        
+        exec sql disconnect all;
+    }
+}
+```
+
+Un importante problema che caratterizza l’integrazione tra SQL e i normali linguaggi di programmazione è il cosiddetto **conflitto di impedenza**. I linguaggi di programmazione accedono agli elementi di una tabella scandendone le righe una a una (tuple-oriented). Al contrario SQL è un linguaggio di tipo set-oriented, che opera su intere tabelle e restituisce come risultato di un’interrogazione un’intera tabella. Le soluzioni a questo problema si ottengono con l’utilizzo dei **cursori** e l’utilizzo di linguaggi con costruttori di tipo in grado di gestire una struttura del tipo “insieme di righe” (Call Level Interface).
 ### Cursori
-[da finire]
+Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta; il cursore viene definito su una generica interrogazione, con la seguente sintassi:
+$$
+\begin{aligned}
+&\text{DECLARE } NomeCursore \ [ \ \text{SCROLL} \ ] \ \text{CURSOR FOR } SelectSQL \\
+&\quad [ \ \text{FOR } ( \ \text{READ ONLY} \ | \ \text{UPDATE } [ \ \text{OF } Attributo \ \{ \ , Attributo \ \} \ ] \ ) \ ]
+\end{aligned}
+$$
