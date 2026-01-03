@@ -56,7 +56,19 @@ Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuo
 \begin{aligned}
 &\text{FETCH } [ \ Posizione \ \text{FROM } ] \ NomeCursore \ \text{INTO } ListaDiFetch
 \end{aligned}
-$$Il comando copia il contenuto di una riga dal cursrore nelle avriabili del linguaggio ospite enumerate in $ListaDiFetch$. In particolare, $ListaDiFetch$
+$$Il comando copia il contenuto di una riga dal cursrore nelle avriabili del linguaggio ospite enumerate in $ListaDiFetch$. In particolare, $ListaDiFetch$ contiene una variabile per ogni elemento della target list dell'interrogazione, con una corrispondenza tra colonne della tabelle e variabili del linguaggio ospite dettata dalla posizione della variabile nella lista; ciascuna variabile dalla lista di fetch deve avere un tipo compatibile con i domini degli elementi della target list dell'interrogazione SQL.
+
+Il cursore è una variabile speciale dotata di un proprio stato, infatti il parametro $Posizione$ permette di specificare quale riga deve essere oggetto dell'operazione di fetch; il parametro può assumere i valori:
+- $\text{NEXT}$ sposta il cursore alla riga successiva alla corrente
+- $\text{PRIOR}$ alla precedente alla corrente
+- $\text{FIRST}$ alla prima riga del risultato
+- $\text{LAST}$ all'ultima riga del risultato
+- $\text{ABSOLUTE}$, ammesso che espressione intera sia uguale a i, posiziona il cursore alla i-esima posizione a partire dalla prima riga del risultato
+- $\text{RELATIVE}$, ammesso che espressione intera sia uguale a i, posiziona il cursore alla i-esima posizione a partire dalla riga corrente in cui si trova il cursore
+
+
+
+
 
 
 Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un DB utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
