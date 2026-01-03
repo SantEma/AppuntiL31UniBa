@@ -14,7 +14,7 @@ Per lavorare con un database da linguaggio ospite:
 1. Si stabilisce una connessione con il sistema specificando il DB su sui lavorare tramite il comando seguente:$$\text{CONNECTED TO} <IdUtente> \text{IDENTIFIED BY} <password> \text{USING} <Database>$$
 2. Il preprocessore introduce implicitamente la dichiarazione di una struttura SQLCA (SQL communication area) per gestire la comunicazione tra programma e DBMS
 3. Si può accedere al campo SQLCODE della struttura SQLCA, il cui valore è un intero che codifica l’effetto dell’ultima operazione SQL effettuata. Se il valore è uguale a zero indica la corretta esecuzione del comando, se è diverso da zero indica che si è verificata una anomalia ed il comando non è andato a buon fine.
-4. In caso di query scalary (unico risultato) il comando select è esteso con la clausola $$\text{into} <Variabile> \{,<Variabile>\}$$per assegnare a delle variabili del programma il valore degli attributi dell’unica tupla del risultato. Se il comando select può assegnare ad una variabile il valore nullo (non previsto nel linguaggio ospite) la variabile va dichiarata come: $$:Variabile \ \text{INDICATOR} <\text{IndVariabile}>$$Se dopo l’esecuzione IndVariabile ha valore minore di zero allora Variabile ha valore significativo (quindi non null).
+4. In caso di query scalary (unico risultato) il comando $\text{SELECT}$ è esteso con la clausola $$\text{into} <Variabile> \{,<Variabile>\}$$per assegnare a delle variabili del programma il valore degli attributi dell’unica tupla del risultato. Se il comando $\text{SELECT}$ può assegnare ad una variabile il valore nullo (non previsto nel linguaggio ospite) la variabile va dichiarata come: $$:Variabile \ \text{INDICATOR} <\text{IndVariabile}>$$Se dopo l’esecuzione $IndVariabile$ ha valore minore di zero allora $Variabile$ ha valore significativo (quindi non null).
 
 Un esempio di implementazione di SQL Embedded tramite C è questo:
 ```c
@@ -51,5 +51,9 @@ Un cursore è una variabile speciale che permette ad un programma di accedere al
 &\quad [ \ \text{FOR} \langle \text{READ ONLY} \ | \ \text{UPDATE} [ \ \text{OF} Attributo \ \{\ , Attributo \ \} \ ] \ \rangle \ ]
 \end{aligned}
 $$
-Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuota. L’avvaloramento del cursore avviene mediante il comando:$$\text{OPEN} \  Nomecursore$$
 
+
+[da finire]
+Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un DB utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
+Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione effettuate hanno una struttura predefinita e ciò che varia è solamente il valore dei parametri usati in ingresso. È però possibile che l’applicazione richieda di effettuare interrogazioni non note a priori ma create a run time, sulla base dell’evoluzione delle informazioni contenute del DB stesso o sulla base dell’interazione dell’utente con il DB.
+### SQL dinamico
