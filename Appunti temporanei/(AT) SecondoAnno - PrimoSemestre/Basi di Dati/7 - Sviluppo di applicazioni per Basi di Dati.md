@@ -87,4 +87,9 @@ Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione
 Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare. Per questo motivo SQL dinamico mette a disposizione due modalità di interazione:
 1. Esecuzione immediata: si esegue immediatamente l’interrogazione/istruzione specificata direttamente o in un parametro di tipo stringa $$\text{execute immediate:}<VariabileConIstruzioneSQL>$$Questo è possibile solo quando si hanno una o più istruzioni conosciute a priori nella sua interezza, ma non si sa quando o quali verranno eseguite (perché magari dipende dalla scelta dell’utente). Come si può vedere il comando non richiede parametri né in ingresso né in uscita (variabile di tipo stringa).
 2. La seconda modalità permette di eseguire istruzioni dipendenti non solo dalla dinamicità del sistema, ma prevede anche dei parametri in ingresso o in uscita. Tale modalità si compone di due fasi:
-	- **Fase di preparazione**: il comando $\text{prepare}$ analizza l’istruzione SQL e la traduce nel linguaggio interno al DBMS. Inoltre il comando $\text{prepare}$ associa alla traduzione dell’istruzione un nome, che può essere usato dagli altri comandi: $$$$
+	- **Fase di preparazione**: il comando $\text{prepare}$ analizza l’istruzione SQL e la traduce nel linguaggio interno al DBMS. Inoltre il comando $\text{prepare}$ associa alla traduzione dell’istruzione un nome, che può essere usato dagli altri comandi: $$\text{PREPARE} \  NomeComando \ \text{FROM} \ IstruzioneSQL$$L’istruzione SQL può contenere dei parametri in ingresso, rappresentati dal carattere di punto interrogativo, per esempio:$$
+\begin{aligned}
+&\text{PREPARE } :comando \\
+&\text{FROM } \text{ SELECT } Città \text{ FROM } Dipartimento \text{ WHERE } Nome = \text{\textquoteright ?\textquoteright \textquotedbl}
+\end{aligned}
+$$
