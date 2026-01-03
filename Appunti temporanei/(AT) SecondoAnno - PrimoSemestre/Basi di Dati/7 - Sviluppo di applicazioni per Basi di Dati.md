@@ -11,7 +11,7 @@ Tutte le variabili usate per scambiare dati fra il programma e il DBMS sono dich
 \end{aligned}$$Ogni volta che si dichiara una variabile $(x)$ in questo blocco nel linguaggio ospite, viene creata una variabile copia identica in SQL il cui nome è lo stesso ma preceduto dal carattere $\textquoteleft:\textquoteright (:x)$. Ogni modifica effettuata $x$ viene effettuata anche se $:x$ e viceversa. 
 
 Per lavorare con un database da linguaggio ospite:
-1. Si stabilisce una connessione con il sistema specificando il DB su sui lavorare tramite il comando seguente:$$\text{CONNECTED TO} <IdUtente> \text{IDENTIFIED BY} <password> \text{USING} <Database>$$
+1. Si stabilisce una connessione con il sistema specificando il database su sui lavorare tramite il comando seguente:$$\text{CONNECTED TO} <IdUtente> \text{IDENTIFIED BY} <password> \text{USING} <Database>$$
 2. Il preprocessore introduce implicitamente la dichiarazione di una struttura SQLCA (SQL communication area) per gestire la comunicazione tra programma e DBMS
 3. Si può accedere al campo SQLCODE della struttura SQLCA, il cui valore è un intero che codifica l’effetto dell’ultima operazione SQL effettuata. Se il valore è uguale a zero indica la corretta esecuzione del comando, se è diverso da zero indica che si è verificata una anomalia ed il comando non è andato a buon fine.
 4. In caso di query scalary (unico risultato) il comando $\text{SELECT}$ è esteso con la clausola $$\text{into} <Variabile> \{,<Variabile>\}$$per assegnare a delle variabili del programma il valore degli attributi dell’unica tupla del risultato. Se il comando $\text{SELECT}$ può assegnare ad una variabile il valore nullo (non previsto nel linguaggio ospite) la variabile va dichiarata come: $$:Variabile \ \text{INDICATOR} <\text{IndVariabile}>$$Se dopo l’esecuzione $IndVariabile$ ha valore minore di zero allora $Variabile$ ha valore significativo (quindi non null).
@@ -81,8 +81,8 @@ $$$$
 $$
 Infine, esiste il comando $\text{CLOSE}$ che comunica al sistema che il risultato dell'interrogazione non serve più, chiudendo il cursore e rilasciando l'area di buffer occupata da tale, si definisce come $\text{CLOSE} \ NomeCursore$
 
-Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un DB utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
-Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione effettuate hanno una struttura predefinita e ciò che varia è solamente il valore dei parametri usati in ingresso. È però possibile che l’applicazione richieda di effettuare interrogazioni non note a priori ma create a run time, sulla base dell’evoluzione delle informazioni contenute del DB stesso o sulla base dell’interazione dell’utente con il DB.
+Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un database utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
+Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione effettuate hanno una struttura predefinita e ciò che varia è solamente il valore dei parametri usati in ingresso. È però possibile che l’applicazione richieda di effettuare interrogazioni non note a priori ma create a run time, sulla base dell’evoluzione delle informazioni contenute del database stesso o sulla base dell’interazione dell’utente con il database.
 ### SQL dinamico
 Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare. Per questo motivo SQL dinamico mette a disposizione due modalità di interazione:
 1. Esecuzione immediata: si esegue immediatamente l’interrogazione/istruzione specificata direttamente o in un parametro di tipo stringa $$\text{execute immediate:}<VariabileConIstruzioneSQL>$$Questo è possibile solo quando si hanno una o più istruzioni conosciute a priori nella sua interezza, ma non si sa quando o quali verranno eseguite (perché magari dipende dalla scelta dell’utente). Come si può vedere il comando non richiede parametri né in ingresso né in uscita (variabile di tipo stringa).
@@ -99,3 +99,15 @@ $$
 \end{aligned}
 $$
 Quando un’istruzione SQL che era stata preparata non serve più, è possibile rilasciare la memoria occupata dalla traduzione dell’istruzione utilizzando il comando:$$\text{DEALLOCATE PREPARE} \ NomeComando$$
+### Call Level Interface (CLI)
+I meccanismi descritti finora ricadono nella famiglia delle soluzioni SQL Embedded, in cui si prevede di disporre di un preprocessore, utilizzato a tempo di compilazione o di esecuzione.
+È possibile anche interfacciarsi direttamente con un DBMS, da un programma usando apposite primitiva (librerie per realizzare il dialogo con il database). Quello offerto dal CLI è uno strumento meglio integrato con il linguaggio di programmazione. Lo svantaggio consiste nel dover gestire esplicitamente aspetti che in SQL Embedded vengono risolti automaticamente dal preprocessore.
+Diversi sistemi offrono proprie CLI sulla base del sistema operativo e del linguaggio di programmazione. Il modo generale d’uso di questi strumenti è il seguente:
+- Si utilizza un servizio CLI per creare una connessione con il DBMS
+- Si invia sulla connessione un comando SQL che rappresenta la richiesta
+- Si riceve come risposta del comando una struttura relazionale in un opportuno formato
+- Al termine della sessione di lavoro:
+	- Si chiude la connessione
+	- Si rilasciano le strutture dati usate per la gestione del dialogo
+### Object Relational Mapping (ORM)
+Le soluzioni viste fino a questo momento sono basate sul trasferimento di dati dagli oggetti/variabili temporanei dell’applicazione alla fonte persistente e viceversa. I sistemi di mappatura relazionale (ORM), sviluppati in ambito Object Oriented, offrono e gestiscono automaticamente la corrispondenza tra oggetti temporanei e tuple.
