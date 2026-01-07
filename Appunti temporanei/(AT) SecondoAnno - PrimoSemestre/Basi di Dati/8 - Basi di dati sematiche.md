@@ -47,11 +47,14 @@ I graph pattern possono essere estesi utilizzando alcune clausole opzionali:
 - La clausola $\text{UNION}$ all'interno della clausola $\text{WHERE}$ consente di eseguire l’unione dei risultati di due graph pattern.
 - La clausola $\text{OPTIONAL}$ consente di definire ulteriori graph pattern rispetto a quelli della clausola $\text{WHERE}$ senza vincolare le variabili ivi introdotte ad assumere un valore preciso. Nel caso il valore manchi le variabili sono avvalorate con $\text{NULL}$
 
-Oltre alla select, esistono altre forme di query. La construct consente di costruire un nuovo grafo RDF, con un meccanismo simile a quello delle view in SQL. La query ask consente di valutare se la query ha un risultato non nullo, cioè se alle variabili della query viene associata almeno una tupla di binding. Infine, la query describe consente di estrarre tutta l’informazione conosciuta relativamente alle risorse che soddisfano una query.
+Oltre alla select, esistono altre forme di query. La $\text{CONSTRUCT}$ consente di costruire un nuovo grafo RDF, con un meccanismo simile a quello delle view in SQL. La query $\text{ASK}$ consente di valutare se la query ha un risultato non nullo, cioè se alle variabili della query viene associata almeno una tupla di binding. Infine, la query $\text{DESCRIBE}$ consente di estrarre tutta l’informazione conosciuta relativamente alle risorse che soddisfano una query.
 ## SPARQL 1.1
 La definizione di SPARQL 1.0 difettava di alcune caratteristiche tipiche dei linguaggi di query (in particolare di SQL); tali aspetti sono stati recentemente introdotti in SPARQL 1.1. Nello specifico introduce:
-- 
-
+- Le clausole $\text{GROUP BY}$ e $\text{HAVING}$
+- L’operatore binario $\text{MINUS}$ per effettuare la differenza
+- La clausola $\text{NOT EXISTS}$ che ricorda la sottoquery di SQL
+- Le nozioni di entailment e property path che estendono in modo significativo il potere espressivo
+- L’operatore $\text{SERVICE}$ che consente forme sofisticate di interoperabilità
 
 
 Focalizziamo l’attenzione sull'estensione **dell'entailment regimes** che è l’innovazione principale di SPARQL 1.1. Gli entailment regime sono particolari contesti di valutazione che estendono la valutazione delle query includendo nel risultato tutte le triple che sono implicate dalla istanza in base agli entailments RDFS. Fino ad’ora con SPARQL 1.0 abbiamo specificato un graph pattern, applicato un pattern matching tra il graph patter e la collezione di dati RDF ed il risultato viene restituito solo nel caso in cui ci fosse una corrispondenza 1 a 1 tra il graph pattern specificato e la base di dati. 
