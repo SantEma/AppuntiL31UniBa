@@ -65,7 +65,7 @@ Ogni vincolo può essere visto come un predicato che assegna valori vero o falso
 ## Chiavi
 Una **chiave** è un insieme di attributi utilizzato per identificare univocamente le tuple di una relazione, formalmente:
 
-**Def.** :Data una relazione $R(X)$ con $K \underline{\subset} X$, l’insieme $K$ di attributi è superchiave per $R$ se $r$ non contiene due tuple distinte $t_{1}$ e $t_{2}$ con $t_{1}[K]=t_{2}[K]$.
+**Def.**: Data una relazione $R(X)$ con $K \underline{\subset} X$, l’insieme $K$ di attributi è superchiave per $R$ se $r$ non contiene due tuple distinte $t_{1}$ e $t_{2}$ con $t_{1}[K]=t_{2}[K]$.
 
 In altre parole l'insieme di istanze di attributi utilizzato come superchiave non deve contenere elementi uguali in più di una tupla.  
 Un insieme $K$ di attributi è chiave per $r$ se è una superchiave minimale di $r$ (cioè non esiste un’altra superchiave $K'$ di $r$ che sia contenuta in $K$ come sottoinsieme proprio).
