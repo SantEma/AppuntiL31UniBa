@@ -94,8 +94,8 @@ Un DBMS deve garantire:
 Un DBMS prevede che le interazioni con la base di dati avvengano per mezzo di **transazioni**.
 Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di elaborazioni di dati in memoria temporanea, che il DBMS esegue garantendo le seguenti proprietà (ACID properties):
 
-- **Atomicity**: è eseguita nella sua interezza ppure non è eseguita affatto (Le transazioni che terminano prematuramente sono abortite)
-- **Consistency preservation**: una esecuzione corretta della transazione porta il DB da uno stato consistente all’altro (i vincoli di integrità devono essere rispettati).
+- **Atomicity**: è eseguita nella sua interezza oppure non è eseguita affatto (Le transazioni che terminano prematuramente sono abortite)
+- **Consistency preservation**: una esecuzione corretta della transazione porta il DB da uno stato consistente all'altro (i vincoli di integrità devono essere rispettati).
 - **Isolation**: una transazione non deve rendere gli aggiornamenti visibili ad altre transazioni finché non termina normalmente.
 - **Durability** : le modifiche su DB di una transazione terminata normalmente sono permanenti, cioè non sono alterabili da malfunzionamenti successivi alla terminazione
 
@@ -205,10 +205,12 @@ L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in sch
 - **Livello di vista logica**:  definisce come deve apparire la struttura del DB ad una certa applicazione e/o utente
 ![[Pasted image 20251005154127.png]]
 #### Indipendenza dei dati
-L'architettura dei livelli quindi garantisce **l'indipendenza** dei dati, principale proprietà dei DBMS.
+L'architettura dei livelli quindi garantisce **l'indipendenza** dei dati, permette a utenti e programmi di interagire con la base di dati a un livello astratto, prescindendo dai dettagli realizzativi.
 L'indipendenza dei dati può essere caratterizzata in due stati:
 - **Indipendenza fisica**: consente di interagire con il DBMS in modo indipendente dalla struttura fisica dei dati, senza influire sulle descrizioni e quindi sui programmi che usano i dati
 - **Indipendenza logica**: consente di interagire con il livello esterno della base di dati in modo indipendente dal livello logico, per esempio come aggiungere un nuovo schema esterno senza modificare lo schema logico e perciò la sottostante organizzazione fisica dei dati
+
+Il **modello relazionale** risponde perfettamente a questo requisito perché introduce una netta distinzione tra il livello fisico e quello logico. A differenza dei modelli precedenti (reticolare e gerarchico), che includevano riferimenti espliciti a puntatori fisici, il modello relazionale è basato su valori e non richiede la conoscenza delle strutture fisiche per accedere ai dati
 ### Linguaggi e utenti delle basi di dati
 I DBMS sono caratterizzati da un lato dalla presenza di molteplici linguaggi per la gestione dei dati, dall'altro dalla presenza di molteplici tipologie di utenti.
 Per i **linguaggi della base di dati** si distinguono in:
