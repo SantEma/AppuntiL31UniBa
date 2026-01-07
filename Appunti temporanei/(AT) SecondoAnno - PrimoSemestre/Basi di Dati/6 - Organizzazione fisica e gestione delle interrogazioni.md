@@ -62,6 +62,7 @@ L'efficienza è la ragion d'essere di queste strutture. Essendo file molto picco
 Le strutture viste fin’ora sono basate su strutture ordinate e quindi poco flessibili in presenza di elevata dinamicità. Gli indici utilizzati dai DBMS sono più sofisticati in quanto utilizzano strutture ad albero dinamiche multi-livello, efficienti anche in caso di aggiornamenti. 
 
 Ogni albero è caratterizzato da un nodo radice, vari nodi intermedi e vari nodi foglia; ogni nodo coincide con una pagina o blocco a livello di file system e di gestore del buffer. I legami tra nodi vengono stabiliti da puntatori che collegano fra loro le pagine; in genere, ogni nodo ha un numero di discendenti abbastanza grande, che dipende dall'ampiezza della pagina (non è raro il caso di alberi in cui ogni nodo ha decine o addirittura centinaia di successori); questo consente di costruire alberi con un numero limitato di livelli, nei quali la maggioranza delle pagine è occupata da nodi foglia. Un altro requisito importante per il buon funzionamento di queste strutture dati è che gli alberi siano **bilanciati** (il B-Tree classico), cioè che la lunghezza di un cammino che collega il nodo radice a un qualunque nodo foglia sia costante; in tal caso, il tempo di accesso alle informazioni contenute nell'albero è lo stesso per tutte le foglie ed è pari alla profondità dell’albero.
+![[Pasted image 20260107115714.png]]
 ##### Contenuti dei nodi e tecnica di ricerca
 Per capire come funziona un albero $n$-ario, è sufficiente analizzare la struttura di un suo qualsiasi nodo non foglia. Come si può vedere in figura, ogni nodo presenta una sequenza di $F$ valori ordinati di chiave.
 ![[Pasted image 20251230171159.png]]
@@ -83,6 +84,7 @@ Una cancellazione può essere sempre fatta localmente, marcando lo spazio preced
 ![[Pasted image 20251230171754.png]]
 ##### B+-Tree
 Per la struttura ad albero appena descritta esistono due versioni, denominate B e B+. L'unica differenza consiste nel fatto che negli alberi B+, i nodi foglia sono collegati da una catena che li connette in base all'ordine imposto dalla chiave. Tale catena consente di svolgere in modo efficiente anche interrogazioni il cui predicato di selezione definisce un intervallo di valori ammissibili. Per ottimizzare ulteriormente questo tipo di struttura si possono integrare dei puntatori ulteriori che collegano determinati nodi intermedi alle foglie corrispondenti.
+![[Pasted image 20260107115312.png]]
 ##### Definizione degli indici in SQL
 In SQL, la sintassi del comando per la creazione di un indice è:
 $$\begin{aligned}
