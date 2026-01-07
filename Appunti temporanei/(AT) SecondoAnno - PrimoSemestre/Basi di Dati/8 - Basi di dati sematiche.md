@@ -1,3 +1,7 @@
+# ATTENZIONE
+Questo capitolo per mancanza di tempo non è completo ma sufficiente a sostenere l'esame, per chi volesse approfondire ci sarebbe il libro di testo menzionato all'inizio con la quarta parte.
+
+---
 Le basi di dati semantiche sono collezioni di dati che possono essere arricchite con metadati che possono avere delle definizioni formali definite in vocabolari condivisi chiamati ontologie. Nascono dall'evoluzione dei linguaggi a oggetti e dei linguaggi logici e dall'evoluzione del Semantic Web. 
 L’obbiettivo è fornire una descrizione dei dati (annotazioni) con conformazione irregolare attraverso linguaggi con capacità espressiva crescente in grado di fornire informazioni dalle annotazioni. L’innovazione consiste nella costruzione di collezioni di dati aperte e connesse (linked open data).
 ## Modello dei dati RDF
@@ -41,3 +45,15 @@ I graph pattern possono essere estesi utilizzando alcune clausole opzionali:
 - La clausola $\text{FILTER}$ applica alle tuple di binding che risultano dalla valutazione della clausola $\text{WHERE}$ un predicato; solo le tuple che soddisfano il predicato fanno parte del risultato finale.
   Gli operatori utilizzabili all'interno della clausola $\text{FILTER}$ sono: Operatori di confronto, aritmetici, logici e predicati unari specifici di SPARQL
 - La clausola $\text{UNION}$ all'interno della clausola $\text{WHERE}$ consente di eseguire l’unione dei risultati di due graph pattern.
+- La clausola $\text{OPTIONAL}$ consente di definire ulteriori graph pattern rispetto a quelli della clausola $\text{WHERE}$ senza vincolare le variabili ivi introdotte ad assumere un valore preciso. Nel caso il valore manchi le variabili sono avvalorate con $\text{NULL}$
+
+Oltre alla select, esistono altre forme di query. La construct consente di costruire un nuovo grafo RDF, con un meccanismo simile a quello delle view in SQL. La query ask consente di valutare se la query ha un risultato non nullo, cioè se alle variabili della query viene associata almeno una tupla di binding. Infine, la query describe consente di estrarre tutta l’informazione conosciuta relativamente alle risorse che soddisfano una query.
+## SPARQL 1.1
+La definizione di SPARQL 1.0 difettava di alcune caratteristiche tipiche dei linguaggi di query (in particolare di SQL); tali aspetti sono stati recentemente introdotti in SPARQL 1.1. Nello specifico introduce:
+- 
+
+
+
+Focalizziamo l’attenzione sull'estensione **dell'entailment regimes** che è l’innovazione principale di SPARQL 1.1. Gli entailment regime sono particolari contesti di valutazione che estendono la valutazione delle query includendo nel risultato tutte le triple che sono implicate dalla istanza in base agli entailments RDFS. Fino ad’ora con SPARQL 1.0 abbiamo specificato un graph pattern, applicato un pattern matching tra il graph patter e la collezione di dati RDF ed il risultato viene restituito solo nel caso in cui ci fosse una corrispondenza 1 a 1 tra il graph pattern specificato e la base di dati. 
+Con l’entailment regime non viene restituito solo quello che trovo come conoscenza asserita, ma viene restituito anche quello che posso derivare (o inferire). Si cerca, quindi, non solo la conoscenza asserita, ma anche tutta la conoscenza che si può ottenere dall'applicazione di un reasoner deduttivo. 
+Supponendo che lo schema RDF comprenda un predicato amico, che collega fra loro blank nodes corrispondenti a persone, e supponendo che tali blank nodes abbiano una relazione HaNome, l’interrogazione percorre transitivamente la relazione a partire dalla persona di nome Giorgio.
