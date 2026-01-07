@@ -51,7 +51,6 @@ Un cursore è una variabile speciale che permette ad un programma di accedere al
 &\quad [ \ \text{FOR} \langle \text{READ ONLY} \ | \ \text{UPDATE} [ \ \text{OF} Attributo \ \{\ , Attributo \ \} \ ] \ \rangle \ ]
 \end{aligned}
 $$
-
 Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuota. L’avvaloramento del cursore avviene mediante il comando $\text{OPEN} \ Nomecursore$ e determina l'esecuzione dell'interrogazione associata al cursore, il suo risultato poi diventa accessibile tramite il comando $\text{FETCH}$:$$
 \begin{aligned}
 &\text{FETCH } [ \ Posizione \ \text{FROM } ] \ NomeCursore \ \text{INTO } ListaDiFetch
@@ -81,7 +80,7 @@ $$$$
 $$
 Infine, esiste il comando $\text{CLOSE}$ che comunica al sistema che il risultato dell'interrogazione non serve più, chiudendo il cursore e rilasciando l'area di buffer occupata da tale, si definisce come $\text{CLOSE} \ NomeCursore$
 
-Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un database utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (conflitto di impedenza).
+Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un database utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (**conflitto di impedenza**).
 Quanto visto fin’ora è definibile come SQL statico, perché le interrogazione effettuate hanno una struttura predefinita e ciò che varia è solamente il valore dei parametri usati in ingresso. È però possibile che l’applicazione richieda di effettuare interrogazioni non note a priori ma create a run time, sulla base dell’evoluzione delle informazioni contenute del database stesso o sulla base dell’interazione dell’utente con il database.
 ### SQL dinamico
 Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare. Per questo motivo SQL dinamico mette a disposizione due modalità di interazione:
