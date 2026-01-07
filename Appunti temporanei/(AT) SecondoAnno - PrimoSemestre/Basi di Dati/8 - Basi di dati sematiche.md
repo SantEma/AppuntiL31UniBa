@@ -56,7 +56,6 @@ La definizione di SPARQL 1.0 difettava di alcune caratteristiche tipiche dei lin
 - Le nozioni di entailment e property path che estendono in modo significativo il potere espressivo
 - L’operatore $\text{SERVICE}$ che consente forme sofisticate di interoperabilità
 
-
 Focalizziamo l’attenzione sull'estensione **dell'entailment regimes** che è l’innovazione principale di SPARQL 1.1. Gli entailment regime sono particolari contesti di valutazione che estendono la valutazione delle query includendo nel risultato tutte le triple che sono implicate dalla istanza in base agli entailments RDFS. Fino ad’ora con SPARQL 1.0 abbiamo specificato un graph pattern, applicato un pattern matching tra il graph patter e la collezione di dati RDF ed il risultato viene restituito solo nel caso in cui ci fosse una corrispondenza 1 a 1 tra il graph pattern specificato e la base di dati. 
 Con l’entailment regime non viene restituito solo quello che trovo come conoscenza asserita, ma viene restituito anche quello che posso derivare (o inferire). Si cerca, quindi, non solo la conoscenza asserita, ma anche tutta la conoscenza che si può ottenere dall'applicazione di un reasoner deduttivo. 
 Supponendo che lo schema RDF comprenda un predicato amico, che collega fra loro blank nodes corrispondenti a persone, e supponendo che tali blank nodes abbiano una relazione HaNome, l’interrogazione percorre transitivamente la relazione a partire dalla persona di nome Giorgio.
