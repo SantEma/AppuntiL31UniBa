@@ -166,7 +166,7 @@ In SQL è possibile specificare chi (utente) può utilizzare la base di dati e q
 I privilegi possono essere concessi con il comando:
 $$
 \begin{aligned}
-&\text{GRANT } \langle \ Privileges \ | \ \text{ALL PRIVILEGES} \ \rangle \ \text{ON } Resource \ \text{TO } Users \ [ \ \text{WITH GRANT OPTIONS} \ ]
+&\text{GRANT} \langle \ Privileges \ | \ \text{ALL PRIVILEGES} \ \rangle \ \text{ON } Resource \ \text{TO } Users \ [ \ \text{WITH GRANT OPTIONS} \ ]
 \end{aligned}
 $$
 $\text{GRANT OPTIONS}$ specifica se il privilegio può essere trasmesso ad altri utenti. Chiaramente i privilegi possono essere anche revocati con il comando:
