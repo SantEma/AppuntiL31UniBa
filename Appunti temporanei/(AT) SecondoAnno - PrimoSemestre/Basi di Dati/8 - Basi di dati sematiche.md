@@ -1,5 +1,5 @@
 # ATTENZIONE
-Questo capitolo per mancanza di tempo non è completo ma sufficiente a sostenere l'esame, per chi volesse approfondire ci sarebbe il libro di testo menzionato all'inizio con la quarta parte.
+Questo capitolo per mancanza di tempo non è completo ma sufficiente a sostenere l'esame, per chi volesse approfondire ci sarebbe il libro di testo menzionato all'inizio, principalmente tutta la quarta parte del libro.
 
 ---
 Le basi di dati semantiche sono collezioni di dati che possono essere arricchite con metadati che possono avere delle definizioni formali definite in vocabolari condivisi chiamati ontologie. Nascono dall'evoluzione dei linguaggi a oggetti e dei linguaggi logici e dall'evoluzione del Semantic Web. 
