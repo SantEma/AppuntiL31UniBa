@@ -17,7 +17,6 @@ Un sistema informativo è molte volte indipendente dalle automatizzazioni che co
 
 Un esempio di sistema informativo può essere una biblioteca:
 ![[Pasted image 20250930163113.png]]
-
 La parte che quindi conosciamo di un sistema informativo per adesso è quella **non automatizzata**
 ### Sistema Informatico
 Andiamo a definire un **sistema informatico** come la parte automatizzata di un sistema informativo.
