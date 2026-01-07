@@ -209,7 +209,7 @@ L'architettura di un DBMS è distinta in 3 livelli di descrizione di dati in sch
 L'architettura dei livelli quindi garantisce **l'indipendenza** dei dati, principale proprietà dei DBMS.
 L'indipendenza dei dati può essere caratterizzata in due stati:
 - **Indipendenza fisica**: consente di interagire con il DBMS in modo indipendente dalla struttura fisica dei dati, senza influire sulle descrizioni e quindi sui programmi che usano i dati
-- **Indipendenza logica**: consente di interagire con il livello esterno della base di dati in modo indipendente dal livello logico, per esempio come aggiungere un nuovo schema esterno senza modificare lo schema logico e perciò la sottostante organizzazione fisica
+- **Indipendenza logica**: consente di interagire con il livello esterno della base di dati in modo indipendente dal livello logico, per esempio come aggiungere un nuovo schema esterno senza modificare lo schema logico e perciò la sottostante organizzazione fisica dei dati
 ### Linguaggi e utenti delle basi di dati
 I DBMS sono caratterizzati da un lato dalla presenza di molteplici linguaggi per la gestione dei dati, dall'altro dalla presenza di molteplici tipologie di utenti.
 Per i **linguaggi della base di dati** si distinguono in:
