@@ -97,7 +97,7 @@ $$\begin{aligned}
 \end{aligned}$$
 ## Gestore delle interrogazioni: esecuzione e ottimizzazione
 Il gestore delle interrogazioni è un modulo cruciale dell’architettura di un DBMS, in quanto responsabile dell’esecuzione efficiente di operazioni che sono specificate a livello molto alto. Esso riceve in ingresso un’interrogazione scritta in SQL, controlla che non vi siano errori lessicali, sintattici o semantici, una volta accettata, l’interrogazione viene tradotta in una forma interna di tipo algebrico. A questo punto, l’ottimizzazione vera e propria ha inizio, dividendosi in: 
-1. Ottimizzazione algebrica, basata sulle proprietà degli operatori algebrici;
+1. **Ottimizzazione algebrica**: effettua trasformazioni sulle operazioni (come l'anticipazione di selezioni e proiezioni verso le foglie dell'albero) che sono sempre convenienti indipendentemente dai costi fisici
 2. Ottimizzazione basata sul modello dei costi, a sua volta basata sui profili delle relazioni;
 3. Generazione del codice.
 ### Profili delle relazioni
