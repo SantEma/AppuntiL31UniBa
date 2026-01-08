@@ -45,17 +45,22 @@ main()
 
 Un importante problema che caratterizza l’integrazione tra SQL e i normali linguaggi di programmazione è il cosiddetto **conflitto di impedenza**. I linguaggi di programmazione accedono agli elementi di una tabella scandendone le righe una a una (tuple-oriented). Al contrario SQL è un linguaggio di tipo set-oriented, che opera su intere tabelle e restituisce come risultato di un’interrogazione un’intera tabella. Le soluzioni a questo problema si ottengono con l’utilizzo dei **cursori** e l’utilizzo di linguaggi con costruttori di tipo in grado di gestire una struttura del tipo “insieme di righe” (Call Level Interface).
 ### Cursori
-Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta; il cursore viene definito su una generica interrogazione, con la seguente sintassi:$$
+Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta; il cursore viene definito su una generica interrogazione, con la seguente sintassi:
+$$
 \begin{aligned}
 &\text{DECLARE}\  NomeCursore \ [ \ \text{SCROLL} \ ] \ \text{CURSOR FOR} \ SelectSQL \\
 &\quad [ \ \text{FOR} \langle \text{READ ONLY} \ | \ \text{UPDATE} [ \ \text{OF} Attributo \ \{\ , Attributo \ \} \ ] \ \rangle \ ]
 \end{aligned}
 $$
-Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuota. L’avvaloramento del cursore avviene mediante il comando $\text{OPEN} \ Nomecursore$ e determina l'esecuzione dell'interrogazione associata al cursore, il suo risultato poi diventa accessibile tramite il comando $\text{FETCH}$:$$
+
+Al momento della sua dichiarazione, il cursore si riferisce ad una struttura vuota. L’avvaloramento del cursore avviene mediante il comando $\text{OPEN} \ Nomecursore$ e determina l'esecuzione dell'interrogazione associata al cursore, il suo risultato poi diventa accessibile tramite il comando $\text{FETCH}$:
+$$
 \begin{aligned}
 &\text{FETCH } [ \ Posizione \ \text{FROM } ] \ NomeCursore \ \text{INTO } ListaDiFetch
 \end{aligned}
-$$Il comando copia il contenuto di una riga dal cursore nelle variabili del linguaggio ospite enumerate in $ListaDiFetch$. In particolare, $ListaDiFetch$ contiene una variabile per ogni elemento della target list dell'interrogazione, con una corrispondenza tra colonne della tabelle e variabili del linguaggio ospite dettata dalla posizione della variabile nella lista; ciascuna variabile dalla lista di fetch deve avere un tipo compatibile con i domini degli elementi della target list dell'interrogazione SQL.
+$$
+
+Il comando copia il contenuto di una riga dal cursore nelle variabili del linguaggio ospite enumerate in $ListaDiFetch$. In particolare, $ListaDiFetch$ contiene una variabile per ogni elemento della target list dell'interrogazione, con una corrispondenza tra colonne della tabelle e variabili del linguaggio ospite dettata dalla posizione della variabile nella lista; ciascuna variabile dalla lista di fetch deve avere un tipo compatibile con i domini degli elementi della target list dell'interrogazione SQL.
 
 Il cursore è una variabile speciale dotata di un proprio stato, infatti il parametro $Posizione$ permette di specificare quale riga deve essere oggetto dell'operazione di fetch; il parametro può assumere i valori:
 - $\text{NEXT}$ sposta il cursore alla riga successiva alla corrente
@@ -66,18 +71,21 @@ Il cursore è una variabile speciale dotata di un proprio stato, infatti il para
 - $\text{RELATIVE} <Espressione Intera>$, ammesso che espressione intera sia uguale a $i$, posiziona il cursore alla $i$-esima posizione a partire dalla riga corrente in cui si trova il cursore
 Di default il cursore va usa il comando $\text{NEXT}$
 
-I comandi di $\text{UPDATE}$ e $\text{DELETE}$ permettono di apportare modifiche alla base di dati tramite l'uso di cursori tramite seguente sintassi:$$
+I comandi di $\text{UPDATE}$ e $\text{DELETE}$ permettono di apportare modifiche alla base di dati tramite l'uso di cursori tramite seguente sintassi:
+$$
 \begin{aligned}
 &\text{UPDATE } NomeTabella \\
 &\quad \text{SET } Attributo = \langle \ Espressione \ | \ \text{NULL} \ | \ \text{DEFAULT} \ \rangle \\
 &\quad \{ \ , Attributo = \langle \ Espressione \ | \ \text{NULL} \ | \ \text{DEFAULT} \ \rangle \ \} \\
 &\quad \text{WHERE CURRENT OF } NomeCursore
 \end{aligned}
-$$$$
+$$
+$$
 \begin{aligned}
 &\text{DELETE FROM } NomeTabella \ \text{WHERE CURRENT OF } NomeCursore
 \end{aligned}
 $$
+
 Infine, esiste il comando $\text{CLOSE}$ che comunica al sistema che il risultato dell'interrogazione non serve più, chiudendo il cursore e rilasciando l'area di buffer occupata da tale, si definisce come $\text{CLOSE} \ NomeCursore$
 
 Il vantaggio di utilizzare linguaggi che ospitano SQL consiste nella facilità con cui un programmatore può accedere ad un database utilizzando linguaggi già conosciuti. Lo svantaggio consiste nel curare la conversazione dei dati fra i tipi del linguaggio host e quelli relazionali (**conflitto di impedenza**).
@@ -144,7 +152,8 @@ $$
 &\text{SET TRANSACTION ISOLATION LEVEL [READ UNCOMMITTED | READ} \\
 &\quad \text{COMMITTED | REPEATABLE READ | SERIALIZABLE]}
 \end{aligned}
-$$Analizziamo i vari livelli di isolamento per grado di concorrenza decrescente:
+$$
+Analizziamo i vari livelli di isolamento per grado di concorrenza decrescente:
 1. **Read uncommitted (degree of isolation 0):** consente transazioni che fanno solo operazioni di lettura (quelle di modifica sono proibite) che vengono eseguite dal sistema senza bloccare in lettura i dati. Si rende il sistema molto più veloce, ma può accadere che una transazione legga dati modificati da un’altra transazione non ancora terminata (dati sporchi) oppure abortita in seguito, motivo per cui questo livello di isolamento può applicarsi esclusivamente su porzioni di DB utilizzate sempre e solo in lettura.
 2. **Read committed (degree of isolation 1):** a differenza del livello precedente in cui sui dati in lettura non vi era un bloccaggio, questo livello prevede che i dati in lettura siano bloccati esclusivamente per il tempo di lettura e subito rilasciati, mentre i dati in scrittura siano rilasciati alla terminazione della transazione. Questo comporta letture non ripetibili, ovvero letture successive sugli stessi dati possono dare risultati diversi perché i dati sono stati modificati da altre transazioni terminate nell’intervallo tra la prima e la seconda lettura.
 3. **Repeatable read (degree of isolation 2)**: prevede che i blocchi in lettura e scrittura non sia applicati sull’intera tabella, ma siano assegnati solo su sottoinsiemi di tuple e vengano rilasciati alla terminazione della transazione. Questa soluzione evita il problema delle letture non ripetibili, ma non quello delle letture fantasma.
@@ -169,6 +178,7 @@ $$
 &\text{GRANT} \langle \ Privileges \ | \ \text{ALL PRIVILEGES} \ \rangle \ \text{ON } Resource \ \text{TO } Users \ [ \ \text{WITH GRANT OPTIONS} \ ]
 \end{aligned}
 $$
+
 $\text{GRANT OPTIONS}$ specifica se il privilegio può essere trasmesso ad altri utenti. Chiaramente i privilegi possono essere anche revocati con il comando:
 $$
 \begin{aligned}
