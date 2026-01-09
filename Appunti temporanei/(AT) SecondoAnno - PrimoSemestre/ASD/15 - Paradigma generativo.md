@@ -340,8 +340,7 @@ PARTIZIONA(A: VECT, p: INT, q: INT)
             
     return i
 ```
-
-![[Pasted image 20251218150218.png]]
+![[Pasted image 20260109114204.png]]
 Analisi dell'esempio: 
 Prima partizione (radice):
 - Viene selezionato l'elemento pivot iniziale. Il pivot è il 9. 
