@@ -15,7 +15,7 @@ La funzione di ammissibilità verifica il rispetto del criterio di ordinamento: 
 
 A titolo esemplificativo, dato un vettore con tre elementi $v(1),v(2),v(3)$, sono possibili 6 ordinamenti distinti all'interno dello spazio di ricerca.
 
-![[Pasted image 20251216162312.png]]
+![[Pasted image 20260109113824.png]]
 
 Esiste una distinzione fondamentale tra due categorie di algoritmi: 
 - **Algoritmo selettivo:** Effettua una visita dello spazio di ricerca esaminando le varie possibilità per individuare una permutazione che soddisfi la condizione di ammissibilità. 
@@ -29,7 +29,7 @@ Il processo di esplorazione dello spazio di ricerca viene modellato mediante una
 - **Foglie:** ogni foglia rappresenta un possibile ordinamento finale; di fatto l'albero partiziona lo spazio di ricerca in modo che ogni terminazione corrisponda a una specifica permutazione. 
 - **Profondità:** La profondità dell'albero è indicatore della complessità computazionale, in quanto rappresenta il numero di confronti necessari per determinare la soluzione nel caso peggiore. 
 
-![[Pasted image 20251216163237.png]]
+![[Pasted image 20260109113839.png]]
 
 ## Tecnica enumerativa
 La tecnica enumerativa è basata sulla sistematica ispezione, elemento per elemento, dello spazio di ricerca associato ad una istanza di un problema. Questa metodologia garantisce la terminazione del processo, a condizione che lo spazio di ricerca sia finito. 
@@ -58,13 +58,11 @@ Il problema viene modellato definendo due configurazioni distinte:
 
 Nello specifico, l'obiettivo è disporre i tasselli numerati in modo ordinato lungo i bordi della griglia. 
 
-![[Pasted image 20251216165710.png]]
+![[Pasted image 20260109113905.png]]
 La soluzione può essere ricercata esaminando tutte le possibili disposizioni che vengono generate attraverso l'esecuzione di mosse successive.
 
 Dal punto di vista formale, questo procedimento di ricerca è rappresentabile mediante un albero, dove i nodi corrispondono alle configurazioni possibili generate mossa dopo mossa a partire dallo stato iniziale.
-
-![[Pasted image 20251216165747.png]]
-
+![[Pasted image 20260109113929.png]]
 Il procedimento si sviluppa attraverso una struttura ad albero:
 - **Radice dell'albero:** Rappresenta la configurazione iniziale della griglia.
 - **Generazione dei successori:** A partire dal nodo radice, vengono generati i nodi figli. Ogni figlio corrisponde a una nuova configurazione ottenuta effettuando una singola mossa valida (spostamento di un tassello nella casella vuota).
@@ -187,7 +185,7 @@ In questo scenario, si ipotizza che la generazione delle mosse avvenga in modo c
 Per gestire l'esplorazione dell'albero di ricerca, vengono definiti vincoli precisi che determinano quando l'algoritmo deve interrompere un ramo e tornare indietro.
 
 Viene fissato un parametro di profondità massima, indicato come $NMAX$ (nell'esempio, $NMAX=6$) .
-![[Pasted image 20251219181325.png]]
+![[Pasted image 20260109114031.png]]
 Il meccanismo di backtracking si attiva al verificarsi di due condizioni specifiche:
 1. **Ridondanza (Cicli):** Si genera una configurazione della griglia che è già stata prodotta precedentemente nello stesso percorso. Questo controllo evita che l'algoritmo entri in cicli infiniti ritornando su stati già visitati.
 2. **Superamento del Limite:** Sono state effettuate più di un numero fissato di mosse ($NMAX$) senza giungere alla configurazione finale (soluzione). Questo vincolo impedisce l'esplorazione di percorsi eccessivamente lunghi e inefficienti.
@@ -224,4 +222,4 @@ $$
 $$
  Poiché 13 è già superiore al target richiesto (9), è certo che proseguendo su questo cammino non si troverà alcuna soluzione ammissibile. L'algoritmo, quindi, interrompe la discesa su questo ramo e torna indietro, evitando di esplorare le configurazioni successive inutili.
  
-![[Screenshot 2025-12-19 alle 18.30.43.png]]
+![[Pasted image 20260109114058.png]]

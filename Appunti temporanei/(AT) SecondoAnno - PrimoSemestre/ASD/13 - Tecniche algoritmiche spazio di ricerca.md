@@ -47,7 +47,7 @@ Non è richiesto che l'insieme delle soluzioni rappresentate coincida perfettame
 Poichè stiamo trattando problemi legati alla ricerca, la condizione minima affinchè lo spazio di ricerca sia valido è: 
 - Se esistono risposte positive per l'istanza $i$ è sufficiente che almeno una di queste soluzioni sia rappresentata nello spaio di ricerca. (Se il problema ha soluzione, il nostro spazio di ricerca deve contenerne almeno una raggiungibile; se ne ignoriamo altre validi, l'algoritmo funzionerà comunque correttamente trovando quella inclusa).
 
-![[Schermata del 2025-12-15 11-19-27.png]]
+![[Pasted image 20260109113701.png]]
 
 ---
 Descrizione dell'esempio:
@@ -103,7 +103,7 @@ In termini insiemistici, la condizione di validità si traduce nel fatto che l'i
 
 - L'insieme delle soluzioni rappresentate nello spazio di ricerca: $\{s\in S|\exists z\in Z_{i},a(z)=TRUE \land o(z)=s \}$
 
-![[Pasted image 20251215173614.png]]
+![[Pasted image 20260109113721.png]]
 
 ## Esempio ricerca di un elemento in un vettore 
 **Listanza del problema:** consideriamo una generica istanza costituita da due input fondamentali: 
@@ -154,8 +154,8 @@ Si adotta quindi una rappresentazione più efficiente:
     2. **Vincolo di Colonna:** Per escludere configurazioni con due regine sulla stessa colonna, è sufficiente limitare lo spazio di ricerca ai vettori che non presentano valori ripetuti (ovvero le permutazioni degli interi da 1 a $i$).
 
 Questo passaggio dimostra come una scelta oculata dello spazio di ricerca (passando da matrice a vettore) riduca drasticamente il numero di controlli necessari nella funzione di ammissibilità, che ora dovrà preoccuparsi principalmente delle diagonali.
-![[Pasted image 20251215182013.png]]
-
+![[Pasted image 20260109113752.png]]
+c
 Allora, per il problema delle n regine:
 Sfruttando la rappresentazione vettoriale ottimizzata, è possibile definire formalmente le componenti dello spazio di ricerca come segue:
 - L'insieme che costituisce lo spazio di ricerca coincide con tutti i possibili modi di memorizzare i valori interi da 1 a $i$ in un vettore $V$ di dimensione $i$. In termini matematici, questo insieme corrisponde a tutte le possibili **permutazioni** della sequenza $(1,…,i)$. Ogni elemento dello spazio è dunque un vettore in cui l'indice rappresenta la riga e il valore contenuto rappresenta la colonna, garantendo implicitamente che non vi siano conflitti di riga o colonna.

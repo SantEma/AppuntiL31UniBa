@@ -213,7 +213,7 @@ CAMMINIMINIMI (G: GRAFO, r: NODO)
                     INSERISCI(j, S)
 ```
 
-![[Pasted image 20251217190054.png]]
+![[Pasted image 20260109114138.png]]
 Calcolo di aggiornamento per mostrare la logica della disuguaglianza $DIST(i)+C_{ij}​<DIST(j)$.
 - Viene preso in esame l'arco che va dal nodo 2 al nodo 5.
 - Essendo il nodo 2 già consolidato con una distanza $dist(2)=1$, l'algoritmo verifica se è possibile migliorare la distanza verso il nodo 5.
