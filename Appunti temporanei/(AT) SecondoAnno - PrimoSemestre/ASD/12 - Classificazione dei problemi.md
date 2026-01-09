@@ -110,7 +110,7 @@ In questo contesto, "trovare una soluzione ammissibile" significa individuare un
 
 #### Esempio: problema della N regina 
 Dato un numero intero positivo $N$, si deve determinare un posizionamento di $N$ regine su una scacchiera di dimensioni $N\times N$ in modo tale che nessuna regina possa "minacciare" un'altra regina (secondo le regole degli scacchi, una regina non deve trovarsi sulla stessa riga, colonna o diagonale di un'altra). 
-![[Schermata del 2025-12-10 14-14-55 1.png]]
+![[Pasted image 20260109113623.png]]
 
 Il problema è definito dalla quintupla $<N^{+}, D,R,D \ \cup\{\bot\},q_{ric}>$, dove:
 - $N^+$: l'insieme dei numeri positivi. L'input è semplicemente in numero $N$ (es. $N=5$).

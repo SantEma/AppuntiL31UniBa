@@ -85,9 +85,7 @@ Per trovare il punto di inserimento, si esegue una procedura di attraversamento 
 2. **Discesa verso sinistra:** Una volta terminata la salita (e passati al fratello destro, se non siamo alla radice), si scende sempre verso il **figlio sinistro**.
     - _Condizione:_ Si scende fino a incontrare una foglia.
     - _Significato:_ Questo garantisce che il nuovo nodo venga posizionato il più a sinistra possibile nel nuovo sotto-albero o livello.
-
-
-![[Schermata del 2025-11-30 18-08-32.png]]
+![[Pasted image 20260109113232.png]]
 Nell'esempio illustra un caso particolare: il raggiungimento della radice durante la risalita.
 Questo accade quando l'albero (o il livello corrente) è completamente pieno fino all'estrema destra.
 
@@ -109,8 +107,7 @@ In questo scenario, non è necessario resettare il livello ripartendo dalla radi
 Ci si ferma al padre del nodo da cui siamo saliti (poiché proveniamo da sinistra).        
 Passa al **fratello destro** dell'ultimo nodo visitato in salita.
 Dal fratello destro, si scende iterativamente verso il **figlio sinistro** fino a raggiungere il livello delle foglie.
-
-![[Schermata del 2025-11-30 18-27-39.png]]
+![[Pasted image 20260109113247.png]]
 - **Stato Iniziale:** L'**ultima foglia inserita** è il nodo **9**.
 - **Fase di Salita:**
     1. Si parte dal nodo **9**. Essendo un **figlio destro**, l'algoritmo risale al padre (**7**).
@@ -120,8 +117,7 @@ Dal fratello destro, si scende iterativamente verso il **figlio sinistro** fino 
     1. Si passa al **fratello destro** del nodo 7, ovvero il nodo **5**.
     2. Dal nodo 5 si dovrebbe scendere verso sinistra, ma non avendo figli, la posizione è immediatamente disponibile.
     3. Il nuovo nodo (cerchio rosso) viene inserito come **figlio sinistro** di 5.
-
-![[Schermata del 2025-11-30 18-27-58.png]]
+![[Pasted image 20260109113259.png]]
 - **Stato Iniziale:** L'albero è più profondo. L'**ultima foglia inserita** è il nodo **18**.
 - **Fase di Salita:**
     1. Si parte da **18**. È un **figlio destro**, quindi si sale al padre (**13**).
@@ -174,14 +170,12 @@ Per trovarlo, l'algoritmo deve "tornare indietro" rispetto all'inserimento, muov
     
 **A cosa serve questa procedura?** 
 Serve a trovare il **predecessore logico**. È fondamentale soprattutto nel caso critico in cui abbiamo appena cancellato l'unico nodo rimasto in un livello: grazie a questo movimento (salire fino alla radice e riscendere tutto a destra), il puntatore "torna a capo" alla fine del livello superiore.
-
-![[Schermata del 2025-11-30 18-40-35.png]]
-
+![[Pasted image 20260109113321.png]]
 Il **primo caso** della ricerca della nuova "ultima foglia", che si verifica quando la fase di risalita raggiunge la radice provenendo esclusivamente da un figlio sinistro.
 Questa specifica condizione segnala che il nodo rimosso si trovava all'estremo sinistro della struttura. 
 Di conseguenza, per individuare il nodo predecessore (il nuovo "ultimo"), l'algoritmo deve ripartire dalla radice e procedere con una discesa verso i figli destri fino al raggiungimento di una foglia.
 
-![[Schermata del 2025-11-30 18-47-58.png]]
+![[Pasted image 20260109113341.png]]
 - **Stato Iniziale:** Il nodo da rimuovere è il **22** (cerchiato in rosso), che è l'attuale "ultima foglia".
 - **Fase di Salita:**
     1. Si parte dal nodo **22**. Essendo un **figlio sinistro**, si sale al padre (**18**).
@@ -193,7 +187,7 @@ Di conseguenza, per individuare il nodo predecessore (il nuovo "ultimo"), l'algo
     2. Si scende verso il **figlio destro** (**20**).
     3. Essendo 20 una foglia, la ricerca termina. Il nodo **20** diventa la nuova ultima foglia.
 
-![[Schermata del 2025-11-30 18-48-54.png]]
+![[Pasted image 20260109113404.png]]
 - **Stato Iniziale:** Il nodo da rimuovere è il **16** (cerchiato in rosso), situato all'estrema sinistra profonda. 
 - **Fase di Salita:**
     1. Si risale la catena dei padri partendo da **16**: $\to$ **13** $\to$ **9** $\to$ **7** (Radice).
@@ -212,7 +206,7 @@ L'algoritmo procede a ritroso rispetto all'inserimento:
 	- Se veniamo da destra, significa che abbiamo appena "lasciato" un blocco di destra. Il nodo predecessore deve trovarsi necessariamente nel blocco di sinistra (il sotto-albero fratello).
 3. **Svolta e Discesa:** Si passa al **fratello sinistro** del nodo da cui siamo saliti e si scende verso destra fino all'ultima foglia disponibile.
 
-![[Schermata del 2025-11-30 19-22-39.png]] 
+![[Pasted image 20260109113418.png]] 
 - **Stato Iniziale:** Il nodo da cancellare è il **22** (cerchiato in rosso).
 - **Percorso:**
     1. Si sale da **22** (figlio sinistro) a **20**. Si continua a salire.
@@ -222,7 +216,7 @@ L'algoritmo procede a ritroso rispetto all'inserimento:
     5. **Discesa:** Dal nodo 10, scendiamo verso la foglia più a destra $\rightarrow$ nodo **18**.
 - **Risultato:** Il nodo **18** diventa la nuova ultima foglia.
 
-![[Schermata del 2025-11-30 19-23-44.png]]
+![[Pasted image 20260109113434.png]]
 - **Stato Iniziale:** Il nodo da cancellare è il **20** (cerchiato in rosso).
 - **Percorso:**
     1. Si sale da **20** (figlio sinistro) a **9**. Si continua.
@@ -249,8 +243,7 @@ Il processo iterativo di confronto e scambio prosegue fino al verificarsi di una
 
 Una conseguenza fondamentale della struttura "quasi perfettamente bilanciata" (Proprietà 1) è che ogni nodo interno ha necessariamente due figli, il che implica che il confronto coinvolge quasi sempre una terna di nodi (padre, figlio sinistro, figlio destro).
 - **Eccezione:** L'unico caso in cui il confronto può avvenire con un solo figlio è quando si raggiunge il penultimo livello dell'albero: qui può esistere un nodo che possiede **soltanto il figlio sinistro** (ma mai solo il destro, per definizione).
-
-![[Schermata del 2025-11-30 19-31-39.png]]
+![[Pasted image 20260109113451.png]]
 - **Obiettivo:** Collocare correttamente il valore **16**.
 - **Passo 1:**
     - Si confronta il nodo attuale (contenente 16) con i suoi figli: **9** e **11**.
@@ -264,7 +257,7 @@ Una conseguenza fondamentale della struttura "quasi perfettamente bilanciata" (P
     - **Azione:** Il 13 sale, il 16 scende ulteriormente.
 - **Risultato:** Il 16 raggiunge una posizione di foglia dove non ha più figli con cui confrontarsi. L'albero è ordinato.
 
-![[Schermata del 2025-11-30 19-32-48.png]]
+![[Pasted image 20260109113509.png]]
 - **Obiettivo:** Collocare correttamente il valore **20**.
 - **Passo 1:**
     - Si confronta il nodo attuale (contenente 20) con i suoi figli: **13** (sinistro) e **11** (destro).
@@ -320,7 +313,7 @@ L'esistenza fisica di tali figli è determinata dalla dimensione totale $n$ dell
 
 Gli elementi dell’albero B si memorizzano nell’heap $H$ cose segue: $H[1] = 3$, $H[2] = 5$, $H[3] = 9$, $H[4] = 6$, $H[5] = 8$,
 $H[6] = 13, \ H[7] = 12, \ H[8] = 11, \ H[9] = 18, \ H[10] = 10$
-![[Schermata del 2025-11-30 19-43-48.png]]L'esempio visualizza concretamente la linearizzazione dell'albero binario $B$ nel vettore sequenziale $H$. 
+![[Pasted image 20260109113545.png]]L'esempio visualizza concretamente la linearizzazione dell'albero binario $B$ nel vettore sequenziale $H$. 
 La memorizzazione avviene seguendo rigorosamente una visita per livelli: si leggono i nodi partendo dalla radice e scendendo livello per livello, procedendo sempre da sinistra verso destra.
 - **Livello 0:** La radice contiene **3**, che occupa la posizione $H[1]$.
 - **Livello 1:** I figli immediati sono **5** e **9**, mappati rispettivamente in $H[2]$ e $H[3]$.
