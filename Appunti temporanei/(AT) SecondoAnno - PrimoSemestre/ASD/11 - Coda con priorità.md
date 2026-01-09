@@ -52,7 +52,7 @@ Affinché la struttura sia valida, l'albero deve soddisfare le seguenti propriet
 
 **Esempio**:
 Si consideri un insieme di elementi con priorità definita: $C = \{5, 10, 8, 11, 13, 12, 9, 18, 3, 6\}$. L'albero binario $B$ mostrato in figura rappresenta correttamente tale coda con priorità, in quanto verifica entrambe le proprietà sopra enunciate
-![[Schermata del 2025-11-29 18-38-19.png]]
+![[Pasted image 20260109113111.png]]
 (_PS: ricorda che si parte sempre da 0 per contare i livelli_)
 
 - **Verifica della Proprietà 1 (Bilanciamento)**: Il livello massimo delle foglie è $3$. L'albero possiede $2^3 - 1 = 7$ nodi di livello $\le 2$ (ovvero i nodi contenenti 3, 5, 9, 6, 8, 13, 12). Le tre foglie presenti al livello $3$ (contenenti 11, 18, 10) sono correttamente posizionate tutte a sinistra.
