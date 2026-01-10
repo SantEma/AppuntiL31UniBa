@@ -237,7 +237,7 @@ Oltre ai vantaggi di **integrazione dei dati** e di **flessibilità** del DB, la
 - **ridurre i tempi di sviluppo** delle applicazioni rispetto a quelli richiesti usando la tecnologia degli archivi
 
 Tuttavia si hanno anche degli **svantaggi**: 
-- I DBMS richiedono impegno hardware e software per messa a punto e funzionamento, di conseguenza anche costi più elevati e personale con competenze per lo specifico DBMS
+	- I DBMS richiedono impegno hardware e software per messa a punto e funzionamento, di conseguenza anche costi più elevati e personale con competenze per lo specifico DBMS
 - Impatto sulla struttura organizzativa 
 - Progetto di DB ed applicazioni richiedono personale qualificato e strumenti opportuni, l’impiego di DB richiede ristrutturazione dei dati in archivi esistenti e riscrittura degli applicativi 
 - Non consigliati per applicazioni con uno o pochi utenti, senza necessità di accessi concorrenti e relativamente stabili nel tempo
