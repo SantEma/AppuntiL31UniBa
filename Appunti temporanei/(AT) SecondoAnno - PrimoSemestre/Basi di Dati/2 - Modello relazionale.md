@@ -3,10 +3,10 @@ Il modello relazionale si basa su due concetti:
 - **Tabella** (intuitivo per tutti gli utenti)
 
 Ricordiamo in matematica che:
-Dati due insiemi $A$ e $B$ (detti domini della relazione), dicesi relazione tra $A$ e $B$ un qualsiasi sottoinsieme del loro prodotto cartesiano $(A \times B)$.
+Dati due insiemi $A$ e $B$ (detti **domini** della relazione), dicesi relazione tra $A$ e $B$ un qualsiasi sottoinsieme del loro prodotto cartesiano $(A \times B)$.
 
 Una **relazione matematica** sui domini $D_{1}, D_{2}, . . . , D_{n}$ è un sottoinsieme del prodotto cartesiano $D_{1} × D_{2} × . . . \times D_{n}$. 
-Il numero $n$ delle componenti del prodotto cartesiano rappresenta il grado della relazione, il numero di elementi (cioè n-uple) della relazione rappresenta la **cardinalità** della relazione.
+Il numero $n$ delle componenti del prodotto cartesiano rappresenta il **grado** della relazione, il numero di elementi (cioè n-uple) della relazione rappresenta la **cardinalità** della relazione.
 È bene, comunque, sottolineare le differenze che ci sono tra il concetto di relazione ed il concetto di tabella; 
 Infatti, poiché una relazione è un insieme di $n$-uple, si ha che:
 - fra le $n$-uple non è definito alcun ordinamento, quindi l’ordine presente in una tabella è occasionale: due tabelle con le stesse righe ma in ordine diverso rappresentano la stessa relazione;
