@@ -23,9 +23,7 @@ La parte che quindi conosciamo di un sistema informativo per adesso è quella **
 Andiamo a definire un **sistema informatico** come la parte automatizzata di un sistema informativo.
 Un esempio di sistema informatico potrebbe essere quello di una banca:
 ![[Pasted image 20250930163620.png]]
-
-Andando a riformulare quindi un **sistema informativo** è un sistema software orientato alla
-gestione dei dati, dove l’aspetto prevalente è rappresentato dai dati stessi (memorizzati, ricercati, modificati) che costituiscono il patrimonio informativo di un’organizzazione
+Andando a riformulare quindi un **sistema informatico** è un sistema software orientato alla gestione dei dati, dove l’aspetto prevalente è rappresentato dai dati stessi (memorizzati, ricercati, modificati) che costituiscono il patrimonio informativo di un’organizzazione
 
 Si distingue da:
 - **Software orientato alla realizzazione di funzioni** per la complessità prevalente riguarda le funzioni da realizzare 
