@@ -15,7 +15,7 @@ Infatti, poiché una relazione è un insieme di $n$-uple, si ha che:
 Al tempo stesso però, ciascuna $n$-upla è internamente ordinata: l’$i$-esimo valore di ciascuna proviene dall'$i$-esimo dominio:
 $$(v_{1}, v_{2}, \dots , v_{n}) \quad \text{con} \quad v_{1} \in D_{1}, v_{2} \in D_{2},\dots,v_{n} \in D_{n}$$
 Questo implica che ci sia un ordinamento tra i domini (tra le colonne della tabella), che è significativo ai fini dell’interpretazione dei dati nelle relazioni. 
-Risulta evidente come le informazioni che siamo interessati ad organizzare nelle relazioni dei DB abbiano una struttura riconducibile a quella dei record: una relazione è sostanzialmente un insieme di record omogenei, cioè definiti sugli stessi campi, di conseguenza attribuendo ad ogni dominio un nome identificativo, detto attributo, l’ordinamento dei domini (quindi la posizione delle colonne nella tabella) diventa irrilevante.
+Risulta evidente come le informazioni che siamo interessati ad organizzare nelle relazioni dei DB abbiano una struttura riconducibile a quella dei record: una relazione è sostanzialmente un insieme di record omogenei, cioè definiti sugli stessi campi, di conseguenza attribuendo ad ogni dominio un nome identificativo, detto **attributo**, l’ordinamento dei domini (quindi la posizione delle colonne nella tabella) diventa irrilevante.
 ![[Pasted image 20251006112024.png]]
 Rispetto al modello basato su record e puntatori (gerarchico e reticolare), il modello relazionale, basato su valori, presenta diversi vantaggi:
 1. **Astrazione**: Richiede di rappresentare solo ciò che è rilevante dal punto di vista di applicazione/utente.
