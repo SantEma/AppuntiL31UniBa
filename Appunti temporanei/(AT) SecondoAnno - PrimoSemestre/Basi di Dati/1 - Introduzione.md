@@ -183,6 +183,7 @@ Oltre al modello relazionale possiamo trovare altri modelli:
     </tr>
   </tbody>
 </table>
+
 #### Modello relazionale
 Il modello relazionale dei dati permette di definire tipi grazie al costruttore della **relazione**, che rappresenta l'organizzazione dei dati in insiemi omogenei.
 Una relazione viene rappresentata generalmente tramite **tabella**, le cui righe rappresentano record **specifici** e le colonne ai vari campi dei record
