@@ -52,7 +52,7 @@ Alcune considerazioni da fare sono:
 - La presenza di più valori nulli in una relazione può causare problemi sull'identitá delle tuple
 I sistemi relazionali permettono di specificare per ciascun attributo di una relazione se esso può assumere il valore nullo oppure se per esso vale il vincolo not-null e quindi non può assumere il valore nullo.
 ## Vincoli di integrità
-Non è corretto dire che qualsiasi insieme di tuple (insieme di dati) sullo schema rappresenti informazioni corrette per l'applicazione, considerando per esempio l'esempio precedente:
+Non è corretto dire che qualsiasi insieme di tuple (insieme di dati) sullo schema rappresenti informazioni corrette per l'applicazione, considerando l'esempio precedente:
 ![[IMG_0010.jpg]]
 - Nella tupla $\text{ESAMI}$ non si potrebbe avere un voto pari a 36
 - Nella tupla $\text{STUDENTI}$ non si potrebbero avere due studenti con stessa matricola 
