@@ -74,27 +74,45 @@ Esistono alcune proprietà, dette **forme normali**, che certificano la qualità
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
  
 Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
-
-#### Si definisca cosa è una decomposizione senza perdita di informazione e quale condizione è possibile utilizzare per verificare tale proprietà...
-
- Data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ la cui unione sia pari a $X$ stesso, si può decomporre senza perdita di dati sugli insiemi $X_{1}$ e $X_{2}$ se il join delle due proiezioni è uguale a $r$ stessa (ossia non contiene **spurie**). È irrinunciabile che una decomposizione effettuata al fine di normalizzare sia senza perdita.
+#### Si definisca cosa è una decomposizione senza perdita di informazione e quale condizione è possibile utilizzare per verificare tale proprietà
+[da finire]
 #### Si definisca cosa è un vincolo di integrità per una base di dati relazionale
+[da finire]
 #### Si definisca cosa sia una superchiave ed una superchiave minimale (o chiave).
+[da finire]
 #### Elencare le proprietà fondamentali di una transazione e descrivere brevemente ognuna di esse
+[da finire]
 #### Si descrivano brevemente i diversi livelli di isolamento di una transazione ed il motivo per cui sono stati introdotti.
+[da finire]
 #### Illustrare brevemente quali sono i dati gestiti dal buffer manager e come avviene la sua gestione delle richieste
+[da finire]
 #### E' possibile creare domini complessi in SQL? Quali sono i domini che SQL mette a disposizione?
+[da finire]
 #### Descrivere brevemente in cosa consiste SQL Embedded e per quale motivo viene introdotto
+[da finire]
 #### Si descriva brevemente cosa sia un cursore e per risolvere quale problema viene introdotto
+[da finire]
 #### Descrivere le caratteristiche principali di una procedura definita in SQL-2 standard e le eventuali differenze rispetto a SQL-3
+[da finire]
 #### Illustrare quando è possibile utilizzare SQL statico e quando invece è necessario utilizzare SQL dinamico.
+[da finire]
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
+[da finire]
 #### Descrivere brevemente i difetti del calcolo relazionale su domini per correggere i quali è stato introdotto il calcolo relazionale su tuple
+[da finire]
 #### Si definisca brevemente cosa sia un DBMS e le sue principali caratteristiche
+[da finire]
 #### Data una base di dati si dica quale sia la sua parte invariante e la sua parte variabile e perchè
+[da finire]
 #### Descrivere brevemente cosa sia un modello dei dati ed elencare i modelli dei dati conosciuti
+[da finire]
 #### Si descrivano brevemente le peculiarità e le finalità delle fasi di progettazione concettuale, logica e fisica" (o formulazione simile)
+[da finire]
 #### Si descriva brevemente quali e quante sono le forme di ridondanza individuabili all'interno di uno modello E-R
+[da finire]
 #### Illustrare brevemente i motivi per cui è necessario effettuare l'analisi della ridondanza
+[da finire]
 #### Si descriva brevemente quando un join naturale si dice completo
+[da finire]
 #### Descrivere brevemente perchè il modello relazionale è ache detto modello 'basato su valori'
+[da finire]
