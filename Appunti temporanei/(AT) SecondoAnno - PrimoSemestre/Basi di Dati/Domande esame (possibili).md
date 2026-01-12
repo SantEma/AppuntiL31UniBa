@@ -94,17 +94,38 @@ Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di
 3. **Repeatable read (degree of isolation 2)**: prevede che i blocchi in lettura e scrittura non sia applicati sull’intera tabella, ma siano assegnati solo su sottoinsiemi di tuple e vengano rilasciati alla terminazione della transazione. Questa soluzione evita il problema delle letture non ripetibili, ma non quello delle letture fantasma.
 4. **Serializable (degree of isolation 4)**: le transazioni vengono serializzate in maniera sicura.
 #### Illustrare brevemente quali sono i dati gestiti dal buffer manager e come avviene la sua gestione delle richieste
-L'interazione fra memoria centrale e memoria secondaria è realizzata nei DBMS attraverso l'utilizzo di un'apposita grande zona di memoria detta **buffer**, gestita dal DBMS in modo condiviso per tutte le applicazioni.
-Il buffer è organizzato in **pagine**, che hanno dimensioni pari a un numero intero di blocchi di memoria secondaria (assumeremo che ogni blocco corrisponda a esattamente un blocco di memoria secondaria).
-**Il gestore dei buffer si occupa del caricamento e del salvataggio delle pagine dalla memoria centrale alla memoria di massa.**
+Il gestore del buffer gestisce, oltre al buffer appunto, un direttorio che per ogni pagina mantiene:
+- File fisico e numero blocco corrispondete alla pagina
+- Due variabili di stato: un contatore che indica quanti programmi utilizzano la pagina, un bit che indica se la pagina è “sporca”, cioè se è stata modificata
+
+La conoscenza di questi dati è fondamentale nel momento in cui diventa necessario introdurre nuove pagine in un buffer saturo, per capire quali pagine andare a sostituire. Il buffer comunica con il sistema mediante delle operazioni primitive:
+- $\text{fix}$: consiste nella richiesta di accesso ad una pagina, restituisce il riferimento alla pagina richiesta, richiede una lettura se la pagina non è nel buffer, incrementa il contatore per l’utilizzo della pagina
+- $\text{setDirty}$: comunica al buffer manager che la pagina è stata modificata
+- $\text{unfix}$: indica che la transazione ha concluso l’utilizzo della pagina, quindi decrementa il contatore di utilizzo di pagina
+- $\text{force}$: trasferisce in modo sincrono una pagina in memoria secondaria su richiesta del gestore dell’affidabilità.
 #### E' possibile creare domini complessi in SQL? Quali sono i domini che SQL mette a disposizione?
-[da finire]
+Nella definizione delle tabelle si può fare riferimento ai domini predefiniti del linguaggio o a domini definiti dall'utente a partire da quelli predefiniti, infatti proprio da questi è possibile definirli in questa maniera:
+$$ \begin{aligned}
+&\text{CREATE DOMAIN} \ NomeDominio \ as \ TipoDiDato \\
+&\quad\quad\quad\quad\quad\quad \ [ValoreDiDefault] \\
+&\quad\quad\quad\quad\quad\quad \ [Vincolo] \\
+\end{aligned}
+$$
+
+I domini elementari di SQL sono:
+- Caratteri
+- Tipi numerici esatti
+- Tipi numerici approssimativi
+- Istanti temporali
+- Intervalli temporali
 #### Descrivere brevemente in cosa consiste SQL Embedded e per quale motivo viene introdotto
-[da finire]
+SQL Embedded prevede di introdurre direttamente nel programma sorgente scritto nel linguaggio di alto livello le istruzioni SQL, distinguendole dalle normali istruzioni tramite un opportuno separatore
 #### Si descriva brevemente cosa sia un cursore e per risolvere quale problema viene introdotto
-[da finire]
+Un cursore è una variabile speciale che permette ad un programma di accedere alle righe di una tabella una alla volta e permette di risolvere il cosiddetto **conflitto di impedenza**, infatti linguaggi di programmazione accedono agli elementi di una tabella scandendone le righe una a una (tuple-oriented), al contrario SQL è un linguaggio di tipo set-oriented, che opera su intere tabelle e restituisce come risultato di un’interrogazione un’intera tabella.
 #### Descrivere le caratteristiche principali di una procedura definita in SQL-2 standard e le eventuali differenze rispetto a SQL-3
-[da finire]
+Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sottoprogrammi memorizzati nel database come parte dello schema (motivo per cui vengono dette anche **stored procedures**). Esse permettono di assegnare un nome a un’istruzione SQL ed eventuali parametri. Una volta definita, la procedura è utilizzabile come un qualunque comando SQL.
+
+È bene sapere che lo standard SQL-2 non tratta la scrittura di procedure complesse, ma solo quelle composte da un singolo comando SQL. Questo è invece permesso in SQL-3, dove viene fornita una ricca sintassi per la definizione di procedure, integrando anche le strutture di controllo
 #### Illustrare quando è possibile utilizzare SQL statico e quando invece è necessario utilizzare SQL dinamico.
 [da finire]
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
