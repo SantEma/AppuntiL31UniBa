@@ -75,7 +75,9 @@ Quando una relazione non è normalizzata presenta ridondanze e si presta a compo
  
 Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
 #### Si definisca cosa è una decomposizione senza perdita di informazione e quale condizione è possibile utilizzare per verificare tale proprietà
-[da finire]
+Data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ la cui unione sia pari a $X$ stesso, si può decomporre senza perdita di dati sugli insiemi $X_{1}$ e $X_{2}$ se il join delle due proiezioni è uguale a $r$ stessa (ossia non contiene **spurie**)
+
+Quindi  si decompone senza perdita su due sottoschemi se l'attributo comune ai due è chiave per almeno uno dei due
 #### Si definisca cosa è un vincolo di integrità per una base di dati relazionale
 [da finire]
 #### Si definisca cosa sia una superchiave ed una superchiave minimale (o chiave).
