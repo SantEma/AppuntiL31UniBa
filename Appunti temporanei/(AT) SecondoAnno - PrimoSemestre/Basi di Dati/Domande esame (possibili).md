@@ -79,9 +79,11 @@ Data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sot
 
 Quindi  si decompone senza perdita su due sottoschemi se l'attributo comune ai due è chiave per almeno uno dei due
 #### Si definisca cosa è un vincolo di integrità per una base di dati relazionale
-[da finire]
+Il **vincolo di integrità** è una proprietà che deve essere soddisfatta dalle istanze che rappresentano informazioni corrette per l'applicazione.
+Ogni vincolo può essere visto come un predicato che assegna valori vero o falso se queste soddisfano le condizioni o no.
 #### Si definisca cosa sia una superchiave ed una superchiave minimale (o chiave).
-[da finire]
+[[Pasted image 20260112192815.png]]
+
 #### Elencare le proprietà fondamentali di una transazione e descrivere brevemente ognuna di esse
 [da finire]
 #### Si descrivano brevemente i diversi livelli di isolamento di una transazione ed il motivo per cui sono stati introdotti.
