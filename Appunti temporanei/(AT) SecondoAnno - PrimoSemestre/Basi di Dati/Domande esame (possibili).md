@@ -37,9 +37,7 @@ Il gestore delle interrogazioni è un modulo cruciale dell’architettura di un 
 1.  **Ottimizzazione algebrica**: effettua trasformazioni sulle operazioni (come l'anticipazione di selezioni e proiezioni verso le foglie dell'albero) che sono sempre convenienti indipendentemente dai costi fisici
 2. **Ottimizzazione basata sul modello dei costi**: Sceglie la strategia di esecuzione (es. quale indice usare, quale algoritmo di join tra nested loop, merge scan o hash join) basandosi su un modello di costo che stima il numero di accessi in memoria secondaria e l'uso della CPU, sfruttando i profili statistici delle tabelle memorizzati nel catalogo (come spiegato nei profili delle relazioni);
 3. Generazione del codice.
-
 #### Elencare ed illustrare brevemente le strutture usate da un DBMS per organizzare i file (e le stutture primarie dei file) a livello fisico
-## Strutture primarie per l'organizzazione di file
 La struttura primaria di un file stabilisce il criterio secondo il quale sono disposte le tuple nell'ambito del file. Le strutture possono essere divise in tre categorie principali: 
 - Sequenziali;
 - Ad accesso calcolato (hash);  
@@ -67,9 +65,7 @@ Queste strutture sono usate per l'indicizzazione. Garantiscono che le foglie sia
 Le differenze principali sono:
 - **B-Tree:** I nodi intermedi possono contenere i dati veri e propri (o i puntatori ai record).
 - **B+-Tree:** I dati (o i puntatori ai record) sono contenuti **solo nelle foglie**. I nodi interni servono solo da instradamento. Inoltre, le foglie sono collegate in una catena sequenziale, rendendo questa struttura molto efficiente anche per interrogazioni su intervalli di valori
-
 #### Descrivere brevemente cosa è la normalizzazione e quali problemi risolve
-
 Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti.
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
  
@@ -92,9 +88,15 @@ Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di
 - **Durability** : le modifiche su DB di una transazione terminata normalmente sono permanenti, cioè non sono alterabili da malfunzionamenti successivi alla terminazione
 
 #### Si descrivano brevemente i diversi livelli di isolamento di una transazione ed il motivo per cui sono stati introdotti.
-[da finire]
+
+1. **Read uncommitted (degree of isolation 0):** consente transazioni che fanno solo operazioni di lettura (quelle di modifica sono proibite) che vengono eseguite dal sistema senza bloccare in lettura i dati. Si rende il sistema molto più veloce, ma può accadere che una transazione legga dati modificati da un’altra transazione non ancora terminata (dati sporchi) oppure abortita in seguito, motivo per cui questo livello di isolamento può applicarsi esclusivamente su porzioni di DB utilizzate sempre e solo in lettura.
+2. **Read committed (degree of isolation 1):** a differenza del livello precedente in cui sui dati in lettura non vi era un bloccaggio, questo livello prevede che i dati in lettura siano bloccati esclusivamente per il tempo di lettura e subito rilasciati, mentre i dati in scrittura siano rilasciati alla terminazione della transazione. Questo comporta letture non ripetibili, ovvero letture successive sugli stessi dati possono dare risultati diversi perché i dati sono stati modificati da altre transazioni terminate nell’intervallo tra la prima e la seconda lettura.
+3. **Repeatable read (degree of isolation 2)**: prevede che i blocchi in lettura e scrittura non sia applicati sull’intera tabella, ma siano assegnati solo su sottoinsiemi di tuple e vengano rilasciati alla terminazione della transazione. Questa soluzione evita il problema delle letture non ripetibili, ma non quello delle letture fantasma.
+4. **Serializable (degree of isolation 4)**: le transazioni vengono serializzate in maniera sicura.
 #### Illustrare brevemente quali sono i dati gestiti dal buffer manager e come avviene la sua gestione delle richieste
-[da finire]
+L'interazione fra memoria centrale e memoria secondaria è realizzata nei DBMS attraverso l'utilizzo di un'apposita grande zona di memoria detta **buffer**, gestita dal DBMS in modo condiviso per tutte le applicazioni.
+Il buffer è organizzato in **pagine**, che hanno dimensioni pari a un numero intero di blocchi di memoria secondaria (assumeremo che ogni blocco corrisponda a esattamente un blocco di memoria secondaria).
+**Il gestore dei buffer si occupa del caricamento e del salvataggio delle pagine dalla memoria centrale alla memoria di massa.**
 #### E' possibile creare domini complessi in SQL? Quali sono i domini che SQL mette a disposizione?
 [da finire]
 #### Descrivere brevemente in cosa consiste SQL Embedded e per quale motivo viene introdotto
