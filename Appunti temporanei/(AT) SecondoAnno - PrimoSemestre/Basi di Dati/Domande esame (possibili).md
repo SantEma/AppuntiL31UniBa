@@ -1,5 +1,4 @@
 #### Si descriva brevemente cosa siano indipendenza logica e fisica dai dati e quale/i modello di basi di dati consente/ono di realizzarle
-
 L'architettura a livelli di un DBMS garantisce l'indipendenza dei dati in due livelli:
 - **Indipendenza fisica**: consente di interagire con il DBMS in modo indipendente dalla struttura fisica dei dati, senza influire sulle descrizioni e quindi sui programmi che usano i dati
 - **Indipendenza logica**: consente di interagire con il livello esterno della base di dati in modo indipendente dal livello logico, per esempio come aggiungere un nuovo schema esterno senza modificare lo schema logico e perciò la sottostante organizzazione fisica dei dati
@@ -31,7 +30,6 @@ Ogni sistema organizzativo è dotato di **sistema informativo**, ossia l'insieme
 Un sistema informativo è molte volte indipendente dalle automatizzazioni che conosciamo.
 
 Un **sistema informatico** non è altro che la parte automatizzata di un sistema informativo, quindi un sistema software orientato alla gestione dei dati, dove l’aspetto prevalente è rappresentato dai dati stessi (memorizzati, ricercati, modificati) che costituiscono il patrimonio informativo di un’**organizzazione**
-
 #### Si descriva brevemente i/il criteri/o di ottimizzazione delle query implementato dal gestore di ottimizzazione delle query di un DBMS
 Il gestore delle interrogazioni è un modulo cruciale dell’architettura di un DBMS, in quanto responsabile dell’esecuzione efficiente di operazioni che sono specificate a livello molto alto. Esso riceve in ingresso un’interrogazione scritta in SQL, controlla che non vi siano errori lessicali, sintattici o semantici, una volta accettata, l’interrogazione viene tradotta in una forma interna di tipo algebrico. A questo punto, l’ottimizzazione vera e propria ha inizio, dividendosi in: 
 1.  **Ottimizzazione algebrica**: effettua trasformazioni sulle operazioni (come l'anticipazione di selezioni e proiezioni verso le foglie dell'albero) che sono sempre convenienti indipendentemente dai costi fisici
@@ -128,7 +126,7 @@ Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sott
 È bene sapere che lo standard SQL-2 non tratta la scrittura di procedure complesse, ma solo quelle composte da un singolo comando SQL. Questo è invece permesso in SQL-3, dove viene fornita una ricca sintassi per la definizione di procedure, integrando anche le strutture di controllo
 #### Illustrare quando è possibile utilizzare SQL statico e quando invece è necessario utilizzare SQL dinamico.
 
-Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare, quindi la costruisce a tempo di esecuzione.
+Nel caso di SQL statico, si usa quando sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare, quindi la costruisce a tempo di esecuzione, quindi viene utilizzato in questi casi necessari.
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
 [da finire]
 #### Descrivere brevemente i difetti del calcolo relazionale su domini per correggere i quali è stato introdotto il calcolo relazionale su tuple
@@ -136,14 +134,65 @@ Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengo
 #### Si definisca brevemente cosa sia un DBMS e le sue principali caratteristiche
 Il DBMS (sistemi di gestioni di basi di dati) è un sistema software in grado di gestire collezioni di dati che siano grandi, condivise e persistenti, garantendo affidabilità, privatezza, efficienza ed efficacia.
 
-Un DBMS
-
-I DBMS mettono a disposizione strumenti avanzati di archiviazione e reperimento di informazioni, soddisfacendo i requisiti di un sistema informatico complesso
-#### Data una base di dati si dica quale sia la sua parte invariante e la sua parte variabile e perchè
-[da finire]
+Un DBMS deve garantire:
+- **Affidabilità**, quindi una resistenza a malfunzionamenti HW e SW in modo da mantenere intatto il contenuto o permetterne la ricostruzione (backup e recovery).
+- **Privatezza dei dati**, un sistema deve poter definire dei meccanismi di autorizzazione per utente (opportunamente riconosciuto)
+#### Data una base di dati si dica quale sia la sua parte invariante e la sua parte variabile e perché
+Nella base di dati esiste una parte invariata nel tempo, detta **schema della base di dati**, costituita dalle caratteristiche dei dati, e una parte variabile, chiamata **istanza** della base di dati, costituita dai valori effettivi.
 #### Descrivere brevemente cosa sia un modello dei dati ed elencare i modelli dei dati conosciuti
-[da finire]
-#### Si descrivano brevemente le peculiarità e le finalità delle fasi di progettazione concettuale, logica e fisica" (o formulazione simile)
+Un **modello di dati** è un insieme di concetti (o costrutti) per organizzare i dati di interesse e descriverne la struttura in modo comprensibile ad un elaboratore.
+Ogni modello di dati fornisce meccanismi di astrazione per definire nuovi tipi sulla base di tipi (elementari) predefiniti e costruttori di tipo.
+
+Il modello relazione dei dati (più diffuso tra tutti) permette di definire tipi per mezzo del costrutto della **relazione**, che consente di organizzare i dati in insiemi di record a struttura fissa. Oltre quello esistono diversi
+<table>
+  <thead>
+    <tr>
+      <th>Modello</th>
+      <th>Struttura usata</th>
+      <th>Anni</th>
+      <th>DBMS</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Modello gerarchico</td>
+      <td>basato sull'uso di strutture ad albero</td>
+      <td>'60</td>
+      <td>IMS<br>System 2000</td>
+    </tr>
+    <tr>
+      <td>Modello reticolare</td>
+      <td>basato sull'uso di strutture a grafo</td>
+      <td>Inizio '70</td>
+      <td>IDMS, IDS II, DM IV</td>
+    </tr>
+    <tr>
+      <td>Modello relazionale</td>
+      <td>basato sull'uso di relazioni: insiemi di record a struttura fissa con campi di tipo primitivo</td>
+      <td>'80</td>
+      <td>System R, Ingres, Oracle, DB2</td>
+    </tr>
+    <tr>
+      <td>Modello ad oggetti</td>
+      <td>basato sull'uso di classi di oggetti e istanze</td>
+      <td>Fine '80 - '90</td>
+      <td>O2<br>ObjectStore</td>
+    </tr>
+    <tr>
+      <td>Modello XML</td>
+      <td>rivisitazione del modello gerarchico: dati presentati insieme alla loro descrizione e non devono sottostare rigidamente ad un'unica struttura logica</td>
+      <td>'90</td>
+      <td>BaseX</td>
+    </tr>
+    <tr>
+      <td>Modelli semi-strutturati e flessibili</td>
+      <td>non hanno rigidità nell'organizzazione dei dati ed hanno alte prestazioni</td>
+      <td>'00</td>
+      <td>Sistemi NoSQL</td>
+    </tr>
+  </tbody>
+</table>
+#### Si descrivano brevemente le peculiarità e le finalità delle fasi di progettazione concettuale, logica e fisica (o formulazione simile)
 [da finire]
 #### Si descriva brevemente quali e quante sono le forme di ridondanza individuabili all'interno di uno modello E-R
 [da finire]
@@ -151,5 +200,5 @@ I DBMS mettono a disposizione strumenti avanzati di archiviazione e reperimento 
 [da finire]
 #### Si descriva brevemente quando un join naturale si dice completo
 [da finire]
-#### Descrivere brevemente perchè il modello relazionale è ache detto modello 'basato su valori'
+#### Descrivere brevemente perché il modello relazionale è anche detto modello 'basato su valori'
 [da finire]
