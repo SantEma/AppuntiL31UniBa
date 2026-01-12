@@ -127,13 +127,18 @@ Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sott
 
 È bene sapere che lo standard SQL-2 non tratta la scrittura di procedure complesse, ma solo quelle composte da un singolo comando SQL. Questo è invece permesso in SQL-3, dove viene fornita una ricca sintassi per la definizione di procedure, integrando anche le strutture di controllo
 #### Illustrare quando è possibile utilizzare SQL statico e quando invece è necessario utilizzare SQL dinamico.
-[da finire]
+
+Nel caso di SQL statico, i comandi SQL sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare, quindi la costruisce a tempo di esecuzione.
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
 [da finire]
 #### Descrivere brevemente i difetti del calcolo relazionale su domini per correggere i quali è stato introdotto il calcolo relazionale su tuple
 [da finire]
 #### Si definisca brevemente cosa sia un DBMS e le sue principali caratteristiche
-[da finire]
+Il DBMS (sistemi di gestioni di basi di dati) è un sistema software in grado di gestire collezioni di dati che siano grandi, condivise e persistenti, garantendo affidabilità, privatezza, efficienza ed efficacia.
+
+Un DBMS
+
+I DBMS mettono a disposizione strumenti avanzati di archiviazione e reperimento di informazioni, soddisfacendo i requisiti di un sistema informatico complesso
 #### Data una base di dati si dica quale sia la sua parte invariante e la sua parte variabile e perchè
 [da finire]
 #### Descrivere brevemente cosa sia un modello dei dati ed elencare i modelli dei dati conosciuti
