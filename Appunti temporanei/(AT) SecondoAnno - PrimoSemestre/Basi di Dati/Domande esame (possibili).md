@@ -97,3 +97,4 @@ Dunque, per **normalizzazione** si intende la procedura che permette di trasform
 #### Si descriva brevemente quali e quante sono le forme di ridondanza individuabili all'interno di uno modello E-R
 #### Illustrare brevemente i motivi per cui è necessario effettuare l'analisi della ridondanza
 #### Si descriva brevemente quando un join naturale si dice completo
+#### Descrivere brevemente perchè il modello relazionale è ache detto modello 'basato su valori'
