@@ -26,8 +26,8 @@ Un esempio di sistema informatico potrebbe essere quello di una banca:
 Andando a riformulare quindi un **sistema informatico** è un sistema software orientato alla gestione dei dati, dove l’aspetto prevalente è rappresentato dai dati stessi (memorizzati, ricercati, modificati) che costituiscono il patrimonio informativo di un’organizzazione
 
 Si distingue da:
-- **Software orientato alla realizzazione di funzioni** per la complessità prevalente riguarda le funzioni da realizzare 
-- **Software orientato al controllo** per la complessità prevalente riguarda il controllo di attività che si sincronizzano e cooperano durante l'evoluzione del sistema
+- **Software orientato alla realizzazione di funzioni** per la complessità prevalente riguardante le funzioni da realizzare
+- **Software orientato al controllo** per la complessità prevalentemente riguardante il controllo di attività che si sincronizzano e cooperano durante l'evoluzione del sistema
 #### Componenti
 Il sistema informatico prevede quattro componenti:
 - I programmi applicativi che forniscono i servizi agli utenti eseguendo insiemi di operazioni sulla base informativa.
