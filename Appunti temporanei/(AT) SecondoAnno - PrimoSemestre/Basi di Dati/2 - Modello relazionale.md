@@ -79,7 +79,7 @@ Ora i casi sono due:
 
 Il fatto che su ogni schema di relazione si possa definire almeno una chiave garantisce **l’accessibilità** a tutti i valori di una base di dati e la loro univoca identificabilità e inoltre permette di stabilire delle corrispondenze “basate su valori” fra dati contenuti in relazioni diverse, che caratterizzano il modello relazionale.
 
-Su una delle chiavi della relazione, detta **chiave primaria**, si vieta la presenza di valori nulli, per sceglierla si preferisce poi quella con il minor valore di attribuiti.
+Su una delle chiavi della relazione, detta **chiave primaria**, si vieta la presenza di valori nulli, per sceglierla si preferisce poi quella con il minor valore di attributi.
 Per convenzione gli attributi della chiave primaria sono evidenziati tramite sottolineatura.  
 In quasi tutti i casi è possibile trovare una chiave fra gli attributi, quando ciò non accade si ricorre a un codice come attributo aggiuntivo per l’identificazione di una specifica tupla.
 ### Vincoli di integrità referenziale
