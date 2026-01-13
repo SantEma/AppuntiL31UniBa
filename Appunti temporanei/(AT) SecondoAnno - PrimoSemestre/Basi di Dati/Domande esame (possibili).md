@@ -75,7 +75,17 @@ Quindi si decompone senza perdita su due sottoschemi se l'attributo comune ai du
 Il **vincolo di integrità** è una proprietà che deve essere soddisfatta dalle istanze che rappresentano informazioni corrette per l'applicazione.
 Ogni vincolo può essere visto come un predicato che assegna valori vero o falso se queste soddisfano le condizioni o no.
 #### Si definisca cosa sia una superchiave ed una superchiave minimale (o chiave).
-![[Pasted image 20260112193104.png]]
+Una **chiave** è un insieme di attributi utilizzato per identificare univocamente le tuple di una relazione, formalmente:
+
+**Def.**: Data una relazione $R(X)$ con $K \underline{\subset} X$, l’insieme $K$ di attributi è superchiave per $R$ se $r$ non contiene due tuple distinte $t_{1}$ e $t_{2}$ con $t_{1}[K]=t_{2}[K]$.
+
+In altre parole l'insieme di istanze di attributi utilizzato come superchiave non deve contenere elementi uguali in più di una tupla.  
+Un insieme $K$ di attributi è chiave per $r$ se è una superchiave minimale di $r$ (cioè non esiste un’altra superchiave $K'$ di $r$ che sia contenuta in $K$ come sottoinsieme proprio).
+
+Poiché una relazione è un insieme di elementi distinti, si può concludere che per ogni relazione $r(X),$ l’insieme $X$ di tutti gli attributi su cui è definita è chiaramente una superchiave per essa.
+Ora i casi sono due: 
+- La **superchiave è anche chiave**, quindi si conferma l’esistenza della chiave stessa 
+- **Non è chiave**, perché contiene un’altra superchiave, quindi applicando ricorsivamente questo ragionamento si giunge, in un numero finito di passi (poiché l’insieme degli attributi è finito), ad una superchiave minimale.
 #### Elencare le proprietà fondamentali di una transazione e descrivere brevemente ognuna di esse
 Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di elaborazioni di dati in memoria temporanea, che il DBMS esegue garantendo le seguenti proprietà (ACID properties):
 
