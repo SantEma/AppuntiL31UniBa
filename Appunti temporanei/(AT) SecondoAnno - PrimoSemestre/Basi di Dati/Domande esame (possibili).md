@@ -208,14 +208,13 @@ Il modello relazione dei dati (più diffuso tra tutti) permette di definire tipi
 
 
 #### Si descriva brevemente quali e quante sono le forme di ridondanza individuabili all'interno di uno modello E-R
-All'interno di uno schema Entità-Relazione, la ridondanza è definita come la presenza di informazioni che possono essere derivate, ovvero ottenute attraverso una serie di operazioni, da altri dati già esistenti nel medesimo schema. Si possono individuare sostanzialmente quattro forme principali di ridondanza:
+All'interno di uno schema Entità-Relazione, la ridondanza è definita come la presenza di informazioni che possono essere derivate, ovvero ottenute attraverso una serie di operazioni, da altri dati già esistenti nel medesimo schema. Si possono individuare sostanzialmente tre forme principali di ridondanza:
 1. La prima categoria riguarda gli attributi derivabili, occorrenza per occorrenza, da altri attributi appartenenti alla stessa entità o alla stessa associazione.
 2. La seconda forma di ridondanza è costituita dagli attributi derivabili da attributi di altre entità o associazioni, operazione che avviene solitamente attraverso l'impiego di funzioni aggregate;
-3. La terza tipologia, considerata una variante specifica della precedente ma molto frequente nella pratica, è rappresentata dagli attributi derivabili da operazioni di conteggio di occorrenze
-4. La quarta forma riguarda le associazioni derivabili dalla composizione di altre associazioni in presenza di cicli nello schema.
+3. La terza forma riguarda le associazioni derivabili dalla composizione di altre associazioni in presenza di cicli nello schema.
 #### Illustrare brevemente i motivi per cui è necessario effettuare l'analisi della ridondanza
-[da finire]
+La presenza di una ridondanza ha effetti positivi, semplificare le interrogazioni, ed effetti negativi, appesantisce gli aggiornamenti e comporta l'occupazione di più memoria. Per questo motivo, la decisione di mantenere o eliminare una ridondanza va presa in seguito ad una **analisi quantitativa** che confronti il costo di esecuzione delle operazioni che coinvolgono il dato ridondante e l’occupazione di memoria, sia in presenza e che in assenza di ridondanza.
 #### Si descriva brevemente quando un join naturale si dice completo
-[da finire]
+Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato.
 #### Descrivere brevemente perché il modello relazionale è anche detto modello 'basato su valori'
-[da finire]
+Il modello relazionale viene definito basato su valori poiché, a differenza dei modelli logici precedenti come quello gerarchico o reticolare, le corrispondenze e i riferimenti tra i dati contenuti in relazioni diverse vengono rappresentati esclusivamente attraverso valori comuni che compaiono nelle tuple, senza l'impiego di puntatori espliciti o riferimenti a indirizzi fisici . 
