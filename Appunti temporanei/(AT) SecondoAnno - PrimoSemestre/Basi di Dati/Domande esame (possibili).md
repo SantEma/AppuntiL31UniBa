@@ -128,7 +128,7 @@ Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sott
 
 Nel caso di SQL statico, si usa quando sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare, quindi la costruisce a tempo di esecuzione, quindi viene utilizzato in questi casi necessari.
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
-[da finire]
+L'algebra relazionale si configura come un linguaggio di tipo procedurale che si basa su una collezione di operatori definiti su relazioni, i quali producono a loro volta nuove relazioni come risultato [1, 2]. La sua peculiarità fondamentale risiede nella necessità di specificare esplicitamente il procedimento da seguire, ovvero la sequenza di operazioni quali selezione $\sigma$, proiezione $\pi$, ridenominazione $\rho$ e diverse forme di join $\bowtie$, per giungere alla costruzione del risultato desiderato [2-4]. Al contrario,
 #### Descrivere brevemente i difetti del calcolo relazionale su domini per correggere i quali è stato introdotto il calcolo relazionale su tuple
 [da finire]
 #### Si definisca brevemente cosa sia un DBMS e le sue principali caratteristiche

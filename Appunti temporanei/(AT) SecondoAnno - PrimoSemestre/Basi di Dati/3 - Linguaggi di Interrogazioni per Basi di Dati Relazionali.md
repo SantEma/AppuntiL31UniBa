@@ -91,9 +91,9 @@ La relazione risultante ha:
 
 ![[Pasted image 20251008115151.png]]
 #### Join naturale
-Il join naturale, denotato con $\rhd\lhd$, è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
+Il join naturale, denotato con $\bowtie$, è un operatore che correla dati in relazioni diverse, sulla base di valori uguali in attributi con lo stesso nome.
 Viene formalmente definito con:
-Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni:$$r_{1}\rhd\lhd r_{2}=\{t \ \text{su}\ X_{1} X_{2}| \exists \ t_{1} \in r_{1} \ \text{e} \ t_{2} \in r_{2} \ \text{con} \ t[X_{1}]=t_{1} \ \text{e} \ t[X_{2}] = t_{2} \} $$
+Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{1}$ ed $r_{2}$ definiti sugli stessi domini, il join naturale è una relazione definita sull'unione degli insiemi degli attributi degli operandi ($X_{1}X_{2}$) e le cui tuple sono ottenute combinando le tuple degli operandi con valori uguali sugli attributi comuni:$$r_{1} \bowtie r_{2}=\{t \ \text{su}\ X_{1} X_{2}| \exists \ t_{1} \in r_{1} \ \text{e} \ t_{2} \in r_{2} \ \text{con} \ t[X_{1}]=t_{1} \ \text{e} \ t[X_{2}] = t_{2} \} $$
 
 ![[Pasted image 20251008115203.png]]
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato. 
@@ -105,10 +105,10 @@ Come caso limite è possibile che nessuna delle tuple degli operandi sia combina
 
 Il join naturale presenta alcune proprietà:
 - Il grado della relazione risultato di un join naturale è minore o uguale alla somma dei gradi degli operandi, poiché gli attributi omonimi degli operandi compaiono una sola volta nel risultato.
-- **Commutatività**: $r_{1}\rhd\lhd r_{2} = r_{2}\rhd\lhd r_{1}$
-- **Associatività**: $r_{1}\rhd\lhd (r_{2}\rhd\lhd r_{3}) = (r_{1}\rhd\lhd r_{2})\rhd\lhd r_{3}$ (quindi è possibile scrivere sequenze di join senza parentesi)
-- Se $r_{1} \ \text{e} \ r_{2}$ non hanno attributi comuni allora $r_{1}\rhd\lhd r_{2} = r_{1} \times r_{2}$
-- Se $r_{1} \ \text{e} \ r_{2}$ hanno lo stesso schema ($X_{1}=X_{2}$) allora $r_{1}\rhd\lhd r_{2} = r_{1} \bigcap r_{2}$ (il risultato sarà composto dagli elementi delle due istanze, quindi l'intersezione)
+- **Commutatività**: $r_{1} \bowtie r_{2} = r_{2} \bowtie r_{1}$
+- **Associatività**: $r_{1}\bowtie (r_{2}\bowtie r_{3}) = (r_{1}\bowtie r_{2}) \bowtie r_{3}$ (quindi è possibile scrivere sequenze di join senza parentesi)
+- Se $r_{1} \ \text{e} \ r_{2}$ non hanno attributi comuni allora $r_{1}\bowtie r_{2} = r_{1} \times r_{2}$
+- Se $r_{1} \ \text{e} \ r_{2}$ hanno lo stesso schema ($X_{1}=X_{2}$) allora $r_{1}\bowtie r_{2} = r_{1} \bigcap r_{2}$ (il risultato sarà composto dagli elementi delle due istanze, quindi l'intersezione)
 #### Join esterno
 Il join esterno è una variante del join naturale, il quale restituisce il join naturale di $r_{1}$ ed $r_{2}$ esteso con le tuple di $r_{1}$ ed $r_{2}$ che non appartengono al join naturale, completate con valori nulli per gli attributi mancanti.
 ![[Pasted image 20251008115444.png]]
@@ -121,7 +121,7 @@ Nel primo caso, solo le tuple dell’argomento sinistro $r_{1}$ che non apparten
 Il prodotto cartesiano ha poca utilità nella pratica, poiché concatena tuple non necessariamente correlate dal punto di vista semantico, infatti viene spesso seguito da una selezione, che centra l’attenzione sulle tuple correlate secondo le esigenze. 
 Per questo motivo si definisce l’operatore derivato theta-join come prodotto cartesiano seguito da una selezione.
 Viene definito formalmente in:
-Date due relazioni $R_{1}(X)$ e $R_{2}(Y)$, con $X \bigcup Y = \varnothing$, siano $A_{i} \in X \ \text{e} \ B_{j} \in Y$ e $\theta$ un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$) il theta-join è definito come:$$r_{1}\rhd\lhd_{A_{i} \ \theta\ B_{j}} r_{2} = \sigma_{A_{i} \ \theta\ B_{j}} (r_{1} \times r_{2})  $$
+Date due relazioni $R_{1}(X)$ e $R_{2}(Y)$, con $X \bigcup Y = \varnothing$, siano $A_{i} \in X \ \text{e} \ B_{j} \in Y$ e $\theta$ un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$) il theta-join è definito come:$$r_{1}\bowtie_{A_{i} \ \theta\ B_{j}} r_{2} = \sigma_{A_{i} \ \theta\ B_{j}} (r_{1} \times r_{2})  $$
 ![[Pasted image 20251008115529.png]]
 #### Equi-join
 Un theta-join in cui la condizione di selezione sia una congiunzione di atomi di uguaglianza, con un attributo della prima relazione e uno della seconda, viene detto **equi-join**.
