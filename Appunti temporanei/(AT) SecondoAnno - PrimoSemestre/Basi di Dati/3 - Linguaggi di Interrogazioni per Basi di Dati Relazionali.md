@@ -68,7 +68,7 @@ Formalmente viene definito:
 Data una relazione $r(X)$, una formula proposizionale $F$ su $X$ è una formula ottenuta combinando, con i connettivi $\land$, $\lor$ e $\neg$, condizioni atomiche del tipo $A \theta B$ o $A \theta c$, dove:
 - $\theta$ è un operatore di confronto ($=,\not=,>,<,\underline{>},\underline{<}$)
 - $A \ \text{e} \ B$ sono attributi in $X$ dove il confronto $\theta$ abbia senso
-- $c$ è una costante compatibile con il dominio di A
+- $c$ è una costante compatibile con il dominio di $A$
 
 Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè vero o falso) per $F$ su $t$:
 - $A \theta B$ è vera su $t$ se $t[A]$ è in relazione $\theta$ con $t[B]$, altrimenti è falsa; 
