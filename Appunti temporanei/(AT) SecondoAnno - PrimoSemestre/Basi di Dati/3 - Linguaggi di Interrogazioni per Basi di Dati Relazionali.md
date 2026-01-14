@@ -84,7 +84,7 @@ Esempio:
 ### Operatori di Join
 #### Prodotto cartesiano
 Date due relazioni $r_{1}(X)$ ed $r_{2}(Y)$, con $X$ e $Y$ insiemi di attributi distinti, $X \bigcap Y = \varnothing$, il prodotto cartesiano è una relazione $r_{1} \times r_{2}(XY)$ così definita:$$r_{1} \times r_{2}=\{tt'|t \in r_{1} \land t' \in r_{2}\}$$
-dove $tt'$ è una $k$ + $m$ $n$-upla ottenuta dalla concatenazione di due tuple $t$ e $t'$ dove $k$ è la cardinalità di $X$ (o equivalentemente il grado di $r_{1}$) ed $m$ è la cardinalità di $Y$. 
+dove $tt'$ è una $k$ + $m$ $n$-upla ottenuta dalla concatenazione di due tuple $t$ e $t'$ dove $k$ è il grado di $r_{1}$ ed $m$ è il grado di $r_{2}$. 
 La relazione risultante ha:
 - **grado** uguale alla somma dei gradi dei due operandi
 - **cardinalità** uguale al prodotto delle cardinalità degli operandi
