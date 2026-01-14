@@ -77,7 +77,7 @@ Date una formula $F$ e una tupla $t$, è definito un valore di verità (cioè ve
 
 Date una relazione $r(X)$ ed una formula proposizionale $F$ su $X$, la selezione $\sigma_{F}(r)$  produce una relazione su $X$ che contiene le tuple $t$ di $r$ su cui $F$ è vera:$$\sigma_{F}(r)=\{t|t\in r \land F(t)\}$$![[Pasted image 20251007122410.png]]
 #### Proiezione
-Date una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su $Y$, $\pi_{Y}(r)$, è l’insieme di tuple su $Y$ ottenute dalle tuple di $r$ considerando solo i valori su $Y$:
+Data una relazione $r(X)$ e un sottoinsieme $Y$ di $X$, la proiezione di $r$ su $Y$, $\pi_{Y}(r)$, è l’insieme di tuple su $Y$ ottenute dalle tuple di $r$ considerando solo i valori su $Y$:
 ![[Pasted image 20251013083825.png]]
 Esempio:
 ![[Pasted image 20251007124323.png]]
