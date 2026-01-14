@@ -102,7 +102,6 @@ Se ciascuna tupla di un operando è compatibile con tutte le tuple dell’altro 
 Può accadere che alcune tuple degli operandi non contribuiscano al risultato, perché l’altra relazione non contiene tuple con gli stessi valori sull'attributo comune, tali tuple si definiscono dangling (dondolanti). 
 Come caso limite è possibile che nessuna delle tuple degli operandi sia combinabile e allora il risultato del join naturale è la relazione vuota.
 ![[Pasted image 20251008124234.png]]
-
 Il join naturale presenta alcune proprietà:
 - Il grado della relazione risultato di un join naturale è minore o uguale alla somma dei gradi degli operandi, poiché gli attributi omonimi degli operandi compaiono una sola volta nel risultato.
 - **Commutatività**: $r_{1} \bowtie r_{2} = r_{2} \bowtie r_{1}$
