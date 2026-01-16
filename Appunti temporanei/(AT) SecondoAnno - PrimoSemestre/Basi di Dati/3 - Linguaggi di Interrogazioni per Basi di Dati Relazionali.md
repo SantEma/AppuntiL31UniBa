@@ -57,6 +57,7 @@ $$\rho \ B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)=\{t'|\exi
 
 Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not= B_{i}$ 
 ![[Pasted image 20251007121725.png]]
+La ridenominazione in questo caso è stata aggregata con l'operazione di unione delle due tabelle precedenti
 #### Selezione
 Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condizione di selezione” che possono prevedere: 
 - confronti fra attributi 
