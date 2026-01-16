@@ -45,14 +45,14 @@ Per rappresentare una lista abbiamo due metodi:
 
 Per la rappresentazione sequenziale useremo un **vettore**. Questa rappresentazione consente di realizzare molto semplicemente alcune delle operazioni definite per la lista. Tuttavia riscontra problemi durante l'inserzione e la rimozione di componenti, che hanno una complessità computazionale lineare in quanto andranno spostati degli elementi per riottenere l'equivalenza tra la sequenza e il vettore.
 
-La rappresentazione collegata, invece, prevede che ogni elemento abbia un'informazione per recuperare la posizione dell'elemento successivo. ![[Pasted image 20251027101400.png]]
+La rappresentazione collegata, invece, prevede che ogni elemento abbia un'informazione per recuperare la posizione dell'elemento successivo. ![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251027101400.png]]
 Una realizzazione di tale rappresentazione è a realizzazione con cursori, in cui viene utilizzato un vettore per l'implementazione della lista.
 I riferimenti si realizzano tramite cursori, ovvero variabili il cui valore è interpretato come indice di un vettore.
 Si definisce un vettore spazio che:
 - può contenere più liste, ognuna individuata da un proprio cursore iniziale 
 - contiene tutte le celle libere, organizzate in una lista aggiuntiva, detta “listalibera”
 La listalibera rappresenta un serbatoio da cui prelevare componenti libere dell’array e in cui riversare le componenti dell’array che non sono piu’ utilizzate per la lista.
-![[Pasted image 20251027102220.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251027102220.png]]
 La listalibera dunque permette di evitare lo shift degli elementi presenti ogni qualvolta si effettua un inserimento o una eliminazione. Rimangono gli svantaggi connessi all’uso dell’array: la dimensione dell’array rappresenta un limite alla crescita della lista e la quantità in memoria utilizzata non dipende dalla lunghezza effettiva della lista. Inoltre, rispetto alla rappresentazione sequenziale, vi è un’ulteriore occupazione di memoria, vista la necessità di memorizzare i riferimenti.
 
 Un'altra possibile realizzazione di una lista è quella mediante l’uso congiunto del tipo puntatore e del tipo record.
@@ -62,9 +62,9 @@ Le operazioni usualmente disponibili su una variabile di tipo puntatore p sono:
 - il rilascio della locazione di memoria il cui indirizzo è memorizzato in p (delete) ;
 La prima cella è indirizzata da una variabile di tipo puntatore, mentre l’ultima cella punta a un valore convenzionale NULL.
 
-Esempi di operazioni:![[Pasted image 20251027104811.png]]
+Esempi di operazioni:![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251027104811.png]]
 Una variante di tale rappresentazione è quella a doppi puntatori o simmetrica in cui ogni elemento contiene, oltre al puntatore al nodo successivo, anche il puntatore al precedente.
-![[Pasted image 20251027105002.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251027105002.png]]
 Con questa rappresentazione si ha il vantaggio di: 
 - poter scandire la lista in entrambe le direzioni 
 - poter individuare facilmente l’elemento che precede 
@@ -83,13 +83,13 @@ Ciò significa che una lista è un conseguirsi di catene.
 
 Le catene permettono di fondere due sequenze di n catene in una singola sequenza di n catene, ottenendo una nuova lista con un numero dimezzato di catene. Grazie a ciò, dopo al massimo $\log_{2}(n)$ passi otterremo una lista completamente ordinata.
 
-![[Pasted image 20251029115307.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251029115307.png]]
 
 Fondendo le catene distribuite si può creare una nuova lista l il cui grado di ordinamento è maggiore. L'algoritmo di ordinamento alterna fasi di distribuzione a fasi di fusione, fino a quando si ottiene una lista con un'unica catena 
 
-Come primo passo fondiamo le catene consecutive:![[Pasted image 20251029115542.png]]
+Come primo passo fondiamo le catene consecutive:![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251029115542.png]]
 
-Ci si ferma quando la distribuzione viene messo tutto ordinatamente nella lista "unica":![[Pasted image 20251029120027.png]]
+Ci si ferma quando la distribuzione viene messo tutto ordinatamente nella lista "unica":![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251029120027.png]]
 
 ATTENZIONE: manca un passaggio
 ```
@@ -100,7 +100,7 @@ l = 4 14 15 16 25 77 82 84 13 75
 ### Operatori
 E' possibile fare l'overloading di alcuni operatori, e quindi scrivere delle funzioni che riscrivono il comportamento di certi operatori. Tali funzioni devono essere del tipo `operator + simbolo` (esempio: operator+, operator*).
 
-![[Pasted image 20251030112657.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251030112657.png]]
 
 Tuttavia ci sono delle restrizioni:
 - Non è possibile cambiare il numero di operatori su cui un operatore agisce (quindi il + dovrà sempre lavorare su due elementi, come ++ su un singolo elemento).

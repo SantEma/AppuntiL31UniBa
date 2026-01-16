@@ -132,7 +132,7 @@ $f_{pess}=f_{ott}=f_{med}$ per l'algoritmo del Min di n elementi
 ### Ricerca lineare
 La ricerca lineare in un array è un metodo semplice per trovare un elemento specifico k in un array non ordinato. 
 L'algoritmo scorre tutto l'array dall'inizio alla fine, confrontando ogni elemento fino a trovare una corrispondenza o fino ad esaurire gli elementi.
-![[Pasted image 20251028132838.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251028132838.png]]
 **Parametri di input e output**:
   - $t$: Array di riferimento (contiene gli elementi da cercare, ognuno con un campo chiave)
   - $k$: valore della chiave da cercare (tipicamente un intero o una stringa)
@@ -178,7 +178,7 @@ Due funzioni come $(3 + n)$ e $(100n + 3027)$ sono considerate equivalenti dal p
 L’eliminazione di costanti e termini minori semplifica notevolmente l’analisi, rendendo più agevole la valutazione e il confronto tra algoritmi, mantenendo comunque risultati affidabili per valori validi per $n$ che tende ad infinito. Lo **studio asintotico** fornisce dunque un criterio oggettivo e coerente per confrontare l’efficienza di due algoritmi diversi.
 
 **Esempio** $A_{1}:f_1(n) = 3n^2 - 4n + 2 \quad \text{e} \quad A_{2}:f_2(n) = 2n + 3$
-![[Pasted image 20251028144100.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251028144100.png]]
 Per piccoli valori di n (ad esempio $n=1,2$), si osserva che $f_1(n) < f_2(n)$, quindi in questa fase l’algoritmo $A_1$ risulta più efficiente.
 Tuttavia, al crescere di $n$ (per $n = 3, 4$ e oltre), la funzione $f_1(n)$ supera $f_2(n)$; ciò significa che, per input di dimensione maggiore, $A_2$ diventa l’algoritmo più efficiente poiché ha un costo di crescita inferiore. In generale, per $n > 2$, vale infatti $f_1(n) > f_2(n)$.
 
@@ -222,7 +222,7 @@ Attraverso lo studio della complessità asintotica è possibile suddividere gli 
 Gli algoritmi con complessità costante sono più efficienti di quelli con complessità logaritmica che a loro volta sono più efficienti di quelli con complessità lineare e così via.
 $O (1) < O (logn) < O (n) < O (nlogn) < O (n^2) < O (n^3) < O (a^n)$
 
-![[Pasted image 20251028170213.png]]
+![[Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20251028170213.png]]
 
 ## Algoritmi polinomiali vs. esponenziali
 La distinzione di maggiore interesse in teoria della complessità è fra:
