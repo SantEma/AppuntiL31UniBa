@@ -132,7 +132,7 @@ Peraltro il join naturale può essere simulato per mezzo della ridenominazione, 
 Un interrogazione può essere definita come una funzione che, applicata a istanze di basi di dati, produce relazioni.
 
 Formalmente:
-Dato uno schema $R$ di basi di dati, un'interrogazione è una funzione che, per ogni istanza di $r$ di $R$, produce una reazione su un dato insieme di attributi $X$ 
+Dato uno schema $R$ di basi di dati, un'interrogazione è una funzione che, per ogni istanza di $r$ di $R$, produce una relazione su un dato insieme di attributi $X$ 
 In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ vengono formulati con espressioni i cui atomi (nomi di) sono relazioni in $R$ (le variabili)
 #### Efficienza del join
 Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (la complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
