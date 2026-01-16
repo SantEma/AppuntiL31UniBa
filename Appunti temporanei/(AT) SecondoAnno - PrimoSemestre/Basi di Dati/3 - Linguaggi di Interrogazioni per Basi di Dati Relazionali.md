@@ -56,7 +56,8 @@ contiene una tupla $t'$ su $Y$ per ciascuna tupla $t$ in $r$ (su $X$), definita 
 $$\rho \ B_{1},B_{2} \dots B_{k} \leftarrow A_{1},A_{2} \dots A_{k}(r)=\{t'|\exists t \in r \ \text{t.c} \ \forall i=1,\dots,k \ t'[B_{i}]=t[A_{i}]   \}$$
 
 Nelle liste $A_{1},A_{2} \dots A_{k}$ e $B_{1},B_{2} \dots B_{k}$ si indicheranno solo gli attributi che vengono rinominati, cioè quelli per cui $A_{i} \not= B_{i}$ 
-![[Pasted image 20251007121725.png]]
+![[Pasted image 20260116162500.png]]
+![[Pasted image 20260116162512.png]]
 La ridenominazione in questo caso è stata aggregata con l'operazione di unione delle due tabelle precedenti
 #### Selezione
 Produce il sottoinsieme delle tuple di una relazione che soddisfano la “condizione di selezione” che possono prevedere: 
