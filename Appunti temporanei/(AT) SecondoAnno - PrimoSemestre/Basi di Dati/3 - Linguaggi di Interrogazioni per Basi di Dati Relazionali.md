@@ -149,7 +149,7 @@ Definiamo le formule:
 Siano $E$ un'espressione dell’algebra relazionale e $C_x$ una condizione sull'insieme di attributi $X$
 ![[Pasted image 20251009111902.png]]![[Pasted image 20251009111939.png]]
 ### Viste
-Abbiamo visto che può risultare utile mettere a disposizione degli utenti rappresentazioni diverse per gli stessi dati, in una base di dati relazionale si ottiene distinguendo relazioni di base il cui contenuto è autonomo e relazioni derivate il cui contenuto e funzione del contenuto di altre relazioni, ed inoltre è possibile che una relazione derivata sia funzione di un’altra relazione derivata a patto di stabilire un ordinamento fra le relazioni derivate stesse
+Abbiamo visto che può risultare utile mettere a disposizione degli utenti rappresentazioni diverse per gli stessi dati, in una base di dati relazionale questo si ottiene distinguendo relazioni di base il cui contenuto è autonomo e relazioni derivate il cui contenuto è funzione del contenuto di altre relazioni, ed inoltre è possibile che una relazione derivata sia funzione di un’altra relazione derivata a patto di stabilire un ordinamento fra le relazioni derivate stesse
 
 In linea di principio possono esistere due tipi di relazioni derivate:
 - **Viste materializzate**: relazioni derivate effettivamente memorizzate nella base di dati
