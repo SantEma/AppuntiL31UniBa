@@ -35,7 +35,7 @@ $$r_{1} \bigcup r_{2}=\{t|t \in r_{1} \lor t \in r_{2}\}$$
 
 ![[Pasted image 20251007115556.png]]
 #### Intersezione
-L’intersezione di due relazioni e definite sullo stesso insieme di attributi , indicata con $r_{1} \bigcap r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e $r_{2}$
+L’intersezione di due relazioni definite sullo stesso insieme di attributi , indicata con $r_{1} \bigcap r_{2}$, è una relazione su $X$ contenente le tuple che appartengono ad $r_{1}$ e $r_{2}$
 $$r_{1} \bigcap r_{2}=\{t|t \in r_{1} \land t \in r_{2}\}$$
 
 
