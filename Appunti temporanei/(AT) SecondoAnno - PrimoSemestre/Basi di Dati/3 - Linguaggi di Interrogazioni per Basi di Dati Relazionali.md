@@ -99,7 +99,7 @@ Date due relazioni $r_{1}(X_{1})$ ed $r_{2}(X_{2})$, con attributi comuni a $r_{
 
 ![[Pasted image 20251008115203.png]]
 Si parla di **join completo** se ogni tupla di ciascun operando (ossia tabella) contribuisce ad almeno una tupla del risultato. 
-Se ciascuna tupla di un operando è compatibile con tutte le tuple dell’altro operando, il risultato conterrà un numero di tuple pari al prodotto delle cardinalità degli operandi. 
+Se ciascuna tupla di un operando è compatibile con tutte le tuple dell’altro operando, il risultato conterrà un numero di tuple pari al prodotto delle cardinalità degli operandi.
 ![[Pasted image 20251008124221.png]]
 Può accadere che alcune tuple degli operandi non contribuiscano al risultato, perché l’altra relazione non contiene tuple con gli stessi valori sull'attributo comune, tali tuple si definiscono dangling (dondolanti). 
 Come caso limite è possibile che nessuna delle tuple degli operandi sia combinabile e allora il risultato del join naturale è la relazione vuota.
