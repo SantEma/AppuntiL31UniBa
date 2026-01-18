@@ -238,6 +238,7 @@ Si potrebbe pensare di esprimere il problema consentendo di associare ad una var
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
+[da inserire esempi]
 #### Algebra e calcolo con valori nulli
 Trattiamo un caso dove in una relazione si ha un (o più) valore nullo:
 ![[Pasted image 20251016084830.png]]
