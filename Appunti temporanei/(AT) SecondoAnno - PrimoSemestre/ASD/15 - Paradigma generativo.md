@@ -381,3 +381,6 @@ L'efficacia complessiva di questo approccio si manifesta attraverso due aspetti 
     - **$a$**: il numero di sottoproblemi generati dalla suddivisione.
     - **$b$**: la dimensione dei dati in ingresso ai singoli sottoproblemi (quanto sono più piccoli rispetto all'originale).
     - **$F(n)$**: il costo computazionale necessario per effettuare le operazioni di scomposizione del problema iniziale e di successiva composizione dei risultati parziali.
+
+
+

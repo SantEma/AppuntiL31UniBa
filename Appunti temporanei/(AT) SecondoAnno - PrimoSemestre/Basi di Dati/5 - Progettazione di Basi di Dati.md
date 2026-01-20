@@ -222,7 +222,7 @@ Le trasformazioni elementari che attuiamo vengono chiamate **primitive di trasfo
 Il vantaggio di questa strategia è la stessa decomposizione di problemi in componenti più semplici e facilmente individuabili, rendendo possibile la collaborazione di progettisti diversi sullo stesso progetto. Uno svantaggio è la richiesta delle operazioni di integrazione degli schemi concettuali diversi che, nel caso di schemi complessi, presentano quasi sempre grosse difficoltà
 #### Inside-out
 In questa strategia si rappresentano prima i concetti in relazione con i concetti iniziali per poi muoversi verso quelli più lontani usando una "navigazione" tra specifiche.
-![[Pasted image 20251201111618.png]]
+![[Pasted image 20251201111618.png|600]]
 Come si può vedere dall'esempio proposto in figura, si hanno i concetti principali internamente, per poi espandersi verso l'esterno.
 Questo tipo di strategia è una particolare strategia di bottom-up.
 Questa strategia ha come vantaggio il non richiedere passi integrazione, a discapito di esaminare sempre tutte le specifiche di volta in volta per individuare concetti ancora non rappresentati e descriverne di nuovi nel dettaglio, rendendo quindi impossibile avere livelli di astrazione come in top-down.
