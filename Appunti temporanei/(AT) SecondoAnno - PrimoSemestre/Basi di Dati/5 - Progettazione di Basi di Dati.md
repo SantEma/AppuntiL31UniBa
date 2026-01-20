@@ -76,7 +76,7 @@ Gli attributi atomici possono essere raggruppati in un attributo composto.
 #### Cardinalità delle relazioni
 Vengono specificate per ciascuna partecipazione di entità a una relazione e descrivono il numero minimo e massimo di occorrenze di relazione a cui una occorrenza dell’entità può (o deve) partecipare.
 ![[Pasted image 20251119144154.png]]
-Nell'esempio in figura , ad un impiegato deve essere assegnato almeno un incarico, ma non più di cinque. Uno stesso incarico può non essere attribuito affatto, oppure può essere attributo al più a cinquanta impiegati diversi. 
+Nell'esempio in figura, ad un impiegato deve essere assegnato almeno un incarico, ma non più di cinque. Uno stesso incarico può non essere attribuito affatto, oppure può essere attributo al più a cinquanta impiegati diversi. 
 
 Per la cardinalità minima (primo elemento nella coppia delle cardinalità) si usa:
 - $0$ per indicare che la partecipazione dell’entità alla relazione è **opzionale**
