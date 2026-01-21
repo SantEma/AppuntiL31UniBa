@@ -318,5 +318,7 @@ Viene sempre consigliato di far sempre prima la ristrutturazione.
 In questa avvengono due fasi importanti:
 - **Analisi delle ridondanze**
 - **Eliminazione delle generalizzazioni**
-#### Analisi delle ridondanze
+##### Analisi delle ridondanze
 In base alle ridondanze presenti, eliminarle o modificare e argomentare tale operazione. Se lo schema E-R in generale è fatto bene, questa fase non dovrebbe esistere e dovrebbe soltanto essere argomentata la sua inutilità.
+
+##### Eliminazione delle generalizzazioni
