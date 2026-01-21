@@ -272,8 +272,8 @@ Lo schema generale di azione, in ordine, è il seguente:
 ### Analisi dei requisiti
 Questa fase prevede la riscrittura della traccia in una maniera più specifica.
 Noi faremo riferimento a questa traccia in particolare:
-![[Pasted image 20260121145152.png]]
-![[Pasted image 20260121145201.png]]
+![[Pasted image 20260121145152.png|500]]
+![[Pasted image 20260121145201.png|500]]
 #### Set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
@@ -288,10 +288,10 @@ Noi faremo riferimento a questa traccia in particolare:
 	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte**
 
 Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
-![[Pasted image 20260121145246.png]]
+![[Pasted image 20260121145246.png|500]]
 
 - **Costruire un glossario per termini**
-![[Pasted image 20260121163256.png]]
+![[Pasted image 20260121163256.png|500]]
 #### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
 In questa fase (presumibilmente) bisogna prendere le operazioni specificate dalla traccia e dargli dei valori tipici
@@ -303,4 +303,11 @@ Qui andiamo a descrivere la strategia scelta per il nostro schema. Nel 99% dei c
 - I diversi schemi ottenuti sono integrati, sulla base delle associazioni indicate nello schema scheletro eventualmente raffinate, giungendo allo schema E-R finale, più dettagliato di quello iniziale.
 
 #### Schema scheletro
-Andiamo a costruire uno schema scheletro per s
+Andiamo a costruire uno schema scheletro su cui baseremo i vari raffinamenti:
+![[Pasted image 20260121164029.png]]
+#### Raffinamenti
+[da finire]
+#### Vincoli
+Lo schema è completato con documentazione relativa ad eventuali vincoli non espressi nel diagramma ER:
+![[Pasted image 20260121164126.png]]
+### Progettazione logica
