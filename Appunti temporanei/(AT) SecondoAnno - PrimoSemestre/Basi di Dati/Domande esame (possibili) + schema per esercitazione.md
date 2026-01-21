@@ -311,7 +311,14 @@ Qui andiamo a descrivere la strategia scelta per il nostro schema. Nel 99% dei c
 Andiamo a costruire uno schema scheletro su cui baseremo i vari raffinamenti:
 ![[Pasted image 20260121164029.png]]
 #### Raffinamenti
-Qui andiamo ad espandere lo schema scheletro in uno più completo, basandoci sull'analisi dei requisiti e in particolare alla riorganizzazione di frasi in concetti:
+Qui andiamo ad espandere lo schema scheletro in uno più completo, basandoci sull'analisi dei requisiti e in particolare alla [[#Riorganizzazione di concetti]]:
+![[Pasted image 20260121173546.png]]
+![[Pasted image 20260121173555.png]]
+![[Pasted image 20260121173604.png]]
+![[Pasted image 20260121173616.png]]
+![[Pasted image 20260121173626.png]]
+![[Pasted image 20260121173634.png]]
+![[Pasted image 20260121173646.png]]
 
 #### Vincoli
 Lo schema è completato con documentazione relativa ad eventuali vincoli non espressi nel diagramma ER:
