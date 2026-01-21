@@ -260,8 +260,13 @@ Lo schema generale di azione, in ordine, è il seguente:
 	- Specifiche sui dati e operazioni
 2. Progettazione concettuale
 	- Scelta della strategia
-	- 
+	- Schema scheletro
+	- Raffinamenti
+	- Vincoli e valori ammessi
 3. Progettazione logica
+	- Ristrutturazione
+	- Determinazione Carico Applicativo
+	- Determinazione Costo Operazione
 4. Tavola accessi e operazioni
 
 ### Analisi dei requisiti
@@ -287,4 +292,5 @@ Già con questo set di regole possiamo trasformare la traccia sopra descritta in
 #### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
 
-Nella traccia esiste una seconda parte, ossia quella delle operazioni. In questa fase si va a specificare (per ipotesi) quante volte un operazione viene eseguita in un database
+Nella traccia esiste una seconda parte, ossia quella delle operazioni. In questa fase si va a specificare (per ipotesi) quante volte un operazione viene eseguita in un database.
+### Progettazione concettuale
