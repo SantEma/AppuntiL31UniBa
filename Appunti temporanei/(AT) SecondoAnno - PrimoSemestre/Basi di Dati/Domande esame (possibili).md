@@ -265,9 +265,9 @@ Lo schema generale di azione, in ordine, è il seguente:
 	- Vincoli e valori ammessi
 3. Progettazione logica
 	- Ristrutturazione
-	- Determinazione Carico Applicativo
+	- Determinazione Carico Applicativo (tavola dei volumi e delle operazioni)
 	- Determinazione Costo Operazione
-4. Tavola accessi e operazioni
+	- Traduzione modello relazionale
 
 ### Analisi dei requisiti
 Questa fase prevede la riscrittura della traccia in una maniera più specifica.
