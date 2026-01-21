@@ -253,8 +253,11 @@ In alcune tracce sono presenti anche questi due quesiti:
 - Al termine della progettazione logica, **stabilire se le relazioni ottenute sono in forma normale (se si quale) o meno, giustificando la risposta secondo la teoria**
 
 ### Analisi dei requisiti
-Questa fase prevede la riscrittura della traccia in una maniera più specifica
-#### Regole
+Questa fase prevede la riscrittura della traccia in una maniera più specifica.\
+Noi faremo riferimento a questa traccia in particolare:
+![[Pasted image 20260121145152.png]]
+![[Pasted image 20260121145201.png]]
+#### Primo set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
 - **Standardizzare la struttura delle frasi**, ossia usare sempre lo stesso stile sintattico
@@ -267,3 +270,5 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica
 	Fotografia e Foto son sinonimi $\to$ si sceglie **Foto**
 	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte**
 
+Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
+![[Pasted image 20260121145246.png]]
