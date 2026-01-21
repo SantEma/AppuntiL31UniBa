@@ -252,7 +252,6 @@ In alcune tracce sono presenti anche questi due quesiti:
 - Determinare a propria scelta tavola degli accessi e delle operazioni quando necessario ed eventuali attributi ritenuti utili.
 - Al termine della progettazione logica, **stabilire se le relazioni ottenute sono in forma normale (se si quale) o meno, giustificando la risposta secondo la teoria**
 
-
 Lo schema generale di azione, in ordine, è il seguente:
 1. Analisi dei requisiti
 	- Riscrittura della traccia
