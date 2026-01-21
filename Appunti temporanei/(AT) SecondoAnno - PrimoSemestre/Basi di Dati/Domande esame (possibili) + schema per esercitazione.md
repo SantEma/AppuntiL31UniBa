@@ -292,6 +292,11 @@ Già con questo set di regole possiamo trasformare la traccia sopra descritta in
 ![[Pasted image 20260121145246.png|500]]
 - **Costruire un glossario per termini**
 ![[Pasted image 20260121163256.png|500]]
+#### Riorganizzazione di concetti
+In questa fase riorganizziamo i vari concetti per frase e per entità rilevata, nel nostro caso:
+![[Pasted image 20260121173341.png]]
+![[Pasted image 20260121173351.png]]
+![[Pasted image 20260121173401.png]]
 #### Specifiche delle operazioni
 In questa fase bisogna prendere le operazioni specificate dalla traccia e dargli dei valori possibili per il database (utili nelle parti successive)
 ![[Pasted image 20260121164609.png]]
@@ -306,7 +311,8 @@ Qui andiamo a descrivere la strategia scelta per il nostro schema. Nel 99% dei c
 Andiamo a costruire uno schema scheletro su cui baseremo i vari raffinamenti:
 ![[Pasted image 20260121164029.png]]
 #### Raffinamenti
-[da finire]
+Qui andiamo ad espandere lo schema scheletro in uno più completo, basandoci sull'analisi dei requisiti e in particolare alla riorganizzazione di frasi in concetti:
+
 #### Vincoli
 Lo schema è completato con documentazione relativa ad eventuali vincoli non espressi nel diagramma ER:
 ![[Pasted image 20260121164126.png]]
@@ -319,7 +325,6 @@ In questa avvengono due fasi importanti:
 - **Partizionamento/accorpamento di entità e associazioni**
 - **Scelta degli identificatori primari**
 - **Diagramma E-R Ristrutturato**
-- 
 ##### Analisi delle ridondanze
 In base alle ridondanze presenti, eliminarle o modificare e argomentare tale operazione. Se lo schema E-R in generale è fatto bene, questa fase non dovrebbe esistere e dovrebbe soltanto essere argomentata la sua inutilità.
 ##### Eliminazione delle generalizzazioni
