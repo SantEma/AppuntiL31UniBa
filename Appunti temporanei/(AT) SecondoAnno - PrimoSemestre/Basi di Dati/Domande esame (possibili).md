@@ -255,8 +255,12 @@ In alcune tracce sono presenti anche questi due quesiti:
 
 Lo schema generale di azione, in ordine, è il seguente:
 1. Analisi dei requisiti
+	   - Riscrittura della traccia
+	   - Creazione del glossario
+	   - Riorganizzazione per concetti
 2. Progettazione concettuale
 3. Progettazione logica
+4. Tavola accessi e operazioni
 
 ### Analisi dei requisiti
 Questa fase prevede la riscrittura della traccia in una maniera più specifica.
