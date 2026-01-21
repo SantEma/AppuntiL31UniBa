@@ -252,11 +252,19 @@ In alcune tracce sono presenti anche questi due quesiti:
 - Determinare a propria scelta tavola degli accessi e delle operazioni quando necessario ed eventuali attributi ritenuti utili.
 - Al termine della progettazione logica, **stabilire se le relazioni ottenute sono in forma normale (se si quale) o meno, giustificando la risposta secondo la teoria**
 
+
+Lo schema generale di azione, in ordine, è il seguente:
+1. Analisi dei requisiti
+2. Progettazione concettuale
+3. Progettazione logica
+
 ### Analisi dei requisiti
-Questa fase prevede la riscrittura della traccia in una maniera più specifica.\
+Questa fase prevede la riscrittura della traccia in una maniera più specifica.
 Noi faremo riferimento a questa traccia in particolare:
 ![[Pasted image 20260121145152.png]]
 ![[Pasted image 20260121145201.png]]
+
+
 #### Primo set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
