@@ -239,7 +239,8 @@ Il modello relazionale viene definito basato su valori poiché, a differenza dei
 ---
 
 ## Bullet list per svolgere tracce d'esame
-Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito
+Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito.
+**IMPORTANTE:** ogni punto deve essere esplicitato nell'esame, oltre ad avere una maniera molto più discorsiva di quella descritta qui. Tutti i punti che non vengono toccati (come può essere l'analisi delle ridondanze) deve essere argomentato sul perchè non venga fatto
 ### Richieste solite
 Nelle tracce viene chiesto di eseguire:
 - **Analisi dei requisti**
@@ -265,8 +266,8 @@ Lo schema generale di azione, in ordine, è il seguente:
 	- Vincoli e valori ammessi
 3. Progettazione logica
 	- Ristrutturazione
-	- Determinazione Carico Applicativo (tavola dei volumi e delle operazioni)
-	- Determinazione Costo Operazione
+	- Determinazione carico applicativo (ossia tavola dei volumi e delle operazioni)
+	- Determinazione costo singola operazione
 	- Traduzione modello relazionale
 
 ### Analisi dei requisiti
@@ -313,8 +314,9 @@ Lo schema è completato con documentazione relativa ad eventuali vincoli non esp
 ![[Pasted image 20260121164126.png]]
 ### Progettazione logica
 #### Ristrutturazione
-Nella ristrutturazione avvengono due fasi importanti:
+Viene sempre consigliato di far sempre prima la ristrutturazione.
+In questa avvengono due fasi importanti:
 - **Analisi delle ridondanze**
 - **Eliminazione delle generalizzazioni**
-
 #### Analisi delle ridondanze
+In base alle ridondanze presenti, eliminarle o modificare e argomentare tale operazione. Se lo schema E-R in generale è fatto bene, questa fase non dovrebbe esistere e dovrebbe soltanto essere argomentata la sua inutilità.
