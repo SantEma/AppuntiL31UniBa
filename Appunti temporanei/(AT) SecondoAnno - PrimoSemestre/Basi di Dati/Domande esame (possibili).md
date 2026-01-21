@@ -239,6 +239,9 @@ Il modello relazionale viene definito basato su valori poiché, a differenza dei
 ---
 
 ## Bullet list per svolgere tracce d'esame
-
-Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito sulle esercitazioni
-
+Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito
+### Richieste solite
+Nelle tracce viene chiesto di eseguire:
+- **Analisi dei requisti**
+- **Progettazione concettuale**
+- **Progettazione logica**
