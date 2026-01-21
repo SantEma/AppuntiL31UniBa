@@ -255,5 +255,10 @@ In alcune tracce sono presenti anche questi due quesiti:
 ### Analisi dei requisiti
 Questa fase prevede la riscrittura della traccia in una maniera più specifica
 #### Regole
-- **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo 
-  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
+- **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
+	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
+- **Standardizzare la struttura delle frasi**, ossia usare sempre lo stesso stile sintattico
+	  **Esempio**: Per $<\text{dato}>$ si rappresenta $<\text{proprietà}>$ 
+- **Linearizzare le frasi e suddividere quelle articolate**
+	  **Esempio**: Preferibile dipendenti statali piuttosto che "quelli che lavorano per un ente dello stato
+- **Rendere esplicito il riferimento fra termini**, ossia riconoscere quale sia il giusto
