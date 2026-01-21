@@ -296,3 +296,11 @@ Già con questo set di regole possiamo trasformare la traccia sopra descritta in
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
 In questa fase (presumibilmente) bisogna prendere le operazioni specificate dalla traccia e dargli dei valori tipici
 ### Progettazione concettuale
+#### Scelta della strategia
+Qui andiamo a descrivere la strategia scelta per il nostro schema. Nel 99% dei casi conviene la strategia ibrida, ossia:
+- Partendo dalle specifiche si rappresentano tutte le informazioni in uno schema scheletro iniziale usando pochi concetti astratti.
+- Successivamente ogni entità/relazione dello schema è raffinata rispetto al documento di specifica dei requisiti finché tutte le specifiche non sono rappresentate
+- I diversi schemi ottenuti sono integrati, sulla base delle associazioni indicate nello schema scheletro eventualmente raffinate, giungendo allo schema E-R finale, più dettagliato di quello iniziale.
+
+#### Schema scheletro
+Andiamo a costruire uno schema scheletro per s
