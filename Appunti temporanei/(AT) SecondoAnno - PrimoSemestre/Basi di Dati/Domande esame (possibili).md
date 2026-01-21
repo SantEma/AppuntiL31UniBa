@@ -268,8 +268,6 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica.
 Noi faremo riferimento a questa traccia in particolare:
 ![[Pasted image 20260121145152.png]]
 ![[Pasted image 20260121145201.png]]
-
-
 #### Primo set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
@@ -285,3 +283,6 @@ Noi faremo riferimento a questa traccia in particolare:
 
 Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
 ![[Pasted image 20260121145246.png]]
+
+[chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
+
