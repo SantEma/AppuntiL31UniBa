@@ -245,3 +245,12 @@ Nelle tracce viene chiesto di eseguire:
 - **Analisi dei requisti**
 - **Progettazione concettuale**
 - **Progettazione logica**
+del DB necessario alla realizzazione di un tale sistema informatico, specificando la strategia di progetto scelta e descrivendola brevemente.
+Si specifichino tutti i passi di cui si compongono analisi dei requisiti, progettazione concettuale e progettazione logica e si scelga quali di essi eseguire, motivando sia le azioni dei passi eseguiti sia il perché taluni passi non sono eventualmente esplicitati (es.: non si riporta la linearizzazione delle frasi perché le frasi sono sufficientemente linearizzate).
+
+In alcune tracce sono presenti anche questi due quesiti:
+- Determinare a propria scelta tavola degli accessi e delle operazioni quando necessario ed eventuali attributi ritenuti utili.
+- Al termine della progettazione logica, **stabilire se le relazioni ottenute sono in forma normale (se si quale) o meno, giustificando la risposta secondo la teoria**
+
+### Analisi dei requisiti
+### 
