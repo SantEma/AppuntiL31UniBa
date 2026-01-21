@@ -289,8 +289,10 @@ Noi faremo riferimento a questa traccia in particolare:
 
 Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
 ![[Pasted image 20260121145246.png]]
+
+- **Costruire un glossario per termini**
+![[Pasted image 20260121163256.png]]
 #### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
-
-Nella traccia esiste una seconda parte, ossia quella delle operazioni. In questa fase si va a specificare (per ipotesi) quante volte un operazione viene eseguita in un database.
+In questa fase (presumibilmente) bisogna prendere le operazioni specificate dalla traccia e dargli dei valori tipici
 ### Progettazione concettuale
