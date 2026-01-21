@@ -253,7 +253,7 @@ Descriviamo un metodo per la progettazione concettuale con strategia mista, da p
 	- Raggruppare i requisiti in insiemi omogenei
 2. **Passo base**
 	- Individuare i concetti più rilevanti e rappresentarli in uno schema scheletro
-3. **Passo di decomposizione (solo se necessario o appropriato**
+3. **Passo di decomposizione (solo se necessario o appropriato)**
 	- Effettuare una decomposizione dei requisiti con riferimento ai concetti presenti nello schema scheletro 
 4. **Passo iterativo**
 	- Raffinare i concetti presenti sulla base delle loro specifiche

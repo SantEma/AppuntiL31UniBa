@@ -234,4 +234,11 @@ La presenza di una ridondanza ha effetti positivi, semplificare le interrogazion
 #### Si descriva brevemente quando un join naturale si dice completo
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato.
 #### Descrivere brevemente perché il modello relazionale è anche detto modello 'basato su valori'
-Il modello relazionale viene definito basato su valori poiché, a differenza dei modelli logici precedenti come quello gerarchico o reticolare, le corrispondenze e i riferimenti tra i dati contenuti in relazioni diverse vengono rappresentati esclusivamente attraverso valori comuni che compaiono nelle tuple, senza l'impiego di puntatori espliciti o riferimenti a indirizzi fisici . 
+Il modello relazionale viene definito basato su valori poiché, a differenza dei modelli logici precedenti come quello gerarchico o reticolare, le corrispondenze e i riferimenti tra i dati contenuti in relazioni diverse vengono rappresentati esclusivamente attraverso valori comuni che compaiono nelle tuple, senza l'impiego di puntatori espliciti o riferimenti a indirizzi fisici.
+
+---
+
+## Bullet list per svolgere tracce d'esame
+
+Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito sulle esercitazioni
+
