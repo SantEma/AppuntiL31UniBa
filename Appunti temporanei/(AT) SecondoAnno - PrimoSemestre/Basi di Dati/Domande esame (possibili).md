@@ -256,7 +256,8 @@ Lo schema generale di azione, in ordine, è il seguente:
 1. Analisi dei requisiti
 	- Riscrittura della traccia
 	- Creazione del glossario
-	- Riorganizzazione per concetti
+	- Riorganizzazione per concetti(?)
+	- Specifiche sui dati e operazioni
 2. Progettazione concettuale
 	- Scelta della strategia
 	- 
@@ -268,7 +269,7 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica.
 Noi faremo riferimento a questa traccia in particolare:
 ![[Pasted image 20260121145152.png]]
 ![[Pasted image 20260121145201.png]]
-#### Primo set di regole
+#### Set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
 - **Standardizzare la struttura delle frasi**, ossia usare sempre lo stesso stile sintattico
@@ -283,6 +284,7 @@ Noi faremo riferimento a questa traccia in particolare:
 
 Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
 ![[Pasted image 20260121145246.png]]
-
+#### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
 
+Separare le frasi sui dati da quelle delle funzioni:
