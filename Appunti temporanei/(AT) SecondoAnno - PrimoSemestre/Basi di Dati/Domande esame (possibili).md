@@ -253,4 +253,7 @@ In alcune tracce sono presenti anche questi due quesiti:
 - Al termine della progettazione logica, **stabilire se le relazioni ottenute sono in forma normale (se si quale) o meno, giustificando la risposta secondo la teoria**
 
 ### Analisi dei requisiti
-### 
+Questa fase prevede la riscrittura della traccia in una maniera più specifica
+#### Regole
+- **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo 
+  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
