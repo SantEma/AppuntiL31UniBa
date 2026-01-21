@@ -265,4 +265,5 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica
 - **Individuare omonimi e sinonimi**, ossia unificare i termini
 	**Esempio**:
 	Fotografia e Foto son sinonimi $\to$ si sceglie **Foto**
-	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte** 
+	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte**
+
