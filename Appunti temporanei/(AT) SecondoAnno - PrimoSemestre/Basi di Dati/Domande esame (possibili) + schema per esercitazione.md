@@ -294,7 +294,8 @@ Già con questo set di regole possiamo trasformare la traccia sopra descritta in
 ![[Pasted image 20260121163256.png|500]]
 #### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
-In questa fase (presumibilmente) bisogna prendere le operazioni specificate dalla traccia e dargli dei valori tipici
+In questa fase (presumibilmente) bisogna prendere le operazioni specificate dalla traccia e dargli dei valori possibili per il database (utili nelle parti successive)
+![[Pasted image 20260121164609.png]]
 ### Progettazione concettuale
 #### Scelta della strategia
 Qui andiamo a descrivere la strategia scelta per il nostro schema. Nel 99% dei casi conviene la strategia ibrida, ossia:
@@ -311,3 +312,9 @@ Andiamo a costruire uno schema scheletro su cui baseremo i vari raffinamenti:
 Lo schema è completato con documentazione relativa ad eventuali vincoli non espressi nel diagramma ER:
 ![[Pasted image 20260121164126.png]]
 ### Progettazione logica
+#### Ristrutturazione
+Nella ristrutturazione avvengono due fasi importanti:
+- **Analisi delle ridondanze**
+- **Eliminazione delle generalizzazioni**
+
+#### Analisi delle ridondanze
