@@ -261,4 +261,8 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica
 	  **Esempio**: Per $<\text{dato}>$ si rappresenta $<\text{proprietà}>$ 
 - **Linearizzare le frasi e suddividere quelle articolate**
 	  **Esempio**: Preferibile dipendenti statali piuttosto che "quelli che lavorano per un ente dello stato
-- **Rendere esplicito il riferimento fra termini**, ossia riconoscere quale sia il giusto
+- **Rendere esplicito il riferimento fra termini**, ossia riconoscere quale sia la giusta relazione tra i termini (per esempio se un numero di telefono appartiene ad un responsabile o a qualcun'altro)
+- **Individuare omonimi e sinonimi**, ossia unificare i termini
+	**Esempio**:
+	Fotografia e Foto son sinonimi $\to$ si sceglie **Foto**
+	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte** 
