@@ -287,4 +287,4 @@ Già con questo set di regole possiamo trasformare la traccia sopra descritta in
 #### Specifiche delle operazioni
 [chiedere se è necessario scrivere la parte di riorganizzazione frasi per concetti]
 
-Separare le frasi sui dati da quelle delle funzioni:
+Nella traccia esiste una seconda parte, ossia quella delle operazioni. In questa fase
