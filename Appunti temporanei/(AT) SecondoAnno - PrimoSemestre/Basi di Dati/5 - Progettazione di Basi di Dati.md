@@ -53,7 +53,7 @@ Una **occorrenza** di un’entità è un oggetto della classe che l'entità rapp
 Ogni entità ha un nome che la identifica univocamente nello schema. La scelta del nome deve soddisfare due criteri: essere espressivi ed essere al singolare
 #### Relazioni (o associazioni)
 Rappresentano legami logici, significativi per l’applicazione, tra due o più entità.
-Una **occorrenza** è una n-upla (coppia nel caso di relazione binaria) costituita da occorrenze di entità, una per ciascuna delle entità coinvolte. 
+Una **occorrenza** è una n-upla (coppia nel caso di relazione binaria) costituita da occorrenze di entità, una per ciascuna delle eàntità coinvolte. 
 In uno schema E-R ogni relazione ha un nome che la identifica univocamente e viene rappresentata graficamente mediante un rombo con il nome della relazione all'interno e da linee che collegano la relazione con ciascuna delle sue componenti.
 È importante osservare che due entità possono essere coinvolte in più relazioni e che l’insieme delle occorrenze di una relazione è a tutti gli effetti una relazione matematica tra le occorrenze delle entità coinvolte, ossia, è un sottoinsieme del loro prodotto cartesiano, implicando che tra le occorrenze di una relazione non ci possono essere ennuple ripetute
 È anche possibile avere **relazioni ricorsive**, ovvero relazioni tra un entità e se stessa, e **relazioni n-arie**, cioè relazioni che coinvolgono più di due entità.
@@ -204,7 +204,7 @@ Riferirsi al PDF [[5.2 - Pattern di progetto.pdf]], preso dal libro e presente n
 (Essendo pieno di esempi vi è inutile riportarlo qui)
 ### Strategie di progetto
 Lo sviluppo di uno schema concettuale a partire dalle sue specifiche può essere considerato un processo di ingegnerizzazione e, come tale, è possibile utilizzare strategie viste già in altre discipline
-####  Top-Down
+#### Top-Down
 Schema concettuale dove si parte da uno schema iniziale che descrive tutte le specifiche con pochi concetti molto astratto e in pian piano viene raffinato mediante opportune trasformazioni.
 Nel passaggio da un raffinamento ad un altro lo schema viene modificato facendo uso di alcune trasformazioni elementari, chiamate **primitive di trasformazione top-down**.
 ![[Pasted image 20251201104947.png]]
