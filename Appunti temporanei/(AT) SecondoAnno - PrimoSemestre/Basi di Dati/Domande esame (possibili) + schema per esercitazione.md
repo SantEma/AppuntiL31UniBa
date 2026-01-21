@@ -290,8 +290,7 @@ Noi faremo riferimento a questa traccia in particolare:
 
 Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
 ![[Pasted image 20260121145246.png|500]]
-
-- **Si costruire un glossario per termini**
+- **Costruire un glossario per termini**
 ![[Pasted image 20260121163256.png|500]]
 #### Specifiche delle operazioni
 In questa fase bisogna prendere le operazioni specificate dalla traccia e dargli dei valori possibili per il database (utili nelle parti successive)
@@ -320,14 +319,14 @@ In questa avvengono due fasi importanti:
 - **Partizionamento/accorpamento di entità e associazioni**
 - **Scelta degli identificatori primari**
 - **Diagramma E-R Ristrutturato**
-- Traduzione in modello relazionale
+- 
 ##### Analisi delle ridondanze
 In base alle ridondanze presenti, eliminarle o modificare e argomentare tale operazione. Se lo schema E-R in generale è fatto bene, questa fase non dovrebbe esistere e dovrebbe soltanto essere argomentata la sua inutilità.
 ##### Eliminazione delle generalizzazioni
 Qui si vanno ad eliminare le generalizzazioni dello schema E-R, dando luogo a nuove associazioni (esistono altri metodi, ma questo in generale viene ritenuto il più semplice):
 ![[Pasted image 20260121172050.png]]
 ![[Pasted image 20260121172126.png]]
-#### Partizionamento/accorpamento di entità e associazioni - Scelta degli identificatori primari
+##### Partizionamento/accorpamento di entità e associazioni - Scelta degli identificatori primari
 In questa fase andiamo ad accorpare tutti le entità, associazioni e attributi multivalore che possono essere accoparti, nel nostro caso:
 - Poiché una persona può essere responsabile di più di una sede si decide di creare una entità per il responsabile
 - Non sono presenti attributi multivalore da dover eliminare
@@ -335,6 +334,14 @@ In questa fase andiamo ad accorpare tutti le entità, associazioni e attributi m
 Dopodiché, nel caso questo non fosse avvenuto nella fase di progettazione concettuale, si scelgono degli identificatori primari, nel nostro caso:
 - Si introduce codSede per Sede al posto di Indirizzo
 - Si introduce codFoto per Foto per cui non è stata trovato un identificato in fase di progettazione concettuale
-- Tutte le altre entità hanno già un unico identificatore\
-#### Diagramma E-R ristrutturato
+- Tutte le altre entità hanno già un unico identificatore
+##### Diagramma E-R ristrutturato
 ![[Pasted image 20260121172439.png]]
+#### Determinazione carico applicativo
+Basandosi sulle [[#Specifiche delle operazioni]], andiamo a produrre le tabelle:
+![[Pasted image 20260121172918.png]]
+#### Determinazione costo operazione
+(Questo passaggio va effettuato per tutte le operazioni)
+![[Pasted image 20260121172933.png]]
+#### Traduzione in modello E-R relazionale
+![[Pasted image 20260121172626.png]]
