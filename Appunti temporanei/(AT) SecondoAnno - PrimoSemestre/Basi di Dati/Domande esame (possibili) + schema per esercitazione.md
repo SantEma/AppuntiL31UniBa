@@ -275,7 +275,8 @@ Questa fase prevede la riscrittura della traccia in una maniera più specifica.
 Noi faremo riferimento a questa traccia in particolare:
 ![[Pasted image 20260121145152.png|500]]
 ![[Pasted image 20260121145201.png|500]]
-#### Set di regole
+
+##### Set di regole
 - **Scegliere il corretto livello di astrazione**: evitare termini troppo astratti o troppo specifici
 	  **Esempio**: dimensioni di una foto (piccola, media, grande), specificare che non esistono determinati dati (come il giorno di chiusura per una sede)
 - **Standardizzare la struttura delle frasi**, ossia usare sempre lo stesso stile sintattico
