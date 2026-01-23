@@ -1,3 +1,4 @@
+#### "Si descriva brevemente cosa siano indipendenza logica e fisica dai dati e quale/i modello di basi di dati consente/ono di realizzarle" (in alcune versioni: "...esplicitando quale caratteristica fondamentale del modello relazionale le consentano")
 L'architettura a livelli di un DBMS garantisce l'indipendenza dei dati in due livelli:
 - **Indipendenza fisica**: consente di interagire con il DBMS in modo indipendente dalla struttura fisica dei dati, senza influire sulle descrizioni e quindi sui programmi che usano i dati
 - **Indipendenza logica**: consente di interagire con il livello esterno della base di dati in modo indipendente dal livello logico, per esempio come aggiungere un nuovo schema esterno senza modificare lo schema logico e perciò la sottostante organizzazione fisica dei dati
