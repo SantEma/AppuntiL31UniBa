@@ -255,9 +255,9 @@ In alcune tracce sono presenti anche questi due quesiti:
 
 Lo schema generale di azione, in ordine, è il seguente:
 1. Analisi dei requisiti
-	- Riscrittura della traccia
+	- Set di regole
+	- Riorganizzazione per concetti
 	- Creazione del glossario
-	- Riorganizzazione per concetti(?)
 	- Specifiche sui dati e operazioni
 2. Progettazione concettuale
 	- Scelta della strategia
@@ -288,15 +288,14 @@ Noi faremo riferimento a questa traccia in particolare:
 	Fotografia e Foto son sinonimi $\to$ si sceglie **Foto**
 	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte**
 
-Già con questo set di regole possiamo trasformare la traccia sopra descritta in questo:
-![[Pasted image 20260121145246.png|500]]
-- **Costruire un glossario per termini**
-![[Pasted image 20260121163256.png|500]]
+
 #### Riorganizzazione di concetti
 In questa fase riorganizziamo i vari concetti per frase e per entità rilevata, nel nostro caso:
 ![[Pasted image 20260121173341.png]]
 ![[Pasted image 20260121173351.png]]
 ![[Pasted image 20260121173401.png]]
+- **Costruire un glossario per termini**
+![[Pasted image 20260121163256.png|500]]
 #### Specifiche delle operazioni
 In questa fase bisogna prendere le operazioni specificate dalla traccia e dargli dei valori possibili per il database (utili nelle parti successive)
 ![[Pasted image 20260121164609.png]]
