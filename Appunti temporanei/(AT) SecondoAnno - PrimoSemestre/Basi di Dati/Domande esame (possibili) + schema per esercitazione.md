@@ -67,7 +67,7 @@ Le differenze principali sono:
 Esistono alcune proprietà, dette **forme normali**, che certificano la qualità dello schema di una base di dati relazionale tramite l'assenza di determinati difetti.
 Quando una relazione non è normalizzata presenta ridondanze e si presta a comportamenti indesiderabili o anomali durante gli aggiornamenti.
  
-Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale. È bene sottolineare, però, che la normalizzazione va utilizzata come tecnica di verifica dei risultati della progettazione di una base di dati, infatti una corretta applicazione di una metodologia di progettazione porta generalmente a schemi già normalizzati.
+Dunque, per **normalizzazione** si intende la procedura che permette di trasformare schemi non normalizzati in schemi che soddisfano una forma normale.
 #### Si definisca cosa è una decomposizione senza perdita di informazione e quale condizione è possibile utilizzare per verificare tale proprietà
 Data una relazione $r$ su un insieme di attributi $X$, con $X_{1}$ e $X_{2}$ sottoinsiemi di $X$ la cui unione sia pari a $X$ stesso, si può decomporre senza perdita di dati sugli insiemi $X_{1}$ e $X_{2}$ se il join delle due proiezioni è uguale a $r$ stessa (ossia non contiene **spurie**).
 Quindi si decompone senza perdita su due sottoschemi se l'attributo comune ai due è chiave per almeno uno dei due
