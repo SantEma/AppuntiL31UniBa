@@ -134,6 +134,10 @@ Un interrogazione può essere definita come una funzione che, applicata a istanz
 Formalmente:
 Dato uno schema $R$ di basi di dati, un'interrogazione è una funzione che, per ogni istanza di $r$ di $R$, produce una relazione su un dato insieme di attributi $X$ 
 In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ vengono formulati con espressioni i cui atomi (nomi di) sono relazioni in $R$ (le variabili)
+#### Esempi di interrogazioni in algebra relazionale
+![[Pasted image 20260125195657.png]]
+![[Pasted image 20260125195721.png]]
+
 #### Efficienza del join
 Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (la complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
 
@@ -238,7 +242,6 @@ Si potrebbe pensare di esprimere il problema consentendo di associare ad una var
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 
-[da inserire esempi]
 #### Algebra e calcolo con valori nulli
 Trattiamo un caso dove in una relazione si ha un (o più) valore nullo:
 ![[Pasted image 20251016084830.png]]
