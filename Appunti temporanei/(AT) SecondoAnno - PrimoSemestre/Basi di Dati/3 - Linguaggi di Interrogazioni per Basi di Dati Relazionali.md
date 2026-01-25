@@ -272,7 +272,7 @@ Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$
 
 Il calcolo su tuple non permette di esprimere le interrogazioni i cui risultati possono provenire indifferentemente da due o più relazioni (che in algebra relazionale si realizzano con l'operatore di unione).
 
-Esempio: date due relazioni definite sugli stessi attributi:
+**Esempio**: date due relazioni definite sugli stessi attributi:
 $$R_{1}(AB),R_{2}(AB)$$
 si vuole formulare una interrogazione che restituisca l'unione delle due relazioni.
 In algebra relazionale tale interrogazione verrebbe espressa mediante l’operatore di unione, mentre nel calcolo relazionale su domini si avrebbe:
@@ -284,5 +284,17 @@ Si potrebbe pensare di esprimere il problema consentendo di associare ad una var
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
 #### Esempi di calcolo relazionale su tuple con dichiarazione di range
+![[Pasted image 20260125201416.png]]
+
+![[Pasted image 20260125201428.png]]
+
+![[Pasted image 20260125201438.png]]
+
+![[Pasted image 20260125201450.png]]
+
+![[Pasted image 20260125201514.png]]
+
+![[Pasted image 20260125201656.png]]
+
 ## Esercizi Linguaggi di interrogazione
 Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]] e [[3.2 - Esercizi Calcolo relazionale.pdf]] 
