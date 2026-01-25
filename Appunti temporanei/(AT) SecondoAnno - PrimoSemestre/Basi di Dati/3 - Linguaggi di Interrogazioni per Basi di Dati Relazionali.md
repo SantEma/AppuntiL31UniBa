@@ -138,6 +138,18 @@ In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ veng
 ![[Pasted image 20260125195657.png]]
 ![[Pasted image 20260125195721.png]]
 
+![[Pasted image 20260125195736.png]]
+![[Pasted image 20260125195751.png]]
+
+![[Pasted image 20260125195834.png]]
+![[Pasted image 20260125195850.png]]
+
+![[Pasted image 20260125195927.png]]
+![[Pasted image 20260125200113.png]]
+![[Pasted image 20260125200125.png]]
+
+![[Pasted image 20260125200141.png]]
+![[Pasted image 20260125200152.png]]
 #### Efficienza del join
 Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (la complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
 
