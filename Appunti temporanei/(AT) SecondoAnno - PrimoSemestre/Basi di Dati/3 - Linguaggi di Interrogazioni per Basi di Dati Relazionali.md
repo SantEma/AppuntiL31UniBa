@@ -247,6 +247,18 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera sui valori $a_{1},\dots a_{q}$ se esiste ameno un valore $a$ tale che $f$ è vera sui valori $a$ per $x$, $a_{1}$ per $y_{1}\dots a_{q}$ per $y_{q}$
 	- $\forall x(f)$,con variabili libere $y_{1}\dots y_{q}$ è vera sui valori $a_{1},\dots a_{q}$ se per ogni elemento $a$ del dominio $D$, la formula $f$ risulta veri sui valori $a$ per $x$, $a_{1}$ per $y_{1},\dots,a_{q}$ per $y_{q}$
 #### Esempi di calcolo relazionale su domini
+![[Pasted image 20260125200758.png]]
+![[Pasted image 20260125200736.png]]
+
+![[Pasted image 20260125200813.png]]
+![[Pasted image 20260125200836.png]]
+
+![[Pasted image 20260125200910.png]]
+
+![[Pasted image 20260125200924.png]]
+
+![[Pasted image 20260125200950.png]]
+
 ### Calcolo relazionale su tuple con dichiarazione di range
 Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$dove:
 - $L$ è la range list: elenca le variabili libere di $f$ con i relativi campi di variabilità, la scrittura $x(R) \in L$ indica che la variabile $x$ può assumere come valore solo tuple nella relazione $r$ di schema $R$.
@@ -271,5 +283,6 @@ Si potrebbe pensare di esprimere il problema consentendo di associare ad una var
 
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
+#### Esempi di calcolo relazionale su tuple con dichiarazione di range
 ## Esercizi Linguaggi di interrogazione
 Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]] e [[3.2 - Esercizi Calcolo relazionale.pdf]] 
