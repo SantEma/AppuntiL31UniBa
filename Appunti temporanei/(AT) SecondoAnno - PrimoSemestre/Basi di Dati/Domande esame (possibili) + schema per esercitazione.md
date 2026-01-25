@@ -59,7 +59,7 @@ Le strutture ad albero, denominate anche **indici**, favoriscono l'accesso in ba
 **SPARQL** introduce, oltre alle forme classiche di interrogazione presenti nell'SQL, altri costrutti come:
 - $\text{DESCRIBE}$ per ottenere una descrizione delle risorse presenti presso un endpoint
 - $\text{ASK}$ per sapere se specifici termini sono disponibili nell'endpoint
-- - 
+- $\text{COSTRUCT}$ per costruire un nuovo grafo RDF a partire da un'interrogazione
 #### Illustrare brevemente cosa siano B-tree e B+-Tree e le differenze tra essi" oppure "Illustrare brevemente cosa sia un B+-Tree..." o "Determinare quali azioni possono essere necessarie su una struttura dati di tipo B-Tree.
 
 Le strutture ad albero, denominate anche **indici**, favoriscono l'accesso in base al valore di uno o più campi, consentendo sia accessi puntuali che corrispondenti a valori con complessità logaritmica (sulla base della profondità dell’albero).
