@@ -289,7 +289,6 @@ Noi faremo riferimento a questa traccia in particolare:
 	Fotografia e Foto son sinonimi $\to$ si sceglie **Foto**
 	Opera artistica e opera d'arte $\to$ si sceglie **Opera d'arte**
 
-
 #### Riorganizzazione di concetti
 In questa fase riorganizziamo i vari concetti per frase e per entità rilevata, nel nostro caso:
 ![[Pasted image 20260121173341.png]]
