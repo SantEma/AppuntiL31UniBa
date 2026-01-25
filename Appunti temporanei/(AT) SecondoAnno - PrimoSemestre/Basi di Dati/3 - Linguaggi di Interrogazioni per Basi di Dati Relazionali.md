@@ -150,6 +150,7 @@ In algebra relazionale, le interrogazioni su uno schema di base di dati $R$ veng
 
 ![[Pasted image 20260125200141.png]]
 ![[Pasted image 20260125200152.png]]
+![[Pasted image 20260125200233.png]]
 #### Efficienza del join
 Il join è l’operazione più dispendiosa dell’algebra relazionale, il metodo più semplice per calcolare un join consiste nel confrontare tutte le coppie di tuple (la complessità è $O(n^{2})$ per relazioni di cardinalità $n$.)
 
@@ -164,7 +165,24 @@ Una buona tecnica per ottimizzare un’espressione algebrica consiste nell'antic
 Definiamo le formule:
 Siano $E$ un'espressione dell’algebra relazionale e $C_x$ una condizione sull'insieme di attributi $X$
 ![[Pasted image 20251009111902.png]]![[Pasted image 20251009111939.png]]
-### Viste
+#### Algebra e calcolo con valori nulli
+Trattiamo un caso dove in una relazione si ha un (o più) valore nullo:
+![[Pasted image 20251016084830.png]]
+Se volessimo fare un interrogazione del tipo:$$\sigma_{\text{Età}>30}(Persone)$$non si può dire se la terza tupla faccia parte o meno del risultato.
+Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predicato può essere vero, falso oppure sconosciuto, rendendo il risultato della relazione precedente:
+- Prima tupla appartenente certamente al risultato (vero)
+- Seconda tupla non appartenente certamente al risultato (falso)
+- Terza tupla forse appartenente al risultato (sconosciuto)
+
+In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta.
+Si ottiene una valida alternativa introducendo due condizioni atomiche di selezione (nell'algebra) e due predicati atomici aggiuntivi (nel calcolo) allo scopo di verificare che un valore sia nullo oppure no:
+- $A$ is null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è (non) nullo
+- $A$ is not null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è non (è) nullo
+
+Esempio:
+![[Pasted image 20251016090710.png]]
+Questa logica è utilizzabile in SQL, visto che prevede una gestione a tre valori
+#### Viste
 Abbiamo visto che può risultare utile mettere a disposizione degli utenti rappresentazioni diverse per gli stessi dati, in una base di dati relazionale questo si ottiene distinguendo relazioni di base il cui contenuto è autonomo e relazioni derivate il cui contenuto è funzione del contenuto di altre relazioni, ed inoltre è possibile che una relazione derivata sia funzione di un’altra relazione derivata a patto di stabilire un ordinamento fra le relazioni derivate stesse
 
 In linea di principio possono esistere due tipi di relazioni derivate:
@@ -180,7 +198,7 @@ Esempio:
 
 Mentre per quanto riguarda le interrogazioni, le viste possono essere trattate come relazioni di base, lo stesso non si può dire per le operazioni di aggiornamento, in molti casi non è possibile stabilire facilmente una semantica degli aggiornamenti sulle viste:
 Ad esempio l’inserimento di una tupla nella vista non corrisponde univocamente ad un insieme di aggiornamenti sulle relazioni di base, per questo motivo i DBMS limitano aggiornamenti sulle viste.
-#### Calcolo relazionale
+## Calcolo relazionale
 Con il termine **calcolo relazionale** si fa riferimento ad una famiglia di linguaggi di interrogazione, basati sul calcolo dei predicati del primo ordine, che hanno la caratteristica di essere dichiarativi, cioè di specificare le proprietà del risultato delle interrogazioni anziché la procedura seguita per generarlo. 
 Nel calcolo relazionale, l’istanza di un DB relazionale è vista come una interpretazione di una logica del primo ordine, mentre un’interrogazione è espressa come una formula ben formata. 
 Il risultato si ottiene, dunque, interpretando l’espressione rispetto all'istanza del DB disponibile.
@@ -188,7 +206,7 @@ Il risultato si ottiene, dunque, interpretando l’espressione rispetto all'ista
 Esistono diverse versioni del calcolo relazionale: 
 - **il calcolo relazionale su domini** 
 - **il calcolo relazionale su tuple**
-##### Calcolo relazionale su domini
+### Calcolo relazionale su domini
 Le espressioni del calcolo relazionale su domini hanno la forma:
 $$\{A_{1}:x_{1}\dots,A_{k}:x_{k}|f\}$$
 dove:
@@ -228,8 +246,8 @@ Per definire la semantica di un'espressione bisogna definire la nozione di valor
 - Interpretazione di formule quantificate:
 	- $\exists x(f)$ ,con variabili libere $y_{1}\dots y_{q}$, è vera sui valori $a_{1},\dots a_{q}$ se esiste ameno un valore $a$ tale che $f$ è vera sui valori $a$ per $x$, $a_{1}$ per $y_{1}\dots a_{q}$ per $y_{q}$
 	- $\forall x(f)$,con variabili libere $y_{1}\dots y_{q}$ è vera sui valori $a_{1},\dots a_{q}$ se per ogni elemento $a$ del dominio $D$, la formula $f$ risulta veri sui valori $a$ per $x$, $a_{1}$ per $y_{1},\dots,a_{q}$ per $y_{q}$
-
-##### Calcolo relazionale su tuple con dichiarazione di range
+#### Esempi di calcolo relazionale su domini
+### Calcolo relazionale su tuple con dichiarazione di range
 Le espressioni del calcolo su tuple con dichiarazione di range hanno la forma:$$\{T|L|f\}$$dove:
 - $L$ è la range list: elenca le variabili libere di $f$ con i relativi campi di variabilità, la scrittura $x(R) \in L$ indica che la variabile $x$ può assumere come valore solo tuple nella relazione $r$ di schema $R$.
 - $T$ è la target list, con elementi del tipo $Y : x.Z$, con $x$ variabile e $Y$ e $Z$ sequenze di attributi di pari lunghezza; ($x.* \ \text{abbreviazione di} \ X : x.X$)
@@ -253,23 +271,5 @@ Si potrebbe pensare di esprimere il problema consentendo di associare ad una var
 
 Questo risolverebbe il problema dell'unione di due relazioni, ma non si riuscirebbe comunque a formulare unioni complesse i cui operandi siano sottoespressioni non direttamente corrispondenti a schemi di relazioni.
 SQL, che si ispira al calcolo su tuple con dichiarazioni di range, prevede un costrutto esplicito di unione per esprimere interrogazioni che non potrebbero essere espresse altrimenti.
-
-#### Algebra e calcolo con valori nulli
-Trattiamo un caso dove in una relazione si ha un (o più) valore nullo:
-![[Pasted image 20251016084830.png]]
-Se volessimo fare un interrogazione del tipo:$$\sigma_{\text{Età}>30}(Persone)$$non si può dire se la terza tupla faccia parte o meno del risultato.
-Vi è stato quindi proposto di utilizzare una logica a 3 valori, dove un predicato può essere vero, falso oppure sconosciuto, rendendo il risultato della relazione precedente:
-- Prima tupla appartenente certamente al risultato (vero)
-- Seconda tupla non appartenente certamente al risultato (falso)
-- Terza tupla forse appartenente al risultato (sconosciuto)
-
-In caso di operazioni complesse come:$$\sigma_{\text{Età}>30}(Persone)\bigcup \sigma_{\text{Età}\leq30}(Persone)$$si conduce ad un comportamento non chiaro per la relazione Persone, nella logica a tre valori invece restituirebbe la terza tupla con appartenenza sconosciuta.
-Si ottiene una valida alternativa introducendo due condizioni atomiche di selezione (nell'algebra) e due predicati atomici aggiuntivi (nel calcolo) allo scopo di verificare che un valore sia nullo oppure no:
-- $A$ is null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è (non) nullo
-- $A$ is not null assume valore vero (falso) su una tupla $t$ se il valore di $t$ su $A$ è non (è) nullo
-
-Esempio:
-![[Pasted image 20251016090710.png]]
-Questa logica è utilizzabile in SQL, visto che prevede una gestione a tre valori
 ## Esercizi Linguaggi di interrogazione
 Presenti nel PDF [[3.1 - Esercizi Linguaggi di Interrogazione.pdf]] e [[3.2 - Esercizi Calcolo relazionale.pdf]] 
