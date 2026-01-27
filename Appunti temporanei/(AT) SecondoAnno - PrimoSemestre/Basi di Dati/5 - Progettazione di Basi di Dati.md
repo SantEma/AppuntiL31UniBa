@@ -532,6 +532,8 @@ Prendendo in esempio lo schema logico sugli impiegati si otterà questo:
 ### Extra
 #### Tabella delle traduzioni dal modello E-R a quello relazionale
 ![[Pasted image 20251210115641.png]]
+- Nella relazione 1 a 1 ci sono due modalità
+	- Mettere la chiave esterna e gli attributi di uno nell'altro o viceversa
 #### Esempio di progettazione logica
 Guardare il PDF [[5.3 - Esempio di Progettazione Logica.pdf]], estratto dal libro e in più l'esercitazione data dalla prof [[5.5 - Esercizi Progettazione Logica.pdf]]
 ## Normalizzazione
