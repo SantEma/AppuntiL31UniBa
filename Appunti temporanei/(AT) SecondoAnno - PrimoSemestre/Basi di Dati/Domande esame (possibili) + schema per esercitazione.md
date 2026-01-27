@@ -365,6 +365,6 @@ Basandosi sulle [[#Specifiche delle operazioni]], andiamo a produrre le tabelle:
 	2. Opzionalità e obbligatorietà (relazione 0-1 e 1-1): in questo caso gli attributi della relazione e la chiave esterna li possiede chi ha l'obbligatorietà
 	3. Entrambi opzionali (relazione 0-1 e 0-1): in questo caso si hanno 3 relazioni separate
 - In una relazione 1 a 1 sbagliata (nel caso ci si accorga che nessuno dei tre casi precedenti funzioni): si accorpa tutto in una sola entità
-- In una relazione 1 a N: la chiave esterna e gli attributi della relazione li
+- In una relazione 1 a N: la chiave esterna e gli attributi della relazione li possiede soltanto chi ha la parte a molti (1)![[Pasted image 20260127145509.png]]
 
 ![[Pasted image 20260121172626.png]]
