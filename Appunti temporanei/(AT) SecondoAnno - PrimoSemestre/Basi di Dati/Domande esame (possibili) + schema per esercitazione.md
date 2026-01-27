@@ -228,8 +228,6 @@ Il modello relazione dei dati (più diffuso tra tutti) permette di definire tipi
 3. Progettazione Fisica: La finalità della progettazione fisica è il completamento dello schema logico con la specifica dei **parametri fisici di memorizzazione** per massimizzare l'efficienza del sistema.
    - **Peculiarità:** Questa fase è **fortemente dipendente dal DBMS specifico** scelto. Il progettista deve conoscere le caratteristiche tecnologiche del sistema per definire l'organizzazione dei file e la creazione di strutture ausiliarie per l'accesso ai dati. Qui si prendono decisioni su quali indici creare per ottimizzare i tempi di risposta delle query e sulla contiguità di allocazione dei dati.
    - **Prodotto finale:** Il risultato è lo **schema fisico**, costituito dalle definizioni effettive delle relazioni e delle strutture fisiche utilizzate con i relativi parametri di implementazione.
-
-
 #### Si descriva brevemente quali e quante sono le forme di ridondanza individuabili all'interno di uno modello E-R
 All'interno di uno schema Entità-Relazione, la ridondanza è definita come la presenza di informazioni che possono essere derivate, ovvero ottenute attraverso una serie di operazioni, da altri dati già esistenti nel medesimo schema. Si possono individuare sostanzialmente tre forme principali di ridondanza:
 1. La prima categoria riguarda gli attributi derivabili, occorrenza per occorrenza, da altri attributi appartenenti alla stessa entità o alla stessa associazione.
@@ -241,13 +239,13 @@ La presenza di una ridondanza ha effetti positivi, semplificare le interrogazion
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato.
 #### Descrivere brevemente perché il modello relazionale è anche detto modello 'basato su valori'
 Il modello relazionale viene definito basato su valori poiché, a differenza dei modelli logici precedenti come quello gerarchico o reticolare, le corrispondenze e i riferimenti tra i dati contenuti in relazioni diverse vengono rappresentati esclusivamente attraverso valori comuni che compaiono nelle tuple, senza l'impiego di puntatori espliciti o riferimenti a indirizzi fisici.
+### Si riporti la definizione formale di 2FN
 
 ---
-
 ## Bullet list per svolgere tracce d'esame
 Questa è una piccola lista basata sulle regole generali date dalla prof per svolgere l'esame, visto che è impossibile trovare informazioni a quanto vi si è capito.
 **IMPORTANTE:** ogni punto deve essere esplicitato nell'esame, oltre ad avere una maniera molto più discorsiva di quella descritta qui. Tutti i punti che non vengono toccati (come può essere l'analisi delle ridondanze) deve essere argomentato sul perché non venga fatto
-### Richieste solite
+### Richieste
 Nelle tracce viene chiesto di eseguire:
 - **Analisi dei requisti**
 - **Progettazione concettuale**
