@@ -1,4 +1,3 @@
-# Paradigma generativo: recap
 Dal paradigma generativo scaturiscono tecniche di progetto di algoritmi che generano direttamente la soluzione, anziché selezionarla tra gli elementi già presenti nello spazio di ricerca.
 In questo contesto, il concetto di spazio di ricerca viene gestito in modo specifico:
 - Viene considerato **esclusivamente in fase di progetto** dell'algoritmo.
@@ -7,7 +6,6 @@ In questo contesto, il concetto di spazio di ricerca viene gestito in modo speci
 Appartengono a questo paradigma due tecniche fondamentali di progettazione algoritmica:
 - La tecnica **greedy**.
 - La tecnica **divide-et-impera**.
-
 ## Tecnica Greedy
 La tecnica Greedy viene usata soprattutto per i problemi di ottimizzazione, cioè quando devi trovare la soluzione migliore possibile (come il massimo guadagno o il minimo costo).
 Il funzionamento è intuitivo: l'algoritmo non trova la soluzione completa in un colpo solo, ma la **costruisce passo dopo passo**, aggiungendo un pezzo alla volta.
@@ -15,7 +13,6 @@ Il funzionamento è intuitivo: l'algoritmo non trova la soluzione completa in un
 Il funzionamento si basa rigorosamente su due principi fondamentali:
 - **Scelta Ottima Locale:** In ogni stadio $i$, per definire la componente $i$-esima della soluzione, si seleziona il valore che appare "migliore" tra quelli ammissibili, valutandolo rispetto a un criterio di preferenza fissato a priori.
 - **Irrevocabilità:** Una volta compiuta la scelta per la componente $i$-esima, si procede a determinare le componenti successive. Non è previsto alcun meccanismo per rivedere o modificare le decisioni già prese; l'algoritmo non torna mai sui suoi passi (_no backtracking_).
-
 ### Algoritmo greedy: struttura procedurale
 L'implementazione di un algoritmo greedy presuppone che si acquisisca la rappresentazione di una specifica istanza del problema e che si disponga di un metodo per organizzare la costruzione di un elemento dello spazio di ricerca in stadi successivi.
 
@@ -24,9 +21,7 @@ L'algoritmo viene strutturato in questo modo:
 - Si determina l'insieme $A$ costituito dai valori ammissibili per la componente $i$-esima di $z$. Se tale struttura $A$ non è vuoto, si procede scegliendo al suo interno l'elemento migliore rispetto al criterio di preferenza fissato. 
 - Si verifica se lo stadio $i$-esimo corrente corrisponde all'ultimo stadio del processo. Se la condizione è verificata, l'algoritmo termina e restituisce $o(z)$ come risultato finale. 
 - Qualora non si sia raggiunto l'ultimo stadio, si incrementa l'indice $i$ di 1 e si ritorna al passo di selezione (punto 2) per determinare la componente successiva. 
-
 ### Esempio Applicativo: Il Problema dello Zaino (Knapsack Problem)
-
 Il problema dello zaino rappresenta un esempio di ottimizzazione combinatoria. Lo scenario prevede la disponibilità di un budjet limitato $B$ e la necessità di selezionare un sottoinsieme di $n$ possibili investimenti (o oggetti) al fine di massimizzare la rendita totale. 
 
 Ogni singolo investimento $i$ da due parametri fondamentali: 

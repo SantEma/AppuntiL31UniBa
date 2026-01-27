@@ -1,5 +1,3 @@
-# Coda con priorità 
-
 La Coda con priorità è una struttura dati che rappresenta un caso particolare del tipo di dato _insieme_. 
 A differenza delle code con tecnica FIFO, in questo modello sugli elementi è definita una relazione di ordinamento totale ($\leq$) che determina la priorità. 
 E' possibile interpretare questa struttura come una coda in cui gli elementi non vengono serviti in base all'ordinamento di arrivo, ma rispettando la loro priorità intrinseca.

@@ -1,4 +1,3 @@
-## Definizione
 Un insieme è una **collezione di elementi dello stesso tipo** (omogenei).
 A differenza delle liste, in un insieme:
 1. Gli elementi **non hanno una posizione**.

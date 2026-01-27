@@ -1,4 +1,3 @@
-# Introduzione
 Per comprendere come progettare un algoritmo, è necessario prima distinguere tre livelli di astrazione:
 - **La specifica del problema**: rappresenta la definizione formale della struttura del problema. È importante notare che la specifica definisce il problema in sé, indipendentemente dal metodo o dalla strategia che verrà poi utilizzata per risolverlo.
 - **Lo spazio delle soluzioni**: questo concetto è una caratteristica generale del problema. Sebbene contenga idealmente tutte le possibili risposte, lo spazio delle soluzioni è un concetto astratto che non fornisce indicazioni operative su come trovare la soluzione per un caso specifico (una generica istanza).

@@ -6,7 +6,6 @@ I problemi algoritmici possono essere classificati in tre categorie principali:
 Nello studio dell'informatica la risoluzione di un problema computazionale avviene attraverso due fasi distinte e sequenziali:
 - **Concettualizzazione**: È la fase di astrazione in cui si fornisce una specifica formale del problema. Qui si definiscono le caratteristiche strutturali e i vincoli senza preoccuparsi di come il problema verrà risolto.
 - **Realizzazione**: È la fase operativa in cui si passa specificando alla scelta della strategia risolutiva, definendo l'algoritmo e implementando il programma. 
-
 ## Specifica di un problema 
 Per definire formalmente un problema (fase di concettualizzazione), è necessario identificare cinque componenti fondamentali che descrivono le variabili in gioco e le loro relazioni.
 

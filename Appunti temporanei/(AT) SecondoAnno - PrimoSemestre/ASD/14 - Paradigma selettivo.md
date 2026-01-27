@@ -1,11 +1,9 @@
-# Paradigma selettivo 
 Gli algoritmi del paradigma selettivo visitano lo spazio di ricerca con l'obiettivo di trovare un elemento ammissibile. 
 Ogni algoritmo fa riferimento all'interno dello spazio di ricerca, che viene esplorato con sistematicità secondo una modalità definita. Questo approccio metodico garantisce la copertura necessaria per l'individuazione della soluzione. 
 
 Appartengono a questo paradigma due tecniche principali:
 - Enumerativa;
 - Backtracking; 
-
 ## Esempio: ordinamento di un vettore
 si consideri il problema dell'ordinamento di un vettore di interi $V$, di dimensioni $n$, secondo l'ordine non decrescente dei suoi elementi. 
 
@@ -22,15 +20,12 @@ Esiste una distinzione fondamentale tra due categorie di algoritmi:
 - **Algoritmo generativo:** Deriva la soluzione applicando un procedimento diretto sull'istanza del problema, senza necessità di visitare esplicitamente lo spazio di ricerca. 
 
 Nel contesto dell'esempio di ordinamento, la funzione di ammissibilità guida la selezione, indicando che la soluzione coincide con quella specifica permutazione che rispetta il criterio di ordinamento richiesto. 
-
 ## Rappresentazione dello spazio di ricerca
 Il processo di esplorazione dello spazio di ricerca viene modellato mediante una struttura ad albero, la quale permette di visualizzare le scelte logiche effettuate dall'algoritmo: 
 - **Nodi:** contengono i confronti necessari per discriminare tra varie permutazioni e indirizzare la ricerca verso la soluzione corretta. 
 - **Foglie:** ogni foglia rappresenta un possibile ordinamento finale; di fatto l'albero partiziona lo spazio di ricerca in modo che ogni terminazione corrisponda a una specifica permutazione. 
 - **Profondità:** La profondità dell'albero è indicatore della complessità computazionale, in quanto rappresenta il numero di confronti necessari per determinare la soluzione nel caso peggiore. 
-
 ![[Pasted image 20260109113839.png]]
-
 ## Tecnica enumerativa
 La tecnica enumerativa è basata sulla sistematica ispezione, elemento per elemento, dello spazio di ricerca associato ad una istanza di un problema. Questa metodologia garantisce la terminazione del processo, a condizione che lo spazio di ricerca sia finito. 
 
@@ -42,7 +37,6 @@ Per garantire la possibilità di una visita sistematica dello spazio di ricerca,
 - **Identificazione dell'inizio:** Un metodo per stabilire il primo elemento da considerare.
 - **Avanzamento:** Un metodo per stabilire l'elemento successivo.
 - **Controllo di completezza:** Un metodo per verificare se si sono esaminati tutti gli elementi.
-
 ### Algoritmo enumerativo per problemi di ricerca
 La procedura enumerativa per la risoluzione di problemi di ricerca segue uno schema iterativo volto a individuare il primo elemento che soddisfi i requisiti richiesti. 
 L'algoritmo opera secondo i seguenti passi: 
@@ -50,7 +44,6 @@ L'algoritmo opera secondo i seguenti passi:
 - Si valuta la condizione di ammissibilità $a(x)$. Se $a(x)$ è vero, l'algoritmo termina immediatamente fornendo $o(x)$ come risultato. 
 - Se tutti gli elementi dello spazio di ricerca sono stati esaminati senza trovare un elemento ammissibile, l'algoritmo termina restituendo $\varnothing$ per indicare l'assenza di soluzioni. 
 - Se l'elemento corrente non è ammissibile e lo spazio di ricerca non è ancora esaurito, si considera come nuovo $x$ l'elemento successivo dello spazio di ricerca e si ripete la procedura a partire dalla verifica di ammissibilità. 
-
 #### Esempio: il gioco dell'otto
 Il problema viene modellato definendo due configurazioni distinte: 
 - **INIZIO:** Una disposizione di partenza dei tasselli numerati sulla griglia. 
@@ -70,7 +63,6 @@ Il procedimento si sviluppa attraverso una struttura ad albero:
 
 Questa visualizzazione dimostra come la tecnica enumerativa esplori sistematicamente le varianti del gioco: ogni nodo visitato viene confrontato con la configurazione finale desiderata (tasselli ordinati) per verificare se rappresenta la soluzione. 
 L'albero mappa quindi l'intera sequenza di decisioni e stati che l'algoritmo deve attraversare per passare dallo stato iniziale a quello finale o per determinare che un percorso non porta alla soluzione.
-
 ### Algoritmo Enumerativo per Problemi di Ottimizzazione
 A differenza dei problemi di ricerca, dove l'arresto può avvenire alla prima occorrenza valida, nei problemi di ottimizzazione è necessario esplorare lo spazio per identificare la soluzione migliore secondo un criterio prestabilito. La procedura si articola nei seguenti passi:
 1. Si considera il primo elemento $x$ dello spazio di ricerca. 
@@ -90,8 +82,7 @@ In questo scenario l'obbiettivo non è semplicemente trovare una soluzione, bens
 Operativamente, questo approccio comporta due conseguenze fondamentali: 
 - **Criterio di valutazione:** si valuta la qualità della soluzione in base al numero di mosse necessarie per raggiungerla. La soluzione ottima corrisponde al percorso che richiede il numero minimo di mosse. 
 - **Esplorazione esaustiva:** Per garantire l'ottimalità, non ci si può fermare alla prima soluzione trovata. È necessario esplorare l'intero albero di ricerca per confrontare i vari cammini e identificare con certezza quello più breve.
-
-### Tecnic a di Backtracking
+### Tecnica di Backtracking
 Nella tecnica di backtracking, la modalità di visita dello spazio di ricerca differisce dall'enumerazione semplice. La generazione degli elementi avviene secondo un processo suddiviso in **stadi**.
 
 Il funzionamento si basa su tre principi strutturali:
@@ -193,7 +184,6 @@ Il meccanismo di backtracking si attiva al verificarsi di due condizioni specifi
 Nell'albero rappresentato, i nodi che raggiungono il livello 6 (o che violano la condizione di unicità) vengono tagliati, costringendo l'algoritmo a risalire verso i nodi padre per tentare alternative diverse.
 
 ### Esempio: problema del partizionamento di un insieme
-
 Il comportamento dell'algoritmo di backtracking per il problema del partizionamento viene descritto formalmente mediante la rappresentazione ad albero dello spazio di ricerca.
 
 Dato un insieme $Y=\{y_{1}​,y_{2},\dots,y_{n}\}$ di interi positivi la cui somma totale è $2M$, il problema consiste nel verificare l'esistenza di un sottoinsieme di $Y$ la cui somma degli elementi sia esattamente pari a $M$.
