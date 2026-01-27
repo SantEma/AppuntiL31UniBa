@@ -360,4 +360,9 @@ Basandosi sulle [[#Specifiche delle operazioni]], andiamo a produrre le tabelle:
 (Questo passaggio va effettuato per tutte le operazioni)
 ![[Pasted image 20260121172933.png]]
 #### Traduzione in modello E-R relazionale
+- In una relazione 1 a 1 ci sono tre casi:
+	1. Entrambi obbligatori (relazione 1-1 a 1-1): caso più semplice, si può scegliere di mettere la chiave esterna e gli attributi della relazione in una delle due entità
+	2. Opzionalità e obbligatorietà (relazione 0-1 e 1-1): in questo caso gli attributi della relazione e la chiave esterna li possiede chi ha l'obbligatorietà
+	3. Entrambi opzionali (relazione 0-1 e 0-1): 
+
 ![[Pasted image 20260121172626.png]]
