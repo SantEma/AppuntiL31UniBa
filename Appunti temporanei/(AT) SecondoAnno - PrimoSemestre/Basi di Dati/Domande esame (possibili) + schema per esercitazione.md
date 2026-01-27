@@ -92,13 +92,9 @@ Ora i casi sono due:
 - La **superchiave è anche chiave**, quindi si conferma l’esistenza della chiave stessa 
 - **Non è chiave**, perché contiene un’altra superchiave, quindi applicando ricorsivamente questo ragionamento si giunge, in un numero finito di passi (poiché l’insieme degli attributi è finito), ad una superchiave minimale.
 #### Elencare le proprietà fondamentali di una transazione e descrivere brevemente ognuna di esse
-Una **transazione** è una sequenza di azioni di lettura e scrittura del DB e di elaborazioni di dati in memoria temporanea, che il DBMS esegue garantendo le seguenti proprietà (ACID properties):
-
-- **Atomicity**: La transazione è eseguita nella sua interezza oppure non è eseguita affatto (le transazioni che terminano prematuramente sono abortite)
-- **Consistency preservation**: una esecuzione corretta della transazione porta il DB da uno stato consistente all'altro (i vincoli di integrità devono essere rispettati).
-- **Isolation**: L'esecuzione di una transazione deve essere indipendente da quella di altre transazioni concorrenti. Il risultato deve essere analogo a quello che si otterrebbe eseguendo le transazioni una alla volta (serialmente).
-- **Durability** : le modifiche su DB di una transazione terminata normalmente sono permanenti, cioè non sono alterabili da malfunzionamenti successivi alla terminazione
-
+Le proprietà di una transazione sono:
+- **Atomicità**: una transazione non può essere incompleta, se una transazione fallisce i suoi effetti vengono annullati ed il database torna alla fase di consistenza precedente.
+- **Seralizzabilità**: garantita con il meccanismo del bloccaggio dei dati (record and table locking). È una gestione ottenuta mediante tecniche di programmazione concorrente in cui prima di leggere/modificare un dato, una transazione deve bloccare questo dato il lettura/scrittura.
 #### Si descrivano brevemente i diversi livelli di isolamento di una transazione ed il motivo per cui sono stati introdotti.
 
 1. **Read uncommitted (degree of isolation 0):** consente transazioni che fanno solo operazioni di lettura (quelle di modifica sono proibite) che vengono eseguite dal sistema senza bloccare in lettura i dati. Si rende il sistema molto più veloce, ma può accadere che una transazione legga dati modificati da un’altra transazione non ancora terminata (dati sporchi) oppure abortita in seguito, motivo per cui questo livello di isolamento può applicarsi esclusivamente su porzioni di DB utilizzate sempre e solo in lettura.
@@ -125,11 +121,11 @@ $$ \begin{aligned}
 $$
 
 I domini elementari di SQL sono:
-- Caratteri
-- Tipi numerici esatti
-- Tipi numerici approssimativi
-- Istanti temporali
-- Intervalli temporali
+- **Caratteri**
+- **Tipi numerici esatti**
+- **Tipi numerici approssimativi**
+- **Istanti temporali**
+- **Intervalli temporali**
 #### Descrivere brevemente in cosa consiste SQL Embedded e per quale motivo viene introdotto
 SQL Embedded prevede di introdurre direttamente nel programma sorgente scritto nel linguaggio di alto livello le istruzioni SQL, distinguendole dalle normali istruzioni tramite un opportuno separatore
 #### Si descriva brevemente cosa sia un cursore e per risolvere quale problema viene introdotto
@@ -139,7 +135,6 @@ Lo standard SQL-2 prevede la definizione di **Procedure**, ovvero dei brevi sott
 
 È bene sapere che lo standard SQL-2 non tratta la scrittura di procedure complesse, ma solo quelle composte da un singolo comando SQL. Questo è invece permesso in SQL-3, dove viene fornita una ricca sintassi per la definizione di procedure, integrando anche le strutture di controllo
 #### Illustrare quando è possibile utilizzare SQL statico e quando invece è necessario utilizzare SQL dinamico.
-
 Nel caso di SQL statico, si usa quando sono noti a tempo di compilazione e vengono gestiti dal preprocessore, venendo ottimizzati solo una volta, e non ogni volta che il comando deve essere eseguito. Questo comporta grossi vantaggi in termini di prestazioni. L'SQL dinamico non può avvalersi della fase di preprocessamento, non essendo noti a priori i comandi da ottimizzare, quindi la costruisce a tempo di esecuzione, quindi viene utilizzato in questi casi necessari.
 #### Illustrare brevemente cosa siano: algebra relazionale, calcolo relazionale ed SQL, le loro peculiarità e la relazione che intercorre tra di essi
 L'algebra relazionale si configura come un linguaggio di tipo procedurale che si basa su una collezione di operatori definiti su relazioni, i quali producono a loro volta nuove relazioni come risultato. La sua peculiarità fondamentale risiede nella necessità di specificare esplicitamente il procedimento da seguire, ovvero la sequenza di operazioni quali selezione $\sigma$, proiezione $\pi$, ridenominazione $\rho$ e diverse forme di join $\bowtie$, per giungere alla costruzione del risultato desiderato.
@@ -239,7 +234,8 @@ La presenza di una ridondanza ha effetti positivi, semplificare le interrogazion
 Si parla di **join completo** se ogni tupla di ciascun operando contribuisce ad almeno una tupla del risultato.
 #### Descrivere brevemente perché il modello relazionale è anche detto modello 'basato su valori'
 Il modello relazionale viene definito basato su valori poiché, a differenza dei modelli logici precedenti come quello gerarchico o reticolare, le corrispondenze e i riferimenti tra i dati contenuti in relazioni diverse vengono rappresentati esclusivamente attraverso valori comuni che compaiono nelle tuple, senza l'impiego di puntatori espliciti o riferimenti a indirizzi fisici.
-### Si riporti la definizione formale di 2FN
+#### Si riporti la definizione formale di 2FN. Si fornisca dunque un esempio
+![[Pasted image 20260127154819.png]]
 
 ---
 ## Bullet list per svolgere tracce d'esame
