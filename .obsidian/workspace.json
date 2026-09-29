@@ -174,9 +174,9 @@
   },
   "left-ribbon": {
     "hiddenItems": {
+      "obsidian-git:Open Git source control": false,
       "switcher:Apri selettore rapido": false,
       "daily-notes:Apri nota giornaliera": false,
-      "obsidian-git:Open Git source control": false,
       "graph:Apri vista grafo": false,
       "templates:Inserisci modello": false,
       "command-palette:Apri riquadro comandi": false,
