@@ -11,12 +11,14 @@
             "id": "5306f1e7ff18e550",
             "type": "leaf",
             "state": {
-              "type": "pdf",
+              "type": "markdown",
               "state": {
-                "file": "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/ASD/1 - Algoritmi e Programmi.pdf"
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/Sistemi interattivi e interfacce.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-file-text",
-              "title": "1 - Algoritmi e Programmi"
+              "icon": "lucide-file",
+              "title": "Sistemi interattivi e interfacce"
             }
           }
         ]
@@ -78,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -156,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/ASD/1 - Algoritmi e Programmi.pdf",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/Sistemi interattivi e interfacce.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -170,7 +173,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -183,11 +187,12 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "ab83996f0563bfdd",
+  "active": "5306f1e7ff18e550",
   "lastOpenFiles": [
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Senza nome",
-    "Appunti definitivi/(AD) TerzoAnno - PrimoSemestre",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/ASD/1 - Algoritmi e Programmi.pdf",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/Sistemi interattivi e interfacce.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina",
+    "Appunti definitivi/(AD) TerzoAnno - PrimoSemestre",
     "Appunti definitivi/Senza nome.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/13 - Tecniche algoritmiche spazio di ricerca.md",
@@ -229,8 +234,6 @@
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Calcolo Numerico/EsameCovino",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Calcolo N.md",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Senza nome/Senza nome",
-    "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Calcolo Numerico",
-    "Appunti temporanei/(AT) SecondoAnno - SecondoSemestre/Ingegneria del software/9 - System design.md",
     "Senza nome.canvas"
   ]
 }
