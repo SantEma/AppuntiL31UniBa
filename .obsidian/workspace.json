@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1. Sistemi interattivi e interfacce.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1. Sistemi interattivi e interfacce"
+              "title": "1 - Introduzione"
             }
           }
         ]
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1. Sistemi interattivi e interfacce.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,8 +188,10 @@
   },
   "active": "5306f1e7ff18e550",
   "lastOpenFiles": [
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "README.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1. Sistemi interattivi e interfacce.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Senza nome.md",
@@ -229,7 +231,6 @@
     "Appunti temporanei/(AT) SecondoAnno - SecondoSemestre/Metodi Avanzati di Programmazione/1 - Paradigmi di Programmazione e Astrazione.md",
     "Appunti temporanei/(AT) SecondoAnno - SecondoSemestre/Ingegneria del software/3 - SCRUM.md",
     "Appunti temporanei/(AT) SecondoAnno - SecondoSemestre/Ingegneria del software/2 - Processi software e sviluppo agile.md",
-    "Appunti temporanei/(AT) SecondoAnno - SecondoSemestre/Ingegneria del software/1 - Introduzione all'ingegneria del software.md",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Metodi Avanzati di Programmazione/3.1 - (Slide Esempi) Prima Applicazione in Java SWING.pdf",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Metodi Avanzati di Programmazione/3.3 - (Slide Esempi) Esempi di componenti per il testo.pdf",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Calcolo Numerico/EsameCovino/COVINO ESAME DOMANDE.pdf",
