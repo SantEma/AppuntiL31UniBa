@@ -16,4 +16,6 @@ Questo punteggio di rilevanza viene assortito in maniera decrescente
 ### Tassonomia di modelli IR
 [da rivedere]
 ## Classi di Retrivial Models
-Esistono due classi principali dei Retrivial Models
+Esistono due classi principali dei Retrivial Models:
+- I **modelli booleani**, basati sulla teoria degli insiemi
+- **I modelli vettoriali**
