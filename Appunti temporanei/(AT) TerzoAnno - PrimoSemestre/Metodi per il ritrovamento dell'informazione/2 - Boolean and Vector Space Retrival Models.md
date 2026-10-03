@@ -9,3 +9,4 @@ Un modello IR è una quadrupla composta da:
 - Un insieme di documenti, indicato con $D$
 - Un insieme di query, espresse con $Q$
 - Un framework per modellarli i due precedenti 
+- Una funzione di classificazione che restituisce un punteggio di rilevanza sulla base 
