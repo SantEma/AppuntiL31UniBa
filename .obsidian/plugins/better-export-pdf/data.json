@@ -7,7 +7,7 @@
   "footerTemplate": "<div style=\"width: 100vw;font-size:10px;text-align:center;\"><span class=\"pageNumber\"></span> / <span class=\"totalPages\"></span></div>",
   "printBackground": false,
   "generateTaggedPDF": false,
-  "displayMetadata": false,
+  "displayMetadata": true,
   "debug": false,
   "isTimestamp": false,
   "enabledCss": false,
