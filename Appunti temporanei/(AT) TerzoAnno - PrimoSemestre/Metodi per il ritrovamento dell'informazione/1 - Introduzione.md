@@ -56,21 +56,22 @@ Le fasi del ciclo del processo KDD sono 5:
 
 ![[Pasted image 20261003170140.png]]
 
-Come si evince da questo esempio non c'è mai una garanzia del 100% ma da piccole conoscenze già presenti possiamo notare dei pattern tra diversi dati, creando correlazioni utili per l'azienda.
-
+> [!example] Esempio di Data Mining
+> ![[Pasted image 20261003170615.png]]
+> Come si evince da questo esempio non c'è mai una garanzia del 100% [ma di cosa?] ma da piccole conoscenze già presenti possiamo notare dei pattern tra diversi dati, creando correlazioni utili per l'azienda.
 ### Dal Data Mining al Text Mining
 Il **Text Mining** utilizza i principi del KDD sul testo a **linguaggio naturale**.
 L'obiettivo è quello di scavare tra mille testi diversi fino alla ricerca di pattern, trend e associazioni nascoste, così da costruire nuova conoscenza.
 
 >[!NOTES] Definizione Feldman e Dagan 1995
->Il *Text Data Mining* è l'estrazione non banale di informazioni implicite, precedentemente sconosciute e potenzialmente utili a partire da grandi quantità di dati testuali.
+>Il **Text Data Mining** è l'estrazione non banale di informazioni implicite, precedentemente sconosciute e potenzialmente utili a partire da grandi quantità di dati testuali.
 
 Espressa tramite la formula concettuale: $$\text{Text Mining}=\text{Data Mining (applicato al testo)}+\text{Linguistica di base}$$
 #### Processo di Text Mining
-![[Pasted image 20261001193541.png]]
+![[Pasted image 20261003170819.png]]
 
-Lo schema riportato sopra mostra l'**architettura** tipica di un sistema Text Mining, come si evince è basato su una **pipeline sequenziale**.
-Partendo dal **Testo Grezzo** si va all'**Analisi sintattica**, per poi andare nella fase di **Feature Generation** dove vengono create le *Bag of Words*.
+L'architettura tipica di un sistema Text Mining, come si evince dall'immagine è basato su una **pipeline sequenziale**.
+Partendo da un **testo grezzo** si va all'**analisi sintattica**, per poi andare nella fase di **Feature Generation** dove vengono create le Bag of Words.
 Dopo di che si eseguono i **filtri statistici** e in questa fase centrale vengono estratti i pattern, la loro estrazione avviene tramite tecniche di **classificazione** o di **clustering**, dopo di che vengono eseguiti i controlli dei pattern e per concludere, come abbiamo già visto, vengono poi **valutati i risultati**.
 ### Text Mining nell'Impresa
 In ambito aziendale è diventata una delle pratiche più importanti, poiché permette di comprendere opinioni, reclami, feedback, ecc... dei clienti in una società dove i clienti espongono le loro preferenze tramite **fonti testuali eterogenee** (email, ticket, siti web, social, comunicati stampa, ecc...).
