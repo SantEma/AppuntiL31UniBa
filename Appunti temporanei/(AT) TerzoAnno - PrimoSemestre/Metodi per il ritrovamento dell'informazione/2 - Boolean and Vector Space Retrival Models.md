@@ -24,5 +24,11 @@ Esistono due classi principali dei Retrivial Models:
 Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
 - Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
 - Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
-- I token vengono ridotti alla loro "radice", così che il recupero non dipenda da tempo verbale, numero
-  Questo passaggio può introdurre diversi errori come perdita di contesto
+- Si effettua lo **stemming**, ossia i token vengono ridotti alla loro "radice "(ad esempio $\text{computational}\to \text{compute}$). Questo passaggio può introdurre diversi errori come perdita di contesto, errori di punteggiatura, perdita del significato della radice o parole che vanno in conflitto con la radice stessa (ad esempio $\text{policies e police} → \text{polic}$)
+- Si tolgono le parole molto comuni e poco informative (chiamate **stepword**)
+- Si rilevano delle frasi comuni, eventualmente con un **dizionario specifico del dominio**
+- Si costruisce un **indice invertito**, dove ogni parola chiave viene associata alla lista dei documenti che la contengono
+
+### Modello booleano
+Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
+Le sue query sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi unione (AND), intersezione (OR), 
