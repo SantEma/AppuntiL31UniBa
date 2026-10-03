@@ -31,4 +31,4 @@ Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato segue
 
 ### Modello booleano
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
-Le sue query sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi unione (AND), intersezione (OR), 
+Le sue query sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), 
