@@ -20,4 +20,10 @@ Esistono due classi principali dei Retrivial Models:
 - **I modelli vettoriali**
 - **I modelli probabilistici**
 [da rivedere]
-### 
+### Step di pre-processing
+Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
+- Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
+- Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
+- I token vengono ridotti alla loro "radice", così che il recupero non dipenda da tempo verbale, numero
+  Questo passaggio può introdurre diversi errori come:
+	- 
