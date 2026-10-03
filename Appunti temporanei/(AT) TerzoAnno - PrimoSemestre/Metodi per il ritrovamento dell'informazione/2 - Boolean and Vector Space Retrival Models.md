@@ -25,5 +25,4 @@ Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato segue
 - Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
 - Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
 - I token vengono ridotti alla loro "radice", così che il recupero non dipenda da tempo verbale, numero
-  Questo passaggio può introdurre diversi errori come:
-	- 
+  Questo passaggio può introdurre diversi errori come perdita di contesto
