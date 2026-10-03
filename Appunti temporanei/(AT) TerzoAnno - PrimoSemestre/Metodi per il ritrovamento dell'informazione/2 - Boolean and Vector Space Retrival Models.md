@@ -19,3 +19,4 @@ Questo punteggio di rilevanza viene assortito in maniera decrescente
 Esistono due classi principali dei Retrivial Models:
 - I **modelli booleani**, basati sulla teoria degli insiemi
 - **I modelli vettoriali**
+- **I modelli probabilistici**
