@@ -49,3 +49,5 @@ Questi 3 tipi di complessità sono largamente indipendenti tra loro
 > Queste due dimensioni della complessità dei sistemi non sono necessariamente fra loro correlate: esistono sistemi internamente semplici ma funzionalmente complessi (per esempio, un temperino da tasca multi-uso, con il suo corredo di lame e di arnesi estraibili), ed esistono sistemi internamente complessi ma funzionalmente semplici. 
 > Per esempio, un orologio da parete: dentro è molto complicato, ma ha l’unico scopo di indicare l’ora. 
 > D’altro canto, la complessità interna genera spesso una certa complessità funzionale. Infatti, se un oggetto è internamente complesso, potrebbero verificarsi molti possibili malfunzionamenti di diverso tipo. Questi malfunzionamenti si renderanno, in ultima analisi, visibili all’utente, che dovrà intraprendere le opportune azioni correttive.
+
+L'interfaccia utente ha un ruolo molto importante nella filtrazione della complessità.

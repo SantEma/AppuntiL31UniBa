@@ -11,12 +11,14 @@
             "id": "1bea08385d98f63b",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004154708.png"
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20261004154708"
+              "icon": "lucide-file",
+              "title": "1 - Sistemi interattivi e interfacce d'uso"
             }
           }
         ]
@@ -156,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004154708.png",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -183,11 +185,11 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "ab83996f0563bfdd",
+  "active": "1bea08385d98f63b",
   "lastOpenFiles": [
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004154708.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004154637.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004154708.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261004153619.png",
