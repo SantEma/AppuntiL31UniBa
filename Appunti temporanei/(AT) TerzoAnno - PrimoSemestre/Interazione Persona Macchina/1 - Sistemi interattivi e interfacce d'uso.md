@@ -33,5 +33,20 @@ Il dialogo fra un utente e un sistema interattivo può essere realizzato attrave
 > ![[Pasted image 20261004153619.png]]
 > Da un lato, il sistema può utilizzare una varietà di dispositivi di output, i cui messaggi sono raccolti dai sensi dell’utente (vista, udito, tatto). Dall’altro, l’utente può governare il sistema utilizzando vari dispositivi di input: digitando i dati su tastiere o utilizzando dispositivi di manipolazione di vario tipo, la sua voce o, più raramente, lo sguardo o la postura del suo corpo.
 ## Le dimensioni di complessità
-I sistemi interattivi oggi possono essere molti complessi, con diversi aspetti di complessità specifica. Generalmente possiamo scomporre le dimensioni della complessità in 3 grandi classi:
-- **Complessità interna o strutturale**: 
+I sistemi interattivi oggi possono essere molti complessi, con diversi aspetti di complessità specifica. Generalmente possiamo scomporre le dimensioni della complessità in 3 grandi tipi:
+- **Complessità interna o strutturale**: Il sistema è composta da molti componenti che interagiscono fra loro in modo complicato
+- **Complessità esterna o funzionale**: Il sistema è destinato a supportare numerose attività
+- **Complessità d'uso**: Il sistema risulta più o meno facile da usare
+
+Questi 3 tipi di complessità sono largamente indipendenti tra loro
+
+> [!example] Esempio dei vari tipi di complessità
+> ![[Pasted image 20261004154637.png]]
+> Per esempio, un coltello da lancio è molto semplice, sia dal punto di vista interno che da quello funzionale: è composto soltanto da una lama e da un manico, e serve a un solo scopo, quello di colpire un bersaglio lontano. 
+> Una sega elettrica da boscaiolo è più complessa dal punto di vista interno, perché costituita da numerosi componenti fra loro interagenti: un motore, un meccanismo di trasmissione del movimento, due lame mobili, un interruttore. Mantiene tuttavia una relativa semplicità funzionale: il suo scopo è pur sempre quello di tagliare, anche se, data la complessità interna, deve permettere diompiere alcune semplici funzioni collaterali, quali per esempio l’avvio e l’arresto del motore. 
+> Infine, un iPhone, col suo ricco corredo di funzionalità, realizzate attraverso tecnologie sofisticate, è molto complesso sia funzionalmente sia strutturalmente.
+> Queste due dimensioni della complessità dei sistemi non sono necessariamente fra loro correlate: esistono sistemi internamente semplici ma funzionalmente complessi (per esempio, un temperino da tasca multi-uso, con il suo corredo di lame e di arnesi estraibili), ed esistono sistemi internamente complessi ma funzionalmente semplici. 
+> Per esempio, un orologio da parete: dentro è molto complicato, ma ha l’unico scopo di indicare l’ora. 
+> D’altro canto, la complessità interna genera spesso una certa complessità funzionale. Infatti, se un oggetto è internamente complesso, potrebbero verificarsi molti possibili malfunzionamenti di diverso tipo. Questi malfunzionamenti si renderanno, in ultima analisi, visibili all’utente, che dovrà intraprendere le opportune azioni correttive.
+
+> Contents
