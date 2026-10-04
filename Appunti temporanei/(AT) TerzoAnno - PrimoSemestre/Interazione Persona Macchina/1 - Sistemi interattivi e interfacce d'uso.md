@@ -33,4 +33,5 @@ Il dialogo fra un utente e un sistema interattivo può essere realizzato attrave
 > ![[Pasted image 20261004153619.png]]
 > Da un lato, il sistema può utilizzare una varietà di dispositivi di output, i cui messaggi sono raccolti dai sensi dell’utente (vista, udito, tatto). Dall’altro, l’utente può governare il sistema utilizzando vari dispositivi di input: digitando i dati su tastiere o utilizzando dispositivi di manipolazione di vario tipo, la sua voce o, più raramente, lo sguardo o la postura del suo corpo.
 ## Le dimensioni di complessità
-I sistemi interattivi oggi possono essere molti complessi, con diversi aspetti di complessità specifica. Generalmente la possiamo 
+I sistemi interattivi oggi possono essere molti complessi, con diversi aspetti di complessità specifica. Generalmente possiamo scomporre le dimensioni della complessità in 3 grandi classi:
+- **Complessità interna o strutturale**: 
