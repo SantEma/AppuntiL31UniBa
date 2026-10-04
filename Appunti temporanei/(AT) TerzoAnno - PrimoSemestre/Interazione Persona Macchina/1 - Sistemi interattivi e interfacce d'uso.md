@@ -10,7 +10,7 @@ L’utilizzo di questi sistemi non richiede più l’acquisizione di abilità ma
 > Per **sistema interattivo** intendiamo, in modo del tutto generale, qualsiasi “combinazione di componenti hardware e software che ricevono input da un utente umano, e gli forniscono un output, allo scopo di supportare l’effettuazione di un compito”. 
 > 
 
-Questa definizione proviene dallo **standard ISO** (nello specifico il 9241), un set di norme tecniche da seguire che vengono raccolte in dei documenti molto ampi e sempre in evoluzione.
+Questa definizione, insieme alle successive che vedremo, proviene dallo **standard ISO** (nello specifico il 9241), un set di norme tecniche da seguire che vengono raccolte in dei documenti molto ampi e sempre in evoluzione.
 ## Interfaccia d'uso
 > [!info] Definizione di interfaccia d'uso
 > Per **interfaccia d’uso** (o interfaccia utente, user interface) intendiamo l’insieme di “tutti i componenti di un sistema interattivo (software o hardware) che forniscono all’utente informazioni e comandi per permettergli di effettuare specifici compiti attraverso il sistema.”
