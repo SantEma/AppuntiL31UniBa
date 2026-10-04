@@ -42,11 +42,10 @@ Questi 3 tipi di complessità sono largamente indipendenti tra loro
 
 > [!example] Esempio dei vari tipi di complessità
 > ![[Pasted image 20261004154637.png]]
+> ![[Pasted image 20261004154708.png]]
 > Per esempio, un coltello da lancio è molto semplice, sia dal punto di vista interno che da quello funzionale: è composto soltanto da una lama e da un manico, e serve a un solo scopo, quello di colpire un bersaglio lontano. 
 > Una sega elettrica da boscaiolo è più complessa dal punto di vista interno, perché costituita da numerosi componenti fra loro interagenti: un motore, un meccanismo di trasmissione del movimento, due lame mobili, un interruttore. Mantiene tuttavia una relativa semplicità funzionale: il suo scopo è pur sempre quello di tagliare, anche se, data la complessità interna, deve permettere diompiere alcune semplici funzioni collaterali, quali per esempio l’avvio e l’arresto del motore. 
 > Infine, un iPhone, col suo ricco corredo di funzionalità, realizzate attraverso tecnologie sofisticate, è molto complesso sia funzionalmente sia strutturalmente.
 > Queste due dimensioni della complessità dei sistemi non sono necessariamente fra loro correlate: esistono sistemi internamente semplici ma funzionalmente complessi (per esempio, un temperino da tasca multi-uso, con il suo corredo di lame e di arnesi estraibili), ed esistono sistemi internamente complessi ma funzionalmente semplici. 
 > Per esempio, un orologio da parete: dentro è molto complicato, ma ha l’unico scopo di indicare l’ora. 
 > D’altro canto, la complessità interna genera spesso una certa complessità funzionale. Infatti, se un oggetto è internamente complesso, potrebbero verificarsi molti possibili malfunzionamenti di diverso tipo. Questi malfunzionamenti si renderanno, in ultima analisi, visibili all’utente, che dovrà intraprendere le opportune azioni correttive.
-
-> Contents
