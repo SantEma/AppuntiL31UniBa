@@ -41,4 +41,4 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 > Ogni termine ha così un **vettore di incidenza** 0/1.
 > 
 
-[Finire esempio, ci siamo fermati prima]
+[Finire esempio, ci siamo fermati qui]
