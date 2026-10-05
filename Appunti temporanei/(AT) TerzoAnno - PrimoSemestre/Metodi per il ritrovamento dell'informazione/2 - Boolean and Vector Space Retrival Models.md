@@ -13,7 +13,7 @@ Un modello IR è una quadrupla $[D,Q,F,R(q_{i}, d_{j})]$ composta da:
 
 Questo punteggio di rilevanza viene assortito generalmente in maniera decrescente 
 ### Tassonomia di modelli IR
-[da rivedere]
+Ci sono diversi modelli di ritrovamento, f
 ## Classi di Retrivial Models
 Esistono due classi principali dei Retrivial Models:
 - I **modelli booleani**, basati sulla teoria degli insiemi
