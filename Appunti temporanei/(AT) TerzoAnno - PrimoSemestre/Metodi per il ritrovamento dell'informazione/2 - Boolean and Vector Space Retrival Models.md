@@ -41,12 +41,13 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 > Ogni termine ha così un **vettore di incidenza** 0/1.
 > Con questa rappresentazione si perde comunque il numero di occorrenze all'interno dei documenti e l'ordine delle parole (posizioni)
 
-Questa rappresentazione spreca molto spazio nel generale
+Questa rappresentazione spreca molto spazio in generale
 #### Indice inverso
-[da finire]
+
 L'indice è invertito perchè in primis si inizia la ricerca dalla parola, non dal documento. Per ogni termine andiamo a memorizzare in una lista i documenti che lo contengono.
 
 ![[Pasted image 20261005163721.png]]
 
 La query, essendo sull'indice, diviene molto più leggera rispetto al contrario. 
 Il processo di analisi della collezione per la creazione dell'indice avviene soltanto una volta ma è molto laborioso.
+[da finire]
