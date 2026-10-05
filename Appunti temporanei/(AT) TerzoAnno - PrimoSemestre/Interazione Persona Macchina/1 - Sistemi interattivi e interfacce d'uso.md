@@ -64,3 +64,13 @@ Questa evoluzione frenetica è alimentata da una serie complessa di cicli di fee
 > L'interfaccia utente ha un ruolo molto importante nella **filtrazione della complessità**.
 > Una buona interfaccia deve presentare all’utente un’immagine semplificata del prodotto e congruente con i compiti che  deve svolgere.
 > Una buona interfaccia non solo nasconde la complessità interna del sistema, ma ne riduce la complessità funzionale, mettendo a disposizione dell’utente funzioni di più alto livello, in grado di effettuare compitcomplessi con un grado di automatismo maggiore. Ciò viene realizzato integrando numerose funzionalità semplici in funzionalità più potenti, con il risultato di semplificare il dialogo fra l’utente e il sistema.
+#### Human-Computer Interaction
+Questo nuovo ruolo dell’interfaccia, che da strumento di controllo diviene strumento di semplificazione, assume
+importanza rilevante con la diffusione dei prodotti tecnologici sui mercati di massa, e in particolare dei personal computer, a partire dai primi anni ’80 del secolo scorso. 
+
+
+Proprio in quegli anni nasce allora una disciplina nuova, subito denominata **Human-Computer Interaction**
+indicata con la sigla HCI).
+
+> [!info] Definizione di HCI
+> HCI è una disciplina che si occupa della progettazione, valutazione e realizzazione di sistemi interattivi basati su computer destinati all’uso umano e dello studio dei principali fenomeni che li circondano
