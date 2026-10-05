@@ -85,13 +85,11 @@ indicata con la sigla HCI).
 > 
 > Oggi, gli argomenti principali considerati dalla disciplina della HCI, secondo Wikipedia, sono i seguenti:
 > - Metodologie e processi per la progettazione delle interfacce;
-> - tecniche per l’implementazione delle interfacce (per esempio, algoritmi, strumenti e librerie software); 
-•
-•
-•
+> - Tecniche per l’implementazione delle interfacce (per esempio, algoritmi, strumenti e librerie software);
+> - Tecniche per valutare e confrontare le interfacce
+> - Sviluppo di nuove interfacce e di nuove tecniche di interazione
+> - Sviluppo di modelli descrittivi e previsionali, e di teorie dell’interazione. 
 
 
-tecniche per valutare e confrontare le interfacce;
-sviluppo di nuove interfacce e di nuove tecniche di interazione;
-sviluppo di modelli descrittivi e previsionali, e di teorie dell’interazione.
+
 
