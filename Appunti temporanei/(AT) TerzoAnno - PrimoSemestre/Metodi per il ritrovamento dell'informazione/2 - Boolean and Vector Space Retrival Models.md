@@ -44,6 +44,6 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 Questa rappresentazione spreca molto spazio nel generale
 #### Indice inverso
 [da finire]
+L'indice è invertito perchè in primis si inizia la ricerca dalla parola, non dal documento. Per ogni termine andiamo a memorizzare in una lista i documenti che lo contengono.
 
-
-
+![[Pasted image 20261005163721.png]]
