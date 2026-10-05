@@ -68,13 +68,17 @@ Questa evoluzione frenetica è alimentata da una serie complessa di cicli di fee
 Questo nuovo ruolo dell’interfaccia, che da strumento di controllo diviene strumento di semplificazione, assume
 importanza rilevante con la diffusione dei prodotti tecnologici sui mercati di massa, e in particolare dei personal computer, a partire dai primi anni ’80 del secolo scorso. 
 
-
 Proprio in quegli anni nasce allora una disciplina nuova, subito denominata **Human-Computer Interaction**
 indicata con la sigla HCI).
 
 > [!info] Definizione di HCI
 > HCI è una disciplina che si occupa della progettazione, valutazione e realizzazione di sistemi interattivi basati su computer destinati all’uso umano e dello studio dei principali fenomeni che li circondano
 
-> [!info] Definizione AMPIA di HCI
+> [!info] Definizione ampia di HCI
 > L'HCI è una definizione molto ampia che si colloca tra molte discipline, infatti il documento SIGCHI recita:
+> 
 > L'HCI nel suo complesso è un'area interdisciplinare. Sta emergendo come una specializzazione all'interno di parecchie discipline, con enfasi differenti: la scienza dei computer (la progettazione delle applicazioni e l'ingegnerizzazione delle interfacce umane), la psicologia (l'applicazione delle teorie dei processi cognitivi e l'analisi empirica dei comportamenti degli utenti), la sociologia e l'antropologia (le interazioni fra la tecnologia, il lavoro e l'organizzazione), e l'industrial design (i prodotti interattivi)
+
+
+> [!info] Origine della HCI e argomenti principali della HCI
+> Contents
