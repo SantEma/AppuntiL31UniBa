@@ -9,7 +9,7 @@ Un modello IR è una quadrupla $[D,Q,F,R(q_{i}, d_{j})]$ composta da:
 - Un insieme di documenti, indicato con $D$
 - Un insieme di query, espresse con $Q$
 - Un framework per modellarli i due precedenti, indicato con $F$
-- Una funzione di classificazione che restituisce un punteggio di rilevanza, calcolati prendendo in considerazione sia l'insieme dei documenti e query, indicato con $R(q_{i}, d_{j})$
+- Una funzione di ritrovamento che restituisce un punteggio di rilevanza, calcolati prendendo in considerazione sia l'insieme dei documenti e query, indicato con $R(q_{i}, d_{j})$
 
 Questo punteggio di rilevanza viene assortito generalmente in maniera decrescente 
 ### Tassonomia di modelli IR
@@ -33,7 +33,6 @@ Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato segue
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito
 L'**output** che questo modello produce è binario, ossia il documento è rilevante oppure no, non includendo quindi match parziali o ranking.
-
 
 > [!example] Esempio di matrice di incidenza
 > ![[Pasted image 20261003190722.png]]
