@@ -39,7 +39,7 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 > ![[Pasted image 20261003190722.png]]
 > In questo esempio si costruisce una **matrice termine-documento** in cui ogni cella vale 1 se l'opera contiene la parola, altrimenti vale 0 . 
 > Ogni termine ha così un **vettore di incidenza** 0/1.
-> Non si hanno riscontri su sinonimi.
+> 
 
 
 
