@@ -34,7 +34,7 @@ Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito
 L'**output** che questo modello produce è binario, ossia il documento è rilevante oppure no, non includendo quindi match parziali o ranking (frequenza di quel termine).
-
+#### Matrice di incidenza
 > [!example] Esempio di matrice di incidenza
 > ![[Pasted image 20261003190722.png]]
 > In questo esempio si costruisce una **matrice termine-documento** in cui ogni cella vale 1 se l'opera contiene la parola, altrimenti vale 0 . 
