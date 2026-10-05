@@ -50,9 +50,17 @@ Questi 3 tipi di complessità sono largamente indipendenti tra loro
 > Per esempio, un orologio da parete: dentro è molto complicato, ma ha l’unico scopo di indicare l’ora. 
 > D’altro canto, la complessità interna genera spesso una certa complessità funzionale. Infatti, se un oggetto è internamente complesso, potrebbero verificarsi molti possibili malfunzionamenti di diverso tipo. Questi malfunzionamenti si renderanno, in ultima analisi, visibili all’utente, che dovrà intraprendere le opportune azioni correttive.
 ### Velocità del cambiamento
+L'uso dei prodotti tecnologici richiede competenze che diventano rapidamente obsolete, costringendo gli utenti a modificare di continuo le proprie abitudini per imparare a usare le nuove generazioni di strumenti. Questa forte accelerazione è spesso subita in modo drammatico, specialmente dalle persone più anziane.
+
+Questa evoluzione frenetica è alimentata da una serie complessa di cicli di feedback e fattori concomitanti:
+- **Bisogni e nuove tecnologie:** I bisogni degli utenti fanno nascere nuovi prodotti che, a loro volta, inducono ulteriori bisogni. Allo stesso tempo, la tecnologia offre continuamente nuove possibilità che stimolano l'innovazione dei prodotti.
+- **Evoluzione dell'hardware e obsolescenza programmata:** Grazie alla Legge di Moore, la crescita esponenziale delle prestazioni dei processori e la diminuzione dei costi hanno portato a un'obsolescenza rapidissima degli apparecchi.
+- **Competizione di mercato:** La forte concorrenza obbliga i produttori a rilasciare versioni sempre più sofisticate per superare i rivali e per alimentare il mercato di sostituzione, mantenendo così i propri ricavi.
+- **L'ecosistema tecnologico:** I prodotti informatici vivono in un ecosistema in cui hardware, software e standard si condizionano a vicenda e sono costretti a una continua e rapida co-evoluzione per mantenere la compatibilità.
+- **Evoluzione combinatoria:** La tecnologia crea se stessa, poiché le nuove tecnologie diventano i "building block" (blocchi di costruzione) per elaborare tecnologie e soluzioni ancora più complesse in un processo che si autoalimenta costantemente.
 ### Ruolo di interfaccia utente
 > [!info] Ruolo di un interfaccia utente rispetto alla complessità
 > ![[Pasted image 20261004172502.png]]
-> L'interfaccia utente ha un ruolo molto importante nella filtrazione della complessità.
+> L'interfaccia utente ha un ruolo molto importante nella **filtrazione della complessità**.
 > Una buona interfaccia deve presentare all’utente un’immagine semplificata del prodotto e congruente con i compiti che  deve svolgere.
 > Una buona interfaccia non solo nasconde la complessità interna del sistema, ma ne riduce la complessità funzionale, mettendo a disposizione dell’utente funzioni di più alto livello, in grado di effettuare compitcomplessi con un grado di automatismo maggiore. Ciò viene realizzato integrando numerose funzionalità semplici in funzionalità più potenti, con il risultato di semplificare il dialogo fra l’utente e il sistema.
