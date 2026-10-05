@@ -13,22 +13,23 @@ Un modello IR è una quadrupla $[D,Q,F,R(q_{i}, d_{j})]$ composta da:
 
 Questo punteggio di rilevanza viene assortito generalmente in maniera decrescente 
 ### Tassonomia di modelli IR
-Ci sono diversi modelli di ritrovamento, f
+Ci sono diversi modelli di ritrovamento, fondamentalmente il corso verrà basato su dati non strutturati (come i normali documenti).
+Alcuni modelli di ritrovamento lavorano anche sui link (documenti legati ad altri documenti)
+Altri lavorano anche su immagini, video, audio...
+![[Pasted image 20261005161158.png]]
 ## Classi di Retrivial Models
 Esistono due classi principali dei Retrivial Models:
 - I **modelli booleani**, basati sulla teoria degli insiemi
 - **I modelli vettoriali**
-- **I modelli probabilistici**
-[da rivedere]
+- **I modelli probabilistici** (Language Models)
 ### Step di pre-processing
-Prima di indicizzare i documenti, il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
+Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
 - Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
 - Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
 - Si effettua lo **stemming**, ossia i token vengono ridotti alla loro "radice "(ad esempio $\text{computational}\to \text{compute}$). Questo passaggio può introdurre diversi errori come perdita di contesto, errori di punteggiatura, perdita del significato della radice o parole che vanno in conflitto con la radice stessa (ad esempio $\text{policies e police} → \text{polic}$)
 - Si tolgono le parole molto comuni e poco informative (chiamate **stepword**)
 - Si rilevano delle frasi comuni, eventualmente con un **dizionario specifico del dominio**
 - Si costruisce un **indice invertito**, dove ogni parola chiave viene associata alla lista dei documenti che la contengono
-
 ### Modello booleano
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito
