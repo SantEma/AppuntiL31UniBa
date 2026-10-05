@@ -81,7 +81,7 @@ indicata con la sigla HCI).
 
 
 > [!info] Origine della HCI e argomenti principali della HCI
-> Questa disciplina, seppur nuova, non nasceva dal nulla. Da un lato, infatti, faceva riferimento all’ergonomia, la scienza sviluppata, soprattutto a partire dagli anni successivi alla seconda guerra mondiale, per studiare il fit fra le persone e il loro ambiente di lavoro. Dall’altro, s’ispirava alle idee di alcuni pionieri dell’informatica, che già dagli anni 60 avevano iniziato a studiare nuove e più strette modalità di interazione fra uomo e calcolatore.
+> Questa disciplina, seppur nuova, non nasceva dal nulla. Da un lato, infatti, faceva riferimento all’ergonomia, la scienza sviluppata, soprattutto a partire dagli anni successivi alla seconda guerra mondiale, per studiare il "fit" fra le persone e il loro ambiente di lavoro. Dall’altro, s’ispirava alle idee di alcuni pionieri dell’informatica, che già dagli anni 60 avevano iniziato a studiare nuove e più strette modalità di interazione fra uomo e calcolatore.
 > 
 > Oggi, gli argomenti principali considerati dalla disciplina della HCI, secondo Wikipedia, sono i seguenti:
 > - Metodologie e processi per la progettazione delle interfacce;
