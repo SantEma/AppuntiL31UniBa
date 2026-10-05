@@ -17,6 +17,12 @@ Esistono diversi standard ISO sull'usabilità:
 - **ISO/IEC 25023**: misura della qualità del sistema e del prodotto software (include le misure degli attributi di usabilità), in sostituzione di ISO/IEC TR 9126-2 e 9126-3.
 
 Quella più interessante per noi è l'ISO 9241-11:
-
 > [!info] Definizione di usabilità secondo 9241-11
 >L'usabilità è la misura in cui un prodotto può essere usato da specifici utenti per raggiungere specifici obiettivi con efficacia, efficienza e soddisfazione in uno specifico contesto d'uso.
+
+Ma esistono anche altri standard ISO attualmente importanti
+#### ISO 9126
+Lo standard ISO 9126-1 (_Information Technology, Software Product Quality_) sottolinea l'importanza di progettare per la qualità, intesa come capacità interna ed esterna del prodotto di supportare il raggiungimento degli obiettivi degli utenti e delle loro organizzazioni. L'usabilità è definita come la capacità del prodotto software di essere compreso, appreso, usato e di risultare attraente per l'utente, in condizioni specificate.
+
+> [!example] Schema dell'ISO 9126
+> ![[Pasted image 20261005142147.png]]
