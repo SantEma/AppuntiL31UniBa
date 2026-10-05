@@ -43,7 +43,6 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 
 Questa rappresentazione spreca molto spazio in generale
 #### Indice inverso
-
 L'indice è invertito perchè in primis si inizia la ricerca dalla parola, non dal documento. Per ogni termine andiamo a memorizzare in una lista i documenti che lo contengono.
 
 ![[Pasted image 20261005163721.png]]
@@ -51,3 +50,11 @@ L'indice è invertito perchè in primis si inizia la ricerca dalla parola, non d
 La query, essendo sull'indice, diviene molto più leggera rispetto al contrario. 
 Il processo di analisi della collezione per la creazione dell'indice avviene soltanto una volta ma è molto laborioso.
 [da finire]
+##### Costruzione dell'indice inverso
+[da finire]
+##### Step dell'indexer
+[da finire]
+
+#### Match esatto
+
+#### Problemi del modello booleano
