@@ -13,7 +13,7 @@ Un modello IR è una quadrupla $[D,Q,F,R(q_{i}, d_{j})]$ composta da:
 
 Questo punteggio di rilevanza viene assortito generalmente in maniera decrescente 
 ### Tassonomia di modelli IR
-Ci sono diversi modelli di ritrovamento, fondamentalmente il corso verrà basato su dati non strutturati (come i normali documenti).
+Ci sono diversi modelli di ritrovamento, ma andremo a trattare dati non strutturati (come i normali documenti).
 Alcuni modelli di ritrovamento lavorano anche sui link (documenti legati ad altri documenti)
 Altri lavorano anche su immagini, video, audio...
 ![[Pasted image 20261005161158.png]]
@@ -56,7 +56,6 @@ Il processo di analisi della collezione per la creazione dell'indice avviene sol
 [da finire]
 #### Match esatto
 Il modello booleano è un modello che funziona secondo diverse funzioni
-
 [riguardare questa parte]
 #### Problemi del modello booleano
 L'estrema semplicità di questo modello porta dei problemi:
@@ -65,4 +64,6 @@ L'estrema semplicità di questo modello porta dei problemi:
 - È difficile il controllo del numero dei documenti [da rivedere]
 - [da rivedere]
 - [da rivedere]
+
+
 
