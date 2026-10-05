@@ -54,7 +54,15 @@ Il processo di analisi della collezione per la creazione dell'indice avviene sol
 [da finire]
 ##### Step dell'indexer
 [da finire]
-
 #### Match esatto
+Il modello booleano è un modello che funziona secondo diverse funzioni
 
+[riguardare questa parte]
 #### Problemi del modello booleano
+L'estrema semplicità di questo modello porta dei problemi:
+- **È rigido**: l'operazione potrebbe avere pochi o troppi risultati
+- È difficile utilizzare gli operatori booleani per esprimere richieste complesse
+- È difficile il controllo del numero dei documenti [da rivedere]
+- [da rivedere]
+- [da rivedere]
+
