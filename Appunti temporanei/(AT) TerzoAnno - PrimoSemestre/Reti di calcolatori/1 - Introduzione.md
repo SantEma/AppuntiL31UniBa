@@ -54,4 +54,4 @@ La maggior parte dei commutatori di pacchetto utilizza la trasmissione store-and
 > [!example] Esempio di trasmissione store and forward
 > ![[Pasted image 20261006193844.png]]
 
-In generale qui
+In generale quindi, queste reti a c
