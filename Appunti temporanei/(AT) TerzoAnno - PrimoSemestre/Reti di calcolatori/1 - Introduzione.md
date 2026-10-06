@@ -25,6 +25,10 @@ Una soluzione veramente scalabile è il **collegamento indiretto**: i nodi perif
 #### Reti commutate
 In una rete commutata, è necessario quindi che un unico collegamento fisico possa supportare la condivisione di più flussi di informazioni.
 
-Ogni rete commutata trasporta, da ogni applicazione distribuita, dei messaggi definiti tramite dei **protocolli** (la maniera quindi in cui ci si comunica), spezzati poi in diversi **pacchetti**
+ Per spostare i dati in una rete di collegamenti e commutatori esistono due approcci fondamentali: **la commutazione di circuito** e la **commutazione di pacchetto**.
+ 
+ La commutazione a pacchetto prevede che ogni rete commutata trasporti, da ogni applicazione distribuita, dei messaggi definiti tramite dei **protocolli** (la maniera quindi in cui ci si comunica), spezzati poi in diversi **pacchetti**.
 
-Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e commutatori di pacchetto (di cui, ricordiamo, esistono due tipi principali: i router e i commutatori a livello di collegamento). I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di L bit su un canale con velocità di R bps, il tempo di trasmissione risulta pari a L/R secondi.
+Nella **commutazione a circuito**, le risorse (fascia di frequenza o slot temporale, vengono riservate lungo l'intero percorso prima della trasmissione.
+
+Un circuito all’interno di un collegamento è implementato tramite **multiplexing a divisione di frequenza (FDM, frequency-division multiplexing) o multiplexing a divisione di tempo (TDM, time-division multiplexing).** Con FDM, lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento. 
