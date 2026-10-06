@@ -31,4 +31,18 @@ In una rete commutata, è necessario quindi che un unico collegamento fisico pos
 
 Nella **commutazione a circuito**, le risorse (fascia di frequenza o slot temporale, vengono riservate lungo l'intero percorso prima della trasmissione.
 
-Un circuito all’interno di un collegamento è implementato tramite **multiplexing a divisione di frequenza (FDM, frequency-division multiplexing) o multiplexing a divisione di tempo (TDM, time-division multiplexing).** Con FDM, lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento. 
+Un circuito all’interno di un collegamento è implementato tramite **multiplexing a divisione di frequenza (FDM, frequency-division multiplexing) o multiplexing a divisione di tempo (TDM, time-division multiplexing).** Con FDM, lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento.Per un collegamento TDM il tempo viene suddiviso in frame (intervalli) di durata fissa, a loro volta ripartiti in un numero fisso di slot (porzioni) temporali.
+
+> [!example] FDM vs TDM
+> ![[Pasted image 20261006192732.png]]
+#### Reti a commutazione di circuito
+Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Sono basate su FDM, TDM o WDM
+
+In queste reti, la comunicazione avviene in tre fasi fondamentali:
+- **Instaurazione della connessione** (allocazione delle risorse lungo un percorso dal mittente al ricevitore) 
+- **Trasferimento dati** (tutti i dati in una connessione utilizzano le risorse allocate lungo il percorso) 
+- **Chiusura della connessione** (rilascio delle risorse)
+
+La trasmissione di dati all'interno di queste reti è continua e costante e permette di non avere conflitti di risorse (poichè vengono bloccate prima, durante l'instaurazione).
+
+Questa è la tecnologia
