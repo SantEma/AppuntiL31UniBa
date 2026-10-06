@@ -27,7 +27,7 @@ In una rete commutata, è necessario quindi che un unico collegamento fisico pos
 
  Per spostare i dati in una rete di collegamenti e commutatori esistono due approcci fondamentali: **la commutazione di circuito** e la **commutazione di pacchetto**.
  
- La commutazione a pacchetto prevede che ogni rete commutata trasporti, da ogni applicazione distribuita, dei messaggi definiti tramite dei **protocolli** (la maniera quindi in cui ci si comunica), spezzati poi in diversi **pacchetti**.
+La commutazione a pacchetto prevede che ogni rete commutata trasporti, da ogni applicazione distribuita, dei messaggi definiti tramite dei **protocolli** (la maniera quindi in cui ci si comunica), spezzati poi in diversi **pacchetti**.
 
 Nella **commutazione a circuito**, le risorse (fascia di frequenza o slot temporale, vengono riservate lungo l'intero percorso prima della trasmissione.
 
@@ -45,6 +45,13 @@ In queste reti, la comunicazione avviene in tre fasi fondamentali:
 
 La trasmissione di dati all'interno di queste reti è continua e costante e permette di non avere conflitti di risorse (poichè vengono bloccate prima, durante l'instaurazione).
 
+> [!example] Esempio di rete a commutatore di pacchetto
+> ![[Pasted image 20261006193343.png]]
 
-> [!example] Esempio di rete a commutatore di pacc
-> Contents
+#### Reti a commutatori di pacchetto
+La maggior parte dei commutatori di pacchetto utilizza la trasmissione store-and-forward. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
+
+> [!example] Esempio di trasmissione store and forward
+> ![[Pasted image 20261006193844.png]]
+
+In generale qui
