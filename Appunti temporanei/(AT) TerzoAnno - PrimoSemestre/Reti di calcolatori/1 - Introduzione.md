@@ -1,2 +1,1 @@
-Internet è una rete di calcolatori che interconnette miliardi di dispositivi di cal-
-colo in tutto il mondo.
+Internet è una rete di calcolatori che interconnette miliardi di dispositivi di calcolo in tutto il mondo.
