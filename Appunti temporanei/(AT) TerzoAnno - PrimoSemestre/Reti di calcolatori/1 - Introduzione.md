@@ -49,9 +49,11 @@ La trasmissione di dati all'interno di queste reti è continua e costante e perm
 > ![[Pasted image 20261006193343.png]]
 
 #### Reti a commutatori di pacchetto
+Le reti a commutatori di pacchetto utilizzano la multiplazione statistica TDM, non allconando nessuna risorsa in modo esclusivo. 
+
 La maggior parte dei commutatori di pacchetto utilizza la trasmissione store-and-forward. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
 
 > [!example] Esempio di trasmissione store and forward
 > ![[Pasted image 20261006193844.png]]
 
-In generale quindi, queste reti a c
+Ci sono due tipi di reti
