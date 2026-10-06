@@ -52,3 +52,4 @@ Comprendere le persone nei contesti in cui vivono, lavorano e apprendono è fond
 > Uno strumento di pianificazione collaborativa per una **missione spaziale** avrà esigenze completamente diverse da uno strumento per clienti e agenti di vendita in un **negozio di arredamento**, pur essendo entrambi "strumenti collaborativi".
 
 Ciò che funziona per un gruppo di utenti può essere del tutto inappropriato per un altro: i prodotti interattivi vanno progettati **diversamente per tipi diversi di utenti**.
+[da finire, slide 34]
