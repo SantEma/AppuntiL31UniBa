@@ -1,1 +1,3 @@
-Internet, nella sua sostanza, è una rete di calcolatori che interconnette miliardi di dispositivi di calcolo in tutto il mondo.
+Internet può essere descritta in due modi:
+- In termini di componenti hardware e software che la compongono
+- In termini di infrastruttura di rete che fornisce servizi e applicazioni distribuite
