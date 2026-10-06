@@ -16,4 +16,4 @@ Per i collegamenti, esistono diverse tipologie (a stella, bus, anello) ma si con
 Esistono due tipologie di collegamenti diretti:
 - **Reti PtP (Point To Point, punto a punto)**: ogni coppia di calcolatori è connessa da un link dedicato. Per $N$ calcolatori da interconnettere, servono $\frac{(N^{2} - N)}2$ collegamenti, rendendola una soluzione che non scala. 
     ![[Pasted image 20261006171035.png]]
-- Reti **ad accesso multiplo**
+- **Reti ad accesso multiplo**: un solo canale condiviso da tutti che costringe a gestire la contesa su chi trasmette
