@@ -81,13 +81,17 @@ Nel modello di reperimento booleano la sequenza operativa è quindi:
 L'estrema semplicità di questo modello, però, porta dei problemi:
 - **L'operatore di intersezione è fin troppo restrittivo**, basta che manchi una sola parola chiave per escludere un documento, con il rischio di restituire zero risultati.
 - **È difficile utilizzare gli operatori booleani per esprimere richieste complesse**, infatti l'operatore di unione allarga eccessivamente la ricerca includendo qualsiasi documento contenga anche solo uno dei termini.
-- È difficile sapere con certezza che la query formulata dall'utente sia corretta sintatticamente
+- **È difficile sapere con certezza che la query formulata dall'utente sia corretta sintatticamente**
 - **I documenti restituiti dalle query non hanno un ordine di pertinenza**. Se l'utente vuole consultare i primi 10 risultati, il sistema non può indicare quali siano i migliori, poiché tutti i documenti estratti hanno esattamente lo stesso peso
-- **Il modello fatica ad adattarsi al comportamento dell'utente**. Non essendoci pesi o punteggi ma solo risposte **binarie** (vero/falso), il motore non può correggere o riordinare facilmente i risultati in base a quali documenti sono stati aperti o preferiti nelle ricerche precedenti.
+- **Il modello fatica ad adattarsi al comportamento dell'utente**, non essendoci pesi o punteggi ma solo risposte **binarie** (vero/falso), il motore non può correggere o riordinare facilmente i risultati in base a quali documenti sono stati aperti o preferiti nelle ricerche precedenti.
 ## Pre-processing steps
 Durante la fase di **pre-processing** non esistono regole universali prefissate: spetta infatti al progettista definire strategie consapevoli in base allo scopo dell'applicazione e alla natura dei dati da trattare, gestendo con attenzione i diversi casi limite.
 
-Una delle prime decisioni riguarda la definizione stessa dell'unità di documento (**document unit**). Nel caso emblematico di un'email con allegati, ad esempio, bisogna scegliere se indicizzare l'intero messaggio come un unico blocco oppure trattare il corpo del testo e i vari allegati come documenti distinti. 
+ Una delle prime decisioni riguarda la definizione stessa dell'unità di documento (**document unit**). 
+ 
+> [!example] Esempio di un e-mail
+>Nel caso emblematico di un'email con allegati, ad esempio, bisogna scegliere se indicizzare l'intero messaggio come un unico blocco oppure trattare il corpo del testo e i vari allegati come documenti distinti. 
+
 La questione si complica ulteriormente in presenza di **collezioni multi-lingua**, dove il messaggio principale potrebbe essere redatto in una lingua e l'allegato in un'altra.
 
 Per rilevare automaticamente l'**idioma** di un testo, una tecnica **euristica** diffusa consiste nell'analizzare la **frequenza degli articoli**.
