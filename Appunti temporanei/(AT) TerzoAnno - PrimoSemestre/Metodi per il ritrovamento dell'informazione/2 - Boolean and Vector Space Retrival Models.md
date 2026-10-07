@@ -17,7 +17,7 @@ Accanto ai modelli puramente testuali, esistono modelli che integrano l'analisi 
 
 I modelli di reperimento differiscono per architettura e algoritmi, ma condividono tutti il medesimo ciclo di vita: una fase preliminare di elaborazione e indicizzazione della collezione, seguita dalla fase di ricerca e ranking a fronte della query dell'utente
 ![[Pasted image 20261005161158.png]]
-### Step di pre-processing
+### Step di pre-processing (DA DECIDERE SE ELIMINARE O MENO)
 Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
 - Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
 - Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
@@ -43,7 +43,9 @@ L'indice è invertito memorizza **esclusivamente le presenze effettive**, associ
 Si compone di due elementi:
 1. **Vocabolario / Dictionary**: l'elenco ordinato di tutti i termini unici estratti dalla collezione.
 2. **Posting List**: per ciascun termine, la lista ordinata dei documenti identificati tramite `docID` in cui il termine compare. Ciascun elemento della lista è detto **posting**.
-![[Pasted image 20261005163721.png]]
+
+> [!example] Esempio dei due elementi
+> ![[Pasted image 20261005163721.png]]
 
 Le interrogazioni booleane si risolvono eseguendo operazioni insiemistiche direttamente sulle posting list. Quando nuovi documenti vengono aggiunti o modificati, non è necessario riprocessare l'intero corpus, ma è sufficiente aggiornare le posting list corrispondenti ai documenti coinvolti.
 ##### Costruzione dell'indice inverso
@@ -53,20 +55,35 @@ Successivamente, la lista globale di tutte le coppie estratte viene **ordinata a
 
 I termini duplicati vengono raggruppati: per ciascun termine unico del vocabolario viene generata la corrispondente **posting list** con i relativi `docID`, memorizzando anche la **document frequency** (df), ovvero la cardinalità della lista (il numero totale di documenti che contengono quel termine). Vengono salvati in **Lemma**, poiché molte parole possono essere singolari-plurali / maschile-femminile.
 ![[Pasted image 20261005170510.png]]
+##### Vantaggi dell'ordinamento per la ricerca
+- **Ricerca binaria nel vocabolario**: poiché i termini nel dizionario sono ordinati in modo **lessicografico**, la localizzazione di una parola non richiede una scansione lineare, ma può essere effettuata con una ricerca binaria o tramite alberi in tempo logaritmico.
+- **Intersezione efficiente (Posting Merge)**: poiché le posting list sono mantenute rigorosamente ordinate per `docID` crescente, l'intersezione tra due liste per una query `AND` (aventi rispettivamente lunghezza $x$ e $y$) viene risolta tramite un algoritmo di scansione a due puntatori (merge) in tempo lineare, senza scorrere la collezione.
+##### Algoritmo di merge delle posting list
+![[Pasted image 20261006162409.png|354]]
 
-##### Step dell'indexer
-[da finire]
-#### Match esatto
-Il modello booleano è un modello che funziona secondo diverse funzioni
-[riguardare questa parte]
+L'algoritmo confronta due liste muovendo due puntatori, $p_1$ e $p_2$:
+- **Corrispondenza**: se i due puntatori puntano allo stesso `docID`, abbiamo trovato una corrispondenza. L'ID viene salvato nella lista dei risultati (`answer`) e si fanno avanzare entrambi i puntatori per passare ai documenti successivi.
+- **Differenza**: se i valori non coincidono, si fa avanzare il puntatore che ha il valore minore:
+  - se $\text{docID}(p_1) < \text{docID}(p_2)$, si incrementa $p_1$;
+  - se $\text{docID}(p_1) > \text{docID}(p_2)$, si incrementa $p_2$.
+
+Possiamo riprendere l'esempio delle liste di Bruto e Cesare: se per Bruto il valore iniziale è $2$ e per Cesare è $1$, si incrementa il puntatore di Cesare ($p_2$) perché è più piccolo, allineandolo così al valore successivo. 
+Il ciclo continua finché uno dei due puntatori arriva alla fine della propria lista (`null`): a quel punto l'algoritmo si ferma, poiché è impossibile trovare altri documenti in comune.
+#### Efficenza delle query
+In un motore di ricerca, le query troppo lunghe o cariche di termini **non sono efficienti**. Una ricerca con troppe parole complica le operazioni di intersezione, allunga i tempi di risposta e spesso **peggiora** la qualità del risultato finale anziché migliorarlo.
+
+Nel modello di reperimento booleano la sequenza operativa è quindi:
+1. **Processare i documenti** (pulizia e normalizzazione iniziale del testo)
+2. **Creare le posting list**
+3. **Costruire l'indice invertito**
+4. **Lavorare ed eseguire le query direttamente sull'indice**
 #### Problemi del modello booleano
-L'estrema semplicità di questo modello porta dei problemi:
-- **È rigido**: l'operazione potrebbe avere pochi o troppi risultati
-- È difficile utilizzare gli operatori booleani per esprimere richieste complesse
-- È difficile il controllo del numero dei documenti [da rivedere]
-- [da rivedere]
-- [da rivedere]
-
+L'estrema semplicità di questo modello, però, porta dei problemi:
+- **L'operatore di intersezione è fin troppo restrittivo**, basta che manchi una sola parola chiave per escludere un documento, con il rischio di restituire zero risultati.
+- **È difficile utilizzare gli operatori booleani per esprimere richieste complesse**, infatti l'operatore di unione allarga eccessivamente la ricerca includendo qualsiasi documento contenga anche solo uno dei termini.
+- È difficile sapere con certezza che la query formulata dall'utente sia corretta sintatticamente
+- **I documenti restituiti dalle query non hanno un ordine di pertinenza**. Se l'utente vuole consultare i primi 10 risultati, il sistema non può indicare quali siano i migliori, poiché tutti i documenti estratti hanno esattamente lo stesso peso
+- **Il modello fatica ad adattarsi al comportamento dell'utente**. Non essendoci pesi o punteggi ma solo risposte **binarie** (vero/falso), il motore non può correggere o riordinare facilmente i risultati in base a quali documenti sono stati aperti o preferiti nelle ricerche precedenti.
 ## Pre-processing steps
 Durante la fase di **pre-processing** non esistono regole universali prefissate: spetta infatti al progettista definire strategie consapevoli in base allo scopo dell'applicazione e alla natura dei dati da trattare, gestendo con attenzione i diversi casi limite.
 
@@ -77,7 +94,7 @@ Per rilevare automaticamente l'**idioma** di un testo, una tecnica **euristica**
 Poiché ogni lingua possiede il proprio insieme caratteristico di articoli, il sistema può dedurre la lingua prevalente esaminandone la presenza. Trattandosi tuttavia di una semplice euristica, **non garantisce un'accuratezza assoluta** e può fallire facilmente in presenza di testi brevi, poco strutturati o eterogenei.
 ### Token
 Un'analoga discrezionalità si riscontra nella fase di **tokenizzazione**, in cui il flusso di caratteri viene suddiviso in unità elementari. 
-Anche in questo passaggio emergono ambiguità legate ai **separatori**, come apostrofi e trattini: davanti a forme come l'albero o state-of-the-art, è il progettista a dover stabilire se scartare i simboli come semplice punteggiatura, mantenere i termini uniti in una sola parola oppure spezzarli in token separati.
+Anche in questo passaggio emergono ambiguità legate ai **separatori**, come apostrofi e trattini: davanti a forme come l'albero o state-of-the-art, è il progettista a dover stabilire se scartare i simboli come semplice punteggiatura, mIantenere i termini uniti in una sola parola oppure spezzarli in token separati.
 
 Infine, non tutti i token individuati entrano a far parte dell'indice, poiché rappresentano solo candidati provvisori.
 Il primo filtro consiste nell'eliminazione delle **stopword**, ovvero le parole puramente grammaticali e di congiunzione che non apportano valore informativo utile alla ricerca. Successivamente, i token selezionati vengono ricondotti al loro **lemma**, ossia la forma base di dizionario, permettendo di non disperdere le varianti flesse di una parola tra singolari, plurali, maschili e femminili: invece di registrare fino a quattro voci distinte che occuperebbero spazio inutile nell'indice invertito, si conserva un unico token di riferimento.
