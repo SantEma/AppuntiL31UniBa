@@ -17,14 +17,7 @@ Accanto ai modelli puramente testuali, esistono modelli che integrano l'analisi 
 
 I modelli di reperimento differiscono per architettura e algoritmi, ma condividono tutti il medesimo ciclo di vita: una fase preliminare di elaborazione e indicizzazione della collezione, seguita dalla fase di ricerca e ranking a fronte della query dell'utente
 ![[Pasted image 20261005161158.png]]
-### Step di pre-processing (DA DECIDERE SE ELIMINARE O MENO)
-Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
-- Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
-- Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
-- Si effettua lo **stemming**, ossia i token vengono ridotti alla loro "radice "(ad esempio $\text{computational}\to \text{compute}$). Questo passaggio può introdurre diversi errori come perdita di contesto, errori di punteggiatura, perdita del significato della radice o parole che vanno in conflitto con la radice stessa (ad esempio $\text{policies e police} → \text{polic}$)
-- Si tolgono le parole molto comuni e poco informative (chiamate **stepword**)
-- Si rilevano delle frasi comuni, eventualmente con un **dizionario specifico del dominio**
-- Si costruisce un **indice invertito**, dove ogni parola chiave viene associata alla lista dei documenti che la contengono
+
 ### Modello booleano
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito.
@@ -85,6 +78,14 @@ L'estrema semplicità di questo modello, però, porta dei problemi:
 - **I documenti restituiti dalle query non hanno un ordine di pertinenza**. Se l'utente vuole consultare i primi 10 risultati, il sistema non può indicare quali siano i migliori, poiché tutti i documenti estratti hanno esattamente lo stesso peso
 - **Il modello fatica ad adattarsi al comportamento dell'utente**, non essendoci pesi o punteggi ma solo risposte **binarie** (vero/falso), il motore non può correggere o riordinare facilmente i risultati in base a quali documenti sono stati aperti o preferiti nelle ricerche precedenti.
 ## Pre-processing steps
+### Step di pre-processing
+Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
+- Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
+- Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
+- Si effettua lo **stemming**, ossia i token vengono ridotti alla loro "radice "(ad esempio $\text{computational}\to \text{compute}$). Questo passaggio può introdurre diversi errori come perdita di contesto, errori di punteggiatura, perdita del significato della radice o parole che vanno in conflitto con la radice stessa (ad esempio $\text{policies e police} → \text{polic}$)
+- Si tolgono le parole molto comuni e poco informative (chiamate **stepword**)
+- Si rilevano delle frasi comuni, eventualmente con un **dizionario specifico del dominio**
+- Si costruisce un **indice invertito**, dove ogni parola chiave viene associata alla lista dei documenti che la contengono
 Durante la fase di **pre-processing** non esistono regole universali prefissate: spetta infatti al progettista definire strategie consapevoli in base allo scopo dell'applicazione e alla natura dei dati da trattare, gestendo con attenzione i diversi casi limite.
 
  Una delle prime decisioni riguarda la definizione stessa dell'unità di documento (**document unit**). 
@@ -93,6 +94,7 @@ Durante la fase di **pre-processing** non esistono regole universali prefissate:
 >Nel caso emblematico di un'email con allegati, ad esempio, bisogna scegliere se indicizzare l'intero messaggio come un unico blocco oppure trattare il corpo del testo e i vari allegati come documenti distinti. 
 
 La questione si complica ulteriormente in presenza di **collezioni multi-lingua**, dove il messaggio principale potrebbe essere redatto in una lingua e l'allegato in un'altra.
+Inoltre, in lingue che hanno ideogrammi (o comunque alfabeti diverso a quello latino) bisogna processarli in un altra maniera.
 
 Per rilevare automaticamente l'**idioma** di un testo, una tecnica **euristica** diffusa consiste nell'analizzare la **frequenza degli articoli**.
 Poiché ogni lingua possiede il proprio insieme caratteristico di articoli, il sistema può dedurre la lingua prevalente esaminandone la presenza. Trattandosi tuttavia di una semplice euristica, **non garantisce un'accuratezza assoluta** e può fallire facilmente in presenza di testi brevi, poco strutturati o eterogenei.
@@ -106,12 +108,21 @@ In questo modo si risolvono anche i problemi di disallineamento durante l'interr
 
 Il token quindi è una **sequenza di caratteri** che possono essere analizzati nell'indice invertito che compone una parte significativa nel documento che merita considerazione.
 Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, poiché grazie alla **distanza di Levenstain** (la distanza possibile tra una parola e un altra in base al cambiamento dei caratteri), cerco le **chiavi di ricerca** più simili a quella parola ,con la stessa distanza di Levenstain calcolata, memorizzate nell'indice e si trova comunque una corrispondenza e quindi viene suggerita la parola corretta.
+
+#### Stop words
+Nei testi esistono parole che sono quasi sempre utilizzate nei testi (articoli, congiunzioni etc.), togliere tutte le piccolezze semantiche dal dizionario rende il contenuto molto più facile da scorrere nell'indice, ma questa "compressione" in diversi casi presenta dei problemi:
+- In un contenuto che magari ha molte stop-words porta a perdere il contesto
+- In domande più complesse (dove va questo volo?) si perde il contesto generale
+
+#### Normalizzazione dei termini
+Alcune parole possono avere lo stesso significato ma avere diversi modi di essere espressa (USA e U.S.A. significano la stessa cosa).
+Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di equivalenze di termini (nell'indice quindi cercare una parole in una maniera o in un altra diventa indifferente, il sistema riconosce lo stesso)
+
 ### Numeri
 Un'ulteriore criticità nella fase di pre-processing riguarda il trattamento delle stringhe contenenti entità numeriche, in particolare le **date**. 
-Se il sistema tratta i numeri semplicemente come token slegati tra loro, perde del tutto il valore informativo del dato temporale. A ciò si aggiunge l'ambiguità dei formati: memorizzare una data nella forma generica `n1/n2/n3` crea disallineamenti, poiché `n1` può rappresentare il **giorno** nello standard europeo o il **mese** in quello anglosassone. 
+Se il sistema tratta i numeri semplicemente come token slegati tra loro, perde del tutto il valore informativo del dato temporale. A ciò si aggiunge l'ambiguità dei formati: memorizzare una data nella forma generica `n1/n2/n3` crea disallineamenti, poiché `n1` può rappresentare il **giorno** nello standard europeo o il **mese** in quello anglosassone.
 
 I motori di ricerca più moderni e definiti **intelligenti**, superano questo limite interpretando il contesto circostante, riuscendo a riconoscere e normalizzare la data corretta anche quando viene formulata in formati particolari o notazioni storiche (come ad esempio *55 B.C.*).
 
 Una problematica del tutto analoga si riscontra con i **numeri di telefono** e la gestione dei prefissi. Come ad esempio `+39 333...`, `(080) 23343` o `(080)23-323`.
 Se l'algoritmo si limitasse a trattare i separatori come normale punteggiatura da eliminare o se frammentasse i numeri in elementi distinti, diventerebbe impossibile far corrispondere la query al documento corretto. Anche in questo caso è compito del progettista introdurre procedure di normalizzazione specifiche che convertano queste sequenze in un formato standard univoco prima di registrarle nell'indice.
-
