@@ -78,7 +78,7 @@ L'estrema semplicità di questo modello, però, porta dei problemi:
 - **I documenti restituiti dalle query non hanno un ordine di pertinenza**. Se l'utente vuole consultare i primi 10 risultati, il sistema non può indicare quali siano i migliori, poiché tutti i documenti estratti hanno esattamente lo stesso peso
 - **Il modello fatica ad adattarsi al comportamento dell'utente**, non essendoci pesi o punteggi ma solo risposte **binarie** (vero/falso), il motore non può correggere o riordinare facilmente i risultati in base a quali documenti sono stati aperti o preferiti nelle ricerche precedenti.
 ## Pre-processing steps
-### Step di pre-processing
+### Step generali
 Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
 - Si eliminano caratteri indesiderati e markup (come tag HTML, punteggiatura, numeri, etc.)
 - Il testo ottenuto viene viene spezzato in token, usando gli spazi come separatori
@@ -125,7 +125,7 @@ In una classe di equivalenza possono essere presente anche sinonimi, date etc.
 
 [da finire]
 
-### Numeri
+#### Numeri
 Un'ulteriore criticità nella fase di pre-processing riguarda il trattamento delle stringhe contenenti entità numeriche, in particolare le **date**. 
 Se il sistema tratta i numeri semplicemente come token slegati tra loro, perde del tutto il valore informativo del dato temporale. A ciò si aggiunge l'ambiguità dei formati: memorizzare una data nella forma generica `n1/n2/n3` crea disallineamenti, poiché `n1` può rappresentare il **giorno** nello standard europeo o il **mese** in quello anglosassone.
 
@@ -133,3 +133,4 @@ I motori di ricerca più moderni e definiti **intelligenti**, superano questo li
 
 Una problematica del tutto analoga si riscontra con i **numeri di telefono** e la gestione dei prefissi. Come ad esempio `+39 333...`, `(080) 23343` o `(080)23-323`.
 Se l'algoritmo si limitasse a trattare i separatori come normale punteggiatura da eliminare o se frammentasse i numeri in elementi distinti, diventerebbe impossibile far corrispondere la query al documento corretto. Anche in questo caso è compito del progettista introdurre procedure di normalizzazione specifiche che convertano queste sequenze in un formato standard univoco prima di registrarle nell'indice.
+### Stemming
