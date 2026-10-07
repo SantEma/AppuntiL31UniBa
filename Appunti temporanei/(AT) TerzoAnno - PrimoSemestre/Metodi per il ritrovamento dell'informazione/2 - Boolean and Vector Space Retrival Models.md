@@ -115,8 +115,13 @@ Nei testi esistono parole che sono quasi sempre utilizzate nei testi (articoli, 
 - In domande più complesse (dove va questo volo?) si perde il contesto generale
 
 #### Normalizzazione dei termini
-Alcune parole possono avere lo stesso significato ma avere diversi modi di essere espressa (USA e U.S.A. significano la stessa cosa).
-Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di equivalenze di termini (nell'indice quindi cercare una parole in una maniera o in un altra diventa indifferente, il sistema riconosce lo stesso)
+Alcune parole possono avere lo stesso significato ma avere diversi modi di essere espressa.
+Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di equivalenze di termini (nell'indice quindi cercare una parole in una maniera o in un altra diventa indifferente, il sistema riconosce lo stesso).
+
+> [!example] Esempio di classe di equivalenza
+> ![[Pasted image 20261007164045.png]]
+
+In una classe di equivalenza possono essere presente anche sinonimi, date etc,
 
 ### Numeri
 Un'ulteriore criticità nella fase di pre-processing riguarda il trattamento delle stringhe contenenti entità numeriche, in particolare le **date**. 
