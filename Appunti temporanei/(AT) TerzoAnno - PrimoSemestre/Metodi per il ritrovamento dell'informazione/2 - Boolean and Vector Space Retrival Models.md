@@ -123,7 +123,7 @@ Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di e
 
 In una classe di equivalenza possono essere presente anche sinonimi, date etc.
 
-In 
+[da finire]
 
 ### Numeri
 Un'ulteriore criticità nella fase di pre-processing riguarda il trattamento delle stringhe contenenti entità numeriche, in particolare le **date**. 
