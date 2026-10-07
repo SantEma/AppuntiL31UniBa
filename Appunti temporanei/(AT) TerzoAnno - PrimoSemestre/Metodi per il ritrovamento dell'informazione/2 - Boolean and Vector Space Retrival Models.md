@@ -13,7 +13,7 @@ Un modello IR è una quadrupla $[D,Q,F,R(q_{i}, d_{j})]$ composta da:
 
 Questo punteggio di rilevanza viene assortito generalmente in maniera decrescente 
 ### Tassonomia di modelli IR
-Accanto ai modelli puramente testuali, esistono modelli che integrano l'analisi della struttura dei collegamenti (**link analysis**), essenziali per il Web Retrieval, in questo scenario le pagine web formano un grafo connesso da collegamenti ipertestuali e il ranking calcola l'autorevolezza e l'importanza relativa delle pagine connesse.
+Accanto ai modelli puramente testuali, esistono modelli che integrano l'analisi della struttura dei collegamenti (**link analysis**), essenziali per il Web Retrieval, in questo scenario le pagine Web formano un grafo connesso da collegamenti ipertestuali e il ranking calcola l'autorevolezza e l'importanza relativa delle pagine connesse.
 
 I modelli di reperimento differiscono per architettura e algoritmi, ma condividono tutti il medesimo ciclo di vita: una fase preliminare di elaborazione e indicizzazione della collezione, seguita dalla fase di ricerca e ranking a fronte della query dell'utente
 ![[Pasted image 20261005161158.png]]
@@ -28,7 +28,7 @@ Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo
 ### Modello booleano
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito.
-L'**output** che questo modello produce è binario, ossia il documento è rilevante oppure no, non includendo quindi match parziali o ranking (frequenza di quel termine).
+L'**output** che questo modello produce è binario, ossia se il documento è rilevante oppure no, non includendo quindi match parziali o ranking (frequenza di quel termine).
 #### Matrice di incidenza
 > [!example] Esempio di matrice di incidenza
 > ![[Pasted image 20261003190722.png]]
@@ -36,7 +36,7 @@ L'**output** che questo modello produce è binario, ossia il documento è rileva
 > Ogni termine ha così un **vettore di incidenza** 0/1.
 > Con questa rappresentazione si perde comunque il numero di occorrenze all'interno dei documenti e l'ordine delle parole (posizioni)
 
-Nelle collezioni reali di grandi dimensioni la matrice è estremamente **sparsa** (la quasi totalità delle celle ha valore 0, poiché nessun documento contiene più di una minima frazione dell'intero vocabolario). Memorizzare tutti gli zeri comporterebbe un enorme spreco di spazio.
+Nelle collezioni reali di grandi dimensioni la matrice è estremamente **sparsa** (la quasi totalità delle celle ha valore 0, poiché nessun documento contiene più di una minima frazione dell'intero vocabolario). memorizzandoli si ha un enorme spreco di spazio.
 #### Indice inverso
 L'indice è invertito memorizza **esclusivamente le presenze effettive**, associando a ciascun termine solo l'elenco dei documenti in cui esso compare.
 
@@ -44,7 +44,7 @@ Si compone di due elementi:
 1. **Vocabolario / Dictionary**: l'elenco ordinato di tutti i termini unici estratti dalla collezione.
 2. **Posting List**: per ciascun termine, la lista ordinata dei documenti identificati tramite `docID` in cui il termine compare. Ciascun elemento della lista è detto **posting**.
 
-> [!example] Esempio dei due elementi
+> [!example] Esempio dei due elementi precedentemente citati
 > ![[Pasted image 20261005163721.png]]
 
 Le interrogazioni booleane si risolvono eseguendo operazioni insiemistiche direttamente sulle posting list. Quando nuovi documenti vengono aggiunti o modificati, non è necessario riprocessare l'intero corpus, ma è sufficiente aggiornare le posting list corrispondenti ai documenti coinvolti.
