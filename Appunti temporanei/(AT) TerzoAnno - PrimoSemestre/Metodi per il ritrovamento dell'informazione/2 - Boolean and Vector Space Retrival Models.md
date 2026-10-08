@@ -1,4 +1,4 @@
-# Retrivial Models
+	# Retrivial Models
 Un modello di recupero (chiamiato **Retrivial model**) è un modello che definisce come un sistema di Information Retrieval decide quali documenti sono rilevanti per una query.
 Ogni modello specifica:
 - La rappresentazione del documento, ossia come viene descritto un documento (ad esempio come insieme di parole, oppure come vettore di pesi dei termini
