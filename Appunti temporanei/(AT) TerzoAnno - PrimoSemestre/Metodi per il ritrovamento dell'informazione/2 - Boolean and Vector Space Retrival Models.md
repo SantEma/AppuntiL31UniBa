@@ -63,7 +63,6 @@ Si compone di due elementi:
 > Per inciso i termini sulla sinistra (Brutus, Caesar e Calpurnia) costituiscono il dizionario, mentre i vettori sulla sinistra costituiscono le posting lists corrispondenti.
 
 Le interrogazioni booleane si risolvono eseguendo operazioni insiemistiche direttamente sulle posting list. Quando nuovi documenti vengono aggiunti o modificati, non è necessario riprocessare l'intero corpus, ma è sufficiente aggiornare le posting list corrispondenti ai documenti coinvolti.
-
 #### Costruzione dell'indice inverso
 La costruzione di un indice invertito prevede le seguenti fasi:
 1. I documenti da indicizzare vengono tokenizzati;
