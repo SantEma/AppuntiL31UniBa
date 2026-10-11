@@ -36,6 +36,14 @@ L'**output** che questo modello produce è un peso binario, ossia se il document
 
 I principali vantaggi di questo modello sono il formalismo dell’algebra booleana e la sua semplicità.
 Nelle collezioni reali di grandi dimensioni la matrice è estremamente **sparsa** (la quasi totalità delle celle ha valore 0, poiché nessun documento contiene più di una minima frazione dell'intero vocabolario). memorizzandoli si ha un enorme spreco di spazio.
+#### Efficienza delle query
+In un motore di ricerca, le query troppo lunghe o cariche di termini **non sono efficienti**. Una ricerca con troppe parole complica le operazioni di intersezione, allunga i tempi di risposta e spesso **peggiora** la qualità del risultato finale anziché migliorarlo.
+
+Nel modello di reperimento booleano la sequenza operativa è quindi:
+1. **Processare i documenti** (pulizia e normalizzazione iniziale del testo)
+2. **Creare le posting list**
+3. **Costruire l'indice invertito**
+4. **Lavorare ed eseguire le query direttamente sull'indice**
 #### Problemi del modello booleano
 L'estrema semplicità di questo modello, però, porta dei problemi:
 - **L'operatore di intersezione è fin troppo restrittivo**, basta che manchi una sola parola chiave per escludere un documento, con il rischio di restituire zero risultati.
@@ -83,15 +91,6 @@ L'algoritmo confronta due liste muovendo due puntatori, $p_1$ e $p_2$:
 
 Possiamo riprendere l'esempio delle liste di Bruto e Cesare: se per Bruto il valore iniziale è $2$ e per Cesare è $1$, si incrementa il puntatore di Cesare ($p_2$) perché è più piccolo, allineandolo così al valore successivo. 
 Il ciclo continua finché uno dei due puntatori arriva alla fine della propria lista (`null`): a quel punto l'algoritmo si ferma, poiché è impossibile trovare altri documenti in comune.
-#### Efficienza delle query
-In un motore di ricerca, le query troppo lunghe o cariche di termini **non sono efficienti**. Una ricerca con troppe parole complica le operazioni di intersezione, allunga i tempi di risposta e spesso **peggiora** la qualità del risultato finale anziché migliorarlo.
-
-Nel modello di reperimento booleano la sequenza operativa è quindi:
-1. **Processare i documenti** (pulizia e normalizzazione iniziale del testo)
-2. **Creare le posting list**
-3. **Costruire l'indice invertito**
-4. **Lavorare ed eseguire le query direttamente sull'indice**
-
 ## Pre-processing steps
 ### Step generali
 Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo viene "ripulito" e normalizzato seguendo una metodologia precisa:
