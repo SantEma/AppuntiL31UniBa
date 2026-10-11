@@ -108,7 +108,7 @@ La prima fase durante il processing di un documento è il **parsing** dello stes
 Inoltre, in lingue che hanno ideogrammi (o comunque alfabeti diverso a quello latino) bisogna processarli in un altra maniera.
 > [!example] Esempio di un e-mail
 >Nel caso emblematico di un'email con allegati, ad esempio, bisogna scegliere se indicizzare l'intero messaggio come un unico blocco oppure trattare il corpo del testo e i vari allegati come documenti distinti. 
-### Tokenizzazione
+#### Tokenizzazione
 Nella fase di **tokenizzazione**, il flusso di caratteri viene suddiviso in unità elementari (token).
 Il token è una **sequenza di caratteri** che possono essere analizzati nell'indice invertito e compone una parte significativa nel documento che merita considerazione.
 Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, poiché grazie alla **distanza di Levenstain** (la distanza possibile tra una parola e un altra in base al cambiamento dei caratteri), si va a ricercare le **chiavi di ricerca** più simili a quella parola ,con la stessa distanza di Levenstain calcolata, memorizzate nell'indice, trovando comunque una corrispondenza e suggerendo la parola corretta.
@@ -116,7 +116,7 @@ Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, po
 Anche in questo passaggio emergono ambiguità legate ai **separatori**, come apostrofi e trattini: davanti a forme come `"state-of-the-art"`, è il progettista a dover stabilire se scartare i simboli come semplice punteggiatura, mantenere i termini uniti in una sola parola oppure spezzarli in token separati.
 
 Infine, non tutti i token individuati entrano a far parte dell'indice, poiché rappresentano solo candidati provvisori.
-#### Stop words
+##### Stop words
 Il primo filtro consiste nell'eliminazione delle **stopword**, ovvero le parole puramente grammaticali e di congiunzione che non apportano valore informativo utile alla ricerca. 
 Nei testi esistono parole che sono quasi sempre utilizzate nei testi (articoli, congiunzioni etc.), togliere tutte le piccolezze semantiche dal dizionario rende il contenuto molto più facile da scorrere nell'indice, ma questa "compressione" in diversi casi presenta dei problemi:
 - In un contenuto che magari ha molte stop-words porta a perdere il contesto
