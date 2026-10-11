@@ -21,7 +21,7 @@ I modelli di reperimento differiscono per architettura e algoritmi, ma condivido
 ### Modello booleano
 Nel modello booleano, un documento è rappresentato come un **insieme di parole chiave**.
 Le sue **query** sono espresse tramite i vari connettori logici che si conoscono della teoria degli insiemi, quindi intersezione (AND), unione (OR), complementare (NOT), incluse le parentesi per indicare l'ambito.
-L'**output** che questo modello produce è binario, ossia se il documento è rilevante oppure no, non includendo quindi match parziali o ranking (frequenza di quel termine).
+L'**output** che questo modello produce è un peso binario, ossia se il documento è rilevante oppure no, non includendo quindi match parziali o ranking (frequenza di quel termine). Viene indicato con $w_{i,j} \in \{0,1\}$
 #### Matrice di incidenza
 > [!example] Esempio di matrice di incidenza
 > ![[Pasted image 20261003190722.png]]
