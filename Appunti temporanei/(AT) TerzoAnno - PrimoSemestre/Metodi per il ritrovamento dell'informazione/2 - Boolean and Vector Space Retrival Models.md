@@ -112,40 +112,29 @@ Inoltre, in lingue che hanno ideogrammi (o comunque alfabeti diverso a quello la
 
 Per rilevare automaticamente l'**idioma** di un testo, una tecnica **euristica** diffusa consiste nell'analizzare la **frequenza degli articoli**.
 Poiché ogni lingua possiede il proprio insieme caratteristico di articoli, il sistema può dedurre la lingua prevalente esaminandone la presenza. Trattandosi tuttavia di una semplice euristica, **non garantisce un'accuratezza assoluta** e può fallire facilmente in presenza di testi brevi, poco strutturati o eterogenei.
-### Token e termini
-Un'analoga discrezionalità si riscontra nella fase di **tokenizzazione**, in cui il flusso di caratteri viene suddiviso in unità elementari (token). 
-Anche in questo passaggio emergono ambiguità legate ai **separatori**, come apostrofi e trattini: davanti a forme come l'albero o state-of-the-art, è il progettista a dover stabilire se scartare i simboli come semplice punteggiatura, mIantenere i termini uniti in una sola parola oppure spezzarli in token separati.
+### Tokenizzazione
+Un'analoga discrezionalità si riscontra nella fase di **tokenizzazione**, in cui il flusso di caratteri viene suddiviso in unità elementari (token).
+Il token è una **sequenza di caratteri** che possono essere analizzati nell'indice invertito e compone una parte significativa nel documento che merita considerazione.
+Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, poiché grazie alla **distanza di Levenstain** (la distanza possibile tra una parola e un altra in base al cambiamento dei caratteri), si va a ricercare le **chiavi di ricerca** più simili a quella parola ,con la stessa distanza di Levenstain calcolata, memorizzate nell'indice, trovando comunque una corrispondenza e suggerendo la parola corretta.
+
+Anche in questo passaggio emergono ambiguità legate ai **separatori**, come apostrofi e trattini: davanti a forme come `"state-of-the-art"`, è il progettista a dover stabilire se scartare i simboli come semplice punteggiatura, mantenere i termini uniti in una sola parola oppure spezzarli in token separati.
 
 Infine, non tutti i token individuati entrano a far parte dell'indice, poiché rappresentano solo candidati provvisori.
-Il primo filtro consiste nell'eliminazione delle **stopword**, ovvero le parole puramente grammaticali e di congiunzione che non apportano valore informativo utile alla ricerca. Successivamente, i token selezionati vengono ricondotti al loro **lemma**, ossia la forma base di dizionario, permettendo di non disperdere le varianti flesse di una parola tra singolari, plurali, maschili e femminili: invece di registrare fino a quattro voci distinte che occuperebbero spazio inutile nell'indice invertito, si conserva un unico token di riferimento.
-In questo modo si risolvono anche i problemi di disallineamento durante l'interrogazione, consentendo al motore di recuperare i documenti rilevanti anche quando l'utente cerca un termine in una forma grammaticale diversa rispetto a quella presente nel testo originale.
-
-Il token quindi è una **sequenza di caratteri** che possono essere analizzati nell'indice invertito che compone una parte significativa nel documento che merita considerazione.
-Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, poiché grazie alla **distanza di Levenstain** (la distanza possibile tra una parola e un altra in base al cambiamento dei caratteri), cerco le **chiavi di ricerca** più simili a quella parola ,con la stessa distanza di Levenstain calcolata, memorizzate nell'indice e si trova comunque una corrispondenza e quindi viene suggerita la parola corretta.
-
 #### Stop words
+Il primo filtro consiste nell'eliminazione delle **stopword**, ovvero le parole puramente grammaticali e di congiunzione che non apportano valore informativo utile alla ricerca. 
 Nei testi esistono parole che sono quasi sempre utilizzate nei testi (articoli, congiunzioni etc.), togliere tutte le piccolezze semantiche dal dizionario rende il contenuto molto più facile da scorrere nell'indice, ma questa "compressione" in diversi casi presenta dei problemi:
 - In un contenuto che magari ha molte stop-words porta a perdere il contesto
 - In domande più complesse (dove va questo volo?) si perde il contesto generale
-
 #### Normalizzazione dei termini
-Alcune parole possono avere lo stesso significato ma avere diversi modi di essere espressa.
+Alcune parole possono avere lo stesso significato ma  diversi modi di essere espressa.
 Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di equivalenze di termini (nell'indice quindi cercare una parole in una maniera o in un altra diventa indifferente, il sistema riconosce lo stesso).
 
 > [!example] Esempio di classe di equivalenza
 > ![[Pasted image 20261007164045.png]]
 
 In una classe di equivalenza possono essere presente anche sinonimi, date etc.
-
-[da finire]
-
-#### Numeri
-Un'ulteriore criticità nella fase di pre-processing riguarda il trattamento delle stringhe contenenti entità numeriche, in particolare le **date**. 
-Se il sistema tratta i numeri semplicemente come token slegati tra loro, perde del tutto il valore informativo del dato temporale. A ciò si aggiunge l'ambiguità dei formati: memorizzare una data nella forma generica `n1/n2/n3` crea disallineamenti, poiché `n1` può rappresentare il **giorno** nello standard europeo o il **mese** in quello anglosassone.
-
-I motori di ricerca più moderni e definiti **intelligenti**, superano questo limite interpretando il contesto circostante, riuscendo a riconoscere e normalizzare la data corretta anche quando viene formulata in formati particolari o notazioni storiche (come ad esempio *55 B.C.*).
-
-Una problematica del tutto analoga si riscontra con i **numeri di telefono** e la gestione dei prefissi. Come ad esempio `+39 333...`, `(080) 23343` o `(080)23-323`.
-Se l'algoritmo si limitasse a trattare i separatori come normale punteggiatura da eliminare o se frammentasse i numeri in elementi distinti, diventerebbe impossibile far corrispondere la query al documento corretto. Anche in questo caso è compito del progettista introdurre procedure di normalizzazione specifiche che convertano queste sequenze in un formato standard univoco prima di registrarle nell'indice.
-### Stemming
-[da finire]
+#### Lemmatizzazione
+I token selezionati vengono ricondotti al loro **lemma**, ossia la forma base di dizionario, permettendo di non disperdere le varianti flesse di una parola tra singolari, plurali, maschili e femminili: invece di registrare fino a quattro voci distinte che occuperebbero spazio inutile nell'indice invertito, si conserva un unico token di riferimento.
+In questo modo si risolvono anche i problemi di disallineamento durante un interrogazione..
+#### Stemming
+Lo stemming, invece, consiste nel ridurre un termine alla sua radice prima di indicizzarlo semplicemente tagliandone il suﬃsso. Ad esempio “automate”, “automates”, “automatic”, “automation” diventano “automat”.
