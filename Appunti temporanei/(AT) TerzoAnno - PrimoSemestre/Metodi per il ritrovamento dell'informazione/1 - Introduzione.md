@@ -34,11 +34,13 @@ Dall'incrocio di questi due assi, nascono quattro **paradigmi**:
 - **Data Retrieval**:
   Questo paradigma si concentra sul trovare una corrispondenza di dati per risolvere un unico **obiettivo** mirato. Per questo il database è **strutturato** e l'utente troverà questa informazione tramite un **linguaggio formale** (come visto con SQL). Un esempio di questo paradigma è la ricerca di un ristorante in una città, dove sarà effettuata la sua query specifica. L'entità manipolata è il **record**.
   
-- **Information Retrieval**:
+- **Information Retrieval**:|
+  La ricerca di informazione su dati non strutturati,
   In questo caso l'utente deve cercare **documenti** in un DB **non strutturato**, quindi privo di schema relazionale, rendendo quindi l'SQL non praticabile come soluzione.
   Seguendo l'esempio precedente, si ottiene la medesima informazione tramite **navigazione per categorie** (prendendo ad esempio un ristorante giapponese a Boston, `Boston -> Restaurant -> Japanese`), ad albero o per **parole chiave**. L'entità manipolata è il **documento**.
 
 - **Data Mining**:
+  Lscoperta di informazione su dati strutturati, attraverso l’analisi di dati,
   Nel Data Mining non si cerca più un dato noto, ma si vuole scoprire in un database **strutturato** una nuova **conoscenza** analizzando moli di dati strutturati. L'entità manipolata sono i valori **numerici**.
   
 - **Text Mining**:
