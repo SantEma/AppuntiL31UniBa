@@ -32,10 +32,11 @@ Per comprendere dove collocare le varie tecnologie di recupero e analisi della c
 
 Dall'incrocio di questi due assi, nascono quattro **paradigmi**:
 - **Data Retrieval**:
+  La ricerca di informazione su dati strutturati.
   Questo paradigma si concentra sul trovare una corrispondenza di dati per risolvere un unico **obiettivo** mirato. Per questo il database è **strutturato** e l'utente troverà questa informazione tramite un **linguaggio formale** (come visto con SQL). Un esempio di questo paradigma è la ricerca di un ristorante in una città, dove sarà effettuata la sua query specifica. L'entità manipolata è il **record**.
   
-- **Information Retrieval**:|
-  La ricerca di informazione su dati non strutturati,
+- **Information Retrieval**:
+  La ricerca di informazione su dati non strutturati.
   In questo caso l'utente deve cercare **documenti** in un DB **non strutturato**, quindi privo di schema relazionale, rendendo quindi l'SQL non praticabile come soluzione.
   Seguendo l'esempio precedente, si ottiene la medesima informazione tramite **navigazione per categorie** (prendendo ad esempio un ristorante giapponese a Boston, `Boston -> Restaurant -> Japanese`), ad albero o per **parole chiave**. L'entità manipolata è il **documento**.
 
@@ -44,7 +45,7 @@ Dall'incrocio di questi due assi, nascono quattro **paradigmi**:
   Nel Data Mining non si cerca più un dato noto, ma si vuole scoprire in un database **strutturato** una nuova **conoscenza** analizzando moli di dati strutturati. L'entità manipolata sono i valori **numerici**.
   
 - **Text Mining**:
-  La scoperta di informazione su dati non strutturati, attraverso il riconoscimento di pattern o informazioni potenzialmente utili e non banali
+  La scoperta di informazione su dati non strutturati, attraverso il riconoscimento di pattern o informazioni potenzialmente utili e non banali.
   Nel Text Mining andremo ad eseguire la stessa ricerca effettuata nel Data Mining, solo che la conoscenza nuova da scoprire **non è nota a priori** e non cerca su pattern numerici, ma puramente **linguistici**, analizzando direttamente **testi liberi**. L'entità manipolata è il **concetto linguistico**.
 ### Processo di KDD
 Il **Data Mining** in realtà è un sottoprocesso del grande processo di ricerca dai Databases, chiamato KDD (**Knowledge Discovery from Databases**).
@@ -76,8 +77,10 @@ Espressa tramite la formula concettuale: $$\text{Text Mining}=\text{Data Mining 
 ![[Pasted image 20261003170819.png]]
 
 L'architettura tipica di un sistema Text Mining, come si evince dall'immagine è basato su una **pipeline sequenziale**.
-Il processo di Text Mining prende in input documenti in linguaggio naturale e un template specificato e restituisce in output una specifica parte di documenti che corrispondono al template. Tale processo prevede il susseguirsi di diverse fasi:
-- 
+Il processo di Text Mining prende in input documenti in linguaggio naturale e
+un template specificato e restituisce in output una specifica parte di documenti
+che corrispondono al template. Tale processo prevede il susseguirsi di diverse
+fasi:
 ### Text Mining nell'impresa
 In ambito aziendale è diventata una delle pratiche più importanti, utilizzata sopratutto per comprendere opinioni, reclami, feedback, etc. dei clienti in una società dove questi espongono le loro preferenze tramite **fonti testuali eterogenee** (email, ticket, siti web, social, comunicati stampa, etc.).
 
