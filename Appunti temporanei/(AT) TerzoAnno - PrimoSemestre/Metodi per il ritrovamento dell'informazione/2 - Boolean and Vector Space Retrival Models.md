@@ -102,18 +102,14 @@ Prima di indicizzare i documenti (o in generale dati di tipo testuale), il testo
 - Si costruisce un **indice invertito**, dove ogni parola chiave viene associata alla lista dei documenti che la contengono
 Durante la fase di **pre-processing** non esistono regole universali prefissate: spetta infatti al progettista definire strategie consapevoli in base allo scopo dell'applicazione e alla natura dei dati da trattare, gestendo con attenzione i diversi casi limite.
 
- Una delle prime decisioni riguarda la definizione stessa dell'unità di documento (**document unit**). 
- 
+Una delle prime decisioni riguarda la definizione stessa dell'unità di documento (**document unit**). 
+
+La prima fase durante il processing di un documento è il **parsing** dello stesso, ma è una fase con tante difficoltà, infatti la questione si complica ulteriormente in presenza di **collezioni multi-lingua**, dove il messaggio principale potrebbe essere redatto in una lingua e l'allegato in un'altra.
+Inoltre, in lingue che hanno ideogrammi (o comunque alfabeti diverso a quello latino) bisogna processarli in un altra maniera.
 > [!example] Esempio di un e-mail
 >Nel caso emblematico di un'email con allegati, ad esempio, bisogna scegliere se indicizzare l'intero messaggio come un unico blocco oppure trattare il corpo del testo e i vari allegati come documenti distinti. 
-
-La questione si complica ulteriormente in presenza di **collezioni multi-lingua**, dove il messaggio principale potrebbe essere redatto in una lingua e l'allegato in un'altra.
-Inoltre, in lingue che hanno ideogrammi (o comunque alfabeti diverso a quello latino) bisogna processarli in un altra maniera.
-
-Per rilevare automaticamente l'**idioma** di un testo, una tecnica **euristica** diffusa consiste nell'analizzare la **frequenza degli articoli**.
-Poiché ogni lingua possiede il proprio insieme caratteristico di articoli, il sistema può dedurre la lingua prevalente esaminandone la presenza. Trattandosi tuttavia di una semplice euristica, **non garantisce un'accuratezza assoluta** e può fallire facilmente in presenza di testi brevi, poco strutturati o eterogenei.
 ### Tokenizzazione
-Un'analoga discrezionalità si riscontra nella fase di **tokenizzazione**, in cui il flusso di caratteri viene suddiviso in unità elementari (token).
+Nella fase di **tokenizzazione**, il flusso di caratteri viene suddiviso in unità elementari (token).
 Il token è una **sequenza di caratteri** che possono essere analizzati nell'indice invertito e compone una parte significativa nel documento che merita considerazione.
 Molti motori di ricerca permettono di sbagliare alcuni caratteri di un token, poiché grazie alla **distanza di Levenstain** (la distanza possibile tra una parola e un altra in base al cambiamento dei caratteri), si va a ricercare le **chiavi di ricerca** più simili a quella parola ,con la stessa distanza di Levenstain calcolata, memorizzate nell'indice, trovando comunque una corrispondenza e suggerendo la parola corretta.
 
