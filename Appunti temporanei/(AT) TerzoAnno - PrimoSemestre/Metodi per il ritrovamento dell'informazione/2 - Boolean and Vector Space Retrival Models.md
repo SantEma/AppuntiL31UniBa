@@ -83,7 +83,7 @@ L'algoritmo confronta due liste muovendo due puntatori, $p_1$ e $p_2$:
 
 Possiamo riprendere l'esempio delle liste di Bruto e Cesare: se per Bruto il valore iniziale è $2$ e per Cesare è $1$, si incrementa il puntatore di Cesare ($p_2$) perché è più piccolo, allineandolo così al valore successivo. 
 Il ciclo continua finché uno dei due puntatori arriva alla fine della propria lista (`null`): a quel punto l'algoritmo si ferma, poiché è impossibile trovare altri documenti in comune.
-#### Efficenza delle query
+#### Efficienza delle query
 In un motore di ricerca, le query troppo lunghe o cariche di termini **non sono efficienti**. Una ricerca con troppe parole complica le operazioni di intersezione, allunga i tempi di risposta e spesso **peggiora** la qualità del risultato finale anziché migliorarlo.
 
 Nel modello di reperimento booleano la sequenza operativa è quindi:
