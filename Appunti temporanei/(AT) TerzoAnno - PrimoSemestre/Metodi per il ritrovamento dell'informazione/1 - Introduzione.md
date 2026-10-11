@@ -1,4 +1,11 @@
 # La conoscenza
+Secondo Wikipedia la conoscenza è la consapevolezza e la comprensione di verità, fatti o informazioni ottenute attraverso l’esperienza o l’apprendimento (a
+
+posteriori), ovvero tramite l’introspezione (a priori). La conoscenza è l’au-
+tocoscienza del possesso di informazioni connesse tra di loro, le quali, prese
+
+singolarmente, hanno un valore e un’utilità inferiori.
+
 Per gestire la **conoscenza** bisogna saper:
 - **Raccogliere** la conoscenza
 - Organizzarla
@@ -8,9 +15,9 @@ Per gestire la **conoscenza** bisogna saper:
 Queste prassi vengono eseguite al fine di **risparmiare tempo**, riducendo i tempi di accesso all'informazione e **migliorando** la qualità dei servizi che la distribuiscono.
 ## Dati - Informazione - Conoscenza
 La **conoscenza** è un capitale difficile da gestire, poiché è:
-- volatile
-- intangibile
-- difficile da conservare
+- Volatile
+- Intangibile
+- Difficile da conservare
 
 Per questo la maggior parte dei database nel mondo possiede i dati in forma **non strutturata**.
 
