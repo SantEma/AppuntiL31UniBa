@@ -65,7 +65,7 @@ Le fasi del ciclo del processo KDD sono 5:
 > [!example] Esempio di Data Mining
 > ![[Pasted image 20261003170615.png]]
 > Come si evince da questo esempio non c'è mai una garanzia del 100% [ma di cosa?] ma da piccole conoscenze già presenti possiamo notare dei pattern tra diversi dati, creando correlazioni utili per l'azienda.
-### Dal Data Mining al Text Mining
+### Text Mining
 Il **Text Mining** utilizza i principi del KDD sul testo a **linguaggio naturale**.
 L'obiettivo è quello di scavare tra mille testi diversi fino alla ricerca di pattern, trend e associazioni nascoste, così da costruire nuova conoscenza.
 
@@ -81,7 +81,12 @@ Il processo di Text Mining prende in input documenti in linguaggio naturale e
 un template specificato e restituisce in output una specifica parte di documenti
 che corrispondono al template. Tale processo prevede il susseguirsi di diverse
 fasi:
-### Text Mining nell'impresa
+- **Text processing**: partendo dal **testo grezzo**, si processa l'informazione 
+- **Feature generation**: qui vengono create le **Bag Of Words**
+- **Features Selection**: si eseguono i **filtri statistici**, in questa fase centrale vengono estratti i pattern
+- **Text Mining**: estrazione tramite tecniche di **classificazione** o di **clustering** e controlli dei pattern
+- **Analyzing results**: valutazione del risultato
+
 In ambito aziendale è diventata una delle pratiche più importanti, utilizzata sopratutto per comprendere opinioni, reclami, feedback, etc. dei clienti in una società dove questi espongono le loro preferenze tramite **fonti testuali eterogenee** (email, ticket, siti web, social, comunicati stampa, etc.).
 
 L'obiettivo chiave quindi del Text Mining aziendale è quello di poter analizzare documenti testuali in modo **rapido**, **raggruppandoli automaticamente** in base al loro contenuto, così da permetterne l'estrazione (come cercare le criticità maggiormente segnalate) con **velocità**.
@@ -98,7 +103,6 @@ Nei modelli classici di Information Retrieval, il processo di ricerca funziona e
 
 Il punto centrale di tutto il sistema è comprendere cosa sia la **rilevanza**. A differenza di quanto si possa pensare, la rilevanza è un concetto prettamente **soggettivo**: non esiste una pertinenza assoluta, ma dipende sempre dal bisogno specifico di chi cerca, dal contesto e dal momento temporale (spesso serve un'informazione recente e aggiornata).
 A rendere la rilevanza un problema davvero complesso è la natura stessa del linguaggio naturale. 
-
 
 > [!example] Esempio di rilevanza di informazione
 > Se ad esempio un utente cerca la parola `Mosca`, il motore di ricerca si trova davanti a un campo vastissimo di possibilità:
