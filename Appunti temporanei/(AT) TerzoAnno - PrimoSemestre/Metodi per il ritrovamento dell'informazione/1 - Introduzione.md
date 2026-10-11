@@ -97,4 +97,58 @@ Il Text Mining non è una disciplina isolata mirata solamente alla ricerca di da
 - **Information Extraction (IE)**: per identificare entità e relazioni.
 - **Natural Language Processing (NLP)**: per comprendere la sintassi, la grammatica e il significato del linguaggio naturale umano per introdurlo alla macchina.
 - **Data Mining**: per la scoperta di ulteriori pattern.
-[da ricopiare]
+## IR System
+L’Information Retrieval (IR) si occupa della rappresentazione, memorizzazione
+e organizzazione dell’informazione testuale, al ﬁne di rendere agevole all'utente il soddisfacimento dei propri bisogni informativi.
+Data una collezione di documenti (un corpus) e un bisogno informativo dell’utente (solitamente una query testuale), lo scopo di un sistema di IR è di trovare informazioni che potrebbero essere utili, o rilevanti, per l’utente. Rispetto alla teoria classica delle basi di dati, l’enfasi non è sulla ricerca di dati ma sulla ricerca di informazioni. Le tecniche di Information Retrieval, nate per dati testuali, sono state in seguito estese ed applicate anche a dati multimediali (immagini, audio, video) e semi-strutturati.
+
+![[Pasted image 20261003171918.png]]
+Nei modelli classici di Information Retrieval, il processo di ricerca funziona esattamente come mostrato nello schema: l'utente invia una stringa di testo (la **query**), il sistema consulta la propria collezione di documenti e, calcolando un punteggio di pertinenza, restituisce una lista ordinata di documenti (**ranking**) dal più utile al meno utile.
+
+Il punto centrale di tutto il sistema è comprendere cosa sia la **rilevanza**. La rilevanza di un informazione è un giudizio soggettivo che può dipendere dall’attinenza ad un determinato ambito di interesse, da quanto recenti siano le informazioni stesse e da quanto sono utili all'obiettivo per cui l’utente sta eﬀettuando la ricerca. La più semplice nozione di rilevanza consiste nella presenza della query all'interno del documento esattamente come è stata inserita (ad verbatim)
+
+Un altro metodo più immediato per rappresentare i documenti e cercare al loro interno si basa sull'approccio **Bag of Words** (a "sacco di parole"). In questa modalità, la ricerca avviene tramite **parole chiave**, ossia si verifica semplicemente la presenza e la frequenza delle parole della query all'interno del documento, a prescindere dal loro ordine sintattico. 
+Questo approccio è molto comodo e permette di trovare risposte anche se l'utente formula una query sgrammaticata, anche se, in query più articolate, l'ordine dei termini farebbe la differenza.
+
+Tuttavia, affidarsi alla pura presenza delle parole chiave porta con sé due grandi problemi linguistici:
+1. **La polisemia (o ambiguità)**: accade quando una stessa parola possiede più significati diversi. È proprio il caso dell'esempio di `Mosca`, oppure della parola `Apple`, che può riferirsi all'azienda di informatica o al frutto. In questi casi il motore rischia di restituire documenti che contengono la parola giusta ma con il significato sbagliato.
+2. **La sinonimia**: accade quando termini diversi indicano lo stesso concetto (ad esempio cercare `ristorante` quando un testo parla di `café` o `trattoria`, oppure cercare `Cina`quando nel documento è scritto `Repubblica Popolare Cinese`). Se il sistema cerca solo la parola esatta digitata, finirà per ignorare documenti perfettamente pertinenti solo perché usano un sinonimo.
+
+> [!example] Esempio di rilevanza di informazione
+> Se ad esempio un utente cerca la parola `Mosca`, il motore di ricerca si trova davanti a un campo vastissimo di possibilità:
+> - La capitale della Russia
+> - L'insetto
+> - Il cognome di una persona
+> 
+> Capire quale di questi risultati sia effettivamente rilevante per chi ha digitato la query è una delle sfide principali dell'IR.
+## IR Intelligente
+Per superare questi limiti, un IR per definirsi "intelligente" deve andare oltre la semplice corrispondenza letterale dei termini: deve iniziare a considerare il significato semantico delle parole e tenere conto del loro ordine.
+Un elemento chiave dell'IR intelligente è la capacità di adattarsi all'utente sfruttando il **Relevance Feedback** (feedback di rilevanza): il sistema raccoglie i segnali lasciati dall'utente durante le ricerche e usa queste informazioni per correggere o arricchire la query, ricalcolando il ranking nelle ricerche successive per mettere in primo piano i risultati più graditi.
+### Architettura di un sistema IR
+![[Pasted image 20261003172510.png]]
+Guardando lo schema dell'architettura completa, un sistema di IR dovrebbe essere strutturato da diverse componenti:
+
+- **Text Operations**: Operazioni sul testo ﬁnalizzate alla creazione di indici sulle parole (tokens) attraverso la rimozione di stopword e operazioni di stemming e lemmatizzazione
+- **Indexing**:Indicizzazione attraverso la creazione di un indice invertito scansionando tutte le parole dei documenti. Si deﬁnisce indice invertito in quanto ad ogni parola si fa corrispondere una lista di documenti che la contengono (posting list) piuttosto che il contrario
+- **Searching**: ricerca dei documenti che contengono una data query sulla base dell'indice invertito
+- **Ranking**: assegnazione ad ogni documento un punteggio basato sulle metriche di rilevanza adottate.
+
+Per rendere un sistema di Information Retrieval realmente capace di comprendere i testi e le intenzioni dell'utente, la ricerca fa affidamento su due grandi discipline dell'Intelligenza Artificiale: il **Natural Language Processing (NLP)** e il **Machine Learning (ML)**.
+### Natural Language Processing (NLP)
+Il **Natural Language Processing** (Elaborazione del Linguaggio Naturale) si concentra sull'analisi computazionale del testo e del discorso umano a tre livelli progressivi:
+- **Sintattico**: studio della struttura grammaticale e della disposizione delle parole nella frase
+- **Semantico**: comprensione del significato letterale dei termini e delle relazioni concettuali
+- **Pragmatico**: interpretazione del significato del messaggio in relazione al contesto d'uso
+
+L'obiettivo fondamentale dell'integrazione dell'NLP nei motori di ricerca è superare il vecchio modello basato sulla semplice corrispondenza letterale delle parole chiave, permettendo al sistema di recuperare i documenti in base al loro **reale significato** (meaning-based retrieval).
+#### Le direzioni dell'NLP applicate all'Information Retrieval
+In ambito IR, le tecniche di NLP si sviluppano principalmente lungo tre direzioni applicative:
+1. **Disambiguazione del significato delle parole (Word Sense Disambiguation - WSD)**: algoritmi capaci di determinare il significato corretto di un termine polisemico o ambiguo analizzando il contesto della frase (ad esempio capire se *Apple* nella query si riferisce all'azienda informatica o al frutto).
+2. **Estrazione dell'informazione (Information Extraction - IE)**: tecniche per individuare ed estrarre automaticamente fatti, relazioni ed entità specifiche dal testo non strutturato per popolare schemi strutturati.
+3. **Risposta a domande (Question Answering)**: sistemi evoluti in grado di fornire risposte puntuali ed esaustive a domande formulate dall'utente in linguaggio naturale, estraendo la risposta direttamente dall'analisi dell'intero corpus di documenti.
+### Machine Learning
+Il **Machine Learning** (conosciuto in italiano come Apprendimento Automatico) si focalizza sullo sviluppo di sistemi computazionali capaci di **migliorare automaticamente le proprie prestazioni con l'esperienza** (in sostanza aumentando la quantità dei propri risultati nel tempo e imparando dai propri errori).
+
+Nel contesto dell'Information Retrieval, il Machine Learning interviene attraverso due paradigmi fondamentali:
+- **Supervised Learning**: viene impiegato per la **classificazione automatica**.  Il sistema apprende modelli concettuali a partire da un insieme di esempi pre-etichettati (training set, come email già marchiate come "spam" o "non spam"), imparando ad assegnare autonomamente i nuovi documenti alla classe corretta.
+- **Unsupervised Learning**: viene impiegato per il **clustering**. Il sistema analizza dati ed esempi privi di etichetta (unlabeled), raggruppandoli spontaneamente in cluster omogenei e scoprendo temi, affinità e correlazioni nascoste senza bisogno di una guida umana preventiva.
