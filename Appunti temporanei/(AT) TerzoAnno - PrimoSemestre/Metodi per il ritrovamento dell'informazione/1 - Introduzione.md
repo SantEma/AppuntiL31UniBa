@@ -1,13 +1,8 @@
 # La conoscenza
-Secondo Wikipedia la conoscenza è la consapevolezza e la comprensione di verità, fatti o informazioni ottenute attraverso l’esperienza o l’apprendimento (a
-
-posteriori), ovvero tramite l’introspezione (a priori). La conoscenza è l’au-
-tocoscienza del possesso di informazioni connesse tra di loro, le quali, prese
-
-singolarmente, hanno un valore e un’utilità inferiori.
+Secondo Wikipedia la conoscenza è la consapevolezza e la comprensione di verità, fatti o informazioni ottenute attraverso l’esperienza o l’apprendimento (a posteriori), ovvero tramite l’introspezione (a priori). La conoscenza è l’autocoscienza del possesso di informazioni connesse tra di loro, le quali, prese singolarmente, hanno un valore e un’utilità inferiori.
 
 Per gestire la **conoscenza** bisogna saper:
-- **Raccogliere** la conoscenza
+- **Raccoglierla**
 - Organizzarla
 - Distribuirla
 - Renderla **accessibile** a chi necessita di quel tipo di informazione e nel momento e luogo in cui la richiede
