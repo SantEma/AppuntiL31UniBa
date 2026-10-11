@@ -76,8 +76,8 @@ Espressa tramite la formula concettuale: $$\text{Text Mining}=\text{Data Mining 
 ![[Pasted image 20261003170819.png]]
 
 L'architettura tipica di un sistema Text Mining, come si evince dall'immagine è basato su una **pipeline sequenziale**.
-Partendo da un **testo grezzo** si va all'**analisi sintattica**, per poi andare nella fase di **Feature Generation** dove vengono create le **Bag of Words**.
-Dopodiche si eseguono i **filtri statistici**, estraendo dei **pattern**, la loro estrazione avviene tramite tecniche di **classificazione** o di **clustering**. Dopo questa operazione vengono eseguiti i controlli dei pattern e per concludere vengono poi **valutati i risultati**.
+Il processo di Text Mining prende in input documenti in linguaggio naturale e un template specificato e restituisce in output una specifica parte di documenti che corrispondono al template. Tale processo prevede il susseguirsi di diverse fasi:
+- 
 ### Text Mining nell'impresa
 In ambito aziendale è diventata una delle pratiche più importanti, utilizzata sopratutto per comprendere opinioni, reclami, feedback, etc. dei clienti in una società dove questi espongono le loro preferenze tramite **fonti testuali eterogenee** (email, ticket, siti web, social, comunicati stampa, etc.).
 
