@@ -69,8 +69,7 @@ La costruzione di un indice invertito prevede le seguenti fasi:
 1. I documenti da indicizzare vengono tokenizzati;
 2. Le stream di token vengono sottoposte a operazioni di modellazione sintattica (lemmatizzazione e stemming);
 3. Ai token modiﬁcati vengono ora associate le posting list e quindi viene creato l’indice invertito.
-##### Token stream
-
+##### Esempio di costruzione di un indice inverso
 I documenti da indicizzare vengono scansionati uno alla volta e tokenizzati. Per ciascun token viene generata una coppia formata dal termine normalizzato e dal `docID` del documento in cui si trova. ![[Pasted image 20261005170111.png]]
 
 Successivamente, la lista globale di tutte le coppie estratte viene **ordinata alfabeticamente per termine** e, a parità di termine, in ordine crescente di `docID`. ![[Pasted image 20261005170446.png]]
@@ -137,3 +136,5 @@ I token selezionati vengono ricondotti al loro **lemma**, ossia la forma base di
 In questo modo si risolvono anche i problemi di disallineamento durante un interrogazione..
 #### Stemming
 Lo stemming, invece, consiste nel ridurre un termine alla sua radice prima di indicizzarlo semplicemente tagliandone il suﬃsso. Ad esempio “automate”, “automates”, “automatic”, “automation” diventano “automat”.
+
+[da riprendere con "feast or famine"]
