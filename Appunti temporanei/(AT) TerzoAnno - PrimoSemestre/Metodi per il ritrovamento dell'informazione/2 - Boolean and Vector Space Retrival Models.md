@@ -127,6 +127,9 @@ Per questa ragione, si **normalizzano** le parole, ossia si crea una classe di e
 
 > [!example] Esempio di classe di equivalenza
 > ![[Pasted image 20261007164045.png]]
+Successivamente si può pensare di trasformare tutte le parole in lower case
+e di includere nella classe di equivalenza tutte le varianti più rilevanti presenti
+nel dizionario della lingua considerata.
 
 In una classe di equivalenza possono essere presente anche sinonimi, date etc.
 #### Lemmatizzazione
