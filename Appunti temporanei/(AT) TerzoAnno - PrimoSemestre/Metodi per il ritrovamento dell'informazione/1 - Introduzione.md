@@ -1,5 +1,5 @@
 # La conoscenza
-Secondo Wikipedia la conoscenza è la consapevolezza e la comprensione di verità, fatti o informazioni ottenute attraverso l’esperienza o l’apprendimento (a posteriori), ovvero tramite l’introspezione (a priori). La conoscenza è l’autocoscienza del possesso di informazioni connesse tra di loro, le quali, prese singolarmente, hanno un valore e un’utilità inferiori.
+La conoscenza è la consapevolezza e la comprensione di verità, fatti o informazioni ottenute attraverso l’esperienza o l’apprendimento (a posteriori), ovvero tramite l’introspezione (a priori). La conoscenza è l’autocoscienza del possesso di informazioni connesse tra di loro, le quali, prese singolarmente, hanno un valore e un’utilità inferiori.
 
 Per gestire la **conoscenza** bisogna saper:
 - **Raccoglierla**
@@ -16,10 +16,10 @@ La **conoscenza** è un capitale difficile da gestire, poiché è:
 
 Per questo la maggior parte dei database nel mondo possiede i dati in forma **non strutturata**.
 
-L'obiettivo dell'**AKM** (Automatic Knowledge Management) è quello di costruire sistemi in grado di processare documenti in formato di **linguaggio naturale**.
+Alla luce di ciò, gli obiettivi dell'**AKM** (Automatic Knowledge Management) è quello di costruire sistemi in grado di processare documenti in formato di **linguaggio naturale**.
 ### Acquisizione
-L'**acquisizione** è il ritrovamento di conoscenza partendo da un database in forma testuale.
-Per passare dal testo grezzo alla conoscenza formale (processo conosciuto come **Ontology Construction**) si utilizzano diverse tecniche come:
+Come sappiamo, l’unità fondamentale dell’informazione è il dato. Esso può essere strutturato, quindi organizzato secondo tabelle, oppure non strutturato, come lo sono i documenti. Inoltre un informazione può essere cercata, se si ha un obiettivo preciso del risultato della ricerca, oppure scoperta, nel caso in cui si vogliano cercare informazioni che non sono evidenti nella sorgente.
+Per passare dal testo grezzo alla vera conoscenza formale (processo conosciuto come **Ontology Construction**) si utilizzano diverse tecniche come:
 - Document Classification (classificazione dei documenti)
 - Information Extraction (estrazione dell'informazione)
 - Text Mining
