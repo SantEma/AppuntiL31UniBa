@@ -40,10 +40,11 @@ Dall'incrocio di questi due assi, nascono quattro **paradigmi**:
   Seguendo l'esempio precedente, si ottiene la medesima informazione tramite **navigazione per categorie** (prendendo ad esempio un ristorante giapponese a Boston, `Boston -> Restaurant -> Japanese`), ad albero o per **parole chiave**. L'entità manipolata è il **documento**.
 
 - **Data Mining**:
-  Lscoperta di informazione su dati strutturati, attraverso l’analisi di dati,
+  La scoperta di informazione su dati strutturati, attraverso l’analisi di dati.
   Nel Data Mining non si cerca più un dato noto, ma si vuole scoprire in un database **strutturato** una nuova **conoscenza** analizzando moli di dati strutturati. L'entità manipolata sono i valori **numerici**.
   
 - **Text Mining**:
+  La scoperta di informazione su dati non strutturati, attraverso il riconoscimento di pattern o informazioni potenzialmente utili e non banali
   Nel Text Mining andremo ad eseguire la stessa ricerca effettuata nel Data Mining, solo che la conoscenza nuova da scoprire **non è nota a priori** e non cerca su pattern numerici, ma puramente **linguistici**, analizzando direttamente **testi liberi**. L'entità manipolata è il **concetto linguistico**.
 ### Processo di KDD
 Il **Data Mining** in realtà è un sottoprocesso del grande processo di ricerca dai Databases, chiamato KDD (**Knowledge Discovery from Databases**).
