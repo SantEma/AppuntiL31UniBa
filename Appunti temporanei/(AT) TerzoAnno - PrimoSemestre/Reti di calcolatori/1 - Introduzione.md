@@ -26,12 +26,10 @@ I sistemi periferici collegati a Internet forniscono una **interfaccia socket** 
 
 Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di protocolli, il quale ognuno di essi è diverso per il compito che deve svolgere. Qualsiasi attività su internet che coinvolge due o più entità remote in comunicazione viene governata da un protocollo (ad esempio quelle delle schede di rete tra due calcolatori fisicamente connessi, di congestione).
 
-
-
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 
-
+## Specifica dell'infrastruttura fisica di internet
 
 
 
