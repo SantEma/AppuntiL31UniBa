@@ -12,6 +12,14 @@ Un commutatore di pacchetto prende un pacchetto che arriva da uno dei collegamen
 I sistemi periferici accedono a internet tramite i vari **Internet Service Provider (ISP)**, che comprandono vari generi (residenziali reti universitarie etc.).
 Un provider è un insieme di commutatori di pacchetto e di collegamenti. Gli ISP forniscono ai sistemi periferici svariati tipi di accesso alla rete e rendono disponibile l’accesso a Internet ai fornitori di contenuti, connettendone i server a Internet. Poiché Internet non è altro che connettere tra loro gli end systems, anche gli ISP che forniscono accesso ai sistemi periferici devono essere interconnessi, tali provider di livello gerarchico più basso sono interconnessi a quelli nazionali e internazionali di livello più alto, che sono connessi tra di loro direttamente. Un ISP di livello superiore è costituito da router ad alta velocità interconnessi tramite fibra ottica. Ciascuna rete di un ISP, sia di alto sia di basso livello, è gestita in modo indipendente, fa uso del protocollo IP e si conforma a determinate convenzioni riguardo a nomi e indirizzi. 
 
+Sistemi periferici, commutatori di pacchetto e altre parti di Internet fanno uso di protocolli che controllano l’invio e la ricezione di informazioni all’interno della rete. Due dei principali protocolli Internet sono il Transmission ControProtocol (TCP), e l’Internet Protocol (IP).
+Generalmente questi standard sono definiti tramite una taskforce precisa di ingegneri (IETF) e dei documenti chiamati RFC (Request for Comment)
+## Internet come descrizione di servizi
+Date quindi tutte le definizioni precedenti, abbiamo descritto internet nella sua forma "fisica", ma possiamo descriverlo anche come un ampia infrastruttura che fornisce servizi delle applicazioni (posta elettronica, navigazione Web).
+
+Queste applicazioni sono dette **applicazioni distribuite** (distributed applications), in quanto coinvolgono più sistemi periferici che si scambiano reciprocamente dati. L’aspetto più rilevante è che le applicazioni Internet vengono eseguite sui sistemi periferici e non sui commutatori di pacchetto del nucleo della rete. Sebbene i commutatori di pacchetto consentano lo scambio di dati tra sistemi periferici, non hanno a che fare con le applicazioni che sono sorgenti e destinazioni dei dati.
+
+I sistemi periferici collegati a Internet forniscono una **interfaccia socket** (socket interface), che specifica come un programma eseguito su un sistema periferico possa chiedere a Internet di recapitare dati a un programma eseguito su un altro sistema periferico. L’interfaccia socket è un insieme di regole che il programma mittente deve seguire in modo che i dati siano recapitati al programma di destinazione.
 
 
 
