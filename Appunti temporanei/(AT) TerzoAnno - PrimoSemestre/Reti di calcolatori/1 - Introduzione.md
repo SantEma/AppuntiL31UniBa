@@ -28,7 +28,6 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 
 
 
-
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 
