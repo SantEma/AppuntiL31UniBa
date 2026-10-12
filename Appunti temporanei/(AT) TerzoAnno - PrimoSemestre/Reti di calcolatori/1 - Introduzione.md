@@ -1,4 +1,19 @@
-[da rivedere dal libro]
+## Internet come infrastruttura
+Internet è una rete di calcolatori che interconnette miliardi di dispositivi di calcolo in tutto il mondo.
+In gergo, questi dispositivi sono detti **host** (ospite) o **sistemi periferici** (end system).
+
+I vari sistemi periferici sono connessi tra loro tramite una **rete di collegamenti** (communication link) e **commutatori di pacchetti** (packet switch)
+
+
+
+
+
+
+
+
+
+
+
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
 
