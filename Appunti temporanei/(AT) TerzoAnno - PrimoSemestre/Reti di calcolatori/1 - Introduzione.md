@@ -20,6 +20,15 @@ Date quindi tutte le definizioni precedenti, abbiamo descritto internet nella su
 Queste applicazioni sono dette **applicazioni distribuite** (distributed applications), in quanto coinvolgono più sistemi periferici che si scambiano reciprocamente dati. L’aspetto più rilevante è che le applicazioni Internet vengono eseguite sui sistemi periferici e non sui commutatori di pacchetto del nucleo della rete. Sebbene i commutatori di pacchetto consentano lo scambio di dati tra sistemi periferici, non hanno a che fare con le applicazioni che sono sorgenti e destinazioni dei dati.
 
 I sistemi periferici collegati a Internet forniscono una **interfaccia socket** (socket interface), che specifica come un programma eseguito su un sistema periferico possa chiedere a Internet di recapitare dati a un programma eseguito su un altro sistema periferico. L’interfaccia socket è un insieme di regole che il programma mittente deve seguire in modo che i dati siano recapitati al programma di destinazione.
+### Protocolli
+> [!info] Definizione formale di protocolli
+> Un **protocollo** definisce il formato e l’ordine dei messaggi scambiati tra due o più entità in comunicazione, così come le azioni intraprese in fase di trasmissione e/o di ricezione di un messaggio o di un altro evento.
+
+Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di protocolli, il quale ognuno di essi è diverso per il compito che deve svolgere. Qualsiasi attività su internet che coinvolge due o più entità remote in comunicazione viene governata da un protocollo (ad esempio quelle delle schede di rete tra due calcolatori fisicamente connessi, di congestione )
+
+
+> [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
+> ![[Pasted image 20261012144741.png]]
 
 
 
