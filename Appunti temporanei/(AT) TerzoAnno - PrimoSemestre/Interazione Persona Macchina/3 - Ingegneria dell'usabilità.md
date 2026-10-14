@@ -125,16 +125,9 @@ L'integrazione delle attività di usabilità richiede un investimento economico 
 - Riducono drasticamente i costi di riprogettazione tardiva (modificare un'idea su un prototipo cartaceo costa una frazione trascurabile rispetto alla modifica del codice sorgente già rilasciato).
 - Riducono i tempi e i costi di formazione e addestramento del personale.
 - Abbattono le richieste di assistenza tecnica post-vendita e i costi di help-desk.
-
-
-
-## 6. Istanze Pratiche dell'Human-Centred Design: UCD Sprint e Design Thinking
-
-### 6.1 Il concetto di istanziazione pratica
+## 6. Istanze pratiche dell'HCD: UCD Sprint e Design Thinking
 L'Human-Centred Design descritto dallo standard ISO 9241-210 costituisce un modello generale e astratto. Nello sviluppo applicativo reale, tale modello astratto viene istanziato ed eseguito attraverso metodologie concrete, tra le quali assumono primaria rilevanza lo **User-Centred Design Sprint (UCD Sprint)** e il **Design Thinking**.
-
-
-### 6.2 Lo User-Centred Design Sprint (UCD Sprint)
+### User-Centred Design Sprint (UCD Sprint)
 Lo UCD Sprint è una metodologia procedurale passo-dopo-passo sviluppata per favorire la generazione di idee e la progettazione guidata all'interno dei team software. Derivato dal *Design Sprint* ideato da Jake Knapp in Google, l'UCD Sprint fornisce passaggi prescrittivi definiti che lo rendono particolarmente adatto per contesti didattici o per team poco esperti.
 
 La metodologia si suddivide in tre macro-fasi operative:
