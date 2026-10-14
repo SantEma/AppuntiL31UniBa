@@ -1,5 +1,5 @@
 ## Accetabilità di un sistema software
-Secondo J. Nielsen, l'accettabilità di un sistema software dipende da più attributi: compatibilità, affidabilità, utilità, utilizzabilità (usabilità) e altri ancora. 
+Secondo J. Nielsen, l'accettabilità di un sistema software dipende da più attributi: compatibilità, affidabilità, utilità, utilizzabilità (usabilità) e altri ancora.
 Il modello di Nielsen scompone l'usabilità in cinque attributi quantificabili:
 - L'apprendibilità (**learnability**), che misura la facilità con cui un utente novizio apprende il funzionamento base del sistema.
 - L'efficienza (**efficiency**), che indica la velocità e la produttività che un utente esperto raggiunge a regime.
@@ -54,4 +54,13 @@ Comprendere le persone nei contesti in cui vivono, lavorano e apprendono è fond
 > Uno strumento di pianificazione collaborativa per una **missione spaziale** avrà esigenze completamente diverse da uno strumento per clienti e agenti di vendita in un **negozio di arredamento**, pur essendo entrambi "strumenti collaborativi".
 
 Ciò che funziona per un gruppo di utenti può essere del tutto inappropriato per un altro: i prodotti interattivi vanno progettati **diversamente per tipi diversi di utenti**.
-[da finire, slide]
+
+L'usabilità varia inoltre in funzione del tempo e dell'evoluzione dell'utilizzatore, il cui profilo si modifica lungo la traiettoria che va dallo stadio di utente novizio, passando per utente principiante e competente, fino allo stadio di utente esperto.
+L'usabilità varia inoltre in funzione del tempo e dell'evoluzione dell'utilizzatore, il cui profilo si modifica lungo la traiettoria che va dallo stadio di utente novizio, passando per utente principiante e competente, fino allo stadio di utente esperto.
+
+In sede di progettazione, il rapporto tra la facilità di apprendimento (**learnability**) e la memorabilità (**memorability**) determina la forma delle curve di prestazione nel tempo:
+- La *Curva A* rappresenta un sistema progettato con focus sull'utente novizio o occasionale. Tale curva evidenzia una rapida crescita di usabilità e prestazioni nelle fasi iniziali dell'interazione, consentendo all'utente di essere subito operativo, ma stabilizzandosi su un plateau asintotico a basso livello di efficienza massima.
+- La *Curva B* rappresenta un sistema progettato con focus sull'utente continuativo ed esperto. La pendenza iniziale è più dolce e richiede un investimento di tempo significativo per l'apprendimento, ma consente a regime di raggiungere livelli di efficienza decisamente superiori.
+![[Pasted image 20261014114725.png]]
+
+Un sistema ideale deve permettere all'utente continuativo di evolvere da novizio ad esperto raggiungendo la massima efficienza, garantendo al contempo un'elevata memorabilità per consentire all'utente occasionale di riprendere l'uso a distanza di tempo senza dover consultare la documentazione. La memorabilità è fondamentale nei sistemi a uso sporadico ma critico, come i sistemi di gestione delle emergenze o degli allarmi.
