@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "3 - Ingegneria dell'usabilità"
+              "title": "1 - Introduzione"
             }
           }
         ]
@@ -158,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -188,24 +188,27 @@
   },
   "active": "1bea08385d98f63b",
   "lastOpenFiles": [
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014160901.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014162433.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014161837.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014161012.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014114725.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014124003.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123942.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123824.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123814.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123132.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/6 - Liste.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/5 - Complessità Computazionale.md",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Laboratorio di Informatica/5 - Stile di programmazione.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/1 - Introduzione.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261012144741.png",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Linguaggi di programmazione/1 - Introduzione ai linguaggi di programmazione ed alla teoria dei linguaggi formali.md",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Linguaggi di programmazione/8 - Tabella dei simboli.md",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Linguaggi di programmazione/9 - Esercizi.md",
@@ -220,10 +223,6 @@
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/5 - Progettazione di Basi di Dati.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/7 - Sviluppo di applicazioni per Basi di Dati.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/8 - Basi di dati sematiche.md",
-    "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/Domande esame (possibili) + schema per esercitazione.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261007164045.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006162409.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261005170510.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori",

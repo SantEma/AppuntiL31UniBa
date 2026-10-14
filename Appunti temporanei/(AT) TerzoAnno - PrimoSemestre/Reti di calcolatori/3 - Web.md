@@ -1,1 +1,1 @@
-[da finire]
+[da iniziare, Capitolo 2 del libro]
