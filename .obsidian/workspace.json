@@ -11,14 +11,12 @@
             "id": "1bea08385d98f63b",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
-                "mode": "source",
-                "source": false
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014114725.png"
               },
-              "icon": "lucide-file",
-              "title": "2 - Usabilità"
+              "icon": "lucide-image",
+              "title": "Pasted image 20261014114725"
             }
           }
         ]
@@ -80,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -159,7 +156,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014114725.png",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -187,11 +184,16 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "1bea08385d98f63b",
+  "active": "ab83996f0563bfdd",
   "lastOpenFiles": [
-    "Pasted image 20261014114725.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014124003.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123942.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123824.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123814.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014123132.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014114725.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/6 - Liste.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/5 - Complessità Computazionale.md",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Laboratorio di Informatica/5 - Stile di programmazione.md",
@@ -219,12 +221,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261007164045.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006162409.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261005170510.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261005170446.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261005170111.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006171035.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006194149.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006193343.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261006192732.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori",

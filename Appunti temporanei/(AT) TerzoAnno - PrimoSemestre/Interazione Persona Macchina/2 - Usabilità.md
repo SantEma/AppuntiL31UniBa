@@ -18,7 +18,6 @@ Esistono diversi standard ISO sull'usabilità:
 - **ISO/IEC 25022**: misura della qualità in uso (efficacia, efficienza, soddisfazione), in sostituzione di ISO TR 9126-4.
 - **ISO/IEC 25023**: misura della qualità del sistema e del prodotto software (include le misure degli attributi di usabilità), in sostituzione di ISO/IEC TR 9126-2 e 9126-3.
 #### Standard ISO 9241-11
-
 > [!info] Definizione Operativa di Usabilità (ISO 9241-11)
 > L'usabilità è la misura in cui un prodotto può essere usato da **specifici utenti** per raggiungere **specifici obiettivi** con **efficacia**, **efficienza** e **soddisfazione** in uno **specifico contesto d'uso**.
 
@@ -28,7 +27,6 @@ Le tre metriche prestazionali fondamentali sono:
 - **Soddisfazione**: l'assenza di disagio e la presenza di un'attitudine positiva dell'utente verso il prodotto.
 Nello spazio concettuale, l'usabilità costituisce un modello cartesiano tridimensionale i cui assi sono definiti dalle metriche di efficacia, efficienza e soddisfazione.
 #### Standard ISO 9126-1 e ISO/IEC 25000 (SQuaRE)
-
 ##### ISO 9126-1
 Inquadra l'usabilità all'interno della qualità software, distinguendo tra:
 - **Qualità Interna ed Esterna**: definita dai sotto-attributi di *comprensibilità*, *apprendibilità*, *operabilità* ed *attrattività*.
@@ -40,18 +38,64 @@ Evoluzione della ISO 9126, valuta le caratteristiche qualitative del software di
 - **Qualità Interna**: verificabile staticamente tramite ispezione del codice sorgente e della documentazione;
 - **Qualità Esterna**: verificabile tramite test dinamici condotti da tecnici in ambienti di simulazione;
 - **Qualità in Uso**: verificabile sul campo mediante test condotti con utenti reali in contesti d'uso operativi.
-
 ## Usabilità
 L'usabilità non deve mai essere concepita come una proprietà assoluta o intrinseca di un artefatto, bensì come una grandezza strettamente relativa che sussiste esclusivamente nella relazione tra tre variabili indipendenti:  
-- Utenti, 
-- Obiettivi, 
-- Il contesto d'uso
+- Utenti;
+- Obiettivi;
+- Contesto d'uso;
 
 Un medesimo artefatto interattivo può dimostrare un'elevata usabilità per un dato gruppo di utenti in un preciso compito e risultare inusabile per utenti differenti o contesti diversi. Ciò dimostra che i prodotti interattivi devono essere progettati in modo differenziato per rispondere alla diversità degli utenti.
 
 L'usabilità varia inoltre in funzione della dimensione temporale e dell'evoluzione dell'utente. Durante il ciclo di vita dell'interazione con un sistema, il profilo dell'utente si modifica progressivamente attraverso tre stadi evolutivi: lo stadio di utente novizio, che non possiede alcuna conoscenza pregressa del sistema; lo stadio di utente principiante, che inizia a familiarizzare con le funzioni di base; e lo stadio di utente esperto, che ha sviluppato una profonda competenza ed esegue i compiti in modo fluido e automatizzato.
 
-> [!info] Bilanciare learnability e memorability
-> In sede di progettazione, il rapporto tra la facilità di apprendimento (*learnability*) e la memorabilità (*memorability*) determina la forma delle curve di usabilità nel tempo e impone di bilanciare le esigenze di due tipologie di utilizzatori:
-> - La Curva A rappresenta un sistema progettato con primario focus sull'utente novizio o occasionale. Tale curva evidenzia una crescita di usabilità e prestazioni estremamente rapida nelle fasi iniziali dell'interazione, consentendo all'utente di essere immediatamente operativo. Tuttavia, la curva raggiunge precocemente un piano asintotico, poiché le semplificazioni introdotte impediscono l'esecuzione di operazioni avanzate o ad alta velocità.
-> - La *Curva B* rappresenta un sistema progettato con focus sull'utente continuativo ed esperto. La pendenza iniziale della curva è più dolce e richiede un investimento temporale e cognitivo significativo per apprendere le modalità operative del sistema. Ciononostante, una volta superata la fase di apprendimento, la curva raggiunge livelli di usabilità ed efficienza notevolmente superiori rispetto alla curva A, permettendo l'esecuzione di compiti complessi con la massima rapidità.
+> [!info] Bilanciare Learnability e Memorability
+> In sede di progettazione, il rapporto tra la facilità di apprendimento (learnability) e la memorabilità (memorability) determina la forma delle curve di usabilità nel tempo e impone di bilanciare le esigenze di due tipologie di utilizzatori:
+> - La Curva A rappresenta un sistema progettato con primario focus sull'utente novizio o occasionale. Tale curva evidenzia una crescita di usabilità e prestazioni estremamente rapida nelle fasi iniziali dell'interazione, consentendo all'utente di essere immediatamente operativo. Tuttavia, la curva raggiunge precocemente un piano piatto, poiché le semplificazioni introdotte impediscono l'esecuzione di operazioni avanzate o ad alta velocità.
+> - La Curva B rappresenta un sistema progettato con focus sull'utente continuativo ed esperto. La pendenza iniziale della curva è più dolce e richiede un investimento temporale e cognitivo significativo per apprendere le modalità operative del sistema. Ciononostante, una volta superata la fase di apprendimento, la curva raggiunge livelli di usabilità ed efficienza notevolmente superiori rispetto alla curva A, permettendo l'esecuzione di compiti complessi con la massima rapidità.
+>
+>![[Pasted image 20261014114725.png]]
+
+Il compito essenziale del progettista consiste nel realizzare un bilanciamento ottimale tra queste due istanze. Da un lato, il sistema deve mettere in grado l'utente continuativo di evolvere dalla condizione di novizio a quella di esperto raggiungendo livelli elevati di efficienza. Dall'altro lato, il sistema deve garantire un'elevata memorabilità, garantendo che l'utente occasionale, il quale rimane strutturalmente al livello di novizio, possa riprendere l'utilizzo dell'interfaccia a distanza di tempo senza la necessità di dover ricorrere a manuali o aiuti esterni.
+### User Experience
+L'evoluzione della disciplina ha portato a superare la visione meramente prestazionale dell'usabilità per abbracciare il concetto più ampio di **User Experience (UX)**, il quale comprende la totalità degli aspetti emotivi, cognitivi, sensoriali e valutativi che caratterizzano l'interazione della persona con la tecnologia.
+
+Un contributo teorico fondamentale alla modellizzazione dell'UX è rappresentato dal modello di Marc Hassenzahl, il quale suddivide le qualità percepite di un prodotto interattivo in due macro-categorie distinte ma interconnesse:
+- **Attributi pragmatici**: definiscono la capacità del sistema di supportare il raggiungimento di obiettivi pratici e operativi in modo semplice, ovvio ed efficiente, corrispondendo direttamente alla nozione classica di usabilità e funzionalità
+- **Attributi edonici**: definiscono la capacità dell'oggetto di stimolare l'utente, di favorire l'espressione dell'identità personale e di evocare ricordi o emozioni piacevoli attraverso l'interazione
+
+Laddove gli obiettivi tradizionali dell'usabilità si focalizzano sul soddisfacimento di criteri quantitativi quali l'efficienza e la sicurezza, gli obiettivi dell'esperienza utente (UX) mirano a generare stati emotivi desiderabili quali l'appagamento, il coinvolgimento cognitivo, il divertimento e la stimolazione della creatività, evitando al contempo sensazioni indesiderabili di frustrazione o inadeguatezza.
+## Modello di interazione di Norman
+Per analizzare le origini profonde delle difficoltà d'uso che si manifestano durante l'interazione uomo-macchina, si fa ricorso al modello cognitivo dell'interazione proposto da Donald Norman. Tale modello parte dall'assunto fondamentale che lo scopo ultimo di qualsiasi sistema interattivo o artefatto software sia quello di supportare l'utente nel raggiungimento dei propri obiettivi all'interno di uno specifico dominio applicativo, inteso come l'area di conoscenza e di attività del mondo reale su cui si intende agire.
+
+L'operare umano sugli oggetti e sui sistemi interattivi viene scomposto da Norman in sette stadi sequenziali dell'azione, strutturati attorno al ciclo di esecuzione e al ciclo di valutazione
+> [!info] Modello di interazione di Norman
+> 1. Formazione dello **scopo** (Goal): l'utente definisce nella propria mente lo stato finale che intende raggiungere nel mondo reale.
+> 2. Ciclo di **esecuzione** (Execution):
+>    - Formare l'intenzione: l'utente decide la strategia generale o la classe di azioni intese a soddisfare lo scopo prefissato.
+>    - Specificare l'azione: l'utente traduce l'intenzione generale in una sequenza dettagliata di comandi o gesti fisici specifici eseguibili con il sistema.
+>    - Eseguire l'azione: l'utente attua concretamente l'azione fisica agendo sui dispositivi di input o sulle componenti meccaniche del sistema.
+> 3. Ciclo di **valutazione** (Evaluation):
+>    - Percepire lo stato del mondo: l'utente osserva le variazioni fisiche e sensoriali che si sono verificate nel sistema e nell'ambiente circostante a seguito dell'azione compiuta.
+>    - Interpretare lo stato del mondo: l'utente elabora i segnali percepiti attribuendo loro un significato coerente per comprendere cosa sia effettivamente accaduto.
+>    - Valutare il risultato: l'utente confronta lo stato attuale del sistema, così come interpretato, con lo scopo iniziale per determinare se l'obiettivo sia stato pienamente conseguito.
+>
+>![[Pasted image 20261014123132.png]]
+
+> [!example] Esempi di modelli di interazione di Norman
+> ![[Pasted image 20261014123814.png]]
+> ![[Pasted image 20261014123824.png]]
+
+Attraverso questo modello, Norman individua le due barriere cognitive che ostacolano l'interazione fluido-intuitiva, definendole come i "Due Golfi dell'Interazione":
+- Il **Golfo dell'Esecuzione** (Gulf of Execution) misura la distanza e la discrepanza tra le intenzioni formulate dall'utente e le azioni fisiche che il sistema consente o richiede di eseguire. Se il sistema presenta comandi poco chiari, funzioni nascoste o sequenze illogiche, l'attraversamento di questo golfo richiede uno sforzo cognitivo elevato e l'interazione risulta inefficiente.
+- Il **Golfo della Valutazione** (Gulf of Evaluation) misura la distanza tra la presentazione dello stato fisico del sistema e le aspettative dell'utente. Se il sistema non fornisce informazioni immediate, univoche e comprensibili sull'effetto dell'azione eseguita, l'utente incontra gravi difficoltà nell'interpretare lo stato effettivo e nel comprendere se lo scopo sia stato raggiunto.
+### Superamento dei golfi
+La responsabilità primaria del progettista di interfacce consiste nel minimizzare l'ampiezza dei due golfi dell'interazione. Per ridurre fino ad azzerare il Golfo dell'Esecuzione, il progettista deve fare ricorso al principio dell'**Affordance**, mentre per colmare il Golfo della Valutazione, deve garantire un adeguato sistema di **Feedback**.
+> [!info] Concetto di Affordance
+> Il concetto di Affordance (traducibile complanarmente come "invito all'uso" o "invito all'azione"), descrive la proprietà reale o percepita di un oggetto di suggerire visivamente le modalità con cui esso deve essere impugnato, azionato o utilizzato.
+
+> [!example] Esempio di cattiva Affordance
+> ![[Pasted image 20261014123942.png]]
+> ![[Pasted image 20261014124003.png]]
+
+> [!info] Concetto di feedback
+> Il Feedback costituisce il segnale di ritorno attraverso il quale il sistema comunica all'utente le modifiche di stato prodotte dalle sue azioni. Affinché un feedback sia efficace nella riduzione del Golfo della Valutazione, esso deve possedere i requisiti di tempestività, specificità e conformità alle aspettative dell'utente. 
