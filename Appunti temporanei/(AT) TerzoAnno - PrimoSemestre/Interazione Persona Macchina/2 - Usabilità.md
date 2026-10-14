@@ -1,12 +1,14 @@
 ## Accetabilità di un sistema software
 Secondo J. Nielsen, l'accettabilità di un sistema software dipende da più attributi: compatibilità, affidabilità, utilità, utilizzabilità (usabilità) e altri ancora. 
-L'**usabilità** si articola a sua volta in cinque componenti: 
-- Facilità di apprendimento; 
-- Facilità d'uso;
-- Facilità di memorizzazione; 
-- Numero ridotto di errori; 
-- Soddisfazione nell'uso;
+Il modello di Nielsen scompone l'usabilità in cinque attributi quantificabili:
+- L'apprendibilità (**learnability**), che misura la facilità con cui un utente novizio apprende il funzionamento base del sistema.
+- L'efficienza (**efficiency**), che indica la velocità e la produttività che un utente esperto raggiunge a regime.
+- La memorabilità (memorability), ossia la facilità con cui un utente occasionale ripristina la familiarità operativa dopo un periodo di inutilizzo.
+- La gestione degli errori (**errors**), che considera la frequenza di errore, la gravità e la presenza di meccanismi di ripristino rapido.
+- La soddisfazione (**satisfaction**), definita come la piacevolezza e il comfort soggettivo derivanti dall'utilizzo del prodotto.
 ### ISO su usabilità
+La trattazione formale dell'usabilità trova il proprio fondamento normativo negli standard stilati dall'International Organization for Standardization.
+
 Esistono diversi standard ISO sull'usabilità:
 - **ISO 9126**: qualità del prodotto software.
 - **ISO 9241-11**: definizioni e concetti di usabilità (sostituisce la versione del 1988).
