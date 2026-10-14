@@ -10,3 +10,20 @@ Per strutturare un sistema interattivo realmente rispondente alle esigenze umane
 2. **Analisi dei bisogni**: esame dettagliato delle necessità esplicite e implicite, nonché delle aspettative dell'utente nei confronti del sistema.
 3. **Analisi del contesto**: studio dell'ambiente specifico (fisico, organizzativo, sociale e tecnologico) all'interno del quale avverrà l'interazione.
 4. **Analisi dei casi d'uso**: identificazione e formalizzazione dei compiti specifici e delle sequenze di interazione utili a raggiungere scopi concreti per l'utente.
+### Livelli di maturità della progettazione
+La qualità e la maturità di un processo di progettazione possono essere modellate secondo quattro livelli gerarchici progressivi:
+- **Primo livello**: Il prodotto funziona da un punto di vista strettamente tecnico e computazionale.
+- **Secondo livello**: Il prodotto fornisce le funzioni richieste e risponde alle specifiche, ma rimane ancorato a una prospettiva orientata al sistema (*system-centered design*).
+- **Terzo livello**: Il prodotto è facile da imparare e da usare, incarnando appieno la filosofia dell'Human-Centred Design.
+- **Quarto livello**: Il prodotto diventa "invisibile" durante l'uso.
+
+Un artefatto interattivo raggiunge il massimo grado di usabilità quando assume la qualifica di prodotto "invisibile". In questa condizione, l'utente concentra le proprie risorse cognitive esclusivamente sul compito che sta svolgendo e non sullo strumento impiegato. L'interfaccia si dissolve nella percezione del soggetto; l'artefatto riacquista visibilità unicamente quando si verifica un malfunzionamento, un errore imprevisto o un'interruzione imprevista del flusso operativo.
+## Ingegneria dell'Usabilità e Modelli del Ciclo di Vita del Software
+L'ingegneria dell'usabilità comprende, nella sua accezione più ampia, l'insieme integrato delle pratiche, dei metodi e dei processi adottati nello sviluppo dei sistemi interattivi a partire dalla fase di rilevazione dei requisiti. La disciplina si fonda su tre principi cardine imprescindibili:
+1. **Focalizzazione precoce e continua sull'utente**: comprensione diretta e costante delle caratteristiche cognitive e comportamentali degli utenti lungo tutto il progetto.
+2. **Misurazione empirica**: effettuazione costante di prove d'uso con l'utente mediante l'uso di metriche quantitative e analisi qualitative.
+3. **Sviluppo iterativo per prototipi successivi**: affinamento progressivo della soluzione progettuale attraverso cicli ripetuti di prototipazione, test e revisione.
+
+Il modello di sviluppo tradizionale adottato dall'ingegneria del software è il modello "a cascata", articolato in una sequenza rigida di fasi: definizione dei requisiti, analisi e progettazione dell'architettura, specifica di progetto, codifica, integrazione e test, rilascio e manutenzione. 
+
+Sebbene il modello a cascata presenti vantaggi teorici legati alla chiara definizione logica delle fasi e alla presenza di checkpoint gestionali, esso risulta strutturalmente inadeguato per la realizzazione di sistemi interattivi usabili. Il problema risiede nella presunzione di poter "congelare" i requisiti iniziali prima della realizzazione. Poiché il sistema nella sua interezza viene mostrato all'utente soltanto al termine della catena produttiva, eventuali difetti di impostazione o incomprensioni dei bisogni emergono quando il costo economico e temporale della modifica è diventato ormai proibitivo.****
