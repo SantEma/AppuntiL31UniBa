@@ -1,5 +1,5 @@
 ## Accetabilità di un sistema software
-Secondo J. Nielsen, l'accettabilità di un sistema software dipende da più attributi: compatibilità, affidabilità, utilità, utilizzabilità (usabilità) e altri ancora.
+Secondo J. Nielsen, l'accettabilità di un sistema software dipende da più attributi:.
 Il modello di Nielsen scompone l'usabilità in cinque attributi quantificabili:
 - L'apprendibilità (**learnability**), che misura la facilità con cui un utente novizio apprende il funzionamento base del sistema.
 - L'efficienza (**efficiency**), che indica la velocità e la produttività che un utente esperto raggiunge a regime.
@@ -42,6 +42,11 @@ Evoluzione della ISO 9126, valuta le caratteristiche qualitative del software di
 - **Qualità in Uso**: verificabile sul campo mediante test condotti con utenti reali in contesti d'uso operativi.
 
 ## Usabilità
-L'usabilità non è una proprietà assoluta o intrinseca di un artefatto, bensì una grandezza relativa definita dalla relazione quantificabile$$Usabilità = f(Utenti, Obiettivi, Contesto)$$Un medesimo artefatto interattivo può dimostrare un'elevata usabilità per un dato gruppo di utenti in un preciso compito e risultare inusabile per utenti differenti o contesti diversi. Ciò dimostra che i prodotti interattivi devono essere progettati in modo differenziato per rispondere alla diversità degli utenti.
+L'usabilità non deve mai essere concepita come una proprietà assoluta o intrinseca di un artefatto, bensì come una grandezza strettamente relativa che sussiste esclusivamente nella relazione tra tre variabili indipendenti:  
+- Utenti, 
+- Obiettivi, 
+- Il contesto d'uso
+
+Un medesimo artefatto interattivo può dimostrare un'elevata usabilità per un dato gruppo di utenti in un preciso compito e risultare inusabile per utenti differenti o contesti diversi. Ciò dimostra che i prodotti interattivi devono essere progettati in modo differenziato per rispondere alla diversità degli utenti.
 
 L'usabilità varia inoltre in funzione del tempo e dell'evoluzione dell'utilizzatore, il cui profilo si modifica lungo la traiettoria che va dallo stadio di utente novizio, passando per utente principiante e competente, fino allo stadio di utente esperto.
