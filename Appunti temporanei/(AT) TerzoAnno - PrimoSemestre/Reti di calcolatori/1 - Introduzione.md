@@ -69,13 +69,14 @@ La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-a
 > 
 > Più in generale, per inviare un singolo pacchetto su un percorso di $N$ collegamenti identici a velocità $R$, il ritardo complessivo da un capo all'altro è dato dalla formula $$N \cdot \frac{L}{R}$$
 
-Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di questi il commutatore mantiene un **buffer di output** per conservare i pacchetti che sta per inviare su quel collegamento. I buffer di output rivestono un ruolo chiave nella commutazione di pacchetto, infatti un pacchetto in arrivo che debba essere inviato attraverso un collegamento occupato dalla trasmissione di un altro, deve attendere nella coda di output. Di conseguenza, oltre ai ritardi store-and-forward, i pacchetti subiscono anche **ritardi di accodamento** nei buffer di output. Tali ritardi sono variabili e dipendono dal livello di traffico nella rete. Dato che la dimensione del buffer è finita, un pacchetto in arrivo può trovare il buffer completamente riempito da altri pacchetti che attendono la trasmissione, creando il fenomeno della **perdita di pacchetto (packet loss)**, ossia verrà eliminato o il pacchetto in arrivo o uno di quelli che si trova già in coda.
+Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di questi il commutatore mantiene un **buffer di output** per conservare i pacchetti che sta per inviare su quel collegamento. I buffer di output rivestono un ruolo chiave nella commutazione di pacchetto, infatti un pacchetto in arrivo che debba essere inviato attraverso un collegamento occupato dalla trasmissione di un altro, deve attendere nella coda di output.
 
 > [!example] Esempio di rete a pacchetto completa
 > ![[Pasted image 20261016162651.png]]
 
 Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
 #### Ritardi di elaborazione nelle reti a commutazione a pacchetto
+#### Throughput
 ### Commutazione a circuito
 Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto.
 
