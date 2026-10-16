@@ -76,8 +76,9 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 
 Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
 #### Ritardi di elaborazione nelle reti a commutazione a pacchetto
+[da finire]
 #### Throughput
-
+[da finire]
 ### Commutazione a circuito
 Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto.
 
@@ -88,7 +89,7 @@ Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (bu
 #### Multiplexing nelle reti a commutazione di circuito
 Un circuito all'interno di un collegamento è implementato tramite 2 modalità
 - **Multiplexing a divisione di frequenza (FDM, frequency-division multiplexing)**: lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento, dedicando una banda di frequenza a ciascuna connessione per la durata della connessione stessa. La larghezza di banda viene chiamata **ampiezza di banda (bandwidth)**
-- **Multiplexing a divisione di tempo (TDM, time-division multiplexing)**:  il tempo viene suddiviso in frame (intervalli) di durata fissa, a loro volta ripartiti in un numero fisso di slot (porzioni) temporali. Quando la rete stabilisce una connessione attraverso un collegamento, le dedica uno slot di tempo in ogni frame, e tali slot sono dedicati unicamente a quella connessione, con uno slot temporale disponibile in ciascun frame alla trasmissione dei dati di connessione.
+- **Multiplexing a divisione di tempo (TDM, time-division multiplexing)**: il tempo viene suddiviso in frame (intervalli) di durata fissa, a loro volta ripartiti in un numero fisso di slot (porzioni) temporali. Quando la rete stabilisce una connessione attraverso un collegamento, le dedica uno slot di tempo in ogni frame, e tali slot sono dedicati unicamente a quella connessione, con uno slot temporale disponibile in ciascun frame alla trasmissione dei dati di connessione.
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
