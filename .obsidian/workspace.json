@@ -13,12 +13,12 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
                 "mode": "source",
                 "source": false
               },
               "icon": "lucide-file",
-              "title": "1 - Introduzione"
+              "title": "4 - DNS"
             }
           }
         ]
@@ -80,8 +80,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -159,7 +158,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -189,12 +188,14 @@
   },
   "active": "6b7408dfbcd959fa",
   "lastOpenFiles": [
-    "Pasted image 20261016175359.png",
-    "Pasted image 20261016172505.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016164818.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016172505.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016180652.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016180457.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016175359.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016164818.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016163148.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261016154516.png",
     "Pasted image 20261016154023.png",
@@ -205,9 +206,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014160901.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014162433.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014161837.png",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/6 - Liste.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/5 - Complessità Computazionale.md",
     "Appunti temporanei/(AT) PrimoAnno - SecondoSemestre/Laboratorio di Informatica/5 - Stile di programmazione.md",

@@ -95,7 +95,6 @@ Più nello specifico, si supponga l’esistenza di $N – 1$ router tra l’orig
 
 > [!example] Esempio di traceroute
 > ![[Pasted image 20261016175359.png]]
-
 #### Perdita di pacchetti
 Come sappiamo, le code di un router hanno capacità finita (variabile in dimensione dal costo e architettura.Poiché la capacità delle code è finita, un pacchetto può trovare la coda piena. Non essendo possibile memorizzare tale pacchetto, il router lo eliminerà e il pacchetto andrà perduto. 
 
@@ -104,14 +103,25 @@ Dal punto di vista dei sistemi periferici, la perdita sembrerà come se il pacch
 Come vedremo successivamente, un pacchetto generalmente porta con se un valore molto importante chiamato **TTL (Time To Live)**. Questo valore (fisso per alcuni pacchetti) viene diminuito di 1 ogni volta che il pacchetto attraversa un nodo della rete, se questo arriva a 0 viene direttamente scartato. Il TTL previene il fenomeno dei pacchetti fantasma all'interno della rete, ossia di pacchetti che, per un motivo o per l'altro, non riescono a raggiungere la loro destinazione
 #### Throughput
 Oltre al ritardo e alla perdita di pacchetti, un’altra misura critica delle prestazioni in una rete di calcolatori è il **throughput end-to-end**. Per darne una definizione, considerate il trasferimento di un file voluminoso da $A$ a $B$, attraverso la rete che potrebbe essere, per esempio, un grosso videoclip da trasmettere da un computer a un altro. **Il throughput (capacità totale)** istantaneo in ogni istante di tempo è la velocità (in bps) alla quale $B$ sta ricevendo il file.
-Se il file consiste di $F$ bit e il trasferimento richiede $T$ secondi affinché $B$ riceva tutti gli $F$ bit, allora il throughput medio del trasferimento del file è di $\frac{F}{T}$ bps. 
+Se il file consiste di $F$ bit e il trasferimento richiede $T$ secondi affinché $B$ riceva tutti gli $F$ bit, allora il throughput medio del trasferimento del file è di $\frac{F}{T}$ bps.
+
+> [!example] Vari esempi di throughput
+> ![[Pasted image 20261016180457.png]]
+> Nel primo scenario, viene considerato un modello semplificato a due soli collegamenti, in cui un server trasferisce un file a un client attraverso un router intermedio. Se indichiamo con $R_s$ la velocità del collegamento tra il server e il router e con $R_c$ la velocità del collegamento tra il router e il client, è possibile visualizzare la trasmissione assimilando i bit a un fluido che scorre all'interno di condotte. Qualora la velocità del primo tratto sia inferiore a quella del secondo ($R_s < R_c$), il flusso dei dati procederà alla velocità consentita dal server, determinando un throughput pari a $R_s$. Al contrario, se il collegamento in uscita dal router è più lento di quello in ingresso ($R_c < R_s$), il router non sarà in grado di inoltrare i bit al ritmo con cui li riceve, causando un accumulo di dati nel proprio buffer e limitando la velocità finale di ricezione a $R_c$. Da questo comportamento discende il principio per cui il throughput end-to-end è vincolato dalla velocità del collegamento più lento lungo il percorso, noto come collegamento **collo di bottiglia (bottleneck link)**, risultando pari a $\min(R_s, R_c)$. Di conseguenza, il tempo richiesto per trasferire un file di dimensione $F$ bit può essere stimato tramite la formula:
+> $$ \frac{F}{\min(R_s, R_c)} $$
+> 
+> Generalizzando questo modello a un percorso composto da $N$ collegamenti in serie con velocità $R_1, R_2, \dots, R_N$, la velocità complessiva di trasferimento rimane determinata dal collegamento più lento dell'intera catena, ossia da $\min(R_1, R_2, \dots, R_N)$. Se si applica questa trattazione alla realtà dell'Internet odierna, occorre osservare che il nucleo della rete (network core) è fortemente sovradimensionato con collegamenti ad altissima velocità e scarsamente congestionati. In assenza di altro traffico rilevante, le prestazioni end-to-end sono quindi dominate dalle reti di accesso del server e del client, riducendo nuovamente la formula del throughput a $\min(R_s, R_c)$.
+> 
+> ![[Pasted image 20261016180652.png]]
+> Esaminiamo una situazione più complessa e aderente alla realtà in cui la rete è condivisa tra più flussi contemporanei.
+> Ipotizzando che dieci coppie di server e client effettuino trasferimenti simultanei attraverso un collegamento centrale del core di capacità $R$, il throughput di ciascun flusso dipende dal livello di congestione di tale tratta. Se la capacità $R$ è molto elevata rispetto a $R_s$ e $R_c$, ciascun download otterrà comunque la velocità massima consentita dalle proprie reti d'accesso, pari a $\min(R_s, R_c)$. Tuttavia, se il collegamento condiviso è congestionato (per esempio con $R_s = 2\text{ Mbps}$, $R_c = 1\text{ Mbps}$ e $R = 5\text{ Mbps}$ ripartiti equamente tra i dieci flussi) a ogni download spetterà una quota di banda di soli $500\text{ kbps}$. In questa circostanza, il collo di bottiglia non risiede più nelle reti d'accesso ma nella banda allocata sul collegamento centrale, riducendo il throughput end-to-end di ciascuna sessione a $500\text{ kbps}$.
 ### Commutazione a circuito
 Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto.
 
 > [!example] Esempio di rete a circuito
 > ![[Pasted image 20261016163148.png]]
-> La figura mostra una rete a commutazione di circuito in cui i quattro commutatori sono interconnessi tramite quattro collegamenti. Ciascuno di questi ultimi dispone di quattro circuiti, in modo che ogni collegamento possa supportare quattro connessioni simultanee. Gli host sono tutti direttamente connessi a uno dei commutatori. 
-> Quando due host desiderano comunicare la rete stabilisce una **connessione end-to-end** (o connessione punto a punto) dedicata a loro. Affinché A invii messaggi a B, la rete deve prima riservare un circuito su ciascuno dei due collegamenti. Nell'esempio, la connessione punto a punto usa il secondo circuito del primo collegamento e il quarto circuito del secondo. Poiché ogni collegamento ospita quattro circuiti, per ogni collegamento utilizzato dalla connessione punto a punto la connessione ottiene un quarto della capacità trasmissiva totale del collegamento per la durata della connessione stessa. Se la velocità di trasmissione tra switch adiacenti fosse pari a 1Mbps, ogni connessione avrebbe come misura di capacità trasmissiva dedicata 250kbps
+> Consideriamo una rete a commutazione di circuito in cui i quattro commutatori sono interconnessi tramite quattro collegamenti. Ciascuno di questi ultimi dispone di quattro circuiti, in modo che ogni collegamento possa supportare quattro connessioni simultanee. Gli host sono tutti direttamente connessi a uno dei commutatori. 
+> Quando due host desiderano comunicare la rete stabilisce una **connessione end-to-end** (o connessione punto a punto) dedicata a loro. Affinché $A$ invii messaggi a $B$, la rete deve prima riservare un circuito su ciascuno dei due collegamenti. Nell'esempio, la connessione punto a punto usa il secondo circuito del primo collegamento e il quarto circuito del secondo. Poiché ogni collegamento ospita quattro circuiti, per ogni collegamento utilizzato dalla connessione punto a punto la connessione ottiene un quarto della capacità trasmissiva totale del collegamento per la durata della connessione stessa. Se la velocità di trasmissione tra switch adiacenti fosse pari a 1Mbps, ogni connessione avrebbe come misura di capacità trasmissiva dedicata 250kbps
 #### Multiplexing nelle reti a commutazione di circuito
 Un circuito all'interno di un collegamento è implementato tramite 2 modalità
 - **Multiplexing a divisione di frequenza (FDM, frequency-division multiplexing)**: lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento, dedicando una banda di frequenza a ciascuna connessione per la durata della connessione stessa. La larghezza di banda viene chiamata **ampiezza di banda (bandwidth)**
@@ -121,9 +131,10 @@ Un circuito all'interno di un collegamento è implementato tramite 2 modalità
 > ![[Pasted image 20261006192732.png]]
 
 Sebbene la commutazione di pacchetto e quella di circuito siano entrambe presenti negli odierni sistemi di telecomunicazioni, la tendenza è certamente in direzione della commutazione di pacchetto.
+Una rete che ancora oggi fa uso della commutazione a circuito è quella del telefono.
 ### Una rete di reti
 Abbiamo precedentemente visto che i sistemi periferici si collegano a Internet tramite un ISP di accesso che può fornire connettività attraverso una rete cablata o senza fili con svariate tecnologie.
-Tuttavia, la connessione degli utenti finali e dei fornitori di contenuti alla rete di un ISP è solo una piccola parte del puzzle da risolvere per connettere i miliardi di utenti che costituiscono Internet. Per completare il puzzle bisogna interconnettere gli stessi ISP. Ciò avviene creando una **rete di reti (network of networks)**
+Tuttavia, la connessione degli utenti finali e dei fornitori di contenuti alla rete di un ISP è solo una piccola parte per connettere i miliardi di utenti che costituiscono Internet. Per completarla bisogna interconnettere gli stessi ISP, e ciò avviene creando una **rete di reti (network of networks)**
 
 > [!example] Varie interconnessioni tra ISP
 > ![[Pasted image 20261016164818.png]]
