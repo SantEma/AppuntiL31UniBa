@@ -36,7 +36,7 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
-Parliamo brevemente  delle **reti di accesso** (access network. LA rete di accesso è una rete che connette fisicamente un sistema al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
+Parliamo brevemente delle **reti di accesso** (access network. La rete di accesso è una rete che connette fisicamente un sistema al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
 
 Le principali tipologie di reti di accesso si suddividono in tre categorie principali:
 1. **Accesso residenziale a larga banda**:
@@ -48,9 +48,10 @@ Le principali tipologie di reti di accesso si suddividono in tre categorie princ
 3. **Accesso wireless su scala geografica**:
 	- **Reti cellulari (3G, 4G LTE e 5G)**: collegano i dispositivi mobili ad alta velocità su ampie distanze tramite le stazioni base dei gestori di telefonia.
 ## Nucleo della rete
-### Commutazioni a pacchetto
+### Commutazione a pacchetto
 Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** che possono contenere qualsiasi cosa il progettista del protocollo desideri.
-La sorgente suddivide i messaggi lunghi in parti più piccole note come **pacchetti**. Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e **commutatori di pacchetto** (di cui, ricordiamo, esistono due tipi principali: i **router** e i **commutatori a livello di collegamento**). I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di $L$ bit su un canale con velocità di $R$ bps, il tempo di trasmissione risulta pari a $L/R$ secondi.
+La sorgente suddivide i messaggi lunghi in parti più piccole note come **pacchetti**. Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e **commutatori di pacchetto** (di cui, ricordiamo, esistono due tipi principali: i **router** e i **commutatori a livello di collegamento**). 
+I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di $L$ bit su un canale con velocità di $R$ bps, il tempo di trasmissione risulta pari a $L/R$ secondi.
 #### Trasmissione store-and-forward
 La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-and-forward**. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
 > [!example] Esempio di trasmissione store-and-foward
@@ -72,39 +73,28 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 
 > [!example] Esempio di rete a pacchetto completa
 > ![[Pasted image 20261016162651.png]]
-### Commutazione a circuito
-Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto
 
+Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
+#### Ritardi di elaborazione nelle
+### Commutazione a circuito
+Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto.
 
 > [!example] Esempio di rete a circuito
 > ![[Pasted image 20261016163148.png]]
-> La figura mostra una rete a commutazione di circuito in cui i quattro commutatori sono interconnessi tramite quattro collegamenti. Ciascuno di questi ultimi dispone di quattro circuiti, in modo che ogni collegamento possa supportare quattro connessioni simultanee. Gli host (per esempio PC e workstation) sono tutti direttamente connessi a uno dei commutatori. 
-> Quando due host desiderano comunicare la rete stabilisce una **connessione end-to-end** (o connessione punto a punto) dedicata a loro. Affinché A invii messaggi a B, la rete deve prima riservare un circuito su ciascuno dei due collegamenti. Nell’esempio, la connessione punto a punto usa il secondo circuito del primo collegamento e il quarto circuito del secondo. Poiché ogni collegamento ospita quattro circuiti, per ogni collegamento utilizzato dalla connessione punto a punto la connessione ottiene un quarto della capacità trasmissiva totale del collegamento per la durata della connessione stessa
-
-
-
-
-
-
-
-
-
-
-
-
-
+> La figura mostra una rete a commutazione di circuito in cui i quattro commutatori sono interconnessi tramite quattro collegamenti. Ciascuno di questi ultimi dispone di quattro circuiti, in modo che ogni collegamento possa supportare quattro connessioni simultanee. Gli host sono tutti direttamente connessi a uno dei commutatori. 
+> Quando due host desiderano comunicare la rete stabilisce una **connessione end-to-end** (o connessione punto a punto) dedicata a loro. Affinché A invii messaggi a B, la rete deve prima riservare un circuito su ciascuno dei due collegamenti. Nell'esempio, la connessione punto a punto usa il secondo circuito del primo collegamento e il quarto circuito del secondo. Poiché ogni collegamento ospita quattro circuiti, per ogni collegamento utilizzato dalla connessione punto a punto la connessione ottiene un quarto della capacità trasmissiva totale del collegamento per la durata della connessione stessa. Se la velocità di trasmissione tra switch adiacenti fosse pari a 1Mbps, ogni connessione avrebbe come misura di capacità trasmissiva dedicata 250kbps
+#### Multiplexing nelle reti a commutazione di circuito
+Un circuito all'interno di un collegamento è implementato tramite 2 modalità
+- **Multiplexing a divisione di frequenza (FDM, frequency-division multiplexing)**: lo spettro di frequenza di un collegamento viene suddiviso tra le connessioni stabilite tramite il collegamento, dedicando una banda di frequenza a ciascuna connessione per la durata della connessione stessa. La larghezza di banda viene chiamata **ampiezza di banda (bandwidth)**
+- **Multiplexing a divisione di tempo (TDM, time-division multiplexing)**:  il tempo viene suddiviso in frame (intervalli) di durata fissa, a loro volta ripartiti in un numero fisso di slot (porzioni) temporali. Quando la rete stabilisce una connessione attraverso un collegamento, le dedica uno slot di tempo in ogni frame, e tali slot sono dedicati unicamente a quella connessione, con uno slot temporale disponibile in ciascun frame alla trasmissione dei dati di connessione.
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
 
-> [!example] Esempio di rete a commutatore di pacchetto
-> ![[Pasted image 20261006193343.png]]
+Sebbene la commutazione di pacchetto e quella di circuito siano entrambe presenti negli odierni sistemi di telecomunicazioni, la tendenza è certamente in direzione della commutazione di pacchetto.
+### Una rete di reti
+Abbiamo precedentemente visto che i sistemi periferici si collegano a Internet tramite un ISP di accesso che può fornire connettività attraverso una rete cablata o senza fili con svariate tecnologie.
+Tuttavia, la connessione degli utenti finali e dei fornitori di contenuti alla rete di un ISP è solo una piccola parte del puzzle da risolvere per connettere i miliardi di utenti che costituiscono Internet. Per completare il puzzle bisogna interconnettere gli stessi ISP. Ciò avviene creando una **rete di reti (network of networks)**
 
-
-> [!example] Esempio di trasmissione store and forward
-> ![[Pasted image 20261006193844.png]]
-
-> [!example] Esempio di rete a commutatore di pacchetto
-> ![[Pasted image 20261006194149.png]]
-
-
+> [!example] Varie interconnessioni tra ISP
+> ![[Pasted image 20261016164818.png]]
