@@ -35,6 +35,8 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
+Parliamo brevemente  delle **reti di accesso** (access network. LA rete di accesso è una rete che connette fisicamente un sistema al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
+
 Le principali tipologie di reti di accesso si suddividono in tre categorie principali:
 1. **Accesso residenziale a larga banda**:
 	 - **DSL (Digital Subscriber Line)**: connette il modem dell'abitazione alla centrale locale della compagnia telefonica tramite un apparato chiamato DSLAM.
@@ -48,8 +50,12 @@ Le principali tipologie di reti di accesso si suddividono in tre categorie princ
 ### Commutazioni a pacchetto
 Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** che possono contenere qualsiasi cosa il progettista del protocollo desideri.
 La sorgente suddivide i messaggi lunghi in parti più piccole note come **pacchetti**. Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e **commutatori di pacchetto** (di cui, ricordiamo, esistono due tipi principali: i **router** e i **commutatori a livello di collegamento**). I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di $L$ bit su un canale con velocità di $R$ bps, il tempo di trasmissione risulta pari a $L/R$ secondi.
-### Trasmissione store-and-forward
+#### Trasmissione store-and-forward
 La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-and-forward**. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
+
+> [!example] Esempio di trasmissione store-and-foward
+> ![[Pasted image 20261016161316.png]]
+
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
