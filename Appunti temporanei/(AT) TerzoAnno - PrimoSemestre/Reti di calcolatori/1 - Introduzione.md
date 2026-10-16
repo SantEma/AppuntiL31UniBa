@@ -12,9 +12,11 @@ Un commutatore di pacchetto prende un pacchetto che arriva da uno dei collegamen
 > [!info] Infrastruttura base di internet 
 > ![[Pasted image 20261016154023.png]]
 > I sistemi periferici vengono anche detti **host** in quanto ospitano (ed eseguono) programmi applicativi quali browser, web server o software di lettura e gestione della posta elettronica. Talvolta gli host vengono ulteriormente suddivisi in due categorie: **client e server.** In modo informale:
-> - I client sono
+> - I client sono host che richiedono dei servizi e tendono a essere PC, laptop, smartphone e via dicendo, mentre 
+> - I server sono host che si occupano di erogare dei servizi e sono sostanzialmente macchine più potenti che memorizzano e distribuiscono pagine web o flussi video, ritrasmettono la posta elettronica e così via.
 
-I sistemi periferici accedono a internet tramite i vari **Internet Service Provider (ISP)**, che comprandono vari generi (residenziali reti universitarie etc.).
+
+I sistemi periferici accedono a internet tramite i vari **Internet Service Provider (ISP)**, che comprendono vari generi (residenziali reti universitarie etc.).
 Un provider è un insieme di commutatori di pacchetto e di collegamenti. Gli ISP forniscono ai sistemi periferici svariati tipi di accesso alla rete e rendono disponibile l’accesso a Internet ai fornitori di contenuti, connettendone i server a Internet. Poiché Internet non è altro che connettere tra loro gli end systems, anche gli ISP che forniscono accesso ai sistemi periferici devono essere interconnessi, tali provider di livello gerarchico più basso sono interconnessi a quelli nazionali e internazionali di livello più alto, che sono connessi tra di loro direttamente. Un ISP di livello superiore è costituito da router ad alta velocità interconnessi tramite fibra ottica. Ciascuna rete di un ISP, sia di alto sia di basso livello, è gestita in modo indipendente, fa uso del protocollo IP e si conforma a determinate convenzioni riguardo a nomi e indirizzi. 
 
 Sistemi periferici, commutatori di pacchetto e altre parti di Internet fanno uso di protocolli che controllano l’invio e la ricezione di informazioni all’interno della rete. Due dei principali protocolli Internet sono il Transmission ControProtocol (TCP), e l’Internet Protocol (IP).
