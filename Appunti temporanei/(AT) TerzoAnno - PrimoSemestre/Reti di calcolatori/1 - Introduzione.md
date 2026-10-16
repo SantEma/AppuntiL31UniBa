@@ -56,6 +56,7 @@ La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-a
 > [!example] Esempio di trasmissione store-and-foward
 > ![[Pasted image 20261016161316.png]]
 
+Ogni commutatore di pacchetto connette più collegamenti. Per ciascuno di questi, il commutatore mantiene un **buffer di output** per conservare i pacchetti che sta per inviare su quel collegamento. I buffer di output rivestono un ruolo chiave nella commutazione di pacchetto. Un pacchetto in arrivo che debba essere inviato attraverso un collegamento occupato dalla trasmissione di un altro, deve attendere nella coda di output. Di conseguenza, oltre ai ritardi store-and-forward, i pacchetti subiscono anche **ritardi di accodamento** nei buffer di output. Tali ritardi sono variabili e dipendono dal livello di traffico nella rete. Dato che la dimensione del buffer è finita, un pacchetto in arrivo può trovare il buffer completamente riempito da altri pacchetti che attendono la trasmissione. In questo caso si verificherà una **perdita di pacchetto (packet loss)**: verrà cioè eliminato o il pacchetto in arrivo o uno di quelli che si trova già in coda.
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
