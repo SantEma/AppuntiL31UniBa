@@ -4,13 +4,15 @@ In gergo, questi dispositivi sono detti **host** (ospite) o **sistemi periferici
 
 I vari sistemi periferici sono connessi tra loro tramite una **rete di collegamenti** (communication link) e **commutatori di pacchetti** (packet switch)
 
-Collegamenti diversi possono trasmettere dati a velocità differenti, e **tale velocità (o tasso) di trasmissione (transmission rate) viene misurata in bit/secondo (bps).** Quando un sistema periferico vuole inviare dati a un altro sistema periferico, suddivide i dati in sottoparti e aggiunge un’intestazione a ciascuna di esse: l'insieme delle informazioni risultanti viene chiamato **pacchetto** (packet).
+Collegamenti diversi possono trasmettere dati a velocità differenti, e **tale velocità (o tasso) di trasmissione (transmission rate) viene misurata in bit/secondo (bps).**
+Quando un sistema periferico vuole inviare dati a un altro sistema periferico, suddivide i dati in sottoparti e aggiunge un’intestazione a ciascuna di esse: l'insieme delle informazioni risultanti viene chiamato **pacchetto** (packet).
 I pacchetti sono inviati attraverso la rete alla destinazione, dove vengono riassemblati per ottenere i dati originari. 
 
-Un commutatore di pacchetto prende un pacchetto che arriva da uno dei collegamenti in ingresso e lo ritrasmette su uno di quelli in uscita. Esistono commutatori di pacchetto di varia forma e natura, ma i due principali nell'odierna Internet sono i **router** e i **commutatori a livello di collegamento** (link layer switch). I commutatori a livello di collegamento sono solitamente usati nelle reti di accesso, mentre i router nel nucleo della rete. Dal sistema di invio a quello di ricezione, la sequenza di collegamenti e commutatori di pacchetto attraversata da ogni singolo pacchetto è nota come **percorso** (route o path) attraverso la rete.
+Un commutatore di pacchetto prende un pacchetto che arriva da uno dei collegamenti in ingresso e lo ritrasmette su uno di quelli in uscita. Esistono commutatori di pacchetto di varia forma e natura, ma i due principali nell'odierna Internet sono i **router** e i **commutatori a livello di collegamento** (link layer switch). I commutatori a livello di collegamento sono solitamente usati nelle reti di accesso, mentre i router nel nucleo della rete. 
+Dal sistema di invio a quello di ricezione, la sequenza di collegamenti e commutatori di pacchetto attraversata da ogni singolo pacchetto è nota come **percorso** (route o path) attraverso la rete.
 
 I sistemi periferici accedono a internet tramite i vari **Internet Service Provider (ISP)**, che comprendono vari generi (residenziali reti universitarie etc.).
-Un provider è un insieme di commutatori di pacchetto e di collegamenti. Gli ISP forniscono ai sistemi periferici svariati tipi di accesso alla rete e rendono disponibile l’accesso a Internet ai fornitori di contenuti, connettendone i server a Internet. Poiché Internet non è altro che connettere tra loro gli end systems, anche gli ISP che forniscono accesso ai sistemi periferici devono essere interconnessi, tali provider di livello gerarchico più basso sono interconnessi a quelli nazionali e internazionali di livello più alto, che sono connessi tra di loro direttamente. Un ISP di livello superiore è costituito da router ad alta velocità interconnessi tramite fibra ottica. Ciascuna rete di un ISP, sia di alto sia di basso livello, è gestita in modo indipendente, fa uso del protocollo IP e si conforma a determinate convenzioni riguardo a nomi e indirizzi. 
+Un provider è un insieme di commutatori di pacchetto e di collegamenti. Gli ISP forniscono ai sistemi periferici svariati tipi di accesso alla rete e rendono disponibile l’accesso a Internet ai fornitori di contenuti, connettendone i server a Internet. Poiché Internet non è altro che connettere tra loro gli end systems, anche gli ISP che forniscono accesso ai sistemi periferici devono essere interconnessi, tali provider di livello gerarchico più basso sono interconnessi a quelli nazionali e internazionali di livello più alto, che sono connessi tra di loro direttamente. Un ISP di livello superiore è costituito da router ad alta velocità interconnessi tramite fibra ottica. Ciascuna rete di un ISP, sia di alto sia di basso livello, è gestita in modo indipendente, fa uso del protocollo IP e si conforma a determinate convenzioni riguardo a nomi e indirizzi.
 
 Sistemi periferici, commutatori di pacchetto e altre parti di Internet fanno uso di protocolli che controllano l’invio e la ricezione di informazioni all’interno della rete. Due dei principali protocolli Internet sono il **Transmission Control Protocol (TCP), e l’Internet Protocol (IP)**.
 Generalmente questi standard sono definiti tramite una taskforce precisa di ingegneri (IETF) e dei documenti chiamati RFC (Request for Comment)
@@ -31,7 +33,6 @@ I sistemi periferici collegati a Internet forniscono una **interfaccia socket** 
 > Un **protocollo** definisce il formato e l’ordine dei messaggi scambiati tra due o più entità in comunicazione, così come le azioni intraprese in fase di trasmissione e/o di ricezione di un messaggio o di un altro evento.
 
 Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di protocolli, il quale ognuno di essi è diverso per il compito che deve svolgere. Qualsiasi attività su internet che coinvolge due o più entità remote in comunicazione viene governata da un protocollo (ad esempio quelle delle schede di rete tra due calcolatori fisicamente connessi, di congestione).
-
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
@@ -52,11 +53,45 @@ Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** c
 La sorgente suddivide i messaggi lunghi in parti più piccole note come **pacchetti**. Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e **commutatori di pacchetto** (di cui, ricordiamo, esistono due tipi principali: i **router** e i **commutatori a livello di collegamento**). I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di $L$ bit su un canale con velocità di $R$ bps, il tempo di trasmissione risulta pari a $L/R$ secondi.
 #### Trasmissione store-and-forward
 La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-and-forward**. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
-
 > [!example] Esempio di trasmissione store-and-foward
 > ![[Pasted image 20261016161316.png]]
+> Prendiamo questo scenario, dove un host sorgente invia dati a un host di destinazione attraversando un unico router intermedio, ovvero un percorso di $N=2$ collegamenti. Ogni pacchetto ha una lunghezza di $L$ bit e i collegamenti trasmettono a una velocità di $R$ bit al secondo.
+> Se prendiamo lo scenario di invio di un singolo pacchetto vedremo che:
+> 1. All'istante $t = 0$, la sorgente comincia a trasmettere il pacchetto.
+> 2. All'istante $t = L/R$, l'intero pacchetto è stato trasmesso dalla sorgente e immagazzinato nel buffer del router. Soltanto a questo punto il router può iniziare a inoltrarlo sul secondo collegamento.
+> 3. All'istante $t = 2L/R$, il pacchetto è stato completamente trasmesso dal router e ricevuto dal destinatario (trascurando i ritardi di propagazione). Il ritardo totale end-to-end per un pacchetto risulta quindi pari a $2 \cdot \frac{L}{R}$.
+> 
+> Nel caso di una sequenza di pacchetti (supponiamo che questi siano 3) troveremo che:
+> - Il $1^\circ$ pacchetto viene completato a destinazione all'istante $2L/R$.
+> - Il $2^\circ$ pacchetto arriva a destinazione all'istante $3L/R$.
+> - Il $3^\circ$ pacchetto arriva a destinazione all'istante $4L/R$.
+> 
+> Più in generale, per inviare un singolo pacchetto su un percorso di $N$ collegamenti identici a velocità $R$, il ritardo complessivo da un capo all'altro è dato dalla formula $$N \cdot \frac{L}{R}$$
 
-Ogni commutatore di pacchetto connette più collegamenti. Per ciascuno di questi, il commutatore mantiene un **buffer di output** per conservare i pacchetti che sta per inviare su quel collegamento. I buffer di output rivestono un ruolo chiave nella commutazione di pacchetto. Un pacchetto in arrivo che debba essere inviato attraverso un collegamento occupato dalla trasmissione di un altro, deve attendere nella coda di output. Di conseguenza, oltre ai ritardi store-and-forward, i pacchetti subiscono anche **ritardi di accodamento** nei buffer di output. Tali ritardi sono variabili e dipendono dal livello di traffico nella rete. Dato che la dimensione del buffer è finita, un pacchetto in arrivo può trovare il buffer completamente riempito da altri pacchetti che attendono la trasmissione. In questo caso si verificherà una **perdita di pacchetto (packet loss)**: verrà cioè eliminato o il pacchetto in arrivo o uno di quelli che si trova già in coda.
+Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di questi il commutatore mantiene un **buffer di output** per conservare i pacchetti che sta per inviare su quel collegamento. I buffer di output rivestono un ruolo chiave nella commutazione di pacchett, infatti un pacchetto in arrivo che debba essere inviato attraverso un collegamento occupato dalla trasmissione di un altro, deve attendere nella coda di output. Di conseguenza, oltre ai ritardi store-and-forward, i pacchetti subiscono anche **ritardi di accodamento** nei buffer di output. Tali ritardi sono variabili e dipendono dal livello di traffico nella rete. Dato che la dimensione del buffer è finita, un pacchetto in arrivo può trovare il buffer completamente riempito da altri pacchetti che attendono la trasmissione, creando il fenomeno della **perdita di pacchetto (packet loss)**, ossia verrà eliminato o il pacchetto in arrivo o uno di quelli che si trova già in coda.
+
+> [!example] Esempio di rete a pacchetto completa
+> ![[Pasted image 20261016162651.png]]
+
+### Commutazione a circuito
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
