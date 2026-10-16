@@ -101,3 +101,13 @@ Tuttavia, la connessione degli utenti finali e dei fornitori di contenuti alla r
 
 > [!example] Varie interconnessioni tra ISP
 > ![[Pasted image 20261016164818.png]]
+> 
+
+Gli ISP di accesso si connettono a diversi livelli in una rete odierna (dal basso verso l'alto):
+- **ISP regionali o nazionali**: reti di ampia estensione che coprono intere regioni o nazioni (come TIM, Fastweb o la rete GARR per le università italiane). Acquistano la connettività da provider più grandi e la forniscono agli ISP di accesso.
+- **Punti di interconnessione locale(IXP), PoP e Multi-Homing**: Per evitare che ogni singolo pacchetto debba risalire l'intera gerarchia mondiale, a questo livello si inseriscono strutture intermedie e accordi tra reti vicine, che si suddividono in:
+	 - **PoP (Point of Presence)**: gruppi di router tramite i quali un ISP cliente si collega al proprio fornitore affittando una linea ad alta velocità
+	 - **Multi-homing**: la possibilità per un ISP di collegarsi a due o più fornitori superiori per garantire continuità di servizio in caso di guasto su una linea
+	 - **Peering e IXP (** **Internet Exchange Point** **)**: punti fisici d'incontro (IXP) gestiti da terzi in cui più ISP si collegano per scambiarsi traffico direttamente e a costo zero (peering), senza dover pagare un provider di transito
+- **ISP di primo livello** (detti globali, o Tier-1): rappresentano la dorsale (backbone) mondiale di Internet. Sono una decina di grandi multinazionali delle telecomunicazioni (come Cogent o Sparkle) con reti in fibra ottica ad altissima velocità che coprono continenti e oceani. Non pagano nessuno per il transito e fanno peering gratuito tra loro per garantire la raggiungibilità di qualsiasi punto del pianeta
+- **Reti private dei grandi fornitori di contenuti** (come Google, Meta, Microsoft, Amazon): queste aziende gestiscono proprie reti private mondiali ad altissime prestazioni che collegano i loro data center distribuiti nel mondo. Per ridurre i costi di transito e garantire tempi di risposta minimi, esse scavalcano i provider di livello 1 facendo peering diretto con gli ISP di accesso o collegandosi direttamente agli IXP. Si servono dei Tier-1 unicamente come ultima risorsa per le destinazioni non raggiungibili direttamente, rendendo così la topologia di Internet complessivamente più "piatta"
