@@ -59,13 +59,13 @@ La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-a
 > Prendiamo questo scenario, dove un host sorgente invia dati a un host di destinazione attraversando un unico router intermedio, ovvero un percorso di $N=2$ collegamenti. Ogni pacchetto ha una lunghezza di $L$ bit e i collegamenti trasmettono a una velocità di $R$ bit al secondo.
 > Se prendiamo lo scenario di invio di un singolo pacchetto vedremo che:
 > 1. All'istante $t = 0$, la sorgente comincia a trasmettere il pacchetto.
-> 2. All'istante $t = L/R$, l'intero pacchetto è stato trasmesso dalla sorgente e immagazzinato nel buffer del router. Soltanto a questo punto il router può iniziare a inoltrarlo sul secondo collegamento.
-> 3. All'istante $t = 2L/R$, il pacchetto è stato completamente trasmesso dal router e ricevuto dal destinatario (trascurando i ritardi di propagazione). Il ritardo totale end-to-end per un pacchetto risulta quindi pari a $2 \cdot \frac{L}{R}$.
+> 2. All'istante $t = \frac{L}{R}$, l'intero pacchetto è stato trasmesso dalla sorgente e immagazzinato nel buffer del router. Soltanto a questo punto il router può iniziare a inoltrarlo sul secondo collegamento.
+> 3. All'istante $t = \frac{2L}{R}$, il pacchetto è stato completamente trasmesso dal router e ricevuto dal destinatario (trascurando i ritardi di propagazione). Il ritardo totale end-to-end per un pacchetto risulta quindi pari a $2 \cdot \frac{L}{R}$.
 > 
 > Nel caso di una sequenza di pacchetti (supponiamo che questi siano 3) troveremo che:
-> - Il $1^\circ$ pacchetto viene completato a destinazione all'istante $2L/R$.
-> - Il $2^\circ$ pacchetto arriva a destinazione all'istante $3L/R$.
-> - Il $3^\circ$ pacchetto arriva a destinazione all'istante $4L/R$.
+> - Il $1^\circ$ pacchetto viene completato a destinazione all'istante $\frac{2L}{R}$.
+> - Il $2^\circ$ pacchetto arriva a destinazione all'istante $\frac{3L}{R}$.
+> - Il $3^\circ$ pacchetto arriva a destinazione all'istante $\frac{4L}{R}$.
 > 
 > Più in generale, per inviare un singolo pacchetto su un percorso di $N$ collegamenti identici a velocità $R$, il ritardo complessivo da un capo all'altro è dato dalla formula $$N \cdot \frac{L}{R}$$
 
@@ -73,10 +73,20 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 
 > [!example] Esempio di rete a pacchetto completa
 > ![[Pasted image 20261016162651.png]]
-
-Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
 #### Ritardi di elaborazione nelle reti a commutazione a pacchetto
-[da finire]
+Un pacchetto, a ogni "tappa" che attraversa, subisce un **ritardo**.
+Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
+> [!example] Esempio di ritardo in una rete (con più router)
+> ![[Pasted image 20261016172505.png]]
+
+Come vediamo sopra, i pacchetti subiscono nelle reti a commutazione di pacchetto dei vari ritardi, che possono essere categorizzati in diversi maniere:
+- **Ritardo di elaborazione (processing delay)**: Tempo richiesto per esaminare l’intestazione del pacchetto e per determinare dove dirigerlo. Questo può anche includere altri fattori, tra i quali il tempo richiesto per controllare errori a livello di bit eventualmente occorsi nel pacchetto durante la trasmissione dal nodo a monte al router $A$. Nei router ad alta velocità questi ritardi sono solitamente dell’ordine dei microsecondi o inferiori. Dopo l’elaborazione, il router dirige il pacchetto verso la coda che precede il collegamento al router B.
+- **Ritardo di accodamento**: una volta in coda, il pacchetto subisce un **ritardo di accodamento (queuing delay)** mentre attende la trasmissione sul collegamento. La lunghezza di tale ritardo per uno specifico pacchetto dipenderà dal numero di pacchetti precedentemente arrivati, accodati e in attesa di trasmissione sullo stesso collegamento. Se la coda è vuota e non è in corso la trasmissione di altri pacchetti, il ritardo di accodamento per il nostro pacchetto è nullo, in caso contrario potrebbe essere elevato. Generalmente si è nell'ordine dei microsecondi o millisecondi
+- **Ritardo di trasmissione**: Assumendo che i pacchetti siano trasmessi secondo la politica first-come-first-served (il primo che arriva è il primo a essere servito), come avviene comunemente nelle reti a commutazione di pacchetto, il nostro pacchetto può essere trasmesso solo dopo la trasmissione di tutti quelli che lo hanno preceduto nell'arrivo. Considerando quindi una lunghezza $L$ di un pacchetto (in bit) e la velocità di trasmissione $R$ tra un router e l'altro (espressa in bit per secondo), il ritardo viene misurato in $\frac{L}{R}$, ossia il tempo richiesto per trasmettere tutti i bit del pacchetto. Generalmente si è nell'ordine dei microsecondi o millisecondi
+- **Ritardo di propagazione**: Una volta immesso sul collegamento, un bit deve propagarsi fino al router $B$. Il bit viaggia alla velocità di propagazione del collegamento, che dipende dal mezzo fisico (fibra ottica, doppino in rame e così via) ed è compresa nell'intervallo che va dai $2 \cdot 10^{8} m/s$ ai $3 \cdot 10^{8} m/s$, corrispondente quest’ultimo alla velocità della luce. Il ritardo di propagazione è dato da $\frac{d}{v}$, dove $d$ è la distanza tra i due router, mentre $v$ è la velocità di propagazione nel collegamento. Nelle reti molto estese i ritardi di propagazione sono dell’ordine dei millisecondi.
+#### Perdita di pacchetti
+Come sappiamo, le code di un router hanno capacità finita (variabile in dimensione dal costo e architettura.Poiché la capacità delle code è finita, un pacchetto può trovare la coda piena. Non essendo possibile memorizzare tale pacchetto, il router lo eliminerà e il pacchetto andrà perduto. 
+Questo fenomeno
 #### Throughput
 [da finire]
 ### Commutazione a circuito
