@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -188,12 +189,14 @@
   },
   "active": "1bea08385d98f63b",
   "lastOpenFiles": [
+    "Pasted image 20261016154023.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014160901.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261014162433.png",
@@ -222,7 +225,6 @@
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/4 - SQL.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/5 - Progettazione di Basi di Dati.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/7 - Sviluppo di applicazioni per Basi di Dati.md",
-    "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/Basi di Dati/8 - Basi di dati sematiche.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori",
