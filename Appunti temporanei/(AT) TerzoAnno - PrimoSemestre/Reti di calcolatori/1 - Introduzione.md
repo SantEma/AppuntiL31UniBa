@@ -77,6 +77,7 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
 #### Ritardi di elaborazione nelle reti a commutazione a pacchetto
 #### Throughput
+
 ### Commutazione a circuito
 Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto.
 
