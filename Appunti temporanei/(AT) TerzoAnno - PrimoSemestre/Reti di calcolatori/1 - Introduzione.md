@@ -35,10 +35,14 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
+[da finire]
 
-
-
-
+## Nucleo della rete
+### Commutazioni a pacchetto
+Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** che possono contenere qualsiasi cosa il progettista del protocollo desideri.
+La sorgente suddivide i messaggi lunghi in parti più piccole note come **pacchetti**. Tra la sorgente e la destinazione, questi pacchetti viaggiano attraverso collegamenti e **commutatori di pacchetto** (di cui, ricordiamo, esistono due tipi principali: i **router** e i **commutatori a livello di collegamento**). I pacchetti vengono trasmessi su ciascun collegamento a una velocità pari alla velocità totale di trasmissione del collegamento stesso. Quindi, se un sistema periferico o un commutatore invia un pacchetto di $L$ bit su un canale con velocità di $R$ bps, il tempo di trasmissione risulta pari a $L/R$ secondi.
+### Trasmissione store-and-forward
+La maggior parte dei commutatori di pacchetto utilizza la **trasmissione store-and-forward**. Ciò significa che il commutatore deve ricevere l’intero pacchetto prima di poter cominciare a trasmettere sul collegamento in uscita il primo bit.
 
 > [!example] FDM vs TDM
 > ![[Pasted image 20261006192732.png]]
