@@ -2,6 +2,7 @@
 Internet è una rete di calcolatori che interconnette miliardi di dispositivi di calcolo in tutto il mondo.
 In gergo, questi dispositivi sono detti **host** (ospite) o **sistemi periferici** (end system).
 
+
 I vari sistemi periferici sono connessi tra loro tramite una **rete di collegamenti** (communication link) e **commutatori di pacchetti** (packet switch)
 
 Collegamenti diversi possono trasmettere dati a velocità differenti, e **tale velocità (o tasso) di trasmissione (transmission rate) viene misurata in bit/secondo (bps).** Quando un sistema periferico vuole inviare dati a un altro sistema periferico, suddivide i dati in sottoparti e aggiunge un’intestazione a ciascuna di esse: l'insieme delle informazioni risultanti viene chiamato **pacchetto** (packet).
@@ -9,7 +10,7 @@ I pacchetti sono inviati attraverso la rete alla destinazione, dove vengono rias
 
 Un commutatore di pacchetto prende un pacchetto che arriva da uno dei collegamenti in ingresso e lo ritrasmette su uno di quelli in uscita. Esistono commutatori di pacchetto di varia forma e natura, ma i due principali nell’odierna Internet sono i **router** e i **commutatori a livello di collegamento** (link layer switch). I commutatori a livello di collegamento sono solitamente usati nelle reti di accesso, mentre i router nel nucleo della rete. Dal sistema di invio a quello di ricezione, la sequenza di collegamenti e commutatori di pacchetto attraversata da ogni singolo pacchetto è nota come **percorso** (route o path) attraverso la rete.
 
-> [!example] Componenti base di internet
+> [!info] 
 > ![[Pasted image 20261016154023.png]]
 
 I sistemi periferici accedono a internet tramite i vari **Internet Service Provider (ISP)**, che comprandono vari generi (residenziali reti universitarie etc.).
