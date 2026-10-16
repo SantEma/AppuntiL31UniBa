@@ -72,13 +72,14 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 
 > [!example] Esempio di rete a pacchetto completa
 > ![[Pasted image 20261016162651.png]]
-
 ### Commutazione a circuito
+Nelle reti a commutazione di circuito le risorse richieste lungo un percorso (buffer e velocità di trasmissione sui collegamenti) per consentire la comunicazione tra sistemi periferici sono riservate per l’intera durata della sessione di comunicazione. Questa cosa, come visto precedentemente, non accade nelle reti a commutazione di pacchetto
 
 
-
-
-
+> [!example] Esempio di rete a circuito
+> ![[Pasted image 20261016163148.png]]
+> La figura mostra una rete a commutazione di circuito in cui i quattro commutatori sono interconnessi tramite quattro collegamenti. Ciascuno di questi ultimi dispone di quattro circuiti, in modo che ogni collegamento possa supportare quattro connessioni simultanee. Gli host (per esempio PC e workstation) sono tutti direttamente connessi a uno dei commutatori. 
+> Quando due host desiderano comunicare la rete stabilisce una **connessione end-to-end** (o connessione punto a punto) dedicata a loro. Affinché A invii messaggi a B, la rete deve prima riservare un circuito su ciascuno dei due collegamenti. Nell’esempio, la connessione punto a punto usa il secondo circuito del primo collegamento e il quarto circuito del secondo. Poiché ogni collegamento ospita quattro circuiti, per ogni collegamento utilizzato dalla connessione punto a punto la connessione ottiene un quarto della capacità trasmissiva totale del collegamento per la durata della connessione stessa
 
 
 
