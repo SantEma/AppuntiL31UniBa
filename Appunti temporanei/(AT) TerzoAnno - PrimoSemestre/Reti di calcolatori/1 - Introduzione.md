@@ -35,8 +35,15 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
-[da finire]
-
+Le principali tipologie di reti di accesso si suddividono in tre categorie principali:
+1. **Accesso residenziale a larga banda**:
+	 - **DSL (Digital Subscriber Line)**: connette il modem dell'abitazione alla centrale locale della compagnia telefonica tramite un apparato chiamato DSLAM.
+	 - **FTTH (Fiber to the Home)**: fornisce una connessione diretta dalla centrale locale fin dentro l'abitazione dell'utente tramite architetture ottiche (come le PON).
+	 - **5G Fixed Wireless Access (FWA)**: eroga connettività residenziale ad alta velocità inviando il segnale in modalità wireless dalla stazione base dell'operatore direttamente al modem di casa.
+2. **Accesso aziendale e domestico (LAN)**:
+	- **Ethernet e Wi-Fi**: tecnologie per reti locali (LAN) ampiamente impiegate in aziende, università e abitazioni per interconnettere i dispositivi a uno switch o a un *access point* wireless collegato al router di bordo.
+3. **Accesso wireless su scala geografica**:
+	- **Reti cellulari (3G, 4G LTE e 5G)**: collegano i dispositivi mobili ad alta velocità su ampie distanze tramite le stazioni base dei gestori di telefonia.
 ## Nucleo della rete
 ### Commutazioni a pacchetto
 Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** che possono contenere qualsiasi cosa il progettista del protocollo desideri.
