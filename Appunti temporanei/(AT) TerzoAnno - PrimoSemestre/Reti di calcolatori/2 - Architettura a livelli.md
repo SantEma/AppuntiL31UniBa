@@ -27,5 +27,5 @@ L'**incapsulamento** permette di trasportare da un livello superiore ad uno infe
 - **Campo di payload**: contiene l'intero pacchetto proveniente dal livello immediatamente superiore ($N+1$), che il livello corrente tratta come un blocco di dati opaco
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
-> Nodi intermedi possono essere collocati a vari livelli 
+> Nodi intermedi possono essere collocati a vari livelli
 > ![[Pasted image 20261019152111.png]]
