@@ -1,0 +1,1 @@
+L'**architettura a livelli** è il paradigma strutturale fondamentale con cui vengono progettati l'hardware e il software di rete. Consiste nel decomporre un sistema di comunicazione complesso in una pila ordinata di livelli di astrazione
