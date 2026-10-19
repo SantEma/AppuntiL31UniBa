@@ -17,7 +17,7 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 5. **Livello fisico (physical layer)**: Il suo ruolo è quello di trasferire i singoli bit del frame da un nodo a quello successivo. Anche i protocolli di questo livello sono dipendenti dal collegamento e in più dipendono dall'effettivo mezzo trasmissivo (per esempio, doppino o fibra ottica).
 ## Incapsulamento
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello aggiunge al suo pacchetto due campi:
-- **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
+- **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
 - **Campo di payload**: contiene dati trasportati dal livello precedente
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
