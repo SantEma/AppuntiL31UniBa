@@ -7,4 +7,4 @@ Ogni livello del sistema offre dei **servizi**, che effettuano determinate azion
 
 Un livello di protocolli può sempre essere implementato via software, hardware o un misto dei due precedenti.
 
-La **stratificazione** dei protocolli rende la gestione delle componenti molto più semplice, poichè se ne può aggiornare e/o implementarne una nuova senza impattare i livelli inferiori
+La **stratificazione** dei protocolli rende la gestione delle componenti molto più semplice, poichè se ne può aggiornare e/o implementarne una nuova senza impattare i livelli inferiori, ma c'è sempre una concreta possibilità di introdurre funzionalità duplicate in un livello e/o di richiedere informazioni presenti solo in un altro livello (violando lo scopo della separazione dei livelli)
