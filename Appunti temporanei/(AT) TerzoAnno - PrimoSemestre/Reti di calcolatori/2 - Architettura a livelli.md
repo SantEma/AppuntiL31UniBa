@@ -16,10 +16,9 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 4. **Livello di collegamento**: instrada un datagramma attraverso una serie di router tra la sorgente e la destinazione. Per trasferire un pacchetto da un nodo (host o router) a quello successivo sul percorso, il livello di rete si affida ai servizi del livello di collegamento. In particolare, a ogni nodo, il livello di rete passa il datagramma al livello sottostante, che lo trasporta al nodo successivo. In questo nodo, il livello di collegamento passa il datagramma al livello di rete superiore. I servizi forniti dal livello di collegamento dipendono dallo specifico protocollo utilizzato (Ethernet, Wi-Fi, PPP). Chiameremo **frame** i pacchetti a livello di collegamento
 5. **Livello fisico (physical layer)**: Il suo ruolo è quello di trasferire i singoli bit del frame da un nodo a quello successivo. Anche i protocolli di questo livello sono dipendenti dal collegamento e in più dipendono dall'effettivo mezzo trasmissivo (per esempio, doppino o fibra ottica).
 ## Incapsulamento
-
-> [!example] Esempio di incapsulamento
-> ![[Pasted image 20261019145837.png]]
-
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello aggiunge al suo pacchetto due campi:
 - **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
 - **Campo di payload**: dati trasportati dal livello precedente
+> [!example] Esempio di incapsulamento
+> ![[Pasted image 20261019145837.png]]
+> Ogni strato ha compiti diversi
