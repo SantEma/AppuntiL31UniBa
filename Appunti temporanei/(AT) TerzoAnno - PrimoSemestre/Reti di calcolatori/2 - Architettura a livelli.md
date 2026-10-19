@@ -18,7 +18,7 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 ## Incapsulamento
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello aggiunge al suo pacchetto due campi:
 - **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
-- **Campo di payload**: dati trasportati dal livello precedente
+- **Campo di payload**: contiene dati trasportati dal livello precedente
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
 > Ogni strato ha compiti diversi
