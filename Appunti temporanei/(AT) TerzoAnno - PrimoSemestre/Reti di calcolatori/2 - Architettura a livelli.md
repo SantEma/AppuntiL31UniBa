@@ -18,7 +18,8 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 
 
 > [!info] Associazione tra il protocollo di Internet TCP/IP e lo stack ISO/OSI
-> Contents
+> ![[Pasted image 20261019152435.png]]
+> ![[Pasted image 20261019152409.png]]
 
 ## Incapsulamento
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello concatena ad un pacchetto due campi:
@@ -26,4 +27,5 @@ L'**incapsulamento** permette di trasportare da un livello superiore ad uno infe
 - **Campo di payload**: contiene l'intero pacchetto proveniente dal livello immediatamente superiore ($N+1$), che il livello corrente tratta come un blocco di dati opaco
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
+> Nodi intermedi possono essere collocati a vari livelli 
 > ![[Pasted image 20261019152111.png]]
