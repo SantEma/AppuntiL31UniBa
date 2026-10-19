@@ -19,13 +19,12 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 
 > [!info] Associazione tra il protocollo di Internet TCP/IP e lo stack ISO/OSI
 > ![[Pasted image 20261019152435.png]]
+> **Il Modello ISO OSI** (Open Systems Interconnection) è un modello concettuale che definisce il modo in cui le reti inviano i dati dal mittente al destinatario. Il modello è utilizzato per descrivere ogni componente nell'ambito della comunicazione dei dati così da permettere la definizione di regole e standard riguardo alle applicazioni e all'infrastruttura di rete.
 > ![[Pasted image 20261019152409.png]]
-
 ## Incapsulamento
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello concatena ad un pacchetto due campi:
 - **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
 - **Campo di payload**: contiene l'intero pacchetto proveniente dal livello immediatamente superiore ($N+1$), che il livello corrente tratta come un blocco di dati opaco
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
-> Nodi intermedi possono essere collocati a vari livelli
 > ![[Pasted image 20261019152111.png]]
