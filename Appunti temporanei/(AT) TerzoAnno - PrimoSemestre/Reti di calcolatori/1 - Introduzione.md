@@ -36,7 +36,7 @@ Internet, insieme alla reti di calcolatori in generale, fanno uso estensivo di p
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
 ## Reti di accesso
-Parliamo brevemente delle **reti di accesso** (access network. La rete di accesso è una rete che connette fisicamente un sistema al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
+Parliamo brevemente delle **reti di accesso** (access network.) La rete di accesso è una rete che connette fisicamente un sistema al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
 
 Le principali tipologie di reti di accesso si suddividono in tre categorie principali:
 1. **Accesso residenziale a larga banda**:
@@ -100,7 +100,7 @@ Come sappiamo, le code di un router hanno capacità finita (variabile in dimensi
 
 Dal punto di vista dei sistemi periferici, la perdita sembrerà come se il pacchetto fosse stato inviato in rete, ma non fosse più riemerso alla destinazione. I La frazione di pacchetti perduti aumenta in proporzione all’intensità di traffico. Quindi, le prestazioni di un nodo sono spesso misurate non solo in termini di ritardo, ma anche della probabilità di perdita di pacchetti.
 
-Come vedremo successivamente, un pacchetto generalmente porta con se un valore molto importante chiamato **TTL (Time To Live)**. Questo valore (fisso per alcuni pacchetti) viene diminuito di 1 ogni volta che il pacchetto attraversa un nodo della rete, se questo arriva a 0 viene direttamente scartato. Il TTL previene il fenomeno dei pacchetti fantasma all'interno della rete, ossia di pacchetti che, per un motivo o per l'altro, non riescono a raggiungere la loro destinazione
+Come vedremo successivamente, un pacchetto generalmente porta con se un valore molto importante chiamato **TTL (Time To Live)**. Questo valore (fisso per alcuni pacchetti) viene diminuito di 1 ogni volta che il pacchetto attraversa un nodo della rete, se questo arriva a 0 viene direttamente scartato. Il TTL previene il fenomeno dei pacchetti fantasma all'interno della rete, ossia di pacchetti che, per un motivo o per l'altro, non riescono a raggiungere la loro destinazione, girando ininterrottamente per Internet.
 #### Throughput
 Oltre al ritardo e alla perdita di pacchetti, un’altra misura critica delle prestazioni in una rete di calcolatori è il **throughput end-to-end**. Per darne una definizione, considerate il trasferimento di un file voluminoso da $A$ a $B$, attraverso la rete che potrebbe essere, per esempio, un grosso videoclip da trasmettere da un computer a un altro. **Il throughput (capacità totale)** istantaneo in ogni istante di tempo è la velocità (in bps) alla quale $B$ sta ricevendo il file.
 Se il file consiste di $F$ bit e il trasferimento richiede $T$ secondi affinché $B$ riceva tutti gli $F$ bit, allora il throughput medio del trasferimento del file è di $\frac{F}{T}$ bps.
