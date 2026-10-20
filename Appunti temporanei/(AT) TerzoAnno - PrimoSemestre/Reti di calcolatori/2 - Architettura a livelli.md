@@ -16,7 +16,6 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 4. **Livello di collegamento**: instrada un datagramma attraverso una serie di router tra la sorgente e la destinazione. Per trasferire un pacchetto da un nodo (host o router) a quello successivo sul percorso, il livello di rete si affida ai servizi del livello di collegamento. In particolare, a ogni nodo, il livello di rete passa il datagramma al livello sottostante, che lo trasporta al nodo successivo. In questo nodo, il livello di collegamento passa il datagramma al livello di rete superiore. I servizi forniti dal livello di collegamento dipendono dallo specifico protocollo utilizzato (Ethernet, Wi-Fi, PPP). Chiameremo **frame** i pacchetti a livello di collegamento
 5. **Livello fisico (physical layer)**: Il suo ruolo è quello di trasferire i singoli bit del frame da un nodo a quello successivo. Anche i protocolli di questo livello sono dipendenti dal collegamento e in più dipendono dall'effettivo mezzo trasmissivo (per esempio, doppino o fibra ottica).
 
-
 > [!info] Associazione tra il protocollo di Internet TCP/IP e lo stack ISO/OSI
 > ![[Pasted image 20261019152435.png]]
 > **Il Modello ISO OSI** (Open Systems Interconnection) è un modello concettuale che definisce il modo in cui le reti inviano i dati dal mittente al destinatario. Il modello è utilizzato per descrivere ogni componente nell'ambito della comunicazione dei dati così da permettere la definizione di regole e standard riguardo alle applicazioni e all'infrastruttura di rete.
