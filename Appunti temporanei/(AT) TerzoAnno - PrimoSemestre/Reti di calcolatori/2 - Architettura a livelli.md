@@ -1,9 +1,9 @@
 L'**architettura a livelli** è il paradigma strutturale fondamentale con cui vengono progettati protocolli, hardware e software di rete. Consiste nel decomporre un sistema di comunicazione complesso in una pila ordinata di livelli di astrazione.
 
-Ogni livello del sistema offre dei **servizi**, effettuando determinate azioni al proprio interno e utilizzando i servizi del livello immediatamente inferiore
+Ogni livello del sistema offre dei **servizi**, effettuando determinate azioni al proprio interno e utilizzando i servizi del livello immediatamente inferiore.
 
 > [!example] Esempio di servizi forniti da un livello e da quello immediatamente sotto
-> Un servizio a livello $n$ può implementare la consegna affidabile dei messaggi da un lato della rete all'altro. Ciò può essere implementato utilizzando un servizio di consegna dei messaggi non affidabile da lato a lato, fornito dal livello $n-1$ e aggiungendo a livello $n$ la funzionalità di determinare e ritrasmettere i messaggi persi
+> Un servizio a livello $n$ può implementare la consegna affidabile dei messaggi da un lato della rete all'altro. Ciò può essere implementato utilizzando un servizio di consegna dei messaggi non affidabile da lato a lato, fornito dal livello $n-1$ e aggiungendo a livello $n$ la funzionalità di determinare e ritrasmettere i messaggi persi.
 
 Un livello di protocolli può sempre essere implementato via software, hardware o un misto dei due precedenti.
 
@@ -22,8 +22,8 @@ Considerati insieme, i protocolli dei vari livelli sono detti **pila di protocol
 > ![[Pasted image 20261019152409.png]]
 ## Incapsulamento
 L'**incapsulamento** permette di trasportare da un livello superiore ad uno inferiore diverse informazioni. Ogni livello concatena ad un pacchetto due campi:
-- **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente
-- **Campo di payload**: contiene l'intero pacchetto proveniente dal livello immediatamente superiore ($N+1$), che il livello corrente tratta come un blocco di dati opaco
+- **Campo di intestazione**: contiene **informazioni di controllo** generate dal livello $N$ del sistema mittente e destinate esclusivamente allo **stesso livello** sul sistema ricevente.
+- **Campo di payload**: contiene l'intero pacchetto proveniente dal livello immediatamente superiore ($N+1$), che il livello corrente tratta come un blocco di dati opaco.
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
 > ![[Pasted image 20261019152111.png]]
