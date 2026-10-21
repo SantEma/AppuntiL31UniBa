@@ -15,7 +15,7 @@ I sistemi periferici accedono a Internet tramite i vari **Internet Service Provi
 Un provider è un insieme di commutatori di pacchetto e di collegamenti. Gli ISP forniscono ai sistemi periferici svariati tipi di accesso alla rete e rendono disponibile l’accesso a Internet ai fornitori di contenuti, connettendone i server a Internet. Poiché Internet non è altro che connettere tra loro gli end systems, anche gli ISP che forniscono accesso ai sistemi periferici devono essere interconnessi, tali provider di livello gerarchico più basso sono interconnessi a quelli nazionali e internazionali di livello più alto, che sono connessi tra di loro direttamente.
 
 Sistemi periferici, commutatori di pacchetto e altre parti di Internet fanno uso di protocolli che controllano l’invio e la ricezione di informazioni all’interno della rete. Due dei principali protocolli Internet sono il **Transmission Control Protocol (TCP), e l’Internet Protocol (IP)**.
-Generalmente questi standard sono definiti tramite una taskforce precisa di ingegneri (IETF) e dei documenti chiamati RFC (Request for Comment)
+Gli standard sono definiti dall'IETF (Internet Engineering Task Force), un organismo di ingegneri, tramite documenti chiamati RFC (Request For Comments).
 ## Internet come descrizione di servizi
 Date quindi tutte le definizioni precedenti, abbiamo descritto Internet nella sua forma "fisica", ma possiamo descriverlo anche come un'ampia infrastruttura che fornisce servizi alle applicazioni (posta elettronica, navigazione Web).
 
@@ -73,7 +73,7 @@ Ogni commutatore di pacchetto connette più collegamenti e per ciascuno di quest
 
 > [!example] Esempio di rete a pacchetto completa
 > ![[Pasted image 20261016162651.png]]
-#### Ritardi di elaborazione nelle reti a commutazione a pacchetto
+#### Ritardi di elaborazione nelle reti di commutazione a pacchetto
 Un pacchetto, a ogni "tappa" che attraversa, subisce un **ritardo**.
 Internet funziona esattamente in questa maniera, non riservando nessuna risorsa al pacchetto, che viene semplicemente immesso nella rete, offrendo una connessione **best effort** (senza garanzia)
 > [!example] Esempio di ritardo in una rete (con più router)
