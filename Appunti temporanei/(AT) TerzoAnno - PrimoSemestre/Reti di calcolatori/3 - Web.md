@@ -84,8 +84,11 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > ![[Pasted image 20261022152724.png]]
 > - **Riga di stato**, che presenta 3 campi al suo interno:
 > 	- **Versione**:
-> 	- **Codice di stato**
+> 	- **Codice di stato**:
 > 	- **Frase**
 > - **Righe di intestazione**:
 > - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
 > - **Corpo dell'entità**:
+
+> [!exampe] Title
+> Contents
