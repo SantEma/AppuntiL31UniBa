@@ -67,8 +67,19 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > 	- `Host`: nome del server a cui si riferisce l'URL. È obbligatorio nelle richieste conformi HTTP/1.1 perché permette l'uso dei virtual host basati sui nomi
 > 	- `User-Agent`: identificazione del tipo di client, tipo browser, produttore, versione etc.
 > 	- `Cookie`: utilizzati dalle applicazioni web per archiviare e recuperare informazioni a lungo termine sul lato client. Spesso usati per memorizzare un token di autenticazione o per tracciare le attività dell'utente.
-> - **Riga vuota**:
-> - **Corpo dell'entità**:
+> - **Riga vuota**: composta daii caratteri di ritorno a capo (carriage return) e di nuova linea (**line feed**)
+> - **Corpo dell'entità**
+
+> [!example] Esempio di richiesta HTTP
+> ```http
+> GET /wiki/Pagina_principale HTTP/1.1
+> Host: it.wikipedia.org
+> User-Agent: Mozilla/5.0 (compatible; Konqueror/3.2; Linux) (KHTML, like Gecko)
+> Accept: text/html, image/jpeg, image/png, text/*, image/*, */*
+> Accept-Charset: iso-8859-1, utf-8;q=0.5, *;q=0.5 
+> Accept-Language: it
+> Connection: Keep-Alive
+> ```
 
 
 #### Messaggio di risposta HTTP
