@@ -60,7 +60,7 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > ![[Pasted image 20261022151312.png]]
 > In ordine:
 > - **Riga di richiesta**, che presenta 3 campi al suo interno:
-> 	- **Campo metodo**: **azione** (l'intento) che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
+> 	- **Campo metodo**: **azione** che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
 > 	- **Campo URL()**
 > 	- **Campo versione**: versione HTTP che si intende utilizzare.
 > - **Righe di intestazione**:
