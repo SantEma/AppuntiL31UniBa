@@ -16,7 +16,6 @@ Ogni provider è una rete composta da commutatori di pacchetto e collegamenti. G
 
 Sistemi periferici, commutatori di pacchetto e altre parti di Internet fanno uso di protocolli che controllano l’invio e la ricezione di informazioni all’interno della rete. Due dei principali protocolli di Internet sono il **Transmission Control Protocol (TCP)** e l’**Internet Protocol (IP)**.
 Generalmente questi standard sono definiti dall'**IETF** (Internet Engineering Task Force), una task force di ingegneri, tramite documenti chiamati **RFC** (Request For Comments).
-
 ## Internet come descrizione di servizi
 Date quindi tutte le definizioni precedenti, abbiamo descritto Internet nella sua forma "fisica", ma possiamo descriverlo anche come un'ampia infrastruttura che fornisce servizi alle applicazioni (posta elettronica, navigazione Web).
 
@@ -29,7 +28,6 @@ I sistemi periferici collegati a Internet forniscono un'**interfaccia socket** (
 > I sistemi periferici vengono anche detti **host** in quanto ospitano (ed eseguono) programmi applicativi quali browser, web server o software di lettura e gestione della posta elettronica. Talvolta gli host vengono ulteriormente suddivisi in due categorie: **client e server**. In modo informale:
 > - I **client** sono host che richiedono dei servizi e tendono a essere PC, laptop, smartphone e via dicendo; 
 > - I **server** sono host che si occupano di erogare dei servizi e sono sostanzialmente macchine più potenti che memorizzano e distribuiscono pagine web o flussi video, ritrasmettono la posta elettronica e così via.
-
 ### Protocolli
 > [!info] Definizione formale di protocolli
 > Un **protocollo** definisce il formato e l’ordine dei messaggi scambiati tra due o più entità in comunicazione, così come le azioni intraprese in fase di trasmissione e/o di ricezione di un messaggio o di un altro evento.
@@ -38,7 +36,6 @@ Internet e le reti di calcolatori in generale fanno uso estensivo di protocolli,
 
 > [!example] Esempio del protocollo HTTP per la richiesta di una pagina Web
 > ![[Pasted image 20261012144741.png]]
-
 ## Reti di accesso
 Parliamo brevemente delle **reti di accesso** (access network). La rete di accesso è una rete che connette fisicamente un sistema periferico al suo **edge router** (router di bordo), che è il primo router sul percorso dal sistema d’origine a un qualsiasi altro sistema di destinazione collocato al di fuori della stessa rete di accesso.
 
@@ -51,7 +48,6 @@ Le reti di accesso si suddividono in tre categorie principali:
     - **Ethernet e Wi-Fi**: tecnologie per reti locali ampiamente impiegate in aziende, università e abitazioni per interconnettere i dispositivi a uno switch o a un *access point* wireless collegato al router di bordo.
 3. **Accesso wireless su scala geografica**:
     - **Reti cellulari (3G, 4G LTE e 5G)**: collegano i dispositivi mobili ad alta velocità su vasta scala tramite le stazioni base dei gestori di telefonia.
-
 ## Nucleo della rete
 ### Commutazione di pacchetto
 Come detto precedentemente, le applicazioni distribuite scambiano **messaggi** che possono contenere qualsiasi cosa il progettista del protocollo desideri.
@@ -93,7 +89,6 @@ Come vediamo sopra, i pacchetti subiscono nelle reti a commutazione di pacchetto
 - **Ritardo di propagazione**: una volta immesso sul collegamento, un bit deve propagarsi fino al router $B$. Il bit viaggia alla velocità di propagazione del collegamento, che dipende dal mezzo fisico (fibra ottica, doppino in rame e così via) ed è compresa nell'intervallo che va dai $2 \cdot 10^{8}\ \text{m/s}$ ai $3 \cdot 10^{8}\ \text{m/s}$, quest'ultimo corrispondente alla velocità della luce. Il ritardo di propagazione è dato da $\frac{d}{v}$, dove $d$ è la distanza tra i due router, mentre $v$ è la velocità di propagazione nel collegamento. Nelle reti molto estese i ritardi di propagazione sono dell’ordine dei millisecondi.
 
 Il ritardo complessivo subito da un pacchetto in corrispondenza di un singolo nodo (**ritardo nodale**) è quindi dato dalla somma di questi quattro contributi.
-
 ##### Ritardo end-to-end e traceroute
 Per studiare il concetto di ritardo end-to-end (quindi tra due host), supponiamo l’esistenza di $N-1$ router tra l’host sorgente e quello di destinazione. Ipotizziamo, inoltre, per il momento, che la rete non sia congestionata (e che quindi i ritardi di accodamento siano trascurabili), che il ritardo di elaborazione a ciascun router e presso il mittente sia $d_{elab}$, che la velocità di trasmissione in uscita a ogni router e all'host sorgente sia di $R$ bps e che il ritardo di propagazione su ciascun collegamento sia $d_{prop}$.
 I ritardi totali di nodo si accumulano e danno un ritardo complessivo end-to-end pari a: $$d_{end-to-end}=N(d_{elab}+d_{trasm}+d_{prop})$$
