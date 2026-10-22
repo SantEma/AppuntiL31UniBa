@@ -55,7 +55,7 @@ Alcuni browser possono essere configurati dagli utenti per controllare il grado 
 Le specifiche HTTP includono la definizione dei due formati di messaggi, richiesta e risposta
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
-> Ogni pachetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
+> Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
 > ![[Pasted image 20261022151312.png]]
 > - **Riga di richiesta**, che presenta 3 campi al suo interno:
 > 	- **Metodo**: **azione** che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
@@ -80,7 +80,7 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > ```
 #### Messaggio di risposta HTTP
 > [!info] Contenuto generale del messaggio di risposta HTTP
-> Ogni pachetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
+> Ogni pacchetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
 > ![[Pasted image 20261022152724.png]]
 > - **Riga di stato**, che presenta 3 campi al suo interno:
 > 	- **Versione**: versione HTTP utilizzata dal server per generare la risposta
@@ -88,11 +88,14 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > 	- **Frase**: breve descrizione testuale del codice, destinata alla lettura umana
 > - **Righe di intestazione**, le più comuni sono:
 > 	- `Server`: indica il tipo e la versione del server. Può essere visto come l'equivalente dell'header di richiesta User-Agent.
-> 	- `Content-Type`, indica il tipo di contenuto restituito. La codifica di tali tipi (detti Media type) è registrata presso lo IANA (Internet Assigned Number Authority); essi sono detti tipi MIME (Multimedia Internet Mail Extensions), la cui codifica è descritta nel documento RFC 1521. Alcuni usuali tipi MIME incontrati in una risposta HTTP sono:
+> 	- `Content-Type`: indica il tipo di contenuto restituito. La codifica di tali tipi (detti Media type) è registrata presso lo IANA (Internet Assigned Number Authority); essi sono detti tipi MIME (Multipurpose Internet Mail Extensions), la cui codifica è descritta nel documento RFC 1521. Alcuni usuali tipi MIME incontrati in una risposta HTTP sono:
 > 		- text/html: Documento HTML
 > 		- text/plain: Documento di testo non formattato
 > 		- text/xml: Documento XML
 > 		- image/jpeg: Immagine di formato JPEG
+> 	- `Content-Length`: dimensione del corpo
+> 	- `Date`: data/ora della risposta
+> 	- `Last-Modified`: ultima modifica della risorsa, usato per la cache
 > - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
 > - **Corpo dell'entità**
 
