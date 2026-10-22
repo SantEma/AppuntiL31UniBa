@@ -90,5 +90,29 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
 > - **Corpo dell'entità**:
 
-> [!exampe] Title
-> Contents
+> [!example] Esempio di risposta HTTP
+> ```http
+> HTTP/1.1 200 OK
+> Date: Fri, 22 Feb 2019 10:50:37 GMT
+> Content-Type: text/html; charset=UTF-8
+> Content-Length: 22208
+> Connection: keep-alive
+> Server: mw1215.eqiad.wmnet
+> Content-language: it
+> Content-Encoding: gzip
+> Last-Modified: Fri, 22 Feb 2019 08:46:20 GMT
+> Age: 20548
+> Cache-Control: private, s-maxage=0, max-age=0, must-revalidate
+> Vary: Accept-Encoding,Cookie,Authorization
+> [...]
+>  
+> <!DOCTYPE html>
+> <html class="client-nojs" lang="it" dir="ltr">
+> <head>
+> <meta charset="UTF-8"/>
+> <title>Wikipedia, l'enciclopedia libera</title>
+> [...]
+> </body>
+> </html>
+> ```
+
