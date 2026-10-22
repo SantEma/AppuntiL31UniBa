@@ -29,4 +29,3 @@ L'**incapsulamento** permette di trasportare informazioni da un livello superior
 > [!example] Esempio di incapsulamento
 > ![[Pasted image 20261019145837.png]]
 > ![[Pasted image 20261019152111.png]]
-
