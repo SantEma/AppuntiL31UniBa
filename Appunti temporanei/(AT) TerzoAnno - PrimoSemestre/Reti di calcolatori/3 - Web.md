@@ -86,7 +86,13 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > 	- **Versione**: veversione HTTP che si intende utilizzare.rsione HTTP che si intende utilizzare.
 > 	- **Codice di stato**:
 > 	- **Frase**
-> - **Righe di intestazione**:
+> - **Righe di intestazione**, le più comuni sono:
+> 	- `Server`: indica il tipo e la versione del server. Può essere visto come l'equivalente dell'header di richiesta User-Agent.
+> 	- `Content-Type`, indica il tipo di contenuto restituito. La codifica di tali tipi (detti Media type) è registrata presso lo IANA (Internet Assigned Number Authority); essi sono detti tipi MIME (Multimedia Internet Mail Extensions), la cui codifica è descritta nel documento RFC 1521. Alcuni usuali tipi MIME incontrati in una risposta HTTP sono:
+> 		- text/html: Documento HTML
+> 		- text/plain: Documento di testo non formattato
+> 		- text/xml: Documento XML
+> 		- image/jpeg: Immagine di formato JPEG
 > - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
 > - **Corpo dell'entità**
 
