@@ -83,9 +83,9 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > Ogni pachetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
 > ![[Pasted image 20261022152724.png]]
 > - **Riga di stato**, che presenta 3 campi al suo interno:
-> 	- **Versione**: veversione HTTP che si intende utilizzare.rsione HTTP che si intende utilizzare.
-> 	- **Codice di stato**:
-> 	- **Frase**
+> 	- **Versione**: versione HTTP utilizzata dal server per generare la risposta
+> 	- **Codice di stato**: numero a 3 cifre che indica l'esito della richiesta. Possono essere di diverse classi come `1xx` informativo, `2xx` successo (`200 OK`), `3xx` redirezione (`301 Moved Permanently`), `4xx` errore del client (`404 Not Found`), `5xx` errore del server (`500 Internal Server Error`).
+> 	- **Frase**: breve descrizione testuale del codice, destinata alla lettura umana
 > - **Righe di intestazione**, le più comuni sono:
 > 	- `Server`: indica il tipo e la versione del server. Può essere visto come l'equivalente dell'header di richiesta User-Agent.
 > 	- `Content-Type`, indica il tipo di contenuto restituito. La codifica di tali tipi (detti Media type) è registrata presso lo IANA (Internet Assigned Number Authority); essi sono detti tipi MIME (Multimedia Internet Mail Extensions), la cui codifica è descritta nel documento RFC 1521. Alcuni usuali tipi MIME incontrati in una risposta HTTP sono:
