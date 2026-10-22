@@ -54,19 +54,18 @@ Alcuni browser possono essere configurati dagli utenti per controllare il grado 
 ### Formato dei messaggi HTTP
 Le specifiche HTTP includono la definizione dei due formati di messaggi, richiesta e risposta
 #### Messaggio di richiesta HTTP
-
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pachetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
 > ![[Pasted image 20261022151312.png]]
 > - **Riga di richiesta**, che presenta 3 campi al suo interno:
-> 	- **Campo metodo**: **azione** che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
+> 	- **Metodo**: **azione** che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
 > 	- **Campo URL**: indica l'oggetto della richiesta
 > 	- **Campo versione**: versione HTTP che si intende utilizzare.
 > - **Righe di intestazione**, le più comuni sono:
 > 	- `Host`: nome del server a cui si riferisce l'URL. È obbligatorio nelle richieste conformi HTTP/1.1 perché permette l'uso dei virtual host basati sui nomi
 > 	- `User-Agent`: identificazione del tipo di client, tipo browser, produttore, versione etc.
 > 	- `Cookie`: utilizzati dalle applicazioni web per archiviare e recuperare informazioni a lungo termine sul lato client. Spesso usati per memorizzare un token di autenticazione o per tracciare le attività dell'utente.
-> - **Riga vuota**: composta daii caratteri di ritorno a capo (carriage return) e di nuova linea (**line feed**)
+> - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
 > - **Corpo dell'entità**
 
 > [!example] Esempio di richiesta HTTP
@@ -79,11 +78,14 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > Accept-Language: it
 > Connection: Keep-Alive
 > ```
-
-
 #### Messaggio di risposta HTTP
-
 > [!info] Contenuto generale del messaggio di risposta HTTP
 > Ogni pachetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
 > ![[Pasted image 20261022152724.png]]
-> - **Riga di stato**, che presenta 3 campi al suo interno
+> - **Riga di stato**, che presenta 3 campi al suo interno:
+> 	- **Versione**:
+> 	- **Codice di stato**
+> 	- **Frase**
+> - **Righe di intestazione**:
+> - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**)
+> - **Corpo dell'entità**:
