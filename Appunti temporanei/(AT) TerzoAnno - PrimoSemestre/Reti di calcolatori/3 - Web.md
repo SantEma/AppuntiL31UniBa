@@ -57,3 +57,7 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > ![[Pasted image 20261022151312.png]]
+#### Messaggio di risposta HTTP
+
+> [!info] Contenuto generale del messaggio di risposta HTTP
+> ![[Pasted image 20261022152724.png]]
