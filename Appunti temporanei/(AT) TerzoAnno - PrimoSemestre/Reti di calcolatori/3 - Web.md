@@ -61,7 +61,7 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > In ordine:
 > - **Riga di richiesta**, che presenta 3 campi al suo interno:
 > 	- **Campo metodo**: **azione** che il client vuole eseguire sulla risorsa identificata dall'URL di destinazione. Può assumere valori tra `GET` (generalmente più utilizzato), `POST`, `HEAD`, `PUT` e `DELETE`.
-> 	- **Campo URL:** 
+> 	- **Campo URI** (nell'immagine è indicato come URL): indica l'oggetto della richiesta
 > 	- **Campo versione**: versione HTTP che si intende utilizzare.
 > - **Righe di intestazione**:
 > - **Riga vuota**:
