@@ -152,7 +152,8 @@ Da questo esempio, possiamo evincere che i cookies possano essere utilizzati per
 ### Proxy server
 Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto del web server effettivo. Il proxy ha una propria memoria su disco (una cache) in cui conserva copie di oggetti recentemente richiesti.
 
-> [!example] Esempio di p3
+> [!example] Esempio di proxy server
 > ![[Pasted image 20261023153342.png]]
 
+Notiamo che il proxy è contemporaneamente server e client: quando riceve richieste da un browser e gli invia risposte agisce da server, quando invia richieste e riceve risposte da un server di origine funziona da client.
 ### Streaming HTTP e DASH
