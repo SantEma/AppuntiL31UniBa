@@ -136,7 +136,8 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 
 > [!example] Esempio di utilizzo di cookie
 > ![[Pasted image 20261023142333.png]]
->
+> Susan, dal suo PC con Internet Explorer, visita `Amazon.com` per la prima volta (aveva già visitato eBay). Quando la sua richiesta HTTP arriva al server Amazon:
+
 
 Da questo esempio, possiamo 
 ### Proxy server
