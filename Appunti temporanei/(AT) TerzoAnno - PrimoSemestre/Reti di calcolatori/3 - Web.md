@@ -151,3 +151,5 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 Da questo esempio, possiamo evincere che i cookies possano essere utilizzati per l'identificazione dei singoli utenti, creando quindi un livello di sessione utente al di sopra di HTTP.
 ### Proxy server
 Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto del web server effettivo. Il proxy ha una propria memoria su disco (una cache) in cui conserva copie di oggetti recentemente richiesti.
+
+### Streaming HTTP e DASH
