@@ -136,7 +136,7 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 
 > [!example] Esempio di utilizzo di cookie
 > ![[Pasted image 20261023142333.png]]
-> Supponiamo che Susan, che accede sempre al Web con Chrome dal proprio PC di casa, contatti per la prima volta il sito di Amazon.com. Supponiamo inoltre che in passato abbia già visitato il sito di eBay. Quando giunge la richiesta al web server di Amazon, il sito crea un identificativo unico e una voce nel proprio database, indicizzata dal numero identificativo. A questo punto il server risponde al browser di Susan, includendo nella risposta HTTP l’intestazione `Set-cookie:` che contiene un numero identificativo (supponiamo che sia `Set-cookie:1678`)
+>
 
 ### Web caching
 [da finire]
