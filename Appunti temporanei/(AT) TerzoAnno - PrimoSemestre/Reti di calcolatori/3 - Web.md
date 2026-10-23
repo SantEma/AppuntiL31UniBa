@@ -125,4 +125,6 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > </html>
 > ```
 
+### Cookies
+### Web caching
 [da finire]
