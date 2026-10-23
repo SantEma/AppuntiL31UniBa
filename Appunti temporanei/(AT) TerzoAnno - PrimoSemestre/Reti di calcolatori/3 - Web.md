@@ -126,5 +126,12 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > ```
 
 ### Cookies
+Come detto precedentemente, i server HTTP sono privi di stato. Generalmente è auspicabile che i web server possano autenticare gli utenti sia per limitare l'accesso da parte di questi ultimi, sia per fornire contenuti in funzione della loro identità.
+
+Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies presenta quattro componenti principali:
+1. Riga di intestazione nel messaggio di risposta HTTP; 
+2. Riga di intestazione nel messaggio di richiesta HTTP;
+3. File mantenuto sul sistema dell'utente e gestito dal browser
+4. Database sul sito
 ### Web caching
 [da finire]
