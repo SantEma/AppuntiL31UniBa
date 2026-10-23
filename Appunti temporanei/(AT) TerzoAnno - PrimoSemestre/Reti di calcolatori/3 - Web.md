@@ -137,8 +137,17 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 > [!example] Esempio di utilizzo di cookie
 > ![[Pasted image 20261023142333.png]]
 > Susan, dal suo PC con Internet Explorer, visita `Amazon.com` per la prima volta (aveva già visitato eBay). Quando la sua richiesta HTTP arriva al server Amazon:
+> - il sito genera un **identificatore univoco** (`1678`)
+> - crea una **voce corrispondente nel proprio database** backend
+> - risponde con un messaggio HTTP contenente l'intestazione `Set-cookie: 1678`
+> 
+> Il browser di Susan riceve la risposta, vede l'intestazione `Set-cookie:` e aggiunge una riga al suo **file cookie**, che ora contiene:
+> ```
+> ebay:   8734
+> amazon: 1678
+> ```
+> In ogni nuova richiesta HTTP verso Amazon, il browser include automaticamente l'intestazione `Cookie: 1678`. Il server legge questo valore, lo cerca nel database e può così riconoscere Susan e proporre contenuti/azioni personalizzati per il suo account
 
-
-Da questo esempio, possiamo 
+Da questo esempio, possiamo evincere che i cookies possano essere utilizzati per l'identificazione dei singoli utenti, creando quindi un livello di sessione utente al di sopra di HTTP.
 ### Proxy server
-[da finire]
+Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto del web server effettivo. Il proxy ha una propria memoria su disco (una cache) in cui conserva copie di oggetti recentemente richiesti.
