@@ -138,5 +138,6 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 > ![[Pasted image 20261023142333.png]]
 >
 
-### Web caching
+Da questo esempio, possiamo 
+### Proxy server
 [da finire]
