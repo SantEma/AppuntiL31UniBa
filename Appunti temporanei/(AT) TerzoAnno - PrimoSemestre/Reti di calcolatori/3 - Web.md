@@ -156,4 +156,6 @@ Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto
 > ![[Pasted image 20261023153342.png]]
 
 Notiamo che il proxy è contemporaneamente server e client: quando riceve richieste da un browser e gli invia risposte agisce da server, quando invia richieste e riceve risposte da un server di origine funziona da client.
+
+I proxy 
 ### Streaming HTTP e DASH
