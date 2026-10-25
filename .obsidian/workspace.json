@@ -11,14 +11,12 @@
             "id": "88311c98d887f055",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
-                "mode": "source",
-                "source": false
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261023153342.png"
               },
-              "icon": "lucide-file",
-              "title": "3 - Web"
+              "icon": "lucide-image",
+              "title": "Pasted image 20261023153342"
             }
           }
         ]
@@ -80,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -187,13 +184,13 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "88311c98d887f055",
+  "active": "ab83996f0563bfdd",
   "lastOpenFiles": [
-    "Pasted image 20261023153342.png",
-    "Pasted image 20261023142333.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261023142333.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261023153342.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261022150629.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261022152724.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261022151312.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261022145435.png",
@@ -206,7 +203,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261019145837.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261019152111.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261019152435.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261019152409.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
