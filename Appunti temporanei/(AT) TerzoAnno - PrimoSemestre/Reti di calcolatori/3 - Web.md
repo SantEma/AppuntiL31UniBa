@@ -70,8 +70,6 @@ Prima di continuare con i vari formati dei messaggi, definiamo cosa sono URI e U
  >protocollo://[username[:password]@]host[:porta][</percorso>][?querystring][#fragment]
 >```
 >
-
-
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
