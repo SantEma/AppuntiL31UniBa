@@ -150,15 +150,22 @@ Grazie ai **cookies**, questo diventa possibile. La tecnologia dei cookies prese
 
 Da questo esempio, possiamo evincere che i cookies possano essere utilizzati per l'identificazione dei singoli utenti, creando quindi un livello di sessione utente al di sopra di HTTP.
 ### Proxy server
-Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto del web server effettivo. Il proxy ha una propria memoria su disco (una cache) in cui conserva copie di oggetti recentemente richiesti.
+Un **proxy server** (conosciuta anche come **web cache**) è un’entità di rete che soddisfa richieste HTTP al posto del web server effettivo. Il proxy ha una propria memoria su disco (una cache) in cui conserva copie di oggetti recentemente richiesti.
 
 > [!example] Esempio di proxy server
 > ![[Pasted image 20261023153342.png]]
+> Supponiamo che un client, con un browser configurato, faccia una richiesta a `http://www.someschool.edu/campus.gif`. In sequenza succede che:
+> 1. Il browser stabilisce una connessione TCP con il proxy server e invia una richiesta HTTP per l’oggetto specificato;
+> 2. Il proxy controlla la presenza di una copia dell’oggetto memorizzata localmente. Se l’oggetto viene rilevato, il proxy lo inoltra all’interno di un messaggio di risposta HTTP al browser;
+> 3. Se, invece, la cache non dispone dell’oggetto, il proxy apre una connessione TCP verso il server di origine; ossia, nel nostro esempio, `www.someschool.edu`. Quindi, il proxy invia al server una richiesta HTTP per l’oggetto. Una volta ricevuta tale richiesta, il server di origine invia al proxy l’oggetto all’interno di una risposta HTTP;
+> 4. Quando il proxy riceve l’oggetto, ne salva una copia nella propria memoria locale e ne inoltra un’altra copia, all’interno di un messaggio di risposta HTTP, al browser (sulla connessione TCP esistente tra il browser e il proxy).
 
 Notiamo che il proxy è contemporaneamente server e client: quando riceve richieste da un browser e gli invia risposte agisce da server, quando invia richieste e riceve risposte da un server di origine funziona da client.
 
 I proxy si sono sviluppati in internet per due ragioni:
 1. Può ridurre sostanzialmente i tempi di risposta alle richieste dei client, in particolare se l'ampiezza di banda che costituisce il collo di bottiglia tra il client e il server è molto inferiore rispetto all'ampiezza di banda minima tra client e proxy;
 2. Può ridurre in modo sostanziale il traffico sul collegamento di accesso ad Internet, con il vantaggio di non dover aumentare l'ampiezza di banda e ottenere quindi una riduzione dei costi
+
+Con l'aumento delle **Content Distribution Network** (CDN), i proxy server diventano sempre più importanti all'interno di Internet.
 ### Streaming HTTP e DASH
 [da finire]
