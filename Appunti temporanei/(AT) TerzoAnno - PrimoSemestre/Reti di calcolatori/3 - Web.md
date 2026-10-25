@@ -157,6 +157,8 @@ Un **proxy server** è un’entità di rete che soddisfa richieste HTTP al posto
 
 Notiamo che il proxy è contemporaneamente server e client: quando riceve richieste da un browser e gli invia risposte agisce da server, quando invia richieste e riceve risposte da un server di origine funziona da client.
 
-I proxy [da finire]
+I proxy si sono sviluppati in internet per due ragioni:
+1. Può ridurre sostanzialmente i tempi di risposta alle richieste dei client, in particolare se l'ampiezza di banda che costituisce il collo di bottiglia tra il client e il server è molto inferiore rispetto all'ampiezza di banda minima tra client e proxy;
+2. Può ridurre in modo sostanziale il traffico sul collegamento di accesso ad Internet, con il vantaggio di non dover aumentare l'ampiezza di banda e ottenere quindi una riduzione dei costi
 ### Streaming HTTP e DASH
 [da finire]
