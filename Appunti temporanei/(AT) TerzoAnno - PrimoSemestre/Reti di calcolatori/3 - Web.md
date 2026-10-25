@@ -56,8 +56,14 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 Prima di continuare con i vari formati dei messaggi, definiamo cosa sono URI e URL
 
 > [!info] Definizione di URI
-> L’URI, acronimo in italiano di identificatore di risorsa uniforme, è un **insieme di caratteri che il web traduce per riconoscere e collegare una risorsa connessa a internet a un’altra**, permettendo loro di interagire. Sono quindi stringhe di caratteri il cui ruolo è identificare un determinato indirizzo o percorso.
+> Lo **Uniform Resource Identifier** è una sequenza di caratteri che identifica universalmente ed univocamente una risorsa
+> La RFC3986 definisce con precisione le tre parti dell'acronimo, e la loro finalità:
+> - **Uniform**: consiste nella identità del contenuto al variare delle forme in cui è presentato. Ad esempio, un libro cartaceo o l'ebook corrispondente. Dà parecchi vantaggi: tipi diversi di identificatori di risorse possono essere usati nello stesso contesto, anche se i meccanismi usati per accedere a tali risorse possono essere diversi; è possibile usare il medesimo meccanismo di interpretazione semantica su tipi diversi di identificatori di risorse; è possibile aggiungere nuovi tipi di risorse senza interferire con il modo in cui gli identificatori già esistenti sono usati; gli identificatori possono essere riutilizzati in diversi contesti, pertanto nuove applicazioni o protocolli possono usare gli identificatori già esistenti.
+> - **Resource**: Una risorsa è tutto ciò che ha una identità. Non tutte le risorse tuttavia sono reperibili in rete: ad esempio un essere umano, un libro o un'azienda. Più precisamente, una risorsa è la mappatura concettuale di un'entità (o di un insieme di entità), e non è necessariamente legata all'entità in un determinato istante: infatti la risorsa può restare costante anche se le entità che la compongono cambiano nel corso del tempo, a patto che resti costante il legame concettuale (si pensi alla risorsa "Wikipedia": nonostante l'entità cambi nel tempo, poiché il contenuto del sito cambia, la risorsa che concettualmente identifica "Wikipedia" rimane la stessa).
+> - **Identifier**: Un identificatore è un oggetto che viene impiegato come riferimento a qualcosa che ha un'identità. Nel caso della URI, tale oggetto è una sequenza di caratteri con una sintassi ben definita.
 
+> [!info] Definizione di URL
+> Un URL è un URI che identifica una risorsa tramite la sua "collocazione" ("location") in un grafo. Di fatto, non identifica la risorsa per nome, ma con il modo con cui la si può reperire. Per esempio, l'URL `http://www.example.com/)` è un URI che identifica una risorsa (l'home page di un sito web) e lascia intendere che una rappresentazione di tale risorsa (il codice HTML della versione corrente di tale home page) è ottenibile via HTTP da un host di rete chiamato `www.example.com/` .
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
