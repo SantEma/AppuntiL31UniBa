@@ -69,7 +69,14 @@ Prima di continuare con i vari formati dei messaggi, definiamo cosa sono URI e U
 > ```http
  >protocollo://[username[:password]@]host[:porta][</percorso>][?querystring][#fragment]
 >```
->
+>- **protocollo**: Identifica il protocollo, tipicamente di livello applicativo, da utilizzare per l'accesso al server. I protocolli più comuni sono HTTP, HTTPS, FTP, MMS ecc. Se il protocollo non viene specificato, generalmente il browser utilizza "http" come predefinito. In alcuni casi l'utente può vedere la pagina caricata con protocollo https, ma solo perché il web server è già stato contattato con protocollo http e ha risposto al browser con un codice di stato di reindirizzamento (3xx, di solito 301 o 302).
+>- **://**: Separatore tra il protocollo e il resto dell'URL: di solito l'host, o opzionalmente lo username.
+>- **username:password@** (opzionale): Subito dopo il protocollo, è possibile specificare le credenziali di autenticazione (username e password) per l'accesso alla risorsa. L'autenticazione in URL è però estremamente rischiosa, in quanto le credenziali vengono inviate al server in chiaro, ovvero non cifrate.
+>- **host** — Identifica il server su cui risiede la risorsa. Può essere rappresentato direttamente da un indirizzo IP o (più comunemente) da un nome di dominio che il software converte in indirizzo IP avvalendosi del servizio DNS (che vedremo più avanti).
+>- **porta** (opzionale): Identifica la porta del servizio di rete alla quale inoltrare la richiesta. Il numero di porta può essere omesso quando corrisponde alla porta standard associata al protocollo indicato dall'URL (ad esempio 80 per HTTP o 443 per HTTPS).
+>- **percorso** (opzionale) — Percorso (pathname) nel file system del server che identifica la risorsa (generalmente una pagina web, una immagine o un file multimediale). Se il nome del file non viene specificato, il server può essere configurato per restituire un file predefinito.
+>- **querystring** (opzionale) — Se richiesto, al termine dell'URL è possibile aggiungere una query string separandola con il simbolo "?". La query string è una stringa di caratteri che consente di passare al server uno o più parametri. Di norma, la query string ha questo formato: `?parametro1=valore&parametro2=valore2`.
+>- **fragment** (opzionale) — Se presente, indica una parte o una posizione all'interno della risorsa. Come per la query string è possibile utilizzare più parametri, con la differenza che, essendo utilizzati dal client per sapere come muoversi all'interno di una risorsa, non verranno inviati al server. Di norma, il fragment ha questo formato: `#parametro1=valore&parametro2=valore2`.
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
