@@ -236,6 +236,13 @@ Un reverse proxy è utile per diverse motivazioni:
 ### HTTP/2
 HTTP/2, standardizzato nel 2015, è stata la prima nuova versione di HTTP da HTTP/1.1.
 
-Gli obiettivi principali di HTTP/2 sono quello di ridurre la latenza percepita attivando il multiplexing di richiesta e risposta su una singola connessione TCP, di fornire supporto per la priorità delle richieste e il server push e di fornire una compressione efficiente dei campi di intestazione HTTP. HTTP/2 non modifica metodi, codici di stato, URL e campi di intestazione di HTTP, ma cambia il modo in cui i dati vengono formattati e trasportati tra il client e il server.
+Gli obiettivi principali di HTTP/2 sono quello di ridurre la latenza percepita attivando il multiplexing di richiesta e risposta su una singola connessione TCP, di fornire supporto per la priorità delle richieste e il server push, e di fornire una compressione efficiente dei campi di intestazione HTTP. 
+HTTP/2 non modifica metodi, codici di stato, URL e campi di intestazione di HTTP, ma cambia il modo in cui i dati vengono formattati e trasportati tra il client e il server.
+
+Per capire la necessità di introdurre HTTP/2 si ricordi che HTTP/1.1 utilizza connessioni TCP persistenti, consentendo l’invio di una pagina web dal serveal client su un'unica connessione TCP. Avendo solo una connessione TCP per pagina web, il numero di socket sul server è limitato e ogni pagina web trasportata ottiene una equa condivisione della larghezza di banda di rete. Tuttavia gli sviluppatori di browser web hanno rapidamente scoperto che l’invio di tutti gli oggetti in una pagina web su una singola connessione TCP ha il problema dell’**Head of Line (HOL) blocking** (“blocco in testa alla coda”). 
+
+> [!example] Esempio di HOL
+> Contents
+
 ### Streaming HTTP e DASH
 [da finire]
