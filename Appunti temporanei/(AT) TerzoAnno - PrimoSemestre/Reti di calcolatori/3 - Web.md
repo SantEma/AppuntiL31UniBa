@@ -170,7 +170,7 @@ I proxy si sono sviluppati in internet per due ragioni:
 > Immaginiamo una rete aziendale costituita da una rete locale veloce, una LAN da 100 Mbps, a cui sono collegati una manciata di computer. Questa rete ha però un unico punto di contatto con il mondo esterno: un **link di accesso da 15 Mbps** che, attraverso due router, la collega a Internet pubblico, dove si trovano i cinque server di origine da cui gli utenti scaricano le pagine web.
 > ![[Pasted image 20261025161633.png]]
 > Il traffico che attraversa questa rete è semplice da quantificare. Gli oggetti richiesti (immagini, pagine, file) hanno in media una dimensione di 1 Mbit, e i browser degli utenti generano in media 15 richieste HTTP al secondo. Quando un utente fa una richiesta, il tempo che passa prima che veda il risultato sullo schermo è dato dalla somma di tre componenti: il tempo di attraversamento della LAN, il tempo di attraversamento del link di accesso e il ritardo di Internet.
-> Stimiamo, tramite la formula vista nel primo capitolo, il ritardo nella rete locale:
+> Stimiamo, tramite una formula sul ritardo di accodamento, trattato nel primo capitolo, il ritardo nella rete locale:
 > $$\text{LAN}: (15 \text{req/s} × 1 \text{Mbit}) / 100 \text{Mbps} = 0,15$$
 > Mentre, nella rete di accesso:
 > $$\text{Link di accesso}: (15 \text{req/s} × 1 \text{Mbit}) / 15 \text{Mbps} = 1$$
