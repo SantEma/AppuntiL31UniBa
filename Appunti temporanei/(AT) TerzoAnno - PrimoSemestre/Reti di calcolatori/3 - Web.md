@@ -258,7 +258,7 @@ La soluzione HTTP/2 del blocco HOL consiste nel suddividere ogni messaggin picco
 > Supponiamo che tutti i fotogrammi abbiano una lunghezza fissata, il video clip sia composto da 1000 frame e ognuno degli oggetti più piccoli sia costituito da due frame. Se si intervallano i frame, il primo frame di tutti gli oggetti più piccoli viene inoltrato dopo aver inviato un frame del video clip. Quindi, dopo aver inviato il secondo frame del video clip, viene inoltrato l’ultimo frame di ciascuno degli oggetti piccoli. Pertanto, tutti gli oggetti più piccoli vengono inviati dopo aver inoltrato un totale di 18 frame. Se i frame non venissero intervallati, gli oggetti più piccoli verrebbero inviati solo dopo aver inoltrato 1016 frame. Quindi, il meccanismo di framing HTTP/2 può ridurre significativamente il ritardo percepito dall’utente.
 
 
-
+La capacità di suddividere un messaggio HTTP in frame indipendenti, intervallarli e poi ricostruirli dall’altra parte è il principale miglioramento apportato da HTTP/2. Quando un server vuole inviare una risposta HTTP, la risposta viene elaborata dal sottolivello di framing, dove viene scomposta in frame. Il campo di intestazione della risposta diventa un frame e il corpo del messaggio viene suddiviso in più frame aggiuntivi. I frame della risposta sono quindi intervallati dal sottolivello di framing nel server con i frame di altre risposte e inviati tramite singola connessione TCP persistente. I frame, man mano che arrivano al client, vengono prima ricostruiti nei messaggi di risposta originali nel sottolivello di framing e quindi elaborati dal browser come al solito. Allo stesso modo, le richieste HTTP del client vengono suddivise in frame e intervallate.
 
 
 
