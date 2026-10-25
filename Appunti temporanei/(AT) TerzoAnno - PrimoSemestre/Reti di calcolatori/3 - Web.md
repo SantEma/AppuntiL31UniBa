@@ -64,6 +64,14 @@ Prima di continuare con i vari formati dei messaggi, definiamo cosa sono URI e U
 
 > [!info] Definizione di URL
 > Un URL è un URI che identifica una risorsa tramite la sua "collocazione" ("location") in un grafo. Di fatto, non identifica la risorsa per nome, ma con il modo con cui la si può reperire. Per esempio, l'URL `http://www.example.com/)` è un URI che identifica una risorsa (l'home page di un sito web) e lascia intendere che una rappresentazione di tale risorsa (il codice HTML della versione corrente di tale home page) è ottenibile via HTTP da un host di rete chiamato `www.example.com/` .
+> 
+> Si forma con la seguente stringa:
+> ```http
+ >protocollo://[username[:password]@]host[:porta][</percorso>][?querystring][#fragment]
+>```
+>
+
+
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
