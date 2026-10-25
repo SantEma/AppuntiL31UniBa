@@ -68,6 +68,10 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > - **Riga vuota**: composta dai caratteri di ritorno a capo (**carriage return**) e di nuova linea (**line feed**).
 > - **Corpo dell'entità**
 
+> [!info] Metodi HTTP e campi di intestazione possibili
+> ![[Pasted image 20261025164604.png]]
+> ![[Pasted image 20261025164628.png]]
+
 > [!example] Esempio di richiesta HTTP
 > ```http
 > GET /wiki/Pagina_principale HTTP/1.1
@@ -78,6 +82,21 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > Accept-Language: it
 > Connection: Keep-Alive
 > ```
+
+> [!example] Esempio di richiesta HTTP POST 
+> ```http
+> POST /wiki/Speciale:Preferenze HTTP/1.1
+> Host: it.wikipedia.org
+> User-Agent: Mozilla/5.0 (compatible; Konqueror/3.2; Linux) (KHTML, like Gecko)
+> Accept: text/html, image/jpeg, image/png, text/*, image/*, */*
+> Accept-Charset: iso-8859-1, utf-8;q=0.5, *;q=0.5 
+> Accept-Language: it
+> Connection: Keep-Alive
+> Cache-control:no-cache
+> Content-length:1291
+> Content-type:application/x-www-form-urlencoded
+> ```
+
 #### Messaggio di risposta HTTP
 > [!info] Contenuto generale del messaggio di risposta HTTP
 > Ogni pacchetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
