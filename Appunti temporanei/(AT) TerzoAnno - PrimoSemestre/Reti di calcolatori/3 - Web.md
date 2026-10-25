@@ -170,15 +170,31 @@ I proxy si sono sviluppati in internet per due ragioni:
 > Immaginiamo una rete aziendale costituita da una rete locale veloce, una LAN da 100 Mbps, a cui sono collegati una manciata di computer. Questa rete ha però un unico punto di contatto con il mondo esterno: un **link di accesso da 15 Mbps** che, attraverso due router, la collega a Internet pubblico, dove si trovano i cinque server di origine da cui gli utenti scaricano le pagine web.
 > ![[Pasted image 20261025161633.png]]
 > Il traffico che attraversa questa rete è semplice da quantificare. Gli oggetti richiesti (immagini, pagine, file) hanno in media una dimensione di 1 Mbit, e i browser degli utenti generano in media 15 richieste HTTP al secondo. Quando un utente fa una richiesta, il tempo che passa prima che veda il risultato sullo schermo è dato dalla somma di tre componenti: il tempo di attraversamento della LAN, il tempo di attraversamento del link di accesso e il ritardo di Internet.
-> Stimiamo, tramite una formula sul ritardo di accodamento, trattato nel primo capitolo, il ritardo nella rete locale:
+> Stimiamo, tramite una formula sul ritardo di accodamento trattato nel primo capitolo, il ritardo nella rete locale (ricordandoci che il valore più si avvicina ad 1, più ci saranno ritardi):
 > $$\text{LAN}: (15 \text{req/s} × 1 \text{Mbit}) / 100 \text{Mbps} = 0,15$$
 > Mentre, nella rete di accesso:
 > $$\text{Link di accesso}: (15 \text{req/s} × 1 \text{Mbit}) / 15 \text{Mbps} = 1$$
+> Ovviamente, per non creare incovenzienze a chi usa la rete, è necessario risolvere questo ritardo.
+> La prima strada è la più intuitiva, ossia potenziare il link di accesso, portandolo da 15 a 100 Mbps. Il calcolo è immediato l'intensità di traffico scenderebbe a circa 0,015 e il problema sparirebbe. C'è però un ostacolo concreto: questo intervento richiede la **sostituzione fisica della linea di accesso**, un'operazione costosa che spesso deve essere pagata al provider, magari con una tariffa proporzionata alla banda installata. Sotto il profilo tecnico funziona, sotto quello economico pesa.
+> Nel secondo caso, si installa un proxy server all'interno della rete
+> ![[Pasted image 20261025163206.png]]
+> Quando un browser chiede un oggetto, la richiesta passa prima per la cache, che se lo possiede lo restituisce immediatamente ( circa 10 millisecondi) senza doverlo andare a recuperare su Internet; se invece non lo ha, inoltra la richiesta al server di origine come farebbe normalmente.
+> La frazione di richieste soddisfatte direttamente dalla cache si chiama **hit rate**, e nella pratica si colloca tipicamente tra 0,2 e 0,7.
+> Nell'esempio assumiamo una hit rate del 40%: il 40% delle richieste viene servito localmente in pochi millisecondi, mentre solo il restante 60% attraversa il link di accesso. Il traffico sul collo di bottiglia scende così da 15 a 9 richieste al secondo, l'intensità di traffico passa da 1 a 0,6, e il ritardo torna su valori accettabili.
+#### Reverse Proxy e CDN
+Un reverse proxy è un server che si trova di fronte ai server Web e inoltra le richieste del client a tali server Web.
+È il contrario simmetrico del proxy server visto precedentemente.
+
+> [!example] Esempio di reverse proxy
+> ![[Pasted image 20261025164019.png]]
+
+Un reverse proxy è utile per diverse motivazioni:
+- **Bilanciamento del carico (Load balancing)**: un sito Web popolare visitato ogni giorno da milioni di utenti potrebbe non essere in grado di gestire tutto il traffico del sito in entrata con un unico server di origine. Tuttavia, il sito può essere distribuito tra un pool di server diversi, in cui ogni server gestisce le richieste per lo stesso sito. In questo caso, un reverse proxy può fornire una soluzione di bilanciamento del carico che distribuirà il traffico in entrata in modo uniforme tra i diversi server per evitare il sovraccarico di un singolo server. Nel caso in cui un server si guasti completamente, altri server possono intervenire per gestire il traffico.
+- **Protezione dagli attacchi**: in presenza di un reverse proxy, un sito Web o un servizio non ha mai bisogno di rivelare l'indirizzo IP del proprio server di origine. Di conseguenza, è molto più difficile per gli autori di attacchi sfruttare un attacco mirato contro di loro, ad esempio un attacco DDoS. Gli autori di attacchi saranno invece in grado di prendere di mira solo il reverse proxy.
+- **Caching**: un reverse proxy può anche memorizzare nella cache i contenuti, con conseguente miglioramento delle prestazioni. Ad esempio, se un utente a Parigi visita un sito Web con reverse proxy con server Web a Los Angeles, l'utente potrebbe effettivamente connettersi a un server del reverse proxy locale a Parigi, che dovrà quindi comunicare con un server di origine a Los Angeles. Il server proxy può quindi memorizzare nella cache (o salvare temporaneamente) i dati di risposta. Gli utenti parigini successivi che navigheranno nel sito riceveranno quindi la versione memorizzata nella cache locale dal server del reverse proxy parigino, con prestazioni molto più veloci.
+
+> [!example] Esempio di reverse proxy
 > 
 
-#### Reverse Proxy e CDN
-
-
-Con l'aumento delle **Content Distribution Network** (CDN), i proxy server diventano sempre più importanti all'interno di Internet.
 ### Streaming HTTP e DASH
 [da finire]
