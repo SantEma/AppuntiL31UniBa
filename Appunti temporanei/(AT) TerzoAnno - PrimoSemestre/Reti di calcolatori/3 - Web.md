@@ -47,12 +47,17 @@ Alcuni browser possono essere configurati dagli utenti per controllare il grado 
 > L'RTT (Round Trip Time) rappresenta il tempo impiegato da un piccolo pacchetto per viaggiare dal client al server, per poi tornare al client.
 > Poiché la richiesta e la risposta viaggiano sulla stessa connessione, il tempo totale per ricevere un oggetto è pari a **2 RTT più il tempo di trasmissione dell'oggetto da parte del server**: un RTT è necessario per stabilire la connessione TCP (handshake) e un RTT per l'invio della richiesta e la ricezione della risposta. Se la pagina è composta da più oggetti, viene aperta una nuova connessione per ciascuno di essi: ogni oggetto scaricato impone quindi un sovraccarico al server (che deve gestire ogni volta una nuova connessione TCP) e subisce un tempo di setup aggiuntivo di 2 RTT.
 
-
 > [!info] Connessioni persistenti
 > Con HTTP 1.1, nelle connessioni persistenti il server **mantiene aperta la connessione TCP** dopo aver inviato una risposta, così che le successive richieste e risposte tra lo stesso client e lo stesso server possano transitare sulla medesima connessione.
 > Queste richieste di oggetti possono essere effettuate una di seguito all’altra senza aspettare le risposte delle richieste pendenti (**pipelining**, comportamento di default). In generale, il server HTTP chiude la connessione quando essa rimane inattiva per un dato lasso di tempo (un intervallo configurabile). Quando il server riceve richieste in sequenza, invia gli oggetti con la stessa modalità. .
 ### Formato dei messaggi HTTP
 Le specifiche HTTP includono la definizione dei due formati di messaggi, richiesta e risposta
+#### URI e URL
+Prima di continuare con i vari formati dei messaggi, definiamo cosa sono URI e URL
+
+> [!info] Definizione di URI
+> L’URI, acronimo in italiano di identificatore di risorsa uniforme, è un **insieme di caratteri che il web traduce per riconoscere e collegare una risorsa connessa a internet a un’altra**, permettendo loro di interagire. Sono quindi stringhe di caratteri il cui ruolo è identificare un determinato indirizzo o percorso.
+
 #### Messaggio di richiesta HTTP
 > [!info] Contenuto generale del messaggio di richiesta HTTP
 > Ogni pacchetto di richiesta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
