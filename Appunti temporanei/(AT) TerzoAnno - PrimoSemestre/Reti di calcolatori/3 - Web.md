@@ -242,7 +242,25 @@ HTTP/2 non modifica metodi, codici di stato, URL e campi di intestazione di HTTP
 Per capire la necessità di introdurre HTTP/2 si ricordi che HTTP/1.1 utilizza connessioni TCP persistenti, consentendo l’invio di una pagina web dal serveal client su un'unica connessione TCP. Avendo solo una connessione TCP per pagina web, il numero di socket sul server è limitato e ogni pagina web trasportata ottiene una equa condivisione della larghezza di banda di rete. Tuttavia gli sviluppatori di browser web hanno rapidamente scoperto che l’invio di tutti gli oggetti in una pagina web su una singola connessione TCP ha il problema dell’**Head of Line (HOL) blocking** (“blocco in testa alla coda”). 
 
 > [!example] Esempio di HOL
-> Contents
+> Si consideri una pagina web che contiene una pagina di base HTML, un video clip di grandi dimensioni collocato nella parte superiore della pagina e 8 piccoli oggetti disposti sotto il video. Si supponga inoltre che, lungo il percorso tra il server e il client, ci sia un collegamento a collo di bottiglia con velocità medio-bassa, come può essere per esempio un collegamento wireless lento.
+> 
+> Se tutti gli oggetti della pagina dovessero viaggiare su un'unica connessione TCP, sarebbero costretti a passare in fila attraverso quel collo di bottiglia. Il video clip, per le sue dimensioni, impiegherebbe molto tempo ad attraversarlo, e nel frattempo i piccoli oggetti, che si trovano dietro di lui nella coda, dovrebbero semplicemente aspettare il suo completamento prima di poter arrivare a destinazione. È proprio questo l'essenza del blocco HOL: l'oggetto in testa alla coda (il grande video) trattiene tutti quelli che gli stanno dietro, anche se questi sono minimi e potrebbero essere scaricati in pochi istanti. Il risultato, dal punto di vista dell'utente, è una pagina che si popola a fatica, con il video ancora lontano dal concludersi e gli elementi minori che non compaiono affatto.
+> 
+> I browser HTTP/1.1 aggirano in genere questo ostacolo con una mossa semplice ed efficace: aprono più connessioni TCP parallele verso il server. In questo modo gli oggetti della stessa pagina vengono inviati simultaneamente su canali diversi, così che i piccoli oggetti non debbano più attendere la fine del video: possono arrivare ed essere riprodotti nel browser molto più rapidamente, riducendo in modo sensibile il ritardo percepito dall'utente.
+> 
+
+#### Framing HTTP/2
+La soluzione HTTP/2 del blocco HOL consiste nel suddividere ogni messaggin piccoli frame e alternare i messaggi di richiesta e risposta sulla stessa conessione TCP. 
+
+> [!example] Riprendendo l'esempio precedente...
+>  Si consideri nuovamente l’esempio di una pagina web costituita da un unico grande video clip e 8 oggetti più piccoli. Pertanto il server riceverà 9 richieste simultanee da qualsiasi browser che voglia vedere questa pagina web. Per ciascuna di queste richieste, il server deve inviare al browser 9 messaggi di risposta HTTP concorrenti.
+> 
+> Supponiamo che tutti i fotogrammi abbiano una lunghezza fissata, il video clip sia composto da 1000 frame e ognuno degli oggetti più piccoli sia costituito da due frame. Se si intervallano i frame, il primo frame di tutti gli oggetti più piccoli viene inoltrato dopo aver inviato un frame del video clip. Quindi, dopo aver inviato il secondo frame del video clip, viene inoltrato l’ultimo frame di ciascuno degli oggetti piccoli. Pertanto, tutti gli oggetti più piccoli vengono inviati dopo aver inoltrato un totale di 18 frame. Se i frame non venissero intervallati, gli oggetti più piccoli verrebbero inviati solo dopo aver inoltrato 1016 frame. Quindi, il meccanismo di framing HTTP/2 può ridurre significativamente il ritardo percepito dall’utente.
+
+
+
+
+
 
 ### Streaming HTTP e DASH
 [da finire]
