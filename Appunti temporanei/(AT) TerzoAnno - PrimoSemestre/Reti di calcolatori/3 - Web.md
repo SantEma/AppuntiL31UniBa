@@ -166,6 +166,10 @@ I proxy si sono sviluppati in internet per due ragioni:
 1. Può ridurre sostanzialmente i tempi di risposta alle richieste dei client, in particolare se l'ampiezza di banda che costituisce il collo di bottiglia tra il client e il server è molto inferiore rispetto all'ampiezza di banda minima tra client e proxy;
 2. Può ridurre in modo sostanziale il traffico sul collegamento di accesso ad Internet, con il vantaggio di non dover aumentare l'ampiezza di banda e ottenere quindi una riduzione dei costi
 
+
+#### Reverse Proxy e CDN
+
+
 Con l'aumento delle **Content Distribution Network** (CDN), i proxy server diventano sempre più importanti all'interno di Internet.
 ### Streaming HTTP e DASH
 [da finire]
