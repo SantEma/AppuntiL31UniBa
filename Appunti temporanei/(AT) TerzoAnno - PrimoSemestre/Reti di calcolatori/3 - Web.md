@@ -96,7 +96,6 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > Content-length:1291
 > Content-type:application/x-www-form-urlencoded
 > ```
-
 #### Messaggio di risposta HTTP
 > [!info] Contenuto generale del messaggio di risposta HTTP
 > Ogni pacchetto di risposta HTTP (in questo caso, versione 1.1) è formato in questa maniera:
