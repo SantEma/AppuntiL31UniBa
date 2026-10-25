@@ -142,7 +142,6 @@ Le specifiche HTTP includono la definizione dei due formati di messaggi, richies
 > </body>
 > </html>
 > ```
-
 ### Cookies
 Come detto precedentemente, i server HTTP sono privi di stato. Generalmente è auspicabile che i web server possano autenticare gli utenti sia per limitare l'accesso da parte di questi ultimi, sia per fornire contenuti in funzione della loro identità.
 
