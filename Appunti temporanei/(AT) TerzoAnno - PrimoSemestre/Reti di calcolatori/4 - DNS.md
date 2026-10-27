@@ -43,7 +43,13 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 > [!example] Esempio di gerarchia di DNS
 >  Consideriamo un semplice esempio. Supponiamo che l’host `cse.nyu.edu` voglia l’indirizzo IP di `gaia.cs.umass.edu`. Supponiamo, inoltre, che il DNS server locale per `cse.nyu.edu` sia `dns.nyu.edu`, mentre un server autoritativo per `gaia.cs.umass.edu` sia `dns.umass.edu`. Come mostrato nell'immagine, l’host `cse.nyu.edu` dapprima invia un messaggio di richiesta DNS al proprio server locale `dns.nyu.edu`. Il messaggio contiene il nome da tradurre, ossia `gaia.cs.umass.edu`. Il server locale inoltra il messaggio di richiesta a un root server. Quest’ultimo prende nota del suffisso edu e restituisce al server locale un elenco di indirizzi IP per i TLD server responsabili di edu. Il server locale rinvia quindi il messaggio di richiesta a uno di questi ultimi. Il TLD server prende nota del suffisso umass.edu e risponde con l’indirizzo IP del server autoritativo per l’Università del Massachusetts, ossia dns.umass.edu. Infine, il DNS server locale rimanda il messaggio di richiesta direttamente a `dns.umass.edu`, che risponde con l’indirizzo IP di `gaia.cs.umass.edu`. Si noti che in questo esempio, per ottenere la mappatura di un hostname, sono stati inviati ben otto messaggi DNS: quattro messaggi di richiesta e quattro messaggi di risposta.
 >  ![[Pasted image 20261027161634.png]]
->  
+>  In questo caso, vengono inviati ben dieci messaggi DNS. L’esempio mostrato nell'immagine fa uso sia di **query ricorsive sia di query iterative**. La richiesta inviata da `cse.nyu.edu` a `dns.nyu.edu` è ricorsiva, in quanto richiede a `dns.nyu.edu` di ottenere l’associazione per conto del richiedente. Le successive tre richieste sono invece iterative, dato che tutte le risposte sono restituite direttamente a `dns.nyu.edu`. 
+>
+>![[Pasted image 20261027163405.png]]
+> In questo schema vediamo query DNS ricorsive.
+> Nella pratica, la risoluzione DNS avviene sempre in modalità ricorsiva al server DNS locale, mentre le restanti sono iterative
+
+### DNS caching
 
 
 
