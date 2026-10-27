@@ -1,4 +1,4 @@
-Appunti curati personalmente, con il prezioso aiuto dei miei colleghi di corso (citati nei documenti).
+Appunti curati personalmente, con il prezioso aiuto dei miei colleghi di corso.
 
 I file sono suddivisi in 2 categorie principali:
 - **Appunti temporanei**: appunti creati con i file Markdown, molte volte sono imprecisi o comunque non perfetti completamente. 
