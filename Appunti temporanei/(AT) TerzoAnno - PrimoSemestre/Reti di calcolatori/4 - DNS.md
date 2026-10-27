@@ -33,6 +33,13 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
  
 > [!info] Schema della gerarchia DNS
 > ![[Pasted image 20261027152256.png]]
+> Più approfonditamente:
+> - **Root server**: in Internet esistono più di 1000 root server, dislocati in tutto il mondo. ali root server sono copie di 13 differenti root server gestiti da 12 diverse organizzazioni, coordinate attraverso la Internet Assigned Numbers Authority (IANA 2020). I root server forniscono gli indirizzi IP dei TLD server.
+> - **Top-level domain (TLD) server**: questi server si occupano dei domini di primo livello quali com, org, net, edu e gov, e di tutti i domini di primo livello relativi ai vari paesi, come it, uk, fr, ca e jp. I TLD server forniscono gli indirizzi IP dei server autoritativi.
+> - **DNS server autoritativi**: ogni organizzazione dotata di host pubblicamente accessibili tramite Internet (quali web server e mail server) deve fornire record DNS pubblicamente accessibili che associno i nomi di tali host a indirizzi IP. Il DNS server autoritativo dell’organizzazione ospita questi record. Un’organizzazione può scegliere di implementare il proprio server autoritativo o di pagare un fornitore di servizi per ospitare questi record su un suo server. La maggior parte delle università e delle grandi società implementa e gestisce dei propri server autoritativi primario e secondario (di backup).
+>   
+> Esiste un altro importante tipo di DNS, detto **DNS server locale**, che non appartiene strettamente alla gerarchia di server, ma che è comunque centrale nell’architettura DNS. Ciascun ISP, come un’università, un dipartimento universitario, un’azienda o un ISP residenziale, ha un **DNS server locale** (detto anche default name server). Quando un host si connette a un ISP, quest’ultimo gli fornisce un indirizzo IP tratto da uno o più dei suoi DNS server locali e quando effettua una richiesta DNS, questa viene inoltrata esattamente al server locale che opera da proxy e inoltra la query alla gerarchia dei server DNS
+
 
 
 
