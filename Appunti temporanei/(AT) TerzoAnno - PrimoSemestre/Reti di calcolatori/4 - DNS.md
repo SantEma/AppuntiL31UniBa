@@ -49,8 +49,7 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 > In questo schema vediamo query DNS ricorsive.
 > Nella pratica, la risoluzione DNS avviene sempre in modalità ricorsiva al server DNS locale, mentre le restanti sono iterative
 ### DNS caching
-[da spiegare]
-
+Il DNS sfrutta in modo estensivo il caching per migliorare le prestazioni di ritardo e per ridurre il numero di messaggi DNS che “rimbalzano” su Internet. L’idea alla base del DNS caching è molto semplice. In una concatenazione di richieste, il DNS server che riceve una risposta DNS (contenente, per esempio, la traduzione da hostname a indirizzo IP), può mettere in cache le informazioni contenute.
 ### Record e messaggi DNS
 I server che implementano il database distribuito di DNS memorizzano i cosiddetti **record di risorsa (RR, resource record)**, tra cui quelli che forniscono le corrispondenze tra nomi e indirizzi. Ogni messaggio di risposta DNS trasporta uno o più record di risorse. 
 
