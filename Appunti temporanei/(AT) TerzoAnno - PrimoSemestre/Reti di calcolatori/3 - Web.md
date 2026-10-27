@@ -247,6 +247,7 @@ Una **CDN (Content Delivery Network)** è una rete di server distribuiti geograf
 > 3. Il client si connette direttamente a quel server e scarica il contenuto da esso, tipicamente in streaming con DASH.
 
 In questo modo la maggior parte delle richieste non raggiunge mai il server di origine: viene soddisfatta dal server CDN più vicino, che agisce da reverse proxy e da cache per l’intera rete di distribuzione.
+Vedremo i DNS più avanti, per ora basti sapere che è un servizio di traduzione da URL a indirizzi IP.
 ### HTTP/2
 HTTP/2, standardizzato nel 2015, è stata la prima nuova versione di HTTP dopo HTTP/1.1.
 
