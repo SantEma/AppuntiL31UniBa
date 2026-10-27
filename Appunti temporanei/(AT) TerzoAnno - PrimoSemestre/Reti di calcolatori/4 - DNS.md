@@ -58,11 +58,21 @@ Il DNS sfrutta in modo estensivo il **caching** per migliorare le prestazioni di
 I server che implementano il database distribuito di DNS memorizzano i cosiddetti **record di risorsa (RR, resource record)**, tra cui quelli che forniscono le corrispondenze tra nomi e indirizzi. Ogni messaggio di risposta DNS trasporta uno o più record di risorse. 
 
 Un record di risorsa contiene i seguenti campi:
-`(Name, Value Type, TTL)`:
+- **Name:** Il nome di dominio o host a cui fa riferimento il record (es. `example.com` o `[www.example.com](https://www.example.com)`). Funziona come chiave di ricerca durante una risoluzione DNS.
+- **Type:** Specifica la natura della risorsa e determina come deve essere interpretato il valore. Esempi comuni includono **A** (indirizzo IPv4), **AAAA** (indirizzo IPv6), **CNAME** (alias di un altro nome) o **MX** (server di posta).
+- **Value:** Il dato concreto associato al nome, il cui formato dipende dal Type specificato (es. l'indirizzo IP `93.184.216.34` per un tipo A, oppure un nome canonico per un CNAME).
+- **TTL (Time To Live):** Il tempo massimo (espresso in secondi) per cui il record può rimanere memorizzato nella cache di un resolver o client DNS prima di dover effettuare una nuova interrogazione al server autorevole.
 
-
-`TTL` è il time to live, ossia il tempo residuo di vita di un record e determina quando una risorsa vada rimossa dalla cache.
+> [!info] Tabella dei tipi di record
+> ![[Pasted image 20261027174412.png]]
 #### Messaggio DNS
 > [!info] Formato dei messaggi DNS
 > ![[Pasted image 20261027172728.png]]
-> 
+> La semantica dei campi dei messaggi DNS è la seguente:
+> - I primi 12 byte rappresentano la **sezione di intestazione** (header section), che a sua volta contiene un certo numero di campi. Il primo è un numero di 16 bit che identifica la richiesta. Tale identificatore viene copiato nei messaggi di risposta a una richiesta, consentendo al client di far corrispondere le risposte ricevute con le query inviate. Troviamo poi il campo flag. Il primo di questi, il bit di richiesta/risposta (query/reply), indica se il messaggio è una richiesta (0) o una risposta (1). Un bit viene impostato nei messaggi di risposta quando il DNS server è autoritativo per il nome richiesto. Un ulteriore bit, chiamato **richiesta di ricorsione** (recursion-desired flag), viene impostato quando un client (sia esso un host o un DNS server) desidera che il DNS server effettui ricorsione quando non dispone del record. Si imposta un campo da 1 bit di ricorsione disponibile (recursion-available) all’interno di una risposta se il DNS server supporta la ricorsione. Nell’intestazione troviamo anche quattro campi il cui nome comincia con “numero di”, che indicano il numero di occorrenze delle quattro sezioni di tipo dati che seguono l’intestazione.
+> - La **sezione delle domande** contiene informazioni sulle richieste che stanno per essere effettuate. Inoltre, include 
+> 	- Un campo nome con il nome che sta per essere richiesto;
+> 	- Un campo tipo che indica il tipo della domanda sul nome: per esempio, un indirizzo di host associato a un nome (tipo A) o il server di posta per un nome (tipo MX).
+> - In una risposta proveniente da DNS server, la **sezione delle risposte** contiene i record di risorsa relativi al nome originariamente richiesto. Ricordiamo che in ogni record di risorsa troviamo Type (A, NS, CNAME o MX), Value e TTL. Una risposta può restituire più RR, dato che un hostname può avere più indirizzi IP. È il caso dei web server replicati, cui si è fatto precedentemente cenno.
+> - **La sezione autoritativa** contiene i record di altri server autoritativi
+> - La **sezione aggiuntiva** racchiude altri record utili: per esempio, se il campo drisposta relativo a una richiesta MX contiene un record di risorsa che fornisce l’hostname canonico del server di posta, la sezione aggiuntiva contiene un record di tipo A che fornisce l’indirizzo IP relativo all’hostname canonico del server di posta.
