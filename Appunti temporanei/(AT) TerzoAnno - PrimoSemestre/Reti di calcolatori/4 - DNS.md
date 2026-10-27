@@ -49,8 +49,13 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 > In questo schema vediamo query DNS ricorsive.
 > Nella pratica, la risoluzione DNS avviene sempre in modalità ricorsiva al server DNS locale, mentre le restanti sono iterative
 ### DNS caching
+[da spiegare]
 
+### Record e messaggi DNS
+I server che implementano il database distribuito di DNS memorizzano i cosiddetti **record di risorsa (RR, resource record)**, tra cui quelli che forniscono le corrispondenze tra nomi e indirizzi. Ogni messaggio di risposta DNS trasporta uno o più record di risorse. 
 
+Un record di risorsa contiene i seguenti campi:
+`(Name, Value Type, TTL)`
 
-
+`TTL` è il time to live, ossia il tempo residuo di vita di un record e determina quando una risorsa vada rimossa dalla cache. Nei record di esempio di seguito riportati ignoreremo il campo TTL. Il significato di `Name` e `Value` dipende da `Type`:
 
