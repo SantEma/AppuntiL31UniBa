@@ -8,7 +8,11 @@ Si tratta del **DNS (Domain Name System)**, che è composto da:
 1. Un database distribuito implementato in una gerarchia di **DNS server**;
 2. Un protocollo a livello di applicazione che consente agli host di interrogare il database
 
-DNS è specificato nelle RFC 1034, 1035 e viene comunemente utilizzato da altri protocolli a livello di applicazione, incluso HTTP, per tradurre i nomi di host forniti dall'utente in indirizzi IP. 
+DNS è specificato nelle RFC 1034, 1035 e viene comunemente utilizzato da altri protocolli a livello di applicazione, incluso HTTP, per tradurre i nomi di host forniti dall'utente in indirizzi IP.
+Opera sulla porta 53 del protocollo UDP, ma in alcuni casi può utilizzare TCP, ad esempio:
+- **Risposte troppo grandi**: su UDP il messaggio DNS è limitato a 512 byte (se la risposta non ci sta, il server la tronca e imposta il flag TC (truncated), con conseguente ripetizione dal parte del client su TCP)
+- **Zone transfer**: server autoritativo secondario (es. `dns2.networkutopia.com`) copia tutti i record della zona dal primario (dns1).
+L'RFC 6891, chiamata **Extension Mechanism for DNS** permette risposte UDP più grandi.
 
 > [!example] Esempio di risoluzione DNS in un browser
 > Consideriamo che cosa succede quando un browser (ossia un client HTTP) in esecuzione sull’host di un utente richiede l’URL `www.someschool.edu/index.html`. L’host dell’utente, per essere in grado di inviare un messaggio di richiesta HTTP al web server `www.someschool.edu`, deve come prima cosa ottenere il suo indirizzo IP. Ciò avviene come segue. 
@@ -25,3 +29,10 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 - **Distribuzione del carico di rete (load distribution)**: il DNS viene anche utilizzato per distribuire il carico tra server replicati, per esempio dei web server. I siti con molto traffico vengono replicati su più server, ognuno eseguito su un host diverso con un indirizzo IP differente. Nel caso di web server replicati, va dunque associato a ogni hostname canonico un insieme di indirizzi IP. Il database DNS contiene questo insieme di indirizzi. Quando i client effettuano una query DNS per un nome associato a un insieme di indirizzi, il server risponde con l’intero insieme di indirizzi, ma ne varia l’ordinamento a ogni risposta. Dato che generalmente un client invia il suo messaggio di richiesta HTTP al primo indirizzo IP elencato nell’insieme, la rotazione DNS distribuisce il traffico sui server replicati. La rotazione viene anche utilizzata affinché più server di posta possano condividere lo stesso nome. Inoltre, le società di distribuzione di contenuti quali Akamai hanno fatto uso del DNS in modi più sofisticati per effettuare la diffusione di contenuti web (si veda la sezione sulle CDN nel file [[3 - Web]]).
 
 ### Panoramica di funzionamento del DNS
+ Il DNS utilizza un grande numero di server, organizzati in maniera gerarchica e distribuiti nel mondo. Nessun DNS server ha le corrispondenze per tutti gli host in Internet, che sono invece distribuite tra tutti i DNS server. In prima approssimazione, esistono tre classi di DNS server: i **root server, i top-level domain (TLD) server** e i **server autoritativi**, organizzati in una gerarchia:
+ 
+> [!info] Schema della gerarchia DNS
+> ![[Pasted image 20261027152256.png]]
+
+
+
