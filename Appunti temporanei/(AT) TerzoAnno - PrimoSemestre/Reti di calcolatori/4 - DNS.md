@@ -50,6 +50,11 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 > Nella pratica, la risoluzione DNS avviene sempre in modalità ricorsiva al server DNS locale, mentre le restanti sono iterative
 ### DNS caching
 Il DNS sfrutta in modo estensivo il **caching** per migliorare le prestazioni di ritardo e per ridurre il numero di messaggi DNS che “rimbalzano” su Internet. L’idea alla base del DNS caching è molto semplice. In una concatenazione di richieste, il DNS server che riceve una risposta DNS (contenente, per esempio, la traduzione da hostname a indirizzo IP), può mettere in cache le informazioni contenute.
+
+> [!example] Esempio di DNS caching
+> ![[Pasted image 20261027161634.png]]
+> Nell'immagine, ogni volta che il server locale `dns.nyu.edu` riceve una risposta da qualche DNS server, può conservare in cache le informazioni contenute nella risposta. Se una coppia hostname/indirizzo IP è nella cache di un DNS server e giunge al server un’altra richiesta con lo stesso hostname, il DNS server può fornire l’indirizzo IP desiderato, anche se non è autoritativo per tale indirizzo. Dato che gli host e le associazioni tra nome e indirizzo IP non sono in alcun modo permanenti, i DNS server invalidano le informazioni in cache dopo un periodo di tempo fissato (in genere di 2 giorni). Supponiamo, per esempio, che un host `apricot.nyu.edu` richieda a `dns.nyu.edu` l’indirizzo IP dell’hostname `cnn.com`. Supponiamo, inoltre, che poche ore dopo un altro host della stessa organizzazione, per esempio `kiwi.nyu.edu`, faccia richiesta a `dns.nyu.edu` con lo stesso hostname. Grazie al caching, il DNS server locale sarà in grado di restituire immediatamente l’indirizzo IP di `cnn.com` a questo secondo host richiedente, senza dover interrogare alcun altro DNS server. Un DNS server locale può, inoltre, memorizzare in cache gli indirizzi IP dei TLD server, consentendogli di aggirare i root server nella catena di richieste (e ciò avviene di frequente).
+
 ### Record e messaggi DNS
 I server che implementano il database distribuito di DNS memorizzano i cosiddetti **record di risorsa (RR, resource record)**, tra cui quelli che forniscono le corrispondenze tra nomi e indirizzi. Ogni messaggio di risposta DNS trasporta uno o più record di risorse. 
 
@@ -60,3 +65,4 @@ Un record di risorsa contiene i seguenti campi:
 #### Messaggio DNS
 > [!info] Formato dei messaggi DNS
 > Contents
+**(())
