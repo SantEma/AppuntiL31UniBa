@@ -65,4 +65,3 @@ Un record di risorsa contiene i seguenti campi:
 #### Messaggio DNS
 > [!info] Formato dei messaggi DNS
 > Contents
-**(())
