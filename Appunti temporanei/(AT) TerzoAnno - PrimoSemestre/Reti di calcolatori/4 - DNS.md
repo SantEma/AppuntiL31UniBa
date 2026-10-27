@@ -8,8 +8,7 @@ Si tratta del **DNS (Domain Name System)**, che è composto da:
 1. Un database distribuito implementato in una gerarchia di **DNS server**;
 2. Un protocollo a livello di applicazione che consente agli host di interrogare il database
 
-DNS è specificato nelle RFC 1034 e 1035.
-DNS viene comunemente utilizzato da altri protocolli a livello di applicazione, incluso HTTP, per tradurre i nomi di host forniti dall'utente in indirizzi IP. 
+DNS è specificato nelle RFC 1034, 1035 e viene comunemente utilizzato da altri protocolli a livello di applicazione, incluso HTTP, per tradurre i nomi di host forniti dall'utente in indirizzi IP. 
 
 > [!example] Esempio di risoluzione DNS in un browser
 > Consideriamo che cosa succede quando un browser (ossia un client HTTP) in esecuzione sull’host di un utente richiede l’URL `www.someschool.edu/index.html`. L’host dell’utente, per essere in grado di inviare un messaggio di richiesta HTTP al web server `www.someschool.edu`, deve come prima cosa ottenere il suo indirizzo IP. Ciò avviene come segue. 
