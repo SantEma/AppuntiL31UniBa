@@ -57,5 +57,7 @@ I server che implementano il database distribuito di DNS memorizzano i cosiddett
 Un record di risorsa contiene i seguenti campi:
 `(Name, Value Type, TTL)`
 
-`TTL` è il time to live, ossia il tempo residuo di vita di un record e determina quando una risorsa vada rimossa dalla cache. Nei record di esempio di seguito riportati ignoreremo il campo TTL. Il significato di `Name` e `Value` dipende da `Type`:
-
+`TTL` è il time to live, ossia il tempo residuo di vita di un record e determina quando una risorsa vada rimossa dalla cache.
+#### Messaggio DNS
+> [!info] Formato dei messaggi DNS
+> Contents
