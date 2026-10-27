@@ -58,7 +58,8 @@ Il DNS sfrutta in modo estensivo il **caching** per migliorare le prestazioni di
 I server che implementano il database distribuito di DNS memorizzano i cosiddetti **record di risorsa (RR, resource record)**, tra cui quelli che forniscono le corrispondenze tra nomi e indirizzi. Ogni messaggio di risposta DNS trasporta uno o più record di risorse. 
 
 Un record di risorsa contiene i seguenti campi:
-`(Name, Value Type, TTL)`
+`(Name, Value Type, TTL)`:
+
 
 `TTL` è il time to live, ossia il tempo residuo di vita di un record e determina quando una risorsa vada rimossa dalla cache.
 #### Messaggio DNS
