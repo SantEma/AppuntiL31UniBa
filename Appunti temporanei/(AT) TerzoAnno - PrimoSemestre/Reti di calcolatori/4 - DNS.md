@@ -48,7 +48,6 @@ Oltre alla traduzione degli hostname in indirizzi IP, DNS mette a disposizione a
 >![[Pasted image 20261027163405.png]]
 > In questo schema vediamo query DNS ricorsive.
 > Nella pratica, la risoluzione DNS avviene sempre in modalità ricorsiva al server DNS locale, mentre le restanti sono iterative
-
 ### DNS caching
 
 
