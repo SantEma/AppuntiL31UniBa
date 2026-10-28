@@ -81,7 +81,18 @@ Un record di risorsa contiene i seguenti campi:
 > - La **sezione aggiuntiva** racchiude altri record utili: per esempio, se il campo di risposta relativo a una richiesta MX contiene un record di risorsa che fornisce l’hostname canonico del server di posta, la sezione aggiuntiva contiene un record di tipo A che fornisce l’indirizzo IP relativo all’hostname canonico del server di posta.
 
 > [!info] Inserimento di record nel database DNS
-> ![[Pasted image 20261027181000.png]]
+> Supponiamo di fondare la società Network Utopia e di voler registrare il dominio `networkutopia.com`. I passaggi necessari per inserire i relativi record nel database DNS sono i seguenti:
+> 1. **Registrazione del dominio presso un registrar**: si registra a pagamento il dominio `networkutopia.com` presso un **registrar**, ossia un ente commerciale accreditato da ICANN che verifica l’unicità del nome di dominio e lo inserisce nel database DNS.
+> 2. **Comunicazione dei server autoritativi**: il registrar richiede i nomi e gli indirizzi IP di due server DNS autoritativi, primario e secondario (ad esempio `dns1.networkutopia.com` e `dns2.networkutopia.com`, con indirizzi IP `192.0.2.1` e `192.0.2.2`).
+> 3. **Inserimento dei record nel TLD server**: il registrar provvede ad aggiungere i seguenti record di tipo **A** e **NS** nei TLD server di `.com`:
+> 	- `(dns1.networkutopia.com, 192.0.2.1, A)`
+> 	- `(dns2.networkutopia.com, 192.0.2.2, A)`
+> 	- `(networkutopia.com, dns1.networkutopia.com, NS)`
+> 	- `(networkutopia.com, dns2.networkutopia.com, NS)`
+> 4. **Inserimento dei record nei propri server autoritativi**: per rendere accessibili anche il sito web (`www.networkutopia.com`) e il server di posta elettronica (`mail.networkutopia.com`), occorre infine assicurarsi che i propri DNS server autoritativi contengano i seguenti record di risorsa:
+> 	- `(www.networkutopia.com, 192.0.2.3, A)`
+> 	- `(networkutopia.com, mail.networkutopia.com, MX)`
+> 	- `(mail.networkutopia.com, 192.0.2.4, A)`
 
 ### Esempi di DNS
 
