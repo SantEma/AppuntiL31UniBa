@@ -76,4 +76,6 @@ Un record di risorsa contiene i seguenti campi:
 > - In una risposta proveniente da DNS server, la **sezione delle risposte** contiene i record di risorsa relativi al nome originariamente richiesto. Ricordiamo che in ogni record di risorsa troviamo Type (A, NS, CNAME o MX), Value e TTL. Una risposta può restituire più RR, dato che un hostname può avere più indirizzi IP. È il caso dei web server replicati, cui si è fatto precedentemente cenno.
 > - **La sezione autoritativa** contiene i record di altri server autoritativi
 > - La **sezione aggiuntiva** racchiude altri record utili: per esempio, se il campo drisposta relativo a una richiesta MX contiene un record di risorsa che fornisce l’hostname canonico del server di posta, la sezione aggiuntiva contiene un record di tipo A che fornisce l’indirizzo IP relativo all’hostname canonico del server di posta.
-> 
+
+> [!info] Inserimento di record nel database DNS
+> ![[Pasted image 20261027181000.png]]

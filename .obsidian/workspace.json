@@ -4,21 +4,17 @@
     "type": "split",
     "children": [
       {
-        "id": "556c67e6462a9846",
+        "id": "0db64faa1cae5e11",
         "type": "tabs",
         "children": [
           {
-            "id": "4c90a475cdb6ee7c",
+            "id": "3c58014c8815a548",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
-                "mode": "source",
-                "source": false
-              },
+              "type": "empty",
+              "state": {},
               "icon": "lucide-file",
-              "title": "4 - DNS"
+              "title": "Nuova scheda"
             }
           }
         ]
@@ -186,14 +182,15 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "ab83996f0563bfdd",
+  "active": "3c58014c8815a548",
   "lastOpenFiles": [
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261027181000.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261027174412.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261027172728.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Metodi per il ritrovamento dell'informazione/2 - Boolean and Vector Space Retrival Models.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/3 - Ingegneria dell'usabilità.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/2 - Usabilità.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261027163405.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
     "README.md",
@@ -205,8 +202,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261025164604.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261025164628.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261025163206.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261025163543.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina/1 - Sistemi interattivi e interfacce d'uso.md",
     "Appunti temporanei/(AT) SecondoAnno - PrimoSemestre/ASD/6 - Liste.md",
