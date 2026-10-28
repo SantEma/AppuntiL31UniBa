@@ -50,7 +50,7 @@ Il DNS utilizza un grande numero di server, organizzati in maniera gerarchica e 
 > Nella pratica, la risoluzione DNS avviene di norma in modalità ricorsiva dall’host richiedente al server DNS locale, mentre le restanti richieste (dal server locale verso i server della gerarchia) sono iterative.
 
 ### DNS caching
-Il DNS sfrutta in modo estensivo il **caching** per migliorare le prestazioni di ritardo e per ridurre il numero di messaggi DNS che “rimbalzano” su Internet. L’idea alla base del DNS caching è molto semplice. In una concatenazione di richieste, il DNS server che riceve una risposta DNS (contenente, per esempio, la traduzione da hostname a indirizzo IP) può mettere in cache le informazioni contenute.
+Il DNS sfrutta in modo estensivo il **caching** per migliorare le prestazioni di ritardo e per ridurre il numero di messaggi DNS che “rimbalzano” su Internet. L’idea alla base del DNS caching è molto semplice: in una concatenazione di richieste, il DNS server che riceve una risposta DNS (contenente, per esempio, la traduzione da hostname a indirizzo IP) può mettere in cache le informazioni contenute.
 
 > [!example] Esempio di DNS caching
 > ![[Pasted image 20261027161634.png]]
