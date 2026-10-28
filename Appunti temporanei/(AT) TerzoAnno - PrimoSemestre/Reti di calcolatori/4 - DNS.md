@@ -72,11 +72,11 @@ Un record di risorsa contiene i seguenti campi:
 > [!info] Formato dei messaggi DNS
 > ![[Pasted image 20261027172728.png]]
 > La semantica dei campi dei messaggi DNS è la seguente:
-> - I primi 12 byte rappresentano la **sezione di intestazione** (header section), che a sua volta contiene un certo numero di campi. Il primo è un numero di 16 bit che identifica la richiesta. Tale identificatore viene copiato nei messaggi di risposta a una richiesta, consentendo al client di far corrispondere le risposte ricevute con le query inviate. Troviamo poi il campo **flag**, suddiviso in diversi bit. Il primo di questi, il bit di richiesta/risposta (*query/reply*), indica se il messaggio è una richiesta (0) o una risposta (1). Un bit (*authoritative*) viene impostato nei messaggi di risposta quando il DNS server è autoritativo per il nome richiesto. Un ulteriore bit, chiamato **richiesta di ricorsione** (*recursion-desired* flag), viene impostato quando un client (sia esso un host o un DNS server) desidera che il DNS server effettui ricorsione quando non dispone del record. Si imposta un campo da 1 bit di **ricorsione disponibile** (*recursion-available*) all’interno di una risposta se il DNS server supporta la ricorsione. Nell’intestazione troviamo anche quattro campi il cui nome comincia con “numero di”, che indicano il numero di occorrenze delle quattro sezioni di tipo dati che seguono l’intestazione.
+> - I primi 12 byte rappresentano la **sezione di intestazione** (header section), che a sua volta contiene un certo numero di campi. Il primo è un numero di 16 bit che identifica la richiesta. Tale identificatore viene copiato nei messaggi di risposta a una richiesta, consentendo al client di far corrispondere le risposte ricevute con le query inviate. Troviamo poi il campo **flag**, suddiviso in diversi bit. Il primo di questi, il bit di richiesta/risposta (query/reply), indica se il messaggio è una richiesta (0) o una risposta (1). Un bit (authoritative) viene impostato nei messaggi di risposta quando il DNS server è autoritativo per il nome richiesto. Un ulteriore bit, chiamato **richiesta di ricorsione** (recursion-desired flag), viene impostato quando un client (sia esso un host o un DNS server) desidera che il DNS server effettui ricorsione quando non dispone del record. Si imposta un campo da 1 bit di **ricorsione disponibile** (recursion-available) all’interno di una risposta se il DNS server supporta la ricorsione. Nell’intestazione troviamo anche quattro campi il cui nome comincia con “numero di”, che indicano il numero di occorrenze delle quattro sezioni di tipo dati che seguono l’intestazione.
 > - La **sezione delle domande** contiene informazioni sulle richieste che stanno per essere effettuate. Inoltre, include:
 > 	- un campo **nome** con il nome che sta per essere richiesto;
 > 	- un campo **tipo** che indica il tipo della domanda sul nome: per esempio, un indirizzo di host associato a un nome (tipo A) o il server di posta per un nome (tipo MX).
-> - In una risposta proveniente da un DNS server, la **sezione delle risposte** contiene i record di risorsa relativi al nome originariamente richiesto. Ricordiamo che in ogni record di risorsa troviamo Name, Type (A, NS, CNAME o MX), Value e TTL. Una risposta può restituire più RR, dato che un hostname può avere più indirizzi IP. È il caso dei web server replicati, cui si è fatto precedentemente cenno.
+> - In una risposta proveniente da un DNS server, la **sezione delle risposte** contiene i record di risorsa relativi al nome originariamente richiesto. Ricordiamo che in ogni record di risorsa troviamo Name, Type (A, NS, CNAME o MX), Value e TTL. Una risposta può restituire più RR, dato che un hostname può avere più indirizzi IP.
 > - La **sezione autoritativa** contiene i record di altri server autoritativi.
 > - La **sezione aggiuntiva** racchiude altri record utili: per esempio, se il campo di risposta relativo a una richiesta MX contiene un record di risorsa che fornisce l’hostname canonico del server di posta, la sezione aggiuntiva contiene un record di tipo A che fornisce l’indirizzo IP relativo all’hostname canonico del server di posta.
 
@@ -87,7 +87,7 @@ Un record di risorsa contiene i seguenti campi:
 
 > [!example] Trace di una query DNS con `dig`
 > Tramite il comando `dig +trace +nodnssec www.facebook.com` è possibile osservare l’intera catena di risoluzione iterativa a partire dalla radice della gerarchia DNS (l’opzione `+nodnssec` omette i record crittografici DNSSEC per rendere l’output più compatto):
-> ```text
+> ```bash
 > $ dig +trace +nodnssec [www.facebook.com](https://www.facebook.com)
 > 
 > ; <<>> DiG 9.10.6 <<>> +trace +nodnssec [www.facebook.com](https://www.facebook.com)
@@ -120,16 +120,16 @@ Un record di risorsa contiene i seguenti campi:
 > ```
 > Analizziamo l’esecuzione passo passo:
 > 1. **Ottenimento dei root server dal resolver di default**: come primo passo, il resolver locale configurato sulla macchina (`8.8.8.8`, ossia Google Public DNS, interrogato sulla porta `53`) restituisce in 24 ms la lista dei **13 root server** (da `a.root-servers.net.` a `m.root-servers.net.`).
-> 2. **La radice della gerarchia (`.`)**: nella prima colonna dei record restituiti, il singolo punto `.` rappresenta la **radice** (*root*) della gerarchia dei nomi DNS, a cui sono associati i record di tipo `NS` dei root server.
+> 2. **La radice della gerarchia (`.`)**: nella prima colonna dei record restituiti, il singolo punto `.` rappresenta la **radice** (root) della gerarchia dei nomi DNS, a cui sono associati i record di tipo `NS` dei root server.
 > 3. **Selezione del root server**: tra i 13 root server disponibili, `dig` seleziona e contatta il root server **b** (`b.root-servers.net`, indirizzo IP `199.9.14.201`) poiché è quello con **RTT minore**.
 > 4. **Delega al dominio `.com` e TTL**: il root server `b.root-servers.net` esamina il suffisso `.com` e risponde (844 byte in 185 ms) indicando i record `NS` dei server autoritativi per il dominio di primo livello `com.`, ciascuno associato a un **TTL di 172800 secondi** (pari esattamente a **due giorni**, ossia 48 ore).
-> 5. **Server gTLD**: i server restituiti (`a.gtld-servers.net.` … `m.gtld-servers.net.`) sono i **gTLD** (*generic Top-Level Domain*) server che gestiscono il dominio generico `.com`.
+> 5. **Server gTLD**: i server restituiti (`a.gtld-servers.net.` … `m.gtld-servers.net.`) sono i **gTLD** (generic Top-Level Domain) server che gestiscono il dominio generico `.com`.
 > 6. **Delega ai server autoritativi di Facebook e load balancing**: `dig` interroga uno dei server gTLD (`k.gtld-servers.net`, indirizzo IP `192.52.178.30`), che risponde in 38 ms rimandando ai **quattro name server di Facebook** (`a.ns.facebook.com.`, `b.ns.facebook.com.`, `e.ns.facebook.com.`, `c.ns.facebook.com.`). Questi sono i **server autoritativi** per il dominio `facebook.com.` e vengono restituiti ordinati in modo da garantire il **load balancing** (distribuzione del carico).
 > 7. **Risposta del server autoritativo (record CNAME)**: infine viene interrogato il primo server autoritativo della lista (`a.ns.facebook.com`, indirizzo IP `129.134.30.12`), che risponde in 20 ms con un record di tipo **CNAME** (con TTL di 3600 secondi, ossia un’ora): `www.facebook.com.` è infatti un **alias** che punta al nome canonico `star-mini.c10r.facebook.com.`.
 
 > [!example] Zone transfer con `dig`
-> Tramite il comando `dig axfr zonetransfer.me @nsztm1.digi.ninja` è possibile richiedere un trasferimento di zona completo (*zone transfer*) per il dominio didattico `zonetransfer.me`:
-> ```text
+> Tramite il comando `dig axfr zonetransfer.me @nsztm1.digi.ninja` è possibile richiedere un trasferimento di zona completo (zone transfer) per il dominio (d'esempio) `zonetransfer.me`:
+> ```bash
 > $ dig axfr zonetransfer.me @nsztm1.digi.ninja
 > 
 > zonetransfer.me.          7200    IN  SOA   nsztm1.digi.ninja. robin.digi.ninja. 2019100801 172800 900 1209600 3600
@@ -150,8 +150,8 @@ Un record di risorsa contiene i seguenti campi:
 > ;; XFR size: 52 records (messages 1, bytes 3311)
 > ```
 > Analizziamo l’esecuzione passo passo:
-> 8. **Query AXFR su TCP**: la query di tipo **AXFR** (*Authoritative Zone Transfer*) richiede la copia dell’intera zona `zonetransfer.me` direttamente al suo server autoritativo `@nsztm1.digi.ninja`. Poiché il trasferimento di zona comporta l’invio di una grande quantità di dati in modo affidabile, `dig` invia la richiesta su **TCP** (porta `53`) anziché su UDP.
-> 9. **Formato dei Resource Record e record SOA di apertura**: ogni riga dell’output è un **record di risorsa** composto da cinque campi: *nome*, *TTL* (in secondi), *classe* (`IN`, ossia Internet), *tipo* e *valore*. Il primo record è il **SOA** (*Start of Authority*), che specifica il server primario della zona (`nsztm1.digi.ninja.`), la casella email del responsabile (`robin.digi.ninja.`, che corrisponde a `robin@digi.ninja`), il numero di serie (`2019100801`, usato dai server secondari per verificare eventuali aggiornamenti) e i quattro parametri temporali espressi in secondi (*refresh* `172800`, *retry* `900`, *expire* `1209600` e *TTL minimo* `3600`).
+> 8. **Query AXFR su TCP**: la query di tipo **AXFR** (Authoritative Zone Transfer) richiede la copia dell’intera zona `zonetransfer.me` direttamente al suo server autoritativo `@nsztm1.digi.ninja`. Poiché il trasferimento di zona comporta l’invio di una grande quantità di dati in modo affidabile, `dig` invia la richiesta su **TCP** anziché su UDP.
+> 9. **Formato dei Resource Record e record SOA di apertura**: ogni riga dell’output è un **record di risorsa** composto da cinque campi: nome, TTL (in secondi), classe (`IN`, ossia Internet), tipo e valore. Il primo record è il **SOA** (Start of Authority), che specifica il server primario della zona (`nsztm1.digi.ninja.`), la casella email del responsabile (`robin.digi.ninja.`, che corrisponde a `robin@digi.ninja`), il numero di serie (`2019100801`, usato dai server secondari per verificare eventuali aggiornamenti) e i quattro parametri temporali espressi in secondi (*refresh* `172800`, *retry* `900`, *expire* `1209600` e *TTL minimo* `3600`).
 > 10. **Record NS, MX, A e CNAME**: seguono i record operativi del dominio:
 > 	- **NS**: elenca i server autoritativi della zona (`nsztm1.digi.ninja.` e `nsztm2.digi.ninja.`).
 > 	- **MX**: indica i server di posta del dominio; il valore numerico che precede l’hostname rappresenta la **priorità** (più basso è il numero, più alta è la preferenza: `0 ASPMX.L.GOOGLE.COM.` è il mail server principale, mentre `10 ALT1.ASPMX.L.GOOGLE.COM.` è il secondario).
@@ -159,3 +159,4 @@ Un record di risorsa contiene i seguenti campi:
 > 11. **Esposizione dei nomi interni e sicurezza dell’AXFR**: il trasferimento di zona rivela **tutti gli host e i sottodomini della zona, inclusi quelli non pubblicizzati** (`vpn.zonetransfer.me.`, `owa.zonetransfer.me.`, la delega interna `internal.zonetransfer.me.`) e perfino informazioni di contatto contenute nei record **TXT** (`"Remember to call or email Pippa..."`). Per evitare questa fuga di informazioni sulla struttura della rete interna, sui server DNS reali il trasferimento AXFR deve essere **concesso esclusivamente ai server autoritativi secondari**.
 > 12. **Record SOA di chiusura**: l’elenco della zona si chiude ripetendo lo **stesso record SOA** iniziale, che segnala formalmente al client la fine del trasferimento.
 > 13. **Dimensione complessiva e limite di UDP**: la riga conclusiva (`XFR size: 52 records (messages 1, bytes 3311)`) mostra che sono stati trasferiti **52 record in un unico messaggio DNS da 3311 byte**. Su UDP standard, dove i messaggi DNS sono limitati a **512 byte**, tale trasferimento non sarebbe stato possibile.
+
