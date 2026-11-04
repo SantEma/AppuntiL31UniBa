@@ -40,5 +40,17 @@ In generale, un segmento a livello di trasporto si presenta in questa maniera:
 > ![[Pasted image 20261104150551.png]]
 > 
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
+Una socket UDP è identificata esclusivamente da una **coppia (2-tupla)** composta da:
 
+1. **Indirizzo IP di destinazione**
+2. **Numero di porta di destinazione**
+
+Quando un segmento UDP arriva a un host, il livello di trasporto esamina unicamente il numero di porta di destinazione e lo indirizza alla socket corrispondente, indipendentemente dall'indirizzo IP o dalla porta di origine. Di conseguenza, due segmenti UDP provenienti da host differenti o da porte di origine diverse, ma diretti allo stesso IP e alla stessa porta di destinazione, verranno incanalati nella **medesima socket** e consegnati allo stesso processo applicativo
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
+Una socket TCP è identificata univocamente da una **quaterna (4-tupla)** composta da:
+1. **Indirizzo IP di origine**
+2. **Numero di porta di origine**
+3. **Indirizzo IP di destinazione**
+4. **Numero di porta di destinazione**
+
+Quando un segmento TCP giunge a destinazione, l'host esamina **tutti e quattro i valori** per effettuare il demultiplexing verso la socket corretta. A differenza di UDP, due segmenti TCP in arrivo che presentano differenti IP di origine o differenti porte di origine vengono diretti a **due socket distinte**, anche se condividono lo stesso IP e la stessa porta di destinazione (con l'unica eccezione dei segmenti iniziali di richiesta di connessione SYN)
