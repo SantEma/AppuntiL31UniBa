@@ -13,7 +13,7 @@ Questo passaggio viene chiamato **multiplexing** e **demultiplexing a livello di
 ### Multiplexing e Demultiplexing
 Per introdurre il multiplexing e il demultiplexing, pensiamo a questo esempio:
 
-> [!example] Esempio di comunicazione tra due computer
+> [!example] Esempio di comunicazione tra due processi su due host (parte 1)
 > Supponiamo che vi troviate di fronte ad un computer su cui scarichiamo pagine web mentre sono in esecuzione una sessione FTP e due sessioni Telnet. Si avranno pertanto quattro processi applicativi in esecuzione: due Telnet, uno FTP e uno HTTP.
 > 
 > Si considerino due host: **Host A**, il computer locale presso il quale si trova l'utente, e **Host B**, il computer remoto sul quale si ipotizza, per semplicità e senza perdita di generalità, che risiedano un server Telnet, un server FTP e un server web. I quattro processi suddetti assumono pertanto il ruolo di processi client, ciascuno associato ad almeno una socket.
@@ -32,6 +32,13 @@ I numeri di porta sono grandi 16 bit e vanno da 0 a 65535, ma esistono dei **num
 In generale, un segmento a livello di trasporto si presenta in questa maniera:
 ![[Pasted image 20261104145113.png]]
 
+> [!example] Esempio di comunicazione tra due processi su due host (parte 2)
+> Riprendendo l'esempio:
+> Il livello di trasporto di Host A raccoglie i frammenti di dati in uscita dalle socket dei quattro processi, incapsula ciascuno di essi in un segmento dotato di apposita intestazione (appena visto) e consegna i segmenti così ottenuti al livello di rete sottostante. Poiché i quattro flussi attraversano il medesimo canale da host a host (un medesimo indirizzo IP), il livello di trasporto effettua il **multiplexing** dei dati provenienti da socket distinte su un unico canale di comunicazione verso Host B.
+> 
+> Il livello di trasporto di Host B riceve dal livello di rete i segmenti in arrivo, ne esamina i campi di intestazione deputati allo scopo, identifica la socket destinataria e vi inoltra il carico utile, che giunge così al processo applicativo competente. Tale operazione è detta **demultiplexing**. Si osservi che le due funzioni vengono esercitate da entrambi gli host in entrambe le direzioni: anche Host A, in ricezione, deve smistare tra i propri quattro processi client i segmenti provenienti da Host B.
+> 
+> Grazie al concorso di porte, socket e intestazioni di trasporto, il servizio di trasporto da host a host offerto dal livello di rete viene elevato a servizio **da processo a processo**: ciascun segmento, tra i flussi che intercorrono tra i due computer, viene consegnato esattamente al processo applicativo competente.
 
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
 
