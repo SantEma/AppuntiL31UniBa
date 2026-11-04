@@ -14,13 +14,23 @@ Questo passaggio viene chiamato **multiplexing** e **demultiplexing a livello di
 Per introdurre il multiplexing e il demultiplexing, pensiamo a questo esempio:
 
 > [!example] Esempio di comunicazione tra due computer
-> Supponiamo che vi troviate di fronte ad un  computer su cui scarichiamo pagine web mentre sono in esecuzione una sessione FTP e due sessioni Telnet. Si avranno pertanto quattro processi applicativi in esecuzione: due Telnet, uno FTP e uno HTTP. 
+> Supponiamo che vi troviate di fronte ad un computer su cui scarichiamo pagine web mentre sono in esecuzione una sessione FTP e due sessioni Telnet. Si avranno pertanto quattro processi applicativi in esecuzione: due Telnet, uno FTP e uno HTTP.
+> 
+> Si considerino due host: **Host A**, il computer locale presso il quale si trova l'utente, e **Host B**, il computer remoto sul quale si ipotizza, per semplicità e senza perdita di generalità, che risiedano un server Telnet, un server FTP e un server web. I quattro processi suddetti assumono pertanto il ruolo di processi client, ciascuno associato ad almeno una socket.
+> 
+> Ogni processo applicativo gestisce una o più **socket**, interfacce attraverso le quali i dati fluiscono dal processo verso la rete e viceversa. Il livello di trasporto dell'host in ricezione non consegna pertanto i dati direttamente al processo, bensì ad una socket intermedia; poiché in un medesimo istante possono coesistere più socket in uno stesso host, ciascuna deve disporre di un identificatore univoco, il cui formato dipende dal fatto che si tratti di socket UDP o TCP. 
 
-Ogni host, per indirizzare al processo giusto i segmenti di rete per livello di trasporto, richiede che:
+Ogni host, per indirizzare al processo giusto i segmenti di rete a livello di trasporto, richiede che:
 1. Le socket abbiano identificatori unici; 
-2. Ciascun segmento presenti campi che indichino la socket cui va consegnato il segmento.
+2. Ciascun segmento presenti campi che indichino la socket cui va consegnato il segmento, ossia:
+	- **Campo del numero di porta di origine**
+	- **Campo del numero di porta di intestazione**
 
-![[Pasted image 20261104144703.png]]
+I numeri di porta sono grandi 16 bit e vanno da 0 a 65535, ma esistono dei **numeri di porta noti**, riservati a dei protocolli applicativi ben noti 
+In generale, un segmento a livello di trasporto si presenta in questa maniera:
+![[Pasted image 20261104145113.png]]
+
+
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
 
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
