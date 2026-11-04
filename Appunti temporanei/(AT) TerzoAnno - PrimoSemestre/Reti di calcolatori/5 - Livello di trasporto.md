@@ -16,6 +16,11 @@ Per introdurre il multiplexing e il demultiplexing, pensiamo a questo esempio:
 > [!example] Esempio di comunicazione tra due computer
 > Supponiamo che vi troviate di fronte ad un  computer su cui scarichiamo pagine web mentre sono in esecuzione una sessione FTP e due sessioni Telnet. Si avranno pertanto quattro processi applicativi in esecuzione: due Telnet, uno FTP e uno HTTP. 
 
+Ogni host, per indirizzare al processo giusto i segmenti di rete per livello di trasporto, richiede che:
+1. Le socket abbiano identificatori unici; 
+2. Ciascun segmento presenti campi che indichino la socket cui va consegnato il segmento.
+
+![[Pasted image 20261104144703.png]]
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
 
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
