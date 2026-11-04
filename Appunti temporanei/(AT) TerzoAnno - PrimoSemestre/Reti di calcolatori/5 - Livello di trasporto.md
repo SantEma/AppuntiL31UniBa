@@ -90,4 +90,4 @@ UDP ha diversi vantaggi rispetto a TCP:
 - **Nessuna connessione stabilita**: come vedremo più avanti, TCP utilizza un handshake a tre vie prima di iniziare il trasferimento dei dati. UDP invece “spara” dati a raffica senza alcun preliminare formale. Pertanto, UDP non introduce alcun ritardo nello stabilire una connessione.
 - **Nessuno stato di connessione**: TCP mantiene lo stato della connessione nei sistemi periferici, incluso buffer di ricezione e di invio, parametri per il controllo di congestione e parametri sul numero di sequenza e di acknowledgment (notifica, riscontro).  UDP, invece, non conserva lo stato della connessione e non tiene traccia di questi parametri. Per questo motivo, un server dedicato a una particolare applicazione può generalmente supportare molti più client attivi quando l’applicazione utilizza UDP anziché TCP.
 - **Minor spazio usato per l’intestazione del pacchetto**: l'intestazione dei pacchetti TCP aggiunge 20 byte, mentre UDP solo 8.
-
+#### Struttura dei segmenti UDP
