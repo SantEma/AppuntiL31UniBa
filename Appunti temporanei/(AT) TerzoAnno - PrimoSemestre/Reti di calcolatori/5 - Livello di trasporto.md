@@ -39,7 +39,6 @@ In generale, un segmento a livello di trasporto si presenta in questa maniera:
 > Grazie al concorso di porte, socket e intestazioni di trasporto, il servizio di trasporto da host a host offerto dal livello di rete viene elevato a servizio **da processo a processo**: ciascun segmento, tra i flussi che intercorrono tra i due computer, viene consegnato esattamente al processo applicativo competente.
 > ![[Pasted image 20261104150551.png]]
 > 
-
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
 
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
