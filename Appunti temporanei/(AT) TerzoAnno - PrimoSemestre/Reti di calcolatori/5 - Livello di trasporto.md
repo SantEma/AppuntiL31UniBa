@@ -10,3 +10,4 @@ Prima di procedere nella nostra introduzione su UDP e TCP risulta utile sofferma
 
 Il principale compito di TCP e UDP è l'estensione del servizio di consegna IP tra sistemi periferici a quello di consegna tra processi di esecuzione sui sistemi periferici.
 Questo passaggio viene chiamato **multiplexing** e **demultiplexing a livello di trasporto** (transport layer multiplexing/demultiplexing).
+
