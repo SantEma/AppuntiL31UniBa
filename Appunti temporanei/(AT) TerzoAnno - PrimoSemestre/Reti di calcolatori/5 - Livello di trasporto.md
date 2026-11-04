@@ -82,4 +82,5 @@ Quando un segmento TCP giunge a destinazione, l'host esamina **tutti e quattro i
 >  3.La connessione dell'Host A è associata alla quaterna (IP_A, 26145, IP_B, 80). 
 >  
 >  Ciascuna di queste tre quaterne indirizza i dati a una socket di connessione separata e riservata.
-
+### UDP
+UDP fa praticamente il minimo che un protocollo di trasporto debba fare. A parte la funzione di multiplexing/demultiplexing e una forma di controllo degli errori molto semplice, non aggiunge nulla a IP.
