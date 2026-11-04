@@ -46,6 +46,17 @@ Una socket UDP è identificata esclusivamente da una **coppia (2-tupla)** compos
 2. **Numero di porta di destinazione**
 
 Quando un segmento UDP arriva a un host, il livello di trasporto esamina unicamente il numero di porta di destinazione e lo indirizza alla socket corrispondente, indipendentemente dall'indirizzo IP o dalla porta di origine. Di conseguenza, due segmenti UDP provenienti da host differenti o da porte di origine diverse, ma diretti allo stesso IP e alla stessa porta di destinazione, verranno incanalati nella **medesima socket** e consegnati allo stesso processo applicativo
+
+
+> [!example] Esempio di multiplexing e demultiplexing non orientati alla connessione 
+> ![[Pasted image 20261104155207.png]]
+> Si consideri uno scenario in cui un processo residente sull'Host A, associato alla porta UDP 19157 intenda trasmettere un blocco di dati applicativi a un processo in esecuzione sull'Host B, attestato sulla porta UDP 46428. Il livello di trasporto dell'Host A assembla il segmento inserendo i dati dell'applicazione, il numero di porta di origine 19157 e il numero di porta di destinazione 46428. Successivamente, il segmento viene passato al livello di rete, che lo incapsula in un datagramma IP e lo trasmette attraverso la rete verso l'Host B.
+> 
+> All'arrivo del datagramma presso l'Host B, il livello di trasporto locale analizza il campo della porta di destinazione del segmento, rilevando il valore 46428, e dirotta il segmento verso la socket identificata da tale porta. Nel caso in cui un ulteriore host, ad esempio un ipotetico Host C, inviasse contemporaneamente un segmento UDP indirizzato alla medesima porta 46428 dell'Host B, il livello di trasporto dell'Host B indirizzerebbe anche quest'ultimo pacchetto alla medesima socket, senza che vi sia alcuna distinzione o creazione di un canale separato.
+> 
+> Infine, il numero di porta di origine 19157 incluso nel segmento iniziale funge da indirizzo di ritorno. Quando l'Host B risponde all'Host A, il relativo livello di trasporto effettua l'inversione delle porte: imposta la porta di destinazione del messaggio di risposta pari a 19157 e la porta di origine pari a 46428.
+
+
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
 Una socket TCP è identificata univocamente da una **quaterna (4-tupla)** composta da:
 1. **Indirizzo IP di origine**
@@ -54,3 +65,16 @@ Una socket TCP è identificata univocamente da una **quaterna (4-tupla)** compos
 4. **Numero di porta di destinazione**
 
 Quando un segmento TCP giunge a destinazione, l'host esamina **tutti e quattro i valori** per effettuare il demultiplexing verso la socket corretta. A differenza di UDP, due segmenti TCP in arrivo che presentano differenti IP di origine o differenti porte di origine vengono diretti a **due socket distinte**, anche se condividono lo stesso IP e la stessa porta di destinazione (con l'unica eccezione dei segmenti iniziali di richiesta di connessione SYN)
+
+> [!example] Esempio di multiplexing e demultiplexing orientati alla connessione 
+> ![[Pasted image 20261104155514.png]]
+> Diversamente da quanto accade con UDP, due segmenti TCP in arrivo aventi indirizzi IP di origine distinti o numeri di porta di origine differenti vengono indirizzati a due socket separate, anche qualora condividano lo stesso indirizzo IP e lo stesso numero di porta di destinazione. L'unica eccezione a questa regola è rappresentata dai segmenti di richiesta di instaurazione della connessione aventi il bit SYN impostato a 1.
+> 
+> Nel ciclo di vita di un'applicazione server TCP, la gestione delle connessioni richiede l'impiego di due tipologie distinte di socket. Il server mantiene inizialmente una socket di benvenuto (welcoming socket), legata a un determinato numero di porta (ad esempio la porta 80 per i server Web o la porta 12000), rimanendo in ascolto delle richieste di connessione in ingresso da parte dei client. Quando un client intende avviare una sessione, crea una propria socket e trasmette un segmento TCP contenente il bit SYN impostato a 1, specificando la porta di destinazione del server e una porta di origine dinamica generata dal proprio sistema operativo.
+> 
+> Al ricevimento del segmento SYN, il sistema operativo del server individua il processo in ascolto sulla porta di destinazione e invoca il metodo accept(), il quale instanzia una nuova socket di connessione (connection socket) interamente dedicata a quel determinato client. Il livello di trasporto del server registra la quaterna identificativa formata dall'indirizzo IP sorgente, dalla porta sorgente, dal proprio indirizzo IP e dalla porta di destinazione. Tutti i successivi segmenti che recheranno nell'intestazione dati corrispondenti a questa specifica quaterna verranno instradati verso la nuova socket di connessione dedicata.
+> 
+> Prendiamo in considerazione l'Host B con un server HTTP (in ascolto sulla porta 80) contattato contemporaneamente da due client distinti, denominati Host A e Host C. L'Host C avvia due sessioni HTTP distinte verso l'Host B, assegnando a esse due differenti numeri di porta di origine, ad esempio la porta 26145 e la porta 7532. Nel medesimo istante, l'Host A avvia anch'esso una sessione HTTP verso l'Host B e il suo sistema operativo assegna in modo indipendente la porta sorgente 26145, che risulta numericamente identica a una delle porte usate dall'Host C.
+> 
+> Nonostante i segmenti inviati dall'Host A e uno dei flussi dell'Host C condividano sia la porta d'origine (26145) sia la porta di destinazione (80), l'Host B è in grado di effettuare il demultiplexing in modo del tutto corretto e privo di ambiguità. Il livello di trasporto dell'Host B distingue infatti le tre sessioni tramite le rispettive quaterne: la prima connessione dell'Host C è legata alla quaterna (IP_C, 26145, IP_B, 80), la seconda connessione dell'Host C corrisponde alla quaterna (IP_C, 7532, IP_B, 80), mentre la connessione dell'Host A è associata alla quaterna (IP_A, 26145, IP_B, 80). Ciascuna di queste tre quaterne indirizza i dati a una socket di connessione separata e riservata.
+> 
