@@ -84,3 +84,10 @@ Quando un segmento TCP giunge a destinazione, l'host esamina **tutti e quattro i
 >  Ciascuna di queste tre quaterne indirizza i dati a una socket di connessione separata e riservata.
 ### UDP
 UDP fa praticamente il minimo che un protocollo di trasporto debba fare. A parte la funzione di multiplexing/demultiplexing e una forma di controllo degli errori molto semplice, non aggiunge nulla a IP.
+
+Come abbiamo visto prima, UDP prende i messaggi dal processo applicativo, aggiunge il numero di porta di origine e di destinazione per il multiplexing/demultiplexing, aggiunge altri due piccoli campi e passa il segmento risultante al livello di rete. Questi incapsula il segmento in un datagramma IP e quindi effettua un tentativo di consegnarlo all’host di destinazione in modalità best-effort. Se il segmento arriva a destinazione, UDP utilizza il numero di porta di destinazione per consegnare i dati del segmento al processo applicativo corretto. 
+
+In UDP non esiste un  tra le entità di invio e di ricezione a livello di trasporto. Per questo motivo, si dice che UDP è **non orientato alla connessione** (connectionless).
+
+UDP ha diversi vantaggi rispetto a TCP:
+- Controllo più preciso a livello di applicazione su quali dati sono inviati e quando: Non appena un processo applicativo passa dei dati a UDP, quest’ultimo li impacchetta in un segmento che trasferisce immediatamente al livello di rete. TCP, come vedremo, dispone di un meccanismo di controllo della congestione che ritarda l’invio a livello di trasporto quando uno o più collegamenti tra l’origine e la destinazione diventano eccessivamente congestionati. TCP continua, inoltre, a inviare il segmento fino a quando viene notificata la sua ricezione da parte della destinazione, incurante del tempo richiesto per un trasporto affidabile. Dato che le applicazioni in tempo reale spesso richiedono una velocità minima di invio e non sopportano ritardi eccessivi nella trasmissione dei pacchetti mentre tollerano una certa perdita di dati, il modello di servizio TCP non si adatta particolarmente bene a queste esigenze.
