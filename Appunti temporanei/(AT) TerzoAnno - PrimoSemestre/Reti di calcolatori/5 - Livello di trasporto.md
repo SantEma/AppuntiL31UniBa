@@ -12,7 +12,7 @@ Il principale compito di TCP e UDP è l'estensione del servizio di consegna IP t
 Questo passaggio viene chiamato **multiplexing** e **demultiplexing a livello di trasporto** (transport layer multiplexing/demultiplexing).
 ### Multiplexing e Demultiplexing
 Per introdurre il multiplexing e il demultiplexing, pensiamo a questo esempio:
-()
+
 > [!example] Esempio di comunicazione tra due processi su due host (parte 1)
 > Si considerino due host: **Host A**, il computer locale presso il quale si trova l'utente, e **Host B**, il computer remoto sul quale si ipotizza, per semplicità e senza perdita di generalità, che risiedano un server Telnet, un server FTP e un server web. I quattro processi suddetti assumono pertanto il ruolo di processi client, ciascuno associato ad almeno una socket.
 > 
