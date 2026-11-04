@@ -41,12 +41,10 @@ In generale, un segmento a livello di trasporto si presenta in questa maniera:
 > 
 #### Multiplexing e demultiplexing non orientati alla connessione (UDP)
 Una socket UDP è identificata esclusivamente da una **coppia (2-tupla)** composta da:
-
 1. **Indirizzo IP di destinazione**
 2. **Numero di porta di destinazione**
 
 Quando un segmento UDP arriva a un host, il livello di trasporto esamina unicamente il numero di porta di destinazione e lo indirizza alla socket corrispondente, indipendentemente dall'indirizzo IP o dalla porta di origine. Di conseguenza, due segmenti UDP provenienti da host differenti o da porte di origine diverse, ma diretti allo stesso IP e alla stessa porta di destinazione, verranno incanalati nella **medesima socket** e consegnati allo stesso processo applicativo
-
 
 > [!example] Esempio di multiplexing e demultiplexing non orientati alla connessione 
 > ![[Pasted image 20261104155207.png]]
@@ -55,8 +53,6 @@ Quando un segmento UDP arriva a un host, il livello di trasporto esamina unicame
 > All'arrivo del datagramma presso l'Host B, il livello di trasporto locale analizza il campo della porta di destinazione del segmento, rilevando il valore 46428, e dirotta il segmento verso la socket identificata da tale porta. Nel caso in cui un ulteriore host, ad esempio un ipotetico Host C, inviasse contemporaneamente un segmento UDP indirizzato alla medesima porta 46428 dell'Host B, il livello di trasporto dell'Host B indirizzerebbe anche quest'ultimo pacchetto alla medesima socket, senza che vi sia alcuna distinzione o creazione di un canale separato.
 > 
 > Infine, il numero di porta di origine 19157 incluso nel segmento iniziale funge da indirizzo di ritorno. Quando l'Host B risponde all'Host A, il relativo livello di trasporto effettua l'inversione delle porte: imposta la porta di destinazione del messaggio di risposta pari a 19157 e la porta di origine pari a 46428.
-
-
 #### Multiplexing e demultiplexing orientati alla connessione(TCP)
 Una socket TCP è identificata univocamente da una **quaterna (4-tupla)** composta da:
 1. **Indirizzo IP di origine**
@@ -91,3 +87,7 @@ In UDP non esiste un  tra le entità di invio e di ricezione a livello di traspo
 
 UDP ha diversi vantaggi rispetto a TCP:
 - **Controllo più preciso a livello di applicazione su quali dati sono inviati e quando**: non appena un processo applicativo passa dei dati a UDP, quest’ultimo li impacchetta in un segmento che trasferisce immediatamente al livello di rete. TCP, come vedremo, dispone di un meccanismo di controllo della congestione che ritarda l’invio a livello di trasporto quando uno o più collegamenti tra l’origine e la destinazione diventano eccessivamente congestionati. TCP continua, inoltre, a inviare il segmento fino a quando viene notificata la sua ricezione da parte della destinazione, incurante del tempo richiesto per un trasporto affidabile. Dato che le applicazioni in tempo reale spesso richiedono una velocità minima di invio e non sopportano ritardi eccessivi nella trasmissione dei pacchetti mentre tollerano una certa perdita di dati, il modello di servizio TCP non si adatta particolarmente bene a queste esigenze.
+- **Nessuna connessione stabilita**: come vedremo più avanti, TCP utilizza un handshake a tre vie prima di iniziare il trasferimento dei dati. UDP invece “spara” dati a raffica senza alcun preliminare formale. Pertanto, UDP non introduce alcun ritardo nello stabilire una connessione.
+- **Nessuno stato di connessione**: TCP mantiene lo stato della connessione nei sistemi periferici, incluso buffer di ricezione e di invio, parametri per il controllo di congestione e parametri sul numero di sequenza e di acknowledgment (notifica, riscontro).  UDP, invece, non conserva lo stato della connessione e non tiene traccia di questi parametri. Per questo motivo, un server dedicato a una particolare applicazione può generalmente supportare molti più client attivi quando l’applicazione utilizza UDP anziché TCP.
+- **Minor spazio usato per l’intestazione del pacchetto**: l'intestazione dei pacchetti TCP aggiunge 20 byte, mentre UDP solo 8.
+
