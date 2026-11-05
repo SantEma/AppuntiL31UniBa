@@ -102,3 +102,12 @@ UDP ha diversi vantaggi rispetto a TCP:
 Il checksum di UDP rappresenta un meccanismo fondamentale per il rilevamento degli errori sui bit, progettato per verificare se i dati contenuti all'interno del segmento abbiano subito alterazioni durante il trasferimento dalla sorgente alla destinazione (poichè non esiste garanzia che tra tutti i collegamenti, da origine a destinazione, controllino gli errori).
 
 Lato mittente, il calcolo del checksum si basa sull'aritmetica del complemento a 1 applicata a sequenze di dati trattate come parole a 16 bit nel segmento.
+
+> [!example] Esempio di checksum UDP
+> 
+Come esempio supponiamo di avere le seguenti tre parole di 16 bit: $$0110011001100000, \\ 0101010101010101, \\ 1000111100001100$$ 
+La somma delle prime due è: $$0110011001100000 \\  \underline{0101010101010101} \\ 1011101110110101$$ 
+Sommando la terza parola al risultato precedente otteniamo: $$1011101110110101 \\ \underline{1000111100001100} \\ 0100101011000010$$
+Notiamo che il riporto di quest’ultima somma è stato sommato al primo bit. Il complemento a 1 si ottiene convertendo i bit 0 in 1 e viceversa. Di conseguenza, il checksum sarà $1011010100111101$. In ricezione, si sommano le tre parole iniziali e il checksum. Se non ci sono errori nel pacchetto, l’addizione darà $1111111111111111$
+
+
