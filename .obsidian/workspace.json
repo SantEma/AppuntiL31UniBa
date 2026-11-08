@@ -11,12 +11,14 @@
             "id": "3c58014c8815a548",
             "type": "leaf",
             "state": {
-              "type": "image",
+              "type": "markdown",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104171258.png"
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
+                "mode": "source",
+                "source": false
               },
-              "icon": "lucide-image",
-              "title": "Pasted image 20261104171258"
+              "icon": "lucide-file",
+              "title": "5 - Livello di trasporto"
             }
           }
         ]
@@ -184,16 +186,16 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "ab83996f0563bfdd",
+  "active": "3c58014c8815a548",
   "lastOpenFiles": [
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104171258.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104155514.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104155207.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104150551.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104145113.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104144703.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104171258.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
