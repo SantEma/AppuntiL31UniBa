@@ -113,12 +113,17 @@ Notiamo che il riporto di quest’ultima somma è stato sommato al primo bit. Il
 ### Principi del trasferimento dati affidabile
 Il problema del trasferimento dati affidabile viene affrontato in un contesto generale poiché non riguarda esclusivamente il livello di trasporto, ma si presenta anche al livello di collegamento e al livello di applicazione.
 
-Dal punto di vista del modello di servizio, l’astrazione offerta alle entità dei livelli superiori consiste in un canale affidabile attraverso il quale è possibile trasferire dati. Disporre di un canale affidabile significa garantire che nessun bit dei dati trasmessi venga corrotto (ovvero alterato da $0$ a $1$ o viceversa), che nessun bit vada perduto e che tutti i bit siano consegnati esattamente nell'ordine di invio; questo coincide precisamente con il modello di servizio fornito da TCP alle applicazioni Internet (che vedremo più avanti).
-
-**Il compito di un protocollo di trasferimento dati affidabile (reliable data transfer protocol)** consiste proprio nell'implementare tale astrazione di servizio. La complessità di questo compito deriva dal fatto che il livello sottostante al protocollo può essere inaffidabile: ad esempio, TCP opera al di sopra del livello di rete IP, il quale offre un servizio best-effort non affidabile end-to-end. 
+Dal punto di vista del modello di servizio, l’astrazione offerta alle entità dei livelli superiori consiste in un canale affidabile attraverso il quale è possibile trasferire dati.
+> [!example] Esempio di astrazione di un canale affidabile
+> ![[Pasted image 20261123151823.png]]
+> Disporre di un canale affidabile significa garantire che nessun bit dei dati trasmessi venga corrotto (ovvero alterato da $0$ a $1$ o viceversa), che nessun bit vada perduto e che tutti i bit siano consegnati esattamente nell'ordine di invio; questo coincide precisamente con il modello di servizio fornito da TCP alle applicazioni Internet (che vedremo più avanti).
+> **Il compito di un protocollo di trasferimento dati affidabile (reliable data transfer protocol)** consiste proprio nell'implementare tale astrazione di servizio. La complessità di questo compito deriva dal fatto che il livello sottostante al protocollo può essere inaffidabile: ad esempio, TCP opera al di sopra del livello di rete IP, il quale offre un servizio best-effort non affidabile end-to-end. 
 
 > [!example] Contesto trasferimento dati affidabile
-> ![[Pasted image 20261123150515.png]]
+> ![[Pasted image 20261123151707.png]]
 > Per studiare il problema in modo sistematico, si sviluppano in parallelo il lato mittente e il lato ricevente di un protocollo di trasferimento dati affidabile, introducendo modelli del canale sottostante progressivamente più complessi e realistici, in grado di corrompere i bit o di perdere interi pacchetti. Nell'esempio assumeremo che il canale sottostante non riordini i pacchetti, facendoli giungere a destinazione nell’ordine in cui sono stati inviati, pur potendo subire alterazioni o andare smarriti.
 > 
 > Definiamo anche interfacce software per il funzionamento di questi principi. Sul lato mittente, il livello superiore invoca il protocollo attraverso la chiamata `rdt_send()`, passando i dati da consegnare al livello superiore del destinatario (dove `rdt` sta per reliable data transfer). Per trasmettere effettivamente un pacchetto sul canale inaffidabile sottostante, il protocollo richiama la funzione `udt_send()`, dove `udt` indica unreliable data transfer. Sul lato ricevente, l’arrivo di un pacchetto dal canale inaffidabile provoca la chiamata a `rdt_rcv()` e, quando il protocollo è pronto a passare i dati estratti al livello superiore, invoca la funzione `deliver_data()`.
+
+#### Costruzione di un protocollo di trasferimento dati affidabile
+##### Trasferimento dati affidabile su un canale perfettamente affidabile (rdt 1.0)
