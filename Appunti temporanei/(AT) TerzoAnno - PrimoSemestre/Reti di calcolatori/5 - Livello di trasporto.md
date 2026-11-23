@@ -141,4 +141,3 @@ Il punto di partenza è il caso ideale e più semplice, in cui il canale sottost
 
 In questo scenario ideale non esiste una reale distinzione funzionale tra un’unità di dati e un pacchetto, e tutti i pacchetti viaggiano esclusivamente dal mittente verso il destinatario. Poiché nulla può andare storto, il lato ricevente non ha alcuna necessità di inviare messaggi di riscontro al mittente. Inoltre, si assume implicitamente che il destinatario sia sempre in grado di ricevere ed elaborare i dati alla stessa velocità di invio del mittente, motivo per cui non ha mai bisogno di richiedere al mittente di rallentare la trasmissione.
 ##### Trasferimento dati affidabile su un canale con errori su bit (rdt 2.0)
-
