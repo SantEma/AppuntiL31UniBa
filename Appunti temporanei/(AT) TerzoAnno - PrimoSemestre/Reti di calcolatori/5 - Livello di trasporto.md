@@ -126,4 +126,12 @@ Dal punto di vista del modello di servizio, l’astrazione offerta alle entità 
 > Definiamo anche interfacce software per il funzionamento di questi principi. Sul lato mittente, il livello superiore invoca il protocollo attraverso la chiamata `rdt_send()`, passando i dati da consegnare al livello superiore del destinatario (dove `rdt` sta per reliable data transfer). Per trasmettere effettivamente un pacchetto sul canale inaffidabile sottostante, il protocollo richiama la funzione `udt_send()`, dove `udt` indica unreliable data transfer. Sul lato ricevente, l’arrivo di un pacchetto dal canale inaffidabile provoca la chiamata a `rdt_rcv()` e, quando il protocollo è pronto a passare i dati estratti al livello superiore, invoca la funzione `deliver_data()`.
 
 #### Costruzione di un protocollo di trasferimento dati affidabile
+Per giungere alla progettazione di un protocollo di trasferimento dati affidabile completo e pienamente funzionante, si procede in modo incrementale analizzando una sequenza di protocolli via via più articolati, ciascuno progettato per compensare un nuovo tipo di difetto del canale sottostante.
+
+Prima di analizzare i vari funzionamenti, fissiamo velocemente le convenzioni di una FSM. 
+
+> [!important] Convenzioni di una FSM
+> Gli stati sono rappresentati da nodi e le transizioni da frecce orientate; lo stato iniziale della macchina viene indicato da una freccia tratteggiata. Ogni transizione è etichettata con una linea orizzontale: al di sopra della linea è riportato l’evento che innesca la transizione, mentre al di sotto sono elencate le azioni eseguite in risposta a tale evento. Qualora un evento non determini alcuna azione, oppure un’azione venga intrapresa senza il verificarsi di un evento specifico, si utilizza la lettera greca maiuscola $\Lambda$ rispettivamente sotto o sopra la linea orizzontale per denotare in modo esplicito l’assenza di azione o di evento.
+
+
 ##### Trasferimento dati affidabile su un canale perfettamente affidabile (rdt 1.0)
