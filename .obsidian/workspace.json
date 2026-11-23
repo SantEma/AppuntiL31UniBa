@@ -80,7 +80,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -158,7 +159,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
                 "followCursor": false,
                 "showSearch": false,
                 "searchQuery": ""
@@ -172,8 +173,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,6 +188,7 @@
   },
   "active": "3c58014c8815a548",
   "lastOpenFiles": [
+    "Pasted image 20261123150515.png",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/Basi di Dati/Tracce.zip",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/Basi di Dati/Tracce.zip.b7kj1t.part",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/6 - Livello di rete.md",
@@ -233,7 +234,6 @@
     "Appunti definitivi/(AD) TerzoAnno - PrimoSemestre",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre",
     "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Ingegneria del software/12 - Testing.pdf",
-    "Appunti definitivi/(AD) SecondoAnno - SecondoSemestre/Metodi Avanzati di Programmazione/3.1 - (Slide Esempi) Prima Applicazione in Java SWING.pdf",
     "Senza nome.canvas"
   ]
 }

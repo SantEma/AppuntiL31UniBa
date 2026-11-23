@@ -110,4 +110,11 @@ La somma delle prime due è: $$0110011001100000 \\ \underline{0101010101010101} 
 Sommando la terza parola al risultato precedente otteniamo: $$1011101110110101 \\ \underline{1000111100001100} \\ 0100101011000010$$
 Notiamo che il riporto di quest’ultima somma è stato sommato al primo bit. Il complemento a 1 si ottiene convertendo i bit 0 in 1 e viceversa. Di conseguenza, il checksum sarà $1011010100111101$. In ricezione, si sommano le tre parole iniziali e il checksum. Se non ci sono errori nel pacchetto, l’addizione darà $1111111111111111$
 
+### Principi del trasferimento dati affidabile
+In un contesto generale (non riguardante soltanto quindi, il livello di trasporto), bisogna considerare il problema del trasferimento di dati affidabile.
+> [!example] Contesto trasferimento dati affidabile
+> ![[Pasted image 20261123150515.png]]
 
+Dal punto di vista del modello di servizio, l’astrazione offerta alle entità dei livelli superiori consiste in un canale affidabile attraverso il quale è possibile trasferire dati. Disporre di un canale affidabile significa garantire che nessun bit dei dati trasmessi venga corrotto (ovvero alterato da $0$ a $1$ o viceversa), che nessun bit vada perduto e che tutti i bit siano consegnati esattamente nell’ordine di invio; questo coincide precisamente con il modello di servizio fornito da TCP alle applicazioni Internet.
+
+**Il compito di un protocollo di trasferimento dati affidabile (reliable data transfer protocol)** consiste proprio nell’implementare tale astrazione di servizio. La complessità di questo compito deriva dal fatto che il livello sottostante al protocollo può essere inaffidabile: ad esempio, TCP opera al di sopra del livello di rete IP, il quale offre un servizio best-effort non affidabile end-to-end. 
