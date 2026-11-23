@@ -117,3 +117,7 @@ Notiamo che il riporto di quest’ultima somma è stato sommato al primo bit. Il
 ### TCP (trasporto orientato alla connessione)
 TCP viene detto **orientato alla connessione** (connection-oriented) in quanto, prima di effettuare lo scambio dei dati, i processi devono effettuare l’handshake, ossia devono inviarsi reciprocamente alcuni segmenti preliminari per stabilire i parametri del successivo trasferimento dati.
 
+La “connessione” TCP non è un circuito end-to-end TDM o FDM, come in una rete a commutazione di circuito, in quanto lo stato della connessione risiede completamente nei due sistemi periferici. Dato che il protocollo TCP va in esecuzione solo sui sistemi periferici e non negli elementi di rete intermedi (router e switch a livello di collegamento), questi ultimi non salvano lo stato della connessione TCP, avendo accesso unicamente a datagrammi.
+
+Una connessione TCP offre un servizio **full-duplex**: su una connessione TCP tra il processo A su un host e il processo B su un altro host, i dati a livello di applicazione possono fluire dal processo A al processo B nello stesso momento in cui fluiscono in direzione opposta. Una connessione TCP è anche **punto a punto** (point-to-point), ossia ha luogo tra un singolo mittente e un singolo destinatario. Il cosiddetto “multicast”, ossia il trasferimento di dati da un mittente a molti destinatari in un’unica operazione, con TCP non è possibile.
+
