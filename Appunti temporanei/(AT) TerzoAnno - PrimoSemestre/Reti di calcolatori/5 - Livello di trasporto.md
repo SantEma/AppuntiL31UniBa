@@ -128,10 +128,17 @@ Dal punto di vista del modello di servizio, l’astrazione offerta alle entità 
 #### Costruzione di un protocollo di trasferimento dati affidabile
 Per giungere alla progettazione di un protocollo di trasferimento dati affidabile completo e pienamente funzionante, si procede in modo incrementale analizzando una sequenza di protocolli via via più articolati, ciascuno progettato per compensare un nuovo tipo di difetto del canale sottostante.
 
-Prima di analizzare i vari funzionamenti, fissiamo velocemente le convenzioni di una FSM. 
+Prima di analizzare i vari funzionamenti, fissiamo velocemente le convenzioni di come andremo a descrivere tutti i protocolli. 
 
-> [!important] Convenzioni di una FSM
+> [!important] Convenzione per descrizione dei protocolli 
+> Ogni protocollo verrà descritto mediante delle **macchine a stati finiti** (FSM, Finite-State Machine).
 > Gli stati sono rappresentati da nodi e le transizioni da frecce orientate; lo stato iniziale della macchina viene indicato da una freccia tratteggiata. Ogni transizione è etichettata con una linea orizzontale: al di sopra della linea è riportato l’evento che innesca la transizione, mentre al di sotto sono elencate le azioni eseguite in risposta a tale evento. Qualora un evento non determini alcuna azione, oppure un’azione venga intrapresa senza il verificarsi di un evento specifico, si utilizza la lettera greca maiuscola $\Lambda$ rispettivamente sotto o sopra la linea orizzontale per denotare in modo esplicito l’assenza di azione o di evento.
 
-
 ##### Trasferimento dati affidabile su un canale perfettamente affidabile (rdt 1.0)
+Il punto di partenza è il caso ideale e più semplice, in cui il canale sottostante è completamente affidabile, privo cioè sia di errori sui bit sia di perdite di pacchetti. Il protocollo risultante, denominato `rdt1.0`, è banale e viene descritto mediante due FSM separate, una per il mittente e una per il destinatario.
+
+> [!example] Rappresentazione del protocollo rdt 1.0
+> ![[Pasted image 20261123152840.png]]
+> Nel protocollo `rdt1.0`, sia la FSM del mittente sia quella del destinatario possiedono un unico stato, per cui tutte le transizioni riportano necessariamente dallo stato a sé stesso. Il mittente si trova costantemente nello stato di attesa di una chiamata dall'alto: quando il livello superiore invoca `rdt_send(data)`, il mittente incapsula i dati creando un pacchetto attraverso `packet = make_pkt(data)` e lo immette nel canale chiamando `udt_send(packet)`. In modo speculare, il destinatario rimane nello stato di attesa di una chiamata dal basso: alla ricezione di un pacchetto tramite l’evento `rdt_rcv(packet)`, estrae il contenuto informativo mediante `extract(packet, data)` e lo consegna al livello superiore chiamando `deliver_data(data)`.
+
+In questo scenario ideale non esiste una reale distinzione funzionale tra un’unità di dati e un pacchetto, e tutti i pacchetti viaggiano esclusivamente dal mittente verso il destinatario. Poiché nulla può andare storto, il lato ricevente non ha alcuna necessità di inviare messaggi di riscontro al mittente. Inoltre, si assume implicitamente che il destinatario sia sempre in grado di ricevere ed elaborare i dati alla stessa velocità di invio del mittente, motivo per cui non ha mai bisogno di richiedere al mittente di rallentare la trasmissione.
