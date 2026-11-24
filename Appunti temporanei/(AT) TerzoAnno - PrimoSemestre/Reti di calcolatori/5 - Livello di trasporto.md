@@ -139,5 +139,6 @@ TCP accoppia ogni blocco di dati del client a una intestazione TCP, andando pert
 > In più troviamo:
 > - **Numero di sequenza e acknowledgment**: entrambi da 32 bit, vengono utilizzati dal mittente e dal destinatario TCP per implementare il trasferimento affidabile;
 > - **Finestra di ricezione**: da 16 bit viene utilizzato per il controllo di flusso. Vedremo il suo uso per indicare il numero di byte che il destinatario è disposto ad accettare; 
-> - **Lunghezza dell’intestazione**: di 4 bit, specifica la lunghezza dell’intestazione TCP in multipli di 32 bit. L’intestazione TCP ha lunghezza variabile a causa del campo delle opzioni TCP. Generalmente, il campo delle opzioni è vuoto e, pertanto, la lunghezza consueta è di 20 byte.
+> - **Lunghezza dell’intestazione**: di 4 bit, specifica la lunghezza dell’intestazione TCP in multipli di 32 bit. L’intestazione TCP ha lunghezza variabile a causa del campo delle opzioni TCP. Generalmente, il campo delle opzioni è vuoto e, pertanto, la lunghezza consueta è di 20 byte;
+> - **Opzioni**: facoltativo e di lunghezza variabile, viene utilizzato quando mittente e destinatario negoziano la dimensione massima del segmento (MSS) o come fattore di scala per la finestra nelle reti ad alta velocità. Viene, inoltre, definita l’opzione di time-stamping;
 > - 
