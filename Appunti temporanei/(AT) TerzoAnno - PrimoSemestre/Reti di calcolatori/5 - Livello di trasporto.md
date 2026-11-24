@@ -135,3 +135,9 @@ TCP accoppia ogni blocco di dati del client a una intestazione TCP, andando pert
 #### Struttura dei segmenti TCP
 > [!info] Schema di un segmento TCP 
 > ![[Pasted image 20261124144756.png]]
+> Come UDP, troviamo come intestazione il **numero di porta di origine e destinazione**, utilizzati per il multiplexing/demultiplexing dei dati da e verso le applicazioni a livello superiore, oltre al campo **Checksum**.
+> In più troviamo:
+> - **Numero di sequenza e acknowledgment**: entrambi da 32 bit, vengono utilizzati dal mittente e dal destinatario TCP per implementare il trasferimento affidabile;
+> - **Finestra di ricezione**: da 16 bit viene utilizzato per il controllo di flusso. Vedremo il suo uso per indicare il numero di byte che il destinatario è disposto ad accettare; 
+> - **Lunghezza dell’intestazione**: di 4 bit, specifica la lunghezza dell’intestazione TCP in multipli di 32 bit. L’intestazione TCP ha lunghezza variabile a causa del campo delle opzioni TCP. Generalmente, il campo delle opzioni è vuoto e, pertanto, la lunghezza consueta è di 20 byte.
+> - 
