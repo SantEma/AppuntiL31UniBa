@@ -125,5 +125,7 @@ Come vedremo più avanti, un client e un server che comunicano via TCP instauran
 
 > [!example] Sguardo veloce all'handshake a 3 vie
 > ![[Pasted image 20261124143402.png]]
-> 
+> TCP dirige i dati al **buffer di invio** della connessione, uno dei buffer riservato durante l’handshake a tre vie, da cui, di tanto in tanto, preleverà blocchi di dati e li passerà al livello di rete.
+
+
 
