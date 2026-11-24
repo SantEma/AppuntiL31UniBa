@@ -164,3 +164,4 @@ Il secondo esempio appena analizzato solleva una questione delicata: l'Host A ha
 
 Abbiamo supposto per tutti gli esempi che il numero di sequenza iniziale fosse zero, quando nella realtà entrambi gli host che partecipano a una connessione TCP selezionano in modo casuale il proprio numero di sequenza iniziale. Questo accorgimento riduce al minimo il rischio che un segmento rimasto ancora in circolazione nella rete, appartenente a una connessione precedente ormai terminata tra la stessa coppia di host (e che utilizzava i medesimi numeri di porta), possa essere erroneamente accettato come segmento valido all'interno della nuova connessione.
 #### Timeout e stima del tempo di andata e ritorno (RTT)
+TCP utilizza un meccanismo di timeout (tempo scaduto) e ritrasmissione per recuperare i segmenti persi
