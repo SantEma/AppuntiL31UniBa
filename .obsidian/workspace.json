@@ -11,14 +11,12 @@
             "id": "3c58014c8815a548",
             "type": "leaf",
             "state": {
-              "type": "markdown",
+              "type": "image",
               "state": {
-                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
-                "mode": "source",
-                "source": false
+                "file": "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123151823.png"
               },
-              "icon": "lucide-file",
-              "title": "5 - Livello di trasporto"
+              "icon": "lucide-image",
+              "title": "Pasted image 20261123151823"
             }
           }
         ]
@@ -80,8 +78,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "right": {
     "id": "2413337e7f34b214",
@@ -187,15 +184,16 @@
       "bases:Crea nuova Base": false
     }
   },
-  "active": "3c58014c8815a548",
+  "active": "ab83996f0563bfdd",
   "lastOpenFiles": [
-    "Pasted image 20261124143402.png",
-    "Pasted image 20261123164736.png",
-    "Pasted image 20261123163559.png",
-    "Pasted image 20261123152840.png",
-    "Pasted image 20261123151750.png",
-    "Pasted image 20261123151823.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261124144756.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261124143402.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123164736.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123163559.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123152840.png",
+    "Pasted image 20261123151750.png",
+    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123151823.png",
     "Pasted image 20261123150515.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261123151707.png",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/Basi di Dati/Tracce.zip",
@@ -203,8 +201,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/6 - Livello di rete.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104171258.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104155514.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261104155207.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/1 - Introduzione.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/2 - Architettura a livelli.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/3 - Web.md",

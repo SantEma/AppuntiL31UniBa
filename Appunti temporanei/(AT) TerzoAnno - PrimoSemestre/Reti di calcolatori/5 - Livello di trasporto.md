@@ -132,3 +132,6 @@ La massima quantità di dati prelevabili e posizionabili in un segmento viene li
 
 TCP accoppia ogni blocco di dati del client a una intestazione TCP, andando pertanto a formare **segmenti TCP**. Questi vengono passati al sottostante livello di rete, dove sono incapsulati separatamente nei datagrammi IP a livello di rete che vengono poi immessi nella rete. Quando all’altro capo TCP riceve un segmento, i dati del segmento vengono memorizzati nel buffer di ricezione della connessione TCP L’applicazione legge il flusso di dati da questo buffer. Ogni lato della connessione presenta un proprio buffer di invio e di ricezione.
 
+#### Struttura dei segmenti TCP
+> [!info] Schema di un segmento TCP 
+> ![[Pasted image 20261124144756.png]]
