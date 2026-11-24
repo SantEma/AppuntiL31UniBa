@@ -121,3 +121,5 @@ La “connessione” TCP non è un circuito end-to-end TDM o FDM, come in una re
 
 Una connessione TCP offre un servizio **full-duplex**: su una connessione TCP tra il processo A su un host e il processo B su un altro host, i dati a livello di applicazione possono fluire dal processo A al processo B nello stesso momento in cui fluiscono in direzione opposta. Una connessione TCP è anche **punto a punto** (point-to-point), ossia ha luogo tra un singolo mittente e un singolo destinatario. Il cosiddetto “multicast”, ossia il trasferimento di dati da un mittente a molti destinatari in un’unica operazione, con TCP non è possibile.
 
+
+ 
