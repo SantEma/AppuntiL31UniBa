@@ -114,6 +114,8 @@ Notiamo che il riporto di quest’ultima somma è stato sommato al primo bit. Il
 > [!important] Guardare libro
 > Tutto questo sottocapitolo è utile ai fini di comprensione, ma non importante ai fini dell'esame vero e proprio. Lo trovate nel libro Reti di calcolatori e internet: Un approccio top-down. nei capitolo 3.4.1, 3.4.2, 3.4.3 e 3.4.4.
 
+
+
 ### TCP (trasporto orientato alla connessione)
 TCP viene detto **orientato alla connessione** (connection-oriented) in quanto, prima di effettuare lo scambio dei dati, i processi devono effettuare l’handshake, ossia devono inviarsi reciprocamente alcuni segmenti preliminari per stabilire i parametri del successivo trasferimento dati.
 
