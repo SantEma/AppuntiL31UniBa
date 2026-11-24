@@ -127,5 +127,5 @@ Come vedremo più avanti, un client e un server che comunicano via TCP instauran
 > ![[Pasted image 20261124143402.png]]
 > TCP dirige i dati al **buffer di invio** della connessione, uno dei buffer riservato durante l’handshake a tre vie, da cui, di tanto in tanto, preleverà blocchi di dati e li passerà al livello di rete.
 
-
+La massima quantità di dati prelevabili e posizionabili in un segmento viene limitata dalla **dimensione massima di segmento** (MSS, Maximum Segment Size). Questo valore viene generalmente impostato determinando prima la lunghezza del frame più grande che può essere inviato a livello di collegamento dall'host mittente locale, la cosiddetta **unità trasmissiva massima** (MTU, Maximum Transmission Unit) e poi scegliendo un MSS tale che il segmento TCP (una volta incapsulato in un datagramma IP) stia all’interno di un singolo frame a livello di collegamento, considerando anche la lunghezza dell’intestazione TCP/IP normalmente pari a 40 byte. I protocolli Ethernet e PPP hanno un MTU di 1500 byte, quindi un valore tipico di MSS è 1460 byte. Si noti che l’MSS rappresenta la massima quantità di dati a livello di applicazione nel segmento e non la massima dimensione del segmento TCP con intestazioni incluse. Questa terminologia può confondere, ma dobbiamo convivere con essa, essendo piuttosto diffusa.
 
