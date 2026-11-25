@@ -192,3 +192,4 @@ Per completare la gestione dinamica dei timer, l'RFC 6298 prescrive infine alcun
 - Ogni volta che si verifica un evento di timeout, il valore di $TimeoutInterval$ viene raddoppiato ($\text{TimeoutInterval} = \text{TimeoutInterval} \cdot 2$) anziché essere lasciato invariato; tale accorgimento serve a evitare che si inneschi un timeout prematuro anche per un segmento successivo il cui acknowledgment potrebbe essere sul punto di arrivare (oltre a fornire una prima forma di risposta alla congestione della rete). Tuttavia, non appena giunge regolarmente un riscontro che consente di misurare un nuovo campione e di aggiornare $EstimatedRTT$ (e $DevRTT$), il valore di $TimeoutInterval$ torna a essere ricalcolato secondo la formula standard $\text{EstimatedRTT} + 4 \cdot \text{DevRTT}$.
 
 
+
