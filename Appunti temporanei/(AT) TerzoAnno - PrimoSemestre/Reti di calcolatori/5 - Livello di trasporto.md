@@ -290,3 +290,4 @@ Per integrare la ritrasmissione rapida nel mittente TCP semplificato, il ramo re
 ##### Gestione della connessione TCP
 [da finire capitolo 3.5.6]
 #### Controllo di congestione TCP
+[da finire, capitolo 3.7]
