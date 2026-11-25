@@ -195,6 +195,7 @@ Il servizio offerto dal livello di rete di Internet (ossia il protocollo IP) è 
 
 Per realizzare questo servizio, TCP impiega molti dei principi teorici del trasferimento dati affidabile, tra cui il rilevamento degli errori, i numeri di sequenza, gli acknowledgment cumulativi, le ritrasmissioni e i timer. Dal punto di vista concettuale sarebbe più immediato associare un timer individuale a ciascun segmento trasmesso e non ancora riscontrato; tuttavia, nelle implementazioni reali la gestione simultanea di molti timer comporterebbe un notevole sovraccarico computazionale e di risorse. Per tale motivo, le procedure standard raccomandate dall'IETF nell'RFC 6298 prevedono l'utilizzo di un **unico timer di ritrasmissione** per connessione, anche in presenza di più segmenti in transito ancora privi di conferma.
 
+Per analizzare con chiarezza il meccanismo di trasferimento affidabile di TCP, esamineremo in due fasi: inizialmente si esamina un modello semplificato del mittente TCP che sfrutta esclusivamente i timeout per recuperare i segmenti perduti, per poi passare a una descrizione più completa che integra il recupero anticipato basato sugli acknowledgment duplicati. In tutta l'analisi si ipotizza un trasferimento unidirezionale di un file di grandi dimensioni dall'Host A all'Host B, trascurando temporaneamente i vincoli imposti dal controllo di flusso e dal controllo di congestione e assumendo che ciascun blocco di dati proveniente dall'applicazione abbia dimensione inferiore a MSS.
 
 > [!example] Il mittente TCP semplificato
 > Nel modello semplificato del mittente TCP, il funzionamento ruota attorno a due variabili di stato inizializzate al valore `InitialSeqNumber`: la variabile `NextSeqNum`, che indica il numero di sequenza del prossimo byte da trasmettere, e la variabile `SendBase`, che rappresenta il numero di sequenza del byte più vecchio già inviato ma non ancora riscontrato. Di conseguenza, $\text{SendBase} - 1$ corrisponde al numero di sequenza dell'ultimo byte che il mittente sa per certo essere stato ricevuto correttamente e in ordine dal destinatario. 
@@ -236,6 +237,7 @@ Per realizzare questo servizio, TCP impiega molti dei principi teorici del trasf
 >     }
 > ```
 > 
+
 
 #### Controllo di flusso
 #### Gestione della connessione TCP
