@@ -261,5 +261,32 @@ Un limite intrinseco del recupero affidato esclusivamente ai timeout è che l'in
 
 Per comprendere come il mittente sfrutti gli ACK duplicati, occorre innanzitutto analizzare le regole che governano la generazione degli acknowledgment sul lato ricevente, formalizzate nell'RFC 5681:
 ![[Pasted image 20261125171950.png]]
+
+Va osservato che questa tabella presuppone che il ricevente TCP non scarti i segmenti giunti fuori ordine, ma li conservi nel proprio buffer di ricezione. Quando il destinatario riceve un segmento il cui numero di sequenza è strettamente maggiore di quello atteso in ordine, rileva una lacuna (un "buco") nel flusso di byte, causata dalla perdita o dal riordinamento di un segmento nella rete. Poiché TCP non dispone di un messaggio esplicito di acknowledgment negativo ($NAK$), il destinatario segnala l'anomalia limitandosi a reinviare immediatamente un acknowledgment relativo all'ultimo byte ricevuto in ordine, generando così un ACK duplicato.
+
+Poiché nelle trasmissioni reali il mittente invia frequentemente un'intera raffica di segmenti consecutivi uno dopo l'altro, la perdita di un singolo segmento innesca l'arrivo di diversi segmenti successivi fuori ordine presso il destinatario, producendo di conseguenza una sequenza di ACK duplicati. Quando il mittente TCP riceve **tre ACK duplicati** per lo stesso numero di sequenza — ovvero quattro acknowledgment identici complessivi, contando l'ACK originale più tre duplicati — interpreta tale circostanza come un forte segnale del fatto che il segmento immediatamente successivo sia andato smarrito. In questo caso, il mittente esegue immediatamente una **ritrasmissione rapida** (fast retransmit, definita nell'RFC 5681), rispedendo il segmento mancante prima ancora che il relativo timer di timeout scada.
+
+Questo comportamento è illustrato nella Figura 3.37 del testo (e nello Scenario Timeout 4 delle slide): l'Host A trasmette in rapida successione cinque segmenti, rispettivamente $\text{seq} = 92$ ($8$ byte), $\text{seq} = 100$ ($20$ byte), $\text{seq} = 120$ ($15$ byte), $\text{seq} = 135$ ($6$ byte) e $\text{seq} = 141$ ($16$ byte). Il primo segmento giunge regolarmente a B, che risponde con l'ACK originale $\text{ack} = 100$; il secondo segmento ($\text{seq} = 100$) viene invece smarrito nella rete. Di conseguenza, quando arrivano a B i tre segmenti successivi ($\text{seq} = 120$, $\text{seq} = 135$ e $\text{seq} = 141$), il ricevente rileva il buco a partire dal byte $100$ e invia immediatamente tre ACK duplicati consecutivi, tutti con valore $\text{ack} = 100$. Non appena l'Host A riceve il terzo ACK duplicato per il valore $100$, esegue la ritrasmissione rapida del segmento $\text{seq} = 100$ ($20$ byte di dati) con largo anticipo rispetto alla scadenza del timer.
+
+Per integrare la ritrasmissione rapida nel mittente TCP semplificato della Figura 3.33, il ramo relativo all'evento di ricezione di un ACK viene modificato come segue, introducendo un contatore dei duplicati per ogni valore $y$:
+```
+    evento: ACK ricevuto, con valore del campo ACK pari a y
+        if (y > SendBase) {
+            SendBase = y
+            if (esistono attualmente segmenti che non hanno ricevuto un ACK)
+                avvia il timer
+        }
+        else { /* un ACK duplicato per un segmento già confermato */
+            incrementa il numero di ACK duplicati ricevuti per y
+            if (numero di ACK duplicati ricevuti per y == 3) {
+                /* ritrasmissione rapida */
+                rispedisci il segmento con numero di sequenza y
+            }
+        }
+        break;
+```
+
 #### Controllo di flusso
+[da finire]
 #### Gestione della connessione TCP
+[da finire]
