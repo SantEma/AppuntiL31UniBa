@@ -24,7 +24,7 @@ Ogni host, per indirizzare al processo giusto i segmenti di rete a livello di tr
 1. Le socket abbiano identificatori unici; 
 2. Ciascun segmento presenti campi che indichino la socket cui va consegnato il segmento, ossia:
 	- **Campo del numero di porta di origine**
-	- **Campo del numero di porta di intestazione**
+	- **Campo del numero di porta di destinazione**
 
 I numeri di porta sono grandi 16 bit e vanno da 0 a 65535, ma esistono dei **numeri di porta noti**, riservati a dei protocolli applicativi ben noti 
 In generale, un segmento a livello di trasporto si presenta in questa maniera:
