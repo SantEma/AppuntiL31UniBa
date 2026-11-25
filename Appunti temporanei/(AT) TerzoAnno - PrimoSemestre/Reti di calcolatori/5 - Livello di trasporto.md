@@ -194,5 +194,48 @@ Per completare la gestione dinamica dei timer, l'RFC 6298 prescrive infine alcun
 Il servizio offerto dal livello di rete di Internet (ossia il protocollo IP) è inaffidabile e di tipo **best-effort**, ossia non garantisce né la consegna dei datagrammi, né il loro arrivo nell'ordine originale, né tantomeno l'integrità dei bit trasportati. Attraversando la rete, i datagrammi IP possono saturare i buffer dei router intermedi ed essere scartati, giungere a destinazione in ordine casuale oppure subire alterazioni dei bit; poiché i segmenti del livello di trasporto sono incapsulati all'interno dei datagrammi IP, essi risultano direttamente esposti a tutte queste problematiche. Su queste basi inaffidabili, TCP costruisce un **servizio di trasferimento dati affidabile** (reliable data transfer service), garantendo che il flusso di byte letto dal processo applicativo dal proprio buffer di ricezione TCP sia privo di errori, privo di lacune, privo di duplicazioni e perfettamente ordinato: in altre parole, il flusso ricevuto coincide esattamente con il flusso originariamente spedito.
 
 Per realizzare questo servizio, TCP impiega molti dei principi teorici del trasferimento dati affidabile, tra cui il rilevamento degli errori, i numeri di sequenza, gli acknowledgment cumulativi, le ritrasmissioni e i timer. Dal punto di vista concettuale sarebbe più immediato associare un timer individuale a ciascun segmento trasmesso e non ancora riscontrato; tuttavia, nelle implementazioni reali la gestione simultanea di molti timer comporterebbe un notevole sovraccarico computazionale e di risorse. Per tale motivo, le procedure standard raccomandate dall'IETF nell'RFC 6298 prevedono l'utilizzo di un **unico timer di ritrasmissione** per connessione, anche in presenza di più segmenti in transito ancora privi di conferma.
+
+
+> [!example] Il mittente TCP semplificato
+> Nel modello semplificato del mittente TCP, il funzionamento ruota attorno a due variabili di stato inizializzate al valore `InitialSeqNumber`: la variabile `NextSeqNum`, che indica il numero di sequenza del prossimo byte da trasmettere, e la variabile `SendBase`, che rappresenta il numero di sequenza del byte più vecchio già inviato ma non ancora riscontrato. Di conseguenza, $\text{SendBase} - 1$ corrisponde al numero di sequenza dell'ultimo byte che il mittente sa per certo essere stato ricevuto correttamente e in ordine dal destinatario. 
+> Il comportamento del mittente è governato da un ciclo infinito che reagisce a tre eventi principali legati alla trasmissione e alla ritrasmissione dei dati:
+> 
+> 1. Il primo evento è la **ricezione di dati provenienti dal processo applicativo** sovrastante. Al verificarsi di questo evento, TCP incapsula i dati in un nuovo segmento impostando come numero di sequenza il valore corrente di `NextSeqNum`. Successivamente, se il timer di ritrasmissione non è già attivo per un segmento precedente, TCP provvede ad avviarlo nel momento in cui il segmento viene passato al livello IP; è utile concettualizzare quest'unico timer come sempre associato al segmento più vecchio ancora in attesa di riscontro, con una durata di scadenza pari a `TimeoutInterval`, calcolato dinamicamente a partire da `EstimatedRTT` e `DevRTT`. Infine, il mittente aggiorna il contatore dei byte da inviare ponendo $\text{NextSeqNum} = \text{NextSeqNum} + \text{lunghezza(dati)}$.
+> 
+> 2. Il secondo evento è il **timeout del timer di ritrasmissione**. Quando il timer scade senza che sia giunto il riscontro atteso, TCP reagisce ritrasmettendo il segmento non ancora confermato avente il numero di sequenza più basso — ossia il segmento più vecchio privo di acknowledgment, responsabile della scadenza del timer — e riavviando immediatamente il timer stesso.
+> 
+> 3. Il terzo evento è la **ricezione di un segmento di acknowledgment** recante un valore valido $y$ nel campo ACK. Poiché TCP adotta acknowledgment cumulativi, ricevere il valore $y$ certifica che il destinatario ha ricevuto correttamente e in sequenza tutti i byte che precedono il byte $y$. Il mittente confronta dunque $y$ con la propria variabile `SendBase`: se vale la condizione $y > \text{SendBase}$, l'acknowledgment conferma uno o più segmenti precedentemente in sospeso. In tal caso, il mittente aggiorna la propria base ponendo $\text{SendBase} = y$ e verifica se esistano ancora segmenti trasmessi privi di riscontro: qualora vi siano ancora segmenti non confermati in transito, il timer viene riavviato per monitorare il nuovo segmento più vecchio in sospeso. La logica operativa di questo mittente semplificato può essere sintetizzata nel seguente pseudocodice:
+> ```
+>     NextSeqNum = InitialSeqNumber
+>     SendBase = InitialSeqNumber
+> 
+>     loop (per sempre) {
+>         switch (evento)
+> 
+>         evento: dati ricevuti dall'applicazione a livello superiore
+>             crea il segmento TCP con numero di sequenza NextSeqNum
+>             if (il timer attualmente non è in funzione)
+>                 avvia il timer
+>             passa il segmento a IP
+>             NextSeqNum = NextSeqNum + lunghezza(dati)
+>             break;
+> 
+>         evento: timeout del timer
+>             ritrasmetti il segmento che non ha ricevuto ACK con il
+>                 più piccolo numero di sequenza
+>             avvia il timer
+>             break;
+> 
+>         evento: ACK ricevuto, con valore del campo ACK pari a y
+>             if (y > SendBase) {
+>                 SendBase = y
+>                 if (esistono attualmente segmenti senza ACK)
+>                     avvia il timer
+>             }
+>             break;
+>     }
+> ```
+> 
+
 #### Controllo di flusso
 #### Gestione della connessione TCP
