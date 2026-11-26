@@ -393,7 +393,32 @@ Consideriamo innanzitutto come viene instaurata una connessione tra due host con
 > 3. Nel terzo passo, alla ricezione del segmento SYNACK, anche l'host client provvede ad allocare i buffer e le variabili TCP dedicati alla connessione e trasmette un ulteriore segmento di risposta al server. In questo segmento il client imposta il campo di acknowledgment al valore $\text{ack} = \text{server\_isn} + 1$, pone il proprio numero di sequenza a $\text{seq} = \text{client\_isn} + 1$ e imposta il bit $\text{SYN} = 0$, segnalando che la connessione è ormai instaurata. A differenza dei primi due segmenti di controllo, in questa terza fase il campo dati del segmento può già trasportare informazioni applicative dal client verso il server.
 
 Una volta completati questi tre passaggi, client e server possono scambiarsi liberamente segmenti contenenti dati applicativi, ciascuno dei quali presenterà il bit $\text{SYN} = 0$. Poiché l'instaurazione della connessione richiede lo scambio complessivo di tre pacchetti tra i due host, la procedura viene definita **handshake a tre vie** (three-way handshake). 
+##### Chiusura di una connessione TCP tra due host
+Riprendendo l'esempio di prima, vediamo come due host chiudono la connessione tra loro
 
+> [!example] Esempio di chiusura di una connessione TCP tra due host
+> ![[Pasted image 20261126150034.png]]
+> Ciascuno dei due processi coinvolti nella comunicazione può decidere di terminare la connessione TCP, provocando la conseguente deallocazione delle risorse impegnate sugli host, ovvero dei buffer e delle variabili di stato. Riprendendo il caso precedente e supponendo che sia il client ad avviare la chiusura, il processo applicativo client emette un comando di chiusura che induce il client TCP a trasmettere al server uno speciale segmento con il bit $\text{FIN} = 1$ nell'intestazione.
+> Alla ricezione di tale segmento, il server replica inviando un segmento ACK al client. Successivamente, il server invia a sua volta il proprio segmento di chiusura (shutdown), contrassegnato anch'esso dal bit $\text{FIN} = 1$. Infine, il client risponde con un ultimo segmento di acknowledgment a conferma del $\text{FIN}$ del server e, dopo una fase di attesa temporizzata, tutte le risorse allocatisi su entrambi gli host risultano completamente deallocate.
+##### Ciclo di vita e stati TCP
+Durante l'intero arco temporale di una connessione, le entità TCP in esecuzione sul client e sul server attraversano una sequenza ordinata di **stati TCP** (TCP states), che determinano il comportamento del protocollo in risposta alle chiamate applicative e ai segmenti ricevuti dalla rete.
+
+La tipica successione di stati attraversati dal client TCP la rappresentiamo in questo modo:
+> [!info] Tipica sequenza di stati visitati da un client TCP
+> ![[Pasted image 20261126150440.png]]
+> Il client parte dallo stato `CLOSED` e, quando l'applicazione client inizializza una nuova connessione (ad esempio creando un oggetto `Socket`), il livello TCP invia un segmento $\text{SYN}$ al server e passa nello stato `SYN_SENT`, nel quale attende di ricevere dal server un segmento recante un acknowledgment per il proprio $\text{SYN}$ e il bit $\text{SYN} = 1$. Alla ricezione di tale segmento SYNACK, il client risponde con un segmento $\text{ACK}$ ed entra nello stato `ESTABLISHED`, durante il quale i processi possono scambiarsi regolarmente dati applicativi.
+> 
+> Quando l'applicazione client decide di chiudere la connessione (tenendo presente che l'iniziativa potrebbe partire anche dal server), il client TCP spedisce un segmento con $\text{FIN} = 1$ e si porta nello stato `FIN_WAIT_1`, dove rimane in attesa del relativo acknowledgment dal server. Una volta ricevuto tale $\text{ACK}$, il client non invia alcun segmento e transita nello stato `FIN_WAIT_2`, attendendo la ricezione del segmento di chiusura del server con $\text{FIN} = 1$. Quando questo giunge a destinazione, il client invia l'acknowledgment finale ed entra nello stato `TIME_WAIT`.
+> 
+> Lo stato `TIME_WAIT` ha una funzione precisa: consente al client TCP di ritrasmettere l'ultimo segmento $\text{ACK}$ nel caso in cui quest'ultimo sia andato perduto in rete. La durata della permanenza in `TIME_WAIT` varia a seconda della specifica implementazione, ma assume tipicamente valori pari a $30$ secondi, $1$ minuto oppure $2$ minuti. Trascorso questo intervallo di attesa, la connessione si considera formalmente chiusa, il client torna allo stato `CLOSED` e tutte le risorse lato client, inclusi i numeri di porta occupati, vengono rilasciate.
+
+Ora vediamo la tipica sequenza di stati attraversati dal server TCP nel caso in cui sia il client a chiudere la connessione:
+
+> [!info] Tipica sequenza di stati visitati da un server TCP
+> ![[Pasted image 20261126150742.png]]
+> Dallo stato `CLOSED`, l'applicazione server crea una socket in ascolto facendo transitare il proprio livello TCP nello stato `LISTEN`. Alla ricezione di un segmento $\text{SYN}$, il server invia un segmento SYNACK e si sposta nello stato `SYN_RCVD`; quando riceve il successivo $\text{ACK}$ dal client, non trasmette nulla ed entra nello stato `ESTABLISHED`.
+> 
+> All'avvio della chiusura da parte del client, il server riceve il segmento $\text{FIN}$, replica inviando un segmento $\text{ACK}$ e si porta nello stato `CLOSE_WAIT`. Quando anche il lato server è pronto a terminare la connessione, invia il proprio segmento $\text{FIN}$ passando nello stato `LAST_ACK`. Infine, alla ricezione dell'ultimo $\text{ACK}$ proveniente dal client, il server non invia ulteriori segmenti e ritorna allo stato `CLOSED`.
 
 ### Controllo di congestione TCP
 [da finire, capitolo 3.7]
