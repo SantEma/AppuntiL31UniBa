@@ -146,11 +146,13 @@ Una connessione TCP è inoltre:
 Client e server instaurano la connessione tramite un **handshake a tre vie** (three-way handshake), al termine del quale i due processi applicativi possono scambiarsi dati reciprocamente.
 > [!example] Sguardo rapido all'handshake a tre vie
 > ![[Pasted image 20261124143402.png]]
-> I dati prodotti dal processo mittente vengono collocati nel **buffer di invio** della connessione, riservato durante l'handshake, da cui TCP preleva periodicamente blocchi da incapsulare in segmenti.
 > 
-> La quantità massima di dati applicativi inseribili in un singolo segmento è limitata dalla **dimensione massima di segmento** (**MSS**, Maximum Segment Size). L'MSS viene determinato a partire dall'**unità trasmissiva massima** (**MTU**, Maximum Transmission Unit), ossia il frame più grande trasmissibile dal livello di collegamento dell'host mittente, sottraendo la lunghezza delle intestazioni TCP e IP (tipicamente 40 byte complessivi). Su Ethernet, ad esempio, con $\text{MTU} = 1500\text{ byte}$ si ha tipicamente $\text{MSS} = 1500 - 20 - 20 = 1460\text{ byte}$. L'MSS rappresenta quindi il solo carico utile applicativo, escluse le intestazioni.
-> 
-> Ogni blocco di dati viene dotato di un'intestazione TCP formando un segmento, che il livello di rete incapsula separatamente in un datagramma IP. All'estremo ricevente, i dati dei segmenti ricevuti vengono depositati nel **buffer di ricezione**, da cui l'applicazione destinataria legge il flusso di byte. Ciascun lato della connessione mantiene un proprio buffer di invio e un proprio buffer di ricezione.
+
+I dati prodotti dal processo mittente vengono collocati nel **buffer di invio** della connessione, riservato durante l'handshake, da cui TCP preleva periodicamente blocchi da incapsulare in segmenti.
+
+La quantità massima di dati applicativi inseribili in un singolo segmento è limitata dalla **dimensione massima di segmento** (**MSS**, Maximum Segment Size). L'MSS viene determinato a partire dall'**unità trasmissiva massima** (**MTU**, Maximum Transmission Unit), ossia il frame più grande trasmissibile dal livello di collegamento dell'host mittente, sottraendo la lunghezza delle intestazioni TCP e IP (tipicamente 40 byte complessivi). Su Ethernet, ad esempio, con $\text{MTU} = 1500\text{ byte}$ si ha tipicamente $\text{MSS} = 1500 - 20 - 20 = 1460\text{ byte}$. L'MSS rappresenta quindi il solo carico utile applicativo, escluse le intestazioni.
+
+Ogni blocco di dati viene dotato di un'intestazione TCP formando un segmento, che il livello di rete incapsula separatamente in un datagramma IP. All'estremo ricevente, i dati dei segmenti ricevuti vengono depositati nel **buffer di ricezione**, da cui l'applicazione destinataria legge il flusso di byte. Ciascun lato della connessione mantiene un proprio buffer di invio e un proprio buffer di ricezione.
 ### Struttura dei segmenti TCP
 > [!info] Schema di un segmento TCP
 > ![[Pasted image 20261124144756.png]]
@@ -383,10 +385,10 @@ Nel corso della connessione, client e server attraversano una sequenza definita 
 > Da `CLOSED`, il server apre una socket in ascolto entrando in `LISTEN`. Alla ricezione di un `SYN`, risponde con `SYNACK` e passa in `SYN_RCVD`; ricevuto l'`ACK` del client entra in `ESTABLISHED`.
 >
 > Quando il client avvia la chiusura, il server riceve `FIN`, risponde con `ACK` e transita in `CLOSE_WAIT`. Non appena anche il lato server è pronto a terminare, invia il proprio `FIN` spostandosi in `LAST_ACK`; alla ricezione dell'ultimo `ACK` dal client torna direttamente in `CLOSED`.
-##### Risposta alle porte chiuse e flag RST
+#### Risposta alle porte chiuse e flag RST
 Oltre alla chiusura ordinata (graceful) realizzata tramite lo scambio di segmenti `FIN` e `ACK`, TCP dispone del flag `RST` (reset), impiegato per interrompere bruscamente una connessione o rifiutare un segmento non valido. Il caso tipico si verifica quando un host riceve un segmento TCP, ad esempio una richiesta `SYN`, indirizzato a una porta su cui nessun processo è in ascolto (oppure privo di corrispondenza con alcuna socket attiva). In questa circostanza l'host destinatario risponde inviando un segmento speciale con flag `RST = 1`, comunicando al mittente che non esiste alcuna socket associata a tale segmento e di non ritrasmetterlo. Un comportamento analogo, ma affidato al livello di rete, si ha con UDP: quando arriva un segmento UDP destinato a una porta priva di socket attiva, l'host risponde con uno speciale messaggio di errore **ICMP** del tipo "port unreachable" (porta irraggiungibile).
 
-Questa diversità di risposte è alla base delle tecniche di port scanning impiegate da strumenti diagnostici e di sicurezza come nmap Inviando un segmento TCP `SYN` verso una specifica porta di un host bersaglio, è infatti possibile dedurne lo stato: la ricezione di un `SYNACK` indica una porta aperta su cui è attivo un servizio, la ricezione di un `RST` rivela una porta chiusa ma raggiungibile, mentre l'assenza di qualsiasi risposta suggerisce in genere che il pacchetto sia stato filtrato da un firewall lungo il percorso.
+Questa diversità di risposte è alla base delle tecniche di port scanning impiegate da strumenti diagnostici e di sicurezza come nmap. Inviando un segmento TCP `SYN` verso una specifica porta di un host bersaglio, è infatti possibile dedurne lo stato: la ricezione di un `SYNACK` indica una porta aperta su cui è attivo un servizio, la ricezione di un `RST` rivela una porta chiusa ma raggiungibile, mentre l'assenza di qualsiasi risposta suggerisce in genere che il pacchetto sia stato filtrato da un firewall lungo il percorso.
 ### Principi di congestione di rete
 La **congestione di rete** si verifica quando troppe sorgenti immettono traffico a una velocità superiore alla capacità di smaltimento dei router lungo il percorso. I pacchetti accumulano lunghi ritardi di accodamento finché i buffer finiti dei router vanno in overflow e scartano i pacchetti in eccesso. Le ritrasmissioni eseguite dai mittenti per recuperare le perdite (aggravate da eventuali timeout prematuri dovuti agli alti ritardi) aumentano ulteriormente il carico, esponendo la rete al **collasso da congestione**. A ciò si aggiunge uno spreco sistematico: ogni pacchetto scartato da un router a valle vanifica tutta la capacità trasmissiva già spesa dai router a monte per inoltrarlo fin lì.
 
@@ -462,7 +464,7 @@ Indicando con $W_{\max}$ il valore di $\text{cwnd}$ all'ultima perdita e con $K$
 In questo modo TCP CUBIC rimane più a lungo vicino alla massima capacità sostenibile del collegamento, ottenendo un throughput medio superiore rispetto a TCP Reno.
 > [!info] Velocità di invio in congestion avoidance: TCP CUBIC vs TCP Reno
 > ![[Pasted image 20261126174749.png]]
-### Notifica esplicita di congestione (ECN) e controllo basato sul ritardo
+#### Notifica esplicita di congestione (ECN) e controllo basato sul ritardo
 La **notifica esplicita di congestione** (**ECN**, Explicit Congestion Notification, RFC 3168) implementa il controllo di congestione assistito dalla rete tramite la cooperazione tra IP e TCP, consentendo di rilevare la congestione prima che i buffer vadano in overflow.
 
 Il meccanismo sfrutta due bit nel campo Type of Service (ToS) dell'intestazione IP e due flag nell'intestazione TCP, articolandosi in quattro passi:
@@ -479,7 +481,7 @@ La **fairness** (equità) misura la capacità dei protocolli di trasporto di rip
 
 In pratica, questa equità è compromessa da due fattori principali:
 - **Convivenza tra TCP e UDP:** UDP non implementa alcun controllo di congestione. Le applicazioni multimediali su UDP (come telefonia IP o videoconferenza) mantengono costante il proprio ritmo di invio anche sotto congestione, aggravando l'intasamento e costringendo il traffico TCP concorrente a ridurre drasticamente la propria velocità. Per questo UDP è considerato unfair (sleale) verso TCP;
-- **Connessioni TCP parallele:** poiché il controllo di congestione assegna una quota equa a ogni singola connessione e non a ogni applicazione, un programma (ad esempio un browser web) può aprire più connessioni TCP parallele verso la stessa sorgente per appropriarsi di una frazione di banda complessiva molto maggiore rispetto ad applicazioni che usano una sola connessione;
+- **Connessioni TCP parallele:** poiché il controllo di congestione assegna una quota equa a ogni singola connessione e non a ogni applicazione, un programma (ad esempio un browser web) può aprire più connessioni TCP parallele verso la stessa sorgente per appropriarsi di una frazione di banda complessiva molto maggiore rispetto ad applicazioni che usano una sola connessione.
 ## Evoluzione della funzionalità del livello di trasporto
 Quando né il servizio minimale di UDP né i vincoli di TCP soddisfano appieno le esigenze di un'applicazione, gli sviluppatori possono implementare le funzioni di trasporto direttamente al livello di applicazione. È questo il principio alla base di **QUIC** (Quick UDP Internet Connections, RFC 9000).
 
