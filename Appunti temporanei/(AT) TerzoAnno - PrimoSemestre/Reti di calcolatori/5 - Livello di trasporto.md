@@ -374,6 +374,7 @@ TCP offre un servizio di **controllo di flusso** (flow-control service) alle pro
 [da finire capitolo 3.5.6]
 ### Controllo di congestione TCP
 [da finire, capitolo 3.7]
-nell’istante### Evoluzione della funzionalità del livello di trasporto
+
+### Evoluzione della funzionalità del livello di trasporto
 [da finire, capitolo 3.8]
 
