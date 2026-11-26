@@ -484,9 +484,16 @@ Osservando il funzionamento a regime di TCP classico (trascurando la breve fase 
 ###### TCP Cubic
 Analizzando il comportamento AIMD di TCP Reno, sorge il dubbio che dimezzare la velocità di trasmissione a ogni perdita (o ridurla drasticamente a un singolo segmento per RTT come in Tahoe) per poi risalire lentamente di $1\text{ MSS}$ per RTT rappresenti una strategia eccessivamente conservativa. Se le condizioni del collegamento congestionato in cui si è verificata la perdita non sono mutate in maniera sostanziale, potrebbe risultare più efficiente riavvicinarsi rapidamente alla velocità precedente alla perdita e sondare poi con cautela lo spazio immediatamente prossimo alla soglia di saturazione.
 
-Da questa intuizione nasce **TCP CUBIC** (standardizzato in RFC 8312 e aggiornato in RFC 9438), oggi adottato come algoritmo predefinito in gran parte dei sistemi operativi moderni. TCP CUBIC lascia sostanzialmente invariate le fasi di slow start e fast recovery, modificando la fase di congestion avoidance nel seguente modo:
-- Sia $\text{W}_\text{max}$ la dimensione della finestra del controllo di congestione di TCP nell’istante in cui viene rilevata l’ultima perdita e sia $K$ l’istante nel futuro in cui la dimensione della finestra di TCP CUBIC raggiungerà nuovamente $\text{W}_\text{max}$, assumendo che non vi sia alcuna perdita. Diversi parametri CUBIC determinano il valore di $K$ che indica quanto velocemente la dimensione della finestra di congestione del protocollo raggiungerebbe $\text{W}_\text{max}$.
-- 
+Da questa intuizione nasce **TCP CUBIC** (standardizzato in RFC 8312 e aggiornato in RFC 9438), oggi adottato come algoritmo predefinito in gran parte dei sistemi operativi moderni. TCP CUBIC lascia sostanzialmente invariate le fasi di slow start e fast recovery, intervenendo invece sull'entità del decremento alla perdita (riducendo la finestra in modo meno brusco rispetto al dimezzamento, tipicamente a $0,7 \cdot cwnd$) e soprattutto sulla legge di crescita nella fase di congestion avoidance. Indicata con $W_{max}$ l'ampiezza della finestra di congestione nell'istante in cui è stata rilevata l'ultima perdita e definito $K$ come l'istante futuro in cui la finestra di CUBIC tornerebbe a eguagliare $W_{max}$ in assenza di ulteriori perdite, TCP CUBIC fa crescere $cwnd$ in funzione del cubo della distanza temporale tra l'istante corrente $t$ e $K$. Ne derivano tre regimi operativi: 
+1. Quando $t$ è molto distante da $K$ (subito dopo la perdita), la funzione cubica produce incrementi molto ampi che riportano velocemente il tasso trasmissivo vicino a $W_{max}$; 
+2. Man mano che $t$ si avvicina a $K$, la curva si appiattisce determinando incrementi minimi che permettono di sondare con grande cautela la banda proprio attorno al livello di congestione precedente; 
+3. Infine, se non avvengono nuove perdite e $t$ supera $K$ (indicando che la congestione sul collegamento si è allentata), la crescita torna a essere rapidamente cubica per individuare tempestivamente una nuova soglia operativa superiore. 
+
+Grazie a questo andamento, TCP CUBIC riesce a mantenere il flusso più a lungo in prossimità della massima capacità sostenibile del percorso, conseguendo un throughput complessivo superiore rispetto a TCP Reno.
+
+> [!info] Velocità di invio della congestion avoidance, CUBIC vs Reno
+> ![[Pasted image 20261126174749.png]]
+##### Notifica esplicita di congestione (ECN)
 ##### Controllo di congestione basato sul ritardo
 ## Evoluzione della funzionalità del livello di trasporto
 [da finire, capitolo 3.8]
