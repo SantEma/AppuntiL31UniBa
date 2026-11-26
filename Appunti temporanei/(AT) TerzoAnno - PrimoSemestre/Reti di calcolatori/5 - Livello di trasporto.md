@@ -494,7 +494,16 @@ Grazie a questo andamento, TCP CUBIC riesce a mantenere il flusso più a lungo i
 > [!info] Velocità di invio della congestion avoidance, CUBIC vs Reno
 > ![[Pasted image 20261126174749.png]]
 ##### Notifica esplicita di congestione (ECN)
+**La notifica esplicita di congestione** (ECN, Explicit Congestion Notification, standardizzata in RFC 3168) costituisce la realizzazione pratica del controllo di congestione assistito dalla rete in Internet e si fonda sulla cooperazione tra il livello di rete IP, gestito dai router, e il livello di trasporto TCP, gestito dagli host periferici. Il meccanismo consente di segnalare l'insorgere della congestione prima che i buffer vadano in overflow provocando lo scarto dei pacchetti.
+
+Operativamente, il protocollo impiega due bit dedicati all'interno del campo Type of Servic* (ToS) dell'intestazione IP e due flag nell'intestazione TCP, seguendo una sequenza in quattro passaggi:
+1. Il mittente (Host A) invia pacchetti TCP incapsulati in datagrammi IP dichiarando che gli estremi della connessione supportano ECN mediante la codifica dei due bit ECN nel campo ToS al valore `10` oppure `01`. 
+2. Qualora un router intermedio rilevi l'insorgenza di congestione (ad esempio osservando l'aumento del ritardo di accodamento, secondo soglie configurate dall'operatore di rete), invece di scartare il pacchetto marca i due bit ECN dell'intestazione IP ponendoli al valore `11` (Congestion Experienced, CE) e continua a inoltrare il datagramma verso la destinazione. 
+3. Il destinatario TCP (Host B), ricevendo un datagramma IP marcato con `ECN=11`, avvisa il mittente impostando a $1$ il bit di flag **ECE** (Explicit Congestion Notification Echo) nell'intestazione dei segmenti ACK di ritorno, mantenendo attivo tale flag nei riscontri successivi fino a ricevere conferma dell'avvenuta reazione del mittente. 
+4. Il mittente riceve l'ACK con `ECE=1`, reagisce preventivamente dimezzando la propria finestra di congestione $cwnd$ esattamente come farebbe alla ricezione di tre ACK duplicati e imposta a $1$ il bit di flag **CWR** (*Congestion Window Reduced*) nell'intestazione del segmento successivo inviato al destinatario, notificando la riduzione della finestra affinché quest'ultimo cessi di impostare il flag `ECE=1`.
 ##### Controllo di congestione basato sul ritardo
+Un approccio alternativo per intervenire in modo proattivo prima che avvengano perdite di pacchetti, senza però richiedere il coinvolgimento esplicito dei router, è il controllo di congestione basato sul ritardo (delay-based). In questi protocolli il mittente monitora sistematicamente le misure di RTT dei segmenti scambiati lungo il percorso tra sorgente e destinazione: un incremento progressivo del ritardo rivela l'accumulo di pacchetti nelle code dei router prima che i buffer giungano a saturazione, consentendo al mittente di ridurre in anticipo la propria velocità di trasmissione ed evitando così perdite e ritrasmissioni. Il primo è **TCP Vegas**, che utilizza le misurazioni di RTT per stimare l'insorgere della congestione; su logiche affini di stima della banda e del ritardo di propagazione si basano anche varianti più moderne impiegate su larga scala nelle reti dorsali contemporanee, come il protocollo **BBR**.
+
 ## Evoluzione della funzionalità del livello di trasporto
 [da finire, capitolo 3.8]
 
