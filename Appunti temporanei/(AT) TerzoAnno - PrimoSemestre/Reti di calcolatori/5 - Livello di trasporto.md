@@ -380,12 +380,12 @@ TCP offre un servizio di **controllo di flusso** (flow-control service) alle pro
 > 
 > Per risolvere questa situazione di stallo, le specifiche di TCP stabiliscono che, quando la finestra di ricezione notificata dall'Host B risulta pari a zero, l'Host A debba continuare a inviare segmenti contenenti un singolo byte di dati. Il destinatario è tenuto a rispondere a tali segmenti inviando un acknowledgment; in questo modo, non appena il buffer dell'Host B comincia a svuotarsi, i riscontri generati in risposta porteranno all'Host A un valore finalmente non nullo di $rwnd$, permettendo la regolare ripresa del trasferimento del file.
 #### Gestione della connessione TCP
-
 Lo studio delle procedure con cui una connessione TCP viene instaurata e successivamente rilasciata riveste una notevole rilevanza pratica per due motivi principali:
 - L'apertura di una connessione TCP introduce ritardi temporali concreti che risultano facilmente percepibili dall'utente finale, come accade comunemente durante la navigazione nel Web. 
 - Le vulnerabilità legate alla gestione della connessione sono sfruttate da molti tra gli attacchi informatici più frequenti, tra cui il noto attacco SYN flooding, un attacco di tipo DoS (Denial of Service) in cui un aggressore invia un numero elevatissimo di richieste di connessione $\text{SYN}$ senza mai completare la fase di apertura, saturando così le risorse del server destinate alle connessioni mezze aperte e impedendo l'accesso agli utenti legittimi.
-
-> [!example] Esempio di connessione TCP tra due host
+##### Instaurazione di una connessione TCP tra due host
+Consideriamo innanzitutto come viene instaurata una connessione tra due host con un esempio 
+> [!example] Esempio di instaurazione di una connessione TCP tra due host
 > Si consideri un processo applicativo in esecuzione su un host (client) che desidera inizializzare una comunicazione con un processo su un altro host (server). Il processo applicativo client comunica innanzitutto al proprio livello TCP l'intenzione di stabilire una connessione verso il processo server; a questo punto, il protocollo TCP lato client avvia una procedura articolata in tre passaggi sequenziali:
 > ![[Pasted image 20261126144531.png]]
 > 1. Nel primo passo, il TCP lato client invia al TCP lato server uno speciale segmento privo di dati a livello applicativo, nella cui intestazione il bit di controllo $\text{SYN}$ viene impostato al valore $\text{SYN} = 1$; proprio per questa caratteristica esso prende il nome di segmento SYN. Contestualmente, il client genera in modo casuale un numero di sequenza iniziale, indicato come $\text{client\_isn}$, e lo inserisce nel campo del numero di sequenza dell'intestazione. Il segmento SYN viene quindi incapsulato in un datagramma IP e trasmesso verso il server; la scelta casuale e accurata di $\text{client\_isn}$ è stata oggetto di numerosi studi specifici (tra cui le linee guida CERT 2001-09 e l'RFC 4987) volti a prevenire determinate classi di attacchi informatici.
