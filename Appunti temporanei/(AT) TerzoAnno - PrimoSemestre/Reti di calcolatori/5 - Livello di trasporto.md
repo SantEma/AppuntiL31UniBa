@@ -365,10 +365,15 @@ Ricordiamo che gli host agli estremi delle connessioni TCP riservano dei buffer 
 
 TCP offre un servizio di **controllo di flusso** (flow-control service) alle proprie applicazioni per evitare che il mittente saturi il buffer del ricevente. Il controllo di flusso è pertanto un servizio di confronto sulla velocità, dato che paragona la frequenza di invio del mittente con quella di lettura dell’applicazione ricevente. Come notato in precedenza, i mittenti TCP possono anche essere rallentati dalla congestione nella rete IP. Questa forma di controllo del mittente viene detta controllo di congestione (congestion control), che vedremo successivamente. Sebbene le azioni intraprese dal controllo di flusso e di congestione siano simili (il rallentamento del mittente), sono causate da ragioni molto differenti. 
 
+![[Pasted image 20261126123855.png]]
+Consideriamo il caso in cui un Host A stia trasferendo un file di grandi dimensioni verso un Host B attraverso una connessione TCP. L'Host B alloca per tale connessione un buffer di ricezione di dimensione complessiva pari a $RcvBuffer$, dal quale il proprio processo applicativo legge i dati di tanto in tanto. Per monitorare lo stato di occupazione di questa memoria, sul lato destinatario vengono definite due variabili fondamentali: $LastByteRead$, che indica il numero dell'ultimo byte nel flusso di dati già letto dal processo applicativo in B, e $LastByteRcvd$, che rappresenta il numero dell'ultimo byte proveniente dalla rete e copiato nel buffer di ricezione di B. Poiché TCP non deve mai mandare in overflow il buffer allocato, la quantità di dati ricevuti ma non ancora letti dall'applicazione deve rispettare in ogni momento il vincolo $LastByteRcvd - LastByteRead \le RcvBuffer$.
 
-> [!example]  Esempio di controllo di flusso
-> ![[Pasted image 20261126123855.png]]
+Sulla base di queste grandezze, la finestra di ricezione $rwnd$ viene impostata esattamente alla quantità di spazio residuo libero all'interno del buffer, secondo la relazione $rwnd = RcvBuffer - [LastByteRcvd - LastByteRead]$. Come rappresentato visivamente nella figura, la capienza totale $RcvBuffer$ risulta ripartita tra i dati TCP già presenti nel buffer e lo spazio ancora disponibile pari a $rwnd$; poiché la quantità di dati in arrivo da IP e quelli prelevati dall'applicazione varia continuamente nel tempo, il valore di $rwnd$ è intrinsecamente dinamico.
 
+Per rendere operativo il controllo di flusso lungo la connessione, l'Host B inizializza $rwnd$ al valore di $RcvBuffer$, mantenendo ovviamente variabili dedicate per ciascuna connessione attiva, e informa periodicamente l'Host A sullo spazio residuo scrivendo il valore corrente di $rwnd$ nell'apposito campo dell'intestazione dei segmenti inviati verso A. Parallelamente, sul lato mittente, l'Host A tiene traccia di altre due variabili: 
+1. $LastByteSent$, corrispondente al numero dell'ultimo byte spedito;
+2. $LastByteAcked$, relativo all'ultimo byte per il quale è già pervenuto un acknowledgment.
+La differenza $LastByteSent - LastByteAcked$ esprime esattamente la quantità di dati trasmessi da A per i quali non è ancora stato ricevuto un riscontro. Assicurandosi che l'ammontare di dati privi di acknowledgment rimanga costantemente inferiore o uguale al valore notificato di $rwnd$, l'Host A garantisce di non poter mai mandare in overflow il buffer di ricezione dell'Host B, mantenendo valida per l'intera durata della connessione la disuguaglianza $LastByteSent - LastByteAcked \le rwnd$.
 
 #### Gestione della connessione TCP
 [da finire capitolo 3.5.6]
