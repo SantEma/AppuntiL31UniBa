@@ -419,6 +419,14 @@ Ora vediamo la tipica sequenza di stati attraversati dal server TCP nel caso in 
 > 
 > All'avvio della chiusura da parte del client, il server riceve il segmento $\text{FIN}$, replica inviando un segmento $\text{ACK}$ e si porta nello stato `CLOSE_WAIT`. Quando anche il lato server è pronto a terminare la connessione, invia il proprio segmento $\text{FIN}$ passando nello stato `LAST_ACK`. Infine, alla ricezione dell'ultimo $\text{ACK}$ proveniente dal client, il server non invia ulteriori segmenti e ritorna allo stato `CLOSED`.
 #### Principi di congestione di rete
+La congestione di rete si verifica quando troppe sorgenti cercano di immettere dati a ritmi eccessivi rispetto alla capacità di smaltimento dei router lungo il percorso, causando l'overflow dei buffer e la perdita di pacchetti. Poiché la semplice ritrasmissione dei segmenti perduti è soltanto un workaround, il controllo di congestione regola la velocità trasmissiva dei mittenti e va tenuto nettamente distinto dal controllo di flusso: pur condividendo la medesima azione operativa di rallentamento del mittente, il controllo di flusso evita di saturare il buffer del singolo processo ricevente in base alla sua velocità di lettura, mentre il controllo di congestione tutela la rete nel suo complesso impedendo di iniettarvi più traffico di quanto i router riescano a gestire.
+
+
+Quando troppe sorgenti trasmettono troppo velocemente rispetto alla capacità dei collegamenti, i pacchetti accumulano lunghi ritardi di accodamento finché i buffer finiti dei router vanno in overflow e iniziano a scartare i pacchetti in eccesso. Le ritrasmissioni eseguite dai mittenti per recuperare le perdite (aggravate da eventuali ritrasmissioni inutili dovute a timeout prematuri innescati dagli alti ritardi) immettono ulteriore carico nella rete, esponendola al rischio del collasso della rete. A ciò si aggiunge un ulteriore spreco sistematico: ogni volta che un pacchetto viene eliminato da un router a valle lungo il percorso, tutta la capacità trasmissiva già spesa dai router a monte per inoltrarlo fino a quel punto risulta completamente perduta.
+
+A seconda che il livello di rete offra o meno supporto esplicito al livello di trasporto, si distinguono due orientamenti principali:
+- Nell'approccio end-to-end, adottato dal TCP classico , il livello IP non fornisce alcun feedback esplicito e gli host devono dedurre autonomamente la congestione osservando perdite di pacchetti o incrementi del ritardo di RTT.
+- Nell'approccio assistito dalla rete, invece, sono i router a segnalare esplicitamente la congestione, tramite un avviso diretto al mittente (choke packet) oppure marcando un campo nei pacchetti diretti al destinatario affinché quest'ultimo avvisi a sua volta il mittente (con un ritardo di almeno un RTT), meccanismo che costituisce la premessa diretta della notifica esplicita ECN.
 #### Controllo di congestione TCP
 [da finire, capitolo 3.7]
 
