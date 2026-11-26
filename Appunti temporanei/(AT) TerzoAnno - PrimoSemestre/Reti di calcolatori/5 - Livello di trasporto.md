@@ -21,7 +21,6 @@ Per indirizzare ogni segmento alla socket corretta, il livello di trasporto rich
 - due campi appositi nell'intestazione di ciascun segmento: il **numero di porta di origine** e il **numero di porta di destinazione**.
 
 I numeri di porta sono codificati su 16 bit e assumono valori compresi tra 0 e 65535. La IANA suddivide questo spazio in tre fasce:
-
 - **0 – 1023 (porte di sistema o well-known ports):** riservate da IANA ai servizi standard IETF (es. 21 per FTP, 23 per Telnet, 25 per SMTP, 80 per HTTP);
 - **1024 – 49151 (porte registrate o registered ports):** assegnate da IANA su richiesta di terze parti e utilizzabili da applicazioni utente non di sistema;
 - **49152 – 65535 (porte private o dinamiche):** assegnate temporaneamente e automaticamente dal sistema operativo quando un'applicazione client avvia una comunicazione.
@@ -95,7 +94,6 @@ Rispetto a TCP, UDP offre quattro vantaggi principali:
 > ![[Pasted image 20261104171258.png]]
 
 L'intestazione UDP è composta da quattro campi da 16 bit ciascuno (8 byte complessivi):
-
 - **Porta di origine e porta di destinazione (16 bit ciascuno):** identificano i processi comunicanti (valori da 0 a 65535). La porta di destinazione consente al ricevente il demultiplexing verso la socket corretta; la porta di origine fornisce l'indirizzo di ritorno per eventuali risposte.
 - **Lunghezza (16 bit):** specifica la dimensione complessiva del segmento UDP in byte, comprensiva degli 8 byte di intestazione e del carico utile applicativo. Il valore minimo è 8 byte (segmento senza dati); il massimo teorico codificabile è 65535 byte, ma nella pratica il limite effettivo è imposto dalla dimensione massima del datagramma IP che lo incapsula ($\le 64\text{ KB}$).
 - **Checksum (16 bit):** rileva eventuali alterazioni dei bit verificatesi durante il transito lungo i collegamenti o durante la permanenza nei buffer dei router intermedi. È opzionale in IPv4 (valore `0` se disabilitato) e obbligatorio in IPv6.
@@ -103,7 +101,6 @@ L'intestazione UDP è composta da quattro campi da 16 bit ciascuno (8 byte compl
 Il checksum UDP permette di verificare se i bit del segmento abbiano subito corruzioni tra sorgente e destinazione, poiché non vi è garanzia che tutti i collegamenti intermedi effettuino il controllo degli errori e inoltre i bit possono alterarsi anche nella memoria dei router.
 
 Sul lato mittente, il calcolo applica la somma in aritmetica del complemento a 1 a tutte le parole da 16 bit del segmento e ne esegue il complemento a 1 finale (inversione dei bit).
-
 > [!example] Esempio di calcolo del checksum UDP
 > Si considerino tre parole da 16 bit: `0110011001100000`, `0101010101010101` e `1000111100001100`.
 >
@@ -159,7 +156,6 @@ Client e server instaurano la connessione tramite un **handshake a tre vie** (th
 > ![[Pasted image 20261124144756.png]]
 
 Come in UDP, l'intestazione TCP contiene i numeri di **porta di origine** e **porta di destinazione** (16 bit ciascuno) per il multiplexing/demultiplexing e il campo **Checksum** (16 bit). A questi si aggiungono:
-
 - **Numero di sequenza e numero di acknowledgment (32 bit ciascuno):** utilizzati per implementare il trasferimento dati affidabile;
 - **Finestra di ricezione (16 bit):** impiegata per il controllo di flusso, indica il numero di byte che il destinatario è disposto ad accettare;
 - **Lunghezza dell'intestazione (4 bit):** esprime la dimensione dell'intestazione TCP in parole da 32 bit (4 byte). Poiché il valore massimo codificabile su 4 bit è 15, l'intestazione varia tra 20 byte (parte fissa, senza opzioni) e $15 \times 4 = 60\text{ byte}$ (con fino a 40 byte di opzioni);
@@ -350,7 +346,6 @@ Completati i tre passaggi, definiti **handshake a tre vie** (three-way handshake
 > ![[Pasted image 20261126150034.png]]
 >
 > Ciascuno dei due processi può avviare la terminazione della connessione per rilasciare buffer e variabili di stato. Supponendo che l'iniziativa parta dal client, quest'ultimo invia un segmento con flag `FIN = 1`. Il server risponde con un segmento `ACK` e, quando è pronto a chiudere il proprio lato, invia a sua volta un segmento con `FIN = 1`. Il client replica con l'`ACK` finale: il server rilascia subito le proprie risorse alla ricezione di tale `ACK`, mentre il client dealloca le proprie al termine di una breve attesa temporizzata (`TIME_WAIT`).
-
 #### Ciclo di vita e stati TCP
 Nel corso della connessione, client e server attraversano una sequenza definita di **stati TCP** (TCP states) in risposta ai comandi applicativi e ai segmenti scambiati.
 > [!info] Tipica sequenza di stati visitati da un client TCP
