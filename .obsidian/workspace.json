@@ -173,7 +173,8 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300
+    "width": 300,
+    "collapsed": true
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -188,6 +189,7 @@
   },
   "active": "3c58014c8815a548",
   "lastOpenFiles": [
+    "Pasted image 20261126181000.png",
     "Pasted image 20261126174749.png",
     "Pasted image 20261126172855.png",
     "Pasted image 20261126171928.png",
@@ -201,7 +203,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261126150742.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261126150440.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261126150034.png",
-    "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/ImmaginInutili/Pasted image 20261126144531.png",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/Basi di Dati/Tracce.zip",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/Basi di Dati/Tracce.zip.b7kj1t.part",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/4 - DNS.md",
