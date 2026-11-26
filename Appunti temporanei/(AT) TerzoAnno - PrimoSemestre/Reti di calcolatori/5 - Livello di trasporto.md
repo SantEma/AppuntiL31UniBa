@@ -185,6 +185,15 @@ Le RFC di TCP non impongono un comportamento unico per la gestione dei segmenti 
 2. conservarli nel buffer di ricezione in attesa dei byte mancanti per colmare le lacune (soluzione più efficiente per la banda e adottata nella quasi totalità delle implementazioni reali).
 
 Infine, nella realtà i due host non partono da 0 ma scelgono casualmente il proprio numero di sequenza iniziale (Initial Sequence Number, ISN). Ciò evita che vecchi segmenti rimasti in rete da una connessione precedente tra gli stessi host e le stesse porte vengano accettati erroneamente nella nuova sessione.
+
+> [!example] Caso di studio: Telnet e piggybacking
+> Un esempio efficace per comprendere l'interazione tra numeri di sequenza e numeri di acknowledgment in una comunicazione bidirezionale è offerto da **Telnet** (RFC 854), un protocollo applicativo interattivo per il login remoto basato su TCP (oggi generalmente sostituito da SSH perché trasmette i dati, comprese le password, in chiaro).
+>
+> Si supponga che l'Host A (client) apra una sessione Telnet con l'Host B (server) e che i numeri di sequenza iniziali siano 42 per il client e 79 per il server. Dopo l'instaurazione della connessione, il client è in attesa del byte 79 dal server e il server è in attesa del byte 42 dal client. Quando l'utente sull'Host A digita il carattere `'C'`, vengono scambiati tre segmenti TCP:
+>
+> 1. **Dal client al server:** il primo segmento trasporta nel campo dati il byte ASCII di `'C'`, imposta `Seq = 42` e riporta `ACK = 79`, poiché il client non ha ancora ricevuto alcun dato dal server.
+> 2. **Dal server al client:** il secondo segmento assolve una duplice funzione. Da un lato riscontra la ricezione del carattere del client impostando `ACK = 43` (segnalando di aver ricevuto fino al byte 42 e di attendere il byte 43); dall'altro invia indietro l'eco del carattere `'C'` nel campo dati con `Seq = 79`, trattandosi del primo byte trasmesso dal server. Poiché il riscontro viaggia a bordo di un segmento che trasporta anche dati nella direzione opposta, si dice che l'acknowledgment è in **piggybacking** (o piggybacked).
+> 3. **Dal client al server:** il terzo segmento ha l'unico scopo di confermare la ricezione della `'C'` restituita dal server. Il suo campo dati è vuoto (nessun piggybacking), il campo di riscontro assume valore `ACK = 80` (il client ha ricevuto fino al byte 79 e attende il byte 80) e il numero di sequenza è impostato a `Seq = 43`, poiché l'intestazione TCP prevede sempre un valore valido in tale campo anche in assenza di carico utile.
 ### Timeout e stima del tempo di andata e ritorno (RTT)
 Per recuperare i segmenti smarriti, TCP combina timeout e ritrasmissioni. La durata dell'intervallo di timeout deve superare il tempo di andata e ritorno (**RTT**, Round-Trip Time)  comprensivo dei ritardi di elaborazione, accodamento, trasmissione e propagazione per evitare che il timer scada prima del normale arrivo degli `ACK`, generando ritrasmissioni inutili.
 #### Stima del tempo di andata e ritorno (RTT)
