@@ -381,6 +381,9 @@ TCP offre un servizio di **controllo di flusso** (flow-control service) alle pro
 > Per risolvere questa situazione di stallo, le specifiche di TCP stabiliscono che, quando la finestra di ricezione notificata dall'Host B risulta pari a zero, l'Host A debba continuare a inviare segmenti contenenti un singolo byte di dati. Il destinatario è tenuto a rispondere a tali segmenti inviando un acknowledgment; in questo modo, non appena il buffer dell'Host B comincia a svuotarsi, i riscontri generati in risposta porteranno all'Host A un valore finalmente non nullo di $rwnd$, permettendo la regolare ripresa del trasferimento del file.
 #### Gestione della connessione TCP
 
+Lo studio delle procedure con cui una connessione TCP viene instaurata e successivamente rilasciata riveste una notevole rilevanza pratica per due motivi principali:
+- L'apertura di una connessione TCP introduce ritardi temporali concreti che risultano facilmente percepibili dall'utente finale, come accade comunemente durante la navigazione nel Web. 
+- Le vulnerabilità legate alla gestione della connessione sono sfruttate da molti tra gli attacchi informatici più frequenti, tra cui il noto attacco SYN flooding, un attacco di tipo DoS (Denial of Service) in cui un aggressore invia un numero elevatissimo di richieste di connessione $\text{SYN}$ senza mai completare la fase di apertura, saturando così le risorse del server destinate alle connessioni mezze aperte e impedendo l'accesso agli utenti legittimi.
 
 > [!example] Esempio di connessione TCP tra due host
 > Si consideri un processo applicativo in esecuzione su un host (client) che desidera inizializzare una comunicazione con un processo su un altro host (server). Il processo applicativo client comunica innanzitutto al proprio livello TCP l'intenzione di stabilire una connessione verso il processo server; a questo punto, il protocollo TCP lato client avvia una procedura articolata in tre passaggi sequenziali:
