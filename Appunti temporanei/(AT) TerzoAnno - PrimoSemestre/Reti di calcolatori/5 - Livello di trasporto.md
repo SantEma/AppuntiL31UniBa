@@ -395,7 +395,6 @@ Consideriamo innanzitutto come viene instaurata una connessione tra due host con
 Una volta completati questi tre passaggi, client e server possono scambiarsi liberamente segmenti contenenti dati applicativi, ciascuno dei quali presenterà il bit $\text{SYN} = 0$. Poiché l'instaurazione della connessione richiede lo scambio complessivo di tre pacchetti tra i due host, la procedura viene definita **handshake a tre vie** (three-way handshake). 
 ##### Chiusura di una connessione TCP tra due host
 Riprendendo l'esempio di prima, vediamo come due host chiudono la connessione tra loro
-
 > [!example] Esempio di chiusura di una connessione TCP tra due host
 > ![[Pasted image 20261126150034.png]]
 > Ciascuno dei due processi coinvolti nella comunicazione può decidere di terminare la connessione TCP, provocando la conseguente deallocazione delle risorse impegnate sugli host, ovvero dei buffer e delle variabili di stato. Riprendendo il caso precedente e supponendo che sia il client ad avviare la chiusura, il processo applicativo client emette un comando di chiusura che induce il client TCP a trasmettere al server uno speciale segmento con il bit $\text{FIN} = 1$ nell'intestazione.
