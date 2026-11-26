@@ -173,8 +173,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 300,
-    "collapsed": true
+    "width": 300
   },
   "left-ribbon": {
     "hiddenItems": {
@@ -189,6 +188,9 @@
   },
   "active": "3c58014c8815a548",
   "lastOpenFiles": [
+    "Pasted image 20261126235622.png",
+    "Pasted image 20261126235453.png",
+    "Pasted image 20261126235427.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/Non confermato 212355.crdownload",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/Non confermato 907001.crdownload",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/Non confermato 487538.crdownload",
@@ -200,8 +202,6 @@
     "Pasted image 20261126181000.png",
     "Pasted image 20261126174749.png",
     "Pasted image 20261126172855.png",
-    "Pasted image 20261126171928.png",
-    "Pasted image 20261126171135.png",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/6 - Livello di rete.md",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori/5 - Livello di trasporto.md",
     "README.md",
@@ -234,7 +234,6 @@
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Reti di calcolatori",
     "Appunti definitivi/(AD) SecondoAnno - PrimoSemestre/ASD/1 - Algoritmi e Programmi.pdf",
     "Appunti temporanei/(AT) TerzoAnno - PrimoSemestre/Interazione Persona Macchina",
-    "Appunti definitivi/(AD) TerzoAnno - PrimoSemestre",
     "Senza nome.canvas"
   ]
 }
