@@ -368,15 +368,15 @@ Nel corso della connessione, client e server attraversano una sequenza definita 
 > Da `CLOSED`, il server apre una socket in ascolto entrando in `LISTEN`. Alla ricezione di un `SYN`, risponde con `SYNACK` e passa in `SYN_RCVD`; ricevuto l'`ACK` del client entra in `ESTABLISHED`.
 >
 > Quando il client avvia la chiusura, il server riceve `FIN`, risponde con `ACK` e transita in `CLOSE_WAIT`. Non appena anche il lato server è pronto a terminare, invia il proprio `FIN` spostandosi in `LAST_ACK`; alla ricezione dell'ultimo `ACK` dal client torna direttamente in `CLOSED`.
-## Principi di congestione di rete
+### Principi di congestione di rete
 La **congestione di rete** si verifica quando troppe sorgenti immettono traffico a una velocità superiore alla capacità di smaltimento dei router lungo il percorso. I pacchetti accumulano lunghi ritardi di accodamento finché i buffer finiti dei router vanno in overflow e scartano i pacchetti in eccesso. Le ritrasmissioni eseguite dai mittenti per recuperare le perdite (aggravate da eventuali timeout prematuri dovuti agli alti ritardi) aumentano ulteriormente il carico, esponendo la rete al **collasso da congestione**. A ciò si aggiunge uno spreco sistematico: ogni pacchetto scartato da un router a valle vanifica tutta la capacità trasmissiva già spesa dai router a monte per inoltrarlo fin lì.
 
 Poiché la semplice ritrasmissione è solo un rimedio sintomatico, è necessario un controllo della congestione che regoli la velocità dei mittenti. In base al ruolo del livello di rete si distinguono due approcci:
 - **Controllo di congestione end-to-end:** adottato dal TCP classico, in cui IP non fornisce segnalazioni esplicite e gli host deducono la congestione osservando perdite di pacchetti o aumenti dell'RTT;
 - **Controllo di congestione assistito dalla rete:** i router segnalano esplicitamente la congestione inviando un avviso diretto al mittente (choke packet) oppure marcando un campo nei pacchetti diretti al destinatario, affinché questo avvisi il mittente (con un ritardo di almeno un RTT), principio alla base della notifica esplicita ECN.
-## Controllo di congestione TCP
+### Controllo di congestione TCP
 Oltre al trasferimento affidabile e al controllo di flusso, TCP integra il controllo della congestione per impedire che le connessioni saturino la rete. Il **TCP classico** (RFC 2581 e RFC 5681) adotta un approccio end-to-end.
-### Controllo di congestione TCP classico
+#### Controllo di congestione TCP classico
 Il mittente TCP regola dinamicamente il proprio tasso di invio in base alla congestione percepita, rispondendo a tre esigenze: come limitare la velocità, come rilevare la congestione e con quale algoritmo variare il ritmo di invio.
 
 Per limitare i dati immessi in rete, il mittente affianca alla finestra di ricezione $\text{rwnd}$ una seconda variabile di stato, la **finestra di congestione** $\text{cwnd}$ (congestion window). La quantità di byte inviati e non ancora confermati deve rispettare il vincolo $\text{LastByteSent} - \text{LastByteAcked} \le \min\{\text{cwnd}, \text{rwnd}\}$, determinando la finestra effettiva di invio:
@@ -394,7 +394,7 @@ Ogni mittente opera in modo distribuito e asincrono seguendo tre principi:
 3. il protocollo effettua un continuo **sondaggio della banda** (bandwidth probing), incrementando la velocità finché non si verifica una perdita, rallentando e ricominciando poi a crescere.
 
 L'algoritmo definito in RFC 5681 si articola in tre fasi: **slow start** e **congestion avoidance** (obbligatorie) e **fast recovery** (raccomandata, formalmente opzionale).
-#### Slow start
+##### Slow start
 All'apertura della connessione TCP imposta $\text{cwnd} = 1\text{ MSS}$. Con $\text{MSS} = 500\text{ byte}$ (4000 bit) e $\text{RTT} = 200\text{ ms}$ ($0{,}2\text{ s}$), la velocità iniziale è di appena $4000\text{ bit} / 0{,}2\text{ s} = 20\text{ kbit/s}$. Per raggiungere rapidamente la banda disponibile, durante lo slow start il mittente incrementa $\text{cwnd}$ di $1\text{ MSS}$ per ogni nuovo `ACK` ricevuto: si passa così da $1\text{ MSS}$ (20 kbit/s) a $2\text{ MSS}$ (40 kbit/s), poi $4\text{ MSS}$ (80 kbit/s) e così via. Nonostante il nome, la crescita è **esponenziale** ($\text{cwnd}$ raddoppia a ogni RTT).
 
 > [!info] Slow start di TCP
@@ -404,7 +404,7 @@ La fase di slow start termina al verificarsi di una di tre condizioni:
 1. **Timeout:** TCP imposta la soglia di slow start alla metà della finestra corrente ($\text{ssthresh} = \text{cwnd} / 2$, inizialmente posta a un valore elevato), reimposta $\text{cwnd} = 1\text{ MSS}$ e riparte dallo slow start;
 2. **Raggiungimento della soglia ($\text{cwnd} \ge \text{ssthresh}$):** poiché raddoppiare ancora la finestra in prossimità del livello che ha provocato l'ultima congestione sarebbe rischioso, TCP entra in congestion avoidance;
 3. **Tre `ACK` duplicati:** TCP esegue il fast retransmit del segmento mancante e passa in fast recovery.
-#### Congestion avoidance
+##### Congestion avoidance
 All'ingresso in **congestion avoidance**, $\text{cwnd}$ si trova circa a metà del valore che aveva generato l'ultima congestione. TCP passa quindi a una **crescita lineare** prudente, aumentando $\text{cwnd}$ di $1\text{ MSS}$ per ogni RTT: alla ricezione di ciascun nuovo `ACK`, la finestra viene incrementata di $\text{MSS} \cdot (\text{MSS} / \text{cwnd})$ byte. Per esempio, con $\text{MSS} = 1460\text{ byte}$ e $\text{cwnd} = 14600\text{ byte}$ (10 segmenti per RTT), ogni `ACK` aggiunge $1/10\text{ MSS}$, producendo esattamente $+1\text{ MSS}$ al termine dell'RTT.
 
 > [!info] Automa a stati finiti del controllo di congestione TCP
@@ -413,7 +413,7 @@ All'ingresso in **congestion avoidance**, $\text{cwnd}$ si trova circa a metà d
 La reazione a una perdita in congestion avoidance dipende dal tipo di segnalazione:
 - **Timeout (congestione grave):** TCP imposta $\text{ssthresh} = \text{cwnd} / 2$, riporta $\text{cwnd} = 1\text{ MSS}$ e rientra in slow start;
 - **Tre `ACK` duplicati (perdita isolata, poiché altri segmenti continuano ad arrivare):** TCP reagisce in modo più moderato impostando $\text{ssthresh} = \text{cwnd} / 2$ e $\text{cwnd} = \text{ssthresh} + 3\text{ MSS}$ (conteggiando i tre segmenti già consegnati), esegue il fast retransmit ed entra in fast recovery.
-#### Fast recovery e varianti di TCP: Tahoe, Reno e NewReno
+##### Fast recovery e varianti di TCP: Tahoe, Reno e NewReno
 In **fast recovery**, per ogni ulteriore `ACK` duplicato relativo al segmento smarrito TCP incrementa $\text{cwnd}$ di $1\text{ MSS}$, poiché un altro segmento ha raggiunto il ricevente. All'arrivo di un nuovo `ACK` che riscontra il segmento ritrasmesso, TCP imposta $\text{cwnd} = \text{ssthresh}$, azzera il contatore dei duplicati e riprende la crescita lineare in congestion avoidance. Se invece scade un timeout durante il fast recovery, imposta $\text{ssthresh} = \text{cwnd} / 2$, riporta $\text{cwnd} = 1\text{ MSS}$ e torna in slow start.
 
 La presenza o meno del fast recovery distingue due versioni storiche di TCP:
@@ -431,7 +431,7 @@ La presenza o meno del fast recovery distingue due versioni storiche di TCP:
 A regime (con perdite rilevate tramite triplo `ACK` duplicato), TCP classico alterna un incremento additivo lineare di $+1\text{ MSS}$ per RTT a un decremento moltiplicativo che dimezza $\text{cwnd}$. Tale dinamica è detta **AIMD** (Additive-Increase, Multiplicative-Decrease) e produce il caratteristico andamento a dente di sega (sawtooth).
 > [!info] Controllo di congestione a incremento additivo e decremento moltiplicativo (AIMD)
 > ![[Pasted image 20261126172855.png]]
-#### TCP CUBIC
+##### TCP CUBIC
 Dimezzare $\text{cwnd}$ a ogni perdita e risalire lentamente di $1\text{ MSS}$ per RTT può risultare troppo conservativo, specialmente su reti ad alta velocità e grande RTT. **TCP CUBIC** (RFC 8312, aggiornato in RFC 9438), oggi predefinito in gran parte dei sistemi operativi moderni, lascia sostanzialmente invariati slow start e fast recovery, ma modifica la congestion avoidance e riduce la finestra in modo meno drastico alla perdita (tipicamente a $0{,}7 \cdot \text{cwnd}$).
 
 Indicando con $W_{\max}$ il valore di $\text{cwnd}$ all'ultima perdita e con $K$ l'istante futuro in cui la finestra di CUBIC tornerebbe a eguagliare $W_{\max}$ in assenza di nuove perdite, $\text{cwnd}$ cresce come funzione **cubica** della distanza temporale tra l'istante corrente $t$ e $K$, generando tre regimi:
@@ -447,7 +447,6 @@ In questo modo TCP CUBIC rimane più a lungo vicino alla massima capacità soste
 La **notifica esplicita di congestione** (**ECN**, Explicit Congestion Notification, RFC 3168) implementa il controllo di congestione assistito dalla rete tramite la cooperazione tra IP e TCP, consentendo di rilevare la congestione prima che i buffer vadano in overflow.
 
 Il meccanismo sfrutta due bit nel campo Type of Service (ToS) dell'intestazione IP e due flag nell'intestazione TCP, articolandosi in quattro passi:
-
 1. l'Host A dichiara il supporto a ECN impostando i due bit ECN dell'intestazione IP a `10` o `01`;
 2. un router intermedio che rileva congestione incipiente, anziché scartare il pacchetto, marca i due bit IP al valore `11` (Congestion Experienced, CE) e lo inoltra;
 3. l'Host B, ricevuto un datagramma con `ECN = 11`, avvisa il mittente impostando il flag TCP `ECE = 1` (ECN-Echo) nei segmenti `ACK` di ritorno;
@@ -456,7 +455,7 @@ Il meccanismo sfrutta due bit nel campo Type of Service (ToS) dell'intestazione 
 > ![[Pasted image 20261126181000.png]]
 
 Un approccio alternativo è il **controllo di congestione basato sul ritardo** (delay-based), impiegato in protocolli come **TCP Vegas** e nel più recente **BBR**: il mittente monitora l'andamento dell'RTT e, rilevando un aumento del ritardo causato dal riempimento delle code nei router, riduce anticipatamente la velocità di invio prima che si verifichino perdite di pacchetti.
-### Fairness
+#### Fairness
 La **fairness** (equità) misura la capacità dei protocolli di trasporto di ripartire equamente la banda di un collegamento condiviso: se $K$ connessioni TCP (con uguale RTT) condividono un collo di bottiglia di capacità $R$, l'algoritmo AIMD tende a far convergere ciascuna connessione verso una quota media pari a $R / K$.
 
 In pratica, questa equità è compromessa da due fattori principali:
