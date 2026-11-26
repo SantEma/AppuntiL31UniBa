@@ -418,7 +418,7 @@ Ora vediamo la tipica sequenza di stati attraversati dal server TCP nel caso in 
 > Dallo stato `CLOSED`, l'applicazione server crea una socket in ascolto facendo transitare il proprio livello TCP nello stato `LISTEN`. Alla ricezione di un segmento $\text{SYN}$, il server invia un segmento SYNACK e si sposta nello stato `SYN_RCVD`; quando riceve il successivo $\text{ACK}$ dal client, non trasmette nulla ed entra nello stato `ESTABLISHED`.
 > 
 > All'avvio della chiusura da parte del client, il server riceve il segmento $\text{FIN}$, replica inviando un segmento $\text{ACK}$ e si porta nello stato `CLOSE_WAIT`. Quando anche il lato server è pronto a terminare la connessione, invia il proprio segmento $\text{FIN}$ passando nello stato `LAST_ACK`. Infine, alla ricezione dell'ultimo $\text{ACK}$ proveniente dal client, il server non invia ulteriori segmenti e ritorna allo stato `CLOSED`.
-
+### Principi di congestione di rete
 ### Controllo di congestione TCP
 [da finire, capitolo 3.7]
 
