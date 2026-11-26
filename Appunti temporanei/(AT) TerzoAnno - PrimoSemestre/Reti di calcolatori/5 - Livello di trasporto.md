@@ -428,9 +428,7 @@ A seconda che il livello di rete offra o meno supporto esplicito al livello di t
 - Nell'approccio end-to-end, adottato dal TCP classico , il livello IP non fornisce alcun feedback esplicito e gli host devono dedurre autonomamente la congestione osservando perdite di pacchetti o incrementi del ritardo di RTT.
 - Nell'approccio assistito dalla rete, invece, sono i router a segnalare esplicitamente la congestione, tramite un avviso diretto al mittente (choke packet) oppure marcando un campo nei pacchetti diretti al destinatario affinché quest'ultimo avvisi a sua volta il mittente (con un ritardo di almeno un RTT), meccanismo che costituisce la premessa diretta della notifica esplicita ECN.
 #### Controllo di congestione TCP
-Quindi, oltre al trasferimento affidabile dei dati e al controllo di flusso, il protocollo TCP integra come componente fondamentale il controllo di congestione. La versione cosiddetta "classica" di TCP, standardizzata originariamente in RFC 2581 e successivamente in RFC 5681, adotta un controllo di congestione di tipo end-to-end, dal momento che il livello IP di base non restituisce ai sistemi periferici alcuna segnalazione esplicita sullo stato di intasamento della rete. 
-Accanto a questo modello classico si sono poi affermate estensioni più recenti basate sulla segnalazione esplicita da parte dei router o sulla misura dei ritardi, nonché l'analisi dell'equità (fairness) nella ripartizione della banda tra flussi in competizione.
-##### Controllo di congestione di TCP classico
+
 
 
 ## Evoluzione della funzionalità del livello di trasporto
