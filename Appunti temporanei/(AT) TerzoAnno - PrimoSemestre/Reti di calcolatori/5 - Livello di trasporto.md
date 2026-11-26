@@ -361,11 +361,19 @@ evento: ACK ricevuto, con valore del campo ACK pari a y
     break;
 ```
 #### Controllo di flusso
-[da finire, capitolo 3.5.5]
+Ricordiamo che gli host agli estremi delle connessioni TCP riservano dei buffer di ricezione per la connessione. Quando la connessione TCP riceve byte corretti e in sequenza, li posiziona nel buffer di ricezione. Il processo applicativo associato legge i dati da questo buffer, ma non necessariamente nell'istante in cui arrivano. Infatti, l’applicazione ricevente potrebbe essere impegnata in qualche altro compito e potrebbe non leggere i dati fino a un istante di tempo molto successivo al loro arrivo. Se l’applicazione è relativamente lenta nella lettura dei dati può accadere che il mittente mandi in overflow il buffer di ricezione inviando molti dati troppo rapidamente.
+
+TCP offre un servizio di **controllo di flusso** (flow-control service) alle proprie applicazioni per evitare che il mittente saturi il buffer del ricevente. Il controllo di flusso è pertanto un servizio di confronto sulla velocità, dato che paragona la frequenza di invio del mittente con quella di lettura dell’applicazione ricevente. Come notato in precedenza, i mittenti TCP possono anche essere rallentati dalla congestione nella rete IP. Questa forma di controllo del mittente viene detta controllo di congestione (congestion control), che vedremo successivamente. Sebbene le azioni intraprese dal controllo di flusso e di congestione siano simili (il rallentamento del mittente), sono causate da ragioni molto differenti. 
+
+
+> [!example]  Esempio di controllo di flusso
+> ![[Pasted image 20261126123855.png]]
+
+
 #### Gestione della connessione TCP
 [da finire capitolo 3.5.6]
 ### Controllo di congestione TCP
 [da finire, capitolo 3.7]
-### Evoluzione della funzionalità del livello di trasporto
+nell’istante### Evoluzione della funzionalità del livello di trasporto
 [da finire, capitolo 3.8]
 
