@@ -1,1 +1,1 @@
-[da finire]
+Il ruolo principale del livello di rete è quello di trasferire pacchetti da un host a un altro. Per fare questo è possibile identificare due importanti funzioni.
