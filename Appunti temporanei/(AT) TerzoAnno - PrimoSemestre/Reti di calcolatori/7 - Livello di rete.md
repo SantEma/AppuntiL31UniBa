@@ -7,5 +7,5 @@ Con inoltro quindi faremo riferimento all'azione locale con cui il router trasfe
 
 Per inoltrare i pacchetti, i router estraggono da uno o più campi dell’intestazione (per esempio il campo Indirizzo di destinazione) i loro valori che utilizzano come indice nella **tabella di inoltro** (tabella di forwarding o forwarding table), un elemento chiave di qualsiasi router. Il risultato indica a quale interfaccia di uscita il pacchetto debba essere diretto.
 
-### Piano
+### Piano di controllo: approccio tradizionale
 
