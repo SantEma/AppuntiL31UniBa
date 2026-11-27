@@ -49,10 +49,12 @@ Il meccanismo risolutivo prevede che ogni connessione TCP sia identificata in mo
 Nell'interazione orientata alla connessione, tipica di TCP, il server predispone inizialmente il canale creando la socket con `socket()`, associandola all'indirizzo e alla porta tramite `bind()` e ponendola in stato di ascolto con `listen()`; subito dopo invoca `accept()` per attendere l'arrivo di un client. Parallelamente, il client crea la propria socket con `socket()` e avvia la fase di instaurazione della connessione chiamando `connect()`, che si completa in corrispondenza della `accept()` sul server.
 
 Una volta stabilita la connessione, il client invia i dati della richiesta utilizzando `send()`, mentre il server li riceve tramite `recv()`. Il server procede quindi all'elaborazione della richiesta e trasmette i dati della risposta con `send()`, che vengono letti dal client mediante `recv()`. Conclusa la comunicazione, sia il server sia il client rilasciano le risorse chiudendo le rispettive socket attraverso la chiamata `close()`.
+![[Pasted image 20261127154819.png]]
 ### Interazione client/server senza connessione
 Nell'interazione senza connessione, caratteristica di UDP, non ha luogo alcuna fase preventiva di apertura della connessione. Il server crea la socket con `socket()`, la associa alla propria porta tramite `bind()` e si pone direttamente in attesa dei messaggi invocando `recvfrom()`. Il client crea la propria socket con `socket()` e spedisce immediatamente i dati della richiesta al server utilizzando `sendto()`.
 
 Il server acquisisce la richiesta tramite `recvfrom()`, la elabora e invia i dati della risposta al client chiamando `sendto()`, che il client raccoglie con `recvfrom()`. Al termine dello scambio, tanto il server quanto il client chiudono la propria socket mediante `close()`.
+![[Pasted image 20261127154838.png]]
 ## Collaudo di applicazioni di rete
 Per collaudare un'applicazione di rete durante lo sviluppo non è necessario disporre di due macchine distinte: client e server possono infatti essere eseguiti sullo stesso host sfruttando l'indirizzo di loopback `127.0.0.1`, noto anche come `localhost`.
 
